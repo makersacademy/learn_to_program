@@ -4,7 +4,7 @@ describe 'old school roman numerals' do
   numerals.each.with_index do |numeral, i|
     it "translates #{i+1} to #{numeral}" do
       allow(STDOUT).to receive(:puts)
-      require './ch9-writing-your-own-methods/old_school_roman_numerals.rb'
+      require './ch09-writing-your-own-methods/old_school_roman_numerals.rb'
       expect(old_roman_numeral(i+1)).to eq numeral
     end
   end
@@ -13,7 +13,7 @@ describe 'old school roman numerals' do
   l_numerals.each.with_index do |numeral, i|
     it "translates #{i+50} to #{numeral}" do
       allow(STDOUT).to receive(:puts)
-      require './ch9-writing-your-own-methods/old_school_roman_numerals.rb'
+      require './ch09-writing-your-own-methods/old_school_roman_numerals.rb'
       expect(old_roman_numeral(i+50)).to eq numeral
     end
   end
@@ -22,7 +22,7 @@ describe 'old school roman numerals' do
   c_numerals.each.with_index do |numeral, i|
     it "translates #{i+100} to #{numeral}" do
       allow(STDOUT).to receive(:puts)
-      require './ch9-writing-your-own-methods/old_school_roman_numerals.rb'
+      require './ch09-writing-your-own-methods/old_school_roman_numerals.rb'
       expect(old_roman_numeral(i+100)).to eq numeral
     end
   end
@@ -31,7 +31,7 @@ describe 'old school roman numerals' do
   d_numerals.each.with_index do |numeral, i|
     it "translates #{i+500} to #{numeral}" do
       allow(STDOUT).to receive(:puts)
-      require './ch9-writing-your-own-methods/old_school_roman_numerals.rb'
+      require './ch09-writing-your-own-methods/old_school_roman_numerals.rb'
       expect(old_roman_numeral(i+500)).to eq numeral
     end
   end
@@ -40,7 +40,7 @@ describe 'old school roman numerals' do
   m_numerals.each.with_index do |numeral, i|
     it "translates #{i+1000} to #{numeral}" do
       allow(STDOUT).to receive(:puts)
-      require './ch9-writing-your-own-methods/old_school_roman_numerals.rb'
+      require './ch09-writing-your-own-methods/old_school_roman_numerals.rb'
       expect(old_roman_numeral(i+1000)).to eq numeral
     end
   end

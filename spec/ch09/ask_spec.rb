@@ -1,4 +1,4 @@
-require './ch9-writing-your-own-methods/ask.rb'
+require './ch09-writing-your-own-methods/ask.rb'
 
 describe 'ask' do
   it 'returns true when you say yes' do

@@ -18,5 +18,5 @@ def ask question
   answer # This is what we return (true or false). 
 end
 
-likes_it = ask 'Do you like eating tacos?' 
-puts likes_it
+# likes_it = ask 'Do you like eating tacos?' 
+# puts likes_it

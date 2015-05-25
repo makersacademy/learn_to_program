@@ -1,5 +1,3 @@
-#def ask question
-  # your code here
 def ask question
 	while true
 	puts question 
@@ -18,4 +16,3 @@ end
 
 
 
-#end

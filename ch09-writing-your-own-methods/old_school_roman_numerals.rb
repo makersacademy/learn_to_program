@@ -1,5 +1,3 @@
-#def old_roman_numeral num
-  # your code here
 def roman n
 
 thous='M' * (n/1000)
@@ -16,4 +14,3 @@ return numeral
 end
 
 
-#end

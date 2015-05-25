@@ -1,9 +1,9 @@
-def roman n
+def roman_numeral num
 
-thous=(n/1000)
-hunds=(n%1000/100)
-tens=(n%100/10)
-ones=(n%10)
+thous=(num/1000)
+hunds=(num%1000/100)
+tens=(num%100/10)
+ones=(num%10)
 
 numeral='M' *thous
 
@@ -12,8 +12,8 @@ if hunds == 9
 elsif hunds ==4
 	numeral = numeral +'CD'
 else
-numeral =numeral +'D' *(n%1000/500)
-numeral=numeral +'C' * (n % 500/100)
+numeral =numeral +'D' *(num%1000/500)
+numeral=numeral +'C' * (num % 500/100)
 end
 
 if tens == 9
@@ -21,8 +21,8 @@ if tens == 9
 elsif tens ==4
 	numeral == numeral +'XL'
 else
-numeral =numeral +'L' *(n%100/50)
-numeral=numeral +'X' * (n % 50/10)
+numeral =numeral +'L' *(num%100/50)
+numeral=numeral +'X' * (num% 50/10)
 end
 
 if ones == 9
@@ -30,8 +30,8 @@ if ones == 9
 elsif ones ==4
 	numeral = numeral +'IV'
 else
-numeral =numeral +'V' *(n%10/5)
-numeral=numeral +'I' * (n % 5/1)
+numeral =numeral +'V' *(num%10/5)
+numeral=numeral +'I' * (num % 5/1)
 end
 
 return numeral

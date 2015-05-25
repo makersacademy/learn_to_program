@@ -1,4 +1,4 @@
-def old_roman_numerals num
+def old_roman_numeral num
 
 thous='M' * (num/1000)
 five_hund='D' * ((num%1000)/500)

@@ -16,10 +16,6 @@ def ask question
 	end 
 end
 
-apples=ask "do you like apples?"
-puts apples
 
-wet=ask "Do you wet the bed?"
-puts wet
 
 #end

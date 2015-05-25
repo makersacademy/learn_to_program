@@ -1,3 +1,5 @@
+# well, aside from just using the built-in sort method:
+
 # The well-known quicksort algorithm.
 def sort arr
   return arr if arr.length <= 1

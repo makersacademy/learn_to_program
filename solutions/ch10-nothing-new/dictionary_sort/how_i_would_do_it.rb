@@ -6,7 +6,7 @@ def dictionary_sort arr
   less = arr.select{|x| x.downcase < middle.downcase} 
   more = arr.select{|x| x.downcase >= middle.downcase}
 
-  sort(less) + [middle] + sort(more)
+  dictionary_sort(less) + [middle] + dictionary_sort(more)
 end
 
 # words = ['can','feel','singing.','like','A','can'] 

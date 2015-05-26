@@ -6,13 +6,12 @@ def old_roman_numeral num
   roman_num << 'X' * (num%100 / 50) 
   roman_num << 'L' * (num%50 / 10) 
   roman_num << 'V' * (num%10 / 5)   
-  (num%5 == 4 ? roman_num << 'IV' : roman_num << 'I' * (num%5)   #condition ? if_true : if_false
+  num%5 == 4 ? roman_num << 'IV' : roman_num << 'I' * (num%5)   #condition ? if_true : if_false
 
 
   return roman_num
 end
 
-puts old_roman_numeral 707
 puts old_roman_numeral 1444
 puts old_roman_numeral 1999
 puts old_roman_numeral 2554

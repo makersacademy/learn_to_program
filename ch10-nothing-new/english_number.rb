@@ -1,5 +1,9 @@
-def english_number number
+
   # your code here
+<<<<<<< HEAD
+
+def english_number number
+  
   if number < 0
     return 'Please enter a number that isn\'t negative'
   end
@@ -106,3 +110,6 @@ puts english_number(0)
 puts english_number(231)
 puts english_number(3263)
 puts english_number(10785)
+=======
+end
+>>>>>>> upstream/master

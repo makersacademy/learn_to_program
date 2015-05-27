@@ -1,1 +1,3 @@
-# your code here
+class Integer
+  # your code here
+end

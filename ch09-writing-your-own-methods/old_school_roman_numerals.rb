@@ -1,7 +1,7 @@
 def old_roman_numeral num
   
-  if (num < 1 or num > 3000)
-  	return "Enter a number between 1 and 3000"
+  if (num < 1)
+  	return "Enter an integer greater than or equal to 1"
   end
 
   numString = ""
@@ -27,6 +27,6 @@ return numString
 
 end
 
-puts old_roman_numeral(2234)
+
 
 

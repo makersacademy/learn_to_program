@@ -26,3 +26,24 @@ If you are curious feel free to inspect the contents of files like spec/ch09/ask
 Remember, don't spend more than an hour on each exercise.  This week the critical thing is to work through all the chapters and do your best on the exercies, but not to spend hours and hours stuck on a particular problem.  If you can't complete an exercise within a reasonable amount of time, please feel free to move on.
 
 Of course you can always ask your mentor for help and come back to exercises later when you have an insight, but please don't feel compelled to spend time on exercises at the expense of working through the individual chapters and trying out the code within them by typing it into your own editor and running it on your own computer with Ruby.
+
+If you are keen to explore more of the tests and would like to run more than one at a time please use the following commands:
+
+```sh
+rspec spec/ch09/
+```
+
+will run all the tests for the chapter 9 exercises (that have tests) and
+
+```sh
+rspec spec/ch10/
+```
+
+will run all the ch10 tests and so on.  If you want to run every single test at once you can run:
+
+```sh
+rspec
+```
+
+but be prepared for potentially quite a lot of output! :-)
+

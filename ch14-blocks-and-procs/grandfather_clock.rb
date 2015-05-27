@@ -1,16 +1,14 @@
 # /usr/bin/env ruby
 
-def hours proc
+def grandfather_clock &block
 
 	hours_passed = Time.new.hour % 12
 
 	hours_passed.times do 
-		proc.call
+		block.call
 	end
 end
 
-chime = Proc.new do
+grandfather_clock do
 	puts "DONG!"
 end
-
-puts hours(chime)

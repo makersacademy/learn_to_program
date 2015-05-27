@@ -1,1 +1,3 @@
-# your code here
+class OrangeTree
+  # your code here
+end

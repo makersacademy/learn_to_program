@@ -11,12 +11,11 @@ def old_roman_numeral(n)
     "I" => 1
   }
 
-  def numeralise(numeral, base_ten_equivalent)
-    @result << numeral * (@remaining/base_ten_equivalent)
+  def numeralise(numeral_symbol, base_ten_equivalent)
+    @result << numeral_symbol * (@remaining/base_ten_equivalent)
     @remaining %= base_ten_equivalent
   end
 
   numeral_list.each { |k, v| numeralise(k, v)}
   @result
 end
-p old_roman_numeral 900

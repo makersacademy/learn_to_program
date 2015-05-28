@@ -12,5 +12,3 @@ def ask question
   end
   return
 end
-
-ask 'Do you like tacos?'

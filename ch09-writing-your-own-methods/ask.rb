@@ -9,6 +9,6 @@ def ask question
     else
       puts 'Please answer "yes" or "no".'
     end
+    
   end
-  return
 end

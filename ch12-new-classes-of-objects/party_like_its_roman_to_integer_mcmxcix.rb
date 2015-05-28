@@ -1,4 +1,5 @@
 def roman_to_integer roman
+<<<<<<< HEAD
 
 digital_vals={'i' => 1, 
 	          'v'=> 5,
@@ -32,3 +33,7 @@ end
 total
 
 end
+=======
+  # your code here
+end
+>>>>>>> upstream/master

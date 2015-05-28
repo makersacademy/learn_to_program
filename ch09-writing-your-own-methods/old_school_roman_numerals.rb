@@ -11,7 +11,7 @@ class ToRomans
   }
 
   def old_roman_numeral number
-    calculator number
+    
   end
 
   def calculator number, result = ""
@@ -26,6 +26,10 @@ class ToRomans
     VALUES.select do |roman, decimal|
       decimal <= number
     end.max_by { |roman,decimal| decimal }
+  end
+
+  def to_old_numeral number
+    if calculator( number ).gsub( /\w{4})
   end
 
 end

@@ -16,7 +16,3 @@ def shuffle arr
 
 end
 
-
-array = ["big", "alpha", "Alpha"]
-
-puts shuffle(array)

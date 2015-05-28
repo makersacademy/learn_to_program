@@ -13,6 +13,7 @@ class Roman
 
   def convert number
     output = ''
+    
     VALUES.each do |key,value|
      ( number / key ).times do
         output << value

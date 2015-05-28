@@ -1,33 +1,26 @@
+class Roman
 
-class ToRomans
-
-  VALUES = { "I" => 1, 
-             "V" => 5,
-             "X" => 10,
-             "L" => 50,
-             "C" => 100,
-             "D" => 500,
-             "M" => 1000
+  VALUES = {  500 => "L",
+              100 => "C",
+              90  => "XC",
+              50  => "D",
+              10  => "X",
+              9   => "IX", 
+              5   => "V",
+              4   => "IV",
+              1   => "I",             
   }
 
-  def roman_numeral number
-    calculator number
-  end
-
-private 
-
-  def calculator number, result = ""
-    if number == 0
-      result
-    else
-      calculator number - elements( number )[ 1 ], result << elements( number )[ 0 ]
+  def convert number
+    output = ''
+    VALUES.each do |key,value|
+     ( number / key ).times do
+        output << value
+        number -= key 
+      end
     end
-  end 
 
-  def elements number
-    VALUES.select do |roman, decimal|
-      decimal <= number
-    end.max_by { |roman,decimal| decimal }
+    output
   end
 
 end

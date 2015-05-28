@@ -13,8 +13,8 @@ def old_roman_numeral num
 
   while left > 0
 
-  	write = left / divider[counter]
-  	left = num % divider[counter]
+    write = left / divider[counter]
+    left = num % divider[counter]
 
   	if write > 0
   	numString = numString + numerals[counter] * write

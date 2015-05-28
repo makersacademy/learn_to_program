@@ -1,17 +1,17 @@
 def roman_numeral num
 
-  #set variables for the position of thousands, hundreds, tens and single digits
+#set variables for the position of thousands, hundreds, tens and single digits
   thousands = num / 1000
   hundreds = num % 1000 / 100
   tens = num % 100 / 10
   single = num % 10 / 1
 
-  #print thousands
+#print thousands
   numString = ''
 
   numString = 'M' * thousands
 
-  #printing hundreds - with special case of 4 or 9 and then all others
+#printing hundreds - with special case of 4 or 9 and then all others
 
 if (hundreds == 9) || (hundreds == 4)
   if hundreds == 9

@@ -1,3 +1,22 @@
 def shuffle arr
-  # your code here
+  
+  shuf = []
+
+  x = ""
+
+  while arr.length > 0
+
+  	x = arr.sample
+  	arr.delete(x)
+  	shuf.push(x)
+
+  end
+
+  shuf
+
 end
+
+
+array = ["big", "alpha", "Alpha"]
+
+puts shuffle(array)

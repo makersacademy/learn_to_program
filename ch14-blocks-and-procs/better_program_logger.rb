@@ -1,1 +1,3 @@
-# your code here
+def log desc, &block
+  # your code here
+end

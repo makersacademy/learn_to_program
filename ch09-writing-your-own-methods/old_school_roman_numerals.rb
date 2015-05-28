@@ -11,8 +11,10 @@ class ToRomans
   }
 
   def old_roman_numeral number
-    
+    to_old_numeral number
   end
+
+private
 
   def calculator number, result = ""
     if number == 0
@@ -29,7 +31,11 @@ class ToRomans
   end
 
   def to_old_numeral number
-    if calculator( number ).gsub( /\w{4})
+    calculator( number ).sub( /(\w{4})/,substitute( $1 ) )
+  end
+
+  def substitute pattern
+    
   end
 
 end

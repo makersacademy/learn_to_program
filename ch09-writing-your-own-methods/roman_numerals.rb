@@ -14,6 +14,8 @@ class ToRomans
     calculator number
   end
 
+private 
+
   def calculator number, result = ""
     if number == 0
       result

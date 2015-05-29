@@ -1,5 +1,5 @@
 def old_roman_numeral num
-  
+
   if (num < 1)
     return "Enter an integer greater than or equal to 1"
   end
@@ -17,16 +17,12 @@ def old_roman_numeral num
     left = num % divider[counter]
 
     if write > 0
-    numString = numString + numerals[counter] * write
-  end
+      numString = numString + numerals[counter] * write
+    end
 
     counter = counter + 1
   end
 
-return numString
+  return numString
 
 end
-
-
-
-

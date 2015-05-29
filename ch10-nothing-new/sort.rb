@@ -1,33 +1,33 @@
 def sort arr
-	recursive_sort(arr, [])
-  
+  recursive_sort(arr, [])
+
 end
 
 def recursive_sort unsorted_array, sorted_array
-	
-	a = 0
-	b = 0
 
-	while b < unsorted_array.length
-		if unsorted_array[a] < unsorted_array[b]
-			b = b + 1
-		elsif a = b
-			b = b + 1
-		else
-			a = a + 1
-			b = 0
-		end
-	end
+  a = 0
+  b = 0
 
-	sorted_array.push unsorted_array[a]
-	unsorted_array.delete_at(a)
+  while b < unsorted_array.length
+    if unsorted_array[a] < unsorted_array[b]
+      b = b + 1
+    elsif a = b
+      b = b + 1
+    else
+      a = a + 1
+      b = 0
+    end
+  end
 
-	if unsorted_array.length > 0
+  sorted_array.push unsorted_array[a]
+  unsorted_array.delete_at(a)
 
-		recursive_sort(unsorted_array, sorted_array)
-	end
+  if unsorted_array.length > 0
 
-	sorted_array
+    recursive_sort(unsorted_array, sorted_array)
+  end
+
+  sorted_array
 
 end
 
@@ -37,4 +37,4 @@ end
 
 
 
-	
+

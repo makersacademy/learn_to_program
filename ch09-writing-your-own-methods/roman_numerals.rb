@@ -1,5 +1,5 @@
 def roman_numeral num
-  
+
   if (num < 1)
     return "Enter an integer greater than or equal to 1"
   end
@@ -21,18 +21,17 @@ def roman_numeral num
         if (numString[-1] == "V") or (numString[-1] == "L") or (numString[-1] == "D")
           numString = numString.chop + numerals[counter] + numerals[counter-2]
         else
-          numString = numString + numerals[counter] + numerals[counter-1] 
+          numString = numString + numerals[counter] + numerals[counter-1]
         end
       else
         numString = numString + numerals[counter] * write
       end
-  end
+    end
 
     counter = counter + 1
- 
+
   end
 
-return numString
+  return numString
 
 end
-

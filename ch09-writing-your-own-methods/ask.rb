@@ -1,22 +1,19 @@
 def ask question
-    while true
+  while true
     puts question
     reply = gets.chomp.downcase
-  
-    if (reply == 'yes' || reply == 'no') 
+
+    if (reply == 'yes' || reply == 'no')
       if reply == 'yes'
         return true #replaced with return
       else
         return false #replaced with return
-      end 
+      end
       #removed break command since now using return statements
     else
-      puts 'Please answer "yes" or "no".' 
+      puts 'Please answer "yes" or "no".'
     end
   end
 
-#removed statement here since now using return statements
+  #removed statement here since now using return statements
 end
-
-
-

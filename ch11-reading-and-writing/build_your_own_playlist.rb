@@ -27,3 +27,5 @@ shuffled_music.each do |iterator|
     f.write iterator + "\n" #could have used f.puts and then wouldnt need to create space
   end
 end
+
+# The above method will permanetly alte the caller

@@ -16,4 +16,4 @@ def shuffle arr
 
 end
 
-
+# N.B. The above method will permanently alter the caller!!!

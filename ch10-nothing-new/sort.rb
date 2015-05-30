@@ -1,6 +1,5 @@
 def sort arr
   recursive_sort(arr, [])
-
 end
 
 def recursive_sort unsorted_array, sorted_array
@@ -30,6 +29,8 @@ def recursive_sort unsorted_array, sorted_array
   sorted_array
 
 end
+
+# The above method will permanetly alter the caller.
 
 
 

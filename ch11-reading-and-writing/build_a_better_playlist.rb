@@ -43,7 +43,7 @@ end
 
 filename = 'playlist.m3u'
 
-music_list = Dir["/Users/michaelarnott/Music/iTunes/**/*.{aac,mp3}"]
+music_list = Dir["/Users/michaelarnott/Music/iTunes/iTunes\ Media/Music/U2/**/*.{aac,mp3}"]
 
 shuffled_music = music_shuffle(music_list)
 
@@ -52,3 +52,7 @@ shuffled_music.each do |iterator|
     f.write iterator + "\n"
   end
 end
+
+
+
+

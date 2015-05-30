@@ -19,6 +19,7 @@ def roman_numeral num
   end
   puts roman_string
 end
+puts "what number?"
+num = gets.chomp.to_i
 
-roman_numeral 78
-roman_numeral 789
+roman_numeral num

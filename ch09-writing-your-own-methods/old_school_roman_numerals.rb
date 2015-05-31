@@ -11,7 +11,7 @@ class ToRomans
   }
 
   def old_roman_numeral number
-    to_old_numeral number
+    calculator number
   end
 
 private
@@ -28,14 +28,6 @@ private
     VALUES.select do |roman, decimal|
       decimal <= number
     end.max_by { |roman,decimal| decimal }
-  end
-
-  def to_old_numeral number
-    calculator( number ).sub( /(\w{4})/,substitute( $1 ) )
-  end
-
-  def substitute pattern
-    
   end
 
 end

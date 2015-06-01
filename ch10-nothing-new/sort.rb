@@ -11,7 +11,7 @@ def recursive_sort unsorted, sorted
   still_unsorted = [ ]
 
   unsorted.each do |tested_object|
-    if tested_object < smallest
+    if tested_object.downcase < smallest.downcase
       still_unsorted.push smallest
       smallest = tested_object
     else

@@ -1,10 +1,10 @@
 $tracker = -1
 
-def log description, &block
+def log desc, &block
   $tracker = $tracker + 1
-  puts " "*$tracker + "'#{description}' started..."
+  puts " "*$tracker + "'#{desc}' started..."
   x = block.call.to_s
-  puts " "*$tracker + "'#{description}' complete. Return value: " + x
+  puts " "*$tracker + "'#{desc}' complete. Return value: " + x
   $tracker = $tracker -1
 
 end
@@ -26,3 +26,4 @@ log 'outer block' do
   'Back up!'
 
 end
+

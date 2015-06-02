@@ -117,3 +117,5 @@ while true
     x.rock
   end
 end
+
+dragon = Dragon.new 'dragon'

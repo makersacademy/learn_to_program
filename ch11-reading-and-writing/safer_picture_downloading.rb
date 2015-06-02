@@ -1,6 +1,6 @@
-Dir.chdir 'C:/Documents and Settings/Katy/PictureInbox'
+Dir.chdir '~/Pictures/New Pictures'
 
-pic_names = Dir['F:/**/*.jpg']
+pic_names = Dir['~/**/*.jpg']
 puts 'What would you like to call this batch?'
 batch_name = gets.chomp
 puts
@@ -15,7 +15,7 @@ pic_names.each do |name|
     "#{batch_name}#{pic_number}.jpg"
   end
 
-  if new_name.exist?
+  if File.exist?(new_name)
     puts "This file name already exists!"
     exit
   end

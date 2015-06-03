@@ -17,7 +17,7 @@ profile '25000 doublings' do
   end
 
   puts "#{number.to_s.length} digits"
-# That's the number of digits in this HUGE number. 
+ 
 end
 
 profile 'count to a million' do

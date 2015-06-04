@@ -20,5 +20,3 @@ def recursive_sort unsorted_array, sorted_array
   end
   return sorted_array
 end
-
-puts sort ["nat", "zoo", "ball", "apple", "win", "lose", "bee", "stu", "alpha", "beta", "nat"]

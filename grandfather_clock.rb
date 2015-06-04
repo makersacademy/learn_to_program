@@ -1,3 +1,4 @@
+
 # this method is taking a block, so put & before the block name
 def clock &dong
   n = Time.new.hour
@@ -18,5 +19,7 @@ end
 # write the block - the method is expecting to take a block so you just
 # start writing do . . . . . . end. A block is just do... end.
 clock do
-  puts "Dong!"
+  puts "Dong."
 end
+
+

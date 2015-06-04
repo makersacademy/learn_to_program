@@ -6,17 +6,10 @@
 # CP ch14 p118
 
 def profile block_description, &block
-
-  do_profiling = false
-  # set to false to begin with so you won't profile unless you change it.
-  
-  if do_profiling
-    start_time = Time.new
-    block.call
-    duration = Time.new - start_time
-    puts "#{block_description}: #{duration} seconds"
-  else
-  	block.call
+  start_time = Time.new
+  block.call
+  duration = Time.new - start_time
+  puts "#{block_description}: #{duration} seconds"
 end
 # the method checks the time immediately before running the block,
 # and the time after it runs, then figures out the difference. I.e.
@@ -39,3 +32,4 @@ profile 'count to a million' to
     number = number + 1
   end
 end
+

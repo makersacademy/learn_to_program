@@ -39,3 +39,4 @@ profile 'count to a million' to
     number = number + 1
   end
 end
+

@@ -16,8 +16,3 @@ def sort arr
     end
   return sorted
 end
-
-
-
-
-puts sort ["nat", "zoo", "ball", "apple", "win", "lose", "bee", "stu", "alpha", "beta", "nat"]

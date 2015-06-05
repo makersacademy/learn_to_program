@@ -1,9 +1,6 @@
 
-  # your code here
-<<<<<<< HEAD
-
 def english_number number
-  
+
   if number < 0
     return 'Please enter a number that isn\'t negative'
   end
@@ -58,14 +55,14 @@ def english_number number
     write = left/zil_base
     left = left - write*zil_base
 
-  if write > 0
-    prefix = english_number write
-    num_string = num_string + prefix + zil_name
-    if left > 0
-      num_string = num_string + ' '
+    if write > 0
+      prefix = english_number write
+      num_string = num_string + prefix + zil_name
+      if left > 0
+        num_string = num_string + ' '
+      end
     end
   end
-end
 
 
   write = left/10
@@ -86,15 +83,15 @@ end
     if write > 0
       if ((write == 1) and (left > 0))
         num_string = num_string + teenagers[left-1]
-      left = 0
-    else
-      num_string = num_string + tens_place[write-1]
-    end
+        left = 0
+      else
+        num_string = num_string + tens_place[write-1]
+      end
 
-    if left > 0
-      num_string = num_string + '-'
+      if left > 0
+        num_string = num_string + '-'
+      end
     end
-  end
 
   write = left
   left = 0
@@ -110,6 +107,3 @@ puts english_number(0)
 puts english_number(231)
 puts english_number(3263)
 puts english_number(10785)
-=======
-end
->>>>>>> upstream/master

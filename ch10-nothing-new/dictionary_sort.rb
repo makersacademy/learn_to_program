@@ -6,7 +6,7 @@ def dictionary_sort arr
     smallest = arr[0]
     smallest_pos = 0
     for num in (1..array_last) do 
-      if (smallest > arr[num])
+      if (smallest.downcase > arr[num].downcase)
         smallest = arr[num]
         smallest_pos = num
       end 
@@ -16,8 +16,3 @@ def dictionary_sort arr
     end
   return sorted
 end
-
-
-
-
-puts dictionary_sort ["nat", "zoo", "ball", "apple", "win", "lose", "bee", "stu", "alpha", "beta", "nat"]

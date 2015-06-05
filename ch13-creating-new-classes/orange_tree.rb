@@ -56,23 +56,21 @@ class OrangeTree
 
   end
 
-
-
 end
 
-my_tree = OrangeTree.new
-10.times do
-  my_tree.one_year_passes
-end
-puts(my_tree.one_year_passes)
-puts(my_tree.count_the_oranges)
-puts(my_tree.height)
-
-puts(my_tree.one_year_passes)
-puts(my_tree.one_year_passes)
-puts(my_tree.one_year_passes)
-puts(my_tree.one_year_passes)
-
-puts(my_tree.height)
-puts(my_tree.count_the_oranges)
-puts(my_tree.pick_an_orange)
+# my_tree = OrangeTree.new
+# 10.times do
+#   my_tree.one_year_passes
+# end
+# puts(my_tree.one_year_passes)
+# puts(my_tree.count_the_oranges)
+# puts(my_tree.height)
+#
+# puts(my_tree.one_year_passes)
+# puts(my_tree.one_year_passes)
+# puts(my_tree.one_year_passes)
+# puts(my_tree.one_year_passes)
+#
+# puts(my_tree.height)
+# puts(my_tree.count_the_oranges)
+# puts(my_tree.pick_an_orange)

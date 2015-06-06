@@ -1,21 +1,26 @@
-def sort arr
-  recurse_sort arr []
+def sort some_array # This "wraps" recursive_sort. 
+  recursive_sort some_array, []
 end
-
-def recurse_sort unsorted sorted
-  #From the array, find the smallest word (first in dictionary)
-  current = 0
-  lowest = unsorted[current]
-  while current < unsorted.length
-    if lowest > unsorted[current+1]
-  	lowest = unsorted[current]
-  	sorted << lowest
-    recurse_sort unsorted sorted
+def recursive_sort unsorted_array, sorted_array 
+  x = 0
+  index = 0
+  temp = unsorted_array[x]
+  (unsorted_array.length-1).times do
+    if temp > unsorted_array[x+1]
+      temp = unsorted_array[x+1]
+      index = x+1
     end
-   end
-return sorted
+    x += 1
+  end
+  if unsorted_array.length != 0 
+    sorted_array << temp
+    unsorted_array.delete_at(index)
+    recursive_sort unsorted_array, sorted_array
+  else
+    sorted_array
+  end
 end
 
-array = ['here', 'are', 'some', 'stupid', 'words', 'i', 'wrote']
+array = ['here', 'are', 'some', 'some', 'stupid', 'words', 'i', 'wrote']
 
-sort array
+puts sort array

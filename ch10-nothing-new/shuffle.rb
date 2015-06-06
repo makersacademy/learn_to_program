@@ -1,3 +1,5 @@
 def shuffle arr
-  # your code here
+  arr.shuffle
 end
+
+puts (shuffle(['every', 'ant', 'deserves', 'good', 'bread', 'everyday'])).inspect

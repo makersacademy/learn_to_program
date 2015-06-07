@@ -1,34 +1,34 @@
-@ROMAN_MAP =  [
-    ["M"  , 1000],
-    ["CM" , 900],
-    ["D"  , 500],
-    ["CD" , 400],
-    ["C"  , 100],
-    ["XC" ,  90],
-    ["L"  ,  50],
-    ["XL" ,  40],
-    ["X"  ,  10],
-    ["IX" ,   9],
-    ["V"  ,   5],
-    ["IV" ,   4],
-    ["I"  ,   1]
-    ]
-
 def roman_to_integer roman
-  if ((!roman.is_a?String)) 
-    puts "Invalid input"
-    exit 
-  end
+  digit_vals = {'i' => 1,
+                'v' => 5,
+                'x' => 10,
+                'l' => 50,
+                'c' => 100,
+                'd' => 500,
+                'm' => 1000}
+  total = 0
+  prev = 0
+  index = roman.length - 1
   
-  roman = roman.upcase
-  reply = 0
-  for key, value in @ROMAN_MAP
-    while roman.index(key) == 0
-      reply += value
-      roman.slice!(key)
+  while index >= 0
+    c = roman[index].downcase
+    index = index - 1
+    val = digit_vals[c]
+    if !val 
+      puts "This is not a roman numeral!"
+      return
+    end 
+    
+    if val < prev
+      val = val * -1
+    else
+      prev = val
     end
+    
+    total = total + val
+    
   end
-  reply
-  
+  total
 end
-puts roman_to_integer 'i'
+  
+puts(roman_to_integer('mcmxcix'))

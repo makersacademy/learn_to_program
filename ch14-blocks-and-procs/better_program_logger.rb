@@ -1,5 +1,4 @@
 $logger_depth =0
-
 def log desc, &block
   indent = ' '*$logger_depth
   puts indent + 'Beginning "' + desc + '"...'

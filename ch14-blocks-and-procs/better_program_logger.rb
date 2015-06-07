@@ -9,9 +9,9 @@ end
 
 log 'outer block' do
   log 'some little block' do
-  	log 'teeny-tiny block' do
-  		"LOTS OF LOVE".downcase
-  	end
+    log 'teeny-tiny block' do
+      "LOTS OF LOVE".downcase
+    end
     6*7
   end
 

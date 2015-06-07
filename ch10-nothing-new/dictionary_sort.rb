@@ -1,22 +1,21 @@
 def dictionary_sort array
 
 if array.length <=1
-	return array
+  return array
 else
+  test = array.pop
+  less=[]
+  greater=[]
 
-	test = array.pop
-	less=[]
-	greater=[]
+  array.each do |x|
+    if x.downcase<=test.downcase
+      less<<x
+    else
+      greater<<x
+    end
+  end
 
-	array.each do |x|
-		if x.downcase<=test.downcase
-			less<<x
-		else
-			greater<<x
-		end
-	end
-
-	return dictionary_sort(less) + [test] + dictionary_sort(greater)
+  return dictionary_sort(less) + [test] + dictionary_sort(greater)
 end
 end
 

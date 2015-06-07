@@ -100,17 +100,17 @@ starting_number = 10
 current_number= starting_number
 
 while current_number>0
-	if current_number>2
-		puts english_number(current_number).capitalize + " bottles of beer on the wall, " + english_number(current_number) + " bottles of beer!"
+  if current_number>2
+    puts english_number(current_number).capitalize + " bottles of beer on the wall, " + english_number(current_number) + " bottles of beer!"
   current_number-=1
-  puts " You take one down, pass it around, " + english_number(current_number) + " bottles of beer on the wall!"	
+  puts " You take one down, pass it around, " + english_number(current_number) + " bottles of beer on the wall!"  
 elsif current_number ==2
-	  puts english_number(current_number).capitalize + " bottles of beer on the wall, " + english_number(current_number) + " bottles of beer!"
+    puts english_number(current_number).capitalize + " bottles of beer on the wall, " + english_number(current_number) + " bottles of beer!"
   current_number-=1
-  puts " You take one down, pass it around, " + english_number(current_number) + " bottle of beer on the wall!"	
+  puts " You take one down, pass it around, " + english_number(current_number) + " bottle of beer on the wall!" 
 elsif current_number ==1
-	  puts english_number(current_number).capitalize + " bottle of beer on the wall, " + english_number(current_number) + " bottle of beer! Take one down, pass it around, no more bottles of beer on the wall!"
-	  current_number-=1
-	end
+    puts english_number(current_number).capitalize + " bottle of beer on the wall, " + english_number(current_number) + " bottle of beer! Take one down, pass it around, no more bottles of beer on the wall!"
+    current_number-=1
+  end
 end
 

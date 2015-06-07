@@ -16,7 +16,7 @@ class Integer
     (self <= 1) ? 1 : self * (self-1).factorial
   end
 
-  def old_roman_numeral
+  def to_roman
     num = self
     roman_num = ''
     roman_num << 'M' * (num/1000)

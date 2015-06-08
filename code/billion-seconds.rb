@@ -1,4 +1,6 @@
-birth_time = Time.mktime(1984, 12, 8, 10, 0, 4) 
+# y2k = Time.mktime(2000, 1, 1) 
+
+birth_time = Time.mktime(1984, 2, 23, 10, 0, 4) 
 
 # number of seconds after 1/1/1970 I was born
 birth_seconds = birth_time.to_i

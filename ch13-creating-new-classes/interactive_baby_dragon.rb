@@ -1,135 +1,115 @@
-#Write a program so that you can interact with your baby dragon. You should be able to enter commands like  feed and walk, and have those methods be called on your dragon. Of course, since what you are inputting are just strings, you will have to have some sort of method dispatch, where your program checks which string was entered, and then calls the appropriate method.
-    
 class Dragon
-
   def initialize name
     @name = name
     @asleep = false
-    @stuffInBelly     = 10  # He's full.
-    @stuffInIntestine =  0  # He doesn't need to go.
-
-    puts @name + ' is born.'
+    @stuff_in_belly = 10
+    @stuff_in_intestine = 0 
+    puts "#{@name} is born."
+    @alive = true
   end
-
   def feed
-    puts 'You feed ' + @name + '.'
-    @stuffInBelly = 10
-    passageOfTime
+    puts "You feed #{@name}." 
+    @stuff_in_belly = 10 
+    passage_of_time
   end
-
   def walk
-    puts 'You walk ' + @name + '.'
-    @stuffInIntestine = 0
-    passageOfTime
+    puts "You walk #{@name}." 
+    @stuff_in_intestine = 0 
+    passage_of_time
   end
-
-  def putToBed
-    puts 'You put ' + @name + ' to bed.'
+  def put_to_bed
+    puts "You put #{@name} to bed." 
     @asleep = true
     3.times do
-      if @asleep
-        passageOfTime
+      if @asleep 
+      	passage_of_time
       end
       if @asleep
-        puts @name + ' snores, filling the room with smoke.'
-      end
+        puts "#{@name} snores, filling the room with smoke."
+      end 
     end
     if @asleep
       @asleep = false
-      puts @name + ' wakes up slowly.'
-    end
+      puts "#{@name} wakes up slowly."
+    end 
   end
-
   def toss
-    puts 'You toss ' + @name + ' up into the air.'
-    puts 'He giggles, which singes your eyebrows.'
-    passageOfTime
+    puts "You toss #{@name} up into the air."
+    puts 'He giggles, which singes your eyebrows.' 
+    passage_of_time
   end
-
   def rock
-    puts 'You rock ' + @name + ' gently.'
+    puts "You rock #{@name} gently."
     @asleep = true
     puts 'He briefly dozes off...'
-    passageOfTime
+    passage_of_time
     if @asleep
       @asleep = false
       puts '...but wakes when you stop.'
-    end
+    end 
   end
-
   private
-
-  # "private" means that the methods defined here are
-  # methods internal to the object.  (You can feed
-  # your dragon, but you can't ask him if he's hungry.)
-
   def hungry?
-    # Method names can end with "?".
-    # Usually, we only do this if the method
-    # returns true or false, like this:
-    @stuffInBelly <= 2
+    @stuff_in_belly <= 2
   end
-
   def poopy?
-    @stuffInIntestine >= 8
+  	@stuff_in_intestine >= 8
   end
-
-  def passageOfTime
-    if @stuffInBelly > 0
-      # Move food from belly to intestine.
-      @stuffInBelly     = @stuffInBelly     - 1
-      @stuffInIntestine = @stuffInIntestine + 1
-    else  # Our dragon is starving!
+  def passage_of_time
+    if @stuff_in_belly > 0
+    #  Move food from belly to intestine.
+    @stuff_in_belly     = @stuff_in_belly     - 1
+    @stuff_in_intestine = @stuff_in_intestine + 1
+    else # Our dragon is starving! 
       if @asleep
         @asleep = false
-        puts 'He wakes up suddenly!'
+        puts 'He wakes up suddenly!' 
       end
-      puts @name + ' is starving!  In desperation, he ate YOU!'
-      exit  # This quits the program.
+      puts "#{@name} is starving!  In desperation, he ate YOU!"
+      exit # This quits the program. 
     end
-
-    if @stuffInIntestine >= 10
-      @stuffInIntestine = 0
-      puts 'Whoops!  ' + @name + ' had an accident...'
+    if @stuff_in_intestine >= 10
+    	@stuff_in_intestine = 0
+      puts "Whoops! #{@name} had an accident..."
     end
-
-    if hungry?
+    if hungry? 
       if @asleep
         @asleep = false
-        puts 'He wakes up suddenly!'
+        puts 'He wakes up suddenly!' 
       end
-      puts @name + '\'s stomach grumbles...'
+      puts "#{@name}'s stomach grumbles..." 
     end
-
+    
     if poopy?
       if @asleep
         @asleep = false
-        puts 'He wakes up suddenly!'
+        puts 'He wakes up suddenly!' 
       end
-      puts @name + ' does the potty dance...'
+      puts "#{@name} does the potty dance..." 
     end
-  end
-
+   end 
 end
 
-puts "Enter name of pet"
-dragon = gets.chomp
-pet = Dragon.new dragon
+puts "Enter dragon name"
+name = gets.chomp
+
+pet = Dragon.new name
 
 while pet
-  puts "What do you want to do (feed/toss/walk/puttobed/rock)?"
-  action = gets.chomp.downcase
-  if action == "feed"
-    pet.feed
-  elsif action == "toss"
-    pet.toss
-  elsif action == "walk"
-    pet.walk
-  elsif action == "puttobed"
-    pet.putToBed
-  elsif action == "rock"
-    pet.rock
-  else 
-    puts "Please enter a valid command"
+  puts "Enter one of the following commands: feed, walk, put to bed, rock, toss"
+  command = gets.chomp
+  if command == 'feed'
+  	pet.feed
+  elsif command == 'walk'
+  	pet.feed
+  elsif command == 'put to bed'
+  	pet.put_to_bed
+  elsif command == 'rock'
+  	pet.rock
+  elsif command == 'toss'
+  	pet.toss
+  else
+  	puts "Invalid command, please try again"
   end
 end
+

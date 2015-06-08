@@ -1,65 +1,43 @@
 class OrangeTree
-
-
-  def initialize name, height
-    @name = name
-    @height = height
-    @oranges = 0
+  def initialize
     @age = 0
-    puts "#{@name} is #{@height}cm tall"
-  end
-  
-  def oneYearPasses 
-    @age +=1
-    @height +=10
-    if (@age > 3)
-      @oranges = 3 * @age
-    end
-    puts "One year passes"
-    if @age > 7
-      puts "Tree is dead, sorry"
-      exit
-    end
+    @height = 0.0
+    @oranges = 0
   end
   
   def height
-    puts "#{@name} is #{@height}cm tall"
+    return @height
   end
   
-  def countTheOranges 
-    puts"There are #{@oranges} oranges on the tree"
+  def one_year_passes
+    @age += 1
+    @height = @height.round(1) + 0.4
+    if @age == 60
+      tree_dies
+    end
+    if @age > 2 
+      @oranges = (@height * 15 - 25).to_i
+    end
+    return "This year your tree grew to #{@height}m tall, and produced #{@oranges} oranges."
   end
   
-  def pickAnOrange
-    @oranges -= 1
-    puts "Yumm that was a great orange. There are #{@oranges} left on #{@name}"
+  def count_the_oranges
+    return @oranges  
   end
   
+  def pick_an_orange
+    if @oranges > 0 
+      return "Yum that was delicious!"
+      @oranges -= 1
+    else
+      return "There are no more oranges to pick this year"
+    end
+  end
+  
+  private
+  def tree_dies
+    @alive = false
+    puts "Oh no, the tree died!"
+  end
 end
-
-my_tree = OrangeTree.new "Bob", 10
-my_tree.oneYearPasses
-my_tree.oneYearPasses
-my_tree.height
-my_tree.oneYearPasses
-my_tree.height
-my_tree.oneYearPasses
-my_tree.oneYearPasses
-my_tree.countTheOranges 
-my_tree.pickAnOrange 
-my_tree.oneYearPasses
-my_tree.countTheOranges 
-my_tree.pickAnOrange 
-my_tree.oneYearPasses
-my_tree.countTheOranges 
-my_tree.pickAnOrange 
-my_tree.oneYearPasses
-my_tree.countTheOranges 
-my_tree.pickAnOrange 
-my_tree.oneYearPasses
-my_tree.countTheOranges 
-my_tree.pickAnOrange 
-my_tree.oneYearPasses
-my_tree.countTheOranges 
-my_tree.pickAnOrange 
 

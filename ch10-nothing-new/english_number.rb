@@ -11,6 +11,8 @@ def packets numStr, array
 end
 
 def english_number number
+  puts number
+
   ones_place = ['one', 'two', 'three',
                 'four', 'five', 'six',
                 'seven', 'eight', 'nine']
@@ -26,12 +28,12 @@ def english_number number
   numberStr = number.to_s
   numArray = []
   numArray = packets numberStr, numArray
-  puts "numArray: #{numArray}"
 
   #fill the string up to full three-place packets
-  remainder=2-(numArray.length % 3)
-  puts "remainder: #{remainder}"
-  remainder.times {numArray[0].insert(0,"0")}
+  if (numArray[0].length % 3)!=0
+    remainder=3-(numArray[0].length % 3)
+    remainder.times {numArray[0].insert(0,"0")}
+  end
   puts "numArray: #{numArray}"
 
   outputStr=""
@@ -39,24 +41,27 @@ def english_number number
   while parts<=numArray.length-1
 
     first=numArray[parts][0]
+    second=numArray[parts][1]
+    third=numArray[parts][2]
+
     if first=="0"
     else
       outputStr+=ones_place[first.to_i-1]+" hundred "
     end
 
     if numArray[parts][1,2].to_i<20 && numArray[parts][1,2].to_i>10
-      third=numArray[parts][2]
       outputStr+="and "+teenagers[third.to_i-1]+" "
     else
-      second=numArray[parts][1]
       if second=="0"
         outputStr+="and " if first.to_i>0 && third.to_i>0
       else
-        outputStr+="and "+tens_place[second.to_i-1]+" "
+        outputStr+="and "+tens_place[second.to_i-1]
       end
-      third=numArray[parts][2]
       if third=="0"
       else
+        if second!="0"
+          outputStr+="-"
+        end
         outputStr+=ones_place[third.to_i-1]
       end
     end
@@ -75,5 +80,5 @@ def english_number number
   puts outputStr
 end
 
-#Test case
-# english_number 47832811057
+# Test case
+english_number 25084390103

@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc581445-f9a9-4768-84b2-90c409df5662" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ch10-nothing-new/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ch10-nothing-new/.idea/ch10-nothing-new.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ch10-nothing-new/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ch10-nothing-new/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ch10-nothing-new/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ch10-nothing-new/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10-nothing-new/dictionary_sort.rb" afterPath="$PROJECT_DIR$/../ch10-nothing-new/dictionary_sort.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10-nothing-new/english_number.rb" afterPath="$PROJECT_DIR$/../ch10-nothing-new/english_number.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10-nothing-new/ninety_nine_bottles_of_beer.rb" afterPath="$PROJECT_DIR$/../ch10-nothing-new/ninety_nine_bottles_of_beer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10-nothing-new/shuffle.rb" afterPath="$PROJECT_DIR$/../ch10-nothing-new/shuffle.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10-nothing-new/sort.rb" afterPath="$PROJECT_DIR$/../ch10-nothing-new/sort.rb" />
-    </list>
+    <list default="true" id="cc581445-f9a9-4768-84b2-90c409df5662" name="Default" comment="" />
     <ignored path="ch11-reading-and-writing.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,6 +17,9 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="ch11-reading-and-writing" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -94,7 +85,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ch10-nothing-new" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -137,5 +128,15 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../ch10-nothing-new/english_number.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8113208">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="78" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

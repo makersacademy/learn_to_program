@@ -15,10 +15,14 @@ pic_names.each do |name|
              else
                "#{batch_name}#{pic_number}.jpg"
              end
+  # check whether or not the filename we've just created already exists in the directory
   if File.exist? new_name
+    # if it does, return a message to the user to let them know what's happened & stop before
+    # you overwrite anything!
     puts "Exiting before I overwrite a file. Check your directory!"
     exit
   else
+    # otherwise, crack-on!!
     File.rename name, new_name
   # Finally, we increment the counter.
   pic_number = pic_number + 1

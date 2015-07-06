@@ -11,18 +11,25 @@ def english_number number
   ones_place = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
   tens_place = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
   teenagers = ["eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+  large_numbers = ["trillion", "billion", "million", "thousand"]
 
   left = number
-  write = left / 1000
-  left = left - write * 1000
+  power = 10 ** 12
 
-  if write > 0
-    thousands = english_number write
-    num_string += thousands + " thousand"
 
-    if left > 0
-      num_string += " "
+  (0...large_numbers.length).each do |i|
+    write = left / power
+    left = left - write * power
+
+    if write > 0
+      x = english_number write
+      num_string += x + " #{large_numbers[i]}"
+
+      if left > 0
+        num_string += " "
+      end
     end
+    power = power / 1000
   end
 
   write = left / 100
@@ -75,4 +82,7 @@ puts english_number(100)
 puts english_number(101)
 puts english_number(234)
 puts english_number(3211)
+puts english_number(20000)
 puts english_number(999999)
+puts english_number(38825928)
+puts english_number(839430483742)

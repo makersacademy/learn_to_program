@@ -5,11 +5,8 @@ end
 def recursive_sort(unsorted_arr, sorted_arr)
   while unsorted_arr.length > 0
     smallest = unsorted_arr[0]
-    unsorted_arr.each do |word|
-      if word < smallest
-        smallest = word
-      end
-    end
+    unsorted_arr.each{ |word| smallest = word if word < smallest }
+
     sorted_arr << smallest
     i = unsorted_arr.index(smallest)
     unsorted_arr.delete_at(i)

@@ -1,5 +1,4 @@
 def old_roman_numeral num
- # input = num.to_s
 
   roman = {one: "I", five: "V", ten: "X", fifty: "L", hunds: "C", fivehund: "D", thous: "M"}
              
@@ -27,14 +26,13 @@ def old_roman_numeral num
 
 
 # this code here works
-  thous.times do result << roman[:thous] end 
-  fivehund.times do result << roman[:fivehund] end  
-  hunds.times do result << roman[:hunds] end  
-  fifty.times do result << roman[:fifty] end  
-  ten.times do result << roman[:ten] end  
-  five.times do result << roman[:five] end  
-  one.times do result << roman[:one] end
-
+  result << roman[:thous]    * thous 
+  result << roman[:fivehund] * fivehund  
+  result << roman[:hunds]    * hunds 
+  result << roman[:fifty]    * fifty  
+  result << roman[:ten]      * ten  
+  result << roman[:five]     * five  
+  result <<  roman[:one]      * one
   result
 
  #I am trying to be a bit clever and rather that havign to write the 7 lines above I want to iterate through 
@@ -50,8 +48,3 @@ def old_roman_numeral num
 # result
 end
 
-  puts old_roman_numeral 2600
-  puts old_roman_numeral 26
-  puts old_roman_numeral 50
-  puts old_roman_numeral 1
-  puts old_roman_numeral 5

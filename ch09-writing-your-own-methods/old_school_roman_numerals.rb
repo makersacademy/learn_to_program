@@ -5,14 +5,28 @@ def old_roman_numeral num
              
   result = ''
  
-  thous =     (num        / 1000) 
-  fivehund =  (num % 1000 / 500)
-  hunds =     (num % 500  / 100) 
-  fifty  =    (num % 100   / 50)
-  ten  =      (num % 50    / 10)
-  five =      (num % 10    / 5)
-  one  =      (num % 5     / 1)
-   
+  thous = (num / 1000)
+  fivehund = (num % 1000 / 500)
+  hunds = (num % 500  / 100)
+  fifty = (num % 100   / 50)
+  ten =   (num % 50    / 10)
+  five =  (num % 10    / 5)
+  one =   (num % 5     / 1)
+
+=begin
+   units = {
+  "thous" => (num / 1000), 
+  "fivehund" => (num % 1000 / 500),
+  "hunds" => (num % 500  / 100),
+  "fifty" => (num % 100   / 50),
+  "ten" =>   (num % 50    / 10),
+  "five" =>  (num % 10    / 5),
+  "one" =>   (num % 5     / 1)
+  }
+=end   
+
+
+# this code here works
   thous.times do result << roman[:thous] end 
   fivehund.times do result << roman[:fivehund] end  
   hunds.times do result << roman[:hunds] end  
@@ -23,16 +37,21 @@ def old_roman_numeral num
 
   result
 
-  
-=begin   
-  units.each do | unit |
-   unit.times  do result << roman[unit] end  
+ #I am trying to be a bit clever and rather that havign to write the 7 lines above I want to iterate through 
+ # the two hashes using the code below.
+ 
+
+=begin
+  units.each do | key, unit |
+    unit.times  do result << roman[key] end
   end
-=end
+=end 
+
+# result
 end
 
-puts old_roman_numeral 2600
-puts old_roman_numeral 26
-puts old_roman_numeral 50
-puts old_roman_numeral 1
-puts old_roman_numeral 5
+  puts old_roman_numeral 2600
+  puts old_roman_numeral 26
+  puts old_roman_numeral 50
+  puts old_roman_numeral 1
+  puts old_roman_numeral 5

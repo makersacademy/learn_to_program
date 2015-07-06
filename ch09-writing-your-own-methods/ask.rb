@@ -3,13 +3,11 @@
       puts question
       reply = gets.chomp.downcase
    if (reply == 'yes' || reply == 'no')
-     if reply == 'yes'
-       return true
-     end
-     if reply == 'no'
-       return false
-     end
+    return true if reply == 'yes' 
+    return false if reply == 'no'
     end
       puts 'please answer yes or no?'	
   end    
 end
+
+food = ask 'Do you like eating monkey'

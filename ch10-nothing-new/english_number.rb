@@ -92,7 +92,3 @@ def english_number number
 end
 
 
-#puts english_number 10
-puts english_number 22000
-puts english_number 2000000
-puts english_number 3211

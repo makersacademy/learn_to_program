@@ -18,10 +18,10 @@ def roman_to_integer roman
       exit_string = "You're giving us funny numbers"
     else
       if (numbers[roman[index]] <= (numbers[roman[index + 1]] || 0))
-        total = total + numbers[roman[index]]
+        total += numbers[roman[index]]
         index += 1
       else
-        total = total + (numbers[roman[index]] - (numbers[roman[index + 1 ]] || 0 ) )
+        total += (numbers[roman[index]] - (numbers[roman[index + 1 ]] || 0 ) )
         index += 2
       end
     end

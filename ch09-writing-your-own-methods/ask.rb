@@ -21,7 +21,7 @@ wets_bed = ask 'do you you wet the bed?'
 ask 'do you like eating chimichangass?'
 ask 'do you like eating sopapillas?'
 puts 'Just a few more questions'
-puts 'Do you like drinking horchata?'
+ask 'Do you like drinking horchata?'
 ask 'do you like eating flautas?'
 
 puts 'Debriefing:'

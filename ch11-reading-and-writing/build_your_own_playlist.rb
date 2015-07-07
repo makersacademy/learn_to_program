@@ -1,5 +1,5 @@
 def create_playlist
-  music_dir = Dir["/Users/rebeccaappleyard1984/Desktop/Music"]
+  music_dir = Dir["/Users/rebeccaappleyard1984/*.m4a"]
 
   puts "What would you like to call your playlist?"
   playlist_name = gets.chomp

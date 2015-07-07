@@ -11,10 +11,10 @@ def english_number number
   ones_place = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
   tens_place = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
   teenagers = ["eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
-  large_numbers = ["trillion", "billion", "million", "thousand"]
+  large_numbers = ["vigintillion", "novemdecillion", "octodecillion", "septendecillion", "sexdecillion", "quindecillion", "quattuordecillion", "tredecillion", "duodecillion", "undecillion", "decillion", "nonillion", "octillion", "septillion", "sextillion", "quintillion", "quadrillion", "trillion", "billion", "million", "thousand"]
 
   left = number
-  power = 10 ** 12
+  power = 10 ** 63
 
 
   (0...large_numbers.length).each do |i|

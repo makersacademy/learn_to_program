@@ -1,5 +1,5 @@
 def create_playlist
-  music_dir = Dir["/Users/rebeccaappleyard1984/*.m4a"]
+  music_dir = Dir["/Users/rebeccaappleyard1984/Desktop/Music/*.m4a"]
 
   puts "What would you like to call your playlist?"
   playlist_name = gets.chomp
@@ -9,6 +9,7 @@ def create_playlist
   File.open filename, 'w' do |f|
     music_dir.each do |track|
       f.write track
+      f.write "\n"
     end
   end
 end

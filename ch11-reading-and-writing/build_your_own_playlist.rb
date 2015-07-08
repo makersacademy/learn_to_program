@@ -3,14 +3,12 @@ class Playlist
   def initialize(playlist_name)
     @playlist_name = playlist_name
     @filename = "/Users/rebeccaappleyard1984/Desktop/Music/#{playlist_name}.m3u"
-    create_playlist
+    create_playlist(Dir["/Users/rebeccaappleyard1984/Desktop/Music/*.m4a"])
   end
 
-  def create_playlist
-    music_dir = Dir["/Users/rebeccaappleyard1984/Desktop/Music/*.m4a"]
-
+  def create_playlist(tracks)
     File.open filename, 'w' do |f|
-      music_dir.each do |track|
+      tracks.each do |track|
         f.write track
         f.write "\n"
       end
@@ -27,7 +25,7 @@ class Playlist
       i = playlist_arr.index(playlist_arr[rand_num])
       playlist_arr.delete_at(i)
     end
-    puts shuffled_arr
+    create_playlist(shuffled_arr)
   end
 end
 

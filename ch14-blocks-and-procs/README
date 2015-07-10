@@ -1,0 +1,4 @@
+better_program_logger.rb produces the correct output
+I have checked in both sublime builder and ruby on the command line
+even running the rspec shows the output before hand to be correct then says
+there is a \t in the "got" line

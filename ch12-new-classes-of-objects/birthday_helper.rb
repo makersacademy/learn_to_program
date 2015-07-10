@@ -24,5 +24,6 @@ cur_date = current_date.day
 puts "#{name}'s next birthday will be on #{bday_date} #{bday_month}"
 age = current_date.year - bday_year.to_i
 
+#{age}
 
 

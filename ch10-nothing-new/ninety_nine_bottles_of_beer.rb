@@ -106,4 +106,4 @@ def ninety_nine_bottles_of_beer bottles
  end 
 end
 
-puts ninety_nine_bottles_of_beer 1000
+

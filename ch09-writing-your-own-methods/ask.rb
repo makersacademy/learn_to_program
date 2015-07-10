@@ -10,4 +10,3 @@
   end    
 end
 
-food = ask 'Do you like eating monkey'

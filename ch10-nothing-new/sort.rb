@@ -27,17 +27,4 @@ def recursive_sort unsorted_array, sorted_array
   end 
 end
 
-=begin
 
-words = []
-while true
-  puts 'Enter your words please!!!!!'
-  entry = gets.chomp
-  if entry.empty?
-     sort(words)
-    break
-  else 
-    words.push entry
-  end 
-end  
-=end

@@ -41,4 +41,3 @@ def roman_numeral num
   
 end
 
-puts roman_numeral 1000

@@ -4,6 +4,8 @@ class OrangeTree
     @orange_count = 0
     @height = 0
     @age = 0
+
+    one_year_passes
   end
 
   def height

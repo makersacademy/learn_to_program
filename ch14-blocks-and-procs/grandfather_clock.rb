@@ -1,7 +1,7 @@
 def grandfather_clock &block
-  repeat = Time.now.hour % 12
+  repeat = Time.new.hour % 12
   repeat = 12 if repeat == 0
-  repeat.times { block.call }
+  repeat.times{ block.call }
 end
 
 grandfather_clock do

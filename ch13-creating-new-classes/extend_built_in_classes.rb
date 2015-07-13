@@ -11,45 +11,24 @@ class Integer
   end
 
 
-  def roman_numeral
-    #makes an array to store letters in
+  def to_roman
+    num = self
     romanised_number = []
-
-    #how many of each number type to translate
-    thousands = self / 1000
-    hundreds = self % 1000 / 100
-    tens = self % 100 / 10
-    units = self % 10
-
-    #pushing correct translations for each number type to array
-    romanised_number.push ("M" * thousands)
-
-    if hundreds == 9
-      romanised_number.push ("CM")
-    elsif hundreds == 4
-      romanised_number.push ("CD")
-    else
-      romanised_number.push ("D" *  (self % 1000 / 500))
-      romanised_number.push ("C" *  (self % 500 / 100))
-    end
-    if tens == 9
-      romanised_number.push ("XC")
-    elsif tens == 4
-      romanised_number.push ("XL")
-    else
-      romanised_number.push ("L" *  (self % 100 / 50))
-      romanised_number.push ("X" *  (self % 50 / 10))
-    end
-    if units == 9
-      romanised_number.push ("IX")
-    elsif units == 4
-      romanised_number.push ("IV")
-    else
-      romanised_number.push ("V" *  (self % 10 / 5))
-      romanised_number.push ("I" *  (self % 5))
-    end
-    #gives array as string
-    return romanised_number.join
+    romanised_number.push ('M' * (num/1000))
+    num = num % 1000
+    romanised_number.push ("D" * (num/500))
+    num = num % 500
+    romanised_number.push ("C" * (num/100))
+    num = num % 100
+    romanised_number.push ("L" * (num/50))
+    num = num % 50
+    romanised_number.push ("X" * (num/10))
+    num = num % 10
+    romanised_number.push ("V" * (num/5))
+    num = num % 5
+    romanised_number.push ("I" * (num/1))
+    romanised_number = romanised_number.join("")
+    return romanised_number
   end
 
 end

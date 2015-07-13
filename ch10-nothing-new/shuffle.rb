@@ -9,7 +9,6 @@ def shuffle arr
     shuffled_array.insert(rand(counter), item_being_shuffled)
     counter += 1
   end
-  shuffled_array
+  arr = shuffled_array
+  return arr
 end
-
-puts shuffle [1,2,5,8,67]

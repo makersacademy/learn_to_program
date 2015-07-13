@@ -15,9 +15,5 @@ def old_roman_numeral num
   num = num % 5
   romanised_number.push ("I" * (num/1))
   romanised_number = romanised_number.join("")
-  puts romanised_number
+  return romanised_number
 end
-
-puts "What number do you want Romanised?"
-num = gets.chomp
-puts old_roman_numeral(num)

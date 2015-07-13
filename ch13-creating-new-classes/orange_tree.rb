@@ -5,10 +5,11 @@ class OrangeTree
     @orange_count = 0
   end
   def height
-    "Your Orange tree is #{@height}m tall!"
+    puts "Your Orange tree is #{@height}m tall!"
+    @height
   end
   def one_year_passes
-    if @age < 15
+    if @age < 60
       @age += 1
     else
       puts "Your lovely orange tree has died, on its 15th birthday."
@@ -16,7 +17,8 @@ class OrangeTree
     end
     @orange_count = 0
     orange_growth
-    @height += 1
+    @height = (@height + 0.4).round(2)
+    return "This year your tree grew to #{@height}m tall, and produced #{@orange_count} oranges."
   end
   def pick_an_orange
     if @orange_count == 0
@@ -27,7 +29,9 @@ class OrangeTree
     end
   end
   def orange_growth
-    if @age > 9
+    if @age > 19
+      @orange_count = 119
+    elsif @age > 9
       @orange_count = 30
     elsif @age > 4
       @orange_count = 15
@@ -41,5 +45,6 @@ class OrangeTree
     else
       puts "Your tree has got #{@orange_count} oranges!"
     end
+    @orange_count
   end
 end

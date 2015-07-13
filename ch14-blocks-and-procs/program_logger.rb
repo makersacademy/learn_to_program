@@ -1,6 +1,5 @@
 def log desc, &block
-    puts "Beginning #{desc}..."
+    puts "Beginning \"#{desc}\"..."
   returns = block.call
-  puts "#{desc} completed."
-  puts "returns: #{returns}"
+  puts "...\"#{desc}\" finished, returning: #{returns}"
 end

@@ -1,12 +1,47 @@
 # starting condition
 list = [ ]
+# as the question
+puts 'Enter a list of words, press \'enter\' to quit and they will be returned randomly shuffled.'
+word = 'one'
+# get the words in the first list
+while word != ''
+	word = gets.chomp 
+	list.push word
+end
+
+# define shuffle method
+def shuffle array
+	# starting conditions of local variables
+	randomized = [ ]
+	count = -2
+	x = 0
+	y = 0
+		array.each do |word|
+			count = count + 1
+		end
+	while y <= count
+		x = rand(count+1)
+		if array[x] != 'used'
+			randomized.push array[x]
+			array [x] = 'used'
+			y = y + 1
+		end
+	end
+	puts randomized
+end
+
+shuffle list
+
+2. Dictionary sort method.
+# starting condition
+list = [ ]
 # ask the question
 puts 'Enter a list of words, press \'enter\' to quit and they will be returned sorted.'
 word = 'one'
 # get the words in the first list
 while word != ''
-word = gets.chomp 
-list.push word
+	word = gets.chomp 
+	list.push word
 end
 # sort definition wrapper method
 def sort array
@@ -14,10 +49,10 @@ def sort array
 		# count number of words in first list
 		array.each do |word|
 		count = count + 1
-		end
+	end
 	recursive_sort(array, [ ], [ ], count)
 end
-# recursive sort method definition
+	# recursive sort method definition
 def recursive_sort listA, listB, sorted, nums
 	# local variables
 	x = 0
@@ -25,18 +60,18 @@ def recursive_sort listA, listB, sorted, nums
 	z = 0
 	# cycle I
 	while x <= nums
-		if listA[x] <= listA[y]
+		if listA[x].downcase <= listA[y].downcase
 			y = y + 1
 			if y == nums + 1
-				sorted.push listA[x]
-				x = x + 1
-				y = 0
-				z = z + 1
+			sorted.push listA[x]
+			x = x + 1
+			y = 0
+			z = z + 1
 			end 
 		else
-			listB.push listA[x]
-			x = x + 1
-			y = 0 
+		listB.push listA[x]
+		x = x + 1
+		y = 0 
 		end
 	end
 	# cycle II
@@ -49,7 +84,7 @@ def recursive_sort listA, listB, sorted, nums
 		x = nums + 5
 	end
 	while x <= nums
-		if listB[x] <= listB[y]
+		if listB[x].downcase <= listB[y].downcase
 			y = y + 1
 			if y == nums + 1
 				sorted.push listB[x]

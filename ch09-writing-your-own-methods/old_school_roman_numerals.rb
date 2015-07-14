@@ -1,20 +1,20 @@
 def old_roman_numeral number
-  values =   [1000,500, 100, 50, 10, 5, 1]
+  numbers =   [1000,500, 100, 50, 10, 5, 1]
   numerals = ["M", "D", "C", "L", "X", "V", "I"]
-  roman_numeral = ""
-  i = 0
+  roman_numeral = " "
+  x = 0
  
-  while i <= 6
-    while number >= values[i]
-      number = number - values[i]
-      roman_numeral = roman_numeral + numerals[i]
+  while x <= 6
+    while number >= numbers[x]
+      number = number - numbers[x]
+      roman_numeral = roman_numeral + numerals[x]
     end
-    i = i + 1
+    x = x + 1
   end
  
   roman_numeral
 end
  
-print "Enter the number you want to convert to an old roman numeral: "
+puts "Enter a number and we will convert it to a Roman numeral"
  
 puts old_roman_numeral(gets.chomp.to_i)

@@ -113,28 +113,11 @@ while true
 
   command = gets.chomp
 
-=begin
-  commands = [["feed",    feed],
-              ["walk",    walk],
-              ["bedtime", put_to_bed],
-              ["toss",    toss],
-              ["rock",    rock]]
-  #  if commands[command][1]
-  #   commands[command][1]
-=end
-  if command.downcase    == "feed"
-    pet.feed
-  elsif command.downcase == "walk"
-    pet.walk
-  elsif command.downcase == "bed"
-    pet.put_to_bed
-  elsif command.downcase == "toss"
-    pet.toss
-  elsif command.downcase == "rock"
-   pet.rock
-  elsif command.downcase == "bye" 
-    exit
-  else  
-    puts "do not know that command."
+  if pet.respond_to?(command)
+    pet.send(command)
+  else
+    puts "your dragon does not know that command"
   end
+
+
 end

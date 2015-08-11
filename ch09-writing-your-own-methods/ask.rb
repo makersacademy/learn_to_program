@@ -7,5 +7,3 @@ def ask question
     puts 'Please answer "yes" or "no".'
   end
 end
-
-ask 'Do you like burgers?'

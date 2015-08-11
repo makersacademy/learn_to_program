@@ -1,5 +1,14 @@
 # Learn To Program
-For submitting exercises from the Chris Pine Learn to Program Book
+
+###Setup Instructions
+
+ - Fork the repo to your own
+ - Push to your own fork (check the upstream)
+ - Open a pull request
+ - Commit and push your code after *each* challenge so the CI server can check your work as you go along.
+
+
+###For submitting exercises from the Chris Pine Learn to Program Book
 
 If you would like to run the tests associated with each chapter or even individual exercies you can do so as follows.  We use the RSpec library to test the code is working properly.  The RSpec library is available as a Ruby 'gem', which you can install in your computer by typing the following at the command line prompt:
 

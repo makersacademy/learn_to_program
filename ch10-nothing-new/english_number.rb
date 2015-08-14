@@ -17,39 +17,22 @@ def english_number number
                   'fourteen', 'fifteen', 'sixteen',
                   'seventeen', 'eighteen', 'nineteen']
 
+    powers =[[48, ' quindecillion'],[45, ' quattuordecillion'],[42, ' tredecillion'],[39,' duodecillion'],
+             [36, ' undecillion'],[33, ' decillion'],[30, ' nonillion'],[27, ' octillion'],
+             [24, ' septillion'],[21, ' sextillion'],[18, ' quintillion'],[15, ' quadrillion'],
+             [12, ' trillion'],[9, ' billion'],[6, ' million'],[3, ' thousand'],[2, ' hundred']]
+    
     left = number
-    write = left/1000000
-    left = left - write*1000000
-
-    if write > 0
-        millions = english_number write
-        num_string = num_string + millions + ' million'
-        if left > 0
-            num_string = num_string + ' '
+    powers.each do |power, name| 
+        write = left/(10**power)
+        left = left - write*(10**power)
+        if write > 0 
+            ammount = english_number write
+            num_string = num_string + ammount + name
+            if left > 0
+                num_string = num_string + ' '
+            end
         end
-    end
-
-    left = number
-    write = left/1000
-    left = left - write*1000
-
-    if write > 0
-        thousands = english_number write
-        num_string = num_string + thousands + ' thousand'
-        if left > 0
-            num_string = num_string + ' '
-        end
-    end
-
-    write = left/100
-    left = left - write*100
-
-    if write > 0
-    	hundreds = english_number write
-    	num_string = num_string + hundreds + ' hundred'
-    	if left > 0
-    		num_string = num_string + ' '
-    	end
     end
 
     write = left/10

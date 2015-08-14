@@ -18,6 +18,18 @@ def english_number number
                   'seventeen', 'eighteen', 'nineteen']
 
     left = number
+    write = left/1000000
+    left = left - write*1000000
+
+    if write > 0
+        millions = english_number write
+        num_string = num_string + millions + ' million'
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+
+    left = number
     write = left/1000
     left = left - write*1000
 

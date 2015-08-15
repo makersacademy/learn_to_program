@@ -1,0 +1,3 @@
+Joe Zhou,	Feb 3, 1984
+John Smith, 	May 15, 1990
+Chris Pine, 	Aug 3, 1976

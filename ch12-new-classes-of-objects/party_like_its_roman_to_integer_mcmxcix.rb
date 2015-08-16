@@ -36,13 +36,88 @@ def roman_numeral num
 		roman_num = romnum_1_to_9(num,rom_digits[i*2],rom_digits[i*2+1],rom_digits[i*2+2],10**i) + roman_num
 	end
 	
-	return roman_num
+	return roman_num.downcase
 
 end
 
-puts roman_numeral(3497)
+#puts roman_numeral(3497)
+#MMMCDXCVII
 
+def roman_to_integer(roman, number = 0)
+	roman.downcase!
+	the_number = number
+	case roman[0]
+	when 'm'
+		the_number += 1000
+		roman.slice!(0)
+	when 'd'
+		the_number += 500
+		roman.slice!(0)
+	when 'c'
+		if roman[1] == 'm'
+			the_number += 900
+			roman.slice!(0..1)
+		elsif roman[1] == 'd'
+			the_number += 400
+			roman.slice!(0..1)
+		else
+			the_number += 100
+			roman.slice!(0)
+		end
+	when 'l'
+		the_number += 50 
+		roman.slice!(0)
+	when 'x'		
+		if roman[1] == 'c'
+			the_number += 90
+			roman.slice!(0..1)
+		elsif roman[1] == 'l'
+			the_number += 40
+			roman.slice!(0..1)
+		else
+			the_number += 10
+			roman.slice!(0)
+		end
+	when 'v'
+		the_number += 5
+		roman.slice!(0)
+	when 'i'		
+		if roman[1] == 'x'
+			the_number += 9
+			roman.slice!(0..1)
+		elsif roman[1] == 'v'
+			the_number += 4
+			roman.slice!(0..1)
+		else
+			the_number += 1
+			roman.slice!(0)
+		end
+	else	
+	end
 
-def roman_to_integer roman
-  # your code here
+	#puts "#{roman}  #{the_number}"  #for testing
+
+	if roman == ''
+		return the_number
+	else
+		roman_to_integer(roman,the_number)
+	end
 end
+
+def test()
+	num_of_error = 0 
+	(1..3000).each do |x| 
+		if x != roman_to_integer(roman_numeral(x))
+			num_of_error += 1
+			puts "the number is #{x}, #{roman_numeral(x)}, #{roman_to_integer(roman_numeral(x))} "
+		end
+	end
+	puts "The number of errors found is #{num_of_error}"
+end
+
+
+
+
+
+
+

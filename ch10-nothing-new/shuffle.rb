@@ -18,4 +18,3 @@ def recursive_shuffle(array, shuffled_array)
 
 end
 
-puts shuffle([1,2,3,4,5])

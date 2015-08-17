@@ -8,7 +8,7 @@ def log desc, &block
 end
 
 
-=begin
+def test
 log 'outer-block' do  
 	log 'inner-block1' do n = 100; n end
 	log 'inner-block2' do
@@ -16,8 +16,9 @@ log 'outer-block' do
 	2000.times{r+=1}
 	end
 end
-=end
+end
 
+#test
 
 $indent_pl = 0
 def profile_log desc, &block

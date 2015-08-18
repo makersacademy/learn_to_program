@@ -1,8 +1,11 @@
 def englishNumber number
-
+  if number < 0 
+    return 'Please enter a number that isn\'t negative.'
+  end
   if number == 0
     return 'zero'
   end
+
 
   numString = ''
 
@@ -94,30 +97,10 @@ def englishNumber number
   numString
 end
 
+puts englishNumber 1005302
+puts englishNumber 12
+puts englishNumber 356
+puts englishNumber 128889476
+puts (englishNumber 3000478756).capitalize
+puts englishNumber 1983
 
-
-puts "How many bottles we starting with today?"
-num = gets.chomp.to_i
-
-if not num>0
-	puts "Please enter a number greater than zero"
-else
-	while num > 0
-		if num == 2
-			bot1 = "bottles"
-			bot2 = "bottle"
-		elsif num == 1
-			bot1 = "bottle"
-			bot2 = "bottles"
-		else
-			bot1 = "bottles"
-			bot2 = "bottles"
-		end
-		puts "#{englishNumber(num).capitalize} #{bot1} of beer on the wall."
-		puts "#{englishNumber(num).capitalize} #{bot1} of beer."
-		puts "You take one down, pass it around."
-		puts "#{englishNumber(num-1).capitalize} #{bot2} of beer on the wall."
-		puts ""
-		num = num - 1
-	end
-end

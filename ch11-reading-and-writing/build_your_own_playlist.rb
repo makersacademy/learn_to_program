@@ -2,7 +2,7 @@
 
 
 
-music_name = Dir['/Users/philipclarke/Desktop/testmusic/*.mp3']
+music_name = shuffle(Dir['/Users/philipclarke/Desktop/testmusic/*.mp3'])
 puts "What do you want to call this playlist"
 name = gets.chomp
 File.open "#{name}.m3u", 'w' do |track| 

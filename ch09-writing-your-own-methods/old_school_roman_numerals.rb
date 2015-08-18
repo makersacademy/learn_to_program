@@ -1,6 +1,6 @@
 def old_roman_numeral num
-  if not num.to_i > 0
-  		puts "Please enter a number greater than zero"
+  if !(num.to_i > 0) || num.to_i-num != 0
+  		puts "Please enter an integer greater than zero"
   else
 	  m = num/1000
 	  d = (num%1000)/500
@@ -21,5 +21,6 @@ old_roman_numeral 12
 old_roman_numeral 1
 old_roman_numeral (-35)
 old_roman_numeral "Pig"
+old_roman_numeral (45.6)
 old_roman_numeral 3457
 old_roman_numeral 1983

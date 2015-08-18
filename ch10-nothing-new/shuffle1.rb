@@ -12,3 +12,6 @@ end
 return random
 end
 
+words = ['beer','cider','zoo','leg']
+
+puts shuffle(words)

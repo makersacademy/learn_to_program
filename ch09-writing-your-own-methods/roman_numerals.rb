@@ -33,9 +33,10 @@ def roman_numeral num
 		roman = roman + 'I' * (num % 	  5 /   1)
 	end	
 
-	puts roman	
+	roman	
 end
- 
-puts 'What number would you like converting into Roman numerals?'
-num = gets.chomp
-roman_numeral(num.to_i)
+
+puts (roman_numeral(2015))
+puts (roman_numeral(1999))
+puts (roman_numeral(1066))
+puts (roman_numeral(  49))

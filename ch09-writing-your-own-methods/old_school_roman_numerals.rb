@@ -14,11 +14,11 @@ def roman x
   i = r5%5
 
 
-  puts  ("M"*m)+("D"*d)+("C"*c)+("L"*l)+("X"*x)+("I"*i)
+  puts  ("M"*m)+("D"*d)+("C"*c)+("L"*l)+("X"*x)+("V"*v)+("I"*i)
 
 
 end
 
 
 
-puts roman 4861
+puts roman 4856

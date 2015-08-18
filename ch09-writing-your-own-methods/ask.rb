@@ -21,4 +21,4 @@ def ask question
 
 end
 
-puts ask "do you like opium?"
+puts ask "do you like Coca Cola?"

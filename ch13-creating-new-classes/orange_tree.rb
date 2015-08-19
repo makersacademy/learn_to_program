@@ -34,7 +34,7 @@ def pick_an_orange
  		pick
  end
 
-end
+end #end class
 #private
 
 def oneYearPasses
@@ -45,13 +45,8 @@ def oneYearPasses
 		@age = @age + 1
  		@height = @height + 1
  		puts @name + "\'s height is " + @height.to_s + " and his age is "  + @age.to_s + " and has " + @apples.to_s + " apples"
+		end
 end
-
-def pick_an_orange
- 		pick
- 		
- 	end
- end
 
 
  	
@@ -61,24 +56,24 @@ def fruit
 	elsif
 		@age >= 2 && @age <= 5
 		@apples = 30
-  elsif @age >= 6 && @age <= 10
+    elsif @age >= 6 && @age <= 10
 		@apples = 5
   	
 	end
 	puts @apples
 end
+
 def height
   puts @height
 	end
 
 def pick
     puts "pick how many oranges?"
-
     @picked = gets.chomp.to_i
     unless @apples < @picked
     	puts "here are you apples"
-    	 puts "you picked #{@picked} oranges and there are #{@apples} left"
-    @apples = @apples - @picked
+    	@apples = @apples - @picked
+    	puts "you picked #{@picked} oranges and there are #{@apples} left"
     else
     	puts "oops - you want #{@picked} oranges and there are only #{@apples} left on the tree"
     	
@@ -102,9 +97,8 @@ tree.grow
 tree.grow
 tree.grow
 tree.grow
-
 tree.height
 tree.count_the_oranges
 tree.pick_an_orange
 
-
+tree.send(:grow)

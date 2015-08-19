@@ -16,15 +16,22 @@
     ["I"  ,   1]
     ]
 
-def roman2_integer roman
-	result = 0 #this is where we output the result to
+# still need to work out how to check for invaild numerals - so if value is not in the array puts an error message
 
-	for index, value in @data #hmmm we go through the array looking at the two columns as index and value 
-		while roman.index(key) == 0 #we just look at the first item in the string passed to the method and take the index item for that character - phew!
-			result += value #and add the vale
-			roman.slice!(key) #remove the character and round we go until key is nil
-			
-		end
-	end
-	result #then we return the result
-end
+def roman_to_integer roman
+    reply = 0 # this is where we will send the output
+ for key, value in @data #look for the key and value
+     while roman.index(key) == 0 #of the first character
+     reply += value #add that number to reply
+     roman.slice!(key) #remove the character
+     end    
+     end
+
+reply #and return
+
+ end
+
+ puts(roman_to_integer("MCM"))
+  puts(roman_to_integer("ABC"))
+
+

@@ -2,27 +2,23 @@
 
 def roman_numeral num
   	str=''	
-#	numerals_hash={	'M'=>1000, 
-#			'D'=>500,
-#			'C'=>100,
-#			'L'=>50,
-#			'X'=>10,
-#			'V'=>5,			
-#			'I'=>1, }	
-	numerals_array=[['X',10],['V',5],['I',1]]
+	numerals_hash={	'M'=>1000,
+			'CM'=>900, 
+			'D'=>500,
+			'CD'=>400,
+			'C'=>100,
+			'XC'=>90,
+			'L'=>50,
+			'XL'=>40,
+			'X'=>10,
+			'IX'=>9,
+			'V'=>5,
+			'IV'=>4,			
+			'I'=>1, }	
 
-#	numerals_hash.each_with_index do |(letter,devisor),index|	
-	numerals_array.each_with_index do |foo, index|
-	letter=foo[0] 
-	devisor=foo[1]	
+	numerals_hash.each do |letter,devisor|	
 	n=num/devisor
-	puts n
-	if n >3
-		
-		puts numerals_array[index-1][0]	
-	elsif n>8
-		puts numerals_array[index-2][0]
-	end
+	
 	num=num%devisor
 	str+=letter*n
 	
@@ -31,4 +27,6 @@ def roman_numeral num
 end
 
 puts roman_numeral 29
+
+puts roman_numeral 489
 

@@ -17,14 +17,14 @@
     ]
 
 def roman2_integer roman
-	result = 0
+	result = 0 #this is where we output the result to
 
-	for index, value in @data
-		while roman.index(key) == 0
-			result += value
-			roman.slice!(key)
+	for index, value in @data #hmmm we go through the array looking at the two columns as index and value 
+		while roman.index(key) == 0 #we just look at the first item in the string passed to the method and take the index item for that character - phew!
+			result += value #and add the vale
+			roman.slice!(key) #remove the character and round we go until key is nil
 			
 		end
 	end
-	result
+	result #then we return the result
 end

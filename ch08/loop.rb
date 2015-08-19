@@ -4,8 +4,8 @@ array=[]
 input = ' '
 
 while input != ''
-input = gets.chomp
-array.push input
+	input = gets.chomp
+	array.push input
 end
 
 array.pop #remove \n from the end of the array

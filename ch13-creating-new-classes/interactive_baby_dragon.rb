@@ -115,9 +115,9 @@ puts "You have a new pet dragon - what would you like to call him?"
 name = gets.chomp
 pet = Dragon.new name
 while true
-puts "what would you like your dragon to do?"
+puts "what would you like #{name} to do?"
 
-puts "Your choices are feed, walk, putTobed, toss, rock"
+puts "Your choices are feed, walk, putTobed, toss, rock or exit if you have had enough of this dragon stuff"
 answer = gets.chomp
 
 if answer == "feed"
@@ -130,6 +130,9 @@ elsif answer == "toss"
 	pet.toss
 elsif answer == "rock"
 	pet.rock
+elsif answer == 'exit'
+	puts "goodbye"
+	exit
 else
 	puts "what?"
 end

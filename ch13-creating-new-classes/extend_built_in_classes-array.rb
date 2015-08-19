@@ -1,4 +1,4 @@
-class Array
+class Array #need to come back to ths
   def shuffle
    random = [] #create an empty array to receive our items
   randomarray =[]

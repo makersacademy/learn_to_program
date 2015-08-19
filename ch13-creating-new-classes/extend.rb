@@ -32,6 +32,8 @@ class Integer
    result = result + "X" * (self % 50 /10)
    result = result + "V" * (self % 10 /5)
    result = result + "I" * (self % 5)
+   result.gsub('VIIII','IX').gsub('IIII','IV').gsub('XXXX','XL').gsub('LXL','XC').gsub('DCD','CM').gsub('CCCC','CD')
+
    result
 end
 end

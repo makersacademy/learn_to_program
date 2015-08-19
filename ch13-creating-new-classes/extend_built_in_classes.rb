@@ -1,8 +1,8 @@
-class Array 
-  def shuffle
+class Array # we are going to extebd tbe array class
+  def shuffle # this is our previous shuffle method but no variable is prescribed - we will use self below
    random = [] #create an empty array to receive our items
   
-while self.length >=1  #loop until no items left
+while self.length >=1  #loop until no items left we have used to self
 	itemid = rand(self.length)
  	random << self[itemid]
  	
@@ -14,11 +14,11 @@ end
 
 
 
-class Integer
+class Integer #extending integer class
   def fact
-    self <= 1 ? 1 : self * (self - 1).fact
+    self <= 1 ? 1 : self * (self - 1).fact #run recurssice factorial until 0 self again
   end
-  def roman
+  def roman #add our roman class
  
   result = '' #creates the string to output
   result = result + "M" * (self/1000) # how many thousands

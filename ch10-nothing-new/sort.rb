@@ -1,4 +1,4 @@
-def dictionary_sort some_array # This "wraps" recursive_sort.
+def sort some_array # This "wraps" recursive_sort.
   recursive_sort some_array, []
 end
 
@@ -31,4 +31,4 @@ def recursive_sort unsorted, sorted
 
 end
 
-# puts dictionary_sort(['aardvark', 'beekeeper', 'bop', 'bop', 'bop', 'rar', 'zoology'])
+# puts sort(['aardvark', 'beekeeper', 'bop', 'bop', 'bop', 'rar', 'zoology'])

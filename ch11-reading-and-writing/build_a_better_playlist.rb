@@ -1,4 +1,4 @@
-def shuffle arrayIn
+def music_shuffle arrayIn
 
   # Return quickly for single-element arrays.
   if arrayIn.length <= 1
@@ -26,12 +26,4 @@ def shuffle arrayIn
   end
 
 arrayOut
-end
-
-def music_shuffle filenames
-
-  # This challenge is puzzling, and I don't get Chris' logic. My shuffle function gives a totally random output. If I use it twice and "cut the deck" it's still random. Weird! Also, why sort the input before feeding the list into a random shuffle it makes no difference.
-
-  shuffle filenames
-
 end

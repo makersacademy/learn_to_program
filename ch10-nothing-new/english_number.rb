@@ -27,7 +27,7 @@ def english_number number
                'fourteen', 'fifteen', 'sixteen',
                'seventeen', 'eighteen', 'nineteen']
 
-  zillions = [['hundred', 2],
+  highbase = [['hundred', 2],
               ['thousand', 3],
               ['million', 6],
               ['billion', 9],
@@ -56,31 +56,53 @@ def english_number number
   # Initialise the amount left.
   left = number
 
-  # Handle hundreds
-  write = left / 100
-  left = left - (write * 100)
+  # # Handle hundreds
+  # write = left / 100
+  # left = left - (write * 100)
 
-  if write > 0
+  # if write > 0
 
-    # Use recursion to write out the number of hundreds.
-    hundreds = english_number write
+  #   # Use recursion to write out the number of hundreds.
+  #   hundreds = english_number write
 
-    num_string = num_string + hundreds + ' hundred'
+  #   num_string = num_string + hundreds + ' hundred'
 
-    # Add space padding if there is more of the English string to come.
-    if left > 0
-      num_string = num_string + ' '
+  #   # Add space padding if there is more of the English string to come.
+  #   if left > 0
+  #     num_string = num_string + ' '
+  #   end
+
+  # end
+
+# Loop while testing for numbers long enough for each of the base name / value pairs in highbase.
+  while highbase.length > 0
+
+    activeBase = highbase.pop
+
+    write = left / (10 ** activeBase[1])
+    left = left - (write * (10 ** activeBase[1]) )
+
+    if write > 0
+
+      # Use recursion
+      num_string = num_string + (english_number write) + ' ' + activeBase[0]
+
+      # Add space padding if there is more of the English string to come.
+      if left > 0
+        num_string = num_string + ' '
+      end
+
     end
 
   end
 
-  # Handle tens
+  # Handle tens - do this outisde the loop above as there's an exception here for teens.
   write = left / 10
   left = left - (write * 10)
 
   if write > 0
 
-    # Exception for handling teens, so no recursion here.
+    # Exception for handling teens.
     if ((write == 1) and (left > 0))
       num_string = num_string + teens[left-1] # Array indices start at 0.
       left = 0 # Nothing left now as the teens include the ones digit.
@@ -95,7 +117,7 @@ def english_number number
 
   end
 
-  # Handle ones, there can be no more to write now.
+  # Handle ones, do this outside the main loop as this is where all the recursion points to. There can be no more to write out after this.
   write = left # How many ones left to write out?
   left = 0
 

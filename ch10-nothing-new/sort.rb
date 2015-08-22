@@ -8,31 +8,22 @@ end
 
 
 def dictionary_sort arr
-	return sorter(arr)
+	temp_array=[]
+	return  recursive_sort(arr, temp_array)
 end
 
-def sorter array
-	
-    temp_array=array
-	
-    l=temp_array.length
-    for i in 0..l
-	for i in 1..(l-1)
-		strA=temp_array[i-1]
-		strB=temp_array[i] 
-		if strA.downcase > strB.downcase 	
 
-			temp_array[i]=strA
-			temp_array[i-1]=strB
-				
-		end
+def recursive_sort array, temp_array
+	
+	if array.empty?
+		return temp_array
 	end
-     end
-     return temp_array
 	
-end      
-
-
+	temp_array.push(array.min)
+	array.delete(array.min)	
+	
+	recursive_sort(array, temp_array)
+end
 
 
 #my_array=['on', 'the', 'first', 'day', 'yellow' , 'monkey']

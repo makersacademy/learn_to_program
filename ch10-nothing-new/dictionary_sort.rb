@@ -1,11 +1,26 @@
 #!/usr/bin/env ruby
 
 def dictionary_sort arr
-	return sorter(arr)
+	return recursive_sort(arr, [])
 end
 
-def sorter array
+
+def recursive_sort array, temp_array
 	
+	if array.empty?
+		puts 'no more sorting to do'
+		return temp_array
+	end
+	
+	min= array.map(&:upcase).enum_for(:each_with_index).min
+	temp_array.push(array[min[1]])
+	array.delete_at(min[1])	
+	recursive_sort(array, temp_array)
+end
+
+
+def sorter array ##DB note: you can tell I'm a c programmer by default... : S
+		#This works, but also made more ruby-like version above
     temp_array=array
 	
     l=temp_array.length
@@ -23,19 +38,5 @@ def sorter array
      end
      return temp_array
 	
-end      
-
-
-
-
-my_array=['on', 'the', 'first', 'day', 'yellow' , 'monkey']
-
-puts my_sort=dictionary_sort(my_array)
-ruby_sort=my_array.sort
-
-#Test for if it's worked
-if my_sort==ruby_sort
-	puts 'WIN!'
-else
-	puts 'You fail'
 end
+

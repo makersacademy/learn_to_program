@@ -1,7 +1,7 @@
 def log desc, &block
 
   # Using the text Chris specifies on page 120.
-  puts "Beginning \"#{desc}\"..."
+  puts " Beginning \"#{desc}\"..."
   output = block.call
   puts "...\"#{desc} finished, returning: #{output}"
 

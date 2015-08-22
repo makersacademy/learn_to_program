@@ -23,7 +23,7 @@ class OrangeTree
           @numFruit = (@age - 2)
         end
 
-        return
+        return "The tree is #{@age} years old, #{@height}m tall and has #{@numFruit} oranges on it."
       end
 
       else

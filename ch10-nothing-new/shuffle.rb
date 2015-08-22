@@ -17,10 +17,3 @@ def recursive_shuffle array, temp_array
 	recursive_shuffle(array, temp_array)
 end
 
-
-
-
-#my_array=['on', 'the', 'first', 'day', 'yellow' , 'Monkey', 'on']
-
-#puts shuffle(my_array)
-

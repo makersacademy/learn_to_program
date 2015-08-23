@@ -33,7 +33,7 @@ def english_number number
     if write > 0
       # Now here's a really sly trick:
       zillions  = english_number write
-      numString = numString + zillions + ' ' + zillionsNames[zzz]
+      numString = numString + zillions + ' ' + zillionsNames[zzz-1]
       if left > 0
         numString = numString + ' '
       end

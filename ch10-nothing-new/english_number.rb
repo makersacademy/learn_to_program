@@ -27,7 +27,7 @@ def english_number number
 
   if write > 0
     # Now here's a really sly trick:
-    trillions  = englishNumber write
+    trillions  = english_number write
     numString = numString + trillions + ' trillion'
     
     if left > 0
@@ -40,7 +40,7 @@ def english_number number
 
   if write > 0
     # Now here's a really sly trick:
-    billions  = englishNumber write
+    billions  = english_number write
     numString = numString + billions + ' billion'
     
     if left > 0
@@ -53,7 +53,7 @@ def english_number number
 
   if write > 0
     # Now here's a really sly trick:
-    millions  = englishNumber write
+    millions  = english_number write
     numString = numString + millions + ' million'
     
     if left > 0
@@ -66,7 +66,7 @@ def english_number number
 
   if write > 0
     # Now here's a really sly trick:
-    thousands  = englishNumber write
+    thousands  = english_number write
     numString = numString + thousands + ' thousand'
     
     if left > 0
@@ -80,7 +80,7 @@ def english_number number
 
   if write > 0
     # Now here's a really sly trick:
-    hundreds  = englishNumber write
+    hundreds  = english_number write
     numString = numString + hundreds + ' hundred'
     
     if left > 0

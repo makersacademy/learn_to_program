@@ -16,65 +16,31 @@ def english_number number
                'sixty',   'seventy',   'eighty',   'ninety']
   teenagers = ['eleven',  'twelve',    'thirteen', 'fourteen', 'fifteen',
                'sixteen', 'seventeen', 'eighteen', 'nineteen']
-
+  zillionsNames = ['thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion',
+                   'sextillion', 'septillion', 'octillion', 'nonillion', 'decillion',
+                   'undecillion', 'duodecillion', 'tredecillion', 'quattuordecillion', 'quindecillion']
+  
   # "left" is how much of the number we still have left to write out.
   # "write" is the part we are writing out right now.
 
   left  = number
- 
-  write = left/1000000000000          # How many trillions left to write out?
-  left  = left - write*1000000000000  # Subtract off those trillions.
+   
+  16.downto(1) { |zzz| 
+  
+    write = left/(1000**zzz)          # How many zillions left to write out?
+    left  = left - write*(1000**zzz)  # Subtract off those zillions.
 
-  if write > 0
-    # Now here's a really sly trick:
-    trillions  = english_number write
-    numString = numString + trillions + ' trillion'
-    
-    if left > 0
-      numString = numString + ' '
+    if write > 0
+      # Now here's a really sly trick:
+      zillions  = english_number write
+      numString = numString + zillions + ' ' + zillionsNames[zzz]
+      if left > 0
+        numString = numString + ' '
+      end
     end
-  end
-
-  write = left/1000000000          # How many billions left to write out?
-  left  = left - write*1000000000  # Subtract off those billions.
-
-  if write > 0
-    # Now here's a really sly trick:
-    billions  = english_number write
-    numString = numString + billions + ' billion'
-    
-    if left > 0
-      numString = numString + ' '
-    end
-  end
-
-  write = left/1000000          # How many millions left to write out?
-  left  = left - write*1000000  # Subtract off those millions.
-
-  if write > 0
-    # Now here's a really sly trick:
-    millions  = english_number write
-    numString = numString + millions + ' million'
-    
-    if left > 0
-      numString = numString + ' '
-    end
-  end
-
-  write = left/1000          # How many thousands left to write out?
-  left  = left - write*1000  # Subtract off those thousands.
-
-  if write > 0
-    # Now here's a really sly trick:
-    thousands  = english_number write
-    numString = numString + thousands + ' thousand'
-    
-    if left > 0
-      # So we don't write 'two thousandfive hundred'...
-      numString = numString + ' '
-    end
-  end
-
+  
+  }
+	
   write = left/100          # How many hundreds left to write out?
   left  = left - write*100  # Subtract off those hundreds.
 

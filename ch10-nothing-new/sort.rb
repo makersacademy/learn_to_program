@@ -13,11 +13,11 @@ def recursive_sort unsorted, sorted
   still_unsorted = [] # where we're keeping the words that haven't been sorted yet
 
   unsorted.each do |tested_object| # ---> look at each object of unsorted
-    if tested_object.downcase < smallest.downcase
+    if tested_object < smallest
       still_unsorted.push smallest
       smallest = tested_object
     else
-      still_unsorted.push tested_object 
+      still_unsorted.push tested_object
     end
   end
 

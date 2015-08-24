@@ -1,4 +1,3 @@
-#why is this failing tests?
 
 def shuffle arr
 arr.shuffle

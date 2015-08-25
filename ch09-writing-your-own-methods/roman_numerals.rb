@@ -11,9 +11,10 @@ def roman_numeral num
 
   roman_nums.map do |key,value|  
     output << key * (num / value) 
+    byebug
     num = num % value
-    end
-    output
+  end
+  output
 end
 
 

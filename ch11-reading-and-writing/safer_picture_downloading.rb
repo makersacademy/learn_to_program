@@ -1,6 +1,6 @@
-Dir.chdir 'C:/Users/User/Desktop/Inbox'
+Dir.chdir '/home/nitrous/pictures/inbox'
 
-pic_names = Dir['C:/Users/User/Desktop/Kinder/*.jpg']
+pic_names = Dir['/home/nitrous/pictures/camera/*.jpg']
 
 puts 'What would you like to call this batch?'
 batch_name = gets.chomp

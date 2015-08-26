@@ -1,1 +1,1 @@
-# your code here
+puts(Time.gm(1990, 8, 1, 2, 05))

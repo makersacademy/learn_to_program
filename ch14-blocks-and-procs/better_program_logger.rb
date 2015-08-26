@@ -1,7 +1,7 @@
 $depth = 0
 
 def log desc, &block
-  nesting_depth = '  ' * $depth
+  nesting_depth = ' ' * $depth
   puts nesting_depth + "Beginning \"#{desc}\"..."
   $depth += 1
   result = block.call

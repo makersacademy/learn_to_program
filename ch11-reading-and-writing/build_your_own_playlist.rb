@@ -9,9 +9,9 @@ def shuffle arr
   end
 end
 
-Dir.chdir 'C:/Users/User/Desktop/Music'
+  Dir.chdir '/home/nitrous/music'
 
-music_files = Dir['**/*.m4a']
+music_files = Dir['**/*.mp3']
 
 playlist = shuffle(music_files)
 
@@ -19,6 +19,4 @@ File.open 'random_playlist.m3u', 'w' do |file|
   while !(playlist == [])
     file.write playlist.pop + "\n"
   end
- end
- 
- 
+end

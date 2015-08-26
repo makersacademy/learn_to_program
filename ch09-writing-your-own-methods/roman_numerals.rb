@@ -1,5 +1,5 @@
 def roman_numeral num
-  
+
   output = ""
 
   roman_nums = {
@@ -9,9 +9,8 @@ def roman_numeral num
     "IX" => 9,   "V" => 5,   "IV" => 4,   "I" => 1
   }
 
-  roman_nums.map do |key,value|  
-    output << key * (num / value) 
-    byebug
+  roman_nums.map do |key,value|
+    output << key * (num / value)
     num = num % value
   end
   output

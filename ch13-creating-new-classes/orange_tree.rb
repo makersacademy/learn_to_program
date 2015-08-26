@@ -10,7 +10,7 @@ class OrangeTree
     if @alive
       @height
     else
-      "A dead tree can't grow and isn't very tall."
+      "A dead tree is not very tall. :("
     end
   end
 
@@ -18,18 +18,18 @@ class OrangeTree
     if @alive
       @orange_count
     else
-      "A dead tree has no fruit to share."
+      "A dead tree has no oranges. :("
     end
   end
 
   def one_year_passes
     if @alive
-      @height = (@height + 0.2).round(2)
+      @height = (@height + 0.4).round(2)
       @orange_count = 0
 
-      if @height > 20
+      if @height > 10
         @alive = false
-        "Tree has died. RIP."
+        "Oh, no! The tree is too old, and has died. :("
       elsif @height > 2
         @orange_count = (@height * 15 - 25).to_i
         "This year your tree grew to #{@height}m tall, and produced #{@orange_count} oranges."
@@ -38,7 +38,7 @@ class OrangeTree
       end
 
     else
-      'A year later, the tree is still dead.'
+      "A year later, the tree is still dead. :("
     end
   end
 
@@ -52,7 +52,7 @@ class OrangeTree
         'You search every branch, but find no oranges.'
       end
     else
-      'A dead tree has nothing to pick.'
+      "A dead tree has nothing to pick. :("
     end
   end
 end

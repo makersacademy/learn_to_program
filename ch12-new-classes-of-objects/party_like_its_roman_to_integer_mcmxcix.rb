@@ -17,5 +17,3 @@ def roman_to_integer roman
   raise "not a valid Roman numeral" if !roman.empty?
   total
 end
-
-puts roman_to_integer(gets.chomp)

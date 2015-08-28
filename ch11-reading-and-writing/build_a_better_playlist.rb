@@ -1,10 +1,38 @@
 require 'pathname'
 
-# this shuffles the list avoiding consecutive tunes of the same genre wherever possible
+# rewritten to use Chris Pine's shuffle algorithm
+
+def music_shuffle filenames
+
+  return [] if filenames.empty? # get the empty case out of the way
+  
+  # initialise shuffle
+  filenames.sort!
+  len = filenames.length
+  
+  # do the shuffle
+  2.times do
+    leftpile = filenames[0..(len/2 - 1)]
+    rightpile = filenames[len/2..-1]
+    filenames = []
+    while !leftpile.empty? do
+      filenames << rightpile.shift
+      filenames << leftpile.shift
+    end
+    filenames = filenames + rightpile # adds final 'card' if len is odd
+  end
+
+  #cut the 'deck' at random
+  cutpoint = rand(len)
+  filenames = filenames[cutpoint..-1] + (cutpoint == 0 ? [] : filenames[0..(cutpoint-1)])
+  
+end
+
+# this one shuffles avoiding consecutive tunes of the same genre wherever possible
 # first we pick tunes at random but always switching genre
 # when we can no longer do this we insert the remaining tunes in random places
 
-def music_shuffle filenames
+def my_music_shuffle filenames
   
   return [] if filenames.empty? # get the empty case out of the way
   

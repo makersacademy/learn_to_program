@@ -2,7 +2,7 @@ $logger_depth = 0
 
 def log desc, &block
   $logger_depth += 1
-  indent = '  ' * ($logger_depth - 1)
+  indent = ' ' * ($logger_depth - 1)
   puts indent + 'Beginning "' + desc + '"...'
   out = block.call
   puts indent + '..."' + desc + '" finished, returning: ' + out.to_s

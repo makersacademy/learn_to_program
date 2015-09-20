@@ -8,16 +8,13 @@ Please attempt every exercise, submitting the code to us using your newfound git
 
 Do not spend more than an hour on any individual exercise.  The solutions are included at the end of the book.  This week it is better that you cover all the chapters, and review the solutions for any exercises that you cannot complete in under an hour.  Please do not look at any individual solution until you have at least tried each individual exercise.
 
-If you find that you really dislike the style of 'Learn To Program' then as an alternative please try [Ruby KickStart](http://www.ruby-kickstart.com/), which also includes videos and challenges which you can fork from [https://github.com/makersacademy/ruby-kickstart](https://github.com/makersacademy/ruby-kickstart).  We'll be happy to accept completion of all the challenges from section 1 and 2 of Ruby Kickstart, as an equivalent to doing the exercises from Learn To Program. **Note : You must complete, in full, either of the two choices**
-
-
 ###Setup Instructions
 
  - Fork the repo to your own
  - Push to your own fork (check the upstream)
- - Open a pull request
+ - Open a pull request straight away
  - Commit and push your code after *each* challenge so the CI server can check your work as you go along.
-
+ - You must get a green tick at the end of the exercise from the CI to pass the week's challenge. 
 
 ###For submitting exercises from the Chris Pine Learn to Program Book
 

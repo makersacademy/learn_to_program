@@ -1,7 +1,7 @@
-def roman_numeral(number)
+def old_roman_numeral num
 
-    m = number / 1000
-    mleft = number % 1000
+    m = num / 1000
+    mleft = num % 1000
     
     dleft = mleft % 500
     c = dleft / 100

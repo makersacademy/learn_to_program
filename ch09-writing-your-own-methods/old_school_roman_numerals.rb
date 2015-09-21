@@ -25,12 +25,3 @@ def old_roman_numeral num
     key * div
   end.join
 end
-
-puts old_roman_numeral 1
-puts old_roman_numeral 4
-puts old_roman_numeral 54
-puts old_roman_numeral 152
-puts old_roman_numeral 1949
-puts old_roman_numeral 3000
-puts old_roman_numeral 2016
-puts old_roman_numeral 1999

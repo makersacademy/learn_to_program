@@ -14,14 +14,10 @@
 
 def old_roman_numeral num
   roman_to_arabic = {
-    'M' => 1_000, 'D' => 500, 'C' => 100,
-    'L' => 50,    'X' => 10,  'V' => 5,
-    'I' => 1
+    M: 1_000, D: 500, C: 100, L: 50,
+    X: 10,    V: 5,   I: 1
   }
 
-  roman_to_arabic.map do |key, val|
-    div = num / val
-    num = num % val
-    key * div
-  end.join
+  return '' if num <= 0
+  roman_to_arabic.each { |key, val| return key.to_s + old_roman_numeral(num - val) if num >= val }
 end

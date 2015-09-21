@@ -4,19 +4,15 @@ while true
 puts question
 reply = gets.chomp.downcase
 
-if (reply == 'yes' || reply == 'no')
-
-	if reply == 'yes'
-	answer = true
-	return answer
+if (reply == "yes" || reply == "no")
+	if reply == "yes"
+	return true
 	else
-	answer = false
-	return answer
+	return false
 	end
 	break
 	else
 	puts 'Please answer "yes" or "no".'
-	return
 	end
 
 end

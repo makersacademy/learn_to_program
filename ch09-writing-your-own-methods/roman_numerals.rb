@@ -11,8 +11,6 @@ def roman_numeral num
     i = i - to_cut
     b += 1
   end
-
-
   #sub the 4's
   to_print.gsub!(/IIII/, 'IV')
   to_print.gsub!(/XXXX/, 'XL')
@@ -22,11 +20,6 @@ def roman_numeral num
    to_print.gsub!(/DCD/, 'CM')
    to_print.gsub(/LXL/, 'XC')
    to_print.gsub!(/VIV/, 'IX')
-  #to_print.gsub!(/VIV/, 'IX')
-  #to_print.gsub(/LXL/, 'XC')
-  #to_print.gsub!(/DCD/, 'MC')
-
-
 
   to_print
 

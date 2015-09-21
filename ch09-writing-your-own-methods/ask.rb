@@ -1,3 +1,23 @@
 def ask question
-  # your code here
+
+while true
+puts question
+reply = gets.chomp.downcase
+
+if (reply == 'yes' || reply == 'no')
+
+	if reply == 'yes'
+	answer = true
+	return answer
+	else
+	answer = false
+	return answer
+	end
+	break
+	else
+	puts 'Please answer "yes" or "no".'
+	return
+	end
+
+end
 end

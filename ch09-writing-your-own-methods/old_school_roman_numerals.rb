@@ -1,6 +1,6 @@
-def old_roman_numeral(num)
+def old_roman_numeral num
 	if (num > 0 && num <3001)
-		roman_num = " "
+		roman_num = ""
  	m = num/1000
 	 	if m == 1
 	 		roman_num = roman_num + "M"
@@ -63,10 +63,8 @@ def old_roman_numeral(num)
  		elsif i == 4
  			roman_num = roman_num + "IIII"
  		end
-
- 	puts roman_num
+		print roman_num
  	else
  		"Number is not between 1 and 3000"
  	end	
 end
-old_roman_numeral(num)

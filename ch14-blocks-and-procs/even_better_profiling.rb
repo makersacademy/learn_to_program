@@ -1,13 +1,16 @@
 def profile(block_description, &block)
+  $on = true
   if $on
     start_time = Time.new
     block.call
     duration = Time.new - start_time
     puts "#{block_description}: #{duration} seconds"
   else
+    block.call
   end
 end
 
+=begin
 print "Run with profiling? (y/n): "
 ans = gets.chomp.downcase
 if ans == 'y'
@@ -17,7 +20,7 @@ elsif ans == 'n'
 else
   puts "input has to be either y/n"
 end
-
+=end
 
 profile '25000 doublings' do
   number = 1

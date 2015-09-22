@@ -1,16 +1,23 @@
-def log( string_desc, &block )
-  puts "starting block..."
-  value = block.call
-  puts "...block has finished! It returned:"
-  puts value
+def log desc, &block
+  puts 'Beginning "' + desc + '"...'
+  result = block.call
+  puts '..."' + desc + '" finished, returning: ' + result.to_s
+end
+
+log 'outer block' do
+  log 'some little block' do
+    "Nikesh is a funny man."
+  end
+
+  log 'yet another block' do
+    'pass the damn rspec'.upcase
+  end
+
+  number = 1
+  25000.times { number = number + number }
+  "#{number.to_s.length} digits"
+  
 end
 
 
-log "do something" do
-    number = 1
-    25000.times { number = number + number }
-    log "do another thing" do
-        "Nikesh is a funny man."
-        end
-    "#{number.to_s.length} digits" 
-    end
+ 

@@ -9,10 +9,6 @@ def old_roman_numeral num
 	answer += 'I' * (num%5)
 
 answer
-
+puts old_roman_numeral(768)
 
 end
-puts 'Please give me an integer between 1 and 3000'
-
-num =gets.chomp.to_i
-puts old_roman_numeral(num)

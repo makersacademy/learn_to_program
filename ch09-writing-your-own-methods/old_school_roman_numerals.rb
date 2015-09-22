@@ -1,5 +1,3 @@
-puts "Please pick a number between 1 and 3000 to be converted into Old Roman Numerals"
-num = gets.chomp.to_i
 def old_roman_numeral(num)
 	if (num > 0 && num <3001)
 		roman_num = " "

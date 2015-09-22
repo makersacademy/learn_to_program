@@ -1,9 +1,8 @@
-# Looked up the answer but below is my attempt to write code from memory (with occasional reference) rather than copying
-def sort array
-  recursive_sort array, []
+def dictionary_sort array
+  recursive_dictionary_sort array, []
 end
 
-def recursive_sort unsorted, sorted
+def recursive_dictionary_sort unsorted, sorted
   if unsorted.length <= 0
     return sorted
   end
@@ -11,7 +10,7 @@ def recursive_sort unsorted, sorted
   smallest = unsorted.pop
   still_unsorted = []
   unsorted.each { |object|
-    if object < smallest
+    if object.downcase < smallest.downcase
       still_unsorted.push smallest
       smallest = object
     else
@@ -19,7 +18,7 @@ def recursive_sort unsorted, sorted
     end
        }
   sorted.push smallest
-  recursive_sort still_unsorted, sorted
+  recursive_dictionary_sort still_unsorted, sorted
 end
 
 puts 'Hello, please input words, followed by the enter key. When you have finished, just press enter.'
@@ -31,4 +30,4 @@ while words != ''
   words = gets.chomp
 end
 
-puts sort(words_list)
+puts dictionary_sort(words_list)

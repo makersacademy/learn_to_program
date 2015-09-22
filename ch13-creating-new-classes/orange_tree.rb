@@ -25,7 +25,7 @@ class OrangeTree
     if @alive
       @height = @height + 0.4
       @orange_count = 0 # old oranges fall off
-      if @height > 10 && rand(2) > 0
+      if @height > 10.1
         # tree dies
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
@@ -57,7 +57,7 @@ class OrangeTree
   end
 end
 
-=begin i prefer mine, but it doesn't pass.
+=begin i prefer mine, but it doesn't pass, nor does the solution
 
 class OrangeTree
   def initialize

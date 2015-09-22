@@ -1,10 +1,10 @@
-def roman number
+def roman_numeral num
 	i_m = ''
 	i_c = ''
 	i_x = ''
 	i_i = ''
-	nl = number.length
-	n = number.to_i
+	nl = num.length
+	n = num.to_i
 	while nl > 0
 	 if nl == 4
 		i_m = "M" * (n/1000)
@@ -32,8 +32,10 @@ def roman number
 	 end
 	 if nl == 1 && (n >= 5 && n < 9)
 		i_i = "V" + "I" * (n - 5)
-	 elsif n < 5
+	 elsif n < 5 && n != 4 
 		i_i = "I" * n
+	 elsif n = 4
+	 	i_i = "I" + "V"
 	 elsif nl == 1 && n == 9
 		i_i = "I" + "X"	
 	 end
@@ -42,5 +44,5 @@ def roman number
 	puts "your roman number is: #{i_m}#{i_c}#{i_x}#{i_i}."
 end
 puts "Write the number that you want to convert:"
-number = gets.chomp 
-puts roman number
+num = gets.chomp 
+puts roman_numeral num

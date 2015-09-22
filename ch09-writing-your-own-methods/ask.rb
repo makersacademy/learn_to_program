@@ -14,14 +14,14 @@ def ask question
   		puts 'please answer "yes" or "no"'
   	end
   end
-
+   return
 end
 
 puts 'hello, and thank you for...'
 puts
 
 ask "do you like eating taco's?"
-aks 'do you like eating burritoes'
+ask 'do you like eating burritoes'
 wets_bed = ask 'do you wet the bed?'
 ask 'do you like eating chimichangers?'
 ask 'do you like eating sopapillas?'
@@ -30,7 +30,7 @@ ask 'do you like drinking horcahta?'
 ask 'do you like eating flautas?'
 
 puts 
-puts 'DEBRIEFING:'
-Puts 'Thank you for....'
+puts "DEBRIEFING:"
+puts "Thank you for...."
 puts
 puts wets_bed

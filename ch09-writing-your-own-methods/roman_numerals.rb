@@ -20,7 +20,7 @@ def roman_numeral num
 
 	if tens != 4 && tens != 9
 		result << "L" * (num % 100 / 50)
-		result << "X" * (num % 50 / 50)
+		result << "X" * (num % 50 / 10)
 	elsif tens == 4
 		result << "XL"
 	elsif tens == 9
@@ -39,3 +39,5 @@ def roman_numeral num
 	result
 
 end
+
+puts roman_numeral 10

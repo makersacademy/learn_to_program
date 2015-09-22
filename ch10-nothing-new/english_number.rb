@@ -2,7 +2,9 @@ def english_number(n)
   array = n.to_s.split('')
   lions = { 0 => 'thousand', 1 => 'million', 2 => 'billion', 3 => 'trillion', 4 => 'quadrillion', 5 => 'quintillion', 6 => 'sextillion', 7 => 'septillion', 8 => 'octillion',
     9 => 'nonillion', 10 => 'decillion', 11 => 'undecillion', 12 => 'duodecillion', 13 => 'tredecillion', 14 => 'quattuordecillion', 15 => 'quindecillion' }
-  if array.length % 3 == 0
+  if array.length <= 3
+    print "#{hundreds(n)}"
+  elsif array.length % 3 == 0
     while array.length > 0
       print "#{hundreds(array.shift(3).join('').to_i)} #{lions[(array.length-3)/3]} "
     end

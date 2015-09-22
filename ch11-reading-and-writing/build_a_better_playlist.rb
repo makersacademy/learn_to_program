@@ -1,31 +1,31 @@
 def music_shuffle filenames
   songs_and_paths = filenames.map do |s|
-    [s, s.split('/')] # [song, path]
+    [s, s.split('/')]
   end
   tree = {:root => []}
-  #  put each song into the tree
   songs_and_paths.each{|sp| insert_into_tree(tree, *sp)}
 
-  shuffle_branch = proc do |branch|
-    shuffled_subs = []
-    branch.each do |key, unshuffled|
-      shuffled_subs << if key == :root
-                         unshuffled # At this level, these are all duplicates.
-      else
-        shuffle_branch[unshuffled]
-      end
-    end
-    weighted_songs = []
-    shuffled_subs.each do |shuffled_songs|
-      shuffled_songs.each_with_index do |song, idx|
-        num = shuffled_songs.length.to_f
-        weight = (idx + rand) / num
-        weighted_songs << [song, weight]
-      end
-    end
-    weighted_songs.sort_by{|s,v| v}.map{|s,v| s}
+  shuffle_branch(tree)
+end
+
+def shuffle_branch branch
+  shuffled_subs = []
+  branch.each do |key, unshuffled|
+    shuffled_subs << if key == :root
+                       unshuffled
+                     else
+                       shuffle_branch unshuffled
+                     end
   end
-  shuffle_branch[tree]
+  weighted_songs = []
+  shuffled_subs.each do |shuffled_songs|
+    shuffled_songs.each_with_index do |song, idx|
+      num = shuffled_songs.length.to_f
+      weight = (idx + rand) / num
+      weighted_songs << [song, weight]
+    end
+  end
+  weighted_songs.sort_by{|s,v| v}.map{|s,v| s}
 end
 
 def insert_into_tree branch, song, path

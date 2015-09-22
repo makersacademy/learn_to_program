@@ -1,0 +1,1 @@
+puts "Hours in a year are: ", 365 * 24 * 60 

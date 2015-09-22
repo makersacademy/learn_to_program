@@ -1,0 +1,1 @@
+puts "Minutes in a decade: ", 10 * 365 * 24 * 60

@@ -18,7 +18,7 @@ def roman_numeral num
 
   #reverse 9's
    to_print.gsub!(/DCD/, 'CM')
-   to_print.gsub(/LXL/, 'XC')
+   to_print.gsub!(/LXL/, 'XC')
    to_print.gsub!(/VIV/, 'IX')
 
   to_print
@@ -26,6 +26,6 @@ def roman_numeral num
 end
 
 
-puts roman_numeral 9999
+puts roman_numeral 1982
 puts roman_numeral 4444
 

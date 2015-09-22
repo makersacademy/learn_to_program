@@ -1,7 +1,5 @@
 def old_roman_numeral num
   # your code here
-def old_roman_numeral num
-  # your code here
 
   chars = { 1000 => "M", 500 => "D", 100 => "C", 50 => "L", 10 => "X", 5 => "V" }
   numAry = [1000, 500, 100, 50, 10, 5]

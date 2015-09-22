@@ -1,5 +1,13 @@
+def ninety_nine_bottles_of_beer(n)
+  counter = n
+  while counter > 0 
+  puts "\t#{exp(counter)} bottles of beer on the wall, #{exp(counter)} bottles of beer!\n\tTake one down and pass it around, #{exp(counter-1)} bottles of beer on the wall!"
+  counter -= 1
+  end
+end
+
 def hundreds(n)
-  words = { '1' => 'one', '2' => 'two', '3' => 'three', '4' => 'four', '5' => 'five', '6' => 'six', '7' => 'seven', '8' => 'eight', '9' => 'nine', '10' => 'ten',
+  words = { '0' => 'zero', '1' => 'one', '2' => 'two', '3' => 'three', '4' => 'four', '5' => 'five', '6' => 'six', '7' => 'seven', '8' => 'eight', '9' => 'nine', '10' => 'ten',
     '11' => 'eleven', '12' => 'twelve', '13' => 'thirteen', '14' => 'fourteen', '15' => 'fifteen', '16' => 'sixteen', '17' => 'seventeen',
     '18' => 'eighteen', '19' => 'nineteen', '20' => 'twenty', '30' => 'thirty', '40' => 'forty', '50' => 'fifty', '60' => 'sixty', '70' => 'seventy',
     '80' => 'eighty', '90' => 'ninety', '100' => 'hundred', '1000' => 'thousand', '1000000' => 'million'}
@@ -33,10 +41,5 @@ def exp(n)
   end
 end
 
-def nnbb(n)
-  counter = n
-  while counter > 0 
-  puts "\t#{exp(counter)} bottles of beer on the wall, #{exp(counter)} bottles of beer!\n\tTake one down and pass it around, #{exp(counter-1)} bottles of beer on the wall!"
-  counter -= 1
-  end
-end
+ninety_nine_bottles_of_beer(10)
+

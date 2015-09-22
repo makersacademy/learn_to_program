@@ -57,7 +57,7 @@ class OrangeTree
   end
 end
 
-=begin i prefer mine, but it doesn't pass, nor does the solution
+=begin i prefer mine, but it doesn't pass, nor does the solution. the rspec tests are ridiculously narrow
 
 class OrangeTree
   def initialize

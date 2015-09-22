@@ -12,5 +12,3 @@ def old_roman_numeral num
 	result
 
 end
-
-puts old_roman_numeral 1999

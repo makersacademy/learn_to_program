@@ -1,6 +1,20 @@
-def english_number n
+def english_number(n)
+  array = n.to_s.split('')
+  lions = { 0 => 'thousand', 1 => 'million', 2 => 'billion', 3 => 'trillion', 4 => 'quadrillion', 5 => 'quintillion', 6 => 'sextillion', 7 => 'septillion', 8 => 'octillion',
+    9 => 'nonillion', 10 => 'decillion', 11 => 'undecillion', 12 => 'duodecillion', 13 => 'tredecillion', 14 => 'quattuordecillion', 15 => 'quindecillion' }
+  if array.length % 3 == 0
+    while array.length > 0
+      print "#{hundreds(array.shift(3).join('').to_i)} #{lions[(array.length-3)/3]} "
+    end
+  else
+    print "#{hundreds(array.shift(array.length % 3).join('').to_i)} #{lions[(array.length-3)/3]} "
+    english_number(array.join('').to_i)
+  end
+end
+
+def hundreds(n)
   word = n.to_s.split('')
-  words = { '1' => 'one', '2' => 'two', '3' => 'three', '4' => 'four', '5' => 'five', '6' => 'six', '7' => 'seven', '8' => 'eight', '9' => 'nine', '10' => 'ten',
+  words = { '0' => 'zero', '1' => 'one', '2' => 'two', '3' => 'three', '4' => 'four', '5' => 'five', '6' => 'six', '7' => 'seven', '8' => 'eight', '9' => 'nine', '10' => 'ten',
     '11' => 'eleven', '12' => 'twelve', '13' => 'thirteen', '14' => 'fourteen', '15' => 'fifteen', '16' => 'sixteen', '17' => 'seventeen',
     '18' => 'eighteen', '19' => 'nineteen', '20' => 'twenty', '30' => 'thirty', '40' => 'forty', '50' => 'fifty', '60' => 'sixty', '70' => 'seventy',
     '80' => 'eighty', '90' => 'ninety', '100' => 'hundred' }
@@ -20,12 +34,3 @@ def english_number n
     "#{words[word[0]]} #{words['100']} #{words[(word[1].to_i*10).to_s]}-#{words[word[2]]}"
   end
 end
-
-puts english_number(1)
-puts english_number(10)
-puts english_number(35)
-puts english_number(79)
-puts english_number(103)
-puts english_number(816)
-puts english_number(923)
-puts english_number(911)

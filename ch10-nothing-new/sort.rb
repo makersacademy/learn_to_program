@@ -19,8 +19,7 @@ def rec_sort unsorted, sorted
 		end
 	end
 
-sorted.push smallest
-still_unsorted = 
+sorted.push smallest 
 
 rec_sort still_unsorted, sorted
  

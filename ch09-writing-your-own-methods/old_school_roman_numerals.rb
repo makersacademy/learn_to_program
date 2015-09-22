@@ -35,6 +35,6 @@ def roman number
     end
 	puts "your roman number is: #{i_m}#{i_c}#{i_x}#{i_i}."
 end
-
+puts "Write the number that you want to convert:"
 number = gets.chomp 
 puts roman number

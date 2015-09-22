@@ -19,6 +19,3 @@ def old_roman_numeral num
   roman_string
 
 end
-
-puts 'Please enter a number to translate'
-puts old_roman_numeral gets.chomp.to_i

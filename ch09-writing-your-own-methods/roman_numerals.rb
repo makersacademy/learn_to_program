@@ -43,6 +43,3 @@ def roman_numeral num
   roman
 
 end
-
-puts 'Please enter a number to translate'
-puts roman_numeral gets.chomp.to_i

@@ -29,6 +29,6 @@ else
 	roman_digits = 'I' * digits
 end
 
-puts roman_thousands+roman_hundreds+roman_tens+roman_digits
+return roman_thousands+roman_hundreds+roman_tens+roman_digits
 
 end

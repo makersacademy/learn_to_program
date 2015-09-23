@@ -20,7 +20,7 @@ def shuffle arr
   return arr
 end
 
-#=begin
+=begin
 num_array = []
 num = ""
 
@@ -35,4 +35,4 @@ end
 shuffle num_array
 
 num_array.each { |n| puts n}
-#=end
+=end

@@ -2,14 +2,14 @@ def sort some_array
 	recursive_sort some_array, []
 end
 
-def recusive_sort unsorted_array, sorted_array
+def recursive_sort unsorted_array, sorted_array
 	if unsorted_array.length <= 0
-		return sorted
+		return sorted_array
 	end
 
 	smallest = unsorted_array.pop
 	still_unsorted = []
-	unsorted.each {|object|
+	unsorted_array.each {|object|
 		if object < smallest
 			still_unsorted.push smallest
 			smallest = object
@@ -17,6 +17,6 @@ def recusive_sort unsorted_array, sorted_array
 			still_unsorted.push object
 		end
 			}
-		sorted.push smallest
-		recursive_sort still_unsorted, sorted
+		sorted_array.push smallest
+		recursive_sort still_unsorted, sorted_array
 end

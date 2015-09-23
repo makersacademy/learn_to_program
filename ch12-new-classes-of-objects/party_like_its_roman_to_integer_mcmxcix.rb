@@ -18,7 +18,7 @@ def roman_to_integer roman
   roman.gsub!(/I/, ' 1')
 
   p = (roman.split(' ').map{|x| x.to_i}).reduce(:+)
-  puts "POTATO LIKE IT'S #{p}"
+  #puts "POTATO LIKE IT'S #{p}"
 end
 
 

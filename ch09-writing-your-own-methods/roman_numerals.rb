@@ -23,16 +23,20 @@ else
 end
 
 #working out how to write digits
-if digits.between?(5,8)
+if digits.between?(0,3)
+	roman_digits = 'I' * digits
+elsif digits == 4
+	roman_digits = 'IV'  
+elsif digits.between?(5,8)
 	roman_digits = 'V' + ('I' * (digits - 5))
 elsif digits == 9
 	roman_digits = 'IX'
-elsif digits = 4
-	roman_digits = 'IV'  
-elsif digits.between?(0,3)
-	roman_digits = 'I' * digits
 end
 
 return roman_thousands+roman_hundreds+roman_tens+roman_digits
 
+end
+
+for i in 1..3000
+	roman_numeral i
 end

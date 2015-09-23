@@ -6,7 +6,6 @@ def sort arr
 end
 
 def recursive_sort unsorted, sorted
-  puts unsorted.join(', R! ')
   if unsorted.length <= 0
   return sorted
   end

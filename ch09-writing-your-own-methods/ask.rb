@@ -6,7 +6,6 @@ def ask question
     return "false" if reply == "no"
     puts 'Please answer "yes" or "no"'
   end
-  answer
 end
 
-ask "Do you like Tacos"
+puts(ask "Do you like Tacos")

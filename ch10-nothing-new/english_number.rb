@@ -231,13 +231,3 @@ def english_number number
 
   num_string
 end
-
-puts english_number 10000
-puts english_number 35000
-puts english_number 150000
-puts english_number 500000
-puts english_number 3500000
-puts english_number 7300000
-
-
-

@@ -1,23 +1,27 @@
-def sort array
-	temp = []
-	if array.length == 0
-		return 0
-	end
+array = ["o","b","c","z","m"]
+def sort array # This "wraps" recursive_sort.
+    recursive_sort array, [] 
+end
+def recursive_sort unsorted_array, sorted_array
+    if unsorted_array.length <= 0
+    	puts "hello"
+    end
 	x = 0
 	y = 0
-	while y < array.length
-		if array[x] < array[y]
+	while y < unsorted_array.length
+		if unsorted_array[x] < unsorted_array[y]
 			y += 1
-		elsif array[x] > array[y]
+		elsif unsorted_array[x] > unsorted_array[y]
 			x = y
 			y += 1
 		else
 			y += 1
-		end 
+		end 	
+		sorted_array.push(unsorted_array[x])
+		unsorted_array.delete(unsorted_array[x])
+		recursive_sort(unsorted_array, sorted_array)
 	end
-	temp.push(array[x])	
-	array.delete(array[x])
-	temp = temp + sort(array)
-end
-array = ["o","b","c","z","m"]
-puts sort(array)
+end 
+
+print sort(array)
+

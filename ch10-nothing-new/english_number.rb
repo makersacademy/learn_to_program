@@ -54,7 +54,7 @@ def english_number number
   if write > 0
     # Now here's a really sly trick:
     quindecillions  = english_number write
-    numString = numString + quindecillions + ' quindecillions'
+    numString = numString + quindecillions + ' quindecillion'
 
     if left > 0
       # So we don't write 'two thousandfifty-one'...

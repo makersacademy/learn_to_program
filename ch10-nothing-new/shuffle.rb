@@ -20,6 +20,11 @@ def shuffle arr
   return arr
 end
 
+puts shuffle [1,2,3,4,5,6,7,8,9]
+
+
+
+
 =begin
 num_array = []
 num = ""

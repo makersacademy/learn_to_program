@@ -18,8 +18,10 @@ def sort arr
       index += 1
     end
   end
+  return arr
 end
 
+=begin
 word_array = []
 word = ""
 
@@ -34,3 +36,4 @@ end
 sort word_array
 
 word_array.each { |w| puts w}
+=end

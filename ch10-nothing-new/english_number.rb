@@ -111,19 +111,8 @@ def english_number number
     else
       number = 0
     end
-
-
-
-
   end
 
   str.strip
 
 end
-
-
-
-puts english_number(560123)
-puts english_number(560123000)
-puts english_number(560123000000)
-puts english_number(560123000000000)

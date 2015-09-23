@@ -8,9 +8,9 @@ def shuffle arr
       n = arr[index]
       nn = arr[index+1]
 
-      shuffle_word = rand(length) < (length/2)
+      shuffle_it = rand(length) < (length/2)
 
-      if shuffle_word
+      if shuffle_it
         arr[index] = nn
         arr[index+1] = n
       end

@@ -1,4 +1,4 @@
-def sort some_array
+def dictionary_sort some_array
 	recursive_sort some_array, []
 end
 

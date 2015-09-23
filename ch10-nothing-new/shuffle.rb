@@ -1,3 +1,9 @@
 def shuffle arr
-  # your code here
+  if arr.length < 0
+  	return nil
+  else
+  	arr.shuffle
+  end
+   
 end
+

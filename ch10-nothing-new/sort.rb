@@ -31,8 +31,3 @@ def recursive_sort unsorted, sorted
   sorted.push smallest
   recursive_sort still_unsorted, sorted
 end
-
-=begin
-words = ['hip', 'snuggle', 'bowl', 'leaves', 'sofa', 'calendar', 'minecraft']
-puts (sort words).join(', ')
-=end

@@ -1,11 +1,9 @@
-
 def shuffle arr
   rec_shuffle arr, []
 end
 
 def rec_shuffle unshuffled, shuffled
   seed = rand(unshuffled.length)
-  puts 'SEED: ' + seed.to_s
   if (seed.is_a? Integer) == false
     return
   else

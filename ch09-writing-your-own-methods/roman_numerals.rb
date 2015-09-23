@@ -27,11 +27,10 @@ if digits.between?(5,8)
 	roman_digits = 'V' + ('I' * (digits - 5))
 elsif digits == 9
 	roman_digits = 'IX'
-elsif roman_digits = 4
+elsif digits = 4
 	roman_digits = 'IV'  
-else
+elsif digits.between?(0,3)
 	roman_digits = 'I' * digits
-
 end
 
 return roman_thousands+roman_hundreds+roman_tens+roman_digits

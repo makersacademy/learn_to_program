@@ -63,7 +63,7 @@ def old_roman_numeral num
  		elsif i == 4
  			roman_num = roman_num + "IIII"
  		end
-		print roman_num
+		return roman_num
  	else
  		"Number is not between 1 and 3000"
  	end	

@@ -49,6 +49,3 @@ def roman_numeral num
     end
 	puts "your roman number is: #{i_m}#{i_c}#{i_x}#{i_i}."
 end
-puts "Write the number that you want to convert:"
-num = gets.chomp 
-puts roman_numeral num

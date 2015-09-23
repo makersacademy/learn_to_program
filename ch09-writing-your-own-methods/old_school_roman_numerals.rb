@@ -4,7 +4,7 @@ def old_roman_numeral num
 	i_x = ''
 	i_i = ''
 	nl = num.length
-	n = num.to_i
+	n = num
 	while nl > 0
 	 if nl == 4
 		i_m = "M" * (n/1000)
@@ -34,5 +34,4 @@ def old_roman_numeral num
 	puts "your roman number is: #{i_m}#{i_c}#{i_x}#{i_i}."
 end
 puts "Write the number that you want to convert:"
-num = gets.chomp 
 puts old_roman_numeral num

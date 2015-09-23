@@ -2,7 +2,7 @@ def shuffle some_array
 	recursive_shuffle some_array, []
 end
 
-def recursive_sort unshuffled_array, shuffled_array
+def recursive_shuffle unshuffled_array, shuffled_array
 	if unshuffled_array.length <= 0
 		return shuffled_array
 	end

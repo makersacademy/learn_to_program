@@ -11,8 +11,8 @@ def shuffle arr
       shuffle_it = rand(length) < (length/2)
 
       if shuffle_it
-        arr[index] = nn
-        arr[index+1] = n
+        arr[index] = nn.to_i
+        arr[index+1] = n.to_i
       end
       index += 1
     end

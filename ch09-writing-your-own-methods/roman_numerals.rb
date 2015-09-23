@@ -36,7 +36,3 @@ end
 return roman_thousands+roman_hundreds+roman_tens+roman_digits
 
 end
-
-for i in 1..3000
-	roman_numeral i
-end

@@ -1,5 +1,8 @@
-def sort (array,array_sorted)
-	return 0 if array.length <= 0
+def sort array
+	temp = []
+	if array.length == 0
+		return 0
+	end
 	x = 0
 	y = 0
 	while y < array.length
@@ -10,10 +13,11 @@ def sort (array,array_sorted)
 			y += 1
 		else
 			y += 1
-		end 	
-		array_sorted.push(array[x])
-		array.delete(array[x])
-		sort(array,array_sorted)
+		end 
 	end
+	temp.push(array[x])	
+	array.delete(array[x])
+	temp = temp + sort(array)
 end
-end
+array = ["o","b","c","z","m"]
+puts sort(array)

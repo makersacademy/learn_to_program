@@ -1,7 +1,6 @@
 def roman_numeral num
-	num = num.to_i
-	if (num > 0 && num <3001)
-		roman_num = " "
+	if (num > 0 && num < 3001)
+		roman_num = ""
  	m = num/1000
 	 	if m == 1
 	 		roman_num = roman_num + "M"
@@ -37,20 +36,24 @@ def roman_numeral num
  
 
  	x = ((((num % 1000) % 500) % 100) % 50) /10
- 		if x == 1
- 			roman_num = roman_num + "X"
- 		elsif x == 2
- 			roman_num = roman_num + "XX"
- 		elsif x == 3
- 			roman_num = roman_num + "XXX"
- 		elsif x == 4
- 			roman_num = roman_num + "XL"
- 		end
- 
-
+	 		if x == 1
+	 			roman_num = roman_num + "X"
+	 		elsif x == 2
+	 			roman_num = roman_num + "XX"
+	 		elsif x == 3
+	 			roman_num = roman_num + "XXX"
+	 		elsif x == 4
+	 			roman_num = roman_num + "XL"
+	 		end
+	 
+		if num % 10 == 9
+ 			roman_num = roman_num + "IX"
+ 			num = num - 9
+ 		else	 
  	v = (((((num % 1000) % 500) % 100) % 50) % 10) / 5
- 		if v == 1
- 			roman_num = roman_num + "V"
+ 			if v == 1
+ 				roman_num = roman_num + "V"
+ 			end
  		end
  
 
@@ -64,9 +67,9 @@ def roman_numeral num
  		elsif i == 4
  			roman_num = roman_num + "IV"
  		end
-
- 	puts roman_num
+		return roman_num
  	else
  		"Number is not between 1 and 3000"
  	end	
 end
+

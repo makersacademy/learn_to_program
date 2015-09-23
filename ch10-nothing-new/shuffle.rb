@@ -17,12 +17,12 @@ def shuffle arr
       index += 1
     end
   end
-  return arr
+
+  new_arr = arr
+  return new_arr
 end
 
-puts shuffle [1,2,3,4,5,6,7,8,9]
-
-
+#puts shuffle [1,2,3,4,5,6,7,8,9]
 
 
 =begin

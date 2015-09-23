@@ -20,5 +20,3 @@ def roman_numeral num
   end
 roman = thousands + hundreds + tens + units
 end
-
-puts (roman_numeral(2494))

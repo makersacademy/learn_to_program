@@ -16,46 +16,47 @@ class Integer
 
   def to_roman
     roman = ''
+    num = self
 
-    roman += 'M' * (self / 1000)
+    roman += 'M' * (num / 1000)
 
 
-    if self % 1000 / 100 == 9
+    if num % 1000 / 100 == 9
       roman += 'CM'
     else
-      roman += 'D' * (self % 1000 / 500)
-      if self % 500 / 100 == 4
+      roman += 'D' * (num % 1000 / 500)
+      if num % 500 / 100 == 4
         roman += 'CD'
       else
-        roman += 'C' * (self % 500 / 100)
+        roman += 'C' * (num % 500 / 100)
       end
     end
 
 
-    if self % 100 / 90 == 1
-      roman += 'XC' * (self % 100 / 90)
+    if num % 100 / 90 == 1
+      roman += 'XC' * (num % 100 / 90)
     else  
-      roman += 'L' * (self % 100 / 50)
-      if self % 50 / 10 == 4
+      roman += 'L' * (num % 100 / 50)
+      if num % 50 / 10 == 4
         roman += 'XL'
       else  
-        roman += 'X' * (self % 50 / 10)
+        roman += 'X' * (num % 50 / 10)
       end
     end
     
     
-    if self % 10 == 9
+    if num % 10 == 9
       roman += 'IX'  
     else
-      roman += 'V' * (self % 10 / 5)    
-      if self % 5 == 4
+      roman += 'V' * (num % 10 / 5)    
+      if num % 5 == 4
         roman += 'IV'
       else
-        roman += 'I' * (self % 5)
+        roman += 'I' * (num % 5)
       end   
     end
 
-    return roman
+    roman
 
   end
 

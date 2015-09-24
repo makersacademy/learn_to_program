@@ -13,54 +13,27 @@ class Integer
   
   end
 
-
   def to_roman
-    roman = ''
     num = self
+    letters = [[1000, 'M'],
+             [500, 'D'],
+             [100, 'C'],
+             [50, 'L'],
+             [10, 'X'],
+             [5, 'V'],
+             [1, 'I']]
 
-    roman += 'M' * (num / 1000)
+    remaining = num
+    roman_string = ''
 
-
-    if num % 1000 / 100 == 9
-      roman += 'CM'
-    else
-      roman += 'D' * (num % 1000 / 500)
-      if num % 500 / 100 == 4
-        roman += 'CD'
-      else
-        roman += 'C' * (num % 500 / 100)
-      end
+    letters.each do |letter|
+      units = remaining / letter[0]
+      remaining -= units * letter[0]
+      roman_string << letter[1] * units
     end
 
+    roman_string
 
-    if num % 100 / 90 == 1
-      roman += 'XC' * (num % 100 / 90)
-    else  
-      roman += 'L' * (num % 100 / 50)
-      if num % 50 / 10 == 4
-        roman += 'XL'
-      else  
-        roman += 'X' * (num % 50 / 10)
-      end
-    end
-    
-    
-    if num % 10 == 9
-      roman += 'IX'  
-    else
-      roman += 'V' * (num % 10 / 5)    
-      if num % 5 == 4
-        roman += 'IV'
-      else
-        roman += 'I' * (num % 5)
-      end   
-    end
-
-    roman
-
-  end
-
-
-  
+  end  
 
 end

@@ -1,6 +1,6 @@
 def shuffle arr
   shuf = []
-  while arr.lengts < 0
+  while arr.length > 0
   	index = 0 
   	rand_ind = rand(arr.lengts)
   	new_arr = []

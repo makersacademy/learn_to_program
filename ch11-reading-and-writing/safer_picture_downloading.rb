@@ -1,5 +1,5 @@
 # your code here
-Dir.chdir '~/Pictures'
+Dir.chdir('~/Pictures')
 pic_names = Dir['~/Downloads/**/*{.jpg,.JPG}']
 
 puts 'What would you like to call this batch?'
@@ -18,7 +18,8 @@ pic_names.each do |name|
 					"#{batch_name}#{pic_number}.jpg"
 		   		end
 
-	if File.exist?(new_name,)
+	if File.exist?(new_name)
+		puts "This name already exists."
 		rename_file(name)
 		pic_number = pic_number + 1
 	else
@@ -40,4 +41,4 @@ def rename_file nme
 		File.rename nme, nme1
 	end
 end
-	end
+

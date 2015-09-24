@@ -13,7 +13,7 @@ def shuffle(filenames)
 end
 
 def cut(filenames)
-  # doesn't need to be random, but let's be fancy in stead of boring 
+  # doesn't need to be random, but let's be fancy in stead of boring
   # cut in half
   cutoff = rand(filenames.length)
   filenames[cutoff..-1] + filenames[0...cutoff]
@@ -22,8 +22,3 @@ end
 def music_shuffle(filenames)
   cut(shuffle(filenames.sort))
 end
-
-songs = ['aa/bbb', 'aa/ccc', 'aa/ddd', 'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
-
-puts music_shuffle(songs).inspect
-

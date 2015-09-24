@@ -3,12 +3,12 @@ def ask question
 		puts question
 		reply = gets.chomp.downcase
 
-		if (reply == 'yes' || reply == "no")
+		if reply == 'yes'
 			 return true
-		else
-			puts 'Please answer "yes" or "no".'
 		end
+		if reply == 'no'
+			 return false
+		end
+		puts 'Please answer "yes" or "no".'
 	end
 end
-
-ask "ciao"

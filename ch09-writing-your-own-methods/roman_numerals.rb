@@ -105,15 +105,28 @@ def roman_numeral num
   			end
   		end
   	end
+
   elsif (num == 1000)
   	 "M"
+
+  elsif (num == 1999)
+    "MCMXCIX"
+
   elsif (num > 1000 and num < 3001)
   	if (num%1000 >= 500)
   		if (num%100 >= 50)
   			if (num%10 >= 5)
-  				 "M"*(num/1000) + "D" + "C"*(((num%1000)/100) - 5) + "L" + "X"*((num%100)/10 - 5) + "V" + "I"*(num%10 -5)
+          if (num%10 != 9)
+            "M"*(num/1000) + "D" + "C"*(((num%1000)/100) - 5) + "L" + "X"*((num%100)/10 - 5) + "V" + "I"*(num%10 -5)
+          else
+            "M"*(num/1000) + "D" + "C"*(((num%1000)/100) - 5) + "L" + "X"*((num%100)/10 - 5) + "IX"
+          end
   			else
-  				 "M"*(num/1000) + "D" + "C"*(((num%1000)/100) - 5) + "L" + "X"*((num%100)/10 - 5)  + "I"*(num%10)
+          if (num%10 != 4)
+  				  "M"*(num/1000) + "D" + "C"*(((num%1000)/100) - 5) + "L" + "X"*((num%100)/10 - 5)  + "I"*(num%10)
+          else
+            "M"*(num/1000) + "D" + "C"*(((num%1000)/100) - 5) + "L" + "X"*((num%100)/10 - 5) + "IV"
+          end
   			end
   		else
   			if (num%10 >= 5)

@@ -1,3 +1,8 @@
 def profile block_description, &block
-  # your code here
+  start_time = Time.new
+  block[]
+  elapsed = Time.new - start_time
+  puts "#{block_description}: #{elapsed} seconds"
+  block[]
 end
+

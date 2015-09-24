@@ -2,7 +2,7 @@ def shuffle arr
   # your code here
 	arr_shuffled = []
 	length = arr.length
-	arr = arr2
+	arr2 = arr
 
 	while length > 0
 		random_index = rand(length)

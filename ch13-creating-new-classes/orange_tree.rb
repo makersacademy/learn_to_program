@@ -1,12 +1,13 @@
 class OrangeTree
 
-  @height = 0
-  @fruit = 0
-  @alive = true
-
+  def initialize
+    @height = 0
+    @fruit = 0
+    @alive = true
+  end
 
   def height
-    @alive ? @height : 'A dead tree is not very tall. :('
+    @alive ? @height.round(1) : 'A dead tree is not very tall. :('
   end
 
 
@@ -20,15 +21,15 @@ class OrangeTree
       @height += 0.4
       @fruit = 0
 
-      if @height > 12
+      if @height.round(1) > 10
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2
-        @orange_count = (@height * 15 - 25).to_i
-        "This year your tree grew to #{@height}m tall, " +
+        @fruit = (@height * 15 - 25).to_i
+        "This year your tree grew to #{@height.round(1)}m tall, " +
         "and produced #{@fruit} oranges."
       else
-        "This year your tree grew to #{@height}m tall, " +
+        "This year your tree grew to #{@height.round(1)}m tall, " +
         "but is still too young to bear fruit."
       end
 

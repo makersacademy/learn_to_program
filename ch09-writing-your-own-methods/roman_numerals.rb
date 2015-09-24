@@ -1,5 +1,4 @@
 def roman_numeral num
-def roman_numeral num
 
 thous = (num / 1000)
 hunds = (num % 1000 / 100)
@@ -33,8 +32,6 @@ roman += 'IV'
 else
 roman += 'V' * (num % 10 / 5)
 roman += 'I' * (num % 5 / 1)
-end
-
 end
 
 end

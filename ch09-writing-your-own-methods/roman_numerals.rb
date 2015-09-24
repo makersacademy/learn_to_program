@@ -75,10 +75,10 @@ def roman_numeral num
   elsif (num == 500)
   	 "D"
 
-  elsif (num > 500 and num < 1000)
+  elsif (num > 500 and num < 899)
   	if ( num%100 >= 50)
   		if (num%10 >= 5)
-  			if(num != 9)
+  			if(num%10 != 9)
   				"D" + "C"*(num/100 - 5) + "L" + "X"*((num%100)/10 - 5) + "V" + "I"*(num%10 -5)
   			else
   				"D" + "C"*(num/100 - 5) + "L" + "X"*((num%100)/10 - 5) + "IX"
@@ -92,13 +92,13 @@ def roman_numeral num
   		end
   	else
   		if (num%10 >= 5)
-  			if (num != 9)
+  			if (num%10 != 9)
   			 	"D" + "C"*(num/100 - 5) + "X"*(num%100/10) + "V" + "I"*(num%10 -5)
   			else 
   				"D" + "C"*(num/100 - 5) + "X"*(num%100/10) + "IX"
   			end
   		else
-  			if (num != 4)
+  			if (num%10 != 4)
   			 	"D" + "C"*(num/100 - 5) + "X"*(num%100/10) + "I"*(num%10)
   			else
   				"D" + "C"*(num/100 - 5) + "X"*(num%100/10) + "IV"
@@ -131,18 +131,19 @@ def roman_numeral num
   			end
   		else
   			if (num%10 >= 5)
-  				 "M"*(num/1000)   + "C"*((num%1000)/100)  + "X"*((num%100)/10) + "V" + "I"*(num%10 -5)
+          if(num%10 != 9)
+  				  "M"*(num/1000)   + "C"*((num%1000)/100)  + "X"*((num%100)/10) + "V" + "I"*(num%10 -5)
+          else
+            "M"*(num/1000)   + "C"*((num%1000)/100)  + "X"*((num%100)/10) + "IX"
+          end
   			else
-  				 "M"*(num/1000)  + "C"*((num%1000)/100) + "X"*((num%100)/10)  + "I"*(num%10)
+          if (num%10 != 4)
+  				  "M"*(num/1000)  + "C"*((num%1000)/100) + "X"*((num%100)/10)  + "I"*(num%10)
+          else
+            "M"*(num/1000)  + "C"*((num%1000)/100) + "X"*((num%100)/10)  + "IV"
+          end
   			end
   		end
   	end
   end
 end
-
-puts roman_numeral 4
-puts roman_numeral 9
-puts roman_numeral 29
-puts roman_numeral 1654
-puts roman_numeral 1155
-puts roman_numeral 2489

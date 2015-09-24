@@ -2,11 +2,12 @@ def shuffle arr
   # your code here
 	arr_shuffled = []
 	length = arr.length
+	arr = arr2
 
 	while length > 0
 		random_index = rand(length)
-		y = arr.at(random_index)
-		arr.delete_at(random_index)
+		y = arr2.at(random_index)
+		arr2.delete_at(random_index)
 		arr_shuffled.push(y)
 		length -= 1
 	end

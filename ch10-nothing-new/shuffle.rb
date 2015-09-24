@@ -18,6 +18,3 @@ def shuffle arr
 	end
 	shuf
 end
-
-
-puts shuffle ['billy','mindy','sally','josh', 'sam']

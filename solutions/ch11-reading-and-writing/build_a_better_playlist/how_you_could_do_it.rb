@@ -9,7 +9,9 @@ def music_shuffle filenames
   # already be, and we don't want it to be *too* random.
   filenames = filenames.sort
   len = filenames.length
-
+  
+  puts "Original deck: "
+  puts filenames.inspect
   # Now we shuffle twice.
   2.times do
     l_idx = 0 # index of next card in left pile
@@ -29,8 +31,9 @@ def music_shuffle filenames
         l_idx = l_idx + 1
       end
     end
-
     filenames = shuf
+    puts "Shuffle: "
+    puts filenames.inspect
   end
   # And cut the deck.
   arr = []
@@ -41,9 +44,11 @@ def music_shuffle filenames
     arr.push(filenames[(idx+cut)%len])
     idx = idx + 1
   end
-  
+  puts "Cut: "
+  puts arr.inspect
   arr
 end
-# songs = ['aa/bbb', 'aa/ccc', 'aa/ddd',
-#          'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
-# puts(music_shuffle(songs))
+
+#songs = %w(a b c d e f g)
+songs = ['aa/bbb', 'aa/ccc', 'aa/ddd', 'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
+music_shuffle(songs).inspect

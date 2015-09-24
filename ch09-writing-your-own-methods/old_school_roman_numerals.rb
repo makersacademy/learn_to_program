@@ -7,4 +7,3 @@ def old_roman_numeral num
   rom = rom + "I" * (num % 10)
   rom
 end
-puts (old_roman_numeral (1355))

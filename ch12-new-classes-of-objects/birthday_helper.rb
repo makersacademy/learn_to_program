@@ -1,12 +1,18 @@
-f = File.new(__dir__ + '/birthday_list.txt')
-arr = f.map { |line| line.scan(/^([\w\s]+),\s(.{3}\s\d+,\s\d{4})$/) }.flatten
-DOB_LIST = Hash[*arr]
+#f = File.new(__dir__ + '/birthday_list.txt')
+#arr = f.map { |line| line.scan(/^([\w\s]+),\s(.{3}\s\d+,\s\d{4})$/) }.flatten
+#DOB_LIST = Hash[*arr]
+
+DOB = Hash.new
+# easier to read than my first attempt with a regex
+File.readlines(__dir__ + '/birthday_list.txt').each do |line|
+  name, date, year = line.split(',')
+  DOB[name] = "#{date}, #{year}"
+end
 
 def question
   puts
-  puts "Welcome to my special birthday calendar. Please type in the person's name"
-  puts "whose date of birth you want ('quit' to exit the program): "
-  DOB_LIST.each { |name, _| puts "  - #{name}" }
+  puts "Type a name to see this person's birthday: "
+  DOB.each { |name, _| puts "  - #{name}" }
   puts
   input
   
@@ -27,12 +33,13 @@ def input
 end
 
 def response(answer)
-  if DOB_LIST.key?(answer)
-    puts DOB_LIST[answer]
-    puts "That was fun. Type another name. Type 'list' for the list of names or 'quit' to exit."
+  if DOB.key?(answer)
+    puts DOB[answer]
+    puts "That was fun. Try another name."
+    puts "Type 'list' for the list of names or 'quit' to exit."
     input
   else
-    puts "Sorry, that name is not in the list. Make sure you have typed in the correct name"
+    puts "Sorry, that name is not in the list."
     puts "Type 'list' for the list of names or 'quit' to exit."
     input
   end

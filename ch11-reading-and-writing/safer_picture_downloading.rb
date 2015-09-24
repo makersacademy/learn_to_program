@@ -1,6 +1,6 @@
 # your code here
-Dir.chdir('~/Pictures')
-pic_names = Dir['~/Downloads/**/*{.jpg,.JPG}']
+Dir.chdir('/Users/chukaebi/Pictures/')
+pic_names = Dir['/Users/chukaebi/Downloads/**/*{.jpg,.JPG}']
 
 puts 'What would you like to call this batch?'
 

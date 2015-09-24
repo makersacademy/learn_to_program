@@ -17,5 +17,3 @@ def roman_to_integer roman
   end
    b
 end
-
-puts roman_to_integer 'xxi'

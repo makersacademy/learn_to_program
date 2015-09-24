@@ -6,12 +6,12 @@ class OrangeTree
 
 
   def height
-    { @alive ? @height : 'A dead tree is not very tall. :(' }
+    @alive ? @height : 'A dead tree is not very tall. :('
   end
 
 
   def count_the_oranges
-    { @alive? ? @fruit : 'A dead tree has no oranges. :(' }
+    @alive ? @fruit : 'A dead tree has no oranges. :('
   end
 
 

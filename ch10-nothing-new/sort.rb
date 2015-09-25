@@ -1,32 +1,29 @@
 def sort arr
-
-	sorting arr, []
-	  
+	rec_sort arr, []
 end
 
-def sorting unsorted, sorted
+def rec_sort unsorted, sorted
 
-	
-	current_item = unsorted.pop
+	if unsorted.length <= 0
+		return sorted
+	end
 
+smallest = unsorted.pop
+still_unsorted = []
+unsorted.each do |tested_object|
 
-		
-		if current_item < current_smallest
-			still_unsorted.push current_smallest
-			current_smallest = current_item
-		else	
-			unsorted_array.push current_item
-		end	
+	if tested_object < smallest
+		still_unsorted.push smallest
+		smallest = tested_object
+	else
+		still_unsorted.push tested_object
+	end
 
-		if unsorted == unsorted[]
-			sorted.push current_smallest
-			break
-		end
+	end
 
-	sorting still_unsorted sorted	
+sorted.push smallest
 
-end	
+rec_sort still_unsorted, sorted
+end
 
-my_array = ["grape", "apple", "satsuma", "carrot"]
-
-puts sort my_array
+puts(sort(['give','me','cheese','now','a','can']))

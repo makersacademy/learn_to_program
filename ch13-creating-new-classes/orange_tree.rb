@@ -1,7 +1,7 @@
 class OrangeTree
 	def initialize
 		@age = 0
-		@height = 1
+		@height = 0
 		@orange_count = 0
 		@alive = true
 		puts "A new orange tree is growing!"
@@ -16,7 +16,7 @@ class OrangeTree
 			return die
 		else
 			@age += 1
-			@height += 1
+			@height += 0.4
 			@orange_count = 0
 		end
 		
@@ -28,7 +28,7 @@ class OrangeTree
 	end
 	
 	def count_the_oranges
-		@orange_count = 2 * @age
+		@orange_count = (@height * 15 - 25).to_i
 		if @alive
 			puts "The tree produces #{@orange_count} oranges"
 			puts "-------------------"

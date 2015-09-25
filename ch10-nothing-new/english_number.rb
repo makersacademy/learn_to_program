@@ -53,11 +53,11 @@ write = left/10
 left = left - write*10 
 if write > 0
   if ((write == 1) and (left > 0))
-    num_string = num_string +'-'+teenagers[left-1]
+    num_string = num_string +teenagers[left-1]
     left = 0
 
   else
-    num_string = num_string +'-'+tens_place[write-1]
+    num_string = num_string +tens_place[write-1]
   end
   if left > 0
 
@@ -66,7 +66,7 @@ end
 write = left 
 left = 0
 if write > 0
-  num_string = num_string +'-'+ones_place[write-1] 
+  num_string = num_string +ones_place[write-1] 
 end
   
 num_string

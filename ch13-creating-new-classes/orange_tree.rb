@@ -20,7 +20,8 @@ class OrangeTree
 			@orange_count = 0
 		end
 		
-		puts "one year passes. The tree is  #{@age} years old, and its #{height} meters tall"
+		"This year your tree grew to #{@height}m tall," +
+" and produced #{@orange_count} oranges."
 		puts ""
 		if @age > 4
 			count_the_oranges

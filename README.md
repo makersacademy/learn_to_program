@@ -11,6 +11,7 @@ Do not spend more than an hour on any individual exercise.  The solutions are in
 ###Setup Instructions
 
  - Fork the repo to your own
+ - Clone the repo to your computer
  - Push to your own fork (check the upstream)
  - Open a pull request straight away
  - Commit and push your code after *each* challenge so the CI server can check your work as you go along.

@@ -4,7 +4,7 @@
 # returning things like 'nineteen hundred and seventy and two', or however wedding invitations are supposed to look. 
 # I'd give you more examples, but I don't fully understand it myself. You might need to contact a wedding coordinator to help you.
 
-def englishNumber number
+def english_number number
   if number < 0  # No negative numbers.
     return 'Please enter a number that isn\'t negative.'
   end
@@ -29,14 +29,25 @@ def englishNumber number
   # "write" is the part we are writing out right now.
   # write and left... get it?  :)
   
+  
   left  = number
 
-  write = left/1000000000000          # How many trillions left to write out?
-  left  = left - write*1000000000000  # Subtract off those hundreds.
+  write = left/100000000000000000000000000000000000000000000000000          # How many trillions left to write out?
+  left  = left - write*100000000000000000000000000000000000000000000000000  # Subtract off those hundreds.
+
+    if write > 0
+    trillions  = english_number write
+    numString = numString + trillions + ' quindecillion'
+    #recursion
+
+    if left > 0
+      numString = numString + ' '
+    end
+  end
 
   if write > 0
     # Now here's a really sly trick:
-    trillions  = englishNumber write
+    trillions  = english_number write
     numString = numString + trillions + ' trillion'
     #recursion
 
@@ -52,7 +63,7 @@ def englishNumber number
 
   if write > 0
     # Now here's a really sly trick:
-    billians  = englishNumber write
+    billians  = english_number write
     numString = numString + billians + ' billion'
 
     if left > 0
@@ -66,7 +77,7 @@ def englishNumber number
 
   if write > 0
     # Now here's a really sly trick:
-    millions  = englishNumber write
+    millions  = english_number write
     numString = numString + millions + ' million'
     
     if left > 0
@@ -80,7 +91,7 @@ def englishNumber number
 
   if write > 0
     # Now here's a really sly trick:
-    thousands  = englishNumber write
+    thousands  = english_number write
     numString = numString + thousands + ' thousand'
     # then we write out ' thousand', and then the rest of
     # englishNumber writes out 'ninety-nine'.
@@ -96,7 +107,7 @@ def englishNumber number
 
   if write > 0
     # Now here's a really sly trick:
-    hundreds  = englishNumber write
+    hundreds  = english_number write
     numString = numString + hundreds + ' hundred'
     # That's called "recursion". So what did I just do?
     # I told this method to call itself, but with "write" instead of
@@ -153,7 +164,7 @@ def englishNumber number
 end
 
 # puts englishNumber(  0)
-puts englishNumber(1000000200000)
+puts english_number(900)
 # puts englishNumber( 10)
 # puts englishNumber( 11)
 # puts englishNumber( 17)

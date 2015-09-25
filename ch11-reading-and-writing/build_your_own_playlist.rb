@@ -5,7 +5,6 @@
 puts "Where are your music files stored? Full path please (add wildcards if necessary):"
 print "> "
 music_location = "#{gets.chomp}"
-puts music_location
 
 # Creating new class, 'Codec', and the required Class methods.
 class Codec
@@ -58,9 +57,32 @@ def create_available_file_types_array file_types_string
   file_types_string.split('/')
 end
 
+def shuffle arr
+  rec_shuffle arr, []
+end
+
+def rec_shuffle unshuffled, shuffled
+  seed = rand(unshuffled.length)
+  if (seed.is_a? Integer) == false
+    return
+  else
+    selected = 'nothing_selected'
+    unshuffled.each do |x|
+      unshuffled.index(x) == seed ? selected = unshuffled[seed] : selected = selected
+      end
+    shuffled << selected
+    unshuffled = (unshuffled - [selected])
+    rec_shuffle unshuffled, shuffled
+  end
+  return shuffled
+end
+
 # search for files and add them to an array, then create an empty array used to store only the audio files.
-def create_playlist music_location
+def create_playlist music_location, shuffle_playlist
   files_array = Dir["#{music_location}/*"]
+  if shuffle_playlist == 'y' 
+  	files_array = shuffle(files_array)
+  end
   audio_files = []
 
 # Name the m3u file
@@ -99,4 +121,12 @@ puts ''
 end
 
 # Make it all happen.
-create_playlist(music_location)
+shuffle_playlist =
+if shuffle_playlist == ('y' || 'n') 
+  create_playlist(music_location, shuffle_playlist)
+else 
+  puts 'Shuffle playlist y/n?'
+  print '> '
+  shuffle_playlist = gets.chomp
+  create_playlist(music_location, shuffle_playlist)
+end

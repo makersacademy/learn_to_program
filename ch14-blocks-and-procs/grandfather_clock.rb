@@ -6,7 +6,7 @@ def grandfather_clock &block
 end
 
 x = Proc.new do
-  puts 'DONG! '
+  puts 'DONG!'
 end
 
 grandfather_clock &x

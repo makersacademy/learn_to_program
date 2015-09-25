@@ -98,6 +98,77 @@
 
 # end
 
+# def english_number_small number
+#   return 'zero ' if number == 0
+#   ones = ['','one','two','three','four','five','six','seven','eight','nine']
+#   tens = %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)
+#   teens = %w(ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)
+#   result = ''
+#   num_of_hundreds = number/100
+#   if num_of_hundreds > 0
+#     result += ones[num_of_hundreds] + ' hundred '
+#     number -= num_of_hundreds*100
+#   end
+#   if number >= 20
+#     result += tens[number/10] + ' ' + ones[number % 10] + ' '
+#   elsif number >=10 && number <= 19
+#     result += teens[number - 10] + ' '
+#   elsif number > 0
+#     result += ones[number] + ' '
+#   end
+#   result.gsub!('  ',' ')
+#   result
+# end
+
+
+# def english_number number
+
+#   result = ""
+
+#   namesOfBigNumbers = {
+#                       0 => "",
+#                       1 => "thousand",
+#                       2 => "million",
+#                       3 => "billion"
+#                     }
+
+#   findMultiples(number).each do |key,value|
+#     if value != 0
+#     result = english_number_small(value)  + namesOfBigNumbers[key] + " " + result
+#     else
+#     end
+#   end
+
+#   result
+
+# end
+
+
+# def findMultiples number
+#   multiplesOfThree = (number.to_i.to_s.length / 3)
+
+#   numberHash = {}
+
+#   left = number
+
+#   (0..multiplesOfThree).each do |index|
+#       numberHash[index] = left%1000
+#     left = left / 1000
+#   end
+#   numberHash
+# end
+
+
+# p english_number 99222178
+
+# (0..99).each do |number|
+#   p english_number_small number
+# end
+
+
+
+#Refactored
+
 def english_number_small number
   return 'zero ' if number == 0
   ones = ['','one','two','three','four','five','six','seven','eight','nine']
@@ -129,7 +200,25 @@ def english_number number
                       0 => "",
                       1 => "thousand",
                       2 => "million",
-                      3 => "billion"
+                      3 => "billion",
+                      4 => "Trillion",
+                      5 => "Quadrillion",
+                      6 => "Quintillion",
+                      7 => "Sextillion",
+                      8 => "Septillion",
+                      9 => "Octillion",
+                      10 => "Nonillion",
+                      11 => "Decillion",
+                      12 => "Undecillion",
+                      13 => "Duodecillion",
+                      14 => "Tredecillion",
+                      15 => "Quattuordecillion",
+                      16 => "Quindecillion",
+                      17 => "Sexdecillion",
+                      18 => "Septendecillion",
+                      19 => "Octodecillion",
+                      20 => "Novemdecillion",
+                      21 => "Vigintillion"
                     }
 
   findMultiples(number).each do |key,value|
@@ -138,7 +227,7 @@ def english_number number
     else
     end
   end
-
+  result.gsub!('  ',' ')
   result
 
 end
@@ -152,15 +241,14 @@ def findMultiples number
   left = number
 
   (0..multiplesOfThree).each do |index|
-      numberHash[index] = left%1000
-    left = left / 1000
+      numberHash[index] = left % 1000
+    left /= 1000
   end
   numberHash
 end
 
 
-p english_number 99222178
+p english_number 10099222178
 
-# (0..99).each do |number|
-#   p english_number_small number
-# end
+
+

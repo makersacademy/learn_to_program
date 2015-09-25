@@ -16,6 +16,6 @@ def shuffle arr
   
 end
 
-arr = ["word",2,3,4,8,9,10,11,12,13,14,15]
+arr = [3, 7, 2, 6, 9, 4, 8, 1, 5]
 
 shuffle arr

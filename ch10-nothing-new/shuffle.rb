@@ -1,4 +1,3 @@
-require 'Set'
 def shuffle(arr)
   new_arr = arr.clone
   new_arr.reverse_each do |word|

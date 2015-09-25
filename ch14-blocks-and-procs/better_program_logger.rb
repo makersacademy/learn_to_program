@@ -25,7 +25,7 @@ end
 
 $logger_depth = 0
 
-def log desc, &block
+def nikesh desc, &block
   prefix = ' '*$logger_depth
   puts prefix+"Beginning #{desc.inspect}..."
   $logger_depth += 1
@@ -34,15 +34,15 @@ def log desc, &block
   puts prefix+"...#{desc.inspect} finished, returning: #{result}"
 end
 
-log 'outer block' do
-  log 'some little block' do
-    log 'teeny-tiny block' do
+nikesh 'outer block' do
+  nikesh 'some little block' do
+    nikesh 'teeny-tiny block' do
       'PasS The damn RSPEC'.downcase
     end
     7 * 3 * 2
   end
 
-  log 'yet another block' do
+  nikesh 'yet another block' do
     '!ssap ssap SSAP SSAP'.reverse
   end
   '0' == "0"

@@ -16,20 +16,21 @@ class OrangeTree
 
   def one_year_passes
     @age = @age + 1
-    loading
-    puts "the tree is now #{@age}"
+    height   
     fruit
+    puts "This year your tree grew to #{@height}m tall, and produced #{@fruit} oranges."
+ 
   end
 
   def height
     if @age < 15
-      @height = (@age * 30) * @height_mod
+      @height = ((@age * 30) * @height_mod).round(1)
     else
-      @height = 460 * @height_mod
+      @height = (460 * @height_mod).round(1)
     end
-    puts "the tree is #{@height}cm"
+    p
 
-  end
+  end 
 
 
   def count_the_oranges
@@ -72,7 +73,7 @@ class OrangeTree
     end
   end
 
-  'This year your tree grew to 9.6m tall, and produced 119 oranges.'
+
 end
 
 

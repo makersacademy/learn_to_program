@@ -5,8 +5,10 @@ def grandfather_clock &block
   end
 end
 
-x = Proc.new do
-  puts 'DONG!'
-end
+grandfather_clock { puts 'DONG!' }
 
-grandfather_clock &x
+# x = Proc.new do
+#   puts 'DONG!'
+# end
+
+# grandfather_clock &x

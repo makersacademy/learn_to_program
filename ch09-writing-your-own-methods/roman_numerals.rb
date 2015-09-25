@@ -5,7 +5,7 @@ def roman_numeral(num)
     tens = ((num % 100) / 10)
     ones = ((num % 10) / 1)
     
-    roman = 'M' * thous
+    roman = 'M' * thousands
     
     if hundreds == 9
         roman = roman + 'CM'
@@ -37,3 +37,5 @@ def roman_numeral(num)
     roman
     
 end
+
+roman_numeral(1014)

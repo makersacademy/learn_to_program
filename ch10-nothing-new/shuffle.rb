@@ -1,44 +1,25 @@
 def shuffle arr
-  shuf = []
-
-  while arr.length > 0
-    rand_index = rand(arr.length)
-
-    curr_index = 0
-    new_arr = []
-
-    arr.each do |item|
-      if curr_index == rand_index
-        shuf.push item
-      else
-        new_arr.push item
-      end
-
-      curr_index = curr_index + 1
-    end
-
-    arr = new_arr
-  end
-
-  shuf
+  rec_shuffle arr, []
 end
 
-puts(shuffle([1,2,3,4,5]))
+def rec_shuffle unshuffled, shuffled
+  if unshuffled.length <= 0
+      return shuffled 
+  end
+  s = []
+  size = unshuffled.length
+  rand = unshuffled[rand(size)]
+  
+  unshuffled.each do |f|
+    if f == rand
+      shuffled.push f
+    else
+      s.push f
+    end
+  end
 
+  rec_shuffle(s, shuffled)
 
-# def shuffle arr
-# 	shuf_arr = []
-# 	# new_arr = []
-# 	sum = 0
+end
 
-# 	while sum <= arr.length
-# 		rand_arr = rand(arr.length)
-# 		item = arr[rand_arr]
-# 		shuf_arr.push item
-
-# 		sum = sum + 1
-# 	end
-# 	shuf_arr
-# end
-
-# puts(shuffle([1,2,3,4,5,6]))
+puts shuffle([0,1,2,3,4])

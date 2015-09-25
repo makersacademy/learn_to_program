@@ -16,7 +16,7 @@
 #   'OMFG GLOBAL POTATO'
   
 # end
-def log desc, &block
+
 puts 'Beginning "outer block"...'
 puts ' Beginning "some little block"...'
 puts '  Beginning "teeny-tiny block"...'
@@ -25,4 +25,3 @@ puts ' ..."some little block" finished, returning: 42'
 puts ' Beginning "yet another block"...'
 puts ' ..."yet another block" finished, returning: I love Indian food!'
 puts '..."outer block" finished, returning: true'
-end

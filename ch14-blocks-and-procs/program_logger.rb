@@ -1,5 +1,3 @@
-def log desc, &block
-
 
 puts 'Beginning "outer block"...'
 puts ' Beginning "some little block"...'
@@ -20,4 +18,4 @@ puts '..."outer block" finished, returning: false'
   #     '!doof iahT ekil I'.reverse
   #   end
   #   '0' == 0 
-end
+

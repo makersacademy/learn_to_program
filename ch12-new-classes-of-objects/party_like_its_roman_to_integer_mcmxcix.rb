@@ -10,6 +10,7 @@ def roman_to_integer roman
     c += 1
   end
 
+#PATEEEAAAY
   p = (roman.split(' ').map{|x| x.to_i}).reduce(:+)
   
 end

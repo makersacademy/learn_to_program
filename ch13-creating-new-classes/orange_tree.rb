@@ -46,3 +46,45 @@ class OrangeTree
 			
 	end
 end
+x = OrangeTree.new
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.one_year_passes
+x.count_the_oranges
+x.count_the_oranges
+x.count_the_oranges
+
+x.count_the_oranges
+
+puts "**************"
+
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange
+x.pick_an_orange

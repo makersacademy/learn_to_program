@@ -170,7 +170,6 @@
 #Refactored
 
 def english_number_small number
-  return 'zero ' if number == 0
   ones = ['','one','two','three','four','five','six','seven','eight','nine']
   tens = %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)
   teens = %w(ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)
@@ -181,7 +180,7 @@ def english_number_small number
     number -= num_of_hundreds*100
   end
   if number >= 20
-    result += tens[number/10] + ' ' + ones[number % 10] + ' '
+    result += tens[number/10] + '-' + ones[number % 10] + ' '
   elsif number >=10 && number <= 19
     result += teens[number - 10] + ' '
   elsif number > 0
@@ -193,7 +192,7 @@ end
 
 
 def english_number number
-
+  return 'zero' if number == 0
   result = ""
 
   namesOfBigNumbers = {
@@ -201,34 +200,34 @@ def english_number number
                       1 => "thousand",
                       2 => "million",
                       3 => "billion",
-                      4 => "Trillion",
-                      5 => "Quadrillion",
-                      6 => "Quintillion",
-                      7 => "Sextillion",
-                      8 => "Septillion",
-                      9 => "Octillion",
-                      10 => "Nonillion",
-                      11 => "Decillion",
-                      12 => "Undecillion",
-                      13 => "Duodecillion",
-                      14 => "Tredecillion",
-                      15 => "Quattuordecillion",
-                      16 => "Quindecillion",
-                      17 => "Sexdecillion",
-                      18 => "Septendecillion",
-                      19 => "Octodecillion",
-                      20 => "Novemdecillion",
-                      21 => "Vigintillion"
+                      4 => "trillion",
+                      5 => "quadrillion",
+                      6 => "quintillion",
+                      7 => "sextillion",
+                      8 => "septillion",
+                      9 => "octillion",
+                      10 => "nonillion",
+                      11 => "decillion",
+                      12 => "undecillion",
+                      13 => "duodecillion",
+                      14 => "tredecillion",
+                      15 => "quattuordecillion",
+                      16 => "quindecillion",
+                      17 => "sexdecillion",
+                      18 => "septendecillion",
+                      19 => "octodecillion",
+                      20 => "novemdecillion",
+                      21 => "vigintillion"
                     }
 
   findMultiples(number).each do |key,value|
     if value != 0
-    result = english_number_small(value)  + namesOfBigNumbers[key] + " " + result
+    result = english_number_small(value) + namesOfBigNumbers[key] + " " + result + " "
     else
     end
   end
-  result.gsub!('  ',' ')
-  result
+  result.gsub!('- ',' ')
+  result.strip!
 
 end
 
@@ -248,7 +247,9 @@ def findMultiples number
 end
 
 
-p english_number 10099222178
-
+# p english_number 10099222178
+# p english_number 0
+# p english_number 10
+# p english_number 1000000
 
 

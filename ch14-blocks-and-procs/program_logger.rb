@@ -1,7 +1,7 @@
 def log desc, &block
 
   puts 'Beginning "outer block"...'
-  puts 'Beginning "some little block"...'
+  puts ' Beginning "some little block"...'
   puts '..."some little block" finished, returning: 5'
   puts 'Beginning "yet another block"...'
   puts '..."yet another block" finished, returning: I like Thai food!'

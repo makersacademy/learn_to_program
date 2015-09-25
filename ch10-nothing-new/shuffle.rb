@@ -26,7 +26,7 @@ def recursive_shuffle unshuffled_array, shuffled_array
   recursive_shuffle unshuffled_array, shuffled_array
 end
 
-puts "Input array one item at a time, enter twice to end"
-ary = getsAry
-puts shuffle ary
+#puts "Input array one item at a time, enter twice to end"
+#ary = getsAry
+#puts shuffle ary
 

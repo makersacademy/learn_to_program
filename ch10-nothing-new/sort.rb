@@ -33,7 +33,7 @@ def recursive_sort unsorted_array, sorted_array
   end
 end
 
-puts "Input array one item at a time, enter twice to end"
-ary = getsAry
-puts sort ary
+#puts "Input array one item at a time, enter twice to end"
+#ary = getsAry
+#puts sort ary
 

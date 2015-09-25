@@ -9,11 +9,11 @@ def log(desc, &block)
   puts "#{' ' * $depth}...\"#{desc}\" finished, returning: #{result}"
 end
 
-log 'outer block' do
-  log 'some little block' do
-    log 'teeny-tiny block' do 'lots of love' end
+log('outer block') do
+  log('some little block') do
+    log('teeny-tiny block') { 'lots of love' }
     42
   end
-  log 'yet another block' do 'I love Indian food!' end
+  log('yet another block') { 'I love Indian food!' }
   true
 end

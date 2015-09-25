@@ -47,10 +47,11 @@ class OrangeTree
   private
   ################
   def new_tree 
-    puts "new seed planted ID:#{@tree_name}."
-    puts 'the tree grows'
-    loading
-    puts "the tree is now #{@age}"
+    puts "This year your tree grew to #{@height}m tall, and produced #{@fruit} oranges."
+    # puts "new seed planted ID:#{@tree_name}."
+    # puts 'the tree grows'
+    # loading
+    # puts "the tree is now #{@age}"
   end
 
   def loading

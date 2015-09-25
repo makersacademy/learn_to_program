@@ -72,6 +72,7 @@ class OrangeTree
     end
   end
 
+  'This year your tree grew to 9.6m tall, and produced 119 oranges.'
 end
 
 

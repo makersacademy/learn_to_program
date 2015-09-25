@@ -8,13 +8,14 @@ def roman_to_integer roman
                   'm' => 1000}
 	total = 0
 	prev = 0
-	index = roman.length - 1
-	puts index
-	while index >= 0
-		c = roman[index].downcase
-		puts c
-		index = index - 1
-		val = digit_vals[c]
+	count = roman.length - 1
+	puts roman.length
+	while count >= 0
+		numeral = roman[count].downcase
+		puts roman[count]
+		count = count - 1
+		val = digit_vals[numeral]
+		puts digit_vals[numeral]
     		if !val
 				puts 'This is not a valid roman numeral!'
 			    return

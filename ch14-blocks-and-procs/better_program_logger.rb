@@ -1,4 +1,5 @@
 # $POTATO = -1
+
 # def log desc, &block
 #   $POTATO += 1
 #   space =( $POTATO > 0 ? ' ' * $POTATO : '')
@@ -8,15 +9,7 @@
 # end
 
 
-# say_potato = log 'proc1' do
-#   say_tomato = log 'proc2' do
-    
-#     'OMFG TOMATO'
-#   end
-#   'OMFG GLOBAL POTATO'
-  
-# end
-
+def log desc, &block
 puts 'Beginning "outer block"...'
 puts ' Beginning "some little block"...'
 puts '  Beginning "teeny-tiny block"...'
@@ -25,3 +18,4 @@ puts ' ..."some little block" finished, returning: 42'
 puts ' Beginning "yet another block"...'
 puts ' ..."yet another block" finished, returning: I love Indian food!'
 puts '..."outer block" finished, returning: true'
+end

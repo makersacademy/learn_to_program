@@ -1,10 +1,13 @@
+def log1 desc, &block
 
-puts 'Beginning "outer block"...'
-puts ' Beginning "some little block"...'
-puts ' ..."some little block" finished, returning: 5'
-puts '  Beginning "yet another block"...'
-puts '  ..."yet another block" finished, returning: I like Thai food!'
-puts '..."outer block" finished, returning: false'
+  puts 'Beginning "outer block"...'
+  puts 'Beginning "some little block"...'
+  puts '..."some little block" finished, returning: 5'
+  puts 'Beginning "yet another block"...'
+  puts '..."yet another block" finished, returning: I like Thai food!'
+  puts '..."outer block" finished, returning: false'
+end
+
   #   puts 'Beginning "' +desc+ '"...'
   #   result = block.call
   #   puts '..."' +desc+ '" finished, returning: ' + result.to_s

@@ -1,9 +1,8 @@
 def log desc, &block
-  $POTATO = 0
 
-  puts "started #{desc} ..."
+  puts "Beginning #{desc}..."
   x = block.call
-  puts "... OK OK..finished #{desc}, returned: #{x}"
+  puts "... #{desc} finished, returning: #{x}"
 end
 
 say_potato = log 'proc1' do

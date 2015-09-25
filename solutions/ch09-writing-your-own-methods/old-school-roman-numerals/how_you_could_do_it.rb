@@ -1,4 +1,4 @@
-def old_roman_numeral num 
+	def old_roman_numeral num 
   roman = ''
 
 ￼￼roman = roman + 'M' * (num / 1000)
@@ -11,4 +11,4 @@ def old_roman_numeral num
   roman
 end
 
-# puts(old_roman_numeral(1999))
+puts(old_roman_numeral(2))

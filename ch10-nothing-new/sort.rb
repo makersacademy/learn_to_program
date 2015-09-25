@@ -11,16 +11,20 @@ def recursive_sort unsorted, sorted
 	
 	unsorted.each do |word|
 		if word < item
-			still_unsorted.push item 
+			still_unsorted.push item
 			item = word
+			puts item
 		else 
 			still_unsorted.push(word)
 		end
 	end
 
 	sorted.push(item)
-
+	# puts "Sorted"
+	# puts sorted
+	# puts "Unsorted"
+	# puts still_unsorted
 	recursive_sort still_unsorted, sorted
 end
 
-puts sort(["asdas","tetee","rrr"])
+puts sort(["tetee","asdas"])

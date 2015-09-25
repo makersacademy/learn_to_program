@@ -10,5 +10,5 @@ def old_roman_numeral num
  roman
 end
 
-number = old_roman_numeral(7)
+number = old_roman_numeral(9)
 puts number

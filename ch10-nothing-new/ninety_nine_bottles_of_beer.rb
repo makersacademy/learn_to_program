@@ -94,9 +94,7 @@ if write > 0
 end
         num_string
 end
-# english_number as above, plus this:
 num_at_start = 23
-# change to 9999 if you want
 num_bot = proc { |n| "#{english_number n} bottle#{n == 1 ? '' : 's'}" }
 num_at_start.downto(2) do |num|
 puts "#{num_bot[num]} of beer on the wall, #{num_bot[num]} of beer!".capitalize

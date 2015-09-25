@@ -11,6 +11,6 @@ def roman_to_integer roman
   end
 
   p = (roman.split(' ').map{|x| x.to_i}).reduce(:+)
-  puts p
+  
 end
 

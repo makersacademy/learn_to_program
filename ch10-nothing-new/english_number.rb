@@ -15,29 +15,26 @@ def english_number number
 
   teen_num = [ "eleven", "twelve", "thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
 
+  zillions = [ ['hundred', 2],['thousand', 3], ['million',6], ['billion', 9], ['trillion',12],['quindecillion',48]]
 
   left = number #number left to write
 
-  write = left/1000000 #how many millions left 
-  left = left - write*1000000
+  while zillions.length > 0 
+    zil_pair = zillions.pop
+    zil_name = zil_pair[0]
+    zil_base = 10**zil_pair[1]
 
-  if write > 0 
-  	millions = english_number write #recursive
-  	num_string = num_string + millions + ' millions'
-  	if left > 1 
-  		num_string = num_string + " "
-  	end
-  end 
+    write = left/zil_base 
+    left = left - write*zil_base
 
-  write = left/1000 #how many thousands left 
-  left = left - write*1000 
+    if write > 0 
+      prefix = english_number write 
+      num_string = num_string + prefix + ' ' + zil_name 
 
-  if write > 0 
-  	thousands = english_number write #recursive
-  	num_string = num_string + thousands + ' thousand'
-  	if left > 1 
-  		num_string = num_string + " "
-  	end
+      if left > 0 
+        num_string = num_string + ' '
+      end 
+    end 
   end 
 
   write = left/100 #how many hundred left 
@@ -46,8 +43,8 @@ def english_number number
   if write > 0
   	hundreds = english_number write #recursive occurs 
   	num_string = num_string + hundreds + ' hundred'
-  	if left > 1 
-  		num_string = num_string + " "
+  	if left > 0 
+  		num_string = num_string + ' '
   	end 
   end 
 
@@ -57,18 +54,18 @@ def english_number number
   if write > 0 
   	if ((write == 1) and (left > 0))
   		num_string = num_string + teen_num[left-1] 
-  		left == 0 
+  		left = 0 
   	else 
   		num_string = num_string + tenth_num[write-1] #whole tenth number
   	end 
   
   	if left > 0 
-  	num_string = num_string + " "
+  	num_string = num_string + '-'
   	end 
   end 
 
   write = left 
-  left = left - write 
+  left = 0
 
   if write > 0 
   	num_string = num_string + ones_num[write-1]
@@ -78,6 +75,3 @@ def english_number number
 
 end
 
-puts english_number (63)
-puts english_number (598)
-puts english_number (2000008)

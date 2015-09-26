@@ -1,6 +1,6 @@
 $level=0
 
-def log desc, &block
+def log1 desc, &block
   # your code here
   indent = " "
   puts "#{indent*$level}Beginning \"#{desc}\"..."

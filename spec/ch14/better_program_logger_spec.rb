@@ -11,15 +11,15 @@ describe 'program logger' do
     expect(STDOUT).to receive(:puts).with ' ..."yet another block" finished, returning: I love Indian food!'
     expect(STDOUT).to receive(:puts).with '..."outer block" finished, returning: true'
 
-    log 'outer block' do
-      log 'some little block' do
-        log 'teeny-tiny block' do
+    log1 'outer block' do
+      log1 'some little block' do
+        log1 'teeny-tiny block' do
           'lOtS oF lOVe'.downcase
         end
         7 * 3 * 2
       end
 
-      log 'yet another block' do
+      log1 'yet another block' do
         '!doof naidnI evol I'.reverse
       end
       '0' == "0"

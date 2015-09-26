@@ -1,3 +1,4 @@
+require "set"
 def shuffle arr
   # your code here
   shuf = []

@@ -1,4 +1,4 @@
-def sort(an_array)
+def dictionary_sort(an_array)
   recursive_sort an_array, []
 end
 def recursive_sort(unsorted_array, sorted_array)

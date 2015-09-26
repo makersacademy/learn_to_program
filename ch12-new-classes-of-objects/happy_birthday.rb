@@ -1,3 +1,5 @@
+# Samuel Overloop, 26/09/2015 12:26 UTC +01
+# I added this comment just to see what will happen :-)
 puts "what is your birthday year?"
 birthday_year = gets.chomp.to_i
 

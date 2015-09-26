@@ -18,4 +18,4 @@ def recursive_sort array, sorted_arr
   end
     sorted_arr.push smallest
     recursive_sort unsorted_arr, sorted_arr
-  end
+end

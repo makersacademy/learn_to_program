@@ -85,4 +85,4 @@ end
   puts number
 
 end
-puts roman_to_integer 'MMMMMMMMMM'
+puts roman_to_integer 'CXIV'

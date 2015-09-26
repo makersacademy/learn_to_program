@@ -1,5 +1,5 @@
 # Couldn't do - had to review solution.
-def roman_numeral num
+def to_roman num
   thousands = num / 1000
   hundreds = num % 1000 / 100
   tens = num % 100 /10
@@ -36,4 +36,4 @@ def roman_numeral num
   roman
 end
 
-puts roman_numeral(449)
+puts to_roman(449)

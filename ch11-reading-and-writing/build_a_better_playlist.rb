@@ -1,19 +1,32 @@
-def shuffle(an_array)
-  main_shuffle an_array, []
-end
+def music_shuffle(filenames)
+  filenames = filenames.sort
+  len = filenames.length
 
-def main_shuffle(unshuffled_array, shuffled_array)
-  if unshuffled_array.length != 0
-    unshuffled_array[rand((unshuffled_array.length + 1))].push shuffled_array
+  2.times do
+  l_idx = 0
+  r_idx = len/2
+  shuf = []
+
+    while shuf.length < len
+      if shuf.length%2 == 0
+
+      shuf.push(filenames[r_idx])
+      r_idx = r_idx + 1
+      else
+
+      shuf.push(filenames[l_idx])
+      l_idx = l_idx + 1
+      end
+    end
+  filenames = shuf
   end
-  main_shuffle unshuffled_array
-  return shuffled_array
-end
 
-all_music = (Dir["**/*.{MP3,mp3,ogg}"]).shuffle
-
-File.open "Playlist.m3u", 'w' do |var|
-  all_music.each do |var1|
-    var.write var1 + "\n"
+  arr = []
+  cut = rand(len)
+  idx = 0
+  while idx < len
+    arr.push(filenames[(idx+cut)%len])
+    idx = idx + 1
   end
+arr
 end

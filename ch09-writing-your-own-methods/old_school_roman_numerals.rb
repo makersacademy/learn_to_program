@@ -11,6 +11,10 @@ def old_roman_numeral num
   old_roman
 end
 
+#Manual input
+
+=begin
 puts 'Please enter an integer number:'
 number = gets.to_i
 puts(old_roman_numeral(number))
+=end

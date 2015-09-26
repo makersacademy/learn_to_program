@@ -1,4 +1,4 @@
-Dir.chdir("/Users/Alix/Desktop/Photos_Vrac")
+Dir.chdir("/Users/Alix/Desktop/Photos_Dec2014")
 
 pic_names = Dir["/Users/Alix/Desktop/Photos_Dec2014/*"]
 

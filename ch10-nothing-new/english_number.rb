@@ -108,6 +108,7 @@ def english_number number
   num_string
 end
 
+=begin
 puts english_number(0)
 puts english_number(9)
 puts english_number(10)
@@ -123,3 +124,4 @@ puts english_number(10311)
 puts english_number(999999)
 puts english_number(1500000)
 puts english_number(1000000000000)
+=end

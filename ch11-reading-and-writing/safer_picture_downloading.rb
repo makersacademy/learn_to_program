@@ -6,10 +6,10 @@
 # she gets her YAML on and moves them to the server.
 # Just for my own convenience, I'll go there now.
 
-Dir.chdir 'C:/Documents and Settings/Katy/PictureInbox'
+Dir.chdir('/Users/mahmudhussain/Documents/makers_mp3')
 
 # First we find all of the pictures to be moved.
-pic_names = Dir['F:/**/*.jpg']
+pic_names = Dir['/Users/mahmudhussain/desktop/*.txt']
 
 puts 'What would you like to call this batch?'
 
@@ -36,7 +36,7 @@ pic_number = 1
 					end
 		if File.exist?(new_name)
 			puts "Please choose another name as this name already exists"
-			file_name(new_name)
+			rename_file(new_name)
 			#File.rename new_name, file_name
 			pic_number = pic_number + 1
 		else

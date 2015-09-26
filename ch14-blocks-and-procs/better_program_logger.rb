@@ -1,6 +1,4 @@
-def log desc, &block
 $logger_depth = 0
-
 def log desc, &block
 prefix = ' '*$logger_depth
 puts prefix + 'Beginning "' + desc + '"...'
@@ -21,5 +19,4 @@ log 'yet another block' do
 '!doof naidnI evol I'.reverse
 end
 '0' == "0"
-end
 end

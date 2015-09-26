@@ -1,16 +1,16 @@
 def english_number(number)
-  if number < 0 
+  if number < 0
     return 'Please enter a number that isn\'t negative'
   end
   if number == 0
     return 'zero'
   end
-# This is the string to be returned
+
   num_string = ''
-# Arrays
+
   ones = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
   teens = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
-  tens = ['ten', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninty']
+  tens = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
   big_numbers =   [['hundred', 2],
           ['thousand', 3],
           ['million', 6],
@@ -41,12 +41,12 @@ def english_number(number)
     big_name = big_no[0]
     big_no_base = 10 ** big_no[1]
     write = left / big_no_base
-    left = left - write * big_no_base 
+    left = left - write * big_no_base
 
     if write > 0
       big_write = english_number write
       num_string = num_string + big_write + ' ' + big_name
-      if left > 0 
+      if left > 0
         num_string = num_string + ' '
       end
     end
@@ -63,7 +63,7 @@ def english_number(number)
       num_string = num_string + tens[write - 1]
     end
 
-    if left > 0 
+    if left > 0
       num_string = num_string + '-'
     end
   end
@@ -71,10 +71,11 @@ def english_number(number)
   write = left
   left = 0
 
-  if write > 0 
+  if write > 0
     num_string = num_string + ones[write - 1]
   end
 
   num_string
 
 end
+

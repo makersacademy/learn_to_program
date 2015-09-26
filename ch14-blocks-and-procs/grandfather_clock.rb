@@ -1,3 +1,5 @@
 def grandfather_clock &block
-  # your code here
+  ((Time.new.hour - 1) % 12 + 1).times do block.call end
 end
+
+grandfather_clock do puts 'DONG!' end

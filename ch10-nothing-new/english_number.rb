@@ -20,18 +20,18 @@ def english_number (number)
     t = t-1
   end
   
-  num_array.reverse.each_with_index { |value , index|
-    if index % 3 == 0 && num_array[index] != 0 
-      num_string = num_string << ones_place[value-1]
-    elsif index % 3 == 0 && value > 0 && num_array[index] != 0
-      num_string = num_string << other_place[index/3] << ones_place[value-1]
+  num_array.reverse.each_with_index { |value , index| # [1,0,0,2,9,7,6]
+    if index % 3 == 0 && num_array[index] != 0                                      
+      num_string = num_string << ones_place[value-1]                                # "one"
+    elsif index % 3 == 0 && value > 0 && num_array[index] != 0                      
+      num_string = num_string << other_place[index/3] << ones_place[value-1]        # "thousand" "two"              # "million" "six"
     elsif index % 3 == 1
-      num_string = num_string << tens_place[value-1]
+      num_string = num_string << tens_place[value-1]                                # "ninety"
     elsif index & 3 == 2
-      num_string = num_string << other_place[0] << ones_place[value-1]
+      num_string = num_string << other_place[0] << ones_place[value-1]              # "hundred" "seven"
     end
-  }
-  print num_string.reverse
+  }                                                                                 # num_string = "one thousand two ninety hundred seven million six"
+  print num_string.reverse                                                          # num_string = "six million seven hundred ninety two thousand one"
 end
 
 

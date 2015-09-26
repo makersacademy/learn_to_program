@@ -9,14 +9,14 @@ class Integer
 	roman = roman + 'V' * (self % 10 / 5)
 	roman = roman + 'I' * (self % 5 / 1)
 	 # roman
-	if roman.include? 'VIIII'
-		roman.gsub!('VIIII', 'IX')
-	elsif roman.include? 'IIII'
-		roman.gsub!('IIII', 'IV')
-	else
-		roman
-	end
+	roman
+  end
+  
+  def factorial
+  	(1..self).inject(:*) || 1
   end
 end
 
 puts 4.to_roman
+
+puts 5.factorial

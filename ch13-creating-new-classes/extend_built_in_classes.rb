@@ -1,42 +1,47 @@
+class Array
+
+def shuffle
+
+sort_by{rand} # "self" is implied, remember?
+
+end
+
+end
+
 class Integer
-	def roman
-		result = ""
 
-		thousands = self / 1000
-		hundreds = (self % 1000) / 100
-		tens = (self % 100) / 10
-		ones = (self % 10)
+def factorial
 
-		result = "M" * thousands
+raise 'Must not use negative integer' if self < 0
 
-		if hundreds != 4 && hundreds != 9
-			result << "D" * (self % 1000 / 500)
-			result << "C" * (self % 500 / 100)
-		elsif hundreds == 4
-			result << "CD"
-		elsif hundreds == 9
-			result << "CM"
-		end
+(self <= 1) ? 1 : self * (self-1).factorial
 
-		if tens != 4 && tens != 9
-			result << "L" * (self % 100 / 50)
-			result << "X" * (self % 50 / 10)
-		elsif tens == 4
-			result << "XL"
-		elsif tens == 9
-			result << "XC"
-		end
+end
 
-		if ones != 4 && ones != 9
-			result << "V" * (self % 10 / 5)
-			result << "I" * (self % 5)
-		elsif ones == 4
-			result << "IV"
-		elsif ones == 9
-			result << "IX"
-		end
+def to_roman
 
-		result
-		end
+# I chose old-school roman numerals just to save space.
+
+raise 'Must use positive integer' if self <= 0
+
+roman = ''
+
+roman << 'M' * (self / 1000)
+
+roman << 'D' * (self % 1000 / 500)
+
+roman << 'C' * (self % 500 / 100)
+
+roman << 'L' * (self % 100 / 50)
+
+roman << 'X' * (self % 50 / 10)
+
+roman << 'V' * (self % 10 / 5)
+
+roman << 'I' * (self % 5 / 1)
+
+roman
+
+end
 
 end

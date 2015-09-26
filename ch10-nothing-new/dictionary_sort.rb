@@ -8,5 +8,3 @@ def dictionary_sort arr
 	}
 	print arr
 end
-
-dictionary_sort ["hello", "cool", "Cat", "Chomp", "ca"]

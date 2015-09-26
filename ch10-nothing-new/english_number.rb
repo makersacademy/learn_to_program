@@ -22,7 +22,6 @@ left = number #6792001
     num_array = num_array << wright #  
     t = t-1
   end
-  puts num_array
   num_arr_rev = num_array.reverse
   num_arr_rev.each_with_index { |value , index| # [6,7,9,2,0,0,1]                                           
     if index % 3 == 0 && value > 0 && index != 0                       
@@ -31,20 +30,14 @@ left = number #6792001
       num_string = num_string.insert(t, ones_place[value-1])
     elsif index % 3 == 1 && value > 0
        if value == 1 
-         num_string = num_string.insert(t, teens_place[num_arr_rev[index-1]-1] + " ")
-         next
+        num_string = num_string.delete(ones_place[num_arr_rev[index-1]-1])
+        num_string = num_string.insert(t, teens_place[num_arr_rev[index-1]-1] + " ")
       else
         num_string = num_string.insert(t, tens_place[value-1] + " ")     
-       end
+      end
     elsif index % 3 == 2 && value > 0
-      num_string = num_string.insert(t, ones_place[value-1] + " " + other_place[0] +  " ")              # "hundred" "seven"
+      num_string = num_string.insert(t, ones_place[value-1] + " " + other_place[0] +  " and ")              # "hundred" "seven"
     end
   }  
   num_string                                                        # num_string = "six million seven hundred ninety two thousand and one"
 end
-puts english_number (6792013)
-
-
-
-
-5

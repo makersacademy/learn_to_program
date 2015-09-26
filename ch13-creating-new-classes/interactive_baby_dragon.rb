@@ -1,12 +1,10 @@
-# your code here
+
 class Dragon
 	def initialize name
 		@name = name
 		@asleep = false
 		@stuff_in_belly = 10
 		@stuff_in_intestine = 0
-		# He's full.
-		#He doesn't need to go.
 		puts "#{@name} is born."
 	end
 	def feed
@@ -96,13 +94,27 @@ class Dragon
 				end
 		end
 	end
-pet = Dragon.new 'Norbert'
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.rock
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
+
+puts 'What would you like to name your baby dragon?'
+name = gets.chomp
+pet = Dragon.new name
+while true
+	puts
+	puts 'commands: feed, toss, walk, rock, put to bed, exit'
+	command = gets.chomp
+	if command == 'exit'
+		exit
+	elsif command == 'feed'
+		pet.feed
+	elsif command == 'toss'
+		pet.toss
+	elsif command == 'walk'
+		pet.walk
+	elsif command == 'rock'
+		pet.rock
+	elsif command == 'put to bed'
+		pet.put_to_bed
+	else
+		puts 'Huh? Please type one of the commands.'
+	end
+end

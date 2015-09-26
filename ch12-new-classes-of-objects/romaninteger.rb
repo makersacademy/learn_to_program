@@ -16,15 +16,15 @@
     ["I"  ,   1]
     ]
 
-# still need to work out how to check for invaild numerals - so if value is not in the array puts an error message
+    # ...
 
 def roman_to_integer roman
-    reply = 0 # this is where we will send the output
+	reply = 0 # this is where we will send the output
  for key, value in @data #look for the key and value
      while roman.index(key) == 0 #of the first character
      reply += value #add that number to reply
      roman.slice!(key) #remove the character
-     end    
+     end	
      end
 
 reply #and return
@@ -32,6 +32,3 @@ reply #and return
  end
 
  puts(roman_to_integer("MCM"))
-  puts(roman_to_integer("ABC"))
-
-

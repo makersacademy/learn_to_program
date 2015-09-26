@@ -1,4 +1,4 @@
-def Number_converter(roman)
+def roman_to_integer(numeral)
   # Create a Hash that contains the Roman Numerals and set variables
 
   numerals = {'i'=> 1,
@@ -11,10 +11,10 @@ def Number_converter(roman)
 
   total = 0
   previous = 0
-  index = roman.length - 1
+  index = numeral.length - 1
 
   while index >= 0
-    c = roman[index].downcase
+    c = numeral[index].downcase
     index = index - 1
     val = numerals[c]
     if !val
@@ -27,5 +27,5 @@ def Number_converter(roman)
     end
     total = total + val
   end
-  total 
+  total
 end

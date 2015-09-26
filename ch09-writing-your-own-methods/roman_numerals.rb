@@ -1,4 +1,4 @@
-def roman(num)
+def roman_numeral(num)
 	thousands = (num / 1000)
 	hundreds = (num % 1000 / 100)
 	tens = (num % 100 / 10)
@@ -19,7 +19,7 @@ def roman(num)
 		romanNumeral = romanNumeral + 'XL'
 	else
 		romanNumeral = romanNumeral + 'L' * (num % 100 / 50)
-		romanNumeral = romanNumeral + 'X' * (num % 50 / 10)		
+		romanNumeral = romanNumeral + 'X' * (num % 50 / 10)
 	end
 	if ones == 9
 		romanNumeral = romanNumeral + 'IX'
@@ -27,7 +27,7 @@ def roman(num)
 		romanNumeral = romanNumeral + 'IV'
 	else
 		romanNumeral = romanNumeral + 'V' * (num % 10 / 5)
-		romanNumeral = romanNumeral + 'I' * (num % 5 / 1)		
+		romanNumeral = romanNumeral + 'I' * (num % 5 / 1)
 	end
 	romanNumeral
 end

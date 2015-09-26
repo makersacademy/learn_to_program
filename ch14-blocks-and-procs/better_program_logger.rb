@@ -1,14 +1,14 @@
 
-$indent=" "
 $level=0
 
 def log desc, &block
   # your code here
-  puts "#{$indent*$level}Beginning \"#{desc}\"..."
+  indent = " "
+  puts "#{indent*$level}Beginning \"#{desc}\"..."
   $level +=1
   retval=block.call
   $level -=1
-  puts "#{$indent*$level}...\"#{desc}\" finished, returning: #{retval}"
+  puts "#{indent*$level}...\"#{desc}\" finished, returning: #{retval}"
 end
 
 #log "outer block" do

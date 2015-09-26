@@ -14,7 +14,7 @@ def english_number number
   tenth_num = ["ten", "twenty","thirty", "fourty", "fifty", "sixty", "seventy", "eighty","ninety"]
 
   teen_num = [ "eleven", "twelve", "thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
-  zillion =[['hundred', 2],
+  zillions =[['hundred', 2],
             ['thousand', 3],
             ['million', 6],
             ['billion', 9],
@@ -33,10 +33,7 @@ def english_number number
             ['quindecillion', 48],
             ['sexdecillion', 51],
             ['septendecillion', 54],
-            ['octodecillion', 57]
-            ['novemdecillion', 60],
-            ['vigintillion', 63],
-            ['googol', 100]]
+            ['octodecillion', 57]]
 
   left = number #number left to write
 

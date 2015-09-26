@@ -20,4 +20,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rspec
+  rspec (~> 3.2.0)

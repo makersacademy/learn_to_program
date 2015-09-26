@@ -1,4 +1,4 @@
-def roman(num)
+def old_roman_numeral(num)
 	romanNumeral = ''
 	romanNumeral = romanNumeral + 'M' * (num / 1000)
 	romanNumeral = romanNumeral + 'D' * (num % 1000 / 500)
@@ -9,3 +9,4 @@ def roman(num)
 	romanNumeral = romanNumeral + 'I' * (num % 5 / 1)
 	romanNumeral
 end
+

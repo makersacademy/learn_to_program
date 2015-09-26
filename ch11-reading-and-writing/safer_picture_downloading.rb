@@ -22,7 +22,8 @@ counter = 1
 			end 
 
 		if File.exists? new_name
-			puts "already exist, type ew "
+			puts "already exist, type new name"
+		
 			exit
 		else	
 			File.rename name, new_name

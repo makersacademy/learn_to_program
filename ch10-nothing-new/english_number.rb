@@ -3,7 +3,7 @@ def english_number (number)
   	return "Please enter a number that isn't negative"
   end
   if number == 0
-  	return "Zero"
+  	return "zero"
   end
 
   ones_place = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
@@ -25,19 +25,24 @@ left = number #6792001
   num_arr_rev = num_array.reverse
   num_arr_rev.each_with_index { |value , index| # [6,7,9,2,0,0,1]                                           
     if index % 3 == 0 && value > 0 && index != 0                       
-      num_string = num_string.insert(t, ones_place[value-1] + " " + other_place[index/3] + " ")        # "thousand" "two"              # "million" "six"
+      num_string = num_string.insert(t, ones_place[value-1] + "" + other_place[index/3] )        # "thousand" "two"              # "million" "six"
     elsif index % 3 == 0 && value > 0 && index == 0  
       num_string = num_string.insert(t, ones_place[value-1])
     elsif index % 3 == 1 && value > 0
        if value == 1 
         num_string = num_string.delete(ones_place[num_arr_rev[index-1]-1])
-        num_string = num_string.insert(t, teens_place[num_arr_rev[index-1]-1] + " ")
+        num_string = num_string.insert(t, teens_place[num_arr_rev[index-1]-1] )
       else
-        num_string = num_string.insert(t, tens_place[value-1] + " ")     
+        num_string = num_string.insert(t, "-" + tens_place[value-1] )     
       end
     elsif index % 3 == 2 && value > 0
-      num_string = num_string.insert(t, ones_place[value-1] + " " + other_place[0] +  " and ")              # "hundred" "seven"
+      num_string = num_string.insert(t, ones_place[value-1] + " " + other_place[0] )              # "hundred" "seven"
+    end
+    if index != 0 || 1 index % 3 ==1
+      num_string = num_string + " "
     end
   }  
   num_string                                                        # num_string = "six million seven hundred ninety two thousand and one"
 end
+
+

@@ -1,14 +1,13 @@
-$logger_depth = 0
-
-def log desc, &block
-  prefix = ' '*$logger_depth
-
-  puts prefix + 'Beginning "' + desc + '"...'
-
-  $logger_depth = $logger_depth + 1
+def profile block_description, &block
+  profiling_on = false
   
-  result = block.call
-
-  $logger_depth = $logger_depth - 1
-  puts prefix + '..."' + desc + '" finished, returning: ' + result.to_s
+  if profiling_on
+    start_time = Time.new
+    block.call
+    
+    duration = Time.new - start_time
+    puts "#{block_description}: #{duration} seconds"
+  else
+    block.call
+  end
 end

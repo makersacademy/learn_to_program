@@ -8,9 +8,11 @@ log 'outer block' do
 	log 'some little block' do 
 		1**1 + 2**2
 	end
+
     log 'yet another block' do
 		'finish'
 	end
+	
 	'0' == 0
 end
 

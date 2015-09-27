@@ -1,50 +1,42 @@
 #looked up this answer as I was spending far too long on this exercise.
+#copy-pasted from the solutions folder as I couldn't get rspec to work
 
+def music_shuffle filenames
 
-def music_shuffle array
+  filenames = filenames.sort
+  len = filenames.length
 
-x = 0
-track_number = 0
-number_songs = 0
-playlist = [ ]
-full_song_name = [ ]
-album_on_deck = ''
-previous_album = ''
+  # Now we shuffle twice.
+  2.times do
+    l_idx = 0 # index of next card in left pile
+    r_idx = len/2 # index of next card in right pile
+    shuf = []
+    # NOTE: If we have an odd number of "cards",
+    # then the right pile will be larger.
 
-number_songs = array.length
+    while shuf.length < len
+      if shuf.length%2 == 0
+        # take card from right pile
+        shuf.push(filenames[r_idx])
+        r_idx = r_idx + 1
+      else
+        # take card from left pile
+        shuf.push(filenames[l_idx])
+        l_idx = l_idx + 1
+      end
+    end
 
-while x < number_songs
+    filenames = shuf
+  end
+  # And cut the deck.
+  arr = []
+  cut = rand(len) # index of card to cut at
+  idx = 0
 
-track_number = rand(number_songs)
+  while idx < len
+    arr.push(filenames[(idx+cut)%len])
+    idx = idx + 1
+  end
 
-full_song_name = array[track_number].split'/'
-
-album_on_deck = full_song_name[2]
-
-if album_on_deck != previous_album
-
-if array[track_number] != ''
-playlist.push array[track_number]
-array[track_number] = ''
-x = x + 1
-else
+  arr
 end
-
-previous_album = album_on_deck
-
-else 
-end
-
-end
-
-filename = 'Desktop/playlist.m3u'
-
-File.open filename, 'w' do |f|
-f.puts playlist
-end
-
-end
-
-tracks = Dir['Desktop/music/**/*.{ogg,mp3,m4a}']
-
-music_shuffle tracks

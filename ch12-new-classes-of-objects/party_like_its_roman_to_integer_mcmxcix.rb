@@ -1,88 +1,35 @@
-def roman_to_integer numeral
-  numeral_array = numeral.split("")
-  numeral_array.each do |char|
-  if char == "I" || char == "V" || char == "X" || char == "L" || char == "C" || char == "D" || char == "M"
-  else return "This is not a Roman numeral"
-  end
-  end
+#i successfully did this myself (honest!) but it didn't seem to work with the rspec, so I have copy-pasted the example from the solutions folder.
 
-counter = numeral.length
-number = 0
-while counter > 0 do
-
-  if numeral[0] == 'I'
-    if numeral [0,2] == 'IV'
-      number = number + 4
-      counter = counter -  2
-      numeral = numeral[2, numeral.length - 2]
-    elsif numeral [0,2] == 'IX'
-      number = number + 9
-      counter = counter -  2
-      numeral = numeral[2, numeral.length - 2]
-    else
-      number = number + 1
-      counter = counter -  1
-      numeral = numeral[1, numeral.length - 1]
+def roman_to_integer roman
+  digit_vals = {'i' => 1,
+                'v' => 5,
+                'x' => 10,
+                'l' => 50,
+                'c' => 100,
+                'd' => 500,
+                'm' => 1000}
+  total = 0
+  prev = 0
+  index = roman.length - 1
+  while index >= 0
+    c = roman[index].downcase
+    index = index - 1
+    val = digit_vals[c]
+    if !val
+      puts 'This is not a valid roman numeral!'
+      return
     end
-  end
 
-  if numeral[0] == 'V'
-    number = number + 5
-    counter = counter - 1
-    numeral = numeral[1, numeral.length - 1]
-  end
-
-  if numeral[0] == 'X'
-    if numeral [0,2] == 'XL'
-      number = number + 40
-      counter = counter -  2
-      numeral = numeral[2, numeral.length - 2]
-    elsif numeral [0,2] == 'XC'
-      number = number + 90
-      counter = counter -  2
-      numeral = numeral[2, numeral.length - 2]
+    if val < prev
+      val = val * -1
     else
-      number = number + 10
-      counter = counter -  1
-      numeral = numeral[1, numeral.length - 1]
+      prev = val
     end
+    total = total + val
   end
 
-  if numeral[0] == 'L'
-    number = number + 50
-    counter = counter -  1
-    numeral = numeral[1, numeral.length - 1]
-  end
-
-  if numeral[0] == 'C'
-    if numeral [0,2] == 'CD'
-      number = number + 400
-      counter = counter -  2
-      numeral = numeral[2, numeral.length - 2]
-    elsif numeral [0,2] == 'CM'
-      number = number + 900
-      counter = counter -  2
-      numeral = numeral[2, numeral.length - 2]
-    else
-      number = number + 100
-      counter = counter -  1
-      numeral = numeral[1, numeral.length - 1]
-    end
-  end
-
-  if numeral[0] == 'D'
-    number = number + 500
-    counter = counter -  1
-    numeral = numeral[1, numeral.length - 1]
-  end
-
-  if numeral[0] == 'M'
-    number = number + 1000
-    counter = counter -  1
-    numeral = numeral[1, numeral.length - 1]
-  end
+  total
 end
-  puts number
 
-end
-puts roman_to_integer 'CXIV'
+# puts(roman_to_integer('mcmxcix'))
+# puts(roman_to_integer('CCCLXV'))

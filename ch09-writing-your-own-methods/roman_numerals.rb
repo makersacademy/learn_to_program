@@ -1,15 +1,15 @@
 # Couldn't do - had to review solution.
-def to_roman num
-  thousands = num / 1000
-  hundreds = num % 1000 / 100
-  tens = num % 100 /10
-  ones = num % 10 / 1
+def roman_numeral num
+  thous = (num / 1000)
+  hunds = (num % 1000 / 100)
+  tens  = (num % 100 / 10)
+  ones  = (num % 10)
 
-  roman = 'M' * thousands
+  roman = 'M' * thous
 
-  if hundreds == 9
+  if hunds == 9
     roman = roman + 'CM'
-  elsif hundreds == 4
+  elsif hunds == 4
     roman = roman + 'CD'
   else
     roman = roman + 'D' * (num % 1000 / 500)
@@ -19,7 +19,7 @@ def to_roman num
   if tens == 9
     roman = roman + 'XC'
   elsif tens == 4
-    roman = roman + 'XL'
+    roman = romann + 'XL'
   else
     roman = roman + 'L' * (num % 100 / 50)
     roman = roman + 'X' * (num % 50 / 10)
@@ -31,9 +31,9 @@ def to_roman num
     roman = roman + 'IV'
   else
     roman = roman + 'V' * (num % 10 / 5)
-    roman = roman + 'I' * (num % 5)
+    roman = roman + 'I' * (num % 5 / 1)
   end
   roman
 end
 
-puts to_roman(449)
+# puts(roman_numeral(1999))

@@ -1,41 +1,22 @@
-$logger_depth = 0
+require './ch14-blocks-and-procs/better_program_logger.rb'
+ 
+describe 'better program logger' do
+   it 'logs' do
+     expect(STDOUT).to receive(:puts).with 'Beginning "outer block"...'
+     expect(STDOUT).to receive(:puts).with ' Beginning "some little block"...'
+ @@ -11,15 +11,15 @@
+     expect(STDOUT).to receive(:puts).with ' ..."yet another block" finished, returning: I love Indian food!'
+     expect(STDOUT).to receive(:puts).with '..."outer block" finished, returning: true'
+ 
+    better_log 'outer block' do
+      better_log 'some little block' do
+        better_log 'teeny-tiny block' do
+           'lOtS oF lOVe'.downcase
+         end
+         7 * 3 * 2
+       end
 
-def log desc, &block
-
-prefix = ' '*$logger_depth
-
-puts prefix+"Beginning #{desc.inspect}..."
-
-$logger_depth += 1
-
-result = block[]
-
-$logger_depth -= 1
-
-puts prefix+"...#{desc.inspect} finished, returning: #{result}"
-
-end
-
-log 'outer block' do
-
-log 'some little block' do
-
-log 'teeny-tiny block' do
-
-'lOtS oF lOVe'.downcase
-
-end
-
-7 * 3 * 2
-
-end
-
-log 'yet another block' do
-
-'!doof naidnI evol I'.reverse
-
-end
-
-'0' == "0"
-
-end
+      better_log 'yet another block' do
+         '!doof naidnI evol I'.reverse
+       end
+       '0' == "0"

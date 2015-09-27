@@ -13,7 +13,7 @@ end
 
 
 
-def roman_numeral
+def to_roman
   thousands = self / 1000
   hundreds = self % 1000 / 100
   tens = self % 100 /10
@@ -52,7 +52,7 @@ end
 end
 puts 9.factorial
 
-puts 20.roman_numeral
+puts 20.to_roman
 
 class Array
   def shuffle

@@ -1,6 +1,6 @@
 def log desc, &block
   # your code here
-  puts "Beginning \"#{desc}\"..."
+  puts " Beginning \"#{desc}\"..."
   retval=block.call
   puts "...\"#{desc}\" finished, returning: #{retval}"
 end

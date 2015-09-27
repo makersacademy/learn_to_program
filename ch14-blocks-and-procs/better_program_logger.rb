@@ -1,6 +1,7 @@
 $logger_depth = 0
 def log desc, &block
 	prefix = ' '*$logger_depth
+	puts prefix
 		puts prefix + 'Beginning "' + desc + '"...'
 		$logger_depth = $logger_depth + 1
 		result = block.call

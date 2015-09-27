@@ -30,3 +30,7 @@ end
 #ary = getsAry
 #puts shuffle ary
 
+# ary = %w( Aston_Villa Birmingham Chelsea Doncaster Everton Falkirk Gateshead Hungerford)
+# p ary
+# p shuffle ary
+

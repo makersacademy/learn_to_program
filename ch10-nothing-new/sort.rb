@@ -6,5 +6,5 @@ def sort (list)
 			end	
 		}
 	}
-	print list
+	return list
 end

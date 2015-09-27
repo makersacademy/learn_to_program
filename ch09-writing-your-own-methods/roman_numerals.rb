@@ -35,7 +35,8 @@ def roman_numeral num
 
   roman
 end
-
+=begin
 puts 'Please enter an integer number:'
 number = gets.to_i
 puts(roman_numeral(number))
+=end

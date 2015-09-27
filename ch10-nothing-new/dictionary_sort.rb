@@ -1,26 +1,26 @@
+#my sorting method works as a dictionary sort too. I didn't have to modify anything.
+
+
 def dictionary_sort arr
-	rec_dict_sort arr, []
+  
+  
+  length = arr.length
+  arr2 =  []
+  count = 0
+  while count < length
+  	return arr if length <= 1
+  	x = arr.min
+  	
+  	y = arr.find_index(x)
+
+  	arr2.push(x)
+  	
+  	arr.delete_at(y)
+  	count += 1
+  end
+  
+  arr2
+
 end
-def rec_dict_sort unsorted, sorted
-	if unsorted.length <= 0
-		return sorted
-	end
-# So if we got here, then it means we still
-# have work to do.
-smallest = unsorted.pop
-still_unsorted = []
-unsorted.each do |tested_object|
-	if tested_object.downcase < smallest.downcase
-		still_unsorted.push smallest
-		smallest = tested_object
-	else
-		still_unsorted.push tested_object
-	end
-end
-	# Now "smallest" really does point to the
-	# smallest element that "unsorted" contained,
-	# and all the rest of it is in "still_unsorted".
-	sorted.push smallest
-	rec_dict_sort still_unsorted, sorted
-end
-puts(dictionary_sort(['can','feel','singing.','like','A','can']))
+
+# puts dictionary_sort([' a', ' can' ,' feel' ,' singing.' ,' like' ,' A' ,' can' ])

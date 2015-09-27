@@ -1,22 +1,11 @@
-require './ch14-blocks-and-procs/better_program_logger.rb'
- 
-describe 'better program logger' do
-   it 'logs' do
-     expect(STDOUT).to receive(:puts).with 'Beginning "outer block"...'
-     expect(STDOUT).to receive(:puts).with ' Beginning "some little block"...'
- @@ -11,15 +11,15 @@
-     expect(STDOUT).to receive(:puts).with ' ..."yet another block" finished, returning: I love Indian food!'
-     expect(STDOUT).to receive(:puts).with '..."outer block" finished, returning: true'
- 
-    better_log 'outer block' do
-      better_log 'some little block' do
-        better_log 'teeny-tiny block' do
-           'lOtS oF lOVe'.downcase
-         end
-         7 * 3 * 2
-       end
+$level=0
 
-      better_log 'yet another block' do
-         '!doof naidnI evol I'.reverse
-       end
-       '0' == "0"
+def log1 desc, &block
+  # your code here
+  indent = " "
+  puts "#{indent*$level}Beginning \"#{desc}\"..."
+  $level +=1
+  retval=block.call
+  $level -=1
+  puts "#{indent*$level}...\"#{desc}\" finished, returning: #{retval}"
+end

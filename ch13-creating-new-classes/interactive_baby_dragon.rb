@@ -94,28 +94,27 @@ end
 end
 end
 
-list_of_commands = ['feed','walk','put to bed','toss','rock',]
+list_of_commands = ['feed','walk','put to bed','toss','rock']
 
 puts 'Please enter a name for your baby dragon.'
 name = gets.chomp
 pet = Dragon.new name
 
-puts 'Please enter a command. Here are your options: walk, toss, feed, rock, put to bed'
+puts 'Please enter a command. Here are your options: walk, toss, feed, rock, put to bed. Type "exit" to quit.'
 command = gets.chomp.downcase
 while command != 'exit' do
   if list_of_commands.include?(command) == false
-    puts 'Please enter a command. Here are your options: walk, toss, feed, rock, put to bed'
+    puts 'Please enter a command. Here are your options: walk, toss, feed, rock, put to bed. Type "exit" to quit.'
     command = gets.chomp.downcase
   else
     if command == 'put to bed'
     command = 'put_to_bed'
     end
   pet.send(command)
-    puts 'Please enter a command. Here are your options: walk, toss, feed, rock, put to bed'
+    puts 'Please enter a command. Here are your options: walk, toss, feed, rock, put to bed. Type "exit" to quit.'
     command = gets.chomp.downcase
   end
 end
 if command != 'exit'
   exit
 end
-

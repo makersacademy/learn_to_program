@@ -1,113 +1,54 @@
-class OrangeTree
+ class OrangeTree
 
-def initialize
+  def initialize
+    @height = 0
+    @fruit = 0
+    @alive = true
+  end
 
-@height = 0
-
-@orange_count = 0
-
-@alive = true
-
-end
-
-def height
-
-if @alive
-
-@height.round(1)
-
-else
-
-'A dead tree is not very tall. :('
-
-end
-
-end
-
-def count_the_oranges
-
-if @alive
-
-@orange_count
-
-else
-
-'A dead tree has no oranges. :('
-
-end
-
-end
-
-def one_year_passes
-
-if @alive
-
-@height = @height + 0.4
-
-@orange_count = 0 
-
-if @height > 10 && rand(2) > 0
+  def height
+    @alive ? @height.round(1) : 'A dead tree is not very tall. :('
+  end
 
 
-@alive = false
-
-'Oh, no! The tree is too old, and has died. :('
-
-elsif @height > 2
+  def count_the_oranges
+    @alive ? @fruit : 'A dead tree has no oranges. :('
+  end
 
 
-@orange_count = (@height * 15 - 25).to_i
+  def one_year_passes
+    if @alive
+      @height += 0.4
+      @fruit = 0
 
-"This year your tree grew to #{@height.round(1)}m tall," +
+      if @height.round(1) > 10
+        @alive = false
+        'Oh, no! The tree is too old, and has died. :('
+       elsif @height > 2
+        @fruit = (@height * 15 - 25).to_i
+        "This year your tree grew to #{@height.round(1)}m tall, " +
+        "and produced #{@fruit} oranges."
+      else
+        "This year your tree grew to #{@height.round(1)}m tall, " +
+        "but is still too young to bear fruit."
+      end
 
-" and produced #{@orange_count} oranges."
+    else
+      "A year later, the tree is still dead. :("
+    end
+        
+  end
+  
 
-else
-
-"This year your tree grew to #{@height.round(1)}m tall," +
-
-" but is still too young to bear fruit."
-
-end
-
-else
-
-'A year later, the tree is still dead. :('
-
-end
-
-end
-
-def pick_an_orange
-
-if @alive
-
-if @orange_count > 0
-
-@orange_count = @orange_count - 1
-
-'You pick a juicy, delicious orange!'
-
-else
-
-'You search every branch, but find no oranges.'
-
-end
-
-else
-
-'A dead tree has nothing to pick. :('
-
-end
-
-end
-
-end
-
-ot = OrangeTree.new
-
-23.times do
-
-ot.one_year_passes
-
-end
+  def pick_an_orange
+    if @alive
+      if @fruit > 0
+        @fruit -= 1
+        "You pick a juicy, delicious orange!"
+      else
+      "You search every branch, but find no oranges."
+      end
+    else
+      "A dead tree has nothing to pick. :("
+    end
+  end

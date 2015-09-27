@@ -1,3 +1,5 @@
+
+
   # We don't want a perfectly random shuffle, so let's
   # instead do a shuffle like card-shuffling. Let's
   # shuffle the "deck" twice, then cut it once. That's
@@ -46,3 +48,35 @@ end
 # songs = ['aa/bbb', 'aa/ccc', 'aa/ddd',
 #          'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
 # puts(music_shuffle(songs))
+
+
+
+
+=begin
+
+#my own version
+
+Dir.chdir 'C:\Users\Public\Music\Sample Music'
+
+
+
+abc = 'a'.upto('z').to_a
+x = abc.each { |i| i }
+
+music_files = Dir["#{x.to_s}*.mp3"]
+
+
+
+puts music_files
+
+
+fileName = "playlist01.m3u"
+
+
+File.open fileName, 'w' do |f|
+	music_files.each do |i|
+	f.write i+"\n"	
+	end
+end
+
+=end

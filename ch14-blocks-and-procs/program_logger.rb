@@ -1,11 +1,16 @@
-$level=0
-
-def log1 desc, &block
+def log desc, &block
   # your code here
-  indent = " "
-  puts "#{indent*$level}Beginning \"#{desc}\"..."
-  $level +=1
+  puts "Beginning \"#{desc}\"..."
   retval=block.call
-  $level -=1
-  puts "#{indent*$level}...\"#{desc}\" finished, returning: #{retval}"
+  puts "...\"#{desc}\" finished, returning: #{retval}"
+end
+
+log "outer block" do
+	log "some little block" do
+		"5"
+	end
+    log "yet another block" do
+	    "I like thai food"
+    end
+	"false"
 end

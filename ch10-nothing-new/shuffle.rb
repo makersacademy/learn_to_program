@@ -1,4 +1,5 @@
 =begin
+#my code is working and it should pass the rspec test, but is not.
 
 def shuffle arr
   # your code here

@@ -1,11 +1,10 @@
-$level=0
+$space_count = 0
 
-def log1 desc, &block
-  # your code here
-  indent = " "
-  puts "#{indent}Beginning \"#{desc}\"..."
-  $level +=1
-  retval=block.call
-  $level -=1
-  puts "#{indent*$level}...\"#{desc}\" finished, returning: #{retval}"
+def log(desc, &block)
+  space = " " * $space_count  
+  puts "#{space}Beginning \"#{desc}\"..."
+  $space_count += 1
+  x = block.call
+  $space_count -= 1
+  puts "#{space}...\"#{desc}\" finished, returning: #{x.to_s}"
 end

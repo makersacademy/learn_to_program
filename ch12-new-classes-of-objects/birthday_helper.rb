@@ -1,8 +1,8 @@
 birth_dates = Hash.new
-
+x = []
 File.read('birth_list.txt').each_line do |line|
   line = line.chomp # To separate each bithday
-
+  x << line # Ho creato un Array nel quale ha messo il file "birth_list.txt"
   first_comma = 0 #counter
 
   while line[first_comma].chr != ',' && first_comma < line.length

@@ -1,13 +1,19 @@
 class Integer
-	def to_roman
-		if self == 4
-			roman = "IV"
-		else
-			roman = "XXXVIII"
-		end
-		roman
-	end
+  def factorial
+    raise 'Must not use negative integer' if self < 0
+    (self <= 1) ? 1 : self * (self-1).factorial
+  end
+  def to_roman
+    # I chose old-school roman numerals just to save space.
+    raise 'Must use positive integer' if self <= 0
+    roman = ''
+    roman << 'M' * (self / 1000)
+    roman << 'D' * (self % 1000 / 500)
+    roman << 'C' * (self % 500 / 100)
+    roman << 'L' * (self % 100 / 50)
+    roman << 'X' * (self % 50 / 10)
+    roman << 'V' * (self % 10 / 5)
+    roman << 'I' * (self % 5 / 1)
+    roman
+  end
 end
-puts 4.to_roman
-puts 38.to_roman
-puts 54.to_roman

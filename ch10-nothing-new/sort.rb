@@ -4,7 +4,7 @@ end
 
 def recursive_sort unsorted_arr, sorted_arr
   # we need to check if an unsorted array has only one item, then there's nothing to sort.
-  return sorted_arr if unsorted_arr.length <= 1
+  return sorted_arr if unsorted_arr.length < 1
   # first we remove the last element from an unsorted array.
   smallest = unsorted_arr.pop
   # then create an empty array for the rest of the unsorted array.

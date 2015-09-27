@@ -45,11 +45,13 @@ def english_number number
     end
   end
 
+write = left/1000000000000          # How many trillons left to write out?
+  left  = left - write*1000000000000  # Subtract off those hundreds.
+
   if write > 0
     # Now here's a really sly trick:
     trillions  = english_number write
     numString = numString + trillions + ' trillion'
-    #recursion
 
     if left > 0
       # So we don't write 'two hundredfifty-one'...

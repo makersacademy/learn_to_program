@@ -34,6 +34,3 @@ def music_shuffle filenames
   end
   ary
 end
-songs = ['aa/bbb', 'aa/ccc', 'aa/ddd',
-          'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
-puts(music_shuffle(songs))

@@ -1,7 +1,7 @@
 $logger_depth = 0
 
-def log desc, &block
-  prefix = '  '*$logger_depth
+def boom desc, &block
+  prefix = ' '*$logger_depth
 
   puts prefix + 'Beginning "' + desc + '"...'
   $logger_depth = $logger_depth + 1
@@ -10,16 +10,16 @@ def log desc, &block
   puts prefix + '..."' + desc + '" finished, returning: ' + result.to_s
 end
 
-log 'outer block' do
-  log 'some little block' do
-    log 'teeny-tiny block' do
+boom 'outer block' do
+  boom 'some little block' do
+    boom 'teeny-tiny block' do
       'lOtS oF lOVe'.downcase
     end
 
     7 * 3 * 2
   end
 
-  log 'yet another block' do
+  boom 'yet another block' do
     '!doof iahT ekil I'.reverse
   end
 

@@ -1,6 +1,6 @@
 def roman_numeral num
 
-  a = [[1000, "M"], [500, "D"], [100, "C"], [50, "L"], [10, "X"], [5, "V"], [1, "I"]]
+  a = [[1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"],[90,"XC"], [50, "L"],[40,"XL"], [10, "X"],[9,"IX"], [5, "V"],[4,"IV"] ,[1, "I"]]
 
   i = num
   to_print = ''
@@ -11,21 +11,8 @@ def roman_numeral num
     i = i - to_cut
     b += 1
   end
-  #sub the 4's
-  to_print.gsub!(/IIII/, 'IV')
-  to_print.gsub!(/XXXX/, 'XL')
-  to_print.gsub!(/CCCC/, 'CD')
-
-  #reverse 9's
-   to_print.gsub!(/DCD/, 'CM')
-   to_print.gsub!(/LXL/, 'XC')
-   to_print.gsub!(/VIV/, 'IX')
 
   to_print
 
 end
-
-
-puts roman_numeral 1982
-puts roman_numeral 4444
 

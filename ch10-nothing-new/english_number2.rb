@@ -1,7 +1,7 @@
 def english_number number
 
   if number < 0
-    return "Enter a positive number."
+    return "please enter a number that isn't negative"
   end
 
   if number == 0
@@ -24,7 +24,7 @@ def english_number number
     left = left - write * large_denominator
 
     if write > 0
-      num_string = num_string + english_number(write) + " " + large_num[0]
+    num_string = num_string + english_number(write) + " " + large_num[0]
       if left > 0
         num_string = num_string + " "
       end
@@ -35,13 +35,11 @@ def english_number number
   left = left - write * 10
 
   if write > 0
-    if (write == 1) && (left > 0)
+    if (write == 1) && (write > 0)
       num_string = num_string + teenagers[left-1]
-      left = 0
     else
-      num_string = num_string + tens[write-1]
+      num_string = num_string + tens[left-1]
     end
-
     if left>0
       num_string = num_string + "-"
     end

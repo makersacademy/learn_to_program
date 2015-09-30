@@ -8,6 +8,7 @@ def ask question
                 else
                     return false
                 end
+                break
             else
                 puts 'Please answer "yes" or "no".'
             end

@@ -1,0 +1,1 @@
+puts "My age in seconds: ", 22 * 365 * 24 * 60 * 60 

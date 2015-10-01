@@ -1,6 +1,6 @@
 $depth = 0
 
-def log desc, &block
+def better_log desc, &block
   puts ' ' * $depth + 'Beginning "' + desc + '"...'
   $depth += 1
   result = block.call
@@ -8,12 +8,12 @@ def log desc, &block
   puts ' ' * $depth + '..."' + desc + '" finished, returning: ' + result.to_s
 end
 
-log 'outer block' do
-  log 'some little block' do
+better_log 'outer block' do
+  better_log 'some little block' do
     5
   end
 
-  log 'yet another block' do
+  better_log 'yet another block' do
     '!doof iahT ekil I'.reverse
   end
 

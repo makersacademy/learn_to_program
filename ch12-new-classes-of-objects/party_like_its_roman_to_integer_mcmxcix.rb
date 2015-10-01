@@ -19,9 +19,6 @@ def roman_to_integer(roman, result = 0)
       result += key
       roman = roman.slice(value.length, roman.length)
       return roman_to_integer(roman, result)
-    else
-      puts 'This is not a valid roman numeral!'
-      exit
     end
   end
 end

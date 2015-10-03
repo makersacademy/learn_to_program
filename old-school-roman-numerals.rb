@@ -10,11 +10,10 @@ def old_roman_numeral num
   roman = roman + 'X' * (num % 50 / 10) 
   roman = roman + 'V' * (num % 10 / 5) 
   roman = roman + 'I' * (num % 5 / 1) 
-  puts roman.to_s
+  puts roman
 end
 
 puts 'Please enter a number between 1 and 3000: '
 
-num = gets.chomp
-num = num.to_i
+num = gets.chomp.to_i
 old_roman_numeral(num)

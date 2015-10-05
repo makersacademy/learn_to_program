@@ -21,14 +21,3 @@ def recursive_shuffle unshuffled, shuffled
 
   recursive_shuffle still_unshuffled, shuffled
 end
-
-puts 'Hello, please input words, followed by the enter key. When you have finished, just press enter.'
-words = gets.chomp
-words_list = Array.new
-
-while words != ''
-  words_list.push words
-  words = gets.chomp
-end
-
-puts shuffle(words_list)

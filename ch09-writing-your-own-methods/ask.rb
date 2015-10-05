@@ -1,3 +1,5 @@
 def ask question
-  # your code here
+  print question
+  answer = gets.chomp
+  answer == 'yes'
 end

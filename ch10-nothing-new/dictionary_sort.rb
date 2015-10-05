@@ -20,14 +20,3 @@ def recursive_dictionary_sort unsorted, sorted
   sorted.push smallest
   recursive_dictionary_sort still_unsorted, sorted
 end
-
-puts 'Hello, please input words, followed by the enter key. When you have finished, just press enter.'
-words = gets.chomp
-words_list = Array.new
-
-while words != ''
-  words_list.push words
-  words = gets.chomp
-end
-
-puts dictionary_sort(words_list)

@@ -130,5 +130,3 @@ if number > 0
   Go to the store and buy some more, 99 bottles of beer on the wall.'
 end
 end
-
-puts ninety_nine_bottles 2222

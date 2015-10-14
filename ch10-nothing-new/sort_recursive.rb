@@ -1,7 +1,6 @@
-def dictionary_sort arr
+def sort arr
   recursive_sort arr, []
 end
-
 
 def getsAry
   ary = []
@@ -22,7 +21,7 @@ def recursive_sort unsorted_array, sorted_array
   else
     smallest = unsorted_array[0]
     (1..(unsorted_array.length-1)).each do |index|
-      if smallest.downcase > unsorted_array[index].downcase
+      if smallest > unsorted_array[index]
         new_unsorted.push(smallest)
         smallest = unsorted_array[index]
       else
@@ -34,7 +33,7 @@ def recursive_sort unsorted_array, sorted_array
   end
 end
 
-#puts "Input array one item at a time, enter twice to end"
-#ary = getsAry
-#puts dictionary_sort ary
+puts "Input array one item at a time, enter twice to end"
+ary = getsAry
+puts sort ary
 

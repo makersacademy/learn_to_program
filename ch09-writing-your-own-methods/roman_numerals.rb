@@ -23,5 +23,5 @@ def new_roman_numeral(num)
     new_romans.each do |old, new|
         num.gsub!(/#{old}/, old => new)
     end
-   puts num
+    num
 end

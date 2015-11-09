@@ -23,8 +23,3 @@ def old_roman_numeral num
 
   "#{"M" * many_thousands}#{"D" * many_fundreds}#{"C" * many_hundreds}#{"L" * many_fifties}#{"X" * many_tens}#{"V" * many_fives}#{"I" * num}"
 end
-
-p old_roman_numeral 2435
-p old_roman_numeral 594
-p old_roman_numeral 52
-p old_roman_numeral 3

@@ -3,5 +3,28 @@
 # I = 1 V = 5 X = 10 L = 50 C = 100 D = 500 M = 1000
 
 def old_roman_numeral num
-  # your code here
+  many_thousands = num / 1000
+  num -= many_thousands * 1000
+
+  many_fundreds = num / 500
+  num -= many_fundreds * 500
+
+  many_hundreds = num / 100
+  num -= many_hundreds * 100
+
+  many_fifties = num / 50
+  num -= many_fifties * 50
+
+  many_tens = num / 10
+  num -= many_tens * 10
+
+  many_fives = num / 5
+  num -= many_fives * 5
+
+  "#{"M" * many_thousands}#{"D" * many_fundreds}#{"C" * many_hundreds}#{"L" * many_fifties}#{"X" * many_tens}#{"V" * many_fives}#{"I" * num}"
 end
+
+p old_roman_numeral 2435
+p old_roman_numeral 594
+p old_roman_numeral 52
+p old_roman_numeral 3

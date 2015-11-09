@@ -1,6 +1,6 @@
 def sort arr
-  #recursive(arr, [])
-  non_recursive (arr)
+  recursive(arr, [])
+  #non_recursive (arr)
 end
 
 def recursive(arr, output)
@@ -36,7 +36,9 @@ def non_recursive arr
   output
 end
 
-
-#sentence = "variable can hold only one item at a time. Arrays can hold multiple items. These items are called elements of the array. Arrays can hold objects of any data type. Each element can be referred to by an index. Arrays are zero based. The index of the first element is zero."
-#words = sentence.downcase.split
-#p sort words
+=begin
+sentence = "variable can hold only one item at a time. Arrays can hold multiple items. These items are called elements of the array. Arrays can hold objects of any data type. Each element can be referred to by an index. Arrays are zero based. The index of the first element is zero."
+words = sentence.downcase.split
+p words.sort
+p sort words
+=end

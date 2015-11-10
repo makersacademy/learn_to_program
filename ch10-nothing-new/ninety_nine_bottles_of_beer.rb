@@ -92,6 +92,3 @@ class BeerSong
     end
   
 end
-
-sing = BeerSong.new(54)
-sing.print_song

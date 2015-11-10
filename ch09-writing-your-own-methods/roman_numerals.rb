@@ -10,15 +10,9 @@ def roman_numeral num
     @num = @left
   end
 
-  get_it("M", 1000)
-  get_it("D", 500)
-  get_it("C", 100)
-  get_it("L", 50)
-  get_it("X", 10)
-  get_it("IX", 9)
-  get_it("V", 5)
-  get_it("IV", 4)
-  get_it("I", 1)
+  hash = {"M"=>1000, "D"=>500, "C"=>500, "L"=>50, "X"=>10, "IX"=>9, "V"=>5, "IV"=>4, "I"=>1}
+  hash.each {|key, value| get_it(key, value)}
 
   @string
+
 end

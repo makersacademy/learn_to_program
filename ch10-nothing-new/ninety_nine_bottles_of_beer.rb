@@ -75,4 +75,4 @@ def english_number number
   num_string
 end
 
-#beertime 99999
+beertime 99

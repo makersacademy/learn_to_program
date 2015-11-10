@@ -1,7 +1,9 @@
 def bottles_of_beer(n)
-  puts "#{english_number(n)} #{bottle_noun(n)} of beer on the wall,\n#{english_number(n)} #{bottle_noun(n)} of beer,\nTake one down, pass it around,"
-  n -= 1
-  puts "#{english_number(n)} #{bottle_noun(n)} of beer on the wall."
+  until n == 0
+    puts "#{english_number(n)} #{bottle_noun(n)} of beer on the wall,\n#{english_number(n)} #{bottle_noun(n)} of beer,\nTake one down, pass it around,"
+    n -= 1
+    puts "#{english_number(n)} #{bottle_noun(n)} of beer on the wall."
+  end
 end
 
 def bottle_noun(n)

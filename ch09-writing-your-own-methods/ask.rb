@@ -1,3 +1,3 @@
 def ask question
-  # your code here
+  code entered
 end

@@ -104,23 +104,3 @@ def english_number(number)
 	end
 	num_string
 end
-
-puts english_number( 1)
-puts english_number( 10)
-puts english_number( 100)
-puts english_number( 1000)
-puts english_number( 10000)
-puts english_number( 88)
-puts english_number( 99)
-puts english_number(1001)
-puts english_number(101)
-puts english_number(212)
-puts english_number(3011)
-puts english_number(999999)
-puts english_number(3)
-puts english_number(30)
-puts english_number(300)
-puts english_number(3011)
-puts english_number(4012)
-puts english_number(211000)
-puts english_number(11101111)

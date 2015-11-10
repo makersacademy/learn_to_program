@@ -1,3 +1,5 @@
 def ask question
-  # your code here
+  puts "This is a question"
+  reply = gets.chomp
+  puts "#{reply} is not a very good answer"
 end

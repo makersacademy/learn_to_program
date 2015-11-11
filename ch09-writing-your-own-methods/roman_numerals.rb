@@ -37,9 +37,7 @@ def roman_numeral input
     c = ''
   end
 
-	puts m + d + c + l + x + v + i
+	return m + d + c + l + x + v + i
 
 end
-
-roman_numeral (input)
 

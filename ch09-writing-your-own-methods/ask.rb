@@ -4,9 +4,10 @@ def ask question
 	puts question
 	reply = gets.chomp
 
-		if (reply == 'yes' || reply == 'no')
-			return
-			break		
+		if reply == 'yes'
+			return true	
+		elsif reply == 'no'
+			return false						
 		else
 			puts 'Please answer "yes" or "no".'
 		end

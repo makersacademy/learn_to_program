@@ -7,3 +7,7 @@ def ask question
     puts "Please answer yes/YES or no/NO"
   end
 end
+
+# I though that refactoring the whole method would be an ideal solution rather than taking just the return
+
+#p ask("Testing answer")

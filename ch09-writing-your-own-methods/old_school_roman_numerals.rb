@@ -11,6 +11,7 @@
 
 def old_roman_numeral input
 	num = input.to_i
+	
 	m = 'M' * (num / 1000)
 	d = 'D' * ((num%1000) / 500)
 	c = 'C' * ((num%500) / 100)

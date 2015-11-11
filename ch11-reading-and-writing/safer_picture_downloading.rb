@@ -1,5 +1,5 @@
-Dir.chdir '/home/ubuntu/workspace/photos'
-pic_names = Dir['/home/ubuntu/workspace/new_photos/*.jpg']
+Dir.chdir '/home/ubuntu/workspace/new_photos'
+pic_names = Dir['/home/ubuntu/workspace/photos/*.jpg']
 
 
 puts 'What would you like to call this batch?'

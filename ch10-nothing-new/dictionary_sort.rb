@@ -11,5 +11,5 @@
 
 
 def dictionary_sort arr
-arr.split.map.sort_by{|word| word.downcase}.join(" ")
+arr.split.map.sort_by {|word| word.downcase}.join(" ")
 end

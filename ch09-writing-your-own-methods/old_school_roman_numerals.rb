@@ -10,8 +10,9 @@
 #I = 1 V = 5 X = 10 L = 50 C = 100 D = 500 M = 1000
 
 def old_roman_numeral input
+
 	num = input.to_i
-	
+
 	m = 'M' * (num / 1000)
 	d = 'D' * ((num%1000) / 500)
 	c = 'C' * ((num%500) / 100)
@@ -20,7 +21,7 @@ def old_roman_numeral input
 	v = 'V' * ((num%10) / 5)
 	i = 'I' * ((num%5) / 1)
 
-	puts m + d + c + l + x + v + i
+	return m + d + c + l + x + v + i
+
 end
 
-old_roman_numeral (input)

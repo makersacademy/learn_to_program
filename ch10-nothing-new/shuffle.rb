@@ -13,10 +13,10 @@ def shuffle arr
 
     curr_index = curr_index + 1
   end
-    
+
   arr = new_arr
   end
-  
+
   shuf
 end
 

@@ -36,6 +36,5 @@ else
   to_return << "V" * (num % 10 / 5)
   to_return << "I" * (num % 5 / 1)
 end
-
-return to_return
+to_return
 end

@@ -13,5 +13,5 @@ def ask question
 
     puts 'please answer "yes" or "no".'
   end
-  
+
 end

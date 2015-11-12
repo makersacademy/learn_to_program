@@ -1,5 +1,16 @@
 def ask question
-  puts "This is a question"
-  reply = gets.chomp
-  puts "#{reply} is not a very good answer"
+    while true
+    puts "Please answer \"yes\" or \"no\"."
+    answer = gets.chomp.downcase
+        if (answer == "yes" || answer == "no")
+            if answer == "yes"
+                    return true
+            else
+            return false
+            end
+        break
+        else
+        puts "Yes or no, only"
+        end
+    end
 end

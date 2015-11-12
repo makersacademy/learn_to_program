@@ -18,8 +18,8 @@ end
 # with a pathlength of any size.
 while song_array.length != 0
   first = song_array[0][-2]
-  big_array << song_array.select{|x| x[-2] == first}
-  song_array.delete_if{|x| x[-2] == first}
+  big_array << song_array.select{|song| song[-2] == first}
+  song_array.delete_if{|song| song[-2] == first}
 end
 
 # Shuffle the array of artists to prevent playlists always starting with
@@ -57,4 +57,4 @@ end
 
 
 #songs = ['aa/bbb', 'aa/ccc', 'aa/ddd', 'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
-#music_shuffle(songs)
+#p music_shuffle(songs)

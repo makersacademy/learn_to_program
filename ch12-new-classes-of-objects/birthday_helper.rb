@@ -2,7 +2,6 @@ require 'time'
 
 def bday_help
 
-
 Dir.chdir '/Users/chriswynne/projects/learn_to_program/ch12-new-classes-of-objects'
 
 file_name = 'birthday_list.txt'
@@ -21,9 +20,6 @@ birth_date = birthdays[name]
 p birth_date
 puts "Next birthday is #{birth_date[0..-6]}"
 puts "They will be #{years_since(birth_date)} years old."
-
-
-
 
 end
 

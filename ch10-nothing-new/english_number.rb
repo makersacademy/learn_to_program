@@ -12,66 +12,54 @@ def english_number number
   ones_place = ['one', 'two', 'three', "four", "five", "six", "seven", "eight","nine"]
   tens_place = ['ten', 'twenty', 'thirty',"forty","fifty","sixty","seventy","eighty","ninety"]
   teenagers = ['eleven', 'twelve', 'thirteen',"fourteen", 'fifteen', 'sixteen','seventeen', 'eighteen', 'nineteen']
+  zillions = [['hundred', 2],
+              ['thousand', 3],
+              ['million', 6],
+              ['billion', 9],
+              ['trillion', 12],
+              ['quadrillion', 15],
+              ['quintillion', 18],
+              ['sextillion', 21],
+              ['septillion', 24],
+              ['octillion', 27],
+              ['nonillion', 30],
+              ['decillion', 33],
+              ['undecillion', 36],
+              ['duodecillion', 39],
+              ['tredecillion', 42],
+              ['quattuordecillion', 45],
+              ['quindecillion', 48],
+              ['sexdecillion', 51],
+              ['septendecillion', 54],
+              ['octodecillion', 57],
+              ['novemdecillion', 60],
+              ['vigintillion', 63],
+              ['googol', 100]]
 
+
+left = number
   # "left" is how much of the number we still have left to write out.
   # "write" is the part we are writing out right now.
 
-  left = number
+  while zillions.length > 0
+     zil_pair = zillions.pop # starts with the last pair of zillions array
+     zil_name = zil_pair[0] # the string name
+     zil_base = 10 ** zil_pair[1] # power the number of zeroes
+     write = left/zil_base # How many zillions left?
+     left = left - write*zil_base # Subtract off those zillions.
 
-  write = left/1000000000000 # How many trills left?
-  left = left - write*1000000000000 # Subtract off those trills.
+     if write > 0
+       # Now here's the recursion:
+       prefix = english_number write
+       num_string = num_string + prefix + ' ' + zil_name
 
-  if write > 0
-      trills = english_number write
-      num_string = num_string + trills + ' trillion'
-      if left > 0
-        num_string = num_string + ' '
-      end
-  end
+       if left > 0
+         # So we don't write 'two billionfifty-one'...
+         num_string = num_string + ' '
+       end
+     end
+   end
 
-  write = left/1000000000 # How many bills left?
-  left = left - write*1000000000 # Subtract off those bills.
-
-  if write > 0
-      bills = english_number write
-      num_string = num_string + bills + ' billion'
-      if left > 0
-        num_string = num_string + ' '
-      end
-  end
-
-  write = left/1000000 # How many mills left?
-  left = left - write*1000000 # Subtract off those mills.
-
-  if write > 0
-      mills = english_number write
-      num_string = num_string + mills + ' million'
-      if left > 0
-        num_string = num_string + ' '
-      end
-  end
-
-  write = left/1000 # How many thous left?
-  left = left - write*1000 # Subtract off those thous.
-
-  if write > 0
-      thousands = english_number write
-      num_string = num_string + thousands + ' thousand'
-      if left > 0
-        num_string = num_string + ' '
-      end
-  end
-
-  write = left/100 # How many hundreds left?
-  left = left - write*100 # Subtract off those hundreds.
-
-  if write > 0
-      hundreds = english_number write
-      num_string = num_string + hundreds + ' hundred'
-      if left > 0
-        num_string = num_string + ' '
-      end
-  end
 
   write = left/10 # How many tens left?
   left = left - write*10 # Subtract off those tens.

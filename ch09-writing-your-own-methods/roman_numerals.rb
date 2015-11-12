@@ -1,4 +1,4 @@
-def roman_numeral num
+
   # “Modern” Roman numerals. Eventually, someone thought it would be ter- ribly clever if 
   #putting a smaller number before a larger one meant you had to subtract the smaller one. 
   #As a result of this development, you must now suffer. 
@@ -8,7 +8,7 @@ def roman_numeral num
 def roman_numeral input
 	num = input.to_i
 
-	m = 'M' * (num / 1000)
+	m = 'M' * (num/1000)
 	d = 'D' * ((num%1000) / 500)
 	c = 'C' * ((num%500) / 100)
 	l = 'L' * ((num%100) / 50)
@@ -21,6 +21,7 @@ def roman_numeral input
   elsif i == 'IIII'
     v = 'IX'
     i = ''
+   
   end
 
   if x == 'XXXX' && l != 'L'
@@ -28,6 +29,7 @@ def roman_numeral input
   elsif x == 'XXXX'
     l = 'XC'
     x = ''
+  
   end
 
   if c == 'CCCC' && d != 'D'
@@ -37,7 +39,6 @@ def roman_numeral input
     c = ''
   end
 
-	return m + d + c + l + x + v + i
+return m + d + c + l + x + v + i
 
 end
-

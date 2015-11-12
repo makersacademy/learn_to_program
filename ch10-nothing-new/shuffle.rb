@@ -1,4 +1,6 @@
 def shuffle arr
-  arr.sample(arr.length)
+  arr.shuffle
 end
 
+# arr.sample(arr.length)
+# arr.sort_by{rand}

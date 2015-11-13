@@ -12,6 +12,17 @@ class Die
     @number_showing
   end
 
+  def cheat(value)
+    if value <= 6 && value >= 0
+      @number_showing = value
+    else
+      "That's not a valid value for a d6 silly"
+    end
+  end
+
 end
 
-puts Die.new.showing
+die = Die.new
+puts die.showing
+die.cheat(7)
+puts die.showing

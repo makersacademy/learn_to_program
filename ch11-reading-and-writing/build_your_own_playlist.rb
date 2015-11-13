@@ -1,7 +1,7 @@
 music = Dir['C:/Users/James/Music/Makers/*.mp3']
 
-playlist.m3u = []
+playlist = []
 
-playlist.m3u << music.shuffle
+playlist << music.shuffle
 
-puts playlist.m3u
+puts playlist

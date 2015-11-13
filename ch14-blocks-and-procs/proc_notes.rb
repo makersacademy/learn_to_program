@@ -2,9 +2,9 @@ toast = Proc.new do
   puts "Cheers!"
 end
 
-toast.call
-toast.call
-toast.call
+# toast.call
+# toast.call
+# toast.call
 
 # Proc is effectively an object that acts like a method. Can be stored or passed around
 
@@ -13,8 +13,8 @@ do_you_like = Proc.new do |good_stuff|
 end
 
 #Can input parameters into a Proc
-do_you_like.call 'chocolate'
-do_you_like.call 'Ruby'
+# do_you_like.call 'chocolate'
+# do_you_like.call 'Ruby'
 
 
 
@@ -33,8 +33,8 @@ say_goodbye = Proc.new do
   puts "goodbye"
 end
 
-do_self_importantly say_hello
-do_self_importantly say_goodbye
+# do_self_importantly say_hello
+# do_self_importantly say_goodbye
 
 
 # methods can be used to determine how many times or whether to call a proc.
@@ -57,12 +57,12 @@ end
 wink = Proc.new { puts '<wink>'}
 glance = Proc.new { puts '<glance>' }
 
-maybe_do wink
-maybe_do wink
-maybe_do glance
-maybe_do glance
-twice_do wink
-twice_do glance
+# maybe_do wink
+# maybe_do wink
+# maybe_do glance
+# maybe_do glance
+# twice_do wink
+# twice_do glance
 
 
 
@@ -98,7 +98,27 @@ end
 
 always_false = Proc.new {|just_ignore_me| false}
 
-puts do_until_false([5], build_array_of_squares).inspect
+# puts do_until_false([5], build_array_of_squares).inspect
 
 yum = 'lemonade with a hint of orrange blossom water'
-puts do_until_false(yum, always_false)
+# puts do_until_false(yum, always_false)
+
+
+
+
+
+# You can also return procs that are created in a method! This seems crazy.
+
+def compose proc1, proc2
+  Proc.new {|x| proc2.call(proc1.call(x))} # this writes a proc which calls proc2 on whatever proc1 was!
+end
+
+square_it = Proc.new {|x| x ** 2}
+
+double_it = Proc.new {|x| x * 2}
+
+double_then_square = compose double_it, square_it
+square_then_double = compose square_it, double_it
+
+puts double_then_square.call(5)
+puts square_then_double.call(5)

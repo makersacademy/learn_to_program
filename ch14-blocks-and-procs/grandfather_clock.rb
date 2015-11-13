@@ -1,6 +1,9 @@
 def grandfather_clock &block
     hour = Time.new.hour
-    if hour > 12
+    if hour == 0
+       hour = 12
+    elsif
+       hour > 12
        hour -= 12
     end
     

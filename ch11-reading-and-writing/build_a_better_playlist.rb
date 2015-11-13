@@ -1,30 +1,33 @@
-def music_shuffle filenames
-  filenames = filenames.sort
-  len = filenames.length
-  2.times do
-    l_idx = 0
-    r_idx = len/2
-    shuf = []
-    while shuf.length < len
-      if shuf.length%2 == 0
-        shuf.push(filenames[r_idx])
-        r_idx = r_idx + 1
-      else
-        shuf.push(filenames[l_idx])
-        l_idx = l_idx + 1
-      end
-    end
-    filenames = shuf
-  end
-  arr = []
-  cut = rand(len) 
-  idx = 0
-  while idx < len
-    arr.push(filenames[(idx+cut)%len])
-    idx = idx + 1
-  end
-  arr
-end
+def music_shuffle(playlist)
 
-songs = ['aa/bbb', 'aa/ccc', 'aa/ddd', 'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
-puts(music_shuffle(songs))
+    playlist = playlist.sort
+    tracks = playlist.length
+
+    2.times do
+    left_deck = 0
+    right_deck = tracks/2
+    shuffler = []
+      
+      while shuffler.length < tracks
+        if shuffler.length.even?
+           shuffler.push(playlist[right_deck])
+           right_deck += 1
+        else
+           shuffler.push(playlist[left_deck])
+           left_deck += 1
+        end
+      end
+    playlist = shuffler
+    end
+    
+    new_playlist = []
+    cut = rand(tracks)
+    index = 0
+    
+    while index < tracks
+        new_playlist.push(playlist[(index+cut)%tracks])
+        index += 1
+    end
+   
+    new_playlist
+end    

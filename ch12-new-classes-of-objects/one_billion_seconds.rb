@@ -1,1 +1,1 @@
-# your code here
+puts

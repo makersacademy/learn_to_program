@@ -1,5 +1,9 @@
 class Die
 
+  def initialize
+    roll
+  end
+
   def roll
     @number_showing = 1 + rand(6)
   end
@@ -10,10 +14,4 @@ class Die
 
 end
 
-die = Die.new
-die.roll
-puts die.showing
-puts die.showing
-die.roll
-puts die.showing
-puts die.showing
+puts Die.new.showing

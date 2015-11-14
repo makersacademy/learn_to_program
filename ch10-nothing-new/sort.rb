@@ -22,22 +22,6 @@ def sort ary
   sorted_ary = recursive_sort ary, []
 end
 
-def shuffle ary
-  rec_shuffle ary, []
-end
-
-def rec_shuffle ary, shuffled
-  if ary == []
-    return ary
-  end
-  i = rand(0...ary.length)
-  i2 = rand(0...ary.length)
-  shuffled.insert(i2, ary[i])
-  puts "adding #{ary[i]} in position #{i2}"
-  ary.delete_at(i)
-  rec_shuffle ary, shuffled
-  shuffled
-end
 
 def recursive_sort unsorted, sorted
   if unsorted == []

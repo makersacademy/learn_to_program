@@ -24,6 +24,7 @@ def english_number number
   if write > 0
     million = english_number write
     num_string = num_string + million + ' million'
+    num_string = num_string + 's' if million != 'one'
 
     if left > 0
       num_string = num_string + ' '
@@ -38,9 +39,9 @@ def english_number number
     thusands = english_number write
     num_string = num_string + thusands + ' thusand'
     num_string = num_string + 's' if thusands != 'one'
-    
+
     if left > 0
-      num_string = num_string + ' '
+      num_string = num_string + ' and '
 
     end
   end
@@ -54,7 +55,7 @@ def english_number number
     num_string = num_string + hundreds + ' hundred'
 
     if left > 0
-      num_string = num_string + ' '
+      num_string = num_string + ' and '
     end
   end
 
@@ -70,7 +71,7 @@ def english_number number
     end
 
     if left > 0
-        num_string = num_string + '-'
+      num_string = num_string + ' '
     end
   end
 
@@ -78,7 +79,7 @@ def english_number number
   write = left
 
   if write > 0
-    num_string = num_string + ones_place[write-1] # The "-1" is because ones_place[3] is
+    num_string = num_string + ones_place[write-1]
   end
 
   num_string

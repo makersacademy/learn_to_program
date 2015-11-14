@@ -20,13 +20,13 @@ def recursive_sort arr, sorted_arr
     arr.delete_at(index_to_delete)
     sorted_arr << smallest
 
-    puts 'smallest: ' + smallest
-    puts 'unsorted: ' + arr.inspect
-    puts 'sorted: ' + sorted_arr.inspect
+    # puts 'smallest: ' + smallest
+    # puts 'unsorted: ' + arr.inspect
+    # puts 'sorted: ' + sorted_arr.inspect
     recursive_sort arr, sorted_arr
 
 end
 
-words = ['can','feel','singing','like','a','Can']
+# words = ['can','feel','singing','like','a','can']
 
-sort(words)
+# sort(words)

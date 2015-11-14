@@ -1,7 +1,8 @@
 def english_number number
   	if number < 0 # No negative numbers.
 		return 'Please enter a number that isn\'t negative.' end
-	if number == 0 return 'zero'
+	if number == 0
+		return 'zero'
 	end
 # No more special cases! No more returns!
 	num_string = '' # This is the string we will return.
@@ -9,9 +10,9 @@ def english_number number
   ones_place = ['one',       'two',      'three',
                 'four',      'five',     'six',
                 'seven',     'eight',    'nine']
-  tens_place = ['ten',       'twenty ',   'thirty ',
-                'forty ',     'fifty ',    'sixty ',
-                'seventy ',   'eighty ',   'ninety ']
+  tens_place = ['ten',       'twenty',   'thirty',
+                'forty',     'fifty',    'sixty',
+                'seventy',   'eighty',   'ninety']
   teenagers  = ['eleven',    'twelve',   'thirteen',
                 'fourteen',  'fifteen',  'sixteen',
 				'seventeen', 'eighteen', 'nineteen']

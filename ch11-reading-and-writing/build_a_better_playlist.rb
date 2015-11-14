@@ -1,6 +1,6 @@
 def music_shuffle filenames
 
-	filenames = filenames.sort 
+	filenames = filenames.sort
 	len = filenames.length
 
 	2.times do

@@ -90,7 +90,7 @@ build_array_of_squares = Proc.new do |array|
     # Take off the last number ...
     array.pop
     # and replace it with its square
-    array.push last_number**2
+    array.push last_number ** 2
     # followed by the next smaller number
     array.push last_number-1
   end
@@ -120,5 +120,36 @@ double_it = Proc.new {|x| x * 2}
 double_then_square = compose double_it, square_it
 square_then_double = compose square_it, double_it
 
-puts double_then_square.call(5)
-puts square_then_double.call(5)
+# puts double_then_square.call(5)
+# puts square_then_double.call(5)
+
+
+# passing just a block into a method
+
+class Array
+
+  def each_even(&was_a_block__now_a_proc)
+    # start with true as array starts with 0 (even)
+    is_even = true
+
+    self.each do |object|
+      if is_even
+        was_a_block__now_a_proc.call object
+      end
+
+      # Toggle from even to odd, or odd to even..
+      is_even = !is_even
+    end
+  end
+
+end
+
+fruits = ['apple', 'bad apple', 'cherry', 'durian']
+fruits.each_even do |fruit|
+  puts "Yum!  I just love #{fruit} pies, don't you?"
+end
+
+# pulling even numbered elements from array
+[1, 2, 3, 4, 5].each_even do |odd_ball|
+  puts "#{odd_ball} is NOT an even number!"
+end

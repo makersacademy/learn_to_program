@@ -1,8 +1,14 @@
+
+
 def shuffle arr
-  arr.sort_by{rand} # => [2, 3, 1, 4, 5]
+  arr.shuffle
 end
 
+shuffle([4,3,5,6,7,3]) # => [7, 3, 6, 5, 4, 3]
 
+
+#### OTHER POSSIBILITIES ########
 
 # arr.sample(arr.length)
 # arr.sort_by{rand}
+# arr.shuffle

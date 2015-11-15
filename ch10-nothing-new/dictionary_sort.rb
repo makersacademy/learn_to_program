@@ -7,5 +7,7 @@ def dictionary_sort arr
     end
   end
   dictionary_sort arr unless it_is_already_sorted
-  arr.join(', ')
+  arr.join(' ')
 end
+
+p dictionary_sort ['A', 'can', 'can', 'feel', 'like', 'singing']

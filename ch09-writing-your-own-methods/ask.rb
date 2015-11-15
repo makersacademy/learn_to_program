@@ -1,3 +1,4 @@
+=begin
 def ask question
 end
 

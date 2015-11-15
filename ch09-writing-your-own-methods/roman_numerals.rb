@@ -23,5 +23,3 @@ def roman n
 		end
 		roman
 end
-
-p roman(112)

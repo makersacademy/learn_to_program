@@ -9,5 +9,3 @@ def dictionary_sort arr
   dictionary_sort arr unless it_is_already_sorted
   arr
 end
-
-p dictionary_sort ['A', 'can', 'can', 'feel', 'like', 'singing']

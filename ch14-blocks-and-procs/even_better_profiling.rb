@@ -1,4 +1,4 @@
-$PROFILING
+$PROFILING = true
 
 def profile block_description, &block
 	if $PROFILING

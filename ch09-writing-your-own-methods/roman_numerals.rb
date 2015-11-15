@@ -1,42 +1,27 @@
-def roman_numeral (num)
+def roman n
 
-	thousands = (num/1000)
-	hundreds = (num % 1000 / 100)
-	tens = (num % 100 / 10)
-	ones = (num % 10 )
+		roman_numerals = {
+		1000 => "M",
+		900 => "CM",
+		500 => "D",
+		400 => "CD",
+		100 => "C",
+		90 => "XC",
+		50 => "L",
+		40 => "XL",
+		10 => "X",
+		9 => "IX",
+		5 => "V",
+		4 => "IV",
+		1 => "I",
+	}
 
-	numeral = "M" * thousands
-
-	if hundreds == 9
-		numeral << "CM"
-	elsif hundreds == 4
-		numeral << "CD"
-	else
-		numeral << "D" * (num % 1000 / 500)
-		numeral << "C" * (num % 500 / 100)
-	end
-
-	if tens == 9
-		numeral << "XC"
-	elsif tens ==4
-		numeral << "XL"
-	else
-		numeral << "L" * (num % 100 / 50)
-		numeral << "X" * (num % 50 / 10)
-	end
-	if ones == 9
-		numeral << "IX"
-	elsif ones == 4
-		numeral << "IV"
-	else
-		numeral << "V" * (num % 10 / 5)
-		numeral << "I" * (num % 5 / 1)
-	end
-
-	numeral
-
-
-
+		roman = ""
+		roman_numerals.each do |decimal, letter|
+			roman << letter * (n / decimal)
+			n = n % decimal
+		end
+		roman
 end
-puts 'Please enter a number to translate'
-puts roman_numeral gets.chomp.to_i
+
+p roman(112)

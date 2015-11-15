@@ -43,7 +43,7 @@ def one_year_passes
   @height = @height + 0.4
   @oranges = 0
 
-    if @height > 10 && rand(2) > 0
+    if @height > 10.4
       @alive = false
       'Oh, no! The tree is too old, and has died. :('
 
@@ -74,10 +74,10 @@ end
 
 end
 
-ot = OrangeTree.new
-ot.one_year_passes
-ot.one_year_passes
-ot.one_year_passes
-ot.pick_an_orange
-puts(ot.height)
-puts(ot.count_the_oranges)
+#ot = OrangeTree.new
+#ot.one_year_passes
+#ot.one_year_passes
+#ot.one_year_passes
+#ot.pick_an_orange
+#puts(ot.height)
+#puts(ot.count_the_oranges)

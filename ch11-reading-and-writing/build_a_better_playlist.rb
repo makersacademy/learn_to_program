@@ -1,37 +1,87 @@
+# MY ATTEMPT
+# def music_shuffle filenames
+#   shuffled = []
+#   filenames.each do |filename|
+#     filename = (rec_shuffle filename.split('/'), []).join('/')
+#     shuffled << filename
+#   end
+#   shuffled = rec_shuffle shuffled, []
+# end
+#
+# def rec_shuffle arr, shuffled
+#   if arr == []
+#     return shuffled
+#   end
+#   i = rand(0...arr.length)
+#   shuffled << arr[i]
+#   arr.delete_at(i)
+#   rec_shuffle arr, shuffled
+#   shuffled
+# end
+#
+#
+# Dir.chdir '/Users/camilla_foodity/Music'
+#
+# all_music = Dir['**/*.mp3']
+# # puts "/////////////////// ALL MUSIC /////////////"
+# # puts all_music
+# music_shuffled = music_shuffle all_music
+# # puts "/*/*/*/*/*/*/*/*/*/*/*/* SHUFFLED /*/*/*/*/*/*/*/*/*/*/*/*"
+# # puts music_shuffled
+# playlist = 'playlist.m3u'
+#
+# File.open playlist, 'w' do |song_to_write|
+#   music_shuffled.each do |song|
+#     puts song
+#     song_to_write.write song+"\n"
+#   end
+# end
 def music_shuffle filenames
-  shuffled = []
-  filenames.each do |filename|
-    filename = (rec_shuffle filename.split('/'), []).join('/')
-    shuffled << filename
+  # We don't want a perfectly random shuffle, so let's
+  # instead do a shuffle like card-shuffling. Let's
+  # shuffle the "deck" twice, then cut it once. That's
+  # not enough times to make a perfect shuffle, but it
+  # does mix things up a bit.
+  # Before we do anything, let's actually *sort* the
+  # input, since we don't know how shuffled it might
+  # already be, and we don't want it to be *too* random.
+  filenames = filenames.sort
+  len = filenames.length
+
+  # Now we shuffle twice.
+  2.times do
+    l_idx = 0 # index of next card in left pile
+    r_idx = len/2 # index of next card in right pile
+    shuf = []
+    # NOTE: If we have an odd number of "cards",
+    # then the right pile will be larger.
+
+    while shuf.length < len
+      if shuf.length%2 == 0
+        # take card from right pile
+        shuf.push(filenames[r_idx])
+        r_idx = r_idx + 1
+      else
+        # take card from left pile
+        shuf.push(filenames[l_idx])
+        l_idx = l_idx + 1
+      end
+    end
+
+    filenames = shuf
   end
-  shuffled = rec_shuffle shuffled, []
-end
+  # And cut the deck.
+  arr = []
+  cut = rand(len) # index of card to cut at
+  idx = 0
 
-def rec_shuffle arr, shuffled
-  if arr == []
-    return shuffled
+  while idx < len
+    arr.push(filenames[(idx+cut)%len])
+    idx = idx + 1
   end
-  i = rand(0...arr.length)
-  shuffled << arr[i]
-  arr.delete_at(i)
-  rec_shuffle arr, shuffled
-  shuffled
+
+  arr
 end
-
-
-Dir.chdir '/Users/camilla_foodity/Music'
-
-all_music = Dir['**/*.mp3']
-# puts "/////////////////// ALL MUSIC /////////////"
-# puts all_music
-music_shuffled = music_shuffle all_music
-# puts "/*/*/*/*/*/*/*/*/*/*/*/* SHUFFLED /*/*/*/*/*/*/*/*/*/*/*/*"
-# puts music_shuffled
-playlist = 'playlist.m3u'
-
-File.open playlist, 'w' do |song_to_write|
-  music_shuffled.each do |song|
-    puts song
-    song_to_write.write song+"\n"
-  end
-end
+# songs = ['aa/bbb', 'aa/ccc', 'aa/ddd',
+#          'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
+# puts(music_shuffle(songs))

@@ -1,21 +1,27 @@
-def roman_numeral num
-  number = ""
+def roman_numeral(num)
+  roman = {1000=>'M', 500 => 'D', 100 => 'C', 50 => 'L', 10 => 'X', 5 => 'V', 1 =>'I'}
   
-  number << 'M' * (num/1000)
-  number << 'CM' * (num % 1000 / 900)
-  number << 'D' * (num % 900 / 500)
-  number << 'CD' * (num % 500 / 400)
-  number << 'C' * (num % 400 / 100)
-  number << 'XC' * (num % 100 / 90)
-  number << 'L' * (num % 90 / 50)
-  number << 'XL' * (num % 50 / 40)
-  number << 'X' * (num % 40 / 10)
-  number << 'IX' * (num % 10 / 9)
-  number << 'V' * (num % 9 / 5)
-  number << 'IV' * (num % 5 / 4)
-  number << 'I' * (num % 4 / 1)
-  
-puts number
-end
+  result=''
 
-roman_numeral 54
+  roman.each do |english_value ,numeral|
+     
+       
+   divide = (num / english_value) 
+    if divide > 0
+        result << numeral * divide 
+    end
+        remainder = num % english_value
+        num = remainder
+    end
+    new_roman_numeral(result)
+end
+   
+def new_roman_numeral(num)
+    
+    new_romans = {"DCCCC"=>"CM", "CCCC"=>"CD", "LXXXX"=>"XC", "XXXX"=>"XL", "VIIII"=>"IX", "IIII"=>"IV"}
+
+    new_romans.each do |old, new|
+        num.gsub!(/#{old}/, old => new)
+    end
+    num
+end

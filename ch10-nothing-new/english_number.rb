@@ -11,75 +11,48 @@ def english_number(number)
 	ones_place = ['one','two','three','four','five','six','seven','eight','nine']
 	tens_place = ['ten','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']
 	teenagers  = ['eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
-
-
+	onwards = [['hundred', 2],
+				['thousand', 3],
+				['million', 6],
+				['billion', 9],
+				['trillion', 12],
+				['quadrillion', 15],
+              	['quintillion', 18],
+              	['sextillion', 21],
+              	['septillion', 24],
+              	['octillion', 27],
+              	['nonillion', 30],
+              	['decillion', 33],
+              	['undecillion', 36],
+              	['duodecillion', 39],
+              	['tredecillion', 42],
+              	['quattuordecillion', 45],
+              	['quindecillion', 48],
+              	['sexdecillion', 51],
+              	['septendecillion', 54],
+              	['octodecillion', 57],
+              	['novemdecillion', 60],
+              	['vigintillion', 63],
+              	['googol', 100]]
+	
+	
 	remaining = number
 
-	current = remaining/1000000000000000
-	remaining = remaining - current*1000000000000000
-
-	if current > 0
-		trillion = english_number(current)
-		num_string = num_string + trillion + ' trillion'
-		if remaining > 0
-			num_string = num_string + ' '
-		end
-	end
-
-	current = remaining/1000000000000
-	remaining = remaining - current*1000000000000
-
-	if current > 0
-		trillion = english_number(current)
-		num_string = num_string + trillion + ' trillion'
-		if remaining > 0
-			num_string = num_string + ' '
-		end
-	end
+	while onwards.empty? == false
+		in_action = onwards.pop
+		action_name = in_action[0]
+		action_zeros = 10 ** in_action[1]
+		current = remaining / action_zeros
+		remaining = remaining - current * action_zeros
 	
-	current = remaining/1000000000
-	remaining = remaining - current*1000000000
-
-	if current > 0
-		billion = english_number(current)
-		num_string = num_string + billion + ' billion'
-		if remaining > 0
-			num_string = num_string + ' '
-		end
-	end
-
-	current = remaining/1000000
-	remaining = remaining - current*1000000
-
-	if current > 0
-		millions = english_number(current)
-		num_string = num_string + millions + ' million'
-		if remaining > 0
-			num_string = num_string + ' '
-		end
-	end
-
-	current = remaining/1000
-	remaining = remaining - current*1000
-
-	if current > 0
-		thousands = english_number(current)
-		num_string = num_string + thousands + ' thousand'
-		if remaining > 0
-			num_string = num_string + ' '
-		end
-	end
-
-	current = remaining/100
-	remaining = remaining - current*100
-
-	if current > 0
-		hundreds = english_number(current)
-		num_string = num_string + hundreds + ' hundred'
-		if remaining > 0
-			num_string = num_string + ' '
-		end
-	end
+	  if current > 0
+		prefix = english_number(current)
+		num_string = num_string + prefix + ' ' + action_name
+	    if remaining > 0
+		  num_string = num_string + ' '
+	    end
+	  end
+	end	
 
 	current = remaining/10
 	remaining = remaining - current*10

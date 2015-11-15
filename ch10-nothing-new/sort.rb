@@ -1,46 +1,28 @@
-puts 'Enter a list of words, press \'enter\' to quit and they will be returned sorted.'
-word = 'one'
-list =[]
-
-while word != ''
-  word = gets.chomp
-  list.push word
+def sort arr
+  rec_sort arr, []
 end
 
-def non_recursive_checker (arr)
-  best = []
-  while arr.length > 0
-    first = arr.first
-    pos = 0
-    arr.each.with_index do |item, index|
-      if item < first
-        first = item
-        pos   = index
-      end
-    end
-    arr.delete_at(pos)
-    best << first
+def rec_sort unsorted, sorted
+  if unsorted.length <= 0
+    return sorted
   end
-  puts best
-end
+  # So if we got here, then it means we still # have work to do.
+  smallest = unsorted.pop
+  still_unsorted = []
 
-
-def recursive_checker (arr, output)
-  return output if arr.length == 0
-    first = arr.first
-    pos = 0
-    arr.each.with_index do |item, index|
-      if item < first
-        first = item
-        pos   = index
-      end
+  unsorted.each do |tested_object|
+    if tested_object < smallest
+      still_unsorted.push smallest
+      smallest = tested_object
+    else
+      still_unsorted.push tested_object
     end
-    arr.delete_at(pos)
-    output << first
-    recursive_checker(arr, output)
   end
 
+  # Now "smallest" really does point to the
+  # smallest element that "unsorted" contained,
+  # and all the rest of it is in "still_unsorted". l
+  sorted.push smallest
 
-def sort (arr)
-  recursive_checker(arr, [])
+  rec_sort still_unsorted, sorted
 end

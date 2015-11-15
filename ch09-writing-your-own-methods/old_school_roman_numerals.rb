@@ -1,15 +1,17 @@
-def old_roman_numeral num
-  number = ""
+def old_roman_numeral(num)
+  roman = {1000=>'M', 500 => 'D', 100 => 'C', 50 => 'L', 10 => 'X', 5 => 'V', 1 =>'I'}
   
-  number << 'M' * (num/1000)
-  number << 'D' * (num % 1000 / 500)
-  number << 'C' * (num % 500 / 100)
-  number << 'L' * (num % 100 / 50)
-  number << 'X' * (num % 50 / 10)
-  number << 'V' * (num % 10 / 5)
-  number << 'I' * (num % 5 / 1)
-  
-puts number  
-end
+  result=''
 
-old_roman_numeral 4
+  roman.each do |english_value ,numeral|
+     
+       
+   divide = (num / english_value) 
+        if divide > 0
+            result << numeral * divide
+        end
+   remainder = num % english_value
+   num = remainder
+end
+   result
+end

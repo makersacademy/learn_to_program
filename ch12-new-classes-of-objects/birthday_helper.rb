@@ -17,6 +17,7 @@ time (but with the line endings, so you might need to chomp them). Just
 thought I’d mention it....
 =end
 
+
 filename = 'birthdays.txt'
 var = File.read filename
 var = var.split("\n")

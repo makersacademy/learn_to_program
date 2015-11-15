@@ -1,13 +1,13 @@
 def old_roman_numeral (num)
   qty_1000s = (num / 1000)
   qty_500s = (num % 1000 / 500)
-  qty_100s = (num % 500 / 100)
+  qty_100s = (num % 1000 / 100)
   qty_100s_exception = (num % 500 / 100)
   qty_50s = (num % 100 / 50)
-  qty_10s = (num % 50 / 10)
+  qty_10s = (num % 100 / 10)
   qty_10s_exception = (num % 50 / 10)
   qty_5s = (num % 10 / 5)
-  qty_1s = (num % 5)
+  qty_1s = (num % 10)
   qty_1s_exception = (num % 5)
 
   arabic = 'M' * qty_1000s
@@ -16,8 +16,8 @@ def old_roman_numeral (num)
   elsif qty_100s == 4
     arabic += 'CD'
   else
-    arabic += 'D' * five_hundreds
-    arabic += 'C' * special_hundreds
+    arabic += 'D' * qty_500s
+    arabic += 'C' * qty_100s_exception
   end
   if qty_10s == 9
     arabic += 'XC'
@@ -33,7 +33,7 @@ def old_roman_numeral (num)
     arabic += 'IV'
   else
     arabic += 'V' * qty_5s
-    arabic += 'I' * qty_1s
+    arabic += 'I' * qty_1s_exception
   end
 end
 

@@ -1,1 +1,1 @@
-# your code here
+birthday = Time.gm(1984, 20, 11, 08, 30) + 10**9

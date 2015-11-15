@@ -10,7 +10,28 @@ class OrangeTree
     if @alive
       @height.round(1)
     else
-      "It's dead mate..."
+      "A dead tree is not very tall. :("
+    end
+  end
+
+  def count_the_oranges
+    if @alive
+      @oranges
+    else
+      "A dead tree has no oranges. :("
+    end
+  end
+
+  def pick_an_orange
+    if @alive
+      if oranges > 0
+        @oranges -= 1
+        "mmmm- delish....."
+      else
+        "sorry boss- no oranges....."
+      end
+    else
+      "A dead tree has nothing to pick. :("
     end
   end
 
@@ -20,38 +41,18 @@ class OrangeTree
       @oranges = 0
       if height > 10 && rand(2) > 0
         @alive = false
-        "ya tree died mate..."
+        'Oh, no! The tree is too old, and has died. :('
       elsif height > 2
-        @orange_count = (@height * 15 - 25).to_i
-        "Your tree made it to #{@height} meters tall this year
-        and produced a whopping #{@orange_count} oranges! Woohooooo!!!!"
+        @oranges = (@height * 15 - 25).to_i
+        "This year your tree grew to #{@height.round(1)}m tall, and produced #{@oranges} oranges."
       else
         "Your tree is only #{@height} meters tall- fruit baring trees have to be at least two..."
       end
     else
-      "Still dead mate..."
+      "A year later, the tree is still dead. :("
     end
   end
 
-  def count_the_oranges
-    if @alive
-      @oranges
-    else
-      "It's dead mate..."
-    end
-  end
 
-  def pick_an_orange
-    if @alive
-      if oranges > 0
-        @oranges -= 1
-        puts "mmmm- delish....."
-      else
-        puts "sorry boss- no oranges....."
-      end
-    else
-      "Sorry mate- ya tree's dead... and aint got no oranges..."
-    end
-  end
 
 end

@@ -38,4 +38,5 @@ def roman_numeral (num)
 
 
 end
-puts (roman_numeral(1999))
+puts 'Please enter a number to translate'
+puts roman_numeral gets.chomp.to_i

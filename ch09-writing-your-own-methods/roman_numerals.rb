@@ -1,66 +1,43 @@
 def roman_numeral num
+  final_number = []
+  thousands = num / 1000
+  hundreds = num % 1000 / 100
+  tens =  num % 100 / 10
+  unity =  num % 10
+
+
     # M (1000)
-      if num >= 1000
-        multiplier = num / 1000
-        emmes = "M"*multiplier
-        remainder = num - multiplier*1000
-      else
-        emmes = ""
-        remainder = num
-      end
-    # D (500)
-      if remainder >= 500
-        multiplier = remainder / 500
-        ds = "D"*multiplier
-        remainder = num - multiplier*1000
-      else
-        ds = ""
-      end
-      # C (100)
-      if remainder >= 100
-        multiplier = remainder / 100
-        cs = "C"*multiplier
-        remainder = remainder - multiplier*100
-      else
-        cs = ""
-      end
-      # L (50)
-      if remainder >= 50
-        multiplier = remainder / 50
-        elles = "L"*multiplier
-        remainder = remainder - multiplier*50
-      else
-        elles = ""
-      end
-      # X (10)
-      if remainder >= 10
-        multiplier = remainder / 10
-        xes = "X"*multiplier
-        remainder = remainder - multiplier*10
-      else
-        xes = ""
-      end
-      # V (5)
-      if remainder >= 5
-        multiplier = remainder / 5
-        vs = "V"*multiplier
-        remainder = remainder - multiplier*5
-      else
-        vs = ""
-      end
-      # I (1)
-      multiplier = remainder / 1
-      if multiplier == 4
-        vs = "I"+vs
-        is = ""
-      elsif multiplier == 9
-        
+    final_number << 'M'*thousands
 
+    # C / D
+      if hundreds == 9
+        final_number << 'CM'
+      elsif hundreds == 4
+        final_number << 'CD'
+      else
+        final_number << 'D'* (num % 1000 / 500)
+        final_number << 'C'* (num % 500 / 100)
+      end
+      # X / L
+      if tens == 9
+        final_number << 'XC'
+      elsif tens == 4
+        final_number << 'XL'
+      else
+        final_number << 'L'* (num % 100 / 50)
+        final_number << 'X'* (num % 50 / 10)
+      end
+      # V / I
+        if unity == 9
+          final_number << 'IX'
+        elsif unity == 4
+          final_number << 'IV'
+        else
+          final_number << 'V'* (num % 10 / 5)
+          final_number << 'I'* (num % 5 / 1)
+        end
 
-      is = "I"*multiplier
-      if
-
-      emmes+ds+cs+elles+xes+vs+is
+      final_number.join('')
   end
 
 

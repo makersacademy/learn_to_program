@@ -32,7 +32,7 @@ def recursive_sort unsorted, sorted
   check_word = unsorted.pop
 
   unsorted.each do |compare|
-    if check_word.upcase < compare.upcase
+    if check_word < compare
       still_unsorted << compare
     else
       still_unsorted << check_word

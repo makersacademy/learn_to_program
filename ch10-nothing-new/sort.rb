@@ -7,5 +7,5 @@ def sort arr
     end
   end
   sort arr unless it_is_already_sorted
-  arr.join(', ')
+  arr
 end

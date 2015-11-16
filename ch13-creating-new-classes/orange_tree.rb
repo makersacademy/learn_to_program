@@ -3,32 +3,44 @@ class OrangeTree
     @height = 0.0
     @alive = true
     @orange_count = 0
-    @age = 0
   end
 
   def height
     if @alive
-      @orange_count
+      @height.round(1)
     else
       puts "A dead tree has no oranges. D:"
     end
+  end
 
   def one_year_passes
     if @alive
       @height = (@height + 0.4).round(1)
-      @age = @age + 1
       @orange_count = 0
-      if @height > 10.2
+      if @height > 10 && rand(2) > 0
         @alive = false
         "Oh, no! The tree is too old and has died. womp womp"
-      elsif
+      elsif @height > 2
         @orange_count = (@height * 15 - 25).to_i
-        "This year your tree grew to #{height.round(1)}m tall," + " and produced #{@orange_count} oranges."
+        "This year your tree grew to #{@height.round(1)}m tall," + " and produced #{@orange_count} oranges."
       else
-        "This year your tree grew to #{@height.round(1)}m tall," + " but is still too young to bear fruit."
+        "This year your tree grew to #{@height.round(1)}m tall," + " but is still too young to bear fruit. Boooooo!"
       end
     else
       "A year later, the tree is still dead. c):-("
+    end
+  end
+
+  def pick_an_orange
+    if @alive
+      if @orange_count > 0
+        @orange_count = @orange_count - 1
+        "You pick a juicy, juicy orange!"
+      else
+        "You search every branch, but tree got no oranges!"
+      end
+    else
+      "A dead tree has nothing to pick. Right?"
     end
   end
 end

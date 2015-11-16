@@ -24,7 +24,7 @@ def music_shuffle filenames
   idx = 0
 
   while idx < len
-    arr.push(filenames[idx + cut) % len])
+    arr.push(filenames[(idx + cut) % len])
     idx = idx + 1
   end
 

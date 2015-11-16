@@ -1,3 +1,10 @@
+$depth = 0
+
 def log desc, &block
-  # your code here
+  prefix = " "*$depth
+  puts prefix+"Beginning #{desc.inspect}..."
+  $depth += 1
+  result = block.call
+  $depth -= 1
+  puts prefix+"...#{desc.inspect} finished, returning: #{result}"
 end

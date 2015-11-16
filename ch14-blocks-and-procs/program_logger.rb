@@ -1,6 +1,5 @@
-def log desc, &block
-  puts "Starting block within Proc log using #{desc.inspect}"
+def program_log desc, &block
+  puts "Beginning \"#{desc}\"..."
   result = block.call
-  puts "#{desc.inspect} block has finished"
-  puts "Your final retult value is #{result}"
+  puts "...\"#{desc}\" finished, returning: #{result}"
 end

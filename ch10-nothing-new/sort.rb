@@ -1,7 +1,30 @@
-def sort arr
+#def sort arr
   # your code here
   
-	(arr.min(arr.length) { |a, b| a <=> b })
+#	(arr.min(arr.length) { |a, b| a <=> b })
+#end
+
+def sort arr
+	recursive_sort arr, []
 end
 
-#I'm sorry could not get my head around the the recursive method!!!
+def recursive_sort arr, sorted_arr
+	if arr.size <= 0
+		return sorted_arr
+	end
+
+	smallest = arr.pop
+	still_unsorted = []
+
+	arr.each {|x| if x < smallest
+			still_unsorted.push smallest
+			smallest = x
+		else
+			still_unsorted.push x
+		end 
+	}
+
+	sorted_arr.push smallest
+
+	recursive_sort still_unsorted, sorted_arr
+end

@@ -9,7 +9,7 @@ class OrangeTree
     if @alive
       @height.round(1)
     else
-      "A dead tree has no oranges. D:"
+      "A dead tree has no oranges. :("
     end
   end
 
@@ -17,7 +17,7 @@ class OrangeTree
     if @alive
       @orange_count
     else
-      "A dead tree has no oranges."
+      "A dead tree has no oranges. :("
     end
   end
 
@@ -27,15 +27,15 @@ class OrangeTree
       @orange_count = 0
       if @height > 10 && rand(2) > 0
         @alive = false
-        "Oh, no! The tree is too old and has died. womp womp"
+        "Oh, no! The tree is too old and has died, and has died."
       elsif @height > 2
         @orange_count = (@height * 15 - 25).to_i
         "This year your tree grew to #{@height.round(1)}m tall," + " and produced #{@orange_count} oranges."
       else
-        "This year your tree grew to #{@height.round(1)}m tall," + " but is still too young to bear fruit. Boooooo!"
+        "This year your tree grew to #{@height.round(1)}m tall," + " but is still too young to bear fruit."
       end
     else
-      "A year later, the tree is still dead. c):-("
+      "A year later, the tree is still dead. :("
     end
   end
 
@@ -43,12 +43,12 @@ class OrangeTree
     if @alive
       if @orange_count > 0
         @orange_count = @orange_count - 1
-        "You pick a juicy, juicy orange!"
+        "You pick a juicy, delicious orange!"
       else
-        "You search every branch, but tree got no oranges!"
+        "You search every branch, but find no oranges."
       end
     else
-      "A dead tree has nothing to pick. Right?"
+      "A dead tree has nothing to pick. :("
     end
   end
 end

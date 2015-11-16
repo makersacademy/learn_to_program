@@ -1,9 +1,11 @@
+$logger_depth = 0
+
 def better_log desc, &block
-  prefix = " " * $indent
+  prefix = " "*$logger_depth
   puts prefix + "Beginning #{desc.inspect}..."
-  $indent += 1
+  $logger_depth += 1
   result = block.call
-  $indent -= 1
+  $logger_depth -= 1
   puts prefix + "...#{desc.inspect} finished, returning: #{result}."
 end
 
@@ -12,7 +14,7 @@ better_log "outer block" do
     better_log "teeny-tiny block" do
       "l0ts of l0Ve".downcase
     end
-  7 * 3 * 2
+    7 * 3 * 2
   end
 
   better_log "yet another block" do

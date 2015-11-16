@@ -1,4 +1,4 @@
-def old_roman_numeral (num)
+def roman_numeral num
   qty_1000s = (num / 1000)
   qty_500s = (num % 1000 / 500)
   qty_100s = (num % 1000 / 100)

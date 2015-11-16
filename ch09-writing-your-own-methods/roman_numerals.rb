@@ -1,6 +1,6 @@
 def roman_numeral num
   thousands = (num / 1000)
-  hudreds   = (num % 1000 / 100)
+  hundreds  = (num % 1000 / 100)
   tens      = (num % 100 / 10)
   ones      = (num % 10)
 

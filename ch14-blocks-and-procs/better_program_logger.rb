@@ -1,3 +1,5 @@
+$depth = 0
+
 def better_log desc, &block
   prefix = " "*$depth
   puts prefix+"Beginning \"#{desc}\"..."

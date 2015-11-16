@@ -40,5 +40,3 @@ def music_shuffle filenames
   # songs = ['aa/bbb', 'aa/ccc', 'aa/ddd',
   #          'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
   # puts(music_shuffle(songs))
-
-end

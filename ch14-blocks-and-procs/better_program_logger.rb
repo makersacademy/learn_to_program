@@ -1,30 +1,29 @@
-$logger_depth = 0
+$indent = 0
 
-def log desc, &block
-  prefix = ' '*$logger_depth
-
+def  better_log desc, &block
+  prefix = ' ' * $indent
+  
   puts prefix + 'Beginning "' + desc + '"...'
-
-  $logger_depth = $logger_depth + 1
+  
+  $indent += 1
   
   result = block.call
-
-  $logger_depth = $logger_depth - 1
-  puts prefix + '..."' + desc + '" finished, returning: ' + result.to_s
+  
+  $indent -= 1
+  
+ puts prefix + '..."' + desc + '" finished, returning: ' + result.to_s
+    
 end
 
-log 'outer block' do
-  log 'some little block' do
-    log 'teeny-tiny block' do
-      'lOtS oF lOVe'.downcase
+better_log 'outer block' do 
+   better_log 'some little block' do 
+        better_log 'teeny-tiny block' do
+            "lots of love" * 1
+            end
+          41 + 1
+        end
+      better_log 'yet another block' do
+      "I Like Indian food!" * 1
     end
-
-    7 * 3 * 2
-  end
-
-  log 'yet another block' do
-    '!doof naidnI evol I'.reverse
-  end
-
-  '0' == "0"
+  9 == 9
 end

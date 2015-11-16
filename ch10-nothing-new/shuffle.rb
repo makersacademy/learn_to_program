@@ -1,7 +1,10 @@
-def shuffle arr
-  # your code here
-  arr.shuffle
-end
 
-nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-p shuffle(nums)
+  def shuffle arr
+    new_arr = []
+
+    while (arr.any?) do
+      new_arr << arr.delete_at(rand(arr.length))
+    end
+
+    new_arr
+  end

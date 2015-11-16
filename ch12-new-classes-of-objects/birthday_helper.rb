@@ -19,20 +19,25 @@ thought I’d mention it....
 
 
 filename = 'birthdays.txt'
-var = File.read filename
-var = var.split("\n")
-my_hash = {}
-var.each do |line|
-  array = line.split(', ')
-  date = array[1].split
-  my_hash[array[0]] = Time.gm(array[2], date[0], date[1])
+lines = File.read filename
+lines = lines.split("\n")
+our_data = {}
+lines.each do |line|
+  name_and_date = line.split(', ')
+  name = name_and_date[0].capitalize
+  date = name_and_date[1].split
+  year = name_and_date[2]
+  month = date[0]
+  day = date[1]
+  our_data[name] = Time.gm(year, month, day)
 end
-puts "Gimme a name"
-name = gets.chomp
-if my_hash.has_key?(name)
+puts "Tell me the name of someone and I'll tell you their birthday."
+requested_name = gets.chomp.capitalize
+if our_data.has_key?(requested_name)
   now = Time.now
-  age = now.year - my_hash[name].year
-  puts "#{name}'s birthday is #{my_hash[name]} and he is #{age} years old."
+  age = now.year - our_data[requested_name].year
+  age -= 1 if now.month < our_data[requested_name].month || (now.month == our_data[requested_name].month && now.day < our_data[requested_name].day)
+  puts "#{requested_name}'s birthday is #{our_data[requested_name]} and they're #{age} years old."
 else
-  puts "Name not present"
+  puts "Sorry, #{requested_name} is not present in my list."
 end

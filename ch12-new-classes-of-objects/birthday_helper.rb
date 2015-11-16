@@ -1,7 +1,7 @@
 # your code here
 
 birth_dates = {}
-File.read('birthdates.txt').each_line { |line|
+File.read('/Users/zade/Desktop/Scripts/birthdates.txt').each_line { |line|
   line = line.chomp
   # Find the index of first comma,
   # so we know where the name ends.
@@ -26,3 +26,6 @@ if date == nil
 else
   puts date[0..5]
 end
+# ~>  from -:4:in `<main>'
+# ~> -:21:in `<main>': undefined method `chomp' for nil:NilClass (NoMethodError)
+# >> Whose birthday would you like to know?

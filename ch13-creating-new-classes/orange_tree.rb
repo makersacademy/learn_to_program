@@ -1,21 +1,29 @@
 class OrangeTree
   def initialize
-    @height = 0.0
-    @alive = true
+    @height = 0
     @orange_count = 0
+    @alive = true
   end
 
   def height
     if @alive
       @height.round(1)
     else
-      puts "A dead tree has no oranges. D:"
+      "A dead tree has no oranges. D:"
+    end
+  end
+
+  def count_the_oranges
+    if @alive
+      @orange_count
+    else
+      "A dead tree has no oranges."
     end
   end
 
   def one_year_passes
     if @alive
-      @height = (@height + 0.4).round(1)
+      @height = @height + 0.4
       @orange_count = 0
       if @height > 10 && rand(2) > 0
         @alive = false

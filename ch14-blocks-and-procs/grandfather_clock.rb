@@ -1,20 +1,10 @@
-def clock some_proc
+def grandfather_clock &block
+  hour = Time.new.hour
+  if hour == 0
+    hour = 12
+  else
+    hour > 12 ? hour = Time.new.hour - 12 : hour = hour
+  end
 
-current_hour = Time.new.hour
-if current_hour == 0
-current_hour = current_hour + 12
-elsif current_hour > 12
-current_hour = current_hour - 12
+  hour.times(&block)
 end
-
-current_hour.to_i.times do
-some_proc.call
-end
-
-end 
-
-dong_proc = Proc.new do
-puts 'DONG!'
-end
-
-clock dong_proc

@@ -52,8 +52,8 @@ def english_number number
     zil_pair = zillions.pop
     zil_name = zil_pair[0]
     zil_base = 10 ** zil_pair[1]
-    write = left / zil_base
-    left = left - write * zil_base
+    write = left/zil_base
+    left = left - write*zil_base
 
     if write > 0
       prefix = english_number write
@@ -65,11 +65,11 @@ def english_number number
     end
   end
 
-  write = left / 10
-  left = left - write * 10
+  write = left/10
+  left = left - write*10
 
   if write > 0
-    if ((write ==1) and (left > 0))
+    if ((write == 1) and (left > 0))
       num_string = num_string + teenagers[left-1]
       left = 0
     else
@@ -77,7 +77,7 @@ def english_number number
     end
 
     if left > 0
-      num_string = num_string + " "
+      num_string = num_string + "-"
     end
   end
 

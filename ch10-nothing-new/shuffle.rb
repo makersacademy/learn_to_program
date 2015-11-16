@@ -1,5 +1,5 @@
 def shuffle arr
-  shuffle = []
+  shuf = []
 
   while arr.length > 0
     rand_index = rand(arr.length)
@@ -8,7 +8,7 @@ def shuffle arr
 
     arr.each do |x|
       if curr_index == rand_index
-        shuffle.push item
+        shuf.push x
       else
         new_arr.push x
       end
@@ -18,5 +18,5 @@ def shuffle arr
 
     arr = new_arr
   end
-  shuffle
+  shuf
 end

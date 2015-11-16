@@ -1,4 +1,9 @@
 def dictionary_sort arr
   # your code here
-  (arr.min(arr.length) { |a, b| a.downcase <=> b.downcase })
+  sorted = []
+  sorted << (arr.min(arr.length) { |a, b| a.downcase <=> b.downcase })
+  sorted
 end
+
+ar = ['hello', 'Ruby', 'Alphabet', 'jimmy', 'William']
+puts dictionary_sort(ar)

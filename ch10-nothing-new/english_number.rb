@@ -1,6 +1,6 @@
 def english_number number
   'Please enter a number that isn\'t negative.' if number < 0
-  'zero' if number == 0
+  return "zero" if number == 0
 
   num_string = '' # This is the string we will return.
   ones_place = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
@@ -73,5 +73,5 @@ def english_number number
   num_string
 end
 
-puts english_number(1000000000000)
-puts english_number(109238745102938560129834709285360238475982374561034)
+# puts english_number(0)
+# puts english_number(109238745102938560129834709285360238475982374561034)

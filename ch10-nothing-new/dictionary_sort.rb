@@ -23,4 +23,4 @@ def rec_sort unsorted, sorted
   rec_sort still_unsorted, sorted
 end
 
-puts(sort(['Foxtrot', 'hotel', 'bravo', 'Golf', 'charlie', 'delta', 'Alpha', 'echo']).join(' '))
+# puts(sort(['Foxtrot', 'hotel', 'bravo', 'Golf', 'charlie', 'delta', 'Alpha', 'echo']).join(' '))

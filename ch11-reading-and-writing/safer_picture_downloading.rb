@@ -20,7 +20,12 @@ pic_names.each do |name|
         "#{batch_name}#{pic_number}.jpg"
     end
 
+    if File.exist? new_name
+       puts "File already exist. Shutting down."
+       exit
+    else
         File.rename name, new_name
+    end
 
     pic_number = pic_number + 1
 

@@ -6,7 +6,7 @@ def better_log desc, &block
   $logger_depth += 1
   result = block.call
   $logger_depth -= 1
-  puts prefix + "...#{desc.inspect} finished, returning: #{result}."
+  puts prefix + "...#{desc.inspect} finished, returning: #{result}"
 end
 
 better_log "outer block" do

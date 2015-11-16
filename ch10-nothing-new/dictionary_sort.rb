@@ -5,5 +5,10 @@ def dictionary_sort arr
   sorted
 end
 
-ar = ['hello', 'Ruby', 'Alphabet', 'jimmy', 'William']
-puts dictionary_sort(ar)
+#ar = ['hello', 'Ruby', 'Alphabet', 'jimmy', 'William']
+#puts dictionary_sort ar
+# >> Alphabet
+# >> hello
+# >> jimmy
+# >> Ruby
+# >> William

@@ -6,7 +6,7 @@
 # all profiling on and off by changing just one line of code. Just one word!
 
 def profile block_description, &block
-  profile_on = false
+  profile_on = true
   if profile_on
     start_time = Time.new
     block.call

@@ -1,5 +1,5 @@
-def log desc, &block
-  puts "Beginning #{desc.inspect}..."
-  result = block.call
-  puts "...#{desc.inspect} finished, returning: #{result}"
+def program_log desc, &block
+  puts "Beginning \"#{desc}\"..."
+  result = block[]
+  puts "...\"#{desc}\" finished, returning: #{result}"
 end

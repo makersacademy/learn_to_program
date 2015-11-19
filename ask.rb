@@ -7,7 +7,7 @@ def ask question
 	return false if reply == 'no'
         puts 'Please answer "yes" or "no".'
 	end
- end
+end
 
 puts 'Hello, and thank you for...'
 puts

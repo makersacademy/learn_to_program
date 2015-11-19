@@ -1,1 +1,1 @@
-# your code here
+(Time.local(1993, 5, 27, 12, 10) + 1000000000)

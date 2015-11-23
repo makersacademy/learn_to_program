@@ -1,24 +1,26 @@
 birth_dates = {}
-File.read('birthdates.txt').each_line do |line|
-  line = line.chomp
-
-  first_comma = 0
-  while line[first_comma] != ',' &&
-      first_comma < line.length
-    first_comma = first_comma + 1
-  end
-
-  name = line[0..(first_comma - 1)]
-  date = line[-12..-1]
-  birth_dates[name] = date
+File.readlines('birthdates.txt').each do |line| 
+  name, date, year = line.split(',') 
+  birth_dates[name] = Time.gm(year, *(date.split))
 end
 
-puts 'Whose birthday would you like to know?'
+puts 'whose birthday do you want to know?'
 name = gets.chomp
-date = birth_dates[name]
+bday = birth_dates[name]
 
-if date == nil
-  puts "Oooh, I don't know that one..."
+if bday==nil
+  puts "I don't know that one"
+else 
+  today = Time.new
+  age = today.year - bday.year
+  if today.month > bday.month || (now.month == bday.month && now.day > bday.day)
+    age +=1
+end
+if now.month == bday.month && now.day == bday.day 
+  puts "#{name} turns #{age} TODAY!!"
 else
-  puts date[0..5]
+      date = bday.strftime "%b %d"
+puts "#{name} will be #{age} on #{date}." 
+end
+
 end

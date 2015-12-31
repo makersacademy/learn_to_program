@@ -6,5 +6,4 @@ def old_roman_numeral num
 	puts answer.join
 end
 
-old_roman_numeral 1999
 

@@ -31,9 +31,3 @@ def old_roman_numeral num
   return 'M'*thousands + 'D'*five_hundreds + 'C'*hundreds + 'L'*fifties + 'X'*tens + 'V'*fives + 'I'*units
 
 end
-
-old_roman_numeral(2557)
-old_roman_numeral(1)
-old_roman_numeral(21)
-old_roman_numeral(132)
-old_roman_numeral(155)

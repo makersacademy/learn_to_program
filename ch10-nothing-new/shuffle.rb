@@ -1,3 +1,3 @@
 def shuffle (array)
-array.shuffle!s
+array.shuffle
 end

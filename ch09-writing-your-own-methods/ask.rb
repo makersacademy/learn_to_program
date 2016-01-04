@@ -1,4 +1,5 @@
 def ask question
+<<<<<<< HEAD
 
 while true
 
@@ -59,3 +60,8 @@ puts 'Thank you for...'
 puts
 
 puts wets_bed
+=======
+  # your code here
+  test 2
+end
+>>>>>>> 0f686e381b379d938c3ad41216fe96ee0848ac59

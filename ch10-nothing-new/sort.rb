@@ -1,30 +1,31 @@
-def sort arr
- #["d", 'a', 'c', 'b']
-  to_sort = []
-  sorted = []
-
-
-while arr.length >= 1
-  smallest = arr.pop
-
-    arr.each do |word|
-      if smallest < word == true
-        to_sort << word
-      else
-        to_sort << smallest
-        smallest = word
-      end
-    end
-
-    sorted << smallest
-    arr = to_sort
-    to_sort = []
-
-
-  end
-  sorted
+def sort(arr)
+  recursive_sort arr, []
 end
 
-test = ["a", 'd', 'c', 'b']
+def recursive_sort unsorted, sorted
+ #["d", 'a', 'c', 'b']
+  if unsorted.length <= 0
+    return sorted
+  end
+
+  smallest = unsorted.pop
+  to_sort = []
+
+  unsorted.each do |word|
+    if smallest < word == true
+      to_sort << word
+    else
+      to_sort << smallest
+      smallest = word
+    end
+  end
+
+    sorted << smallest
+    unsorted = to_sort
+    recursive_sort(unsorted, sorted)
+
+end
+
+test = ['y',"a", 'd', 'c','z', 'x', 'b']
 
 p sort test

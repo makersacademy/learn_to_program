@@ -5,7 +5,7 @@ def old_roman_numeral num
   output = ""
 
   values.each_with_index do |v, i|
-    output << "#{numerals[i]*(num/v).floor}" if num/v.floor != 0
+    output << "#{numerals[i] * (num/v).floor}"
     num = num % v
   end
 
@@ -13,5 +13,5 @@ def old_roman_numeral num
 
 end
 
-puts old_roman_numeral 8721
-puts old_roman_numeral 3891
+puts old_roman_numeral 321
+puts old_roman_numeral 3728

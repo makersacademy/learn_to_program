@@ -1,3 +1,4 @@
 def sort arr
-  arr.sort
+  (pivot = arr.pop) ? sort(arr.select{|i| i <= pivot}) + [pivot] + sort(arr.select{|i| i > pivot}) : []
 end
+

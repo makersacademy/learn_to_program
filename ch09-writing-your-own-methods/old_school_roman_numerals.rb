@@ -10,10 +10,5 @@ def old_roman_numeral num
   v = units/5
   i = units - (v*5)
 
-  end
-"M"*thousands + "D"*d +"C"*c +"L"*l +"X"*x +"V"*v +"I"*i
-
-
-
-  
+ puts "M"*thousands + "D"*d +"C"*c +"L"*l +"X"*x +"V"*v +"I"*i
 end

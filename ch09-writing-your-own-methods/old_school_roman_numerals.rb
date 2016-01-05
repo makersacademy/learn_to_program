@@ -1,4 +1,5 @@
 def old_roman_numeral num
+  num = num.to_i
   thousands = num/1000
   hundreds = (num-thousands*1000)/100
   tens = ((num-thousands*1000)-hundreds*100)/10
@@ -12,3 +13,4 @@ def old_roman_numeral num
 
  puts "M"*thousands + "D"*d +"C"*c +"L"*l +"X"*x +"V"*v +"I"*i
 end
+old_roman_numeral(1)

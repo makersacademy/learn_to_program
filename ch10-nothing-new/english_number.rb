@@ -50,18 +50,9 @@ others =    ['hundred', 2],
             ['vigintillion', 63],
             ['googol', 100]
 
-  number_integer_array = number.to_s.split('')
-  dynamic_number_array = []
-  #loop through array
-  number_integer_array.each do |current_number|
-    #have to minus one as the index of any array starts at 0
-    #e.g - ones_place[0] => 'one', ones_place[1] => 'two', etc...
-   puts ones_place[(current_number.to_i) - 1]
-    if dynamic_number_array.length > 2
-     puts others[dynamic_number_array]
-    #put another number into dynamic array to tell us how many times
-     #we have looped on the next loop
-     dynamic_number_array.push(current_number)
+#index of arrays (n-1)
+[1,1,1].last
+
    end
   end
 end

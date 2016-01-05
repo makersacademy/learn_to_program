@@ -12,6 +12,3 @@ def roman_numeral num
   return output
 
 end
-
-puts roman_numeral 399
-puts roman_numeral 3942

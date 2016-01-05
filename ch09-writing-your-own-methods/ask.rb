@@ -8,6 +8,7 @@ def ask(question)
   end
 end
 
+
 puts 'Hello, and thank you for...'
 puts
 ask 'Do you like eating tacos?' # Ignore this return value

@@ -1,58 +1,3 @@
-#My code fails to pass based on different growth parameters
-
-
-# class OrangeTreeMine
-#   def initialize
-#     $height = 0
-#     @orange_count = 0
-#   end
-#
-#   def height
-#     $height
-#   end
-#
-#   def one_year_passes
-#     $height += 1
-#     puts "The tree is #{$height} m high!"
-#     if $height >= 2
-#       @orange_count = 10
-#     end
-#   end
-#   def count_the_oranges
-#     puts "There are #{@orange_count} oranges on the tree."
-#   end
-#   def pick_an_orange
-#     @orange_count -= 1
-#   end
-# end
-#
-#
-# tree = OrangeTreeMine.new
-#
-# puts
-# puts "Welcome to Orange tree."
-# while $height < 5
-#   puts
-#   puts "What would you like to do?"
-#   puts "For advance a year type 'advance'"
-#   puts "For count the oranges type 'count'"
-#   puts "For pick the oranges type 'pick'"
-#   puts
-#   x = gets.chomp
-#   if x == 'advance'
-#     tree.one_year_passes
-#   elsif x == 'count'
-#     tree.count_the_oranges
-#   elsif x == 'pick'
-#     tree.pick_an_orange
-#   else
-#     puts "Try again"
-#   end
-# end
-# puts "The tree died"
-
-
-
 
 
 class OrangeTree
@@ -113,5 +58,63 @@ class OrangeTree
     end
   end
 end
+
+
+#My code fails to pass based on different growth parameters
+
+
+# class OrangeTreeMine
+#   def initialize
+#     $height = 0
+#     @orange_count = 0
+#   end
+#
+#   def height
+#     $height
+#   end
+#
+#   def one_year_passes
+#     $height += 1
+#     puts "The tree is #{$height} m high!"
+#     if $height >= 2
+#       @orange_count = 10
+#     end
+#   end
+#   def count_the_oranges
+#     puts "There are #{@orange_count} oranges on the tree."
+#   end
+#   def pick_an_orange
+#     @orange_count -= 1
+#   end
+# end
+#
+#
+# tree = OrangeTreeMine.new
+#
+# puts
+# puts "Welcome to Orange tree."
+# while $height < 5
+#   puts
+#   puts "What would you like to do?"
+#   puts "For advance a year type 'advance'"
+#   puts "For count the oranges type 'count'"
+#   puts "For pick the oranges type 'pick'"
+#   puts
+#   x = gets.chomp
+#   if x == 'advance'
+#     tree.one_year_passes
+#   elsif x == 'count'
+#     tree.count_the_oranges
+#   elsif x == 'pick'
+#     tree.pick_an_orange
+#   else
+#     puts "Try again"
+#   end
+# end
+# puts "The tree died"
+
+
+
+
 
 

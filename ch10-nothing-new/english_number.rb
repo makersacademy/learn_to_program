@@ -12,6 +12,146 @@ def english_number number
   
   left = number
   
+  write = left/1000000000000000000000000000000000000000000000000
+  left = left - write*1000000000000000000000000000000000000000000000000
+  if write > 0
+    quindecillions = english_number write
+    num_string = num_string + quindecillions + ' quindecillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000000000000000000000000000000
+  left = left - write*1000000000000000000000000000000000000000000000
+  if write > 0
+    quattuordecillions = english_number write
+    num_string = num_string + quattuordecillions + ' quattuordecillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000000000000000000000000000
+  left = left - write*1000000000000000000000000000000000000000000
+  if write > 0
+    tredecillions = english_number write
+    num_string = num_string + tredecillions + ' tredecillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000000000000000000000000
+  left = left - write*1000000000000000000000000000000000000000
+  if write > 0
+    duodecillions = english_number write
+    num_string = num_string + duodecillions + ' duodecillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000000000000000000000
+  left = left - write*1000000000000000000000000000000000000
+  if write > 0
+    undecillions = english_number write
+    num_string = num_string + undecillions + ' undecillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000000000000000000
+  left = left - write*1000000000000000000000000000000000
+  if write > 0
+    decillions = english_number write
+    num_string = num_string + decillions + ' decillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000000000000000
+  left = left - write*1000000000000000000000000000000
+  if write > 0
+    nonillions = english_number write
+    num_string = num_string + nonillions + ' nonillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000000000000
+  left = left - write*1000000000000000000000000000
+  if write > 0
+    octillions = english_number write
+    num_string = num_string + octillions + ' octillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000000000
+  left = left - write*1000000000000000000000000
+  if write > 0
+    septillions = english_number write
+    num_string = num_string + septillions + ' septillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000000
+  left = left - write*1000000000000000000000
+  if write > 0
+    sextillions = english_number write
+    num_string = num_string + sextillions + ' sextillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000000
+  left = left - write*1000000000000000000
+  if write > 0
+    quintillions = english_number write
+    num_string = num_string + quintillions + ' quintillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000000
+  left = left - write*1000000000000000
+  if write > 0
+    quadrillions = english_number write
+    num_string = num_string + quadrillions + ' quadrillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000000
+  left = left - write*1000000000000
+  if write > 0
+    trillions = english_number write
+    num_string = num_string + trillions + ' trillion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
+  write = left/1000000000
+  left = left - write*1000000000
+  if write > 0
+    billions = english_number write
+    num_string = num_string + billions + ' billion'
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+  
   write = left/1000000
   left = left - write*1000000
   if write > 0
@@ -66,6 +206,8 @@ def english_number number
 end
 
 
-puts english_number(267999999)
+
+
+puts english_number(1000000000000)
 
 

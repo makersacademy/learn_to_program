@@ -1,3 +1,3 @@
-def dictionary_sort arr
-  # your code here
+def dictionary_sort array
+  array.sort_by {|word| word.downcase}
 end

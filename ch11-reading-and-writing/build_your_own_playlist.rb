@@ -1,7 +1,5 @@
 # This is a playlist for all tracks by 'The Cat Empire' currently hosted on this machine.
 
-require "yaml"
-
 def shuffle arr
   word_hash = {}
   arr.each do |item|

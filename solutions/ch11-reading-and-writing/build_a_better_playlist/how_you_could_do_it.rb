@@ -44,6 +44,6 @@ def music_shuffle filenames
   
   arr
 end
-# songs = ['aa/bbb', 'aa/ccc', 'aa/ddd',
-#          'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
-# puts(music_shuffle(songs))
+songs = ['aa/bbb', 'aa/ccc', 'aa/ddd',
+          'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
+ puts(music_shuffle(songs))

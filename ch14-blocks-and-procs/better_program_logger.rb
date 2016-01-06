@@ -14,6 +14,9 @@ log 'The long winter' do
   log 'Days til Christmas' do
     y = Time.new.year
     (((Time.new(y,12,25) - Time.new))/60/60/24).to_i
+    log 'Christmas Elf' do
+      "<|:)"
+    end
   end
   log 'Excitement Level' do
     y = Time.new.year

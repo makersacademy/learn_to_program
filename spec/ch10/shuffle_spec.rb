@@ -1,5 +1,7 @@
 require './ch10-nothing-new/shuffle.rb'
 
+require 'set'
+
 describe 'shuffle' do
 
   let(:array){[1,2,3,4,5,6,7,8,9]}

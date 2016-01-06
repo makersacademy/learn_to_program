@@ -14,6 +14,6 @@ def ask question
 
     puts 'Please answer "yes" or "no".'
   end
-  answer # This is what we return (true or false). 
+  answer 
 end
 end

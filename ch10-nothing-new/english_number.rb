@@ -8,25 +8,23 @@ def english_number number
   if number < 0
     return "not today young man"
   end
-  if number == 0
-    return "zero"
-  end
+end
 
 num_string = " "
-ones_place = ['one', 'two', 'three',
+@ones_place = ['zero', 'one', 'two', 'three',
               'four', 'five', 'six',
               'seven', 'eight', 'nine']
 
-tens_place = ['ten', 'twenty', 'thirty',
+@tens_place = ['ten', 'twenty', 'thirty',
               'forty', 'fifty', 'sixty',
               'seventy', 'eighty', 'ninety']
 
 
-teenagers = ['eleven', 'twelve', 'thirteen',
+@teenagers = ['eleven', 'twelve', 'thirteen',
              'fourteen', 'fifteen', 'sixteen',
              'seventeen', 'eighteen', 'nineteen']
 
-others =    ['hundred', 2],
+@others =    [['hundred', 2],
             ['thousand', 3],
             ['million', 6],
             ['billion', 9],
@@ -48,24 +46,19 @@ others =    ['hundred', 2],
             ['octodecillion', 57],
             ['novemdecillion', 60],
             ['vigintillion', 63],
-            ['googol', 100]
+            ['googol', 100]]
 
-split_number = number.to_s.split("")
-if split_number.length == 1
-  index = split_number[0].to_i - 1
-  ones_place[index]
-  end
+numbers = [@ones_place, @tens_place]
 
-if split_number.length == 2 && split_number < 20
-    index = split_number.last.to_i - 1
-    teenagers[index]
-  end
-
-if split_number.length == 2 && split_number > 20
-  index = split_number.last.to_i - 1
-  tens_place[index]
-  end
+def recursion (accumalator = "", remainder = 0)
+  x = @ones_place[remainder]
+  accumalator += x
+  return accumalator if remainder - 10 <= 0
+  recursion accumalator, remainder
 end
+
+#return if ones_place
+#call recursion with arguments accumalator, remainder
 
 
 

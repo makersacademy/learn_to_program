@@ -50,9 +50,25 @@ others =    ['hundred', 2],
             ['vigintillion', 63],
             ['googol', 100]
 
-#index of arrays (n-1)
-[1,1,1].last
+split_number = number.to_s.split("")
+if split_number.length == 1
+  index = split_number[0].to_i - 1
+  ones_place[index]
+  end
 
-   end
+if split_number.length == 2 && split_number < 20
+    index = split_number.last.to_i - 1
+    teenagers[index]
+  end
+
+if split_number.length == 2 && split_number > 20
+  index = split_number.last.to_i - 1
+  tens_place[index]
   end
 end
+
+
+
+
+#index of arrays (n-1)
+[1,1,1].last

@@ -25,4 +25,3 @@ def old_roman_numeral(num)
   string
 end
 
-puts old_roman_numeral(1009)

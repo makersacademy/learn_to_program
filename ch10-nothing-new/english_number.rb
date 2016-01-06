@@ -57,7 +57,7 @@ def english_number(number)
     end
     
     if left > 0
-      num_string += "-"
+      num_string += " "
     end
   end
   

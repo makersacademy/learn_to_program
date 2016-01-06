@@ -3,7 +3,7 @@ length = arr.length
 random_num = Random.new
 new_array = []
 
-  arr.each_with_index do |a,i|
+  arr.each do |a|
     num = random_num.rand(1..2)
     if num == 1
       new_array.push(a)

@@ -4,7 +4,7 @@ end
 
 
 def recursive_sort unsorted_array, sorted_array
-  return unsorted_array if unsorted_array.length <=1
+  return unsorted_array if unsorted_array.length <=0
 
   small = unsorted_array.pop
   remainder_array = []
@@ -24,7 +24,3 @@ def recursive_sort unsorted_array, sorted_array
   return sorted_array
 
 end
-
-
-
-puts sort %w(hello why how what bye seeya)

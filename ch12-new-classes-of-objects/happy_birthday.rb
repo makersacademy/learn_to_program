@@ -22,9 +22,9 @@ today = Time.now
 if today.month < birthday_date.month || (today.month == birthday_date.month && birthday_date.day > today.day)
 	age = (today.year - birthday_date.year)-1
 else
-	age = puts today.year - birthday_date.year
+	age = today.year - birthday_date.year
 end
 
 puts "You are #{age} years old."
 puts
-puts "SPANK!\n"*age
+puts "SPANK!\n"*age.to_i

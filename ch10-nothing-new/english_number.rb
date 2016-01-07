@@ -34,8 +34,7 @@ def english_number number
 
   left = number
 
-  while large_nos.length > 0
-    tested_object = large_nos.pop
+  large_nos.reverse.each do |tested_object|
     test_name = tested_object[0]
     test_base = 10 ** tested_object[1]
     write = left/test_base # How many zillions left?
@@ -63,7 +62,7 @@ def english_number number
       # The "-1" is because tens_place[3] is
       # 'forty', not 'thirty'.
     end
-    num_string << ' ' if left >0
+    num_string << '-' if left >0
   end
 
   write = left # How many ones left to write out?

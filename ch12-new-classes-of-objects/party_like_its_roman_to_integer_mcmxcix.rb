@@ -23,13 +23,13 @@ def roman_to_integer roman
 
 	result = 0
 
-	if splitter.map {|x| check.include?(x)}.include?(false)  
+	if splitter.map {|x| check.include?(x)}.include?(false) # if hash.keys include any letter from the roman string return false 
 		raise ArgumentError.new("Not a valid roman numeral")
 	else
 		hash.each do |key, value|
-			while roman.index(key) == 0  # while the current key is at the begging of our roman string
+			while roman.index(key) == 0  # while the current key matches the begging of our roman string
 				result += value	     # add the corresponding value to the result integer
-				roman.slice!(key)		 # and delete the previously found roman letters to start all over again.
+				roman.slice!(key)    # and delete the previously found roman letters and start all over again.
 			end
 		end	
 	end

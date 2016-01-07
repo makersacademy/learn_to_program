@@ -58,6 +58,7 @@ class OrangeTree
       'A dead tree has nothing to pick. :('
     end
   end
+
 end
 
 # ot = OrangeTree.new

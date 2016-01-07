@@ -5,11 +5,11 @@ def ask question
     reply = gets.chomp.downcase
     if reply == "yes"
       return true
-    elsif reply == "no"
+    end
+    if reply == "no"
       return false
-    else
-      puts 'Please answer "yes" or "no".'
-    end  
+    end
+    puts 'Please answer "yes" or "no".'
   end
 end
 

@@ -24,6 +24,5 @@ puts 'Spank!' * round_down_age
 
 puts round_down_age
 
-# times_spank =  today - birth_year
-# puts 'Spank!' * times_spank
+
 

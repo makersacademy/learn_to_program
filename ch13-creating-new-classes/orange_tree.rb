@@ -28,11 +28,11 @@ class OrangeTree
     if @alive
       @height = @height + 0.4
       @orange_count = 0 # old oranges fall off
-      if @height > 10 && rand(2) > 0
+      if @height > 25 
         # tree dies
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
-      elsif @height > 2
+      elsif @height > 10 
         # new oranges grow
         @orange_count = (@height * 15 - 25).to_i
         "This year your tree grew to #{@height.round(1)}m tall," +

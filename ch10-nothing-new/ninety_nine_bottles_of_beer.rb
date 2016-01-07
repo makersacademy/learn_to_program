@@ -32,6 +32,7 @@ class Beersong
 end
 
 # answer as provided in RubyKickstarter
+# rspec passed, but no test examples?!
 
 
 

@@ -4,11 +4,10 @@ end
 
 def rec_shuffle unshuffled_array, shuffled_array
 
-
   if unshuffled_array.length <= 0
     return shuffled_array
   else
-    r=Random.rand(0..unshuffled_array.length)
+    r=Random.rand(0...unshuffled_array.length)
     shuffled_array << unshuffled_array[r]
     unshuffled_array.delete_at(r)
   end
@@ -16,4 +15,4 @@ def rec_shuffle unshuffled_array, shuffled_array
   rec_shuffle unshuffled_array, shuffled_array
 end
 
-print shuffle %w(a b c d e f g)
+#print shuffle %w(a b c)

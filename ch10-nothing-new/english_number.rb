@@ -27,6 +27,7 @@ def english_number number
 
   left = number
 
+  #quindecillions = 48 zeros
         write = left/1000000000000000000000000000000000000000000000000
   left = left - write*1000000000000000000000000000000000000000000000000
 
@@ -39,6 +40,7 @@ def english_number number
      end
    end
 
+  #quattuordecillions = 45 zeros
         write = left/1000000000000000000000000000000000000000000000
   left = left - write*1000000000000000000000000000000000000000000000
 
@@ -52,6 +54,7 @@ def english_number number
    end
 
 
+  #tredecillions = 42 zeros
         write = left/1000000000000000000000000000000000000000000
   left = left - write*1000000000000000000000000000000000000000000
 
@@ -64,6 +67,7 @@ def english_number number
      end
    end
 
+  #duodecillions = 39 zeros
         write = left/1000000000000000000000000000000000000000
   left = left - write*1000000000000000000000000000000000000000
 
@@ -76,6 +80,7 @@ def english_number number
      end
    end
 
+  #undecillions = 36 zeros
         write = left/1000000000000000000000000000000000000
   left = left - write*1000000000000000000000000000000000000
 
@@ -89,6 +94,7 @@ def english_number number
    end
 
 
+  #decillions = 33 zeros
         write = left/1000000000000000000000000000000000
   left = left - write*1000000000000000000000000000000000
 
@@ -101,6 +107,7 @@ def english_number number
      end
    end
 
+     #nonillions = 30 zeros
         write = left/1000000000000000000000000000000
   left = left - write*1000000000000000000000000000000
 
@@ -113,6 +120,7 @@ def english_number number
      end
    end
 
+  #octillions = 27 zeros
         write = left/1000000000000000000000000000
   left = left - write*1000000000000000000000000000
 
@@ -125,6 +133,7 @@ def english_number number
      end
    end
 
+  #septillions = 24 zeros
         write = left/1000000000000000000000000
   left = left - write*1000000000000000000000000
 
@@ -137,6 +146,7 @@ def english_number number
      end
    end
 
+  #sextillions = 21 zeros
       write = left/1000000000000000000000
   left = left - write*1000000000000000000000
 
@@ -149,6 +159,7 @@ def english_number number
      end
    end
 
+  #quintillions = 18 zeos
     write = left/1000000000000000000
   left = left - write*1000000000000000000
 
@@ -161,7 +172,7 @@ def english_number number
      end
    end
 
-
+  #quadrillions = 15 zeros
   write = left/1000000000000000
   left = left - write*1000000000000000
 
@@ -174,6 +185,7 @@ def english_number number
      end
    end
 
+  #trillions = 12 zeros
   write = left/1000000000000
   left = left - write*1000000000000
 
@@ -186,7 +198,7 @@ def english_number number
      end
    end
 
-
+  #billions = 9 zeros
   write = left/1000000000
   left = left - write*1000000000
 
@@ -199,7 +211,7 @@ def english_number number
      end
    end
 
-
+  #millions = 6 zeros
   write = left/1000000
   left = left - write*1000000
 
@@ -213,7 +225,7 @@ def english_number number
    end
 
 
-
+  #thousands = 3 zeros
   write = left/1000
   left = left - write*1000
 
@@ -226,6 +238,7 @@ def english_number number
      end
    end
 
+  #hundreds = 2 zeros
   write = left/100
   left  = left - write*100
 
@@ -239,6 +252,7 @@ def english_number number
     end
   end
 
+  #tens = 1 zero
   write = left/10
   left  = left - write*10
 

@@ -1,4 +1,4 @@
-def profile block_description, &block
+def profile block_description, &block#
 
 profile_on = true
 
@@ -30,3 +30,4 @@ number = number + 1
 
 end
 end
+#fd

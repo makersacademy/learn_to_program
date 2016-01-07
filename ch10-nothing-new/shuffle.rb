@@ -8,5 +8,3 @@ def rec_shuffle unsorted_arr, sorted_arr
   rec_shuffle unsorted_arr, sorted_arr unless unsorted_arr.size == 0
   sorted_arr
 end
-
-puts shuffle ["sixty-two", 62, [1, "two"], 13, "thirteen"]

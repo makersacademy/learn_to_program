@@ -17,7 +17,6 @@ end
 
 playlist_file = "playlist.m3u"
 playlist = shuffle Dir['/Users/louisefranklin/Music/iTunes/iTunes\ Media/Music/**/*.m4a']
-puts playlist
 
 File.open playlist_file, 'w' do |f|
   f.write(playlist.join("\n"))

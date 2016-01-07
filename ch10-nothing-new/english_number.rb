@@ -59,8 +59,7 @@ def english_number number
         numString = numString + ' '
       end
     end
-    n = n -
- 1
+    n = n - 1
   end
 
 

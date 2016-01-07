@@ -12,4 +12,4 @@ File.open "CodingTechno.m3u", "w" do | f |
 	end 
 end
 
-puts "Finito"
+puts "Finito!"

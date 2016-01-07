@@ -17,7 +17,7 @@ def english_number number
       if number == 0
         return "Zero"
       elsif number < 1
-        return "Please enter a positive interger"
+        return "Please enter a positive int"
       end
 
 

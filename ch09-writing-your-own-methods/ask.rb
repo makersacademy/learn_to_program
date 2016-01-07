@@ -1,19 +1,12 @@
-def ask (question)
-  	while true
-  		puts question
-  		reply = gets.chomp
-
-  		if reply == 'yes'
-  		true
-  		elsif reply == 'no'
-  		false
-  		else
-  		ask (question) #recursion
-  		end
-  		break
-		
+def ask question
+	while true
+		puts question
+		reply = gets.chomp.downcase
+		return true if reply == 'yes'
+		return false if reply == 'no'
+		puts 'Please answer "yes" or "no"'
 	end
 end
 
-#removed answer variable
-#rspec passes without using recursion but to capture yes/no responses only (and reduce lines of code), have included.
+puts ask('Do you like burgers?')
+

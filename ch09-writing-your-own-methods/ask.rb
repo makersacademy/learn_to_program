@@ -1,5 +1,4 @@
-  
-def ask question 
+ def ask question 
   while true
     puts question
     reply = gets.chomp.downcase
@@ -15,5 +14,4 @@ def ask question
     puts 'Please answer "yes" or "no".'
   end
   answer 
-end
 end

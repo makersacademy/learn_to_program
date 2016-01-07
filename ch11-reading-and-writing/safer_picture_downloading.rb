@@ -1,1 +1,25 @@
-# your code here
+Dir.chdir '/users/jono442244/Pictures/PictureTest'  
+
+pic_names = Dir['/users/jono442244/Pictures/PictureTest/*.jpg']
+
+puts "What would you like to call this batch of pictures?"
+batch_name = gets.chomp
+
+puts 
+print "Downloading #{pic_names.length} files:"
+
+pic_number = 1
+
+pic_names.each do | name | #each loops over all the files
+	print "."
+
+	new_name = if pic_number < 10 
+		"#{batch_name}0#{pic_number}.jpg"
+	else
+		"#{batch_name}#{pic_number}.jpg"
+	end
+
+	File.rename name, new_name 
+
+	pic_number += 1 
+end

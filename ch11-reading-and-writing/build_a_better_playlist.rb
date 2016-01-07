@@ -1,4 +1,5 @@
 
+
 def shuffle arr
   rec_shuffle arr, []
 end
@@ -34,10 +35,14 @@ def super_shuffle arr
   super_shuffle(first_half) + super_shuffle(second_half)
 end
 
+def music_shuffle filenames
+  playlist_file = "playlist2.m3u"
+  playlist = super_shuffle filenames
 
-playlist_file = "playlist2.m3u"
-playlist = super_shuffle Dir['/Users/louisefranklin/Music/iTunes/iTunes\ Media/Music/**/*.m4a']
-
-File.open playlist_file, 'w' do |f|
-  f.write(playlist.join("\n"))
+  File.open playlist_file, 'w' do |f|
+    f.write(playlist.join("\n"))
+  end
 end
+
+
+music_shuffle Dir['/Users/louisefranklin/Music/iTunes/iTunes\ Media/Music/**/*.m4a']

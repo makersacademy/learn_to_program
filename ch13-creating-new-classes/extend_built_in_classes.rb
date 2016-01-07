@@ -37,11 +37,10 @@ p 56.to_roman
 class Array
   def light_shuffle
   length = self.length
-  random_num = Random.new
   new_array = []
   
     self.each do |a|
-      num = random_num.rand(1..2)
+      num = rand(1..2)
       if num == 1
         new_array.push(a)
       else

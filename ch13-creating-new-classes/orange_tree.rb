@@ -60,7 +60,7 @@ class OrangeTree
   end
 end
 
-# ot = OrangeTree.new
+# ot = OrangeTree.ne
 # 23.times do
 #   ot.one_year_passes
 # end

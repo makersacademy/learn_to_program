@@ -3,13 +3,8 @@ def grandfather_clock(&block)
   if hour > 12
     hour -= 12
   end
-  while hour > 0
+  
+  hour.times do
     block.call
-    hour -= 1
   end
 end
-
-grandfather_clock do
-  puts "DONG!"
-end
-

@@ -1,7 +1,7 @@
 #  Changes directory to where pictures are to be saved
-Dir.chdir '/Users/michaelcollins/pictures'
+Dir.chdir '/Users/michaelcollins/desktop'
 #  finds pictures to be moved
-pic_names = Dir['/Users/michaelcollins/c**/*.jpg']
+pic_names = Dir['/Users/michaelcollins/desktop/picture_test/*.jpg']
 
 puts "What would you like to call this batch?"
 batch_name = gets.chomp
@@ -22,7 +22,8 @@ pic_names.each do |name|
 
   # Checks that file does not already exist before renaming/moving
   if File.exist? new_name
-    puts "ERROR: File already exists\nProgram will exit now"
+    puts
+    puts "ERROR: File already exists\nProgram will exit immediately"
     exit
   else
     File.rename name, new_name

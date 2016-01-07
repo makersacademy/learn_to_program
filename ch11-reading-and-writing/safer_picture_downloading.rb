@@ -23,3 +23,6 @@ pic_names.each do |name|
   File.rename name, new_name
   pic_number += 1
 end
+
+puts
+puts "Done, cutie!"

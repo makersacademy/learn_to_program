@@ -1,3 +1,5 @@
+# no rspec tests, but code runs
+
 class Dragon
 
 	def initialize(name)

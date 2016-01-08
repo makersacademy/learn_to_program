@@ -3,29 +3,29 @@ def sort(arr)
   recursive_sort(arr, [])
 end
 
-def recursive_sort(unsorted_array, sorted_array)
+def recursive_sort(original_array, sorted_array)
 
-    if unsorted_array.count <= 0
+    if original_array.count <= 0
       return sorted_array
     end
 
-    smallest = unsorted_array.pop
-    p 'first the smallest is ' + smallest
-    unsorted = []
+    smallest = original_array.pop
+    working_array = []
 
-    unsorted_array.each do |w|
+    original_array.each do |w|
       if w < smallest
-        unsorted.push(smallest)
+        working_array.push(smallest)
         smallest = w
-        p 'now the smallest is ' + smallest
       else
-        unsorted.push(w)
+        working_array.push(w)
       end
     end
 
     sorted_array.push smallest
-    recursive_sort(unsorted, sorted_array)
+    p smallest
+    recursive_sort(working_array, sorted_array)
 
 end
 
-p sort(['egg','balloon','fish','apple', 'Apple', 'Monkey'])
+
+p sort(('A'..'Z').to_a.shuffle)

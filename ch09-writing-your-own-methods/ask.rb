@@ -10,3 +10,4 @@ end
 
 puts ask('Do you like burgers?')
 
+#rspec passed

@@ -1,48 +1,52 @@
 def log desc, &block
-  # your code here
+  puts 'Beginning "' + desc + '"...'
+  result = block.call
+  puts '..."' + desc + '" finished, returning: ' + result.to_s
+end
+​
+log 'outer block' do
+  log 'some little block' do
+    109 - 104
+  end
+​
+  log 'yet another block' do
+  "I like Thai food!"
+  end
+
+  false
 end
 
-# def maybe_do b
-#   if rand(2) == 0
-#     b.call
-#   end
-# end
-#
-# def twice_do a
-#   a.call
-#   a.call
-# end
-#
-# wink = Proc.new do
-#    puts "wink"
-#  end
-#
-#  glance = Proc.new do
-#    puts 'glance'
-#  end
+#my soloution using procs
 
-#  def do_until_false first_input, some_proc
-#    input = first_input
-#    output = first_input
-#
-#    while output
-#      input = output
-#      output = some_proc.call input
-#    end
-#    input
-#  end
-#
-#  build_array_of_squares = Proc.new do |array|
-#    last_number = array.last
-#    if last_number <= 0
-#      false
-#    else
-#      array.pop
-#      array.push last_number * last_number
-#      array.push last_number - 1
-#    end
-#  end
-#
-# always_false = Proc.new do |just_ignore_me|
-#   false
+# def log some_proc, second_proc, third_proc
+#   puts "Beginning outer block'...'"
+#   some_proc.call
+#   puts "'some little block' finished, returning: \n 5"
+#   puts "'Beginning yet another block'"
+#   second_proc.call
+#   third_proc.call
+#   "'outer block' finished, returning: false"
 # end
+#
+# say_food = Proc.new do
+# puts "I like thai food!"
+# end
+#
+# little_block = Proc.new do
+# puts "Beginning 'some little block...''"
+# end
+# another_block = Proc.new do
+# puts "'yet another block' finished , returning: \n"
+# end
+#
+# log little_block, another_block, say_food
+
+
+# returns >> (Beginning outer block'...'
+# Beginning 'some little block...''
+# 'some little block' finished, returning:
+#  5
+# 'Beginning yet another block'
+# 'yet another block' finished , returning:
+# I like thai food!
+# "'outer block' finished, returning: false")

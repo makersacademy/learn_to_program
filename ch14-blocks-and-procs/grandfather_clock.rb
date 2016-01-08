@@ -9,7 +9,7 @@ def grandfather_clock &block
   hour.times(&block)
 end
 
-grandfather_clock { puts "DONG!" }
+grandfather_clock { puts "die!" }
 # def maybe_do b
 #   if rand(2) == 0
 #     b.call

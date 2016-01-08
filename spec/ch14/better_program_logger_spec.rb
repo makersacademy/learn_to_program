@@ -18,11 +18,10 @@ describe 'program logger' do
         end
         7 * 3 * 2
       end
-
+    end
       better_log 'yet another block' do
         '!doof naidnI evol I'.reverse
       end
       '0' == "0"
     end
-  end
 end

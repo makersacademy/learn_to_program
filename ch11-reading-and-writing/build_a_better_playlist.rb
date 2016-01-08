@@ -1,3 +1,28 @@
+
+# def music_shuffle filenames
+#
+#   left = []
+#   right = []
+#   filenames.map.with_index do |f,i|
+#
+#     if i.even?
+#       left << f
+#     else
+#       right << f
+#     end
+#
+#   end
+#
+#     rand_split = rand(filenames.size)
+#     p rand_split
+#     arr = [left,right].flatten
+#     [arr[rand_split..-1], arr[0..rand_split]].flatten
+#
+# end
+#
+# test_arr = ('a'..'i').to_a
+# p music_shuffle(test_arr)
+
 def music_shuffle filenames
 
 filenames = filenames.sort

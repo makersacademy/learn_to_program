@@ -1,8 +1,12 @@
 def profile(block_description, profiling=true, &block)
-  start_time = Time.new
-  block.call
-  duration = Time.new - start_time if profiling
-  puts "#{block_description}: #{duration} seconds"
+  if profiling
+    start_time = Time.new
+    block.call
+    duration = Time.new - start_time
+    puts "#{block_description}: #{duration} seconds"
+  else
+    block.call
+  end
 end
 
 profile '25000 doublings' do

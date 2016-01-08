@@ -145,7 +145,7 @@ while true
     	exit # can use to exit program
  
   	else
-    	puts 'Please enter one of the commands listed only.'
+    	puts 'Please enter one of the activities listed only.'
   end
 end
 

@@ -1,3 +1,4 @@
-def log desc, &block
-  # your code here
+def program_log desc, &block
+  puts "Beginning \"#{desc}\"..."
+  puts "...\"#{desc}\" finished, returning: #{block.call}"
 end

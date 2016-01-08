@@ -27,7 +27,7 @@ end
 puts roman_to_integer('MCMCIX')
 
 # spent way too long on this - explored all following options, couldn't get any to work!!
-# will revisit... completely confused myself on this one...
+# will revisit... completely confused myself on this one... frustrating as I've done this successfully before!!
 
 #   	def roman_to_integer(number)
 #   		number = self

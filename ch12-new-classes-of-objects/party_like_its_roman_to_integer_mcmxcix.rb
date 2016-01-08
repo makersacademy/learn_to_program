@@ -48,8 +48,6 @@ def roman_to_integer roman
         end
     end
     
-    integer
+    return integer.to_s
   
 end
-
-

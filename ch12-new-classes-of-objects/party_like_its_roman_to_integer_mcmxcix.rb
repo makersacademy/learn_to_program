@@ -15,36 +15,34 @@ def roman_to_integer(roman)
                 'cd' => 400,
                 'cm' => 900}
 
-#  a = "A"
-#  => "A"
-# 2.2.1 :011 > a == a.upcase
-if roman == roman.upcase
-    roman = roman.downcase
-end
-letters = roman.split("")
-return "Not a valid roman numeral" unless letters.all?{|letter| roman_nums.keys.include?(letter)}
-exceptions = []
-leftovers = []
-exceptions << exceptional_numbers.keys.select{|key| roman.include?(key)}.reverse
-  if exceptions != [[]]
-    result = exceptions.flatten.map { |number| exceptional_numbers.fetch(number)}.reduce(:+)
-    return result if exceptions.join == roman
+  if roman == roman.upcase
+      roman = roman.downcase
   end
-    leftovers << roman.sub(exceptions.join,"").split("")
-    leftovers.flatten.map{|letter| roman_nums.fetch (letter)}.reduce(:+) + result.to_i
-end
 
+  letters = roman.split("")
+  exceptions = []
+  leftovers = []
+  return "Not a valid roman numeral" unless letters.all?{|letter| roman_nums.keys.include?(letter)}
+  exceptions << exceptional_numbers.keys.select{|key| roman.include?(key)}.reverse
+
+    if exceptions != [[]]
+      result = exceptions.flatten.map { |number| exceptional_numbers.fetch(number)}.reduce(:+)
+      return result if exceptions.join == roman
+    end
+      leftovers << roman.sub(exceptions.join,"").split("")
+      leftovers.flatten.map{|letter| roman_nums.fetch (letter)}.reduce(:+) + result.to_i
+  end
 
 # [
-# ["IV", 4],
-#   ["II", 2],
-#   ["VI", 6],
-#   ["VAA", "Not a valid roman numeral"],
-#   ["XVII", 17],
-#   ["XXI", 21],
-#   ["XXIV", 24],
-#   ["XL", 40],
-#   ["XLIX", 49],
+#  ["IV", 4],
+#  ["II", 2],
+#  ["VI", 6],
+#  ["VAA", "Not a valid roman numeral"],
+#  ["XVII", 17],
+#  ["XXI", 21],
+#  ["XXIV", 24],
+#  ["XL", 40],
+#  ["XLIX", 49],
 #  ["LXXVII", 77],
 #  ["XC", 90],
 #  ["XCIX", 99],
@@ -55,11 +53,11 @@ end
 #  ["CCLVI", 256],
 #  ["CDLXXVII", 477],
 #  ["CDXCIX", 499],
-#   ["D", 500],
+#  ["D", 500],
 #  ["DIX", 509],
-#   ["DC", 600],
+#  ["DC", 600],
 #  ["DCCVI", 706],
-#   ["CMXXXIII", 933],
+#  ["CMXXXIII", 933],
 #  ["CML", 950],
 #  ["MXI", 1011],
 #  ["MCI", 1101],

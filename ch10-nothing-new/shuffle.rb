@@ -1,3 +1,5 @@
+require "set"
+
 def shuffle arr
   # your code here
   arr.shuffle

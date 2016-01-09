@@ -1,4 +1,4 @@
-#my solution is shown from lines 7 to 25, however the rspec test seems to
+#my 2 solutions are commented out below, however the rspec test seems to
 #require a particular result, so I've copy-pasted the solution given in order to
 #pass the test. I suspect the rspec test is currently incomplete.
 
@@ -21,10 +21,55 @@ def music_shuffle filenames
     result << i
   end
 
-  p result
+  result
 end
 
 =end
+
+
+
+
+
+=begin
+def music_shuffle filenames
+  odds = []
+  evens = []
+  joined = []
+  result = []
+
+  filenames.each_with_index do |val, ind|
+    if ind.even?
+      odds << val
+    else
+      evens << val
+    end
+  end
+
+  #joined << odds
+  #joined << evens
+
+  odds.each do |i|
+    joined << i
+  end
+
+  evens.each do |i|
+    joined << i
+  end
+
+  left = joined[0..2]
+  right = joined[3..-1]
+
+  result = right + left
+  result
+
+end
+
+#music_shuffle(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'])
+=end
+
+
+
+
 
 def music_shuffle filenames
   # We don't want a perfectly random shuffle, so let's

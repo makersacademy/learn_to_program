@@ -1,7 +1,7 @@
 class Integer
 
   def factorial
-  	arr = (1..self).inject(:*)
+  	(1..self).inject(:*)
   end
 
   def to_roman

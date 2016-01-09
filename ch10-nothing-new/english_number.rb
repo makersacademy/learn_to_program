@@ -61,7 +61,7 @@ def english_number number
 
     if write > 0
       prefix = english_number write
-      num_string = num_string + prefix + ' ' + zil_name
+      num_string = num_string + prefix + ' ' + name
 
       if left > 0
         num_string = num_string + ' '

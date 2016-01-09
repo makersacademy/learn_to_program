@@ -6,19 +6,20 @@
 #   puts "#{block_description}: #{duration} seconds"
 # end
 
+$OPT_PROFILING_ON = false
 
 def profile block_description, &block
-  profiling_on = false
-  if profiling_on
+  if $OPT_PROFILING_ON
     start_time = Time.new
-    block.call
-
+    block[]
     duration = Time.new - start_time
     puts "#{block_description}: #{duration} seconds"
   else
-    block.call
+    block[]
   end
 end
+
+
 
 # profile 'count' do
 #   number = 1

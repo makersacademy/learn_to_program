@@ -1,25 +1,24 @@
+$logger_depth = 0
+
 def log desc, &block
-  $logger_depth = 0
-    first = ' ' * $logger_depth
-    puts first + 'Beginning "' + desc + '"...'
-    $logger_depth = $logger_depth + 1
-    result = block.call
-    $logger_depth = $logger_depth - 1
-    puts first + '..."' + desc + '" finished, returning: ' + result.to_s
+  prefix = ' '*$logger_depth
+  puts prefix+"Beginning #{desc.inspect}..."
+  $logger_depth += 1
+  result = block[]
+  $logger_depth -= 1
+  puts prefix+"...#{desc.inspect} finished, returning: #{result}"
+end
+
+log 'outer block' do
+  log 'some little block' do
+    log 'teeny-tiny block' do
+      'lOtS oF lOVe'.downcase
+    end
+    7 * 3 * 2
   end
 
-  log 'outer block' do
-    log 'some little block' do
-      log 'teeny-tiny block' do
-        "lots of love"
-      end
-    end
-    42
-    end
-
-    log 'yet another block' do
-      'I love Indian food!'
-    end
-    true
+  log 'yet another block' do
+    '!doof naidnI evol I'.reverse
   end
+  '0' == "0"
 end

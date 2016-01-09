@@ -1,20 +1,21 @@
 def log desc, &block
-  puts 'Beginning "' + desc + '"...'
-  result = block.call
-  puts '..."' + desc + '" finished, returning: ' + result.to_s
+  puts "Beginning #{desc.inspect}..."
+  result = block[]
+  puts "...#{desc.inspect} finished, returning: #{result}"
 end
-​
+
 log 'outer block' do
   log 'some little block' do
-    109 - 104
-  end
-​
-  log 'yet another block' do
-  "I like Thai food!"
+    1**1 + 2**2
   end
 
-  false
+  log 'yet another block' do
+    '!doof iahT ekil I'.reverse
+  end
+
+  '0' == 0
 end
+
 
 #my soloution using procs
 

@@ -84,7 +84,7 @@ class OrangeTree
       @height = @height.round(2) + 0.4
       @orange_count = 0 # old oranges fall off
 
-      if @height > 10 && rand(2) > 0
+      if @height > 10 #&& rand(2) > 0
         # tree dies
         @alive = false
         'Oh, no! The tree is too old, and has died. :('

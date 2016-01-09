@@ -24,9 +24,8 @@ class OrangeTree
   def one_year_passes
     if @alive
       @height = @height + 0.4
-      @orange_count = 0 # old oranges fall off
-      if @height > 10 && rand(2) > 0
-        # tree dies
+      @orange_count = 0
+      if @height > 10.1 && rand(2) > 0
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2

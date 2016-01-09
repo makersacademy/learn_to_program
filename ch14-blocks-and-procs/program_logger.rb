@@ -1,21 +1,19 @@
-def log desc, &block
+def program_log desc, &block
   puts "Beginning #{desc.inspect}..."
   result = block[]
   puts "...#{desc.inspect} finished, returning: #{result}"
 end
 
-log 'outer block' do
-  log 'some little block' do
-    1**1 + 2**2
+program_log 'outer block' do
+  program_log 'some little block' do
+    1111111111111 - 1111111111106
   end
 
-  log 'yet another block' do
-    '!doof iahT ekil I'.reverse
+  program_log 'yet another block' do
+    'I like Thai food!'
   end
-
-  '0' == 0
+   false
 end
-
 
 #my soloution using procs
 

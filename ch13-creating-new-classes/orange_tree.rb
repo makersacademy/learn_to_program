@@ -19,11 +19,11 @@ class OrangeTree
       @height = @age * 0.5
       @orange = 0
 
-      if (@age > 15) && rand(2) > 0
+      if (@age > 20) && rand(2) > 0
         @alive = false
         "Your tree is too old! It has died."
-      elsif @age > 2
-        @orange = @age * 10 + rand(2) * rand(10) - rand(2) * (10) #make it more random
+      elsif @age > 5
+        @orange = @age * 5 + rand(2) * rand(10) - rand(2) * (10) #make it more random
         "Your tree is #{@age} years old and #{@height}m tall. It produced #{@orange} oranges this year."
       else
         "Your tree is #{@age} year#{"s" unless @age == 1} old and #{@height}m tall. It's still too young to produce fruit."

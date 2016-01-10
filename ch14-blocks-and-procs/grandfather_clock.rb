@@ -1,3 +1,4 @@
 def grandfather_clock &block
-  # your code here
+  time = Time.new.hour
+  time > 12 ? (time - 12).times(&block) : time.times(&block)
 end

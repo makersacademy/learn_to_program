@@ -12,11 +12,6 @@ def grandfather_clock &block
   	hour.times(&block)
 end
 
-
-
-
-
-
 grandfather_clock do 
 	puts 'Dong!!!!'
 end

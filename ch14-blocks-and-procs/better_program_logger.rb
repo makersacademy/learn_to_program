@@ -9,6 +9,14 @@ def log desc, &block
   
   result = block.call
 
+  
+
+
+
+
+
+
+
   $logger_depth = $logger_depth - 1
   puts prefix + '..."' + desc + '" finished, returning: ' + result.to_s
 end

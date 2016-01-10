@@ -9,7 +9,8 @@ array << first[a[0].to_i]
 array << second[a[1].to_i]
 array << third[a[2].to_i]
 array << fourth[a[3].to_i]
-array.reverse.join
+b = array.reverse.join
+b
 end
 
 print old_roman_numeral 12

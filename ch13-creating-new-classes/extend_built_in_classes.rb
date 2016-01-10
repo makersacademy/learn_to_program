@@ -17,6 +17,3 @@ class Integer
  		roman = roman + 'I' * (value % 5 / 1)
 	end
 end
-
-
-ok

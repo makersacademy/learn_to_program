@@ -1,14 +1,13 @@
-# well, aside from just using the built-in sort method:
-
 # The well-known quicksort algorithm.
-def sort arr
+def dictionary_sort arr
   return arr if arr.length <= 1
-  
-  middle = arr.pop
-  less = arr.select{|x| x < middle}
-  more = arr.select{|x| x >= middle}
 
-  sort(less) + [middle] + sort(more)
+  middle = arr.pop
+  less = arr.select{|x| x.downcase < middle.downcase} 
+  more = arr.select{|x| x.downcase >= middle.downcase}
+
+  dictionary_sort(less) + [middle] + dictionary_sort(more)
 end
 
-# p(sort(['can','feel','singing','like','a','can']))
+# words = ['can','feel','singing.','like','A','can'] 
+# puts(dictionary_sort(words).join(' '))

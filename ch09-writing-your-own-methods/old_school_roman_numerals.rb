@@ -1,6 +1,4 @@
 def old_roman_numeral num
-  # your code here
-  def old_roman_numeral num
   raise 'Must use positive integer' if num <= 0
 
   roman = ''
@@ -17,6 +15,3 @@ def old_roman_numeral num
 end
 
 # puts(old_roman_numeral(1999))
-end
-
-

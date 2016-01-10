@@ -1,1 +1,1 @@
-# your code here
+puts Time.mktime(1984,10,14,15,16,39) + 10**9

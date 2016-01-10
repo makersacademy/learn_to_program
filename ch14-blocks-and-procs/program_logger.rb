@@ -1,4 +1,4 @@
-
+#comment
 def program_log desc, &block
   puts "Beginning #{desc.inspect}..."
   result = block[]

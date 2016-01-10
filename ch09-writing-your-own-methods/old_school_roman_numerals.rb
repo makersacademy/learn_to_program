@@ -12,5 +12,3 @@ array << fourth[a[3].to_i]
 b = array.reverse.join
 b
 end
-
-print old_roman_numeral 12

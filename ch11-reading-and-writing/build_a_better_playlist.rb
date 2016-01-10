@@ -23,17 +23,17 @@ def music_shuffle filenames
 
 end
 
-Dir.chdir '/Users/irina/Music/iTunes/iTunes Media/Music'
-songs_list = Dir['../**/*love*.mp3']
+# Dir.chdir '/Users/irina/Music/iTunes/iTunes Media/Music'
+# songs_list = Dir['../**/*love*.mp3']
 
-songs_list = music_shuffle songs_list
+# songs_list = music_shuffle songs_list
 
-File.open("/Users/irina/Desktop/playlist.m3u", "w") do |f|
-  songs_list.each do |x|
-    f.write x+"\n"
-  end
-end
+# File.open("/Users/irina/Desktop/playlist.m3u", "w") do |f|
+#   songs_list.each do |x|
+#     f.write x+"\n"
+#   end
+# end
 
-puts "Playlist was created in directory: #{Dir.pwd}"
+# puts "Playlist was created in directory: #{Dir.pwd}"
 
-puts songs_list
+# puts songs_list

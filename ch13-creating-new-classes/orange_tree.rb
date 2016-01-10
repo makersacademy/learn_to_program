@@ -43,8 +43,8 @@ class OrangeTree  #Created a class called OrangeTree
 
       # Here we are making a condition for the tree to die. If the tree has managed to get to 10m it dies. 
       # It also dies if a random number we call (between 0 and 2) is bigger than 0 - so it has a 1 in 3 chance of living
-      if @height > 10 && rand(2) > 2
-        # tree dies
+      if @height > 10.1
+        # tree 
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2

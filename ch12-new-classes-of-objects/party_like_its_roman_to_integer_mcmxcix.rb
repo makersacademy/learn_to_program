@@ -24,9 +24,9 @@ def roman_to_integer roman
   	#fact that the numbers are sorted from the least to the maximum EXCEPT for those
   	#special cases mentioned above.
 
+    #length of the string, will be the starting point of our loop.
+    l = roman.length
   	chars = roman.chars
-  	#length of the array, will be the starting point of our loop.
-  	l = chars.size
 
   	#this is the accumulator of all the numbers we will find
   	sum = 0

@@ -109,7 +109,7 @@ def bottle_s (n)
   return n == 1 ? 'bottle' : 'bottles'
 end
 
-beer = 99
+beer = 9999
 
 while beer > 0
   puts english_number(beer).capitalize + ' ' + bottle_s(beer) + ' of beer on the wall,'

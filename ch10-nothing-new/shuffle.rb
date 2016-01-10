@@ -1,9 +1,27 @@
-def shuffle arr 
-  # arr.sort_by(&:rand)
-  # note the above was how Chris pine did 
-  # do it, but it no longer works, instead do the
-  # following:
-  arr.shuffle
-end
 
- p(shuffle([1,2,3,4,5,6,7,8,9]))
+ require "set"
+ 
+ def shuffle *arr
+    # your code here
+ end 
+   arr.length > 1 ? shuffArray = arr[1] : shuffArray = []
+ 
+   origArray = arr[0]
+ 
+   if origArray.length <= 0
+ 
+   	return shuffArray
+ 
+   end
+ 
+   i = rand(origArray.length).to_i
+ 
+   shuffArray << origArray.fetch(i)
+ 
+   origArray.delete_at(i)
+ 
+   shuffle(origArray, shuffArray)
+ 
+ end
+ 
+ puts shuffle(["A","B","C","D","E"])

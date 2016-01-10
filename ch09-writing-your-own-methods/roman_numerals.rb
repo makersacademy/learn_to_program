@@ -1,100 +1,154 @@
-def roman number
+def roman_numeral num
+    # your code here
+ end 
+   numerals = Hash.new
+   numerals["1"] = "I"
+   numerals["5"] = "V"
+   numerals["10"] = "X"
+   numerals["50"] = "L"
+   numerals["100"] = "C"
+   numerals["500"] = "D"
+   numerals["1000"] = "M"
+ 
+   numeral = ""
+ 
+   if num < 1 || num > 3000
+   	puts "Please choose a number between 1 and 3000"  	
+   end
+ 
+   left = num
+ 
+   while left > 0 
+ 
+   	write = left/1000
+ 
+   	left = left - write*1000
+ 
+   	if write > 0
+ 
+   		numeral = numerals["1000"] * write
+ 
+   	end
+ 
+   	write = left/100
+ 
+   	left = left - write*100
+ 
+   	if write > 0
+ 
+   		if write == 9
+ 
+   			numeral = numeral + numerals["100"] + numerals["1000"]
+ 
+       elsif write < 9 && write > 5
+ 
+         write = write - 5
+ 
+         numeral = numeral + numerals["500"] + numerals["100"] * write
+ 
+       elsif write == 5
+ 
+         numeral = numeral + numerals["500"]
+ 
+   		elsif write == 4
+ 
+   			numeral = numeral + numerals["100"] + numerals["500"]
+ 
+   		elsif write < 4
+ 
+   			numeral = numeral + numerals["100"] * write
+      
+   		end
 
-m_length = 0
-n900_length = 0
-d_length = 0
-n400_length = 0
-c_length = 0
-n90_length = 0
-l_length = 0
-n40_length = 0
-x_length = 0
-n9_length = 0
-v_length = 0
-n4_length = 0
-i_length = 0
-
-if number >= 1000
-m_length = number/1000
-number = number%1000
-end
-
-if number >= 900
-n900_length = number/900
-number = number%900
-end
-
-if number >= 500
-d_length = number/500
-number = number%500
-end
-
-if number >= 400
-n400_length = number/400
-number = number%400
-end
-
-if number >= 100
-c_length = number/100
-number = number%100
-end
-
-if number >= 90
-n90_length = number/90
-number = number%90
-end
-
-if number >= 50
-l_length = number/50
-number = number%50
-end
-
-if number >= 40
-n40_length = number/40
-number = number%40
-end
-
-if number >= 10
-x_length = number/10
-number = number%10
-end
-
-if number >= 9
-n9_length = number/9
-number = number%9
-end
-
-if number >= 5
-v_length = number/5
-number = number%5
-end
-
-if number >= 4
-n4_length = number/4
-number = number%4
-end
-
-if number < 4
-i_length = number/1
-number = number%10
-end
-
-puts 'M'*m_length + "CM"*n900_length + 'D'*d_length + 'CD'*n400_length + 'C'*c_length +
-'XC'*n90_length + 'L'*l_length + 'XL'*n40_length + 'X'*x_length + 'IX'*n9_length +
-'V'*v_length + 'IV'*n4_length + 'I'*i_length
-
-end
-
-x = ''
-while x != 'exit'
-puts 'Enter a number, and the equivalent roman numeral will be returned.'
-puts 'Type exit to quit.'
-x = gets.chomp
-roman x.to_i
-end
-
-
-
-
-
-
+   	end
+ 
+   	write = left/10
+ 
+   	left = left - write*10
+ 
+   	if write > 0
+ 
+       if write == 9
+ 
+         numeral = numeral + numerals["10"] + numerals["100"]
+ 
+       elsif write < 9 && write > 5
+ 
+         write = write - 5
+ 
+         numeral = numeral + numerals["50"] + numerals["10"] * write
+ 
+       elsif write == 5
+ 
+         numeral = numeral + numerals["50"]
+ 
+       elsif write == 4
+ 
+        numeral = numeral + numerals["10"] + numerals["50"]
+ 
+       elsif write < 4
+ 
+  			  numeral = numeral + numerals["10"] * write
+ 
+       end
+ 
+   	end
+ 
+   	write = left
+ 
+ 		left = left - write
+ 
+ 		if write > 0
+ 
+ 		 	if write == 9
+ 
+         numeral = numeral + numerals["1"] + numerals["10"]
+ 
+       elsif write < 9 && write > 5
+ 
+         write = write - 5
+ 
+         numeral = numeral + numerals["5"] + numerals["1"] * write
+ 
+       elsif write == 5
+ 
+         numeral = numeral + numerals["5"]
+ 
+       elsif write == 4
+ 
+ 				numeral = numeral + numerals["1"] + numerals["5"]
+   		
+ 			elsif write < 4
+ 
+   			numeral = numeral + numerals["1"] * write
+     
+  			end
+ 
+ 		end
+ 
+   end
+ 
+   return numeral
+ 
+ end
+ 
+ # puts old_roman_numeral(-2)
+ # puts roman_numeral(4)
+ # puts roman_numeral(7)
+ # puts roman_numeral(9)
+ # puts roman_numeral(14)
+ # puts roman_numeral(15)
+ # puts roman_numeral(18)
+ # puts roman_numeral(19)
+ # puts roman_numeral(33)
+ # puts roman_numeral(34)
+ # puts roman_numeral(38)
+ # puts roman_numeral(59)
+ # puts roman_numeral(228)
+ # puts roman_numeral(234)
+ # puts roman_numeral(2900)
+ # puts old_roman_numeral(16)
+ # puts old_roman_numeral(74)
+ # puts old_roman_numeral(243)
+ # puts old_roman_numeral(2000)
+ # puts old_roman_numeral(3020)

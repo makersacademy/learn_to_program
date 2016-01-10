@@ -65,4 +65,3 @@ def roman_to_integer roman
   	return sum
 end
 
-ok

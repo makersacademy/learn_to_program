@@ -1,7 +1,9 @@
 #code from learn_to_program
 class Dragon
-  def initialize name
-    @name = name
+  def initialize
+    #so you can name your dragon
+    puts "What would you like to name your baby dragon?"
+    @name = gets.chomp
     @asleep = false
     @stuff_in_belly = 10
     @stuff_in_intestine = 0
@@ -12,17 +14,23 @@ class Dragon
   #to make interactive, added this method.
 
   def interact
-    puts "What do you want to do with #{@name}?"
-    command = gets.chomp
-    command = command.split " "
-    command = command.join "_"
-    command = command.to_sym
-    methods = self.methods
-    if methods.include?(command)
-      method = self.method(command)
-      method.call
-    else
-      puts "You can't do this with #{@name}"
+    while true
+      puts "\nWhat do you want to do with #{@name}?\nCommands: feed, toss, walk, rock, put to bed, exit\n"
+      command = gets.chomp
+      if command == "exit"
+        exit
+      else
+        command = command.split " "
+        command = command.join "_"
+        command = command.to_sym
+        methods = self.methods
+        if methods.include?(command)
+          method = self.method(command)
+          method.call
+        else
+          puts "You can't do this with #{@name}"
+        end
+      end
     end
   end
 

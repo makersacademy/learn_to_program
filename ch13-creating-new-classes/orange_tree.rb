@@ -74,7 +74,7 @@ class OrangeTree_me
   end
 
   def one_year_passes
-    if @age > 24
+    if @age > 200
     puts "The tree is dead."
     else
     @age +=1

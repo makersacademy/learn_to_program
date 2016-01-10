@@ -1,3 +1,3 @@
-dir.chdir '~/Users/RachelSmith/Pictures'
+Dir.chdir '~/Users/RachelSmith/Pictures'
 
-pic_names = Dir[]
+pic_names = Dir['**/*.{jpg,JPEG}']

@@ -26,7 +26,6 @@ def roman_to_integer roman
 
     #length of the string, will be the starting point of our loop.
     l = roman.length
-  	chars = roman.chars
 
   	#this is the accumulator of all the numbers we will find
   	sum = 0
@@ -43,7 +42,7 @@ def roman_to_integer roman
   		#Save the last char before we update it at the next row
   		prev_char = curr_char
   		#char at current index
-  		curr_char = chars[index]
+  		curr_char = roman[index]
   		#Save the last number before we update it at the next row (we could also
   		#recalculate it with hash[prev_char])
   		prev_number = curr_number

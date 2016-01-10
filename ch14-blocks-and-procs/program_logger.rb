@@ -9,6 +9,8 @@ program_log 'outer block' do
     1**1 + 2**2
   end
 
+  
+
   program_log 'yet another block' do
     '!doof iahT ekil I'.reverse
   end

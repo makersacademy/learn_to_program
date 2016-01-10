@@ -126,5 +126,5 @@ end
 # puts english_number(234)
 # puts english_number(3211)
 # puts english_number(999999)
-# puts english_number(1000000000000)
-# puts english_number(109238745102938560129834709285360238475982374561034)
+puts english_number(1000000000000)
+ puts english_number(109238745102938560129834709285360238475982374561034)

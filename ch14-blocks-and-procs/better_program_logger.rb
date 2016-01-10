@@ -1,6 +1,6 @@
 $nesting_depth = 0
 
-def log desc, &block
+def better_log desc, &block
   space = " " * $nesting_depth
   puts space + 'Beginning "' + desc + '"...'
   $nesting_depth += 1
@@ -9,16 +9,16 @@ def log desc, &block
   puts space + '..."' + desc + '" finished, returning: ' + result.to_s
 end
 
-log 'outer block' do
-  log 'some little block' do
-    log 'teeny-tiny block' do
+better_log 'outer block' do
+  better_log 'some little block' do
+    better_log 'teeny-tiny block' do
       'lots of love'
     end
 
     40+2
   end
 
-  log 'yet another block' do
+  better_log 'yet another block' do
     'I love Indian food!'
   end
 

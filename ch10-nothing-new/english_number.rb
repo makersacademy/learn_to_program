@@ -1,100 +1,126 @@
-def english_number number
+ def english_number number
    # your code here
  
- def english_number(number)
-   
-   if number < 0 
-     return 'Please enter a number that isn\'t negative.'
-   end
-   
+ fin_answer = []
+ 
    if number == 0
-     return 'zero'
-   end
-   
-   
-   num_string = ''
-   
-   ones_place = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-   
-   tens_place = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
-  
-   teenagers = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'] 
-   
-   zillions = [['hundred', 2],
-               ['thousand', 3],
-               ['million', 6],
-               ['billion', 9],
-               ['trillion', 12],
-               ['quadrillion', 15],
-               ['quintillion', 18],
-               ['sextillion', 21],
-               ['septillion', 24],
-               ['octillion', 27],
-               ['nonillion', 30],
-               ['decillion', 33],
-               ['undecillion', 36],
-               ['duodecillion', 39],
-               ['tredecillion', 42],
-               ['quattuordecillion', 45],
-               ['quindecillion', 48],
-              ['sexdecillion', 51],
-               ['septendecillion', 54],
-               ['octodecillion', 57],
-               ['novemdecillion', 60],
-               ['vigintillion', 63],
-               ['googol', 100]]
-               
-   #left = what's left to write
-   #write = what's being written/translated
-   
-   left = number
-   
-   while zillions.length > 0
-     zil_pair = zillions.pop
-     zil_name = zil_pair[0]
-     zil_base = 10 ** zil_pair[1] 
-     write = left/zil_base
-     left = left - write*zil_base
+       return "zero"
+     elsif number < 0
+       return "Please enter a number zero or greater."
+     else
+ 
+       word_at_comma_hash = {
+         0 => "",
+         1 => "thousand",
+         2 => "million",
+         3 => "billion",
+         4 => "trillion",
+         5 => "quadrillion",
+         6 => "quintillion",
+         7 => "sextillion",
+         8 => "septillion",
+         9 => "octillion",
+         10 => "nonillion",
+         11 => "decillion",
+         12 => "undecillion",
+         13 => "duodecillion",
+         14 => "tredecillion",
+         15 => "quattuordecillion",
+         16 => "quindecillion",
+         17 => "sexdecillion"
+       }
+ 
+       num_arr = number.to_s.split("").map! {|x| x.to_i}.reverse.each_slice(3).map(&:reverse).reverse
      
-     if write > 0
-       prefix = english_number(write)
-       num_string = num_string + prefix + ' ' + zil_name
-       if left > 0
-         num_string = num_string + ' '
-       end
-     end
-   end
-     write = left/10            # How many tens left?
-     left = left - write*10     # Subtract off those tens.
- 
-     if write > 0
-       if ((write == 1) and (left > 0))
-         # Since we can't write "tenty-two" instead of
-         # "twelve", we have to make a special exception
-         # for these.
-         num_string = num_string + teenagers[left-1]
-         # The "-1" is because teenagers[3] is
-         # 'fourteen', not 'thirteen'.
-         # Since we took care of the digit in the
-         # ones place already, we have nothing left to write.
-         left = 0
+     num_arr.each_with_index do |arr, index| 
+     
+       if arr != [0, 0, 0]
+         fin_answer << hundred(arr) << word_at_comma_hash[num_arr.size - index -1]
        else
-         num_string = num_string + tens_place[write-1]
-         # The "-1" is because tens_place[3] is
-         # 'forty', not 'thirty'.
+         fin_answer << ""
+       end
+     end
+ 
+   end
+ 
+   fin_answer.flatten.join(" ").rstrip.tr("  ", " ")
+  end
+ 
+ def hundred(arr) 
+ 
+   units = {
+     0 => "",
+     1 => "one",
+     2 => "two",
+     3 => "three",
+     4 => "four",
+     5 => "five",
+     6 => "six",
+     7 => "seven",
+     8 => "eight",
+     9 => "nine"
+   }
+ 
+   teens = {
+     10 => "ten",
+     11 => "eleven",
+     12 => "twelve",
+     13 => "thirteen",
+     14 => "fourteen",
+     15 => "fifteen",
+     16 => "sixteen",
+     17 => "seventeen",
+     18 => "eighteen",
+     19 => "nineteen" 
+   } 
+ 
+   tens = {
+     2 => "twenty",
+     3 => "thirty",
+     4 => "forty",
+     5 => "fifty",
+     6 => "sixty",
+     7 => "seventy",
+     8 => "eighty",
+     9 => "ninety",
+   }
+ 
+ # CHECK WITH [0, 3, 4]
+ 
+   h_answer = []
+   t_answer = []
+ 
+   ten_lambda = lambda do |arr|
+ 
+     
+ 
+       if arr[0] == 1
+         teens[arr[0..1].join("").to_i]
+       elsif arr[1] == 0
+         tens[arr[0]]
+       else
+         t_answer << tens[arr[0]] << "-" + units[arr[1]]
+         t_answer.join("")
+       end
+   end
+ 
+ 
+     if arr.size == 3
+ 
+       if arr[0] == 0
+         ten_lambda.call(arr[1..2])
+       elsif arr[1] == 0
+         h_answer << units[arr[0]] << "hundred" << units[arr[2]]
+       else 
+         h_answer << units[arr[0]] << "hundred" << ten_lambda.call(arr[1..2])
        end
  
-       if left > 0
-         # So we don't write 'sixtyfour'...
-         num_string = num_string + '-'
-      end
+     elsif arr.size == 2
+       ten_lambda.call(arr)
+ 
+     else 
+       units[arr[0]]
+ 
      end
+ end
    
-    write = left      # How many ones left to write out?
-     left = 0            # Subtract off those ones.
-   
-     if write > 0
-       num_string = num_string + ones_place[write-1]
-     end
-     num_string
-  end

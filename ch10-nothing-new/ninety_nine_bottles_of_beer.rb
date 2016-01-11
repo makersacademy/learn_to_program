@@ -1,7 +1,4 @@
-@@ -1 +1,140 @@
- # your code here 
- 
- class BeerSong
+class BeerSong
  attr_accessor :bottles
  	def initialize(bottles)
  		self.bottles = bottles	

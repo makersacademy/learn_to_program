@@ -1,10 +1,3 @@
-puts "Who's music would you like shuffled?"
-artist_to_shuffle = gets.chomp.split.map(&:capitalize).join(' ')
-
-Dir.chdir "/home/matthew/Documents/Music/#{artist_to_shuffle}"
-
-songs_to_shuffle = Dir['*.mp3']
-
 def music_shuffle songs_to_shuffle
   filenames = songs_to_shuffle.sort
   length = filenames.length

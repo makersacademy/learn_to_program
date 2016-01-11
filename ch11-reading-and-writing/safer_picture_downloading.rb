@@ -1,4 +1,4 @@
-Dir.chdir('/home')
+Dir.chdir('~/Documents/Pictures')
 
 pic_names = Dir['**/*.jpg']
 

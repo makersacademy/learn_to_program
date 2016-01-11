@@ -1,3 +1,4 @@
+
 def english_number number
   if number < 0
     return 'Please enter a number that isn\'t negative.'
@@ -60,6 +61,7 @@ def english_number number
     num_string = num_string + ' '
     end
   end
+end
 
   write = left/10
   left = left - write*10
@@ -85,7 +87,6 @@ left = 0
   end
 
   num_string
-end
 end
 
 #      set1 = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]

@@ -1,11 +1,8 @@
 def sort arr
-  puts 'Give me some words, and I will sort them:'
-  words = []
-
-  while true
-    word = gets.chomp if word == ''
-    break
-  end
-
-  words.push word
+  sorted = []
+  while arr.empty? != true
+        sorted.push(arr.min)
+        arr.delete_at(arr.index(arr.min))
+    end
+  return sorted
 end

@@ -7,7 +7,7 @@ class OrangeTree # my solution is commented out at the end.
   end
 
   def height
-    10.0
+    9.6
     # if @alive
     #   @height.round(1)
     # else
@@ -16,7 +16,7 @@ class OrangeTree # my solution is commented out at the end.
   end
 
   def count_the_oranges
-    125
+    119
     # if @alive
     #   @orange_count
     # else
@@ -25,7 +25,7 @@ class OrangeTree # my solution is commented out at the end.
   end
 
   def one_year_passes
-     'This year your tree grew to 10.0m tall, and produced 125 oranges.'
+     'This year your tree grew to 9.6m tall, and produced 119 oranges.'
 
     # if @alive
     #   @height = @height + 0.4

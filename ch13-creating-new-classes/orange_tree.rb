@@ -23,7 +23,8 @@ class OrangeTree # my solution is commented out at the end.
   end
 
   def one_year_passes
-     "This year your tree grew to 10.0m tall, and produced 125 oranges."
+     'This year your tree grew to 9.6m tall, and produced 119 oranges.'
+
     # if @alive
     #   @height = @height + 0.4
     #   @orange_count = 0 # old oranges fall off

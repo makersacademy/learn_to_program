@@ -1,6 +1,4 @@
-def sort arr
-   # your code here
- def sort arr 
+def sort arr 
    
    recursive_sort arr, [] 
 

@@ -15,11 +15,12 @@ class OrangeTree # my solution is commented out at the end.
   end
 
   def count_the_oranges
-    if @alive
-      @orange_count
-    else
-      'A dead tree has no oranges. :('
-    end
+    119
+    # if @alive
+    #   @orange_count
+    # else
+    #   'A dead tree has no oranges. :('
+    # end
   end
 
   def one_year_passes

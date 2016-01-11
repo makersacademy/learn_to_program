@@ -23,7 +23,7 @@ def initialize
 
   def one_year_passes
     if @alive
-       @height = @height + 0.4
+       @height = (@height + 0.4).to_i
        @orange_count = 0
 
     if @height > 10 && rand(2) > 0

@@ -49,17 +49,13 @@ def english_number number
     
     while zillions.length > 0
         zil_pair = zillions.pop
-        puts zil_pair
         
         zil_name = zil_pair[0]
         zil_base = 10 ** zil_pair[1]
-        puts zil_base
+
         
         write = left/zil_base 
-        left = left - write*zil_base 
-        puts'---next the results of the while-----'
-        puts write 
-        puts left
+        left = left - write*zil_base
         
         if write > 0
             prefix = english_number write
@@ -70,15 +66,11 @@ def english_number number
             end
         end
     end
-    puts write
-    puts left
+
     
     write = left/10 
     left = left - write*10 
-    
-    puts 'after the while'
-    puts write
-    puts left
+
 
     if write > 0
         if ((write == 1) and (left > 0)) 
@@ -96,13 +88,12 @@ def english_number number
     write = left
     left = 0 
     puts 'after after the while'
-    puts write
 
     if write > 0
         num_string = num_string + ones_place[write-1]
     end
     puts 'after after after the while'
-    puts write
+
 
     num_string
 end

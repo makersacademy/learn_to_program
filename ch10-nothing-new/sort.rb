@@ -1,3 +1,4 @@
 def sort arr
-  # your code here
+arr.sort_by {|x| [x.downcase, x]}
+
 end

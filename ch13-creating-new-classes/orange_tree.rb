@@ -3,56 +3,43 @@ class OrangeTree
 		@height  = 0
 		@alive   = true
 		@oranges = 0
-		@age     = 0
+	
 	end
 
 	def height
 		if @alive == true
-			return "#{@height}m"
+			@height.round(1)
 		else
-			puts 'I am afraid.. the tree.. passed away.. :('
+			'A dead tree is not very tall. :('
 		end
 	end
 
 	def one_year_passes
 		if @alive   == true
-			alto     = @height
+			@height  = @height + 0.4
 			@oranges = 0
-			@age     = @age + 1
 
-			if @age <= 5 and @age >= 3
-				@oranges = rand(5..10) #range of random oranges
-				@height  = @height + 2 #depending of the age will grow more.. or..less!
-				grows    = @height - alto
-				puts "This young tree grew #{grows}m! And gave #{@oranges} oranges! not a lot.. but still good :D"
-			
-			elsif @age >5 and @age <15
-				@oranges = rand(8..20) #range of random oranges
-				@height  = @height + 1
-				grows    = @height - alto
-				puts "This young tree grew #{grows}m! And has #{@oranges} oranges! Amazing :D"
-
-			elsif @age >= 0 and @age < 3
-				@height  = @height + 5
-				grows    = @height - alto
-				puts "This young tree grew #{grows}m.. that's a lot! And has #{@oranges} oranges... well.. it's too young for oranges. :)"
-				
-			else
+			if @height > 10 && rand(2) > 0
 				@alive = false
-				puts 'I am afraid this tree had a beautiful life.. but..well.. I do not know how to tell you.. there are not oranges...anymore.'
-		
-			end
+				'Oh, no! The tree is too old, and has died. :('
+			elsif @height > 2
+				@oranges = (@height * 15 - 25).to_i
+				"This year your tree grew to #{@height.round(1)}m tall," + " and produced #{@oranges} oranges."
+			else
+				"This year your tree grew to #{@height.round(1)}m tall," + " but is still too young to bear fruit."
+			end	
+							
 		else
-			puts "I am afraid this tree had a beautiful life.. but..well.. #{@age} years are a lot.. I do not know how to tell you.. there are not oranges...anymore."
+			'A year later, the tree is still dead. :('
 	
 		end		
 	end
 
 	def count_the_oranges
 		if @alive == true
-			return @oranges
+			@oranges
 		else
-			puts "I am afraid this tree had a beautiful life.. there are not oranges...anymore."
+			'A dead tree has no oranges. :('
 		end	
 	end
 
@@ -60,12 +47,12 @@ class OrangeTree
 		if @alive == true #need to be alive to give oranges
 			if @oranges > 0
 				@oranges = @oranges - 1 #need to take off and output how many left
-				puts "The tree has #{@oranges} left. :)"
+				'You pick a juicy, delicious orange!'
 			else
-				puts "there are...#{@oranges} oranges! sorry :("
+				'You search every branch, but find no oranges.'
 			end
 		else
-			puts "I do not think a dead tree can have any orange.. there are nice ones in Tesco.. Sorry about that."
+			'A dead tree has nothing to pick. :('
 			
 		end
 	end

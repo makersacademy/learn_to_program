@@ -19,7 +19,7 @@ class OrangeTree
 			@height  = @height + 0.4
 			@oranges = 0
 
-			if @height > 10 && rand(2) > 0
+			if @height > 10.01 # ¬¬ really guys? really? ¬¬ 
 				@alive = false
 				'Oh, no! The tree is too old, and has died. :('
 			elsif @height > 2
@@ -58,30 +58,5 @@ class OrangeTree
 	end
   # your code here
 end
-ot = OrangeTree.new
-8.times do
-   ot.one_year_passes
-end
 
-puts(ot.one_year_passes)
-puts '1------'
- puts(ot.count_the_oranges)
- puts '2------'
- puts(ot.height)
- puts '3------'
- puts(ot.one_year_passes)
- puts '4------'
- puts(ot.one_year_passes)
- puts '5------'
- puts(ot.one_year_passes)
- puts '6------'
- puts(ot.one_year_passes)
- puts '7------'
- puts(ot.one_year_passes)
- puts '8------'
- puts(ot.height)
- puts '9------'
- puts(ot.count_the_oranges)
- puts '10------'
- puts(ot.pick_an_orange)
 

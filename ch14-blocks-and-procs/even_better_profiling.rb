@@ -13,7 +13,7 @@
 #   	end
 # 	end
 
-# CP soln that does pass rspec - I changed it to run block.call (vs block []) + unsure of use of Constants, not sure it adds anything...
+# CP soln that does pass rspec - I changed it to run block.call (vs block []) + unsure of use of Global Variables ($), not sure it adds anything...
 
 
 $OPT_PROFILING_ON = false

@@ -1,3 +1,5 @@
 def sort arr
-  # your code here
+  arr.sort!
 end
+
+p sort ['yo','hello','jack','tom','harry']

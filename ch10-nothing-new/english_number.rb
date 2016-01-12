@@ -87,13 +87,11 @@ def english_number number
     
     write = left
     left = 0 
-    puts 'after after the while'
+
 
     if write > 0
         num_string = num_string + ones_place[write-1]
     end
-    puts 'after after after the while'
-
 
     num_string
 end

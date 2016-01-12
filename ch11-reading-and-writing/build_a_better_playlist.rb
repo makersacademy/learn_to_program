@@ -1,6 +1,8 @@
 def music_shuffle filenames
   
- filenames.sample(filenames.length)
+ arr = filenames.sample(filenames.length)
+ 
+ arr
  # your code here
 end
 

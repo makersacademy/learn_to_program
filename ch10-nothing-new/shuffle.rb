@@ -1,3 +1,4 @@
 def shuffle arr
-  # your code here
+  random = arr.sample(arr.length)
+  return random# your code here
 end

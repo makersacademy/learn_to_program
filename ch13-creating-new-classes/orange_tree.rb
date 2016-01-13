@@ -30,7 +30,7 @@ class OrangeTree
     if @alive
       @height = @height + 0.4
       @orange_count = 0 # old oranges fall off
-      if @height > 10.01 && rand(2) > 0  #included fix re height (thank you SLACK pals!)
+      if @height > 10.01 && rand(2) > 0
         # tree dies
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
@@ -61,6 +61,8 @@ class OrangeTree
     end
   end
 end
+
+
 
 
 

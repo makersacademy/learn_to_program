@@ -1,30 +1,22 @@
-# ok think I've got it.  However, CPs soln fails rspec (but code runs ok in terminal)
+# rpsec test doesn't match solution - ggrrr...  oh well, know to watch out for that in future!
 
-# this is the method
 
-def log (desc, &block)
+def program_log desc, &block
   puts 'Beginning "' + desc + '"...'
   result = block.call
-  puts '..."' + desc + '" finished, returning: ' + result.to_s  # to_s because somelittleblock runs integer code?
+  puts '..."' + desc + '" finished, returning: ' + result.to_s
 end
 
-
-# is this the call - proc method (log + desc + block) + inner block?  
-
-log 'outer block' do #  'outer block'  = desc?
-  log 'some little block' do # 'somelittleblock' = desc of inner block
-    1**1 + 2**2  #&block
+program_log 'outer block' do
+  program_log 'some little block' do
+    1**1 + 2**2
   end
 
-  log 'yet another block' do  #'yetanotherblock' = desc of another inner bock
-    '!doof iahT ekil I'.reverse  # &block
+program_log 'yet another block' do
+    '!doof iahT ekil I'.reverse
   end
 
-  '0' == 0  # why is this needed, ,is this a wrap up 'else' statement?
+  '0' == 0
 end
-
-# so description names can be a string of words vs one word?
-
-
 
 

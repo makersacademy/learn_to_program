@@ -1,3 +1,16 @@
 def grandfather_clock &block
-  # your code here
+  current_hour = Time.new.hour
+  if current_hour > 12
+    current_hour = current_hour - 12
+  elsif current_hour == 0
+    current_hour = 12
+  end
+  current_hour.times { block.call}
 end
+
+=begin
+grandfather_clock do
+  puts "Dong!"
+end
+
+=end

@@ -1,5 +1,5 @@
 
-def roman number
+def old_roman_numeral number
 
 
 	#I = 1 V = 5 X = 10 L = 50 C = 100 D = 500 M = 1000
@@ -50,6 +50,6 @@ end
 
 
 
-puts "M"*m_length + "D"*d_length + "C"*c_length + "L"*l_length + "X"*x_length + "V"*v_length + "I"*i_length
+'M'*m_length + 'D'*d_length + 'C'*c_length + 'L'*l_length + 'X'*x_length + 'V'*v_length + 'I'*i_length
 
 end

@@ -1,12 +1,12 @@
 def roman_to_integer roman
   digit_vals = {'i' => 1,
-    'v' => 5,
-    'x' => 10,
-    'l' => 50,
-    'c' => 100,
-    'd' => 500,
-    'm' => 1000
-  }
+                'v' => 5,
+                'x' => 10,
+                'l' => 50,
+                'c' => 100,
+                'd' => 500,
+                'm' => 1000
+              }
 
       nums = roman.downcase.split('').map do |r|
         r = digit_vals.select{|k,v| r==k }

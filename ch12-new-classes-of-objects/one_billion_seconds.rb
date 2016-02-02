@@ -1,1 +1,3 @@
-# your code here
+a = Time.local(1988, 10, 13, 12, 30) 
+
+b = a + 10**9

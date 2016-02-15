@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 def ask question
-  # your code here
+
 end

@@ -10,4 +10,3 @@ def old_roman_numeral num
   roman += "I" * (num % 5)
   return roman
 end
-puts old_roman_numeral 2968

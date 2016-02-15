@@ -1,12 +1,13 @@
 def old_roman_numeral num
-  thousands = num / 1000
-  five_hundreds = num % 1000 / 500
-  hundreds = num % 500 / 100
-  fiftys = num % 100 / 50
-  tens = num % 50 / 10
-  fives = num % 10 / 5
-  ones = num % 5
-  "M"*thousands + "D"*five_hundreds + "C"*hundreds + "L"*fiftys + "X"*tens + "V"*fives + "I"*ones
+  old_roman = ""
+  old_roman << "M" * (num / 1000)
+  old_roman << "D" * (num % 1000 / 500)
+  old_roman << "C" * (num % 500 / 100)
+  old_roman << "L" * (num % 100 / 50)
+  old_roman << "X" * (num % 50 / 10)
+  old_roman << "V" * (num % 10 / 5)
+  old_roman << "I" * (num % 5)
+  old_roman
 end
 
 # lettets to use: I = 1, V = 5, X = 10,

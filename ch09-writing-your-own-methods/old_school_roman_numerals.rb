@@ -1,11 +1,11 @@
 def old_roman_numeral num
   thousands = num / 1000
   five_hundreds = num % 1000 / 500
-  hundreds = num % 1000 % 500 / 100
-  fiftys = num % 1000 % 500 % 100 / 50
-  tens = num % 1000 % 500 % 100 % 50 / 10
-  fives = num % 1000 % 500 % 100 % 50 % 10 / 5
-  ones = num % 1000 % 500 % 100 % 50 % 10 % 5
+  hundreds = num % 500 / 100
+  fiftys = num % 100 / 50
+  tens = num % 50 / 10
+  fives = num % 10 / 5
+  ones = num % 5
   "M"*thousands + "D"*five_hundreds + "C"*hundreds + "L"*fiftys + "X"*tens + "V"*fives + "I"*ones
 end
 

@@ -9,6 +9,3 @@ def rec_meth(array,sorted_array)
   sorted_array << array.delete_at(array.index(array.min))
   rec_meth(array,sorted_array)
 end
-
-
- #.map{|a| a.downcase}

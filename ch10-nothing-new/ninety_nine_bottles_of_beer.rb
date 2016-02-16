@@ -1,5 +1,4 @@
 
-require 'pry'
 
 def beersong(beers)
 

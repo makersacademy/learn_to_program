@@ -1,3 +1,5 @@
 def shuffle arr
-  # your code here
+  arr.sample(arr.length)
 end
+
+# trying NOT to use shuffle (too easy)...

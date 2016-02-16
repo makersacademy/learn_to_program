@@ -65,7 +65,7 @@ def english_number number
 #looking at less than one hundred now
 #need to first deal with the tens, e.g. if 42= forty-two
   write = left/10 
-  left = left - write*10 # Subtract off those tens.
+  left = left%10 
 
   if write > 0
     if ((write == 1) and (left > 0))

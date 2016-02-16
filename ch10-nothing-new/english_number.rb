@@ -2,45 +2,75 @@ def english_number number
   return "Please enter a positive number" if number < 0
   return "zero" if number == 0
   num_string = ""
+  left = number
 
-  ones_list = %w(zero one two three four five six seven eight nine ten)
-  teens_list = %w(ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)
-  tens_list = %w(zero ten twenty thirty fourty fifty sixty seventy eighty ninety)
+  ones = %w(zero one two three four five six seven eight nine ten)
+  teens = %w(ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)
+  tens = %w(zero ten twenty thirty forty fifty sixty seventy eighty ninety)
+  powers = [['hundred', 2],
+              ['thousand', 3],
+              ['million', 6],
+              ['billion', 9],
+              ['trillion', 12],
+              ['quadrillion', 15],
+              ['quintillion', 18],
+              ['sextillion', 21],
+              ['septillion', 24],
+              ['octillion', 27],
+              ['nonillion', 30],
+              ['decillion', 33],
+              ['undecillion', 36],
+              ['duodecillion', 39],
+              ['tredecillion', 42],
+              ['quattuordecillion', 45],
+              ['quindecillion', 48],
+              ['sexdecillion', 51],
+              ['septendecillion', 54],
+              ['octodecillion', 57],
+              ['novemdecillion', 60],
+              ['vigintillion', 63],
+              ['googol', 100]]
 
-  thousands = number % 1000000 / 1000
-  hundreds = number % 1000 / 100
-  teens = number % 100
-  tens = number % 1000 % 100 / 10
-  ones = number % 1000 % 100 % 10
+  while powers.length > 0
+    digit_pair = powers.pop
+    digit_name = digit_pair[0]
+    digits = 10 ** digit_pair[1]
 
-  if thousands == 0
-    num_string = ""
-  else
-    num_string = "#{ones_list[thousands]} thousand"
-    num_string += " " if number % 1000 != 0
+    write = left / digits
+    left -= write * digits
+
+    if write > 0
+      prefix = english_number write
+      num_string += prefix + " " + digit_name
+
+      if left > 0
+        num_string += " "
+      end
+    end
   end
 
-  if hundreds == 0
-    num_string += ""
-  else
-    num_string += "#{ones_list[hundreds]} hundred"
-    num_string += " " if number % 100 != 0
+  write = left / 10
+  left -= write * 10
+
+  if write > 0
+    if write == 1 && left > 0
+      num_string += "#{teens[left]}"
+      left = 0
+    else
+      num_string += "#{tens[write]}"
+    end
+
+    if left > 0
+      num_string += "-"
+    end
   end
 
-  if tens == 0
-    num_string += ""
-  elsif teens >= 10 && teens < 20
-    return num_string += "#{teens_list[teens-10]}"
-  else
-    num_string += "#{tens_list[tens]}"
-    num_string += "-" if number % 10 != 0
+  write = left
+  left -= write
+
+  if write > 0
+    num_string += "#{ones[write]}"
   end
 
-  if ones == 0
-    num_string += ""
-  else
-    num_string += "#{ones_list[ones]}"
-  end
+  num_string
 end
-
-p english_number 9999

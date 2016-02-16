@@ -1,27 +1,9 @@
 def old_roman_numeral num
-  result = ""
-  thousands = num/1000.to_i
-  thousands.times do result << "M" end
-  hundreds = (num-thousands*1000)/100.to_i
-  if hundreds >= 5
-    result << "D"
-    (hundreds-5).times do result << "C" end
-  else
-    hundreds.times do result << "C" end
-  end
-  tens = (num - thousands*1000 - hundreds*100)/10.to_i
-  if tens >= 5
-    result << "L"
-    (tens-5).times do result << "X" end
-  else
-    tens.times do result << "X" end
-  end
-  ones = num - thousands*1000 - hundreds*100 - tens*10
-  if ones >= 5
-    result << "V"
-    (ones-5).times do result << "I" end
-  else
-    ones.times do result << "I" end
-  end
-  return result
+  m = num/1000.to_i
+  d = (num-m*1000)/500.to_i
+  c = (num-m*1000-d*500)/100.to_i
+  l = (num-m*1000-d*500-c*100)/50.to_i
+  x = (num-m*1000-d*500-c*100-l*50)/10.to_i
+  i = num-m*1000-d*500-c*100-l*50-x*10
+  return "M"*m + "D"*d + "C"*c + "L"*l + "X"*x + "I"*i
 end

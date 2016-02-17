@@ -1,27 +1,26 @@
-def dictionary_sort(arr)
-	recursive_sort some_array, []
+def dictionary_sort arr
+    sort(arr, [])
+  end
+
+  def sort (unsorted, sorted)
+    return sorted if unsorted.size <= 0
+
+    small = unsorted.pop
+    to_sort = []
+
+    unsorted.each do |x|
+      if x.downcase < small.downcase
+        to_sort << small
+        small = x
+      else
+        to_sort << x
+      end
+    end
+    
+    sorted << small
+
+    sort(to_sort, sorted)
 end
-
-def recursive_sort(unsorted,sorted)
-	return sorted if unsorted.length == 0
-	temp_array = unsorted.map{|x| x.upcase}
-	sorted << unsorted.slice!(temp_arr.index(temp_arr.min))
-	recursive_sort(unsorted,sorted)
-end
-
-
-
-
-#def dictionary_sort array
-    #rec_sort(array,[])
-#end
-
-#def rec_sort(ary,ary2)
-    #return ary2 if ary.length == 0
-    #temp_array = ary.map{|x| x.upcase}
-    #ary2 << ary.slice!(temp_array.index(temp_array.min))
-    #rec_sort(ary,ary2)
-#end
 
 
 

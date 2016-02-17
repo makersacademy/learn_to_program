@@ -1,3 +1,3 @@
 def sort arr
-  # your code here
+  return arr.sort
 end

@@ -12,7 +12,7 @@ playlist_dir = '/Users/Office/Desktop' #gets.chomp
 
 Dir.chdir(song_dir)
 
-song_name = (Dir['**/*.{m4a,mp3}']).sort_by{rand}
+song_name = (Dir['**/*.{m4a,mp3}']).sort_by(rand)
 
 
 Dir.chdir(playlist_dir)
@@ -22,6 +22,3 @@ File.open(filename,'w') do |f|
   f.write(a + "\n")
   end
 end
-
-
-

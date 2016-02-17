@@ -3,7 +3,7 @@ MONTHS = {Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6,
 
 def convert_2_array
   line_arr = []
-  File.read(' birthdates.txt' ).each_line do |line|
+  File.read('birthdates.txt' ).each_line do |line|
     line_arr << line.chomp
   end
   line_arr

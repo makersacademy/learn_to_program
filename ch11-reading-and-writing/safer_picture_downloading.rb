@@ -1,4 +1,4 @@
-Dir.chdir 'C:/Documents and Settings/Katy/PictureInbox' #this is where we want the pics to be moved to
+Dir.chdir '/Users/Phoebe/Pictures' #this is where we want the pics to be moved to
 # First we find all of the pictures to be moved.
 
 pic_names = Dir['F:/**/*.jpg'] #this is where we find all the pictures (from say memory card noted the **/ means it is recursive i.e. go into sub directories)

@@ -98,6 +98,17 @@ def english_number number
 	num_string
 end
 
+num_at_start = 9999 # change to 99 if you want
+num_now = num_at_start
+while num_now > 2
+	english = english_number(num_now)
+	puts english + ' bottles of beer on the wall, ' 
+		+ english + ' bottles of beer!'
+    num_now = num_now - 1
+    puts 'Take one down, pass it around, ' +
+    english + ' bottles of beer on the wall!'
+end
+
 puts english_number(  0)
 puts english_number(  9)
 puts english_number( 10)

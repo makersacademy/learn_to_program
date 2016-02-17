@@ -1,7 +1,7 @@
 def music_shuffle filenames
   Dir.chdir '/Users/murilodalri/Desktop'
   def shuffle(arr)
-    arr.shuffle
+    arr.split('/').shuffle
   end
   mp3s = Dir['/Users/murilodalri/Desktop/Music/**/*.mp3']
   mp3s.shuffle!

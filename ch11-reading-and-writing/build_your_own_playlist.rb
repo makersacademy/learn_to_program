@@ -19,4 +19,4 @@ File.open filename, 'w' do |file|
   file.write shuffled_list
 end
 
-puts "All done! You have created a playlist called #{filename}"
+puts "All done! You have created a playlist called #{filename} with #{mp3_list.length} songs in!"

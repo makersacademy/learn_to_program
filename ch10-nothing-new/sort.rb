@@ -21,5 +21,4 @@ def recursive_sort unsorted_array, sorted_array
   unsorted_array.delete_at(to_delete) 
   notyetsorted = unsorted_array
   recursive_sort notyetsorted, sorted_array        
-
 end  

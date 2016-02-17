@@ -9,3 +9,8 @@ File.open 'playlist.m3u', 'w' do |f|
 end
 
 puts 'Done!'
+
+def shuffle arr
+  # your code here
+  arr.shuffle
+end

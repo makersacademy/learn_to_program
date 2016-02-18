@@ -1,3 +1,3 @@
 def music_shuffle filenames
-  # your code here
+filenames.shuffle.shuffle
 end

@@ -28,7 +28,7 @@ def old_roman_numeral num
     roman_num << "I" * num
     num = num % 1
   end
-    roman_num
+  roman_num
 end
 
 # old_roman_numeral(2776) # => MMDCCLXXVI

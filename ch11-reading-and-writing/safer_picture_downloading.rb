@@ -5,7 +5,7 @@ pic_names = Dir['/Users/**/*.avi']
 puts 'What would you like to call this batch?'
 batch_name = gets.chomp
 
-puts 
+
 print "Downloading #{pic_names.length} files: "
 
 pic_number = 1

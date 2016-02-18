@@ -11,6 +11,7 @@ def one_billion_second bday
 end
 
 puts "Please enter your birthday (DD/MM/YYYY)"
+# creates an array ["day", "month", "year"]
 answer = gets.chomp.split("/")
 bday = Time.local(answer[-1], answer[1], answer[0])
 

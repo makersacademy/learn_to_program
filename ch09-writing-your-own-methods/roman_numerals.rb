@@ -11,7 +11,7 @@ def roman_numeral num
   elsif num < 10
     final = "#{ten_less[num-1]}"
   elsif num < 100 && num > 9
-    final = "#{hundy_less[num / 10 - 1]}" + "#{ten_less[num % 10 - 1]}"
+    final = "#{hundy_less[num / 10 - 1]}" + "#{ten_less[num % 10 - 1] unless num % 10 < 0}"
   elsif num < 1000 && num > 99
     final = "#{thou_less[num / 100 - 1]}" + "#{hundy_less[(num % 100) / 10 - 1]}" + "#{ten_less[num % 10 - 1]}"
   elsif num > 999

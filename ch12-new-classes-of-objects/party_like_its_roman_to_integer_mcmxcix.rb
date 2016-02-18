@@ -2,36 +2,16 @@ def roman_to_integer roman
   return "Sorry, that is not a roman numeral" if roman =~ (/[^MDCLXVI]/i)
   roman = roman.upcase
   result = 0
-  if roman =~ (/CM/)
-    roman.sub!(/CM/,"")
-    result = result + 900
-  end
-  if roman =~ (/CD/)
-    roman.sub!(/CD/,"")
-    result = result + 400
-  end
-  if roman =~ (/XC/)
-    roman.sub!(/XC/,"")
-    result = result + 90
-  end
-  if roman =~ (/XL/)
-    roman.sub!(/XL/,"")
-    result = result + 40
-  end
-  if roman =~ (/IX/)
-    roman.sub!(/IX/,"")
-    result = result + 9
-  end
-  if roman =~ (/IV/)
-    roman.sub!(/IV/,"")
-    result = result + 4
-  end
-  result = result + 1000*(roman.count "M")
-  result = result + 500*(roman.count "D")
-  result = result + 100*(roman.count "C")
-  result = result + 50*(roman.count "L")
-  result = result + 10*(roman.count "X")
-  result = result + 5*(roman.count "V")
-  result = result + (roman.count "I")
+  special = {"CM" => 900, "CD" => 400, "XC" => 90, "XL" => 40, "IX" => 9, "IV" => 4}
+  numeral = {"M"=> 1000, "D" => 500, "C" => 100, "L" => 50, "X" => 10, "V" => 5, "I" => 1}
+  special.each { |k,v|
+    if roman.include?(k)
+      result = result + v
+      roman.gsub!(/#{k}/, "")
+    end}
+  roman.each_char {|v|
+    if numeral.keys.include?(v)
+      result = result + numeral[v]
+    end}
   return result
 end

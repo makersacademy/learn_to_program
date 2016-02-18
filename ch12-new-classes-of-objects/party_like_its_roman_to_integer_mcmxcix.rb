@@ -10,6 +10,9 @@ def roman_to_integer roman
 
   integer = 0
 
+  # throws an error if input is not in roman numerals
+  puts "Error: Please enter a number between 1 and 1999 in roman numerals." if roman.each_char { |chr| chr != ("I"||"V"||"X"||"L"||"C"||"D"||"M") }
+
   # 1. first converts the specials to number, add it to the integer
   # => remove from string once converted
   specials.each do |k, v|

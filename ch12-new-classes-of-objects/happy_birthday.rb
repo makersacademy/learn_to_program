@@ -21,3 +21,7 @@ birth_num = birthday / secs_in_year
 
 puts birth_num.floor
 # Rounding that number to a whole number.
+
+birth_num.floor.times do
+  puts "SPANK"
+end

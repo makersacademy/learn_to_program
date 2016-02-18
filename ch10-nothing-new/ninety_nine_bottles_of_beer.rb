@@ -53,20 +53,19 @@ def english_number number
 	number_word_final.compact.flatten.join(" ")
 end
 
-number_of_bottles = 5
+
+
+
+
+
+num_bottle = 5
 
 def beer_string num
-	string = "#{english_number(num)} bottle"
-	string += "s" if num != 1
-	string = "no more bottles" if num == 0
-	string
+	"#{english_number(num)} bottle#{num == 1 ? "":"s"}"
 end
 
-while number_of_bottles > 0
-	bottles = beer_string(number_of_bottles)
-	puts "#{bottles.capitalize} of beer on the wall, #{bottles} of beer!"
-	
-	number_of_bottles -= 1
-	bottles = beer_string(number_of_bottles)
-	puts "Take one down, pass it around, #{bottles} of beer on the wall!"
+while num_bottle > 0
+	bottles = beer_string num_bottle
+	puts "#{bottles} of beer on the wall, #{beer_string num_bottle} of beer!".capitalize
+	puts "Take one down, pass it around, #{num_bottle == 0 ? "no more bottles" : (beer_string num_bottle -= 1)} of beer on the wall!"
 end

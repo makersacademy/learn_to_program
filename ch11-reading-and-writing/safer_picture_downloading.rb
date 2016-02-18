@@ -16,8 +16,9 @@ pic_names.each do |name|
     else
         "#{batch_name}#{pic_number}.jpg"
     end
-    while FileTest.exist? new_name
-    new_name += 'a'
+    if FileTest.exist? new_name == true
+        "Overwriting file cancelled"
+    exit
   end
     File.rename name, new_name
     pic_number+=1

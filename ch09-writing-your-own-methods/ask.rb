@@ -1,12 +1,14 @@
 def ask question
+	loop do 
 		puts question
 		reply = gets.chomp.downcase
 		
 		if (reply == "yes" || reply == "no")
 			return reply == "yes" ? true : false
+			break
 		else puts "\"yes\" or \"no\" only!"
-			ask question
 		end
+	end
 end
 
 puts 'Hello, and thank you for...'

@@ -10,7 +10,8 @@
   pic_names = Dir['~/Pictures/test_pics'] # First we find all of the pictures to be moved.
 
   puts 'What would you like to call this batch?'
-    batch_name = gets.chomp
+  batch_name = gets.chomp
+  puts "That file already exists." if batch_name.exist == true
 
   puts
   print "Downloading #{pic_names.length} files: "
@@ -30,7 +31,7 @@
     File.rename name, new_name
 # Finally, we increment the counter.
   pic_number = pic_number + 1
-end
+  end
 
 puts # This is so we aren't on progress bar line.
-puts 'Done, cutie!'
+puts 'Done!'

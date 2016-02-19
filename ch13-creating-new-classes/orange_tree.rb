@@ -26,8 +26,7 @@ class OrangeTree
   end
 
   def height
-    if @height > 10.6
-      @dead += 1
+    if @height > 10.0
       return 'A dead tree is not very tall. :('
     end
     @height

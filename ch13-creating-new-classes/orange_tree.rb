@@ -28,7 +28,9 @@ class OrangeTree
   def count_the_oranges 
   	if @age ==24
   		@count =119
-  	elsif @age<26
+  	elsif @age<=2
+      @count=0
+    elsif @age<26
   		@count = @age * 5
   	else
   		"A dead tree has no oranges. :("

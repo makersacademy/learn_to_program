@@ -44,10 +44,10 @@ else
   count = numerals_hash[new_array.join("")]
 end
 
-count
+puts count
 
 
 
-count
+
  end
- roman_to_integer("iv")
+ roman_to_integer("XXI")

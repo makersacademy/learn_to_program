@@ -34,13 +34,3 @@ def roman_numeral num
   end
   roman_num
 end
-
-puts(roman_numeral(1354)) # => MCCCLIV
-puts(roman_numeral(1353)) # => MCCCLIII
-puts(roman_numeral(1359)) # => MCCCLIX
-puts(roman_numeral(1357)) # => MCCCLVII
-
-# 8 = VIII
-# 7 = VII
-# 6 = VI ----- 4 = IV
-# 5 = V

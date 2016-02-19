@@ -30,6 +30,3 @@ def old_roman_numeral num
   end
   roman_num
 end
-
-# old_roman_numeral(2776) # => MMDCCLXXVI
-# old_roman_numeral(1444) # => MCCCCXXXXIIIV

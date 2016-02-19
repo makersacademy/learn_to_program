@@ -1,7 +1,7 @@
 #Aim: take in a roman numeral, convert it to an integer
 # - See if roman contains MDCLXVI - ergo, is a 'proper' roman numeral
 # - See if roman contains special cases (900, 400, 90, 40, 9, 4)
-#
+#- Add up the numbers of normal cases 
 def roman_to_integer roman
   puts "Please enter a valid roman numeral" if roman =~ (/[^MDCLXVI]/i)
   roman = roman.upcase

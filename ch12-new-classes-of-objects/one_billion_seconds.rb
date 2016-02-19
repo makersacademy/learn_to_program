@@ -1,1 +1,1 @@
-# your code here
+puts(Time.gm(1992, 1, 24, 2, 20) + 10**9)

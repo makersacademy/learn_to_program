@@ -1,5 +1,5 @@
-# This programme notifies you when it
-# starts/ends the block that was passed in
+# This programme notifies you when it starts/ends the block
+# that was passed in. Also tells you what the block returned
 
 def program_log desc, &block
   puts "Beginning \"#{desc}\"..."

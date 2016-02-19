@@ -1,5 +1,5 @@
 def profile block_description, &block
-  # can shit between on and off by changing true to false
+  # can shift between on and off by changing true to false
   profiling_on = true
   if profiling_on
     start_time = Time.new

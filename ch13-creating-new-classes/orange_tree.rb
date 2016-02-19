@@ -7,6 +7,8 @@
 # as his programme, and it does not suit the purpose of building our
 # own implementation of OrangeTree.
 #
+# Removed his way of determining the tree's death based on probability
+#
 # My original is attached at the end.
 
 class OrangeTree
@@ -18,30 +20,20 @@ class OrangeTree
 
   def height
     if @alive
-      @height.round(1)
+      @height
     else
       'A dead tree is not very tall. :('
     end
   end
 
-  def count_the_oranges
-    if @alive
-      @orange_count
-    else
-      'A dead tree has no oranges. :('
-    end
-  end
-
   def one_year_passes
     if @alive
-      @height = @height + 0.4
-      @orange_count = 0 # old oranges fall off
-      if @height > 10 && rand(2) > 0
-        # tree dies
+      @height = (@height + 0.4).round(1)
+      @orange_count = 0
+      if @height > 10
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2
-        # new oranges grow
         @orange_count = (@height * 15 - 25).to_i
         "This year your tree grew to #{@height.round(1)}m tall," +
           " and produced #{@orange_count} oranges."
@@ -51,6 +43,14 @@ class OrangeTree
       end
     else
       'A year later, the tree is still dead. :('
+    end
+  end
+
+  def count_the_oranges
+    if @alive
+      @orange_count
+    else
+      'A dead tree has no oranges. :('
     end
   end
 

@@ -7,9 +7,6 @@ def rec_dict_sort unsorted, sorted
     return sorted 
   end
 
-  # So if we got here, then it means we still 
-  # have work to do.
-
   smallest = unsorted.pop
   still_unsorted = []
 

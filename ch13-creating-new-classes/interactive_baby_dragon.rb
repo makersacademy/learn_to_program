@@ -1,7 +1,5 @@
 class Dragon
 
-
-
 puts 'What would you like to name your baby dragon?'
 name = gets.chomp
 pet = Dragon.new name

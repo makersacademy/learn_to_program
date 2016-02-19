@@ -1,3 +1,3 @@
 def shuffle arr
-  # your code here
+    arr.length > 1 ? [arr.slice!(rand(0..arr.length-1)) ] + shuffle(arr) : arr
 end

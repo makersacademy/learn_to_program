@@ -107,6 +107,7 @@ puts 10.to_eng
 puts 998989.to_eng
 
 
+
 class Array
 	def kevshuffle
 		shuffled_arr = []
@@ -119,39 +120,3 @@ class Array
 end
 end
 print [1,2,3,4,5,6,7,8,9].kevshuffle
-
-
-class Integer
-	def to_roman
-  num = self
-  m = num / 1000
-  current = num - m*1000
-  d = current / 500
-  current = current - d*500
-  c = current / 100
-  current = current - c*100
-  l = current / 50
-  current = current - l*50
-  x = current / 10
-  current = current - x*10
-  v = current / 5
-  current = current - v*5
-  i = current
-  "M"*m + "D"*d + "C"*c + "L"*l + "X"*x +  "V"*v + "I"*i
-end
-
-def factorial
-    if self < 0
-      return "You can't take the factorial of a negative number!"
-    end
-    if self <= 1
-      1
-    else
-      self * (self-1).factorial
-    end
-  end
-end
-
-
-
-

@@ -66,6 +66,6 @@ end
 
 while num_bottle > 0
 	bottles = beer_string num_bottle
-	puts "#{bottles} of beer on the wall, #{beer_string num_bottle} of beer!".capitalize
+	puts "#{bottles} of beer on the wall, #{bottles} of beer!".capitalize
 	puts "Take one down, pass it around, #{num_bottle == 0 ? "no more bottles" : (beer_string num_bottle -= 1)} of beer on the wall!"
 end

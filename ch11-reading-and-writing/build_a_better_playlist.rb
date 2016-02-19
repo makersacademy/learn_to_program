@@ -1,13 +1,33 @@
 def music_shuffle filenames
-  filenames.map!{|song| song.split("/")}
-  mixed_playlist = []
-  mixed_playlist << filenames.delete(filenames.sample)
-  while filenames.size >0
-    rand_song = filenames.sample
-    # if mixed_playlist.last[0] != rand_song[0]
-    #    mixed_playlist << filenames.delete(rand_song)
-    # end
-    mixed_playlist << filenames.delete(rand_song)
+  filenames = filenames.sort
+  len = filenames.length
+
+  2.times do
+    l_idx = 0
+    r_idx = len/2
+    shuf = []
+
+    while shuf.length < len
+      if shuf.length%2 == 0
+        shuf.push(filenames[r_idx])
+        r_idx = r_idx + 1
+      else
+        shuf.push(filenames[l_idx])
+        l_idx = l_idx + 1
+      end
+    end
+
+    filenames = shuf
   end
-  mixed_playlist.map!{|song| song.join("/")}
+  arr = []
+  cut = rand(len)
+  idx = 0
+
+  while idx < len
+    arr.push(filenames[(idx+cut)%len])
+    idx = idx + 1
+  end
+
+  arr
 end
+

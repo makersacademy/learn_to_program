@@ -1,51 +1,13 @@
-def roman_to_integer roman
-  return 0 if roman == ''
-  thousands = 0
-  hundreds  = 0
-  tens      = 0
-  ones      = 0
+ROMAN = {
+  'M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 'C' => 100,
+  'XC' => 90, 'L' => 50, 'XL' => 40, 'X' => 10,
+  'IX' => 9, 'V' => 5, 'IV' => 4, 'I' => 1
+}
 
-  while roman != ""
-    if roman[0] == "M".downcase
-      thousands += 1
-      roman[0] = ''
-    elsif roman[0..1] == "CM".downcase
-      hundreds += 9
-      roman [0..1] = ''
-    elsif roman[0..1] == "CD".downcase
-      hundreds += 4
-      roman[0..1] = ''
-    elsif roman[0] == "D".downcase
-      hundreds += 5
-      roman[0] = ''
-    elsif roman[0] == "C".downcase
-      hundreds += 1
-      roman[0] = ''
-    elsif roman[0..1] == "XC".downcase
-      tens += 9
-      roman[0..1] = ''
-    elsif roman[0..1] == "XL".downcase
-      tens += 4
-      roman[0..1] = ''
-    elsif roman[0] == "L".downcase
-      tens += 5
-      roman[0] = ''
-    elsif roman[0] == "X".downcase
-      tens += 1
-      roman[0] = ''
-    elsif roman[0..1] == "IX".downcase
-      ones += 9
-      roman[0..1] = ''
-    elsif roman[0..1] == "IV".downcase
-      ones += 4
-      roman[0..1] = ''
-    elsif roman[0] == "V".downcase
-      ones += 5
-      roman[0] = ''
-    elsif roman[0] == "I".downcase
-      ones += 1
-      roman[0] = ''
-    end
+def roman_to_integer (roman)
+  roman.upcase!
+  re = Regexp.new(ROMAN.keys.join('|'))
+  roman.scan(re).inject(0) do |number, key|
+    number + ROMAN[key]
   end
-  return (thousands * 1000) + (hundreds * 100) + (tens * 10) + ones
 end

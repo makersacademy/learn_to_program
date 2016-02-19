@@ -1,3 +1,5 @@
+#copied from solution as advised
+
 def music_shuffle filenames
   # We don't want a perfectly random shuffle, so let's
   # instead do a shuffle like card-shuffling. Let's

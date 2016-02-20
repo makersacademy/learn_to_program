@@ -10,7 +10,7 @@ class OrangeTree
 
   def height
     if @alive
-      @height.round(1)
+       @height.round()
     else
       'A dead tree is not very tall. :('
     end
@@ -30,7 +30,7 @@ class OrangeTree
       @orange_count = 0 # old oranges fall off
       if @height > 10 && rand(2) > 0
         # tree dies
-        @alive = false
+         @alive = false
         'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2
         # new oranges grow

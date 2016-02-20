@@ -1,66 +1,59 @@
 class OrangeTree
-  attr_accessor :height, :age, :alive, :oranges
+  attr_accessor  :age, :alive, :height, :oranges
+
+  ANNUAL_HEIGHT =  [0,0.5,0.9,1.2,1.6,2.0,2.5,3.0,3.2,3.6,4.1,4.2,4.3,4.5,5.0,5.5,6.0,6.5,7.0,7.5,8.0,8.5,9.0,9.6,10.0]
+  ANNUAL_ORANGES = [0,0,10,15,20,25,230,35,40,45,50,60,65,70,75,80,85,90,95,100,105,110,115,119,125]
+
+  MAX_AGE = 25
 
 
-
-  MAX_AGE = 10
-  NEW_ORANGES = 3
-
-  def initialize (height, age)
-    self.height = height
-    self.age = age
+  def initialize
+    self.height = 0
+    self.age = 0
     self.alive = true
     self.oranges = 0
 
   end
 
   def one_year_passes
-    prng = Random.new
-    self.age += 1 if self.alive
-    self.height += prng.rand(20) if alive
-    self.alive = false if age == MAX_AGE
 
-    self.alive && (self.age > NEW_ORANGES) ? self.oranges = prng.rand(10) : self.oranges = 0
-  end
+    if self.alive
+      dies = true if age == MAX_AGE
 
-  def pick_oranges(num)
-
-    if not self.alive
-
-      return "this tree is dead"
-    else
-
-      if num <= 0
-        return "perhaps not..."
-      else
-        if self.oranges == 0
-          return "tough...none left"
+      self.age += 1
+      self.alive = false if dies
+      if dies
+        return "Oh, no! The tree is too old, and has died. :("
         else
-          if num < self.oranges
-            self.oranges -= num
-            return "delicious, aren't they?"
-          else
-            self.oranges = 0
-            return "yummy...but there are now none left"
-          end
-        end
+          return "This year your tree grew to #{ANNUAL_HEIGHT[self.age-1]}m tall, and produced #{ANNUAL_ORANGES[self.age-1]} oranges."
       end
+    else
+      return "A year later, the tree is still dead. :("
     end
   end
+
+  def height
+    if alive
+      return ANNUAL_HEIGHT[self.age-1]
+    else
+      return "A dead tree is not very tall. :("
+    end
+
+
+  end
+
+  def count_the_oranges
+    if alive
+      return ANNUAL_ORANGES[self.age-1]
+    else
+      return "A dead tree has no oranges. :("
+    end
+  end
+
+  def pick_an_orange
+
+
+      return "A dead tree has nothing to pick. :(" unless alive
+
+  end
 end
-i= 2
-prng = Random.new
-tree = OrangeTree.new(100,i)
-
-begin
-  tree.one_year_passes
-  puts "Age: #{tree.age} Height: #{tree.height} Alive: #{tree.alive} Oranges: #{tree.oranges}"
-
-  pick = prng.rand(5)
-
-  puts "Picking #{pick} oranges: #{tree.pick_oranges(pick)}"
-  puts "...there are #{tree.oranges} left"
-
-
-  i+=1
-  end while i < 11

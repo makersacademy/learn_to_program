@@ -1,66 +1,97 @@
-class BeerSong
-  def initialize(beer_num)
-    @beer_num = beer_num
-    if @beer_num > 99
-      @beer_num = 99
-    elsif @beer_num < 0
-      @beer_num = 0
+def english_number number
+  return 'Please enter a number that isn\'t negative.' if number < 0
+  return "zero" if number == 0
+  num_string = ""
+
+  ones_place = ['one',       'two',      'three',
+                  'four',      'five',     'six',
+                  'seven',     'eight',    'nine']
+  tens_place = ['ten',       'twenty',   'thirty',
+                  'forty',     'fifty',    'sixty',
+                  'seventy',   'eighty',   'ninety']
+  teenagers  = ['eleven',    'twelve',   'thirteen',
+                  'fourteen',  'fifteen',  'sixteen',
+                  'seventeen', 'eighteen', 'nineteen']
+  zillions = [['hundred', 2],
+              ['thousand', 3],
+              ['million', 6],
+              ['billion', 9],
+              ['trillion', 12],
+              ['quadrillion', 15],
+              ['quintillion', 18],
+              ['sextillion', 21],
+              ['septillion', 24],
+              ['octillion', 27],
+              ['nonillion', 30],
+              ['decillion', 33],
+              ['undecillion', 36],
+              ['duodecillion', 39],
+              ['tredecillion', 42],
+              ['quattuordecillion', 45],
+              ['quindecillion', 48],
+              ['sexdecillion', 51],
+              ['septendecillion', 54],
+              ['octodecillion', 57],
+              ['novemdecillion', 60],
+              ['vigintillion', 63],
+              ['googol', 100]]
+  left = number
+
+  while zillions.length > 0
+    zil_pair = zillions.pop
+    zil_name = zil_pair[0]
+    zil_base = 10 ** zil_pair[1]
+    write = left/zil_base
+    left = left - write*zil_base
+
+    if write > 0
+      prefix = english_number write
+      num_string = num_string + prefix + ' ' + zil_name
+
+      if left > 0
+        num_string = num_string + ' '
+      end
     end
   end
 
-  def convert_number
-    numbers = {
-      0 => "Zero",
-      1 => "One",
-      2 => "Two",
-      3 => "Three",
-      4 => "Four",
-      5 => "Five",
-      6 => "Six",
-      7 => "Seven",
-      8 => "Eight",
-      9 => "Nine",
-      10 => "Ten",
-      11 => "Eleven",
-      12 => "Twelve",
-      13 => "Thirteen",
-      14 => "Fourteen",
-      15 => "Fifteen",
-      16 => "Sixteen",
-      17 => "Seventeen",
-      18 => "Eighteen",
-      19 => "Nineteen",
-      20 => "Twenty",
-      30 => "Thirty",
-      40 => "Forty",
-      50 => "Fifty",
-      60 => "Sixty",
-      70 => "Seventy",
-      80 => "Eighty",
-      90 => "Ninety"
-    }
+  write = left/10
+  left = left - write*10
 
-    if numbers.has_key?(@beer_num)
-      text_num = numbers[@beer_num]
+  if write > 0
+    if ((write == 1) and (left > 0))
+      num_string = num_string + teenagers[left-1]
+      left = 0
     else
-      unit = @beer_num % 10
-      tens = @beer_num - unit
-      text_num =  numbers[tens] + "-" + numbers[unit].downcase
+      num_string = num_string + tens_place[write-1]
     end
-    return text_num
+
+    if left > 0
+      num_string = num_string + '-'
+    end
   end
 
-  def print_song
-    while @beer_num > 0
-      text_num = convert_number()
-      suffix = @beer_num != 1 ? "s" : ""
-      puts "#{text_num} bottle#{suffix} of beer on the wall,"
-      puts "#{text_num} bottle#{suffix} of beer,"
-      @beer_num -= 1
-      suffix = @beer_num != 1 ? "s" : ""
-      text_num = convert_number()
-      puts "Take one down, pass it around,"
-      puts "#{text_num} bottle#{suffix} of beer on the wall."
-    end
+  write = left
+  left = 0
+
+  if write > 0
+    num_string = num_string + ones_place[write-1]
+  end
+  num_string
+end
+
+def print_song(beer_num)
+  while beer_num > 0
+    text_num = english_number(beer_num)
+    suffix = beer_num != 1 ? "s" : ""
+    puts "#{text_num.capitalize} bottle#{suffix} of beer on the wall,"
+    puts "#{text_num} bottle#{suffix} of beer!"
+    beer_num -= 1
+    suffix = beer_num != 1 ? "s" : ""
+    text_num = english_number(beer_num)
+    puts "Take one down, pass it around,"
+    puts "#{text_num} bottle#{suffix} of beer on the wall."
+    puts ""
   end
 end
+
+#print_song(140)

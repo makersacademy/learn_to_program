@@ -78,19 +78,3 @@ def english_number number
   end
   num_string
 end
-
-puts english_number( 0)
-puts english_number( 9)
-puts english_number( 10)
-puts english_number( 11)
-puts english_number( 17)
-puts english_number( 32)
-puts english_number( 88)
-puts english_number( 99)
-puts english_number(100)
-puts english_number(101)
-puts english_number(234)
-puts english_number(3211)
-puts english_number(999999)
-puts english_number(1000000000000)
-puts english_number(109238745102938560129834709285360238475982374561034)

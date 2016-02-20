@@ -1,3 +1,6 @@
 def grandfather_clock &block
-  # your code here
+    ding = Time.new.hour
+    ding.times do 
+        block.call
+    end
 end

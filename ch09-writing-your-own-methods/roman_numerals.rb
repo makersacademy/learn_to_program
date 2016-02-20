@@ -5,5 +5,3 @@ def roman_numerals(num)
   c = 0
   number.map {|k, v| c, num = num.divmod v; k*c }.join""
 end
-
-puts roman_numerals(1093)

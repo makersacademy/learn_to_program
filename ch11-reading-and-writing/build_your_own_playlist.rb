@@ -19,7 +19,7 @@ def shuffle song_list
 
   filename = '/Users/annemariekohler/Desktop/myfavouritemusic.m3u'
   File.open filename, 'w' do |f|
-    f.write playlist
+    f.puts playlist
   end
 
 end

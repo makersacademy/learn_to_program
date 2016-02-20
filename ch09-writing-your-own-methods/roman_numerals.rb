@@ -18,7 +18,7 @@ return rString
 
 end
 
-
+puts roman_numeral(4)
 puts roman_numeral(100)
 puts roman_numeral(1998)
 puts roman_numeral(2485)

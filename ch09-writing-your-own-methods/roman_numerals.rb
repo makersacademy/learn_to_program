@@ -1,10 +1,3 @@
-# special numbers
-# CM = 900
-# CD = 400
-# XC = 90
-# XL = 40
-
-
 def roman_numeral num
   roman_num = ""
   c = (num % 1000 / 100)
@@ -41,9 +34,3 @@ def roman_numeral num
   end
   roman_num
 end
-
-puts("1999 " + roman_numeral(1999)) # => MCMXCIX
-puts("1800 " + roman_numeral(1800)) # => MDCCC
-puts("500 " + roman_numeral(500)) # => D
-puts("600 " + roman_numeral(600)) # => DC
-puts("400 " + roman_numeral(400)) # => CD

@@ -14,6 +14,6 @@ def old_roman_numeral num
   result
 end
 
-# puts old_roman_numeral 3500
-# puts old_roman_numeral 1720
-# puts old_roman_numeral 13
+puts old_roman_numeral 3500
+puts old_roman_numeral 1720
+puts old_roman_numeral 13

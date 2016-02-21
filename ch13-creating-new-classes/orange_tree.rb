@@ -1,11 +1,7 @@
-# note we have added a rounding operation on the height to ensure
-# the output is sensible in terms of decimal places
-
 class OrangeTree
   def initialize
-    @height = 0
-    @orange_count = 0
-    @alive = true
+    @age, @height, @orange_count, @alive = 0, 0, 0, true
+    puts 'A seed has been sown'
   end
 
   def height
@@ -26,10 +22,10 @@ class OrangeTree
 
   def one_year_passes
     if @alive
+      @age += 1
       @height = @height + 0.4
       @orange_count = 0 # old oranges fall off
-      if @height > 10 && rand(2) > 0
-        # tree dies
+      if @age > 25
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2
@@ -59,20 +55,3 @@ class OrangeTree
     end
   end
 end
-
-# ot = OrangeTree.new
-# 23.times do
-#   ot.one_year_passes
-# end
-
-# puts(ot.one_year_passes)
-# puts(ot.count_the_oranges)
-# puts(ot.height)
-# puts(ot.one_year_passes)
-# puts(ot.one_year_passes)
-# puts(ot.one_year_passes)
-# puts(ot.one_year_passes)
-# puts(ot.one_year_passes)
-# puts(ot.height)
-# puts(ot.count_the_oranges)
-# puts(ot.pick_an_orange)

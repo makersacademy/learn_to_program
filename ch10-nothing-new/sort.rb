@@ -1,23 +1,13 @@
 def sort arr
-  rec_sort arr, []
-end
+  return arr if arr.length <= 1
 
-def rec_sort unsorted, sorted
-  if unsorted.length <= 0
-    return sorted
-  end
+middle = arr.pop
 
-smallest = unsorted.pop
-still_unsorted = []
+less = arr.select{|x| x < middle}
 
-  unsorted.each do |newword|
-    if newword < smallest
-      still_unsorted.push smallest
-      smallest = newword
-    else
-      still_unsorted.push newword
-    end
-    end
-    sorted.push smallest
-  rec_sort still_unsorted, sorted
+more = arr.select{|x| x >= middle}
+
+sort(less) + [middle] + sort(more)
+
+
 end

@@ -1,19 +1,19 @@
-def log desc, &block
-  puts "Beginning #{desc.inspect}..."
-  result = block[]
-  puts "...#{desc.inspect} finished, returning: #{result}"
+def program_log desc, &block
+  puts "Beginning \"#{desc}\"..."
+  returned_block = block.call
+  puts "...\"#{desc}\" finished, returning: #{returned_block}"
 end
 
-log 'outer block' do
-  log 'some little block' do
-    1**1 + 2**2
+program_log "outer block" do
+  program_log "some little block" do
+    5
   end
 
-  log 'yet another block' do
-    '!doof iahT ekil I'.reverse
+  program_log "yet another block" do
+    "I like Thai food!"
   end
-  
-  '0' == 0
+
+  false
 end
 
 

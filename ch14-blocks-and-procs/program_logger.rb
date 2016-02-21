@@ -1,7 +1,7 @@
-def log desc, &block #string desc &block
-  puts "Beginning #{desc.inspect}..." #string starting block
-  result = block[] 
-  puts "...#{desc.inspect} finished, returning: #{result}" #finish and returning
+def log desc, &block
+  puts "Beginning #{desc.inspect}..."
+  result = block[]
+  puts "...#{desc.inspect} finished, returning: #{result}"
 end
 
 log 'outer block' do
@@ -15,6 +15,7 @@ log 'outer block' do
   
   '0' == 0
 end
+
 
 
 

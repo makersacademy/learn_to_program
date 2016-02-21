@@ -1,5 +1,4 @@
 def program_log desc, &block
-  # your code here
   puts "Beginning \"#{desc}\"..."
   returned_block = block.call
   puts "...\"#{desc}\" finished, returning: #{returned_block}"

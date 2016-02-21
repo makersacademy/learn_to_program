@@ -1,3 +1,5 @@
+
+
 def program_log desc, &block
 
 puts 'Beginning "' + desc + '"...'

@@ -1,18 +1,15 @@
 def sort(arr)
-   recursive_sort(arr,[])
+  return arr if arr.length <= 0 
+   
+   test = arr.pop
+   least = arr.select{|x| x < test}
+   most = arr.select{|x| x >= test}
+
+ sort(least) + [test] + sort(most)
 
 end
 
-def recursive_sort(unsorted_array, sorted_array)
 
-	until unsorted_array.length == 0
-	 firstWord = unsorted_array.min
-	 sorted_array << firstWord
-	 unsorted_array.delete(firstWord)
-	end
-
- sorted_array 
-end
 
 print sort(["How","How","now","Brown","Cow"])
 

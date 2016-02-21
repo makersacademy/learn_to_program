@@ -77,7 +77,9 @@ end
 # Now where were we? Oh, yeah...
 
 File.rename name, new_name
-break if file.exist?(new_name)
+while file.exist? new_name
+	new_name = new_name + 'a'
+end
 
 
 # Finally, we increment the counter.

@@ -1,5 +1,5 @@
 def profile block_description, &block
-	profiling_on = false
+	profiling_on = true
 	if profiling_on 
 		start_time = Time.new
 		block.call

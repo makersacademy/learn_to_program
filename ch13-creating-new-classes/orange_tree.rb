@@ -65,9 +65,11 @@
 
 class OrangeTree
   def initialize
+    @age = 0
     @height = 0
     @orange_count = 0
     @alive = true
+    puts "You planted an orange tree."
   end
 
   def height
@@ -86,11 +88,25 @@ class OrangeTree
     end
   end
 
+  def pick_an_orange
+    if @alive
+      if @orange_count > 0
+        @orange_count = @orange_count - 1
+        'You pick a juicy, delicious orange!'
+      else
+        'You search every branch, but find no oranges.'
+      end
+    else
+      'A dead tree has nothing to pick. :('
+    end
+  end
+
   def one_year_passes
     if @alive
+      @age = @age+1
       @height = @height + 0.4
-      @orange_count = 0 # old oranges fall off
-      if @height >= 10 && rand(2) > 0
+      @orange_count = 0
+      if @age > 25
         # tree dies
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
@@ -108,16 +124,5 @@ class OrangeTree
     end
   end
 
-  def pick_an_orange
-    if @alive
-      if @orange_count > 0
-        @orange_count = @orange_count - 1
-        'You pick a juicy, delicious orange!'
-      else
-        'You search every branch, but find no oranges.'
-      end
-    else
-      'A dead tree has nothing to pick. :('
-    end
-  end
+
 end

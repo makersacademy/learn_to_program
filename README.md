@@ -27,7 +27,7 @@ $ gem install rspec
 Once you have rspec installed as above, ensure that you have navigated to the root directory of this learn_to_program repo, e.g. 
 
 ```sh
-cd /Users/JohnDoe/Projects/MakersAcademy/learn_to_program
+cd /Users/JoeWroe/Projects/MakersAcademy/learn_to_program
 ```
 
 Then if you'd like to check, say, your solution for the chapter 9 'ask' program you can run the following command:

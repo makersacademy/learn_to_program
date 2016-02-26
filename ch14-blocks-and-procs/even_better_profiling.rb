@@ -1,14 +1,12 @@
-def timing block_description, &block
-  timing_on = false
+def profile(block_description, &block)
+  profiling_on = false
+  if profiling_on == true
+    start_time = Time.new
+    block.call
 
-if timing_on == true
-  start_time = Time.new
-  block.call
-  duration = start_time - Time.new
-  puts "#{blockdes} completed in #{duration}"
-
-else
-  block.call
-end
-
+    duration = Time.new - start_time
+    puts "#{block_description}: #{duration} seconds"
+  else
+    block.call
+  end
 end

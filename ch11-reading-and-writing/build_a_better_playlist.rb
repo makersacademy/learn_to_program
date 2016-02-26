@@ -9,23 +9,25 @@ l_idx = 0
 r_idx = len/2
 shuf = []
 
-while shuf.length < len if shuf.length%2 == 0
+  while shuf.length < len
+     if shuf.length%2 == 0
         shuf.push(filenames[r_idx])
         r_idx = r_idx + 1
-else
+      else
         shuf.push(filenames[l_idx])
         l_idx = l_idx + 1
-end end
+      end
+
     filenames = shuf
-end
+  end
 
 arr = []
 cut = rand(len)
 
-while idx < len
+  while idx < len
    arr.push(filenames[(idx+cut)%len])
   idx = idx + 1
-
-end
+  end
 arr
+end
 end

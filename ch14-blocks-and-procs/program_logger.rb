@@ -10,7 +10,7 @@ log 'outer block' do
   end
 
   log 'yet another block' do
-    "I like Thai food!"
+    '!doof iahT ekil I'.reverse
   end
 
   '0' == 0

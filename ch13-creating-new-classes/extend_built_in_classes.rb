@@ -1,37 +1,23 @@
-class Array
-
-  def shuffle
-  arr.sort_by{rand}
-  end
-
-end
-
-
 class Integer
-
   def factorial
-    raise 'Must not use negative integer' if self < 0
-     (self <= 1) ? 1 : self * (self-1).factorial
-   end
-
-  def old_roman_numeral
-
-    if self <= 0
-      puts "Number must be above one"
-      exit
+    if self <= 1
+      1
+    else
+      self * (self-1).factorial
     end
+  end
+  def to_roman
+    # I chose old-school roman numerals just to save space.
+    roman = ''
 
-    numerals = ""
-    numerals << "M" * (num / 1000)
-    numerals << "D" * (num % 1000 /500)
-    numerals << "C" * (num % 500 / 100)
-    numerals << "L" * (num % 100 / 50)
-    numerals << "X" * (num % 50 / 10)
-    numerals << "V" * (num % 10 / 5)
-    numerals << "I" * (num % 5 / 1)
-    numerals
-    end
+    roman = roman + 'M' * (self / 1000)
+    roman = roman + 'D' * (self % 1000 / 500)
+    roman = roman + 'C' * (self % 500 / 100)
+    roman = roman + 'L' * (self % 100 / 50)
+    roman = roman + 'X' * (self % 50 / 10)
+    roman = roman + 'V' * (self % 10 / 5)
+    roman = roman + 'I' * (self % 5 / 1)
 
-
-
+    roman
+  end
 end

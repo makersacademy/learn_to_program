@@ -11,8 +11,6 @@ numerals so when someone calls roman_numeral 4 , it should return ' IV '.
 def roman_numeral num
   # your code here
   letters = { M:1000, CM: 900, D:500, CD:400, C:100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 }
-
-  nb_digits_roman = []
   result = ""
 
   letters.values.each_with_index do |value,index|

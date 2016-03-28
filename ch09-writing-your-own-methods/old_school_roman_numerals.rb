@@ -1,21 +1,14 @@
-def old_roman_numeral num
-	x = self
-	roman = “”
-	NUM_ROM.each do |n, l|
-		roman << l * (x / n)
-		x = x % n
-	end
-	return roman
+#correct
+
+def old_roman_numeral(num)
+  roman = ''
+  roman << 'M' * (num / 1000)
+  roman << 'D' * (num % 1000 / 500)
+  roman << 'C' * (num % 500 / 100)
+  roman << 'L' * (num % 100 / 50)
+  roman << 'X' * (num % 50 / 10)
+  roman << 'V' * (num % 10 / 5)
+  roman << 'I' * (num % 5 / 1)
+  roman
 end
-
-
-NUM_ROM = {
-	1000 => “M”,
-	 500 => “D”, 
-	 100 => “C”,
-	  50 => “L”,
-	  10 => “X”,
-	   5 => “V”,
-	   1 => “I”
-		     }
 

@@ -5,9 +5,9 @@ def old_roman_numeral num
   result = ""
 
   letters.values.each_with_index do |value,index|
-    remainder = num / value
-    result += letters.keys[index].to_s*remainder
-    num -= remainder*value
+    digit = num / value
+    result += letters.keys[index].to_s*digit
+    num -= digit*value
   end
   result
 end

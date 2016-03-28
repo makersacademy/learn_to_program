@@ -4,7 +4,7 @@
 
 Now that you have completed your interview and started the precourse, and need to continue developing your Ruby skills, we recommend that you continue with [Chris Pine's Learn To Program book 2nd Edition](https://drive.google.com/file/d/0Bz17qR4zZedib0M5RnRwWFl3MUk/view).  **Please complete chapters 9-14 before the end of week 3.** 
 
-Please attempt every exercise, submitting the code to us using your newfound git and GitHub skils by forking [https://github.com/makersacademy/learn_to_program](https://github.com/makersacademy/learn_to_program), and submitting a pull request (Note that submitting a pull request will kick off some [Continuous Integration](https://github.com/makersacademy/pre_course/blob/master/pills/continuous_integration.md) <-- see link for more details). 
+Please attempt every exercise, submitting the code to us using your newfound git and GitHub skills by forking [https://github.com/makersacademy/learn_to_program](https://github.com/makersacademy/learn_to_program), and submitting a pull request (Note that submitting a pull request will kick off some [Continuous Integration](https://github.com/makersacademy/pre_course/blob/master/pills/continuous_integration.md) <-- see link for more details). 
 
 Do not spend more than an hour on any individual exercise.  The solutions are included at the end of the book.  This week it is better that you cover all the chapters, and review the solutions for any exercises that you cannot complete in under an hour.  Please do not look at any individual solution until you have at least tried each individual exercise.
 

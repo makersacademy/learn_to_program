@@ -42,7 +42,7 @@ def roman_numeral(num)
     elsif digits[2] < 4                     #if no. tens less than 4 add numerals for that many tens
         string << ("X" * digits[2])
     else
-        string << "L" + ("X" * (digits[2] - 5))         #
+        string << "L" + ("X" * (digits[2] - 5))         
     end
     
     
@@ -61,5 +61,3 @@ def roman_numeral(num)
     end
 string
 end
-
-

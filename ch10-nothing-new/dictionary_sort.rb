@@ -1,10 +1,7 @@
 def dictionary_sort arr
-   x = arr.map.each{|x|
+  arr.sort_by{|x| x.downcase}
 
-
-    x.downcase}.sort
-p x
 end
-arr = ["i","AM","a","Massive","cunt"]
 
+arr = ["i","AM","a","Massive","cunt"]
 p dictionary_sort arr

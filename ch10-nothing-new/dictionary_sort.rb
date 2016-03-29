@@ -12,12 +12,12 @@ ital letters, just ordered as you’d find in a dictionary.
 
 =end
 
-def dictionary_sort arr
+def dictionary_sort(arr)
   # your code here
-  sort arr, true
+  rec_sort arr, true
 end
 
-def sort(arr, case_down = false)
+def rec_sort(arr, case_down = false)
   # your code here
   still_unsorted = []
   already_sorted = []
@@ -40,11 +40,12 @@ def sort(arr, case_down = false)
   arr.slice!(sorted_idx)
   still_unsorted = arr
   while still_unsorted.size > 0
-    already_sorted << sort(still_unsorted,true)
+    already_sorted << rec_sort(still_unsorted,true)
   end
   already_sorted.flatten
 end
 
-puts dictionary_sort ["ZZ","a","c","d"]
+words = ['can','feel','singing.','like','A','can']
+puts dictionary_sort(words).join(' ') == 'A can can feel like singing.'
 
 

@@ -1,31 +1,17 @@
 def roman_numeral num
-  left = num
-  thousands = left /1000
-  left = left - thousands*1000
-  five_hundreds = left / 500
-  left  = left - five_hundreds * 500
-  hundreds = left / 100
-  left = left - hundreds * 100
-  fifties = left / 50
-  left = left - fifties * 50
-  tens = left / 10
-  left = left - tens * 10
-  fives = left / 5
-  left = left - fives * 5
-  ones = left
   array = []
-  thousands.times{|x| array << "M"}
-  five_hundreds.times{|x| array << "D"}
-  hundreds.times{|x| array << "C"}
-  fifties.times{|x| array << "L"}
-  tens.times{|x| array << "X"}
-    if ones == 4 && fives == 1
-      array << "IX"
-    elsif ones == 4 && fives == 0
-      array << "IV"
-    else
-    fives.times{|x| array << "V"}
-    ones.times{|x| array << "I"}
+  (num / 1000).times{|x| array << "M"}
+  (num % 1000 / 500).times{|x| array << "D"}
+  (num % 500 / 100).times{|x| array << "C"}
+  (num % 100 / 50).times{|x| array << "L"}
+  (num % 50 / 10).times{|x| array << "X"}
+  if num % 10 == 9
+    array << "IX"
+  elsif num % 5 == 4
+    array << "IV"
+  else
+    (num % 10 / 5).times{|x| array << "V"}
+    (num % 5 / 1).times{|x| array << "I"}
   end
   array.join
 end

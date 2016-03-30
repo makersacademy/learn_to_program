@@ -9,8 +9,8 @@ def shuffle(arr)
   
   
   shuff_array = Array.new(shuf_size)         #creates a new array with each element nil the same size as array
-  x = 1
-  while x <= array.count                      #iterates over each word in array
+  y = 1
+  while y <= array.count                      #iterates over each word in array
     ran = rand(size)                        # generates random no. between 0 and size of array
     shuf_ran = rand(shuf_size)              #generates random no. between 0 and size of shuf_array
     
@@ -18,10 +18,10 @@ def shuffle(arr)
         ran = rand(size)
     end
     
-    shuf_array.map! { |x| x == shuf_ran ? array[ran] : x }       #replaces the element at index shuf_ran in shuf_array (should be nil) with an element at index ran from array
-    array.delete_at(ran)                                         #deletes the value at index ran from array
-    size -= 1                                                   #reduces size by 1 to reflect one less value in array
-    x += 1
+    shuf_array.map! { |x| x == shuff_array[shuf_ran] ? array[ran] : x }         #replaces the element at index shuf_ran in shuf_array (should be nil) with an element at index ran from array
+    array.delete_at(ran)                                                        #deletes the value at index ran from array
+    size -= 1                                                                   #reduces size by 1 to reflect one less value in array
+    y += 1
   end
 shuff_array
     

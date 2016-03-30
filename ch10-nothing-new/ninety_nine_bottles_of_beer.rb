@@ -218,30 +218,29 @@ end
 
 def ninety_nine_bottles_of_beer num
   num_to_loop = num
-    while num_to_loop > 1
+    while num_to_loop > 0
       num_to_loop
       less = num_to_loop-1
-if num_to_loop >2
-x="s"
-y="s"
-elsif num_to_loop == 1
-  x=""
-  y=""
-else
-x=""
-y=""
 
+if num_to_loop >2
+x , y ="s"
+elsif num_to_loop == 1
+  x , y ="","s"
+else
+  x , y = "s"
 end
-    num_to_loop -=1 #doest matter if above or below loop counter
+
 
     puts "#{english_number(num_to_loop).capitalize} bottle#{x} of beer on the wall, #{english_number(num_to_loop)} bottle#{x} of beer!"
 
     puts "Take one down, pass it around, #{english_number(less)} bottle#{y} of beer on the wall!"
-    #puts "Take one down, pass it around, no more bottles of beer on the wall!"
+
+    num_to_loop -=1 #doest matter if above or below loop counter
   end
 end
 # puts "Two bottles of beer on the wall, two bottles of beer!"
 # puts "Take one down, pass it around, one bottle of beer on the wall!"
 # puts "One bottle of beer on the wall, one bottle of beer!"
 # puts "Take one down, pass it around, no more bottles of beer on the wall!"
-puts ninety_nine_bottles_of_beer 4
+puts ninety_nine_bottles_of_beer 9999
+

@@ -80,5 +80,3 @@ def english_number(number)
 	return englishNumber.join(' ')
 
 	end
-
-puts english_number(90)

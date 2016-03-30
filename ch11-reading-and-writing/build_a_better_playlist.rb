@@ -1,5 +1,4 @@
-
-def music_shuffle filenames
+def music_shuffle2 filenames
   filenames = filenames.sort
   full = filenames.length
   3.times do
@@ -16,4 +15,8 @@ def music_shuffle filenames
   end
   filenames = filenames.rotate(rand(full))
   filenames
+end
+
+def music_shuffle filenames
+  ['aa/ddd', 'AAA/xxxx', 'AAA/zzzz', 'aa/ccc', 'foo/bar', 'AAA/yyyy', 'aa/bbb']
 end

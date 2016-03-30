@@ -14,10 +14,10 @@ ital letters, just ordered as you’d find in a dictionary.
 
 def dictionary_sort(arr)
   # your code here
-  rec_sort arr, true
+  recursive_sort arr, true
 end
 
-def rec_sort(arr, case_down = false)
+def recursive_sort(arr, case_down = false)
   # your code here
   still_unsorted = []
   already_sorted = []
@@ -40,7 +40,7 @@ def rec_sort(arr, case_down = false)
   arr.slice!(sorted_idx)
   still_unsorted = arr
   while still_unsorted.size > 0
-    already_sorted << rec_sort(still_unsorted,true)
+    already_sorted << recursive_sort(still_unsorted,true)
   end
   already_sorted.flatten
 end

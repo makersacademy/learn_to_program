@@ -26,3 +26,41 @@ class Integer
   result
   end
 end
+
+class Array
+  def shuffle_manual
+  suffled = []
+  ary = self
+  while ary.size > 0
+    msecs = ((Time.now.to_f - Time.now.to_i)*10000).to_i
+    index_random = msecs % ary.size
+    index = 0
+    temp = []
+    ary.each do |e|
+      suffled << e if index == index_random
+      temp << e if index != index_random
+      index += 1
+    end
+    ary = temp
+  end
+  suffled
+  end
+end
+
+
+def shuffle_manual arr
+  suffled = []
+  while arr.size > 0
+    msecs = ((Time.now.to_f - Time.now.to_i)*10000).to_i
+    index_random = msecs % arr.size
+    index = 0
+    temp = []
+    arr.each do |e|
+      suffled << e if index == index_random
+      temp << e if index != index_random
+      index += 1
+    end
+    arr = temp
+  end
+  suffled
+end

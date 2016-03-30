@@ -1,10 +1,15 @@
 #!/usr/bin/env ruby
 require "../ch10-nothing-new/shuffle.rb"
 
-music_dir = "/Users/michaelharrison/Music/iTunes/iTunes\ Media/Music/"
-save_dir = "/Users/michaelharrison/Desktop/"
-playlist_name = "It's The Bea.m3u"
-search_string =  "The\ Bea*/*/*.m4a"
+music_dir = "#{ENV["HOME"]}/Music/iTunes/iTunes\ Media/Music/"
+save_dir = "#{ENV["HOME"]}/Desktop/"
+
+puts "What would you like to call this playlist?"
+playlist_name = gets.chomp+".m3u"
+
+puts "Enter an artist"
+artist = gets.chomp
+search_string =  "*#{artist}*/*/*.m4a"
 
 Dir.chdir (music_dir)
 

@@ -1,20 +1,5 @@
-def shuffle arr
-  shuffle_recursive arr, []
-end
-
-def shuffle_recursive unshuffled, shuffled
-  return unshuffled if unshuffled.length == 0
-
-  random_index = rand(unshuffled.length)
-  random_element = unshuffled[random_index]
-
-  shuffled << random_element
-  unshuffled.delete_at(random_index)
-
-  shuffle_recursive unshuffled, shuffled
-
-  return shuffled
-end
+#!/usr/bin/env ruby
+require "../ch10-nothing-new/shuffle.rb"
 
 music_dir = "/Users/michaelharrison/Music/iTunes/iTunes\ Media/Music/"
 save_dir = "/Users/michaelharrison/Desktop/"
@@ -32,3 +17,5 @@ Dir.chdir(save_dir)
 File.open playlist_name, 'w' do |f|
   shuffled_songs.each { |song| f.write music_dir+song+"\n" }
 end
+
+puts "Playlist '#{playlist_name} saved to desktop!"

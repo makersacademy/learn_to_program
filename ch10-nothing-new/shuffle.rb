@@ -14,11 +14,11 @@ def shuffle(arr)
     ran = rand(size)                        # generates random no. between 0 and size of array
     shuf_ran = rand(shuf_size)              #generates random no. between 0 and size of shuf_array
     
-    while shuf_array[shuf_ran] != nil            # if the value for shuf_ran returns a value that is not nil when substituted into shuf_array generates a new value for ran till this is not the case
-        ran = rand(size)
+    while shuff_array[shuf_ran] != nil            # if the value for shuf_ran returns a value that is not nil when substituted into shuf_array generates a new value for ran till this is not the case
+        shuf_ran = rand(shuf_size)                #this is probably infinite looping
     end
     
-    shuf_array.map! { |x| x == shuff_array[shuf_ran] ? array[ran] : x }         #replaces the element at index shuf_ran in shuf_array (should be nil) with an element at index ran from array
+    shuff_array.map! { |x| x == shuff_array[shuf_ran] ? array[ran] : x }         #replaces the element at index shuf_ran in shuf_array (should be nil) with an element at index ran from array
     array.delete_at(ran)                                                        #deletes the value at index ran from array
     size -= 1                                                                   #reduces size by 1 to reflect one less value in array
     y += 1
@@ -26,6 +26,9 @@ def shuffle(arr)
 shuff_array
     
 end
+
+puts shuffle([1,2,3,4,5,6,7,8,9,10])
+
 =end
 
 def shuffle arr

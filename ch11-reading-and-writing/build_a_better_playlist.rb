@@ -10,6 +10,3 @@ def music_shuffle filenames
       filenames
     end
 
-
-
-p music_shuffle filenames

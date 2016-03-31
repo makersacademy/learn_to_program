@@ -13,6 +13,6 @@ def grandfather_clock &block
   end
 end
 
-grandfather_clock do
-  puts "Dong"
-end
+# grandfather_clock do
+#   puts "Dong"
+# end

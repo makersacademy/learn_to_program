@@ -1,26 +1,25 @@
-def roman_to_integer roman
+def roman_to_integer(roman)
   numhash = {
     1000 => "M", 900 => "CM", 500 => "D",400 => "CD",
     100 => "C",90 => "XC", 50 => "L", 40 => "XL",
     10 => "X", 9 => "IX", 5 => "V", 4 => "IV", 1 => "I", }
 
-  reg_num = 0
-
   roman = roman.upcase.split("")
+  regnum = 0
   roman.each_with_index do |val, index|
-    if numhash.has_value?(val)
-      if numhash.has_value?(val + roman[index+1])
-        reg_num + numhash.key(val + roman[index+1])
-      else
-        reg_num = reg_num + numhash.key(val[0])
-      end
+
+    if index + 1 < roman.length && numhash.has_value?(val + roman[index+1])
+      regnum = regnum + numhash.key(val + roman[index+1])
+    elsif numhash.has_value?(val)
+      next if numhash.has_value?(roman[index-1] + val) && index - 1 >= 0
+      regnum = regnum + numhash.key(val)
     else
-    puts "Invalid Roman Numeral"
+      puts "Invalid numeral)"
     end
   end
-  print reg_num
+  return regnum
 end
 
-roman_to_integer('mcmxcix')
+#roman_to_integer('mcmxcix')
 #roman_to_integer('CCCLXV')
 #roman_to_integer('XIV')

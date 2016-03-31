@@ -116,10 +116,10 @@ class OrangeTree
   end
 end
 
-# ot = OrangeTree.new
-# 23.times do
-#   ot.one_year_passes
-# end
+ot = OrangeTree.new
+23.times do
+  ot.one_year_passes
+end
 
 # puts(ot.one_year_passes)
 # puts(ot.count_the_oranges)

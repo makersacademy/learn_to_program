@@ -127,9 +127,7 @@ to leave your dragon behind: 'exit'"
 input = gets.chomp
 
 while true
-  puts
-
-  input = gets.chomp
+   input = gets.chomp
 
   if input == 'exit'
     exit

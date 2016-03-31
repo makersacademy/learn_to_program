@@ -82,7 +82,7 @@ class OrangeTree
 
   def one_year_passes
     if @alive
-      @height = @height + 0.4
+      @height = @height + 9.6
       @number_of_oranges = 0 # old oranges fall off
       if @height > 10 && rand(2) > 0
         # tree dies
@@ -116,3 +116,18 @@ class OrangeTree
   end
 end
 
+ ot = OrangeTree.new
+ 23.times do
+   ot.one_year_passes
+ end
+ puts(ot.one_year_passes)
+ puts(ot.count_the_oranges)
+ puts(ot.height)
+ puts(ot.one_year_passes)
+ puts(ot.one_year_passes)
+ puts(ot.one_year_passes)
+ puts(ot.one_year_passes)
+ puts(ot.one_year_passes)
+ puts(ot.height)
+ puts(ot.count_the_oranges)
+ puts(ot.pick_an_orange)

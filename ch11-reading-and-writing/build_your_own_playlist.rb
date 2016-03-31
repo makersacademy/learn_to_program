@@ -3,17 +3,28 @@ require "../ch10-nothing-new/shuffle.rb"
 
 music_dir = "#{ENV["HOME"]}/Music/iTunes/iTunes\ Media/Music/"
 save_dir = "#{ENV["HOME"]}/Desktop/"
-
-puts "What would you like to call this playlist?"
-playlist_name = gets.chomp+".m3u"
-
-puts "Enter an artist"
-artist = gets.chomp
-search_string =  "*#{artist}*/*/*.m4a"
+songs = []
 
 Dir.chdir (music_dir)
 
-songs = Dir[search_string]
+while true
+  puts "Enter an artist, enter blank when done"
+  artist = gets.chomp
+
+  break if artist.empty?
+
+  if artist.length < 3
+    puts "Artist name must be at least 3 characters long"
+  else
+    search_string =  "*#{artist}*/*/*.m4a"
+    songs << Dir[search_string]
+  end
+end
+
+songs.flatten!
+
+puts "What would you like to call this playlist?"
+playlist_name = gets.chomp+".m3u"
 
 shuffled_songs = shuffle (songs)
 

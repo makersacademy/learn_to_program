@@ -19,7 +19,7 @@ new_name = generate_new_filename batch_name, pic_number
 
 while File.exists?(new_name)
   pic_number += 1
-  new_name = generate_new_filename batch_name,pic_number
+  new_name = generate_new_filename batch_name, pic_number
 end
 
 File.rename name, new_name

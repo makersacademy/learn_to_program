@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require "../ch10-nothing-new/shuffle.rb"
+require "../ch11-reading-and-writing/build_a_better_playlist.rb"
 
 music_dir = "#{ENV["HOME"]}/Music/iTunes/iTunes\ Media/Music/"
 save_dir = "#{ENV["HOME"]}/Desktop/"
@@ -22,11 +23,11 @@ while true
 end
 
 songs.flatten!
+shuffled_songs = shuffle songs
+shuffled_songs = music_shuffle shuffled_songs
 
 puts "What would you like to call this playlist?"
 playlist_name = gets.chomp+".m3u"
-
-shuffled_songs = shuffle (songs)
 
 Dir.chdir(save_dir)
 

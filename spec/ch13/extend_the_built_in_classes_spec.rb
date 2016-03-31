@@ -1,4 +1,4 @@
-describe Integer do
+describe 'Integer' do
 
   before do
     allow(STDOUT).to receive(:puts)

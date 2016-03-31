@@ -1,4 +1,4 @@
-def english_number number
+def wedding_number number
   # your code here
   names = {
     100 => 'hundred', 1000 => 'thousand', 1000000 => 'million', 1000000000 => 'billion',
@@ -63,8 +63,8 @@ def english_number number
     #How many n_llions left?
     left = left - write*n_llions
     if write > 0
-      eng_n_llions = english_number write
-      num_string = num_string + eng_n_llions + " #{names[n_llions]}"
+      eng_n_llions = wedding_number write
+      num_string = num_string + eng_n_llions + " #{names[n_llions]} and"
       if left > 0
         num_string += " "
       end
@@ -108,14 +108,14 @@ def english_number number
   if write > 0
     num_string = num_string + ones_place[write-1]
   end
-  num_string
+  number%100 == 0? num_string[0..-5] : num_string
 end
 
-# puts english_number(-999999)
-# puts english_number(3211)
-# puts english_number(150)
-# puts english_number(14)
-# puts english_number(2)
-# puts english_number(32115.33)
-# puts english_number(30000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+# puts wedding_number(-999999)
+puts wedding_number(3211)
+puts wedding_number(150)
+puts wedding_number(200)
+puts wedding_number(1999)
+puts wedding_number(2000)
+# puts wedding_number(30000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
 

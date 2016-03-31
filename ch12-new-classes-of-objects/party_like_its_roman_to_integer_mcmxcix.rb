@@ -6,7 +6,7 @@ def roman_to_integer roman
   running_total = 0
 
   if roman =~ /[^cdilmvx]/
-    return "This is not a valid roman numeral!"
+    puts "This is not a valid roman numeral!"
     return
   end
 

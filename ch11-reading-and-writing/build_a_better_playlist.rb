@@ -1,6 +1,6 @@
-Dir.chdir('/users/harrywynnwilliams/music/')
-  p Dir.pwd
-filenames = Dir["*.mp3"]
+#Dir.chdir('/users/harrywynnwilliams/music/')
+ # p Dir.pwd
+#filenames = Dir["*.mp3"]
 def music_shuffle filenames
   size = filenames.length
     for i in 0..size

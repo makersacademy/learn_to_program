@@ -6,5 +6,4 @@ def shuffle arr
   remaining = arr
 
   shuffle(remaining) + randomed
-
 end

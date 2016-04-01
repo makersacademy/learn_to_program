@@ -12,8 +12,9 @@ def roman_numeral num
     elsif ones == 9 
     	to_return << "IX" 
     else
-    	to_return << "I" * (ones-5)
     	to_return << "V"
+      to_return << "I" * (ones-5)
+    	
     end
    
    one = ""
@@ -27,8 +28,9 @@ def roman_numeral num
     elsif tens == 9 
     	to_return << "XC" 
     else
-    	to_return << "X" * (tens-5)
     	to_return << "L"
+      to_return << "X" * (tens-5)
+    	
     end
 
     ten = ""
@@ -43,8 +45,9 @@ def roman_numeral num
     elsif hunds == 9 
     	to_return << "CM" 
     else
-    	to_return << "C" * (hunds-5)
-    	to_return << "L"
+    	to_return << "D"
+      to_return << "C" * (hunds-5)
+    	
     end
 
     hundred = ""

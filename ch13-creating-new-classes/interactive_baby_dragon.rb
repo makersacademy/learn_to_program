@@ -11,7 +11,7 @@ class Dragon
   def interact
     commands = {:feed => method(:feed),
                 :walk => method(:walk),
-                :put_to_bed => method(:put_to_bed),
+                :"put to bed" => method(:put_to_bed),
                 :toss => method(:toss),
                 :rock => method(:rock),
                 :rename => method(:rename),
@@ -94,6 +94,11 @@ class Dragon
     interact
   end
 
+  def exit
+    puts "#{@name} looks sad that you are leaving..."
+    Kernel.exit
+  end
+
   def hungry?
     @stuff_in_belly <= 2
   end
@@ -116,7 +121,7 @@ class Dragon
         puts 'He wakes up suddenly!'
       end
       puts "#{@name} is starving!  In desperation, he ate YOU!"
-      exit
+      Kernel.exit
     end
 
     if @stuff_in_intestine >= 10

@@ -8,7 +8,7 @@ numerals = {'i' => 1,
                 'm' => 1000}
   broken = roman.split("")
 arr_tot =[]
-x = broken.map {|brk|
+x = broken.map {|brk| brk = brk.downcase
     numerals.each {|k, v|
     if brk == k
       arr_tot << v
@@ -62,4 +62,4 @@ p final.inject{|acc,x| acc + x}
 
 
 
- roman_to_integer "mcmxcix"
+ roman_to_integer "CCCLXV"

@@ -11,7 +11,63 @@ return 'Please enter a number that isn\'t negative.'
    teenagers = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
    # "left" is how much of the number we still have left to write out.
    # "write" is the part we are writing out right now. write and left...get it? :)
+
    left = number
+   
+   write = left/(10**100)
+   left = left - write*(10**100)
+   if write > 0
+     googols = english_number(write)
+     num_string = num_string + googols + ' googol'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+   write = left/(10**63)
+   left = left - write*(10**63)
+   if write > 0
+     vigintillions = english_number(write)
+     num_string = num_string + vigintillions + ' vigintillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+   write = left/(10**60)
+   left = left - write*(10**60)
+   if write > 0
+     novemdecillions = english_number(write)
+     num_string = num_string + novemdecillions + ' novemdecillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+   write = left/(10**57)
+   left = left - write*(10**57)
+   if write > 0
+     octodecillions = english_number(write)
+     num_string = num_string + octodecillions + ' octodecillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+   write = left/(10**54)
+   left = left - write*(10**54)
+   if write > 0
+     septendecillions = english_number(write)
+     num_string = num_string + septendecillions + ' septendecillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+   write = left/(10**51)
+   left = left - write*(10**51)
+   if write > 0
+     sexdecillions = english_number(write)
+     num_string = num_string + sexdecillions + ' sexdecillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
    write = left/(10**48)
    left = left - write*(10**48)
    if write > 0

@@ -9,20 +9,20 @@ class Dragon
   end
 
   def interact
-    commands = {"feed" => method(:feed),
-                "walk" => method(:walk),
-                "put to bed" => method(:put_to_bed),
-                "toss" => method(:toss),
-                "rock" => method(:rock),
-                "rename" => method(:rename),
-                "exit" => method(:exit)}
+    commands = {:feed => method(:feed),
+                :walk => method(:walk),
+                :put_to_bed => method(:put_to_bed),
+                :toss => method(:toss),
+                :rock => method(:rock),
+                :rename => method(:rename),
+                :exit => method(:exit)}
 
     puts
     puts "What would you like to do?"
-    commands.each_key { |key| puts key.capitalize }
+    commands.each_key { |key| puts key.to_s.capitalize }
     puts
 
-    command = gets.chomp.downcase
+    command = gets.chomp.downcase.to_sym
     puts
 
     if commands.keys.include? command

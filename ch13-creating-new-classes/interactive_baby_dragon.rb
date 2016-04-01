@@ -8,9 +8,14 @@ class Dragon
     self.interact
   end
 
-  public
   def interact
-    commands = {"feed" => method(:feed), "walk" => method(:walk), "put to bed" => method(:put_to_bed), "toss" => method(:toss), "rock" => method(:rock), "rename" => method(:rename), "exit" => method(:exit)}
+    commands = {"feed" => method(:feed),
+                "walk" => method(:walk),
+                "put to bed" => method(:put_to_bed),
+                "toss" => method(:toss),
+                "rock" => method(:rock),
+                "rename" => method(:rename),
+                "exit" => method(:exit)}
 
     puts
     puts "What would you like to do?"

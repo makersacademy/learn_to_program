@@ -23,9 +23,9 @@ class OrangeTree
 
   def one_year_passes
     if @alive
-      @height = @height + 0.4
+      @height += 0.4
       @orange_count = 0 
-      if @height > 10 && rand(2) > 0
+      if @height > 10.1
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2
@@ -44,7 +44,7 @@ class OrangeTree
   def pick_an_orange
     if @alive
       if @orange_count > 0
-        @orange_count = @orange_count - 1
+        @orange_count -= 1
         'You pick a juicy, delicious orange!'
       else
         'You search every branch, but find no oranges.'

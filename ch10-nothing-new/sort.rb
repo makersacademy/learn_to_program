@@ -3,15 +3,22 @@ def sort arr
 end
 
 def recursive_sort unsorted, sorted
+	if unsorted.length <= 0
+		return sorted
+	end
 
-	smallest = unsorted[1]
+	smallest = unsorted.pop
+	still_unsorted = []
 
 	unsorted.each do |test_object|
-
-		if test_object.lowercase < smallest.lowercase
-			sorted.push(smallest)
+		if test_object.downcase < smallest.downcase
+			still_unsorted.push(smallest)
 			smallest = test_object
 		else
-			sorted.push(test_object)
-		end 
+			still_unsorted.push(test_object)
+		end
+	end
 
+	sorted.push smallest
+	rec_dict_sort still_unsorted, sorted
+end

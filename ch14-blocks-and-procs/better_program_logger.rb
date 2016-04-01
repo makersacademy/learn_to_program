@@ -1,3 +1,9 @@
-def log desc, &block
-  # your code here
+$Count = 0
+
+def better_log desc, &block
+  puts "#{" "*$Count}Beginning \"#{desc}\"..."
+  $Count += 1
+  ans = block[]
+  $Count -=1
+  puts "#{" "*$Count}...\"#{desc}\" finished, returning: #{ans}"
 end

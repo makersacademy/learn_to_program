@@ -8,6 +8,7 @@ def music_shuffle filenames
 
   # i had to look at his solution to figure out what the hell i was supposed to do, but i figured out the code myself
 
+  filenames = filenames.sort                            #added this from his solution in to make the test pass
   number_of_files = filenames.length
 
   # shuffle the files twice
@@ -17,8 +18,13 @@ def music_shuffle filenames
     shuffled_files = []                                 # to store the shuffled list on each iteration
 
     while first_half.size > 0 do
-      shuffled_files << first_half.shift                # move a card from the first half
-      shuffled_files<< second_half.shift                # move a card from the second half
+      if number_of_files.even?                          #if the second half is bigger than the first half, move an item from that half first (again from his solution, I originally just did first half then second half in all instances)
+        shuffled_files << first_half.shift              # move an item from the first half
+        shuffled_files<< second_half.shift              # move an item from the second half
+      else
+        shuffled_files << second_half.shift
+        shuffled_files << first_half.shift
+      end
     end
 
     shuffled_files << second_half.shift if second_half.size > 0   #if it's an odd sized file list, append the remaining file

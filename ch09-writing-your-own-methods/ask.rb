@@ -8,11 +8,10 @@ def ask question
     if (reply == 'yes' || reply == 'no')
       if reply == 'yes'
         answer = true
-        return answer
       else
         answer = false
-        return answer
       end
+      return answer
       break
     else
       puts 'Please answer "yes" or "no".'

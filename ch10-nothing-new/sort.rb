@@ -1,3 +1,3 @@
-def sort arr
-  # your code here
+def sort (array)
+  array.sort!
 end

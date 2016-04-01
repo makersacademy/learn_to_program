@@ -105,4 +105,4 @@ def english_number(number)
 
 end
 
-bottles_song(100929299)
+bottles_song(10)

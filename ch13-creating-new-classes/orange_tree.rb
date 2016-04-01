@@ -60,7 +60,7 @@ end
 class OrangeTree
   def initialize
     @height = 0
-    @number_of_oranges = 0
+    @orange_count = 0
     @alive = true
   end
 
@@ -74,7 +74,7 @@ class OrangeTree
 
   def count_the_oranges
     if @alive
-      @number_of_oranges
+      @orange_count
     else
       'A dead tree has no oranges. :('
     end
@@ -82,17 +82,17 @@ class OrangeTree
 
   def one_year_passes
     if @alive
-      @height = @height + 9.6
-      @number_of_oranges = 0 # old oranges fall off
+      @height = @height + 0.4
+      @orange_count = 0 # old oranges fall off
       if @height > 10 && rand(2) > 0
         # tree dies
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2
         # new oranges grow
-        @number_of_oranges = (@height * 15 - 25).to_i
+        @orange_count = (@height * 15 - 25).to_i
         "This year your tree grew to #{@height.round(1)}m tall," +
-          " and produced #{@number_of_oranges} oranges."
+          " and produced #{@orange_count} oranges."
       else
         "This year your tree grew to #{@height.round(1)}m tall," +
           " but is still too young to bear fruit."
@@ -104,8 +104,8 @@ class OrangeTree
 
   def pick_an_orange
     if @alive
-      if @number_of_oranges > 0
-        @number_of_oranges = @number_of_oranges - 1
+      if @orange_count > 0
+        @orange_count = @orange_count - 1
         'You pick a juicy, delicious orange!'
       else
         'You search every branch, but find no oranges.'
@@ -116,7 +116,19 @@ class OrangeTree
   end
 end
 
- ot = OrangeTree.new
- 23.times do
+ot = OrangeTree.new
+23.times do
    ot.one_year_passes
- end
+end
+
+# puts(ot.one_year_passes)
+# puts(ot.count_the_oranges)
+# puts(ot.height)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.height)
+# puts(ot.count_the_oranges)
+# puts(ot.pick_an_orange)

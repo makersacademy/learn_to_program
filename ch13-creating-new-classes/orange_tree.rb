@@ -26,7 +26,7 @@ class OrangeTree
     #drop all current oranges
     @oranges = 0
     #if age too old, die
-    if @tree_height > 10 && rand(2) > 0
+    if @tree_height > 10.1
       @alive = false
       "Oh, no! The tree is too old, and has died. :("
     #dont grow fruit for the first few years

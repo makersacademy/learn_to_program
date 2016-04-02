@@ -9,162 +9,33 @@ def english_number number
   ones_place = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
   tens_place = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
   teenagers = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+  big_num = [['hundred', 2], ['thousand', 3], ['million', 6], ['billion', 9], ['trillion', 12], ['quadrillion', 15],
+                ['quintillion', 18], ['sextillion', 21], ['septillion', 24], ['octillion', 27], ['nonillion', 30],
+                ['decillion', 33], ['undecillion', 36], ['duodecillion', 39], ['tredecillion', 42], ['quattuordecillion', 45],
+                ['quindecillion', 48], ['sexdecillion', 51], ['septendecillion', 54], ['octodecillion', 57],
+                ['novemdecillion', 60], ['vigintillion', 63], ['googol', 100]]
   # "left" is how much of the number we still have left to write out.
   # "write" is the part we are writing out right now. write and left...get it? :)
   left = number
-  write = left/(10**48) # How many quindecillions left?
-  left = left - write*(10**48) # Subtract off those quindecillions.
-  if write > 0 # Now here's the recursion:
-    quindecillions = english_number(write)
-    num_string = num_string + quindecillions + ' quindecillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
+  while big_num.length > 0
+    bigarray = big_num.pop
+    bigname = bigarray[0]
+    bigpower = 10 ** bigarray[1]
+    write = left/bigpower
+    left = left - write*bigpower
+
+    if write > 0
+      # Now here's the recursion:
+      prefix = english_number write
+      num_string = num_string + prefix + ' ' + bigname
+
+      if left > 0
+        # So we don't write 'two billionfifty-one'...
+        num_string = num_string + ' '
+      end
     end
   end
-  write = left/(10**45) # How many quattuordecillions left?
-  left = left - write*(10**45) # Subtract off those quattuordecillions.
-  if write > 0 # Now here's the recursion:
-    quattuordecillions = english_number(write)
-    num_string = num_string + quattuordecillions + ' quattuordecillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**42) # How many tredecillions left?
-  left = left - write*(10**42) # Subtract off those tredecillions.
-  if write > 0 # Now here's the recursion:
-    tredecillions = english_number(write)
-    num_string = num_string + tredecillions + ' tredecillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**39) # How many duodecillions left?
-  left = left - write*(10**39) # Subtract off those duodecillions.
-  if write > 0 # Now here's the recursion:
-    duodecillions = english_number(write)
-    num_string = num_string + duodecillions + ' duodecillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**36) # How many undecillions left?
-  left = left - write*(10**36) # Subtract off those undecillions.
-  if write > 0 # Now here's the recursion:
-    undecillions = english_number(write)
-    num_string = num_string + undecillions + ' undecillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**33) # How many decillions left?
-  left = left - write*(10**33) # Subtract off those decillions.
-  if write > 0 # Now here's the recursion:
-    decillions = english_number(write)
-    num_string = num_string + decillions + ' decillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**30) # How many nonillions left?
-  left = left - write*(10**30) # Subtract off those nonillions.
-  if write > 0 # Now here's the recursion:
-    nonillions = english_number(write)
-    num_string = num_string + nonillions + ' nonillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**27) # How many octillions left?
-  left = left - write*(10**27) # Subtract off those octillions.
-  if write > 0 # Now here's the recursion:
-    octillions = english_number(write)
-    num_string = num_string + octillions + ' octillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**24) # How many septillions left?
-  left = left - write*(10**24) # Subtract off those septillions.
-  if write > 0 # Now here's the recursion:
-    septillions = english_number(write)
-    num_string = num_string + septillions + ' septillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**21) # How many sextillions left?
-  left = left - write*(10**21) # Subtract off those sextillions.
-  if write > 0 # Now here's the recursion:
-    sextillions = english_number(write)
-    num_string = num_string + sextillions + ' sextillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**18) # How many quintillions left?
-  left = left - write*(10**18) # Subtract off those quintillions.
-  if write > 0 # Now here's the recursion:
-    quintillions = english_number(write)
-    num_string = num_string + quintillions + ' quintillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**15) # How many quadrillions left?
-  left = left - write*(10**15) # Subtract off those quadrillions.
-  if write > 0 # Now here's the recursion:
-    quadrillions = english_number(write)
-    num_string = num_string + quadrillions + ' quadrillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/(10**12) # How many trillions left?
-  left = left - write*(10**12) # Subtract off those trillions.
-  if write > 0 # Now here's the recursion:
-    trillions = english_number(write)
-    num_string = num_string + trillions + ' trillion'
-    if left > 0 # So we don't write 'two trillionfive billion'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/1000000000 # How many billions left?
-  left = left - write*1000000000 # Subtract off those billions.
-  if write > 0 # Now here's the recursion:
-    billions = english_number(write)
-    num_string = num_string + billions + ' billion'
-    if left > 0 # So we don't write 'two billionfive million'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/1000000 # How many millions left?
-  left = left - write*1000000 # Subtract off those millions.
-  if write > 0 # Now here's the recursion:
-    millions = english_number(write)
-    num_string = num_string + millions + ' million'
-    if left > 0 # So we don't write 'two millionfive thousand'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/1000 # How many thousands left?
-  left = left - write*1000 # Subtract off those thousands.
-  if write > 0 # Now here's the recursion:
-    thousands = english_number(write)
-    num_string = num_string + thousands + ' thousand'
-    if left > 0 # So we don't write 'two thousandfive hundred'...
-      num_string = num_string + ' '
-    end
-  end
-  write = left/100 # How many hundreds left?
-  left = left - write*100 # Subtract off those hundreds.
-  if write > 0 # Now here's the recursion:
-    hundreds = english_number(write)
-    num_string = num_string + hundreds + ' hundred'
-    if left > 0 # So we don't write 'two hundredfifty-one'...
-      num_string = num_string + ' '
-    end
-  end
+
   write = left/10 # How many tens left?
   left = left - write*10 # Subtract off those tens.
   if write > 0
@@ -202,7 +73,7 @@ puts english_number( 88)
 puts english_number( 99)
 puts english_number(100)
 puts english_number(101)
-puts english_number(234)
+puts english_number(536)
 puts english_number(3211)
 puts english_number(999999)
 puts english_number(1000000000000)

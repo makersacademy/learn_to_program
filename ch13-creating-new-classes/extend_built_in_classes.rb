@@ -22,7 +22,7 @@ class Integer
     end
 end
 
-#class array
+#class Array
 #  def shuffle
 #    recursive_shuffle(self,[])
 #  end

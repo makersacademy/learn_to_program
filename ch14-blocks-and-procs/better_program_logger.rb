@@ -1,3 +1,17 @@
+$logger_depth = 0
+
 def log desc, &block
-  # your code here
+
+prefix = ' '*$logger_depth
+
+puts prefix+"Beginning #{desc.inspect}..."
+
+$logger_depth += 1
+
+result = block[]
+
+$logger_depth -= 1
+
+puts prefix+"...#{desc.inspect} finished, returning: #{result}"
+
 end

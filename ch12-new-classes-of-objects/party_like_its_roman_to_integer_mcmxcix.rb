@@ -1,3 +1,44 @@
 def roman_to_integer roman
   # your code here
+
+digit_vals = {'i' => 1,
+
+total = 0
+
+prev = 0
+
+index = roman.length - 1
+
+while index >= 0
+
+c = roman[index].downcase
+
+index = index - 1
+
+val = digit_vals[c]
+
+if !val
+
+puts 'This is not a valid roman numeral!'
+
+return
+
+end
+
+if val < prev
+
+val = val * -1
+
+else
+
+prev = val
+
+end
+
+total = total + val
+
+end
+
+total
+
 end

@@ -4,13 +4,13 @@ def shuffle input
 input.sort_by{rand}
 end
 
-all_mp4 = shuffle(Dir['**/*.mp4'])
+all_oggs = shuffle(Dir['**/*.ogg'])
 
-File.open 'test_playlist.mp4files', 'w' do |f|
+File.open 'playlist.m3u', 'w' do |f|
 
-all_mp4.each do |mp4|
+all_oggs.each do |ogg|
 
-f.write mp4+"\n"
+f.write ogg+"\n"
 
 end
 

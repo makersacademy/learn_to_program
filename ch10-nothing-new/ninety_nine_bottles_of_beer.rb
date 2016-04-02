@@ -119,7 +119,7 @@ left = 0
 num_string
 end
 
-num_at_start = 5
+num_at_start = number
 
 num_now = num_at_start
 

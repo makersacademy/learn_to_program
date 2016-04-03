@@ -1,6 +1,6 @@
 def ask question
 
-  while true
+while true
     puts question
     reply = gets.chomp.downcase
 
@@ -10,7 +10,7 @@ def ask question
       elsif reply == "no"
         return false
       end
-    else
+  else
     puts 'Please answer "yes" or "no".'
     end
 end

@@ -1,6 +1,6 @@
 # Learn To Program
 
-##Ruby Week
+###Ruby Week
 
 Now that you have completed your interview and started the precourse, and need to continue developing your Ruby skills, we recommend that you continue with [Chris Pine's Learn To Program book 2nd Edition](https://drive.google.com/file/d/0Bz17qR4zZedib0M5RnRwWFl3MUk/view).  **Please complete chapters 9-14 before the end of week 3.** 
 

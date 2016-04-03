@@ -71,7 +71,7 @@ def english_number number
         num_string = num_string + ' '
       end
     end
-    p zillions.length
+    zillions.length
   end
 
   write = left/10 # How many tens left?

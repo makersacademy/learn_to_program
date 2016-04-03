@@ -1,24 +1,12 @@
-$logger_depth = 0
+$OPT_PROFILING_ON = false
 
-def log desc, &block
-  prefix = ' '*$logger_depth
-  puts prefix+"Beginning #{desc.inspect}..."
-  $logger_depth += 1
-  result = block[]
-  $logger_depth -= 1
-  puts prefix+"...#{desc.inspect} finished, returning: #{result}"
-end
-
-log 'outer block' do
-  log 'some little block' do
-    log 'teeny-tiny block' do
-      'lOtS oF lOVe'.downcase
-    end
-    7 * 3 * 2
+def profile block_description, &block
+  if $OPT_PROFILING_ON
+    start_time = Time.new
+    block[]
+    duration = Time.new - start_time
+    puts "#{block_description}: #{duration} seconds"
+  else
+    block[]
   end
-
-  log 'yet another block' do
-    '!doof naidnI evol I'.reverse
-  end
-  '0' == "0"
 end

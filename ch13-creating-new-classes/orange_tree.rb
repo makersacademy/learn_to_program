@@ -6,62 +6,75 @@ class OrangeTree
     end
 
   def height
-      @height
+    if @tree == true
+      @height.round(1)
+    else
+       'A dead tree is not very tall. :('
+    end
   end
   def one_year_passes
-    @height = @height +=1
+    @height = @height + 0.4
     @oranges = 0
     if @height > 10
       puts "tree has died"
       @tree = false
     elsif @height > 2
-      @oranges = @height * rand(5)
-      puts "tree is #{@height}m and has grown #{@oranges} oranges this year"
+      @oranges = (@height * 15 - 25).to_i
+      "This year your tree grew to #{@height.round(1)}m tall," +
+          " and produced #{@oranges} oranges."
+
     else
-      puts "tree is #{@height}m and has grown #{@oranges} oranges this year"
+     "This year your tree grew to #{@height.round(1)}m tall," +
+          " but is still too young to bear fruit."
     end
   end
-  def pick_an_orange
-    if @oranges > 0
-        @oranges = @oranges -= 1
-        "orange picked"
+   def pick_an_orange
+    if @tree==true
+      if @oranges > 0
+        @oranges = @oranges - 1
+        'You pick a juicy, delicious orange!'
+      else
+        'You search every branch, but find no oranges.'
+      end
     else
-        "no oranges"
+      'A dead tree has nothing to pick. :('
     end
   end
-  def orange_count
+
+  def count_the_oranges
     if @tree == true
-      puts "tree has #{@oranges} oranges"
+      @oranges
+     #puts "tree has #{@oranges} oranges"
     else
-      "tree is dead"
+       'A dead tree has no oranges. :('
     end
   end
 
 end
 
-tree =OrangeTree.new
-tree.height
-tree.one_year_passes
-tree.one_year_passes
-tree.one_year_passes
-tree.one_year_passes
-tree.one_year_passes
-tree.one_year_passes
+# tree =OrangeTree.new
+# tree.height
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
 
-tree.pick_an_orange
-tree.orange_count
-tree.one_year_passes
-tree.one_year_passes
+# p tree.pick_an_orange
+# p tree.count_the_oranges
+# tree.one_year_passes
+# tree.one_year_passes
 
-tree.pick_an_orange
-tree.orange_count
-tree.one_year_passes
-tree.one_year_passes
+# tree.pick_an_orange
+# tree.count_the_oranges
+# tree.one_year_passes
+# tree.one_year_passes
 
-tree.pick_an_orange
-tree.orange_count
-tree.one_year_passes
-tree.one_year_passes
+# tree.pick_an_orange
+# tree.count_the_oranges
+# tree.one_year_passes
+# tree.one_year_passes
 
-tree.pick_an_orange
-tree.orange_count
+# tree.pick_an_orange
+# tree.count_the_oranges

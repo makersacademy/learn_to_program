@@ -78,24 +78,13 @@ def english_number number
 
   if write > 0
     if ((write == 1) and (left > 0))
-      # Since we can't write "tenty-two" instead of
-      # "twelve", we have to make a special exception
-      # for these.
       num_string = num_string + teenagers[left-1]
-      # The "-1" is because teenagers[3] is
-      # 'fourteen', not 'thirteen'.
-
-      # Since we took care of the digit in the
-      # ones place already, we have nothing left to write.
       left = 0
     else
       num_string = num_string + tens_place[write-1]
-      # The "-1" is because tens_place[3] is
-      # 'forty', not 'thirty'.
     end
 
     if left > 0
-      # So we don't write 'sixtyfour'...
       num_string = num_string + '-'
     end
   end

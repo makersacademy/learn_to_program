@@ -7,19 +7,17 @@ key = {
 50    => "L",
 10    => "X",
 5     => "V",
-1 	  => "I"
+1 	  => "I",
 }
 
 numerals = ""
 
 key.each do |n, r|
-	numeral += roman * (num/n)
+	numerals += r * (num/n)
 	num = num % n
 	end
 	numerals
 end
-
-
 
 
 #For reference, these are the values of the letters used:

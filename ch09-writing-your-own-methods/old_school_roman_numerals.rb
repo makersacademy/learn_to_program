@@ -1,26 +1,13 @@
 def old_roman_numeral num
   # your code here
-m = num / 1000
-num = num - m*1000
+  conv = ''
+conv = conv + 'M' * (num / 1000)
+conv = conv + 'D' * (num % 1000 / 500)
+conv = conv + 'C' * (num % 500 / 100)
+conv = conv + 'L' * (num % 100 / 50)
+conv = conv + 'X' * (num % 50 / 10)
+conv = conv + 'V' * (num % 10 / 5)
+conv = conv + 'I' * (num % 5 / 1)
+return conv
 
-d = num / 500
-num = num - d*500
-
-c = num /100
-num = num - c*100
-
-l = num/50
-num = num - l*50
-
-x = num/10
-num = num - x*10
-
-v = num/5
-num = num - v*5
-
-i = num
-
-puts 'M'*m + 'D'*d + 'C'*c + 'L'*l + 'X'*x + 'V'*v + 'I'*i
-
-	
 end

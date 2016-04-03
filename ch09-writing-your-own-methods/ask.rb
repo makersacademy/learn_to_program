@@ -20,7 +20,7 @@ end
 # puts(ask('Do you like eating tacos?'))
 =end
 
-#How Chris Pine would do it
+##How Chris Pine would do it
 def ask(question)
 while true
   puts question

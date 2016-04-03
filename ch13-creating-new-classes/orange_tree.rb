@@ -1,69 +1,56 @@
-#Since we need to have same Chris Pine's values tu pass the spec
-#my program doesn't pass it even when it works.
-
 class OrangeTree
-
   def initialize
-	@height = 0 #in metres
-	@age = 0 #in years
-	@oranges = 0
-	@alive = true
-	puts "We have our first tree."
+    @height = 0
+    @oranges = 0
+    @alive = true
   end
-
 
   def height
-  	if @alive
-  	puts "The tree is #{@height} meters tall."
-  else
-  	puts "The tree is dead!"
-  end
-  end
-
-  def one_year_passes 
-  	if @alive
-  	@age += 1
-  	@height += 0.4 # to match spec we can't choose a value as the book sugested!
-  	@oranges = 0
-  	puts "A year passes, now the tree is #{@age} years old."
-  	puts "It also grows, now it is #{@height} meters tall."
-  	  if @age > 24
-  		puts "But a time comes when the tree gets very old and dies!"
-  		exit
-  	  else
-  	    if @height > 2
-  		@oranges += (@height * 15 - 25).to_i
-  		puts "Besides, the tree starts giving fruit!"
-		elsif @height <= 2
-  	  	puts "The tree is still to small to give fruits."
-  	  	else 
-  		@oranges += (@height * 12).to_i
-  		puts "As time goes by, the tree gives more fruits, we have now #{@oranges} oranges!"
-  	  	end
-  	  end
+    if @alive
+      @height.round(1)
+    else
+      'A dead tree is not very tall. :('
     end
-end
+  end
 
   def count_the_oranges
-  	if @alive
-  		@oranges
-  	puts "We have #{@oranges}!"
-  else
-  	puts "The tree is dead we have no oranges."
-  end
-  end
-
-  def pick_an_orange 
-  	@oranges -= 1
-  	puts "The orange was delicious!"
-  	puts "But now we have #{@oranges} oranges left!"
-  	if @oranges == 0
-  		puts "There are no oranges left!"
-  	end
+    if @alive
+      @oranges
+    else
+      'A dead tree has no oranges. :('
     end
   end
 
-  tree = OrangeTree.new
-  23.times do 
-  	tree.one_year_passes
-  	end
+  def one_year_passes
+    if @alive
+      @height = @height + 0.4
+      @oranges = 0 # oranges fall off with a new year
+      if @height > 10 && rand(2) > 0 # rand so the tree dies 50% of the times when it is taller than 10 meters
+        @alive = false
+        'Oh, no! The tree is too old, and has died. :('
+      elsif @height > 2 #tree old enough to give oranges
+        @oranges = (@height * 15 - 25).to_i
+        "This year your tree grew to #{@height.round(1)}m tall," +
+          " and produced #{@oranges} oranges."
+      else
+        "This year your tree grew to #{@height.round(1)}m tall," +
+          " but is still too young to bear fruit."
+      end
+    else
+      'A year later, the tree is still dead. :('
+    end
+  end
+
+  def pick_an_orange
+    if @alive
+      if @oranges > 0
+        @oranges -= 1
+        'You pick a juicy, delicious orange!'
+      else
+        'You search every branch, but find no oranges.'
+      end
+    else
+      'A dead tree has nothing to pick. :('
+    end
+  end
+end

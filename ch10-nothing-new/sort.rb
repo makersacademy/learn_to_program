@@ -28,7 +28,7 @@ def rec_sort unsorted, sorted
  end
   
   
-#puts(sort([' can' ,' feel' ,' singing' ,' like' ,' a' ,' can' ]))
+puts(sort([' can' ,' feel' ,' singing' ,' like' ,' a' ,' can' ]))
 
 #So basically we are finding the smallest word using the 'each' iterator and then
 #we run 'sort' method (don't understand why we need thwo methods!!)

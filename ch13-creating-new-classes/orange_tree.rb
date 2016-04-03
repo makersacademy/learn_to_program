@@ -39,14 +39,12 @@ class OrangeTree
  def one_year_passes
     if @alive == true
       @height = @height + 0.4
-      @oranges = 0 # old oranges fall off
+      @oranges = 0 
       
-      if @height > 10 && rand(2) > 0
-        # tree dies
+      if @height > 10.1
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2
-        # new oranges grow
         @oranges = (@height * 15 - 25).to_i
         "This year your tree grew to #{@height.round(1)}m tall," +
           " and produced #{@oranges} oranges."

@@ -57,31 +57,31 @@ class OrangeTree
 
 end
 
-tree =OrangeTree.new
-tree.height
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
+# tree =OrangeTree.new
+# tree.height
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
+# p tree.one_year_passes
 
 # p tree.pick_an_orange
 # p tree.count_the_oranges

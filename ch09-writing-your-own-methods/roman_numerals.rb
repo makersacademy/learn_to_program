@@ -25,4 +25,3 @@ def roman_numeral num
   end
   puts answer
 end
-

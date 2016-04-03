@@ -1,3 +1,4 @@
+#How you and I could do it
 # using the shuffle method as defined above
 
 all_oggs = shuffle(Dir['**/*.ogg'])

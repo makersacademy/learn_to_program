@@ -4,3 +4,4 @@ def program_log desc, &block
   result = block.call
   puts "...#{desc.inspect} finished, returning: #{result}"
 end
+

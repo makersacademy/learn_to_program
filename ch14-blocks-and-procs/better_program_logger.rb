@@ -1,59 +1,20 @@
-#How Chris Pine would do it
-$logger_depth = 0
-
-def log desc, &block
-  prefix = ' '*$logger_depth
-  puts prefix+"Beginning #{desc.inspect}..."
-  $logger_depth += 1
-  result = block[]
-  $logger_depth -= 1
-  puts prefix+"...#{desc.inspect} finished, returning: #{result}"
-end
-
-log 'outer block' do
-  log 'some little block' do
-    log 'teeny-tiny block' do
-      'lOtS oF lOVe'.downcase
-    end
-    7 * 3 * 2
-  end
-
-  log 'yet another block' do
-    '!doof naidnI evol I'.reverse
-  end
-  '0' == "0"
-end
-
-#how you could do it
-=begin
-$logger_depth = 0
-
-def log desc, &block
-  prefix = ' '*$logger_depth
-
-  puts prefix + 'Beginning "' + desc + '"...'
-
-  $logger_depth = $logger_depth + 1
-
-  result = block.call
-
-  $logger_depth = $logger_depth - 1
-  puts prefix + '..."' + desc + '" finished, returning: ' + result.to_s
-end
-
-log 'outer block' do
-  log 'some little block' do
-    log 'teeny-tiny block' do
-      'lOtS oF lOVe'.downcase
-    end
-
-    7 * 3 * 2
-  end
-
-  log 'yet another block' do
-    '!doof naidnI evol I'.reverse
-  end
-
-  '0' == "0"
-end
-=end
++$log = 0
+ +def better_log desc, &block
+ +  space = " "*$log
+ +  puts space + "Beginning \"#{desc}\"..."
+ +  $log += 1
+ +  result = block.call
+ +  $log -= 1
+ +  puts space + "...\"#{desc}\" finished, returning: #{result}"
+ +end
+ +
+ +better_log 'outer block' do
+ +  better_log 'some little block' do
+ +
+ +    better_log 'yet another block' do
+ +     '!doof iahT ekil I'.reverse
+ +    end
+ +      1**1 + 2**2
+ +    end
+ +'0' == 0
+ + end

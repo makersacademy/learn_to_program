@@ -1,3 +1,3 @@
 def ask question
-  # your code here
+  # Impreove ask method - Chris Pine CH09 - p66
 end

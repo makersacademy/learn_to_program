@@ -45,7 +45,7 @@ class BeerSong
           name = english_number write
           num_string = num_string + name + ' ' + value
           if left > 0
-          words = words + ' '
+          num_string = num_string + ' '
           end
         end
       end
@@ -56,14 +56,14 @@ class BeerSong
 
   if write > 0
     if (write == 1) and (left > 0)
-      words = words + teens[left-1]
+      num_string = num_string + teens[left-1]
       left = 0
     else
-      words = words + tens[write-1]
+      num_string = num_string + tens[write-1]
     end
 
     if left > 0
-      words = words + '-'
+      num_string = num_string + '-'
     end
   end
 
@@ -71,7 +71,7 @@ write = left
 left = 0
 
   if write > 0
-  words = words + ones[write-1]
+  num_string = num_string + ones[write-1]
   end
   words
 end

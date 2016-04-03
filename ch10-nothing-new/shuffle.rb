@@ -10,3 +10,8 @@ def shuffle arr
 
 end
 
+song_names = Dir['**/*.{mp3}'].to_a
+
+song_names
+
+

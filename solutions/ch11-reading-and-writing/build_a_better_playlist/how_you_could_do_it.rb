@@ -41,7 +41,7 @@ def music_shuffle filenames
     arr.push(filenames[(idx+cut)%len])
     idx = idx + 1
   end
-  
+
   arr
 end
 # songs = ['aa/bbb', 'aa/ccc', 'aa/ddd',

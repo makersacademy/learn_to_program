@@ -1,14 +1,14 @@
 def log desc, &block
-  puts 'Beginning ' + desc + '...' #"something"
-call = block.call
+  puts "Beginning #{desc.inspect}..."
+call = block[]
 
-  puts '...' + desc + ' finished, returning: ' + call.to_s
+  puts "...#{desc.inspect} finished, returning:   #{call}"
 
 end
 
 log 'outer block' do
   log 'some little block' do
-    2 + 2 + 1
+    5
   end
 
 log 'yet another block' do
@@ -19,6 +19,5 @@ end
 end
 
 
-#some other block do - puts - end
 
 

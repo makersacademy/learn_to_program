@@ -1,7 +1,7 @@
 
   def profile block_description, &block
-profile = false
-if profile == true
+profiling = false
+if profiling == true
   start_time = Time.new
   block.call
   duration = Time.new - start_time

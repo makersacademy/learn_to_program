@@ -38,7 +38,7 @@ class BeerSong
 
     zillions.each do |value, key|
           key = 10**key
-      until position < key
+      until left < key
         write = left/key
        left = left%key
         if write > 0
@@ -73,7 +73,7 @@ left = 0
   if write > 0
   num_string = num_string + ones[write-1]
   end
-  words
+  num_string
 end
 
   

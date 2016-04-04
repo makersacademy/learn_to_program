@@ -1,20 +1,17 @@
 def log desc, &block
-  # your code here
-  def log desc, &block
-  puts "Beginning #{desc.inspect}..."
-  result = block[]
-  puts "...#{desc.inspect} finished, returning: #{result}"
+  puts 'Beginning "' + desc + '"...'
+  result = block.call
+  puts '..."' + desc + '" finished, returning: ' + result.to_s
 end
 
 log 'outer block' do
   log 'some little block' do
-    5
+    1**1 + 2**2
   end
 
   log 'yet another block' do
-    'I like Thai food!'
+    '!doof iahT ekil I'.reverse
   end
 
-  false
-end
+  '0' == 0
 end

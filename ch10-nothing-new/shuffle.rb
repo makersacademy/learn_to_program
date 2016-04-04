@@ -1,3 +1,5 @@
 def shuffle arr
-  # your code here
+ arr.shuffle
 end
+
+# Could use arr.shuffle(random: Random.new(1)) according to ruby docs.

@@ -13,7 +13,7 @@ return 'Please enter a number that isn\'t negative.'
    # "write" is the part we are writing out right now. write and left...get it? :)
 
    left = number
-   
+
    write = left/(10**100)
    left = left - write*(10**100)
    if write > 0

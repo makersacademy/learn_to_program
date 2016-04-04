@@ -1,9 +1,20 @@
-def sort(arr)
- recursive_sort(arr,[])
+def dictionary_sort arr
+  recursive_dict_sort arr, []
 end
 
-def recursive_sort(unsorted_array, sorted_array)
- unsorted_array.each_with_index {|val, index| val.downcase == unsorted_array.min ? sorted_array..downcase.push(unsorted_array.delete_at(index)) : false}
- recursive_sort(unsorted_array, sorted_array) until unsorted_array.length == 0
- sorted_array
+def recursive_dict_sort(unsorted, sorted)
+  return sorted if unsorted.length <= 0
+  smallest = unsorted.pop
+  still_unsorted = []
+
+  unsorted.each do |item|
+    if item.downcase < smallest.downcase
+      still_unsorted.push(smallest)
+      smallest = item
+    else
+      still_unsorted.push(item)
+    end
+  end
+  sorted.push(smallest)
+  recursive_dict_sort(still_unsorted, sorted)
 end

@@ -12,6 +12,67 @@ return 'Please enter a number that isn\'t negative.'
    # "left" is how much of the number we still have left to write out.
    # "write" is the part we are writing out right now. write and left...get it? :)
    left = number
+
+   write = left/(10**100)
+   left = left - write*(10**100)
+   if write > 0
+     googols = english_number(write)
+     num_string = num_string + googols + ' googol'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+
+   write = left/(10**63)
+   left = left - write*(10**63)
+   if write > 0
+     vigintillions = english_number(write)
+     num_string = num_string + vigintillions + ' vigintillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+
+   write = left/(10**60)
+   left = left - write*(10**60)
+   if write > 0
+     novemdecillions = english_number(write)
+     num_string = num_string + novemdecillions + ' novemdecillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+
+   write = left/(10**57)
+   left = left - write*(10**57)
+   if write > 0
+     octodecillions = english_number(write)
+     num_string = num_string + octodecillions + ' octodecillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+
+   write = left/(10**54)
+   left = left - write*(10**54)
+   if write > 0
+     septendecillions = english_number(write)
+     num_string = num_string + septendecillions + ' septendecillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+
+   write = left/(10**51)
+   left = left - write*(10**51)
+   if write > 0
+     sexdecillions = english_number(write)
+     num_string = num_string + sexdecillions + ' sexdecillion'
+     if left > 0
+       num_string = num_string + ' '
+     end
+   end
+
    write = left/(10**48)
    left = left - write*(10**48)
    if write > 0
@@ -21,6 +82,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**45)
    left = left - write*(10**45)
    if write > 0
@@ -30,6 +92,7 @@ return 'Please enter a number that isn\'t negative.'
       num_string = num_string + ' '
      end
    end
+
    write = left/(10**42)
    left = left - write*(10**42)
    if write > 0
@@ -39,6 +102,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**39)
    left = left - write*(10**39)
    if write > 0
@@ -48,6 +112,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**36)
    left = left - write*(10**36)
    if write > 0
@@ -57,6 +122,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**33)
    left = left - write*(10**33)
    if write > 0
@@ -66,6 +132,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**30)
    left = left - write*(10**30)
    if write > 0
@@ -75,6 +142,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**27)
    left = left - write*(10**27)
    if write > 0
@@ -84,6 +152,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**24)
    left = left - write*(10**24)
    if write > 0
@@ -93,6 +162,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**21)
    left = left - write*(10**21)
    if write > 0
@@ -102,6 +172,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**18)
    left = left - write*(10**18)
    if write > 0
@@ -111,6 +182,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**15)
    left = left - write*(10**15)
    if write > 0
@@ -120,6 +192,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/(10**12)
    left = left - write*(10**12)
    if write > 0
@@ -129,6 +202,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/1000000000
    left = left - write*1000000000
    if write > 0
@@ -138,6 +212,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/1000000
    left = left - write*1000000
    if write > 0
@@ -147,6 +222,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/1000
    left = left - write*1000
    if write > 0
@@ -156,6 +232,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/100
   left = left - write*100
    if write > 0
@@ -165,6 +242,7 @@ return 'Please enter a number that isn\'t negative.'
        num_string = num_string + ' '
      end
    end
+
    write = left/10
    left = left - write*10
    if write > 0
@@ -192,9 +270,7 @@ return 'Please enter a number that isn\'t negative.'
    num_string
 end
 
-
-
-beginning_number = 5
+beginning_number = 9
 number = beginning_number
 while number > 2
   puts "#{english_number(number).capitalize} bottles of beer on the wall, #{english_number(number)} bottles of beer!"
@@ -204,7 +280,7 @@ end
 
 if number == 2
   puts "#{english_number(number).capitalize} bottles of beer on the wall, #{english_number(number)} bottles of beer!"
-  puts "Take one down, pass it around, #{english_number(bottles-1)} bottle of beer on the wall!"
+  puts "Take one down, pass it around, #{english_number(number-1)} bottle of beer on the wall!"
   number = number - 1
 end
 
@@ -212,5 +288,3 @@ end
    puts "#{english_number(number).capitalize} bottle of beer on the wall, #{english_number(number)} bottle of beer!"
    puts "Take one down, pass it around, no more bottles of beer on the wall!"
  end
-
-#done - need to check with rspec

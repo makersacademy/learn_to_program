@@ -1,8 +1,8 @@
 def profile block_description, &block
   # To turn profiling on/off, set this
   # to true/false.
-  profiling_on = false
-  if profiling_on
+  $OPT_PROFILING_ON = true
+  if $OPT_PROFILING_ON == true
     start_time = Time.new
     block.call
 
@@ -15,5 +15,5 @@ end
 
 
 profile 'block' do
-  (2 + 3)
+  (2+3)
 end

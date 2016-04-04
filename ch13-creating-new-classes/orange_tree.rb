@@ -1,12 +1,14 @@
+# note we have added a rounding operation on the height to ensure
+# the output is sensible in terms of decimal places
+
 class OrangeTree
-  # your code here
   def initialize
     @height = 0
     @orange_count = 0
     @alive = true
   end
-#copied from Chris Pine to pass the rspec test
-def height
+
+  def height
     if @alive
       @height.round(1)
     else
@@ -57,3 +59,20 @@ def height
     end
   end
 end
+
+# ot = OrangeTree.new
+# 23.times do
+#   ot.one_year_passes
+# end
+
+# puts(ot.one_year_passes)
+# puts(ot.count_the_oranges)
+# puts(ot.height)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.height)
+# puts(ot.count_the_oranges)
+# puts(ot.pick_an_orange)

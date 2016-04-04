@@ -12,3 +12,8 @@ def profile block_description, &block
     block.call
   end
 end
+
+
+profile 'block' do
+  (2 + 3)
+end

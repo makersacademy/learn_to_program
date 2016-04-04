@@ -5,7 +5,7 @@ tab =  " " * $indent
 puts tab + 'Beginning "' + desc + '"...'
   $indent = $indent +=1
   result = block.call
-  $indent = $indent +=1
+  $indent = $indent -=1
 puts tab + '..."' + desc + '" finished, returning: ' + result.to_s
 end
 log 'outer block' do

@@ -1,3 +1,3 @@
 def shuffle arr
-  # your code here
+  sort_by( rand )
 end

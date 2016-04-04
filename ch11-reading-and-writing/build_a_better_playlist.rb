@@ -1,3 +1,4 @@
 def music_shuffle filenames
-  # your code here
+	filenames = sort_by ( rand )
+  filenames
 end

@@ -12,6 +12,6 @@ log 'outer block' do
   log 'yet another block' do
     '!doof iahT ekil I'.reverse
   end
-
+end
   '0' == 0
 end

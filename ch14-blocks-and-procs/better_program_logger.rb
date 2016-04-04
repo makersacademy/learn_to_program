@@ -20,5 +20,6 @@ log 'outer block' do
   log 'yet another block' do
     '!doof naidnI evol I'.reverse
   end
+end
   '0' == "0"
 end

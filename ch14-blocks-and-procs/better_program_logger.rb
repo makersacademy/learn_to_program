@@ -16,10 +16,10 @@ log 'outer block' do
     end
     7 * 3 * 2
   end
-
+end
   log 'yet another block' do
     '!doof naidnI evol I'.reverse
   end
-end
+
   '0' == "0"
 end

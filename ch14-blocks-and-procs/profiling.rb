@@ -1,12 +1,8 @@
-$profile_on = true 
-
 def profile block_description, &block
-  if $profile_on 
-    start_time = Time.new
-    block.call
-    duration = Time.new - start_time
-    puts "#{block_description}: #{duration} seconds"
-  end
+  start_time = Time.new
+  block.call
+  duration = Time.new - start_time
+  puts "#{block_description}: #{duration} seconds"
 end
 
 profile '25000 doublings' do

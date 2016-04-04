@@ -114,32 +114,13 @@ class OrangeTree
     end
   end
 end
-# tree =OrangeTree.new
-# tree.height
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-# p tree.one_year_passes
-
+tree =OrangeTree.new
+tree.height
+ 23.times { tree.one_year_passes}
+p tree.one_year_passes
+p tree.count_the_oranges
+p tree.height
+p tree.one_year_passes
 # p tree.pick_an_orange
 # p tree.count_the_oranges
 # tree.one_year_passes

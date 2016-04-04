@@ -83,7 +83,7 @@ class OrangeTree
     if @alive
       @height = @height + 0.4
       @orange_count = 0 # old oranges fall off
-      if @height > 26
+      if @height > 11
         # tree dies
         @alive = false
         'Oh, no! The tree is too old, and has died. :('

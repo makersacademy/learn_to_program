@@ -1,3 +1,5 @@
 def log desc, &block
-  # your code here
+  p "Beginning #{desc.inspect}..."
+  output = block.call
+  p "#{desc.inspect} finished, returning: #{output}"
 end

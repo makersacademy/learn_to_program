@@ -1,32 +1,33 @@
 def roman_to_integer roman
 
-  digit_vals =
-               {'i' => 1,
-                'v' => 5,
-                'x' => 10,
-                'l' => 50,
-                'c' => 100,
-                'd' => 500,
-                'm' => 1000}
-  total = 0
-  prev = 0
-  index = roman.length - 1
-  while index >= 0
-    c = roman[index].downcase
-    index = index - 1
-    val = digit_vals[c]
-    if !val
-      puts 'This is not a valid roman numeral!'
-      return
-    end
+   roman_nums =
+       {"M" => 1000,
+       "CM" => 900,
+        "D" => 500,
+       "CD" => 400,
+        "C" => 100,
+       "XC" => 90,
+        "L" => 50,
+       "XL" => 40,
+        "X" => 10,
+       "IX" => 9,
+        "V" => 5,
+       "IV" => 4,
+        "I" => 1}
 
-    if val < prev
-      val = val * -1
-    else
-      prev = val
-    end
-    total = total + val
-  end
 
-  total
-end
+ roman = roman.upcase.split(//)
+ num = 0
+
+ roman.each_with_index do |val, index|
+   if index + 1 < roman.length && roman_nums.has_key?(val + roman[index + 1])
+       num = num + roman_nums[val + roman[index + 1]]
+   elsif roman_nums.has_key?(val)
+    next if roman_nums.has_key?(roman[index - 1] + val) && index - 1 >= 0
+     num = num + roman_nums[val]
+   else
+     return "Error"
+   end
+   end
+   return num
+ end

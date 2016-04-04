@@ -1,5 +1,8 @@
 class Integer
   # your code here
+def factorial
+   	self.downto(1).reduce(:*)
+   end
 
   def to_roman
   

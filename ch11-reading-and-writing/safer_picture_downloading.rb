@@ -1,1 +1,67 @@
-# your code here
+#Safer picture downloading.
+#Adapt the picture-downloading/file-renaming
+#program to your computer by adding some safety features to make sure
+#you never overwrite a file. A few methods you might find useful are
+#File.exist? (pass it a filename, and it will return true or false) and exit (like if
+#return and Napoleon had a baby—it kills your program right where it stands;
+#this is good for spitting out an error message and then quitting).
+
+# For Katy, with love.
+# (I always write little notes in the programs
+# I write for her. I deleted all of the dirty
+# ones, though, so that one is all that's left.)
+# This is where she stores her pictures before
+# she gets her YAML on and moves them to the server.
+# Just for my own convenience, I'll go there now.
+Dir.chdir['C:/Documents and Settings/Katy/PictureInbox']
+# First we find all of the pictures to be moved.
+pic_names = Dir['F:/**/*.jpg']
+puts 'What would you like to call this batch?'
+batch_name = gets.chomp
+
+Dir 'C:/Documents and Settings/Katy/PictureInbox'.
+print "Downloading #{pic_names.length} files: "
+# This will be our counter. We'll start at 1 today,
+# though normally I like to count from 0.
+pic_number = 1
+pic_names.each do |name|
+print '.' # This is our "progress bar".
+new_name = if pic_number < 10
+"#{batch_name}0#{pic_number}.jpg"
+else
+"#{batch_name}#{pic_number}.jpg"
+end
+
+
+  if File.exists?(new_name)
+  puts "error. file already exists! Do you want to overwrite. (yes or no)"
+  answer = gets.chomp.downcase
+if answer == 'no'
+  exit
+end
+else
+    File.rename name, new_name
+end
+
+# This renames the picture, but since "name"
+# has a big long path on it, and "new_name"
+# doesn't, it also moves the file to the
+# current working directory, which is now
+# Katy's PictureInbox folder.
+# Since it's a *move*, this effectively
+# downloads and deletes the originals.
+# And since this is a memory card, not a
+# hard drive, each of these takes a second
+# or so; hence, the little dots let her
+# know that my program didn't hose her machine.
+# (Some marriage advice from your favorite
+# author/programmer: it's all about the
+# little things.)
+# Now where were we? Oh, yeah...
+
+
+# Finally, we increment the counter.
+pic_number = pic_number + 1
+end
+puts # This is so we aren't on progress bar line.
+puts 'Done, cutie!'

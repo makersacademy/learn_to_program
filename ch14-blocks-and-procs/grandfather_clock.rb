@@ -11,3 +11,8 @@ hour = Time.new.hour
 
 hour.times(&block)
 end
+
+
+grandfather_clock do
+puts 'DONG!'
+end

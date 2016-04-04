@@ -2,21 +2,21 @@ def log desc, &block
   # your code here
 
   puts "Beginning \"#{desc}\"..."
-  block.call
+  result =block.call
 
-puts "...\"#{desc}\" finished, returning:"
+puts "...\"#{desc}\" finished, returning: #{result}"
 end
 
 log 'outer block' do
   log 'some little block' do
-    5 * 1
+   5 * 1
   end
 
   log 'yet another block' do
     puts 'I like Thai food!'
   end
   
-  1 == 0 
+   false
 end
 
 #Beginning "outer block"...

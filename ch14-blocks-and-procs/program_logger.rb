@@ -1,3 +1,4 @@
+=begin
 def log desc, &block
   puts 'Beginning "' + desc + '"...'
   result = block.call
@@ -14,4 +15,11 @@ log 'outer block' do
   end
 
   '0' == 0
+end
+=end
+
+def program_log desc, &block
+  puts "Beginning \"#{desc}\"..."
+  result = block.call
+  puts "...\"#{desc}\" finished, returning: #{result.to_s}"
 end

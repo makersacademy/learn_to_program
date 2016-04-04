@@ -1,3 +1,3 @@
 def shuffle arr
-  # your code here
+return arr.shuffle # your code here
 end

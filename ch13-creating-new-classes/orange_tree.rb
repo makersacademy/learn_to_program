@@ -83,7 +83,7 @@ class OrangeTree
     if @alive
       @height = @height + 0.4
       @orange_count = 0 # old oranges fall off
-      if @height > 11
+      if @height > 10.4
         # tree dies
         @alive = false
         'Oh, no! The tree is too old, and has died. :('
@@ -120,6 +120,7 @@ tree.height
 p tree.one_year_passes
 p tree.count_the_oranges
 p tree.height
+p tree.one_year_passes
 p tree.one_year_passes
 # p tree.pick_an_orange
 # p tree.count_the_oranges

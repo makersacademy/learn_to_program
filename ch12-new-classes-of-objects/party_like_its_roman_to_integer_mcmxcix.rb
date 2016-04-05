@@ -1,33 +1,56 @@
 def roman_to_integer roman
 
-   roman_nums =
-       {"M" => 1000,
-       "CM" => 900,
+  single_romans =
+       {
+        "M" => 1000,
         "D" => 500,
-       "CD" => 400,
         "C" => 100,
-       "XC" => 90,
         "L" => 50,
-       "XL" => 40,
         "X" => 10,
-       "IX" => 9,
         "V" => 5,
-       "IV" => 4,
-        "I" => 1}
+        "I" => 1
+      }
 
+  double_romans =
+      {
+        "CM" => 900,
+        "CD" => 400,
+        "XC" => 90,
+        "XL" => 40,
+        "IX" => 9,
+        "IV" => 4
+      }
 
- roman = roman.upcase.split(//)
- num = 0
+#Here I have replaced all new romans with old romans, so I can take one
+#letter at a time, and then work from left to right.
 
- roman.each_with_index do |val, index|
-   if index + 1 < roman.length && roman_nums.has_key?(val + roman[index + 1])
-       num = num + roman_nums[val + roman[index + 1]]
-   elsif roman_nums.has_key?(val)
-    next if roman_nums.has_key?(roman[index - 1] + val) && index - 1 >= 0
-     num = num + roman_nums[val]
-   else
-     return "Error"
-   end
-   end
-   return num
- end
+roman = roman.upcase # This is to convert all to uppercase, so that it can recognise all.
+
+result = 0 # After converting the roman numerals, we then add them to this total
+split_array = roman.chars #split the array into single characters
+
+split_array.each do |key|
+  unless single_romans.include?(key)
+    puts "Not a valid roman numeral"
+end
+end #here this searches for an invalid roman numeral
+
+while roman.length > 0 #Here we search for doubles first, and add to rseult
+  double_romans.each do |key,value|
+    if roman.include?(key)
+      result += value
+      roman.slice!(key) # takes away from the original roman numeral
+    end
+end
+
+      roman.length > 0 #Here we search for singles, and add to result
+      single_romans.each do |key,value|
+        if roman.include?(key)
+      result += value
+      roman.slice!(key) # takes away from the original roman numeral
+    end
+end
+end
+
+result
+end

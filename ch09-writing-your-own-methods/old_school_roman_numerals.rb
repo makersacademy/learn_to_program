@@ -4,7 +4,21 @@ For reference, these are the values of the letters used:
 I = 1 V = 5 X = 10 L = 50 C = 100 D = 500 M = 1000
 =end
 
-#How Chris Pine would do it
+
+def old_roman_numeral num
+  # your code here
+  letters = { M:1000,D:500, C:100,L: 50,X: 10,V: 5,I: 1 }
+  result = ""
+
+  letters.values.each_with_index do |value,index|
+    digit = num / value
+    result += letters.keys[index].to_s*digit
+    num -= digit*value
+  end
+  result
+end
+
+=begin
 def old_roman_numeral num
   raise 'Must use positive integer' if num <= 0
 
@@ -20,10 +34,10 @@ def old_roman_numeral num
 
   roman
 end
+=end
 
-# puts(old_roman_numeral(1999))
+#to test# puts(old_roman_numeral(1999))
 
-#how you could do it
 =begin
 def old_roman_numeral num
   roman = ''
@@ -38,5 +52,5 @@ def old_roman_numeral num
   roman
 end
 
-# puts(old_roman_numeral(1999))
+#to test# puts(old_roman_numeral(1999))
 =end

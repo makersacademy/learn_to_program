@@ -1,5 +1,4 @@
-#How Chris Pine would do it
-puts 'Hey, when were you born? (Please use YYYYMMDD format.)'
+puts 'Hey, when were you born? (YYYYMMDD format.)'
 input = gets.chomp
 
 b_year = input[0..3].to_i
@@ -24,7 +23,6 @@ end
 
 age.times { puts 'SPANK!' }
 
-#how you could do it
 =begin
 puts 'What year were you born?'
 b_year = gets.chomp.to_i

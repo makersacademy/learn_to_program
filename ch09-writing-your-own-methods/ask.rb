@@ -8,7 +8,5 @@ def ask question
 
     puts 'Please answer "yes" or "no".'
   end
-  answer # This is what we return (true or false).
+  answer # This is what will return (true or false).
 end
-
-# puts(ask('Do you like eating tacos?'))

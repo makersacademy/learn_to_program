@@ -1,20 +1,10 @@
-+$log = 0
- +def better_log desc, &block
- +  space = " "*$log
- +  puts space + "Beginning \"#{desc}\"..."
- +  $log += 1
- +  result = block.call
- +  $log -= 1
- +  puts space + "...\"#{desc}\" finished, returning: #{result}"
- +end
- +
- +better_log 'outer block' do
- +  better_log 'some little block' do
- +
- +    better_log 'yet another block' do
- +     '!doof iahT ekil I'.reverse
- +    end
- +      1**1 + 2**2
- +    end
- +'0' == 0
- + end
+$nesting_depth = -1
+
+def better_log desc, &block
+  $nesting_depth += 1
+  nest = ' ' * $nesting_depth.to_i
+  puts "#{nest}Beginning \"#{desc}\"..."
+  result = block.call
+  puts "#{nest}...\"#{desc}\" finished, returning: #{result.to_s}"
+  $nesting_depth -= 1
+end

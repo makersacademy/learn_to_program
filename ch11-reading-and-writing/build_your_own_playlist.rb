@@ -1,6 +1,3 @@
-#How Chris Pine would do it
-# using the shuffle method as defined above
-
 all_oggs = shuffle(Dir['**/*.ogg'])
 
 File.open 'playlist.m3u', 'w' do |f|
@@ -9,4 +6,5 @@ File.open 'playlist.m3u', 'w' do |f|
   end
 end
 
+#is this line necessary to pass the testing on rspec?
 puts 'Done!'

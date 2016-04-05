@@ -1,37 +1,32 @@
-=begin
-“Ninety-nine Bottles of Beer on the Wall.” Using english_number and your old program on page 49, write out the lyrics to this song the right way this time. Punish your computer: have it start at 9999. (Don’t pick a number too large, though, because writing all of that to the screen takes your computer quite a while. A hundred thousand bottles of beer takes some time; and if you pick a million, you’ll be punishing yourself as well!)
-=end
+# DO NOT STRUGGLE ON THIS PROBLEM FOR MORE THAN 30 MINUTES!!
 
-#How Chris Pine would do it
-# english_number as above, plus this:
-num_at_start = 5 # change to 9999 if you want
-num_now = num_at_start
-while num_now > 2
-  puts english_number(num_now).capitalize + ' bottles of beer on the wall, ' +
-    english_number(num_now) + ' bottles of beer!'
-  num_now = num_now - 1
+# Write a program that outputs the lyrics for "Ninety-nine Bottles of Beer on the Wall"
+# Your program should print the number of bottles in English, not as a number. For example:
+#
+# Ninety-nine bottles of beer on the wall,
+# Ninety-nine bottles of beer,
+# Take one down, pass it around,
+# Ninety-eight bottles of beer on the wall.
+# ...
+# One bottle of beer on the wall,
+# One bottle of beer,
+# Take one down, pass it around,
+# Zero bottles of beer on the wall.
+#
+# Your program should not use ninety-nine output statements!
+# Design your program with a class named BeerSong whose initialize method
+# receives a parameter indicating the number of bottles of beer initially on the wall.
+# If the parameter is less than zero, set the number of bottles to zero. Similarly,
+# if the parameter is greater than 99, set the number of beer bottles to 99
+# Then make a public method called print_song that outputs all stanzas from the number of bottles of beer down to zero.
+# Add any additional methods you find helpful.
+
+num_bot = 5
+while num_bot > 2
+  puts english_number(num_bot).capitalize + ' bottles of beer on the wall, ' +
+    english_number(num_bot) + ' bottles of beer!'
+  num_bot -= 1
   puts 'Take one down, pass it around, ' +
-    english_number(num_now) + ' bottles of beer on the wall!'
+    english_number(num_bot) + ' bottles of beer on the wall!'
 end
-
-# puts "Two bottles of beer on the wall, two bottles of beer!"
-# puts "Take one down, pass it around, one bottle of beer on the wall!"
-# puts "One bottle of beer on the wall, one bottle of beer!"
-# puts "Take one down, pass it around, no more bottles of beer on the wall!"
-
-#How I would do it
-=begin
-# english_number as above, plus this:
-
-num_at_start = 5 # change to 9999 if you want
-
-num_bot = proc { |n| "#{english_number n} bottle#{n == 1 ? '' : 's'}" }
-
-num_at_start.downto(2) do |num|
-  puts "#{num_bot[num]} of beer on the wall, #{num_bot[num]} of beer!".capitalize
-  puts "Take one down, pass it around, #{num_bot[num-1]} of beer on the wall!"
-end
-
-puts "#{num_bot[1]} of beer on the wall, #{num_bot[1]} of beer!".capitalize
-puts "Take one down, pass it around, no more bottles of beer on the wall!"
-=end
+puts "One bottle of beer on the wall, one bottle of beer!", "Take one down, pass it around, no more bottles of beer on the wall!"

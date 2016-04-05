@@ -1,4 +1,3 @@
-#How Chris Pine would do it
 # using the Dragon class from the chapter
 puts 'What would you like to name your baby dragon?'
 name = gets.chomp
@@ -20,8 +19,6 @@ while true
   end
 end
 
-
-#How you could do it
 =begin
 # using the Dragon class from the chapter
 puts 'What would you like to name your baby dragon?'

@@ -40,9 +40,8 @@ def roman_numeral(num)
   roman
 end
 
-# puts(roman_numeral(1999))
+#to test# puts(roman_numeral(1999))
 
-#How Chris Pine would do it
 =begin
 def roman_numeral num
   raise 'Must use positive integer' if num <= 0
@@ -78,5 +77,5 @@ def roman_numeral num
   roman.reverse
 end
 
-# puts(old_roman_numeral(1999))
+#to test≈ puts(old_roman_numeral(1999))
 =end

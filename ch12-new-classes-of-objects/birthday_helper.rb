@@ -1,4 +1,3 @@
-#How Chris Pine would do it
 # First, load in the birthdates.
 birth_dates = {}
 
@@ -30,7 +29,6 @@ else
   end
 end
 
-#How you could do it
 =begin
 # First, load in the birthdates.
 birth_dates = {}

@@ -38,15 +38,9 @@ class OrangeTree
   end
 
   def pick_an_orange
-    if self.alive
-      if self.orange_count > 0
-        self.orange_count -= 1
-        "That was a delicious orange!"
-      else
-        "There are no oranges left to pick this year"
-      end
-    else
-      "A dead tree has nothing to pick. :("
-    end
+    return "A dead tree has nothing to pick. :(" unless self.alive
+    return "There are no oranges left to pick this year" if self.orange_count.zero?
+    self.orange_count -= 1
+    "That was a delicious orange!"
   end
 end

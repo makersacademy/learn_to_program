@@ -1,127 +1,114 @@
 def english_number number
-  special_cases = {
-  			0 => "zero",
-			1 => "one",
-			2 => "two",
-			3 => "three",
-			4 => "four",
-			5 => "five",
-			6 => "six",
-			7 => "seven",
-		 	8 => "eight",
-			9 => "nine",    
-			10 => "ten",
-		 	11 => "eleven",
-			12 => "twelve",
-			13 => "thirteen",
-			14 => "fourteen",
-			15 => "fifteen",
-			16 => "sixteen",
-			17 => "seventeen",
-			18 => "eighteen",
-			19 => "nineteen" } 
-		 
-		twenty = {  20 => "twenty" }
+  if number < 0 # No negative numbers.
+    return 'Please enter a number that isn\'t negative.'
+  end
+  if number == 0
+    return 'zero'
+  end
 
-		thirty = {  30 => "thirty" }
+  # No more special cases! No more returns!
 
-		forty = { 40 => "forty" }	
+  num_string = '' # This is the string we will return.
 
-		fifty = {  50 => "fifty" }
+  ones_place = ['one', 'two', 'three',
+                'four', 'five', 'six',
+                'seven', 'eight', 'nine']
 
-		sixty = {  60 => "sixty"  }
-
-		seventy = {  70 => "seventy" }	
-
-		eighty = {  80 => "eighty" }	
-
-		ninety = {  90 => "ninety" }	
-
-		hund = { 100 => "one hundred" }
-
-		thou = { 1000 => "one thousand" }
-
-		ten_thou = {10000 => "ten thousand" }
-
-		hun_thou = { 100000 => "one hundred thousand" }
-
-		mill = { 1000000 => "one million" }
+  tens_place = ['ten', 'twenty', 'thirty',
+                'forty', 'fifty', 'sixty',
+                'seventy', 'eighty', 'ninety']
 
 
-			if number < 20
-				return special_cases[number]
+  teenagers = ['eleven', 'twelve', 'thirteen',
+               'fourteen', 'fifteen', 'sixteen',
+               'seventeen', 'eighteen', 'nineteen']
 
-		 	elsif number < 30 
-				last_number = number.to_s[1]    
-		 		
-		 		if last_number == "0"
-		 			return  twenty[20]
-		 		else
-		 			return twenty[20] + "-"  + special_cases[last_number.to_i]
-		 		end
-		 	elsif number < 40
-		 		last_number = number.to_s[1]
-		 		if last_number == "0"
-		 			return  thirty[30]
-		 		else
-		 			return thirty[30] + "-" + special_cases[last_number.to_i]
-		 		end
-		 	elsif number < 50
-		 		last_number = number.to_s[1]
-		 		if last_number == "0"
-		 			return  forty[40]
-		 		else
-		 			return forty[40] + "-" + special_cases[last_number.to_i]
-		 		end	
-		 	elsif number < 60
-		 		last_number = number.to_s[1]
-		 		if last_number == "0"
-		 			return  fifty[50]
-		 		else
-		 			return fifty[50] + "-" + special_cases[last_number.to_i]
-		 		end	
-		 	elsif number < 70
-		 		last_number = number.to_s[1]
-		 		if last_number == "0"
-		 			return  sixty[60]
-		 		else
-		 			return sixty[60] + "-" + special_cases[last_number.to_i]
-		 		end	
-		 	elsif number < 80
-		 		last_number = number.to_s[1]
-		 		if last_number == "0"
-		 			return seventy[70]
-		 		else
-		 			return seventy[70] + "-" + special_cases[last_number.to_i]
-		 		end	
-		 	elsif number < 90
-		 		last_number = number.to_s[1]
-		 		if last_number == "0"
-		 			return  eighty[80]
-		 		else
-		 			return eighty[80] + "-" + special_cases[last_number.to_i]
-		 		end	
-		 	elsif number < 100
-		 		last_number = number.to_s[1]
-		 		if last_number == "0"
-		 			return  ninety[90]
-		 		else
-		 			return ninety[90] + "-" + special_cases[last_number.to_i]
-		 		end
-		 	elsif number < 1000
-		 		last_number = number.to_s[1]
-		 		very_last_number = number.to_s[2]
-		 		if last_number == "0" && very_last_number != "0"
-		 			return hund[100] + " " + special_cases[very_last_number.to_i]
-		 		end
-		 		if last_number == "0" && very_last_number == "0"
-		 			return  hund[100]
-		 		else
-		 			return hund[100] + " " + special_cases[last_number.to_i] + " " + special_cases[very_last_number.to_i]
-		 		end			
+  zillions = [['hundred', 2],
+              ['thousand', 3],
+              ['million', 6],
+              ['billion', 9],
+              ['trillion', 12],
+              ['quadrillion', 15],
+              ['quintillion', 18],
+              ['sextillion', 21],
+              ['septillion', 24],
+              ['octillion', 27],
+              ['nonillion', 30],
+              ['decillion', 33],
+              ['undecillion', 36],
+              ['duodecillion', 39],
+              ['tredecillion', 42],
+              ['quattuordecillion', 45],
+              ['quindecillion', 48],
+              ['sexdecillion', 51],
+              ['septendecillion', 54],
+              ['octodecillion', 57],
+              ['novemdecillion', 60],
+              ['vigintillion', 63],
+              ['googol', 100]]
 
-		 	end	
-	
+  # "left" is how much of the number
+  # we still have left to write out.
+  # "write" is the part we are
+  # writing out right now.
+  # write and left...get it? :)
+  left = number
+
+  while zillions.length > 0
+    zil_pair = zillions.pop
+    zil_name = zil_pair[0]
+    zil_base = 10 ** zil_pair[1]
+    write = left/zil_base # How many zillions left?
+    left = left - write*zil_base # Subtract off those zillions.
+
+    if write > 0
+      # Now here's the recursion:
+      prefix = english_number write
+      num_string = num_string + prefix + ' ' + zil_name
+
+      if left > 0
+        # So we don't write 'two billionfifty-one'...
+        num_string = num_string + ' '
+      end
+    end
+  end
+
+  write = left/10 # How many tens left?
+  left = left - write*10 # Subtract off those tens.
+
+  if write > 0
+    if ((write == 1) and (left > 0))
+      # Since we can't write "tenty-two" instead of
+      # "twelve", we have to make a special exception
+      # for these.
+      num_string = num_string + teenagers[left-1]
+      # The "-1" is because teenagers[3] is
+      # 'fourteen', not 'thirteen'.
+
+      # Since we took care of the digit in the
+      # ones place already, we have nothing left to write.
+      left = 0
+    else
+      num_string = num_string + tens_place[write-1]
+      # The "-1" is because tens_place[3] is
+      # 'forty', not 'thirty'.
+    end
+
+    if left > 0
+      # So we don't write 'sixtyfour'...
+      num_string = num_string + '-'
+    end
+  end
+
+  write = left # How many ones left to write out?
+  left = 0 # Subtract off those ones.
+
+  if write > 0
+    num_string = num_string + ones_place[write-1]
+    # The "-1" is because ones_place[3] is
+    # 'four', not 'three'.
+  end
+
+  # Now we just return "num_string"...
+  num_string
 end
-
-puts english_number(110)

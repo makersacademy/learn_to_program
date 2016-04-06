@@ -11,33 +11,33 @@ class OrangeTree
   def height
     if @alive
       @height.round(1)
-    else
-      'A dead tree is not very tall. :('
-    end
-  end
+   else
+     'A dead tree is not very tall. :('
+   end
+ end
 
-  def count_the_oranges
-    if @alive
-      @orange_count
-    else
-      'A dead tree has no oranges. :('
-    end
-  end
+ def count_the_oranges
+   if @alive
+     @orange_count
+   else
+     'A dead tree has no oranges. :('
+   end
+ end
 
-  def one_year_passes
+ def one_year_passes
     if @alive
       @height = @height + 0.4
       @orange_count = 0 # old oranges fall off
       if @height > 10 && rand(2) > 0
         # tree dies
         @alive = false
-        'Oh, no! The tree is too old, and has died. :('
-      elsif @height > 2
-        # new oranges grow
+       'Oh, no! The tree is too old, and has died. :('
+    elsif @height > 2
+       # new oranges grow
         @orange_count = (@height * 15 - 25).to_i
-        "This year your tree grew to #{@height.round(1)}m tall," +
-          " and produced #{@orange_count} oranges."
-      else
+       "This year your tree grew to #{@height.round(1)}m tall," +
+       " and produced #{@orange_count} oranges."
+   else
         "This year your tree grew to #{@height.round(1)}m tall," +
           " but is still too young to bear fruit."
       end
@@ -66,20 +66,23 @@ end
 #my code for orange tree which passes the rspec but not the CI
 #class OrangeTree
 
-#	def initialize
-#		@age = 0
+#def initialize
+#	@age = 0
 #		@height = 0
 #		@numberoranges = 0
+#		@dead = false
 #	end
-
+#
 #	def height
+ #   if @dead == false
 #		puts "The tree is #{@height} feet tall."
 #	end
-
-#	def count_the_oranges
+#
+#def count_the_oranges
+#  if @dead == false
 #		puts "The tree has #{@numberoranges} oranges."
 #	end
-
+#
 #	def pick_an_orange
 #		if @numberoranges < 1
 #			puts 'There are no oranges to pick.'
@@ -88,13 +91,14 @@ end
 #				@numberoranges = @numberoranges - 1
 #		end
 #	end
-
+#
 #	def one_year_passes
-#		puts 'One year passes'
+ #   if @dead == false
+	#	puts 'One year passes'
 #		@age = @age + 1
 #		@height = @height + 1
 #		@numberoranges = 0
-
+#end
 #		if dead?
 #			puts 'The Orange Tree dies'
 #			exit
@@ -105,13 +109,16 @@ end
 #			else
 #			@numberoranges = 0
 #		end
+#end
 
-#	end
 
 
 #		def dead?
-#			@age > 5
-#		end
+ #     if @age >= 5
+  #      @dead = true
+	#	end
 
+#  end
 #end
-
+#end
+#end

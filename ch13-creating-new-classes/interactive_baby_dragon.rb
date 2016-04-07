@@ -1,3 +1,4 @@
+
 # using the Dragon class from the chapter
 puts 'What would you like to name your baby dragon?'
 name = gets.chomp
@@ -18,6 +19,7 @@ while true
     puts 'Huh? Please type one of the commands.'
   end
 end
+
 
 =begin
 class Dragon

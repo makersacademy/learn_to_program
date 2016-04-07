@@ -10,9 +10,9 @@ describe 'a better playlist' do
   it 'shuffles songs' do
     songs = ['aa/bbb', 'aa/ccc', 'aa/ddd',
          'AAA/xxxx', 'AAA/yyyy', 'AAA/zzzz', 'foo/bar']
-    your_result = ['aa/ddd', 'AAA/xxxx', 'AAA/zzzz', 
+    your_result = ['aa/ddd', 'AAA/xxxx', 'AAA/zzzz',
          'aa/ccc', 'foo/bar', 'AAA/yyyy', 'aa/bbb']
-    his_result = ['foo/bar', 'AAA/zzzz', 'aa/ddd', 
+    his_result = ['foo/bar', 'AAA/zzzz', 'aa/ddd',
          'aa/ccc', 'AAA/xxxx', 'aa/bbb', 'AAA/yyyy']
     result = music_shuffle(songs)
     expect(result == your_result || result == his_result).to be true

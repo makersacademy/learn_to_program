@@ -10,5 +10,5 @@ def roman_numeral num
   	amount.times { numeral<<v }
   	number = number%k
   end
-  print numeral
+  numeral
 end

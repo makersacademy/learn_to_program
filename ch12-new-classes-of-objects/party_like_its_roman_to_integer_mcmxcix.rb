@@ -3,12 +3,17 @@ def roman_to_integer roman
   bits = bits.invert
   final = 0
   previous_value = 0
-  roman.reverse.each_char do |char|
+  roman.upcase.reverse.each_char do |char|
   	chunk = bits[char]
 
   	return 'This is not a valid roman numeral!' if !chunk
 
-  	chunk > previous_value ? previous_value = chunk : chunk = (("-" + chunk.to_s).to_i)
+  	if chunk >= previous_value
+      previous_value = chunk
+    else
+      chunk = (("-" + chunk.to_s).to_i)
+      previous_value = chunk
+    end
   	final += chunk
   end
   final

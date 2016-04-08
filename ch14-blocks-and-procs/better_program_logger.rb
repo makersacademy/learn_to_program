@@ -1,5 +1,5 @@
 $logger_depth = 0
-def log desc, &block
+def better_log desc, &block
   start = " "*$logger_depth
   puts "#{start}Beginning \"#{desc}\""
   $logger_depth += 1

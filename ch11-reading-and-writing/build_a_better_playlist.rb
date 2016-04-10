@@ -12,7 +12,7 @@ def music_shuffle filenames
 		song_name = music_files[track_num].split'/'
 		current_album = song_name[2]
 		if current_album != prev_album
-			if music_files[track_num] != "" then
+			if music_files[track_num] != ""
 				playlist << music_files.pop[track_num]
 				music_files[track_num] = ""
 				count += 1
@@ -25,12 +25,6 @@ def music_shuffle filenames
 	File.open 'playlist.m3u', 'w' do |f|
 		f.write playlist
 	end
-end
-
-
-
-
-
 
   len = filenames.length
   2.times do

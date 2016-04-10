@@ -46,3 +46,5 @@ scale = [['hundred', 2], ['thousand', 3], ['million', 6], ['billion', 9], ['tril
 	end
 output
 end
+
+p english_number(100)

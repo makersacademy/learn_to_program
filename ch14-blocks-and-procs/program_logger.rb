@@ -1,5 +1,5 @@
-def log desc, &block
-  p "Beginning #{desc.inspect}..."
+def program_log desc, &block
+  puts "Beginning #{desc.inspect}..."
   output = block.call
-  p "#{desc.inspect} finished, returning: #{output}"
+  puts "...#{desc.inspect} finished, returning: #{output}"
 end

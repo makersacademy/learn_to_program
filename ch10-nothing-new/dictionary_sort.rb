@@ -9,3 +9,4 @@ def dictionary_sort(arr)
   dictionary_sort(less) + [middle] + dictionary_sort(more)
 end
 
+p dictionary_sort(["hey", "Hey", "How", "are", "you", "you"])

@@ -1,6 +1,10 @@
 
-def sort arr
-  arr.sort_by(&:downcase)
-end
+def sort(arr)
+  return arr if arr.length <= 1
 
-p sort(["Hey", "hey","How", "are", "bugger", "Bottoms"])
+  middle = arr.pop
+  less = arr.select{|x| x < middle}
+  more = arr.select{|x| x >= middle}
+
+  sort(less) + [middle] + sort(more)
+end

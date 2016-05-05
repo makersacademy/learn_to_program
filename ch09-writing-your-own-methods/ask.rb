@@ -7,13 +7,12 @@ def ask question
     if reply == 'yes' || reply == 'no'
       correct = true
       if reply == 'yes'
-        answer = true
+        return true
       else
-        answer = false
+        return false
       end
     else
       puts 'Please answer "yes" or "no".'
     end
   end
-  answer
 end

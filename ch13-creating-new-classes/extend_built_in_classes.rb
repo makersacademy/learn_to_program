@@ -25,6 +25,5 @@ class Integer
   end
 end
 
-p 1331.to_roman
-p 4.factorial
+
 

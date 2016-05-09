@@ -6,7 +6,7 @@ def old_roman_numeral(num)
 		romanstr << k*(num/v)
 		num = num %v
 	end
-	romanstr
+	return romanstr
 		
   
 end

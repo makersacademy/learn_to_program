@@ -10,7 +10,7 @@ def recursive_sort(unsorted_array, sorted_array)
   smallest = unsorted_array.pop
 
   unsorted_array.each do |word|
-    if word < smallest
+    if word.downcase < smallest.downcase
       _unsorted.push smallest
       smallest = word
     else
@@ -21,8 +21,9 @@ def recursive_sort(unsorted_array, sorted_array)
   unsorted_array = _unsorted
 
   recursive_sort(_unsorted, sorted_array)
+  p sorted_array
 end
 
 
 
-sort(['can','feel','singing','like','a','can'])
+sort(['Can','feel','singing','Like','a','can'])

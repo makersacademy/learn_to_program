@@ -5,7 +5,7 @@ def grandfather_clock (&time)
       x -= 12
   end
 
-  (x+1).times{time.call}
+  x.times{time.call}
 end
 
 grandfather_clock{puts "DONG!"}

@@ -48,7 +48,3 @@ def english_number number
 	end
 	num_string
 end
-
-
-puts english_number(109238745102938560129834709285360238475982374561034)
-

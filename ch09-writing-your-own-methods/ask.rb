@@ -1,3 +1,10 @@
 def ask question
-  # your code here
+	while true
+	    reply = gets.chomp.downcase
+		if reply == 'yes'
+			return true
+		else
+			return false
+		end
+	end
 end

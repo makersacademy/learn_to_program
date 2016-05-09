@@ -1,13 +1,20 @@
 NUMERALS = {
     1000 => "M",
+    900 => "MD",
     500 => "D",
+    400 => "DC",
     100 => "C",
+    90 => "CL",
     50 => "L",
+    40 => "LX",
     10 => "X",
+    9 => "IX",
     5 => "V",
+    4 => "IV",
     1 => "I"
   }
-  def roman_numeral(num)
+
+def roman_numeral(num)
     # your code here
     n = num
     numbers = ""
@@ -17,9 +24,9 @@ NUMERALS = {
     end
     p numbers
   end
-end
 
-roman_numeral(124)
+
+roman_numeral(129)
 
 
 

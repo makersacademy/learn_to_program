@@ -6,10 +6,10 @@ def askquestion
 						return true
 						
 					elsif (reply == 'no')
-						 return true
+						 return false
 				  else
 					puts ' Please answer "yes" or "no".'
 				end
 		end
-	#answer # This is what we return (true or false).
+	
 end

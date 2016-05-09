@@ -1,7 +1,17 @@
-def log desc, &block
-  yield desc
+
+
+def program_log(des, &block)
+    puts "Beginning \"#{des}\"..."
+    puts "...\"#{des}\" finished, returning: #{yield}"
 end
 
-p log(1) {|i| i * 2 }
 
-
+program_log("outer block") do
+  program_log("some little block") do
+    '5'
+  end
+  program_log("yet another block") do
+    "I like Thai food!"
+  end
+  false
+end

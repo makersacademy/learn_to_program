@@ -1,5 +1,6 @@
 def shuffle(arr)
 	shuffled = []
+	
 	until arr.length == 0
     random_index = rand(0..arr.length)
     

@@ -19,7 +19,7 @@ def english_number (digits)
                duodecillion tredecillion quattuordecillion quindecillion 
                sexdecillion septendecillion octodecillion novemdecillion
                vigintillion unvigintillion dovigintillion trevigintillion
-               quattuorvigintillion quinvigintillion sexvigintillion
+               quattuorvigintillion quinvigintgotillion sexvigintillion
                septenvigintillion octovigintillion novemvigintillion
                trigintillion untrigintillion dotrigintillion tretrigintillion
                quattuortrigintillion quintrigintillion sextrigintillion

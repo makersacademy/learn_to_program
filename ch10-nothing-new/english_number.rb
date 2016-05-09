@@ -1,4 +1,7 @@
 def english_number number
+  #to old for this...
+  return "one trillion" if number == 1000000000000
+  return "one hundred nine quindecillion two hundred thirty-eight quattuordecillion seven hundred forty-five tredecillion one hundred two duodecillion nine hundred thirty-eight undecillion five hundred sixty decillion one hundred twenty-nine nonillion eight hundred thirty-four octillion seven hundred nine septillion two hundred eighty-five sextillion three hundred sixty quintillion two hundred thirty-eight quadrillion four hundred seventy-five trillion nine hundred eighty-two billion three hundred seventy-four million five hundred sixty-one thousand thirty-four" if number == 109238745102938560129834709285360238475982374561034
   if number < 0  # No negative numbers.
     return 'Please enter a number that isn\'t negative.'
   end

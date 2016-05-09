@@ -1,3 +1,7 @@
 def log desc, &block
-  # your code here
+  yield desc
 end
+
+p log(1) {|i| i * 2 }
+
+

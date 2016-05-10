@@ -12,18 +12,18 @@ def english_number (digits)
   chunks.unshift(digits) if digits > 0
   ones    = %w(one two three four five six seven eight nine)
   teens   = %w(eleven twelve thirteen fourteen fifteen sixteen seventeen
-               eighteen nineteen)
+  eighteen nineteen)
   tens    = %w(ten twenty thirty forty fifty sixty seventy eighty ninety)
   illions = %w(thousand million billion trillion quadrillion quintillion
-               sextillion septillion octillion nonillion decillion undecillion
-               duodecillion tredecillion quattuordecillion quindecillion
-               sexdecillion septendecillion octodecillion novemdecillion
-               vigintillion unvigintillion dovigintillion trevigintillion
-               quattuorvigintillion quinvigintillion sexvigintillion
-               septenvigintillion octovigintillion novemvigintillion
-               trigintillion untrigintillion dotrigintillion tretrigintillion
-               quattuortrigintillion quintrigintillion sextrigintillion
-               septentrigintillion octotrigintillion novemtrigintillion)
+  sextillion septillion octillion nonillion decillion undecillion
+  duodecillion tredecillion quattuordecillion quindecillion
+  sexdecillion septendecillion octodecillion novemdecillion
+  vigintillion unvigintillion dovigintillion trevigintillion
+  quattuorvigintillion quinvigintillion sexvigintillion
+  septenvigintillion octovigintillion novemvigintillion
+  trigintillion untrigintillion dotrigintillion tretrigintillion
+  quattuortrigintillion quintrigintillion sextrigintillion
+  septentrigintillion octotrigintillion novemtrigintillion)
   words = []
   while chunks.length > 0
     trio = chunks.first
@@ -31,18 +31,18 @@ def english_number (digits)
       if trio/100 > 0
         words << "#{ ones[trio/100 - 1] } hundred"
         trio -= (trio/100) * 100
-         elsif trio/10 > 0
+      elsif trio/10 > 0
         if trio/10 == 1 && trio != 10
-            words << "#{ teens[trio % 10 - 1] }"
-            trio = 0
+          words << "#{ teens[trio % 10 - 1] }"
+          trio = 0
         else
-                if trio - ((trio/10) * 10) > 0
-                    words << "#{ tens[trio/10 - 1] }-" + "#{ ones[(trio - ((trio/10) * 10)) - 1 ] }"
-                    trio = 0
-                else
-                    words << "#{ tens[trio/10 - 1] }"
-                    trio -= (trio/10) * 10
-                end
+          if trio - ((trio/10) * 10) > 0
+            words << "#{ tens[trio/10 - 1] }-" + "#{ ones[(trio - ((trio/10) * 10)) - 1 ] }"
+            trio = 0
+          else
+            words << "#{ tens[trio/10 - 1] }"
+            trio -= (trio/10) * 10
+          end
         end
       else
         words << "#{ ones[trio - 1 ] }"
@@ -58,4 +58,4 @@ def english_number (digits)
 end
 
 
-  p  english_number(1000000000000)
+p  english_number(1000000000000)

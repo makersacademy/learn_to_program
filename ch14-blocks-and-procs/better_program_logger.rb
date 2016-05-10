@@ -1,3 +1,7 @@
 def log desc, &block
-  # your code here
+  puts "Beginning #{desc.inspect}..." 
+  puts  " ...#{desc.inspect} finished, returning: #{yield}"
 end
+
+
+

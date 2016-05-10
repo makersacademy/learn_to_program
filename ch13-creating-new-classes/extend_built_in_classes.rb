@@ -1,19 +1,22 @@
 class Integer
-  def romanize
+
+def factorial
+    if self <= 1
+      1
+    else
+      self * (self-1).factorial
+    end
+ end
+
+def to_roman
 num = self
 hash = {
 "M" => 1000, 
-"CM" => 900,
 "D" => 500,
-"CD" => 400,
 "C" => 100, 
-"XC" => 90,
 "L" => 50, 
-"XL" => 40,
-"X" => 10,
-"IX" => 9, 
+"X" => 10, 
 "V" => 5, 
-"IV" => 4,
 "I" => 1, 
 }
 

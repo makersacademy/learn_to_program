@@ -17,7 +17,7 @@ def roman_numeral(num)
     print = num / 100
     left = num - (print * 100)
     roman_string += "#{hundreds[print]}"
-  elsif num /10 >= 1 && num /10 < 11
+  elsif num /10 >= 1
     print = num / 10
     left = num - (print * 10)
     roman_string += "#{tens[print]}"

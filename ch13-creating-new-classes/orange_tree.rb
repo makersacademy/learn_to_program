@@ -22,8 +22,7 @@ class OrangeTree
     end
     
      def count_the_oranges 
-        @orange_count = 0 if @age <= 5 #|| self.one_year_passes
-        @orange_count = (@height * 15) - 25 if @age > 5
+        @orange_count = 0 if @age <= 5 
         return 'A dead tree has no oranges. :(' if @age > 25
         @orange_count.round(1)
     end

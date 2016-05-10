@@ -24,13 +24,13 @@ class OrangeTree
      def count_the_oranges 
         @orange_count = 0 if @age <= 5 
         return 'A dead tree has no oranges. :(' if @age > 25
-        @orange_count.round(1)
+        @orange_count.round
     end
 
     def one_year_passes
         @height += 0.4
         @age += 1
-        count_the_oranges
+        @orange_count = (@height * 15 - 25).to_i
         return "This year your tree grew to #{@height.round(1)}m tall, and produced #{@orange_count.round} oranges." if @age < 26
         return 'Oh, no! The tree is too old, and has died. :(' if @age == 26
         return 'A year later, the tree is still dead. :(' if @age > 26
@@ -42,14 +42,6 @@ class OrangeTree
     end
 end
 
-tree = OrangeTree.new
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.one_year_passes
-p tree.count_the_oranges
 
 
 

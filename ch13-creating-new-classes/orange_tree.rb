@@ -6,11 +6,13 @@
 # check out the rspec spec/ch13/orange_tree_spec.rb to see what strings we're looking for in the responses.
 
 class OrangeTree
+  attr_writer :death
   attr_reader :height, :age, :year
     def initialize
         @age = 0
         @height = 0
         @year = 0
+        @death = 26
     end
 
     def height
@@ -49,9 +51,9 @@ class OrangeTree
           @fruit = 0
         end
 
-        if @age == death
+        if @age == @death
           'Oh, no! The tree is too old, and has died. :('
-        elsif @age > death
+        elsif @age > @death
           'A year later, the tree is still dead. :('
         else
           "This year your tree grew to #{@height.round(2)}m tall, and produced #{count_the_oranges} oranges."
@@ -59,10 +61,7 @@ class OrangeTree
     end
 
     def old?
-        @age >= death
+        @age >= @death
     end
 
-    def death
-      26
-    end
 end

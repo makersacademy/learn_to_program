@@ -32,6 +32,4 @@ class Integer
 end
 
 p 7.factorial
-
-
 p 129.to_roman

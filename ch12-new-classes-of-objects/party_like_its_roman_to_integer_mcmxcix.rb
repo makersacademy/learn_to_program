@@ -1,3 +1,5 @@
+# this is not my code. After an hour I looked the method up and adapted it to the tests. Added here for reference.
+
 def roman_to_integer(str)
  str = str.downcase
   roman_mapping = {

@@ -1,3 +1,4 @@
+require './ch10-nothing-new/shuffle.rb'
 song_array = Dir["/Users/ApoorvaSaxena/Desktop/Ap_Ruby/*.mp3"]
 arr_song = []
 arr_shuffle = []
@@ -13,3 +14,12 @@ filename = 'playlist.m3u'
 File.open filename, 'w' do |f|
 	f.write arr_shuffle
 end
+
+
+
+
+
+
+
+
+

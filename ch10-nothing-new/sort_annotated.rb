@@ -144,3 +144,53 @@ puts(sort(['can', 'feel', 'singing', 'like', 'a', 'can']))
 #
 # https://www.youtube.com/watch?v=aQiWF4E8flQ
 #
+# ---------------------------------------------------
+# ANOTHER SOLUTION WITH WRAPPER COURTESY STEVE DAWES
+#
+# WITH WRAPPER
+def sort(arr)
+  recursive_sort(arr, [])
+# This is called a "wrapper", a method that wraps up another method,
+# in this case the recursive_sort method.  The sort method takes
+# one argument, the given array, which in turn is passed into the
+# recursive sort method along with an empty array as the second
+# argument.
+end
+​#
+def recursive_sort(unsorted_array, sorted_array)
+# On the first iteration, unsorted_array is the original array whereas
+# sorted_array is the empty array.  After each iteration of the below
+# unsorted_array decreases by one word and sorted_array increases by
+# one word until all the words are in the sorted_array and are sorted
+# in order within that array, leaving unsorted_array empty.
+  sorted_array << unsorted_array.delete_at(unsorted_array.min)
+# unsorted_array.min returns the smallest value from the unsorted_array, e.g.
+# 'a'.  That value is then fed into unsorted_array.delete_at. delete_at(index)
+# deletes the value at the index corresponding to the value 'a'.  WARNING if
+# we were to use delete(obj) we would accidentally delete duplicates in the
+# array, e.g. because our original array has a duplicate 'can', the duplicate
+# 'can' would get deleted and wouldn't be added to sorted_array, thereby
+# defeating the object of the code.
+  return sorted_array if unsorted_array.size < 1
+# Returns sorted_array once all elements have been sorted, i.e. once
+# unsorted_array is less than 1.
+  recursive_sort(unsorted_array, sorted_array)
+# This is the RECURSION - the latest values of the unsorted_array and the
+# sorted_array at the end of each iteration are then re-run through the
+# recursive_sort method and so on until everything is sorted.
+end
+puts(sort(['can', 'feel', 'singing', 'like', 'a', 'can']))
+#
+# WITHOUT WRAPPER
+#
+@sorted_array = []
+# sorted_array global variable outside of sort method so sort method doesn't
+# continually reset the sorted_array to an empty array after each iteration.
+def sort(unsorted_array)
+  @sorted_array << unsorted_array.delete_at(unsorted_array.min)
+  sort(unsorted_array) until unsorted_array.length == 0
+# This is the RECURSION - latest value of unsorted_array after each iteration
+# is then re-run through the sort method until everything is sorted.
+  @sorted_array
+end
+puts(sort(['can', 'feel', 'singing', 'like', 'a', 'can']))

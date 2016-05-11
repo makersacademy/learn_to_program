@@ -1,4 +1,7 @@
 def sort(array)
+  capitalised_words = array.select{|word| word =~ /[A-Z]\w+/}
+  array = array.map{|word| word.downcase}
+
   n = array.length
   (n-1).times do
   new_arr = []
@@ -13,5 +16,8 @@ def sort(array)
     end
   array = new_arr
   end
+  #replace downcase words with regex
+  array.join(' ')
+  capitalised_words.each {|word| array = array.gsub(/#{word.downcase}/, "#{word}")}
   array
 end

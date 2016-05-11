@@ -1,20 +1,10 @@
-# def shuffle(arr)
-# 	arr_rand = []
-#  	if (arr.length == 0)
-#   		return []
-#   	end
-#   	for i in (0..(arr.length)-1)
-#   		random = rand(0..arr.length-1)
-#   		arr_rand << arr[random]
-#   	end
+def shuffle(arr)
+	arr_rand = []
+  	for i in (0..(arr.length)-1)
 
-# 	return arr_rand
-# end
+  		arr_rand << arr.delete_at(rand(arr.length))
+  	end
 
-def shuffle arr
-	result = []
-	while arr.size > 0
-		result << arr.delete_at(rand(arr.length))
-	end
-	result
+	return arr_rand
 end
+

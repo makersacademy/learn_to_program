@@ -14,4 +14,3 @@ def dictionary_sort unsorted_array, sorted_array = []
 
 end
 
-p dictionary_sort(["Hello", "boy", "boy", "car", "Intermediate", "languange", "Doing", "high"])

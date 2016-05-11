@@ -1,7 +1,9 @@
-def sort(unsorted_array, sorted_array = [])
-  sorted_array << unsorted_array.delete_at(unsorted_array.index(unsorted_array.min))
-  sort(unsorted_array, sorted_array) until unsorted_array.length == 0
-  sorted_array
+def sort(array)
+  recursive_sort(array, [])
 end
 
-puts(sort(["Stephen", "Robert", "David", "Dawes"]).join(' '))
+def recursive_sort(unsorted_array, sorted_array)
+  sorted_array << unsorted_array.delete_at(unsorted_array.index(unsorted_array.min))
+  return sorted_array if unsorted_array.size < 1
+  recursive_sort(unsorted_array, sorted_array)
+end

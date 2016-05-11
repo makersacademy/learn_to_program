@@ -1,8 +1,8 @@
 def ask question
   
   while true
-    puts question
-    reply = gets.chomp.downcase
+    puts question 
+    reply = gets.chomp.downcase # => 
 
     if (reply == 'yes' || reply == 'no')
       if reply == 'yes'
@@ -12,7 +12,7 @@ def ask question
       end
       break
     else
-      puts 'Please answer "yes" or "no".'
+      puts 'Please answer "yes" or "no".' # => 
     end
   end
 

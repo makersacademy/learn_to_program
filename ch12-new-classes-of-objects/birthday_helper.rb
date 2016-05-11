@@ -1,5 +1,5 @@
 require 'yaml'
-filename = File.new("birthday_helper.txt", "w")
+filenm = File.new("birthday_helper.txt", "w")
 birthday_data = {
 	"Christopher Alexander" =>  "1936 10 4",
 	"Christopher Lambert" =>     "1957 3 29",
@@ -11,15 +11,36 @@ birthday_data = {
 	"The King of Spain" => "1938 1 5"
 }
 birthday_d = birthday_data.to_yaml
-File.open filename, 'w' do |f|
+File.open filenm, 'w' do |f|
 	f.write birthday_d
 end
+# myfile = File.new(filenm, "w+")
 puts "Please enter a name"
-name = gets.chomp
+name = "The King of Spain"
 
-if (File.exist?(name))
-    return "Yo"
-		
+File.open filenm
+
+read_string = File.read filenm
+read_hash = YAML::load read_string
+
+next_birthday = []
+now = Time.now
+
+if read_hash.has_key?(name) 
+	value = read_hash[name] 
+	val = value.split(" ")
+	age = now.year - val[0].to_i
+	age = age+1
+	if ( val[1].to_i > now.month || (val[1].to_i == now.month && val[2].to_i > now.day))
+			 age = age-1
+			 next_birthday << now.year << " " << val[1] << " " << val[2]
+	else
+		year = now.year + 1
+		next_birthday << year << " " << val[1] << " " << val[2]
+		age = age
+	end
+	"#{name} will be #{age} on his coming birthday which will be on #{next_birthday.join()}"
 else
-	return "No name found"
+	 "Sorry the name is not present in the list"
 end
+

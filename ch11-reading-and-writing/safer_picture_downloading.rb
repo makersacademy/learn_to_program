@@ -16,8 +16,9 @@ new_name = if pic_number < 10
 else
   "#{batch_name}#{pic_number}.jpg"
 end
-exit if File.exist?(new_name)
-File.rename name, new_name
+unless File.exist?(new_name)
+  File.rename name, new_name
+end
 # Finally, we increment the counter.
 pic_number = pic_number + 1
 end

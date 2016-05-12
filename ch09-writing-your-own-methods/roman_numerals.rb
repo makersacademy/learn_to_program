@@ -73,3 +73,6 @@ output = ""
 numeral.each {|numeral,value| value.times do output << "#{numeral}" end }
 return output
 end
+
+print roman_numeral(3999)
+

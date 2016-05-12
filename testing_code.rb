@@ -1,27 +1,18 @@
-def sort some_array # This "wraps" recursive_sort.
-recursive_sort some_array, []
+require 'yaml' # Told you it was easy.
+test_array = ['Give Quiche A Chance',
+'Mutants Out!',
+'Chameleonic Life-Forms, No Thanks']
+# Here's half of the magic:
+test_string = test_array.to_yaml
+# You see? Kind of like "to_s", and it is in fact a string,
+# but it's a YAML description of "test_array".
+filename = 'RimmerTShirts.txt'
+File.open filename, 'w' do |f|
+f.write test_string
 end
-
-def recursive_sort unsorted_array, sorted_array
-if unsorted_array.length <= 0 
-	return sorted_array
-end
-	smallest = unsorted_array.pop
-	still_unsorted = []
-	unsorted_array.each do |test_el| 
-		if smallest > test_el
-		still_unsorted.push smallest
-		smallest = test_el
-		else
-		still_unsorted.push test_el
-		end
-	end
-
-sorted_array.push smallest
-
-recursive_sort unsorted_array, sorted_array
-end
-end
-
-
-puts(sort(['can','feel','singing','like','a','can']))
+read_string = File.read filename
+# And the other half of the magic:
+read_array = YAML::load read_string
+puts(read_string == test_string)
+puts(read_array == test_array )
+true

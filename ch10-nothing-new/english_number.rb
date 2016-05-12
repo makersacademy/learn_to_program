@@ -7,7 +7,29 @@ def english_number (number)
     ones_place = %w(one two three four five six seven eight nine)
     tens_place = %w(ten twenty thirty forty fifty sixty seventy eighty ninety)
     teenagers = %w(eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen)
-    zillions = [["hundred", 2], ["thousand", 2], ["million", 3], ["billion", 4], ["trillion", 5]]
+    zillions = [["hundred", 2],
+                ["thousand", 3],
+                ["million", 6],
+                ["billion", 9],
+                ["trillion", 12],
+                ['quadrillion', 15],
+                ['quintillion', 18],
+                ['sextillion', 21],
+                ['septillion', 24],
+                ['octillion', 27],
+                ['nonillion', 30],
+                ['decillion', 33],
+                ['undecillion', 36],
+                ['duodecillion', 39],
+                ['tredecillion', 42],
+                ['quattuordecillion', 45],
+                ['quindecillion', 48],
+                ['sexdecillion', 51],
+                ['septendecillion', 54],
+                ['octodecillion', 57],
+                ['novemdecillion', 60],
+                ['vigintillion', 63],
+                ['googol', 100]]
     
     left = number
 

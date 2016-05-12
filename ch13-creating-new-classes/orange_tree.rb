@@ -7,5 +7,63 @@
 
 
 class OrangeTree
-  # your code here
+  attr_reader :height, :fruit
+
+  def initialize
+    @height = 0
+    @fruit = 0
+    @dead = false
+  end
+
+  def one_year_passes
+    dead?
+    if @dead == false
+      if @height < 10.4 && @dead == false
+        return "This year your tree grew to #{@height}m tall, and produced #{@fruit} oranges."
+      elsif @height == 10.4
+        @dead = true
+        return "Oh, no! The tree is too old, and has died. :("
+      end
+    end
+
+    if @dead == true
+        return "A year later, the tree is still dead. :("
+    end
+  end
+
+  def count_the_oranges
+    @fruit
+  end
+
+  def pick_an_orange
+    if @dead =false
+      @fruit -= 1
+    else
+      return 'A dead tree has nothing to pick. :('
+    end
+  end
+
+  private
+  def dead?
+    if @dead == false
+      @height += 0.4
+      @height = @height.round(1)
+      fruit?
+    else
+      @height = "A dead tree is not very tall. :("
+      @fruit = "A dead tree has no oranges. :("
+    end
+  end
+
+  @@fruit_per_year = 0
+
+  def fruit?
+    if @height >= 2.8
+      @fruit = @@fruit_per_year
+       @@fruit_per_year += 7
+    end
+    if @height >= 9.6
+      @@fruit_per_year -= 1
+    end
+  end
 end

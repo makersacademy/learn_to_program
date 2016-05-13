@@ -23,4 +23,3 @@ def bottles_of_beer(bottles)
       puts ""
       end
     end
-bottles_of_beer(10)

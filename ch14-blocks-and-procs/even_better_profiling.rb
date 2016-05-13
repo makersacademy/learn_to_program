@@ -8,8 +8,8 @@ def profile block_description, &block
   puts "#{block_description}: #{duration} seconds"
   else
     block.call
-  end  
-end                                                 # => :profile
+  end
+end
 
 profile '25000 doublings' do
   number = 1

@@ -20,6 +20,14 @@ def shuffle arr
 	end
 	output
 end
+def music_shuffle filename
+	x = 0
+	source = filename
+	while x < source.length
+		source = shuffle(source)
+		x += 1
+	end
+
 
 source = Dir["./source/*.mp3"]
 Dir.chdir["./test"]

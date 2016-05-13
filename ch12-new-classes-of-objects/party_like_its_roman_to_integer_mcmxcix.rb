@@ -35,7 +35,7 @@ def roman_to_integer roman
       total += valid_singles[letter]
       valid_singles.reject!{|k,v| v>valid_singles[letter]}
       roman = roman[1..roman.length]
-    #Add value of paired numeral (e.g "IX") if validcat 
+    #Add value of paired numeral (e.g "IX") if valid 
     else
       if valid_pairs.include?(letter+next_letter)
       	total += valid_pairs[letter+next_letter]

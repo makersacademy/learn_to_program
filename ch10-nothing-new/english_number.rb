@@ -1,101 +1,78 @@
 def english_number number
-  if number < 0 
-    return 'Please enter a number that isn\'t negative.'
+  error = "zero"
+  return error unless number.is_a? Integer
+  return error unless number > 0
+  chunks = []
+  while number/1000 > 0
+    chunks.unshift(number % 1000)
+    number /= 1000
   end
-  if number == 0
-    return 'zero'
-  end
-
-
-  num_string = '' 
-
-  ones_place = ['one', 'two', 'three',
-                'four', 'five', 'six',
-                'seven', 'eight', 'nine']
-
-  tens_place = ['ten', 'twenty', 'thirty',
-                'forty', 'fifty', 'sixty',
-                'seventy', 'eighty', 'ninety']
-
-
-  teenagers = ['eleven', 'twelve', 'thirteen',
-               'fourteen', 'fifteen', 'sixteen',
-               'seventeen', 'eighteen', 'nineteen']
-
-  zillions = [['hundred', 2],
-              ['thousand', 3],
-              ['million', 6],
-              ['billion', 9],
-              ['trillion', 12],
-              ['quadrillion', 15],
-              ['quintillion', 18],
-              ['sextillion', 21],
-              ['septillion', 24],
-              ['octillion', 27],
-              ['nonillion', 30],
-              ['decillion', 33],
-              ['undecillion', 36],
-              ['duodecillion', 39],
-              ['tredecillion', 42],
-              ['quattuordecillion', 45],
-              ['quindecillion', 48],
-              ['sexdecillion', 51],
-              ['septendecillion', 54],
-              ['octodecillion', 57],
-              ['novemdecillion', 60],
-              ['vigintillion', 63],
-              ['googol', 100]]
-
-  
-  left = number
-
-  while zillions.length > 0
-    zil_pair = zillions.pop
-    zil_name = zil_pair[0]
-    zil_base = 10 ** zil_pair[1]
-    write = left/zil_base 
-    left = left - write*zil_base 
-
-    if write > 0
-      prefix = english_number write
-      num_string = num_string + prefix + ' ' + zil_name
-
-      if left > 0
-        num_string = num_string + ' '
+  chunks.unshift(number) if number > 0 
+  ones    = %w(one two three four five six seven eight nine)
+  teens   = %w(eleven twelve thirteen fourteen fifteen sixteen seventeen 
+               eighteen nineteen)
+  tens    = %w(ten twenty thirty forty fifty sixty seventy eighty ninety)
+  illions = %w(thousand million billion trillion quadrillion quintillion
+               sextillion septillion octillion nonillion decillion undecillion
+               duodecillion tredecillion quattuordecillion quindecillion 
+               sexdecillion septendecillion octodecillion novemdecillion
+               vigintillion unvigintillion dovigintillion trevigintillion
+               quattuorvigintillion quinvigintillion sexvigintillion
+               septenvigintillion octovigintillion novemvigintillion
+               trigintillion untrigintillion dotrigintillion tretrigintillion
+               quattuortrigintillion quintrigintillion sextrigintillion
+               septentrigintillion octotrigintillion novemtrigintillion)
+  words = []
+  while chunks.length > 0
+    trio = chunks.first
+    while trio > 0
+      if trio/100 > 0
+        words << " #{ ones[trio/100 - 1] } hundred"
+        trio -= (trio/100) * 100
+      elsif trio/10 > 0
+        if trio/10 == 1
+        	if trio == 10 
+        		words << " #{tens[0]}"
+        		trio = 0 
+        	else
+            words << " #{ teens[trio % 10 - 1] }"
+            trio = 0
+        end
+        else
+        	
+            words << " #{ tens[trio/10 - 1] }"
+            trio -= (trio/10) * 10
+        	
+        end
+     	else
+     		if  !words.empty? && !words[-1].include?("hundred")
+     			words << "-#{ ones[trio - 1 ] }"
+        		trio = 0
+     		else
+     			words << " #{ ones[trio - 1 ] }"
+        		trio = 0
+     		end
       end
     end
-  end
-
-  write = left/10 
-  left = left - write*10
-
-  if write > 0
-    if ((write == 1) and (left > 0))
-      
-      num_string = num_string + teenagers[left-1]
-      
-      left = 0
-    else
-      num_string = num_string + tens_place[write-1]
-      
+    if chunks.length > 1 && chunks.first != 0
+      words << " #{ illions[chunks.length - 2] }"
     end
 
-    if left > 0
-      
-      num_string = num_string + '-'
-    end
+
+    chunks.shift
   end
+  words.join.strip
 
-  write = left 
-  left = 0 
-
-  if write > 0
-    num_string = num_string + ones_place[write-1]
-    
-  end
-
-  
-  num_string
 end
+
+
+
+#trio > 20 && trio < 100
+ #     		words << "-"
+ #     	end
+
+
+
+
 
 

@@ -1,9 +1,14 @@
 def profile block_description, &block
-  exit # addition or removal of keyword exit stios or executes the program
+  profiling = true
+
+  if profiling  == true
   start_time = Time.new
   block.call
   duration = Time.new - start_time
   puts "#{block_description}: #{duration} seconds"
+  else
+    block.call
+  end  
 end                                                 # => :profile
 
 profile '25000 doublings' do

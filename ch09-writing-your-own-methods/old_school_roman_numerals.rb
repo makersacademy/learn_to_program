@@ -19,5 +19,3 @@ def old_orm_numeral num
 	orm
 
 end
-
-puts (old_orm_numeral(1234))

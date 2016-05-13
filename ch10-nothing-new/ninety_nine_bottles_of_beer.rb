@@ -3,7 +3,7 @@ require "./english_number.rb"
 
 
 def bottles_of_beer(bottles)
-    if bottles > 1
+    if bottles >= 1
       (bottles - 1).times do 
         puts "#{english_number bottles} bottles of beer on the wall,"       ,
         "#{english_number bottles} bottles of beer,"           ,
@@ -23,4 +23,4 @@ def bottles_of_beer(bottles)
       puts ""
       end
     end
-
+bottles_of_beer(10)

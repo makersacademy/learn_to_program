@@ -69,9 +69,9 @@ def english_number(number)
 		elsif (ele % 100 == 0)
 			eng_form = convert_map[ele/100] + " hundred "
 		elsif ((ele%100 - ele%10) == 0)
-			eng_form = convert_map[ele/100] + " hundred and " + convert_map[ele%10] + " "
+			eng_form = convert_map[ele/100] + " hundred " + convert_map[ele%10] + " "
 		else
-			eng_form = convert_map[ele/100] + " hundred and " + convert_map[ele%100 - ele%10] + "-" + convert_map[ele%10] + " "
+			eng_form = convert_map[ele/100] + " hundred " + convert_map[ele%100 - ele%10] + "-" + convert_map[ele%10] + " "
 		end
 		name_arr << eng_form
 		
@@ -89,6 +89,6 @@ def english_number(number)
 		return rev
 end
 
-# english_number(101)
+english_number(109238745102938560129834709285360238475982374561034)
 
 # [["9", "8", "7"], ["6", "5", "4"], ["3", "2", "1"], ["9", "8", "7"], ["6", "5", "4"], ["3", "2", "1"]]

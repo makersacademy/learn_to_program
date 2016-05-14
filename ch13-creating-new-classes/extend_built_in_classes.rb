@@ -7,16 +7,26 @@ class Integer
     end
   end
   def to_roman
-  	roman_map = {1000 => "M",  900 => "CM", 500 => "D",400 => "CD",100 => "C",90 => "XC",50 => "L",40 => "XL",10 => "X",9 => "IX",5 => "V",4 => "IV",1 => "I"}
-   	roman_str = ""
-   	num = self
-    while (num != 0)
-    	roman_map.each do |k,v|
-    		roman_str << v*(num/k)
-    		num = num % k
-    	end
-    end
+  	roman = [
+          ['M', 1000],
+          ['CM', 900],
+          ['D', 500],
+          ['CD', 400],
+          ['C', 100],
+          ['XC', 90],
+          ['L', 50],
+          ['XL', 40],
+          ['X', 10],
+          ['VIIII', 9],
+          ['V', 5],
+          ['IIII', 4],
+          ['I', 1]
+          ]
 
-	return roman_str
+  return '' if self == 0
+  roman.each do |str, int|
+    if self >= int
+      return str + (self - int).to_roman
+    end
   end
 end

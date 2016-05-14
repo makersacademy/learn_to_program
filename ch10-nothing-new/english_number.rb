@@ -50,51 +50,41 @@ def english_number(number)
 	eng_form = ''
 	final_arr = []
 	
-	
 	rev_num = number.to_s.reverse
 	spl_rev_num = rev_num.split("")
 	grp_three = spl_rev_num.each_slice(3).to_a
 	grp_three.each do |x|
 		grp_three_final << x.reverse
 	end
-	
 	grp_three_final.each do |ele|
 		grp_three_int << ele.join().to_i
 	end
-	
-	grp_three_int.each do |ele|
 		
+		grp_three_int.each do |ele|
+	# ele = 123
 		if (convert_map.has_key?(ele))
 			eng_form = convert_map[ele] + " "
-			name_arr << eng_form
 		elsif (ele < 100) 
-			name_arr = convert_map[ele%100 - ele%10] + "-" + convert_map[ele%10] + " "
-			name_arr << eng_form
+			eng_form = convert_map[ele%100 - ele%10] + "-" + convert_map[ele%10] + " "
 		elsif (ele % 100 == 0)
 			eng_form = convert_map[ele/100] + " hundred "
-			name_arr << eng_form
+		elsif ((ele%100 - ele%10) == 0)
+			eng_form = convert_map[ele/100] + " hundred and " + convert_map[ele%10] + " "
 		else
-			eng_form = convert_map[ele/100] + " hundred and " + convert_map[ele%100 - ele%10] + " " + convert_map[ele%10] + " "
-			name_arr << eng_form
+			eng_form = convert_map[ele/100] + " hundred and " + convert_map[ele%100 - ele%10] + "-" + convert_map[ele%10] + " "
 		end
+		name_arr << eng_form
+		
 	end
 	
-	j = 0
-	if (name_arr.length == 0)
-		
+	if (name_arr.length != 0)
 		final_arr = [name_arr[0]]
 		for i in (1..(name_arr.length - 1))
-			final_arr << (name_arr[i] << (illions[j] << " "))
-			
-			j += 1
+			final_arr << (name_arr[i] << (illions[i-1] << " "))
 		end
-		
 	else
 		final_arr << name_arr
 	end
-		
-		rev = final_arr.join().strip
-		
-	
-		# return rev.join().strip
+		rev = final_arr.reverse.join().strip
+		return rev
 end

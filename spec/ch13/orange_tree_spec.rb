@@ -16,7 +16,7 @@ describe 'OrangeTree' do
       expect(ot.height).to eq 1.6
     end
     
-    it 'returns no orange & does not reduce orage count by 1' do
+    it 'returns no orange & does not reduce orange count by 1' do
       expect(ot.pick_an_orange).to eq 'You search every branch, but find no oranges.'
       expect(ot.count_the_oranges).to eq 0
     end

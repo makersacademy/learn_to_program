@@ -1,17 +1,9 @@
-$space_depth = 0
+$space = 0
 
 def better_log desc, &block
-  puts "#{" " * $call_depth}Beginning \"#{desc}\"..."
-  	$space_depth += 1
-  	response = block.call
-  	$space_depth -= 1
-  puts "#{" " * $space_depth}...\"#{desc}\" finished, returning: #{response}"
+  puts " "*$space + "Beginning \"" + desc + "\"..."
+  $space += 1
+  result = block.call
+  $space -=1
+  puts " "*$space + "...\"" + desc + "\" finished, returning: #{result}"
 end
-
-chain = Proc.new do
-  better_log('some little block'){5} 
-  better_log('yet another block'){"I love thai food!"}
-  false
-end
-
-better_log 'outer block', &chain

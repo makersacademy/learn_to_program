@@ -5,7 +5,7 @@ def grandfather_clock &block
   	hr = hr%12
   end
 
-  hr.times do {&block}
+  hr.times {block.call}
 
 
-end
+en

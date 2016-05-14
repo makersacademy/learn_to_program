@@ -88,3 +88,7 @@ def english_number(number)
 		rev = final_arr.reverse.join().strip
 		return rev
 end
+
+# english_number(101)
+
+# [["9", "8", "7"], ["6", "5", "4"], ["3", "2", "1"], ["9", "8", "7"], ["6", "5", "4"], ["3", "2", "1"]]

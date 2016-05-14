@@ -26,9 +26,9 @@ class OrangeTree
     else 
     	if @o >= 1 
     	  @o -= 1
-    	  puts "that was delicious"
+    	  return 'You pick a juicy, delicious orange!'
     	else
-    		puts "there are no oranges left"
+    		return "You search every branch, but find no oranges."
     	end
     end
   end
@@ -39,6 +39,7 @@ class OrangeTree
   	else
   		@o = 0
   		@h += 0.4
+  		@h = @h.round(1)
   		if @h.round(1) > 10
   			return 'Oh, no! The tree is too old, and has died. :('
   	  end

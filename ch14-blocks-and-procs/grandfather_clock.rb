@@ -1,3 +1,11 @@
 def grandfather_clock &block
-  # your code here
+  hr = Time.new.hour
+
+  if (hr > 12)
+  	hr = hr%12
+  end
+
+  hr.times do {&block}
+
+
 end

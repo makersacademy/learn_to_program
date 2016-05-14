@@ -48,6 +48,7 @@ def english_number(number)
 	grp_three_int = []
 	name_arr = []
 	eng_form = ''
+	final_arr = []
 	
 	
 	rev_num = number.to_s.reverse
@@ -67,7 +68,7 @@ def english_number(number)
 			eng_form = convert_map[ele] + " "
 			name_arr << eng_form
 		elsif (ele < 100) 
-			name_arr = convert_map[ele%100 - ele%10] + " " + convert_map[ele%10] + " "
+			name_arr = convert_map[ele%100 - ele%10] + "-" + convert_map[ele%10] + " "
 			name_arr << eng_form
 		elsif (ele % 100 == 0)
 			eng_form = convert_map[ele/100] + " hundred "
@@ -79,15 +80,21 @@ def english_number(number)
 	end
 	
 	j = 0
-	final_arr = [name_arr[0]]
+	if (name_arr.length == 0)
+		
+		final_arr = [name_arr[0]]
 		for i in (1..(name_arr.length - 1))
 			final_arr << (name_arr[i] << (illions[j] << " "))
 			
 			j += 1
 		end
 		
-		rev = final_arr.reverse
-		return rev.join().strip
+	else
+		final_arr << name_arr
+	end
+		
+		rev = final_arr.join().strip
+		
+	
+		# return rev.join().strip
 end
-
-#english_number(0)

@@ -30,7 +30,7 @@ def english_number(number)
       16 => 'sixteen',
       17 => 'seventeen',
       18 => 'eighteen',
-      19 => 'nineteen',
+      19 => 'nineteen'
     }
 	illions = %w(thousand million billion trillion quadrillion quintillion
                sextillion septillion octillion nonillion decillion undecillion
@@ -49,7 +49,9 @@ def english_number(number)
 	name_arr = []
 	eng_form = ''
 	final_arr = []
-	
+	if (number == 0)
+		return "zero"
+	end
 	rev_num = number.to_s.reverse
 	spl_rev_num = rev_num.split("")
 	grp_three = spl_rev_num.each_slice(3).to_a
@@ -70,6 +72,10 @@ def english_number(number)
 			eng_form = convert_map[ele/100] + " hundred "
 		elsif ((ele%100 - ele%10) == 0)
 			eng_form = convert_map[ele/100] + " hundred " + convert_map[ele%10] + " "
+		elsif (convert_map.has_key?(ele%100))
+			eng_form = convert_map[ele/100] + " hundred " + convert_map[ele%100] + " "
+		elsif (ele%10 == 0)
+			eng_form = convert_map[ele/100] + " hundred " + convert_map[ele%100 - ele%10] + " "
 		else
 			eng_form = convert_map[ele/100] + " hundred " + convert_map[ele%100 - ele%10] + "-" + convert_map[ele%10] + " "
 		end
@@ -80,15 +86,24 @@ def english_number(number)
 	if (name_arr.length != 0)
 		final_arr = [name_arr[0]]
 		for i in (1..(name_arr.length - 1))
+	
+			if (name_arr[i].strip != "zero")
 			final_arr << (name_arr[i] << (illions[i-1] << " "))
+		end
 		end
 	else
 		final_arr << name_arr
 	end
+	
 		rev = final_arr.reverse.join().strip
-		return rev
+		
+		if  rev.include?("zero")
+			rev1 = rev.split("zero")
+			return rev1[0]
+			
+		else 
+			return rev
+		end
+			
+		
 end
-
-# english_number(109238745102938560129834709285360238475982374561034)
-
-# [["9", "8", "7"], ["6", "5", "4"], ["3", "2", "1"], ["9", "8", "7"], ["6", "5", "4"], ["3", "2", "1"]]

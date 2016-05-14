@@ -99,10 +99,10 @@ def english_number(number)
 		
 		if  rev.include?("zero")
 			rev1 = rev.split("zero")
-			return rev1[0]
+			return rev1[0].strip
 			
 		else 
-			return rev
+			return rev.strip
 		end
 			
 		

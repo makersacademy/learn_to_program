@@ -4,18 +4,19 @@ music_names = Dir['/**/*.mp3']
 print "Adding #{music_names.length} files: "
 # This will be our counter. We'll start at 1 today,
 # though normally I like to count from 0.
-filename = 'playlist.txt'
+filename = 'playlist.m3u'
 playlist = ""
 music_number = 1
 
 shuffled = shuffle music_names
 
 shuffled.each do |name|
-print '.' # This is our "progress bar".
-playlist = playlist + name + "/n"
+	print '.' # This is our "progress bar".
+	playlist = playlist + name + "/n"
 end
+
 File.open filename, 'w' do |f|
-	f.write playlist
+	f.write playlist + "\n"
 end
 
 def shuffle arr

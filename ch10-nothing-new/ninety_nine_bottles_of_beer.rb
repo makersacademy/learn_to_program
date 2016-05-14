@@ -1,34 +1,12 @@
-# # ninety_nine_bottles
+require './english_number.rb'
 
-# $convert_map = {
-# 	  0 => 'zero',
-#       1 => 'one',
-#       2 => 'two',
-#       3 => 'three',
-#       4 => 'four',
-#       5 => 'five',
-#       6 => 'six',
-#       7 => 'seven',
-#       8 => 'eight',
-#       9 => 'nine',
-#       10 => 'ten',
-#       20 => 'twenty',
-#       30 => 'thirty',
-#       40 => 'forty',
-#       50 => 'fifty',
-#       60 => 'sixty',
-#       70 => 'seventy',
-#       80 => 'eighty',
-#       90 => 'ninety',
-#       11 => 'eleven',
-#       12 => 'twelve',
-#       13 => 'thirteen',
-#       14 => 'fourteen',
-#       15 => 'fifteen',
-#       16 => 'sixteen',
-#       17 => 'seventeen',
-#       18 => 'eighteen',
-#       19 => 'nineteen',
-#     }
-    
+num_at_start = 100 
+num_now = num_at_start
+while num_now > 2
+  puts english_number(num_now).capitalize + ' bottles of beer on the wall, ' +
+  english_number(num_now) + ' bottles of beer!'
+  num_now = num_now - 1
+  puts 'Take one down, pass it around, ' +
+  english_number(num_now) + ' bottles of beer on the wall!'
+end
 

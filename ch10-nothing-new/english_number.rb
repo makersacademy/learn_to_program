@@ -87,5 +87,7 @@ def english_number(number)
 		end
 		
 		rev = final_arr.reverse
-		return rev.join().chomp
+		return rev.join().strip
 end
+
+#english_number(0)

@@ -13,9 +13,9 @@ end
 #testing
 
 puts old_roman_numeral 6
-puts old_roman_numeral 26
-puts old_roman_numeral 336
-puts old_roman_numeral 1001
+puts old_roman_numeral 29
+puts old_roman_numeral 349
+puts old_roman_numeral 1004
 puts old_roman_numeral 1984
 
 

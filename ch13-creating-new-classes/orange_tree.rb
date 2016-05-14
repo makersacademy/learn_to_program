@@ -15,9 +15,9 @@ class OrangeTree
 				@oranges += 4
 			elsif @age < 21
 				@oranges += 8
-			elsif @age < 26
+			elsif @age < 25
 				@oranges += 3
-			elsif @age == 26
+			elsif @age >= 25
 				@dead = true
 				'Oh, no! The tree is too old, and has died. :('
 			end

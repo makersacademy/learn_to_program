@@ -1,1 +1,1 @@
-# your code here
+puts "SPANK" * ((Time.gm(1992, 9, 14) - Time.new)/ 60 / 60 / 24 / 365).abs.to_i

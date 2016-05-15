@@ -71,9 +71,10 @@ def english_number number
         else
         	num_string = num_string + ten_to_ninety[write - 1]
         end
+        num_string = num_string + '-' if left > 0    
     end
     
-    num_string = num_string + '-' if left > 0
+    
     
     write = left
 	left = 0

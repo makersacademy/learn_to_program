@@ -8,4 +8,44 @@
 
 class OrangeTree
   # your code here
+     def initialize
+       @height = 0
+       @age = 0
+       @oranges = 0
+       @alive = true
+     end
+     
+     def one_year_passes
+          if @alive
+               @age += 1
+               @height += 0.4
+               @oranges = (@height * 15) - 25 if @age > 4
+          
+               if @age < 26
+                    "This year your tree grew to #{@height.round(1)}m tall, and produced #{@oranges.to_i} oranges."
+               else
+                    @alive = false
+                    "Oh, no! The tree is too old, and has died. :("
+               end
+          else 
+               "A year later, the tree is still dead. :("
+          end
+     end
+     
+     def height
+          @alive ? @height.round(1) : "A dead tree is not very tall. :("
+     end
+     def count_the_oranges
+          @alive ? @oranges.to_i : 'A dead tree has no oranges. :('
+     end
+     
+     def pick_an_orange
+          if @alive
+               @oranges -= 1
+               "The orange was very tasty"
+          else
+               "A dead tree has nothing to pick. :("
+          end
+     end
+      
 end

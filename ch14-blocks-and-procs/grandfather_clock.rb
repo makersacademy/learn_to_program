@@ -32,14 +32,13 @@
 
 # error: 'dongs 5 times instead of 4'
 # ==============================my version=============================
-
 def grandfather_clock &block
   #get the time
  t = Time.new.hour
- # # get local time
+ # # get local time - not required for rspec tests
  # t = t.localtime
  #get hours passes since midnight, convert to integer
- #t = t.strftime("%H").to_i  --- does not pass rake: error
+ # t = t.strftime("%H").to_i
  if t >= 13
    t -= 12
  end

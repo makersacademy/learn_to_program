@@ -1,13 +1,13 @@
-def creating_arr
-    arr, element = [], "x"
-    until element.empty?
-        puts "Enter some word, please"
-        element=  gets.chomp
-        arr<< element
-    end
-    arr.delete_at(-1)
-    arr
-end
+#def creating_arr
+  #  arr, element = [], "x"
+    #until element.empty?
+#        puts "Enter some word, please"
+  #      element=  gets.chomp
+    #    arr<< element
+    #end
+    #arr.delete_at(-1)
+    #arr
+#end
 
 def sort some_arr
     recursive_sort some_arr, []

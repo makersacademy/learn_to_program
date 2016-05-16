@@ -1,5 +1,5 @@
 require './ch10-nothing-new/shuffle.rb'
-require 'Set'
+require 'set'
 
 describe 'shuffle' do
 

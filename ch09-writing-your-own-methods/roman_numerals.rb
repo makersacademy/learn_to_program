@@ -25,12 +25,12 @@ def roman_numeral(num)
   os_rom_num
 end
 
-def do_rom_num()
-  puts "Input number to convert to roman numeral:"
-  input = gets.chomp
-  return 0 if input == "exit"
-  puts roman_numeral(input.to_i)
-  do_rom_num
-end
+#def do_rom_num()
+#  puts "Input number to convert to roman numeral:"
+#  input = gets.chomp
+#  return 0 if input == "exit"
+#  puts roman_numeral(input.to_i)
+#  do_rom_num
+#end
 
-do_rom_num
+#do_rom_num

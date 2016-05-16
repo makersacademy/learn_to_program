@@ -1,12 +1,16 @@
-puts "What year were you born in? YYYY"
-year = gets.chomp.to_i
-puts "And the month? M"
-month = gets.chomp.to_i
-puts "And the day? D"
-day = gets.chomp.to_i
+puts "Please enter a name:"
+name = gets.chomp
 
-age = Time.new - Time.local(year, month, day)
+birth_dates = Hash.new
 
-years_old = (age / (31_557_600)).floor # seconds for 365.25 days
+birthdays = File.open("birthdays.txt").read
 
-years_old.times { puts "SPANK!" }
+birthdays.each_line do |line|
+  pieces = line.chomp.split(',')
+  if pieces[0] == name
+    older = pieces[2].strip.to_i + 1
+    birth_dates[pieces[0]] = "#{pieces[1]}, #{older}"
+  end
+end
+
+puts birth_dates

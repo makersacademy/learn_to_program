@@ -43,12 +43,3 @@ def english_number number
     string_numb= string_numb + ones[write-1] if write > 0
     string_numb
 end
-
-num_at_start= 9999
-    num_now= num_at_start
-
-    while num_now > 2
-        puts english_number(num_now).capitalize + 'bottles of beer on the wall, ' + english_number(num_now) + ' bottles of beer!'
-        num_now= num_now - 1
-        puts 'Take one down, pass it around, ' + english_number(num_now) + ' bottles of beer on the wall!'
-    end

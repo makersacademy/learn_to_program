@@ -9,4 +9,5 @@ def recursive_sort(unsorted_array, sorted_array)
   sorted_array << unsorted_array[downcase_min_index]
   unsorted_array.delete_at(downcase_min_index)
   recursive_sort(unsorted_array, sorted_array)
+  sorted_array
 end

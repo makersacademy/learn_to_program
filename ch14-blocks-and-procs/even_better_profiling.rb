@@ -1,8 +1,8 @@
 def profile block_description, &block
   
-  profile_on = false
+  profiling_on = true
 
-  while profile_on 
+  if profiling_on 
   	start_time = Time.new
   	block.call
   	duration = Time.new - start_time

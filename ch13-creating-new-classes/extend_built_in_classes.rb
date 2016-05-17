@@ -7,9 +7,11 @@ class Integer
 		end
 	end
 
-	def old_roman_numeral
+	def to_roman
 
 		num = self
+
+		numerals = ''
 
 		numeral_hash = {
 			'M' => 1000,

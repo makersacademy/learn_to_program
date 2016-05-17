@@ -1,1 +1,1 @@
-# your code here
+day = Time.new(1986, 9, 24, 11, 25) + 1000000000

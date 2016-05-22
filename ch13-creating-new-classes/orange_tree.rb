@@ -5,62 +5,39 @@
 # have the tree die after 25 years.
 # check out the rspec spec/ch13/orange_tree_spec.rb to see what strings we're looking for in the responses.
 
-
 class OrangeTree
+  
+  attr_accessor 'height','count_the_oranges'
+
   def initialize
-    @height = 0
-    @orange_count = 0
-    @alive = true
-  end
-
-  def height
-    if @alive
-      @height.round(1)
-    else
-      'A dead tree is not very tall. :('
-    end
-  end
-
-  def count_the_oranges
-    if @alive
-      @orange_count
-    else
-      'A dead tree has no oranges. :('
-    end
+    @height = 0.0
+    @count_the_oranges = 0
+    @dead = false
   end
 
   def one_year_passes
-    if @alive
-      @height = @height + 0.4
-      @orange_count = 0 # old oranges fall off
-      if @height > 10 && rand(2) > 0
-        # tree dies
-        @alive = false
-        'Oh, no! The tree is too old, and has died. :('
-      elsif @height > 2
-        # new oranges grow
-        @orange_count = (@height * 15 - 25).to_i
-        "This year your tree grew to #{@height.round(1)}m tall," +
-          " and produced #{@orange_count} oranges."
-      else
-        "This year your tree grew to #{@height.round(1)}m tall," +
-          " but is still too young to bear fruit."
-      end
-    else
-      'A year later, the tree is still dead. :('
+    if @dead == true
+      return  "A year later, the tree is still dead. :("
+    elsif @height > 9.9
+      @dead = true
+      @count_the_oranges = "A dead tree has no oranges. :("
+      @height = "A dead tree is not very tall. :("
+      return "Oh, no! The tree is too old, and has died. :("    
+    else 
+      @height = (@height+0.4).round(1)
+      @count_the_oranges = (@height*15-25).to_i if @height >= 2.4
+      return "This year your tree grew to #{@height}m tall, and produced #{@count_the_oranges} oranges."
     end
   end
 
   def pick_an_orange
-    if @alive
-      if @orange_count > 0
-        @orange_count = @orange_count - 1
-        'You pick a juicy, delicious orange!'
-      else
-        'You search every branch, but find no oranges.'
-      end
+    return "A dead tree has nothing to pick. :(" if @dead == true
+    if @count_the_oranges > 0
+      @count_the_oranges -= 1
+      return "Mmmm, that orange was scrupmtious"
     else
-      'A dead tree has nothing to pick. :('
+      return "There aren't any oranges on the tree"
     end
   end
+
 end

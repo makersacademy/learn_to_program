@@ -16,7 +16,7 @@ roman_num = ""
 
   roman_num << 'I' * (num%5)
 
-  puts roman_num
+  roman_num
   
 end
 

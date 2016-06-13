@@ -1,24 +1,27 @@
-def roman_numeral num
+def roman_numerals
+  ones = "I"
+  fives = "V"
+  tens = "X"
+  fifties = "L"
+  hundreds = "C"
+  fiveHundreds = "D"
+  thousands = "M"
 
-  numerals_hash = { "M"=>[1000, 500],
-                    "D"=>[500, 100],
-                    "C"=>[100, 50],
-                    "L"=>[50, 10],
-                    "X"=>[10, 5],
-                    "V"=>[5, 1],
-                    "I"=>[1, nil]
+  numerals = ''
 
+  (num / 1000).times { numerals << thousands }
+  num = num % 1000
+  (num / 500).times { numerals << fiveHundreds }
+  num = num % 500
+  (num / 100).times { numerals << hundreds }
+  num = num % 100
+  (num / 50).times { numerals << fifties }
+  num = num % 50
+  (num / 10).times { numerals << tens }
+  num = num % 10
+  (num / 5).times { numerals << fives }
+  num = num % 5
+  num.times { numerals << ones }
 
-
-numerals = []
-
-numerals_hash.each do |l, i|
-    (num / i).times {numerals << l}
-    num = num % i
-  end
-
-
-
-
-
+  numerals 
 end

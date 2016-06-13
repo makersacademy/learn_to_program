@@ -14,9 +14,9 @@ roman_num = ""
 
   roman_num << 'V' * (num%10/5)
 
-  roman_num << 'I' * num%5
+  roman_num << 'I' * (num%5)
 
-  return roman_num
+  puts roman_num
   
 end
 

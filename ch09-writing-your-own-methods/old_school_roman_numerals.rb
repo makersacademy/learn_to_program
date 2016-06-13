@@ -15,6 +15,6 @@ numerals_hash.each do |l, i|
     num = num % i
   end
 
-puts numerals
+numerals
 
 end

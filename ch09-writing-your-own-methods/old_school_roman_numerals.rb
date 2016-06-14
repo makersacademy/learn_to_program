@@ -3,38 +3,40 @@ def old_roman_numeral(num)
   # orn stands for old roman numeral
 orn = ""
 
-while num > 1000
+while num >= 1000
   orn += 'M' if num % 1000 != num
   num = num -= 1000
 end
-while num > 500
+while num >= 500
 orn += 'D' if num % 500 != num
 num = num -= 500
 end
-while num > 100
+while num >= 100
 orn += 'C' if num % 100 != num
 num = num -= 100
 end
-while num > 50
+while num >= 50
 orn += 'L' if num % 50 != num
 num = num -= 50
 end
-while num > 10
+while num >= 10
 orn += 'X' if num % 10 != num
 num = num -= 10
 end
-while num > 5
+while num >= 5
 orn += 'V' if num % 5 != num
 num = num -= 5
 end
-while num > 1
+while num >= 1
 orn += 'I' if num % 1 != num
 num = num -= 1
 end
-orn
+return orn
 end
 
 puts old_roman_numeral(2016)
+puts old_roman_numeral(1001)
+puts old_roman_numeral(1013)
 puts old_roman_numeral(113)
 
 =begin

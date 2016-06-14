@@ -82,11 +82,15 @@ end
 
 def bottles btls
 
-  puts "#{english_number btls} bottles of beer on the wall, #{english_number btls} bottles of beer!"
-  puts "take one down, pass it around, #{english_number btls-1} bottles of beer on the wall."
+  puts "#{english_number btls} #{btls == 1 ? "bottle" : "bottle"} of beer on the wall, #{english_number btls} #{btls == 1 ? "bottle" : "bottles"} of beer!"
+if btls > 1
+  puts "take one down, pass it around, #{english_number btls-1} #{btls-1 == 1 ? "bottle" : "bottle"} of beer on the wall."
+else
+  puts "take one down, pass it around, no more bottles of beer on the wall!"
+end
 
   bottles (btls - 1) unless btls == 1
 
 end
 
-bottles 8
+bottles 2

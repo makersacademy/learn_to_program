@@ -39,7 +39,3 @@ def roman_numeral (num)
 
 end
 
-puts "Old Roman Numeral Converter!"
-puts "Please enter your number (range: 1-3000):"
-num = gets.chomp.to_i
-roman_numeral (num)

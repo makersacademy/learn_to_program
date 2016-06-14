@@ -1,5 +1,7 @@
 def english_number n
 
+return "zero" if n == 0
+
 english = []
 
 units = {
@@ -75,6 +77,6 @@ english_number 256
 english_number 444
 puts english_number 3211
 puts english_number 100
-english_number 200
+puts english_number 0
 english_number 999
 english_number 10

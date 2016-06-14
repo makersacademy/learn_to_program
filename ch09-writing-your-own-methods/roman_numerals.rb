@@ -1,4 +1,4 @@
-def roman_numeral num
+def roman_numerals num
   thous = num / 1000
   remainder = num % 1000
   hunds= remainder/ 100 
@@ -19,7 +19,7 @@ def roman_numeral num
     roman = roman + 'D' * fivehuns  
     roman = roman + 'C' * (num % 500 / 100)
   end 
-  #build special case for tens 9 of them and 4 of them
+  #build special case for tens 9 of them and 4 of 
   if tens  == 9
     roman = roman + 'XC'
   elsif tens == 4
@@ -37,5 +37,5 @@ def roman_numeral num
     roman = roman + 'V' * (num % 10 / 5)
     roman = roman + 'I' * (num % 5 / 1)  
   end 
-   roman 
+   return roman 
 end

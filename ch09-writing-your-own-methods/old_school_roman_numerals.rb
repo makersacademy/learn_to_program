@@ -61,7 +61,7 @@ def replace_under_10(num)
   num_sarr = num.to_s.chars
   if num < 5
     under_tens = "I" * num_sarr[0].to_i
-  elsif num == 50
+  elsif num == 5
     under_tens = "V"
   else    # for nums between 6 and 9 - inclusive
     under_tens = "V" + "I" * (num_sarr[0].to_i - 5) # e.g. for 7 : "V" + "I" * (7 - 5)

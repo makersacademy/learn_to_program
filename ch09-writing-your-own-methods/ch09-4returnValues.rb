@@ -4,15 +4,17 @@ def ask question
 	    reply = gets.chomp.downcase
 		if (reply == 'yes' || reply == 'no') 
 			if reply == 'yes'
-				return true
+				answer = true
 			else
-		        return false
+		        answer = false
 			end
-			
+			break 
 		else
 		    puts 'Please answer "yes" or "no".'
 		end 
 	end
+
+	answer # This is what we return (true or false)
 end
   puts 'Hello, and thank you for...'
   puts

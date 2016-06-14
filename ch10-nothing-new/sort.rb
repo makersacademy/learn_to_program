@@ -1,7 +1,5 @@
-def sort(arr)
-  recursive_sort arr, []
-end
-
-def recursive_sort unsorted_array, sorted_array
-
+def sort(array, sorted_array = [])
+  sorted_array << array.delete_at(array.index(array.min))
+  sort(array, sorted_array) unless array.size.zero?
+  sorted_array
 end

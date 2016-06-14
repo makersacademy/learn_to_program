@@ -11,7 +11,7 @@ while arr.length > 0
     shuffled.insert(rand(arr.length), num)
     
 end
-    shuffled.compact
+    shuffled.compact.join(' ')
 end
 
 print shuffle(['apple','garden','pear','table', 'fence'])

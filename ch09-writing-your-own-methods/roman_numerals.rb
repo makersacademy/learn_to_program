@@ -26,7 +26,7 @@ def roman_numeral num
 
   if ones == 9
     number = number + 'IX'
-  elsif tens == 4
+  elsif ones == 4
     number = number + 'IV'
   else
     number = number + 'V' * (num % 10 / 5)
@@ -37,4 +37,4 @@ def roman_numeral num
 
 end
 
-puts (roman_numeral(1589))
+puts (roman_numeral(14))

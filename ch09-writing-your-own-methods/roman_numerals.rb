@@ -1,4 +1,4 @@
-def roman_numerals num
+def roman_numeral num
   thous = num / 1000
   remainder = num % 1000
   hunds= remainder/ 100 

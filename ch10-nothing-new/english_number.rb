@@ -31,7 +31,7 @@ units.inject(n) do |num, (name, value)|
 	num - (value * (num / value))
 end
 
-english.compact.join(" ")
+english.compact.join(" ").rstrip
 
 end
 
@@ -43,22 +43,30 @@ def words modulus
 		ones = [	"one", "two", "three", "four", "five",
 					"six", "seven", "eight", "nine"]
 
-		tens = [	"ten", "twenty", "thirty", "fourty", "fifty", "sixty",
+		tens = [	"ten", "twenty", "thirty", "forty", "fifty", "sixty",
 					"seventy", "eighty", "ninety"]
 
 		teens =[	"eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
 					"seventeen", "eighteen", "nineteen"]
 
 string = []
-a = modulus / 100
-if a > 0 #hundreds
+a = modulus / 100 #hundreds
+b = (modulus - a * 100) / 10 #tens
+c = modulus - ((a*100) + (b*10)) #ones
+
+#hundreds
+if a > 0
 	string.push("#{ones[a-1]} hundred")
 end
-b = (modulus - a * 100) / 10
+
+#tens
 if b > 1
 	string.push("#{tens[b-1]}")
+elsif ((b == 1)&&(c == 0))
+	string.push(tens[b-1])
 end
-c = modulus - ((a*100) + (b*10))
+
+#ones (and teens)
 if ((c > 0) && (b == 1))
 	string.push("#{teens[c-1]}")
 elsif (((c > 0) && (b != 1))) && (b > 1)
@@ -79,4 +87,4 @@ puts english_number 3211
 puts english_number 100
 puts english_number 0
 english_number 999
-english_number 10
+puts english_number 10

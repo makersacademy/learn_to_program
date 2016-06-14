@@ -18,8 +18,13 @@ def english_number number
     
       
     left = number
-    write = left/1000000000000
-    left = left - write*1000000000000
+    
+    while zillions.length > 0
+    zil_pair = zillions.pop
+    zil_name = zil_pair[0]
+    zil_num = 10 ** zil_pair[1]
+    write = left/zil_num
+    left = left - write*zil_num
 
     if write > 0
         prefix = english_number write
@@ -53,6 +58,7 @@ def english_number number
     end
     num_string
 
+    end
 end
 
 puts english_number 2111

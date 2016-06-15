@@ -16,7 +16,7 @@ end
 
 change_dir directory
 
-pic_names = Dir['**/*.{JPG,jpg}']
+pic_names = Dir["#{Dir.pwd}/**/*.{JPG,jpg}"]
 
 
 puts "Where would you like to download these pictures to?"

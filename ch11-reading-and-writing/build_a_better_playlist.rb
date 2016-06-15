@@ -1,26 +1,16 @@
 def music_shuffle filenames
-  arr = filenames.split("\n")
+  a = filenames.split("\n")
 
-  a = []
-  b = []
-
-  c = 1
-  arr.each do |x|
-    c % 2 == 0 ? a << x : b << x
-    c += 1
+count = 1
+b =  a.inject([]) do |result, element|
+    result << element if count % 2 == 0
+    count = count + 1
+    result
   end
 
-shuf = []
-
-until (a == []) && (b == [])
-  shuf << a
-  shuf << b
-end
-
-
-
-
-shuf.compact
+puts a
+puts "blank"
+puts b
 
 end
 

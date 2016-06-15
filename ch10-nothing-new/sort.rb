@@ -1,39 +1,27 @@
-def sort array
+def sort arr
 
-  sorted_array = []
-  holding_array = []
-
-  while array.length > 0
-    var1 = array.pop
-    if sorted_array.length > 0
-      var2 = sorted_array.pop
-    else
-      var2 = array.pop
+  def recursive_sort(unsorted_array, sorted_array)
+    if unsorted_array.length <= 0
+      return sorted_array
     end
 
-    while var1 < var2
-      if sorted_array.length > 0
-        holding_array.push(var2)
-        var2 = sorted_array.pop
+    smallest = unsorted_array.pop
+    still_unsorted = []
+
+    unsorted_array.each do |word|
+      if word < smallest
+        still_unsorted.push(smallest)
+        smallest = word
       else
-        sorted_array.push(var1)
-        var1 = 0
-        sorted_array.push(var2)
-        var2 = 0
+        still_unsorted.push(word)
       end
     end
 
-    if var1 !=0 and var2 !=0
-      sorted_array.push(var2)
-      sorted_array.push(var1)
-    end
-
-    holding_array.length.times do
-      sorted_array.push(holding_array.pop)
-    end
+    sorted_array.push(smallest)
+    recursive_sort(still_unsorted, sorted_array)
 
   end
 
-return sorted_array
+  recursive_sort(arr, [])
 
 end

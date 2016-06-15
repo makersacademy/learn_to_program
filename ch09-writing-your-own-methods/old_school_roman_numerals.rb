@@ -7,6 +7,6 @@ def old_roman_numeral num
   number6 = number5 + "V" * (num %10/       5)
   number7 = number6 + "I" * (num %5/        1)
 
-  puts "Your roman numeral is #{number7}."
+number7
 
   end

@@ -25,19 +25,6 @@ change_dir gets.chomp
 
 puts "What would you like to call this batch of photos?"
 
-
-def batch_name bname
-
-  if Dir["#{bname}#{/\d+/}.{JPG,jpg}"]
-    puts "Error. A batch already exists with this name.\n
-    Please choose another name for this batch."
-    batch_name gets.chomp
-  else
-    bname
-  end
-
-end
-
 batch = gets.chomp
 
 
@@ -52,13 +39,16 @@ pic_names.each do |name|
       "#{batch}#{pic_number}.jpg"
     end
 
-if File.exist?(new_name)
-  puts "Error #{new_name} already exists, please enter a name to save #{name} as."
-  new_name = gets.chomp
-end
-    File.rename name, new_name
 
+    while File.exist?(new_name)
+        puts "Error #{new_name} already exists, please enter a name to save #{name} as."
+        new_name = gets.chomp
+    end
+
+    File.rename name, new_name
+    
     pic_number += 1
+
   end
 
 puts #

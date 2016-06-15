@@ -8,7 +8,7 @@ def old_school_numeral (x)
 	roman_numeral = ""
 	rest = x 
 	write = rest/1000
-	rest = x%1000
+	rest = rest%1000
 	if write > 0 
 		if write == 1 
 			roman_numeral = roman_numeral + "M"
@@ -24,7 +24,7 @@ def old_school_numeral (x)
 		roman_numeral = roman_numeral + "D"
 	end 
 	write = rest/100
-	rest = rest%100
+	rest = rest%50
 	if write > 0 
 		if write == 1 
 			roman_numeral = roman_numeral + "C"
@@ -35,11 +35,17 @@ def old_school_numeral (x)
 		elsif write == 4
 			roman_numeral = roman_numeral + "CCCC"
 		end 
+	
+	else 
+		roman_numeral = roman_numeral +""
 	end 
 	write = rest/50
 	rest = rest%50
 	if write > 0 
 		roman_numeral = roman_numeral + "L"
+	
+	else
+		roman_numeral = roman_numeral +""
 	end 
 	write = rest/10 
 	rest = rest%10
@@ -53,12 +59,18 @@ def old_school_numeral (x)
 		elsif write == 4
 			roman_numeral = roman_numeral + "XXXX"
 		end 
+	
+	else 
+		roman_numeral = roman_numeral + ""
 	end 
 	write = rest/5
 	rest = rest%5
 	if write > 0 
 		roman_numeral = roman_numeral + "V"
-	end
+	
+	else 
+		roman_numeral = roman_numeral +""
+	end 
 	write = rest 
 	if write > 0 
 		if write == 1 
@@ -70,9 +82,14 @@ def old_school_numeral (x)
 		elsif write == 4
 			roman_numeral = roman_numeral + "IIII"
 		end 
+	else 
+		roman_numeral = roman_numeral +""
 	end 
 end 
-puts old_school_numeral(2999)
+puts old_school_numeral(781)
+
+
+
 
 
 

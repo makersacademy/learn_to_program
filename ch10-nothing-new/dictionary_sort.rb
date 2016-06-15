@@ -24,5 +24,4 @@ def dictionary_sort(arr)
 
   recursive_sort(arr, [])
 
-
 end

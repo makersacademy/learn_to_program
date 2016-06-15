@@ -4,10 +4,8 @@ def shuffle arr
 
   while arr.length > 0
     rand_index = rand(arr.length)
-
     curr_index = 0
     new_array = []
-
     arr.each do |item|
       if curr_index == rand_index
         shuffle_array.push(item)

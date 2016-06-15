@@ -211,7 +211,7 @@ def english_number number
 
 end
 puts english_number(  0)
-puts english_number(  9)
+puts english_number(  47)
 puts english_number(  3456)
 puts english_number(  999999)
 puts english_number(  2345000)

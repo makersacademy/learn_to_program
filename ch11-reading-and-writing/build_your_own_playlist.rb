@@ -32,6 +32,9 @@ end
 
 playlist = shuffle(Dir["#{Dir.pwd}/**/*.{MP3,mp3}"])
 
+puts "Where would you like to put your playlist?"
+change_dir gets.chomp
+
 File.open 'playlist.m3u', 'w' do |f|
   platlist.each do |msc|
     f.write msc + "\n"

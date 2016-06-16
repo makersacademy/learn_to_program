@@ -3,3 +3,4 @@ def shuffle arr
   #So decided to submit this was as it allows it through
   arr.sort_by{rand}
 end
+puts (shuffle([1,2,3,4,5,6]))

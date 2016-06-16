@@ -49,23 +49,21 @@ end
 
 #Refactored Method
 def roman_numeral(num)
-    digits = [1000, 500, 100, 50, 10, 5, 1]
-    numeral = [0, 0, 0, 0, 0, 0, 0]
-    rom_num = ['M','D','C','L','X','V','I']
+    digits = [[1000, 500, 100, 50, 10, 5, 1], [0, 0, 0, 0, 0, 0, 0], ['M','D','C','L','X','V','I']]
     answer = ' '
     h = 0
     
-    digits.each do |z|
+    digits[0].each do |z|
         if num / z > 0
-            numeral[h] = (num / z)
-            num = num % z
+            digits[1][h] = (num / z) #Counting the number of 10s, 50s, 100s, etc in num
+            num = num % z #Using the remainder as the next value of num
         end
         h += 1
     end
    
-    for a in 0..numeral.size - 1 do
-        answer << rom_num[a] * numeral[a]
-        answer = answer.gsub("DCCCC","CM").gsub("CCCC","CD").gsub("LXXXX","XC").gsub("XXXX","XL").gsub("VIIII","IX").gsub("IIII","IV")
+    for a in 0..digits[1].size - 1 do #Iterate through array to calculate roman numerals old school style
+        answer << digits[2][a] * digits[1][a]
+        answer = answer.gsub("DCCCC","CM").gsub("CCCC","CD").gsub("LXXXX","XC").gsub("XXXX","XL").gsub("VIIII","IX").gsub("IIII","IV") #Catching edge cases to update old school roman numeral
     end
 
     puts answer

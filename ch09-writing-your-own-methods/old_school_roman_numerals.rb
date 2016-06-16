@@ -1,40 +1,16 @@
 def old_roman_numeral num
 
-  	left = num % 1000
-  	right = (num - left) / 1000
+  roman_num = ""
+  roman_num = roman_num + "M" * (num / 1000)
+  roman_num = roman_num + "D" * (num % 1000 / 500)
+  roman_num = roman_num + "C" * (num % 500 / 100)
+  roman_num = roman_num + "L" * (num % 100 / 50)
+  roman_num = roman_num + "X" * (num % 50 / 10)
+  roman_num = roman_num + "V" * (num % 10 / 5)
+  roman_num = roman_num + "I" * (num % 5 / 1)
+  roman_num
 
-  	if right > 0
-  		right.times {print "M"}
-  	end
-  	num = left
-
-  	left = num % 100
-  	right = (num - left) / 100
-
-  	if (right > 0) && (right >= 5)
-  		print "D"
-  		(right - 5).times {print "C"}
-  	elsif (right > 0) && (right < 5)
-  		right.times {print "C"}
-  	end
-  	num = left
-
-  	left = num % 10
-  	right = (num - left) / 10
-
-  	if (right > 0) && (right >= 5)
-  		print "L"
-  		(right - 5).times {print "X"}
-  	elsif (right > 0) && (right < 5)
-  		right.times {print "X"}
-  	end
-  	right = left
-
-  	if (right > 0) && (right >= 5)
-  		print "V"
-  		(right - 5).times {print "I"}
-  	elsif (right > 0) && (right < 5)
-  		right.times {print "I"}
-  	end
-  	puts  roman
 end
+
+puts old_roman_numeral(2524)
+puts old_roman_numeral(520)

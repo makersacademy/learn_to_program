@@ -1,46 +1,42 @@
 def roman_numeral num
-  left = number % 1000
-  right = (number - left) / 1000
+ # MDCLXVI
+  roman_num = ""
+  thousends =  (num / 1000)
+  hundreds = (num % 1000 / 100)
+  tens =  (num % 100 / 10)
+  ones = (num % 10)
 
-  if right > 0
-    right.times {print "M"}
+  roman_num = roman_num + "M" * thousends
+  
+  if hundreds == 9
+    roman_num = roman_num + "CM"
+  elsif hundreds == 4
+    roman_num = roman_num + "CD"
+  else
+    roman_num = roman_num + "D" * (num % 1000 / 500)
+    roman_num = roman_num + "M" * (num % 500 / 100)
   end
 
-  number = left
-  left = number % 100
-  right = (number - left) / 100
-
-  if right >= 5
-    print "D"
-    (right - 5).times {print "C"}
-  elsif (right > 0) && (right < 5)
-    right.times {print "C"}
+  if tens == 9
+    roman_num = roman_num + "XC"
+  elsif tens == 4
+    roman_num = roman_num + "XL"
+  else
+    roman_num = roman_num + "L" * (num % 100 / 50)
+    roman_num = roman_num + "X" * (num % 50 / 10)
   end
 
-  number = left
-  left = number % 10
-  right = (number - left) / 10
-
-  if right >= 5
-    print "L"
-    (right - 5).times {print "X"}
-  elsif (right > 0) && (right < 5)
-    right.times {print "X"}
+  if ones == 9
+    roman_num = roman_num + "IX"
+  elsif ones == 4
+    roman_num = roman_num + "IV"
+  else
+    roman_num = roman_num + "V" * (num % 10 / 5)
+    roman_num = roman_num + "I" * (num % 5 / 1)
   end
-
-  if (left > 0) && (left < 4)
-    left.times print {"I"}
-  elsif left >= 5 && left < 9
-    print "V"
-    (left - 5).times {print "I"}
-  elsif left > 0
-    case left
-      when 9
-        print "IX"
-      when 4
-        print "IV"
-    end
-  end
-  puts roman
-
+  
+  roman_num
 end
+
+puts roman_numeral(2524)
+puts roman_numeral(520)

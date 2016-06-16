@@ -1,6 +1,7 @@
 def recursive_shuffle unshuffled, shuffled
-  shuff_length = unshuffled.length
+  shuff_length = unshuffled.length 
   if unshuffled == []
+    unshuffled = shuffled
     return shuffled
   end  
   #generate a random number from 0 to unshuffled length
@@ -23,5 +24,5 @@ def shuffle arr
   # your code here
   recursive_shuffle arr, []
 end
-temp = shuffle ['s','a','b','tipple']
+temp = shuffle ['1','2','3','4']
 puts temp

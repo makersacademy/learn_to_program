@@ -28,9 +28,7 @@ def ask question
     puts 'Hello, and thank you for...'
     
     puts
-    
-    puts 'Hello, and thank you for...'
-    puts
+
     
     ask 'Do you like eating tacos?'
     ask 'Do you like eating burritos?'

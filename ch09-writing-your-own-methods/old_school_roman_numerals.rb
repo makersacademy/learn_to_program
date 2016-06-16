@@ -14,6 +14,6 @@ rom << "X" * (num % 50 / 10)
 rom << "V" * (num % 10 / 5)
 rom << "I" * (num % 5 / 1)
 
-puts rom.join.to_s
+rom.join.to_s
 
 end

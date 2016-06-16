@@ -48,7 +48,7 @@ else
   rom << "I" * (num % 5 / 1)
 end
 
-puts rom.join.to_s
+rom.join.to_s
 
 end
 

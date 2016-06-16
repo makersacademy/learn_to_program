@@ -41,6 +41,6 @@ def roman_numeral num
         print "IV"
     end
   end
-  puts
+  puts roman
 
 end

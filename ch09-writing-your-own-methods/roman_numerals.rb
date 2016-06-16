@@ -66,7 +66,7 @@ def roman_numeral(num)
         answer = answer.gsub("DCCCC","CM").gsub("CCCC","CD").gsub("LXXXX","XC").gsub("XXXX","XL").gsub("VIIII","IX").gsub("IIII","IV") #Catching edge cases to update old school roman numeral
     end
 
-    puts answer
+    answer.strip
 end
 
 #roman_numeral(949)

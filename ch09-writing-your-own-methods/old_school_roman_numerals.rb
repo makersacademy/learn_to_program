@@ -49,7 +49,7 @@ def old_roman_numeral(num)
         answer << digits[2][a]*digits[1][a] #Concatenate string ready to output old school roman numerals
     end
 
-    puts answer
+    answer.strip
 end
 
 #old_roman_numeral(949)

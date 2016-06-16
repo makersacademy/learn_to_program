@@ -79,12 +79,3 @@ end
 string.join(' ')
 
 end
-
-puts english_number 109238745102938560129834709285360238475982374561034
-english_number 256
-english_number 444
-puts english_number 3211
-puts english_number 100
-puts english_number 0
-english_number 999
-puts english_number 10

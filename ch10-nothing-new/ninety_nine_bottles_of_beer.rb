@@ -92,5 +92,3 @@ end
   bottles (btls - 1) unless btls == 1
 
 end
-
-bottles 2

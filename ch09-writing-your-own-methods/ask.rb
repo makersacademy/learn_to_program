@@ -10,5 +10,3 @@ def ask question
 reply.downcase == "yes" ? true : false
 
 end
-
-ask "Yes or No?"

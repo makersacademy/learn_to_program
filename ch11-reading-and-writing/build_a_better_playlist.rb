@@ -26,5 +26,3 @@ def music_shuffle paths
 end
 paths
 end
-
-puts music_shuffle "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15"

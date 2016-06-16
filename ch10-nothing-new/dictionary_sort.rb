@@ -23,5 +23,3 @@ end
   sorted_arr.push sml
   recursive_sort still_unsorted, sorted_arr
 end
-
-puts dictionary_sort ["apple","banana","starfruit","watermelon","COCOCNUT","Peach","lemon","LIME"]

@@ -1,7 +1,7 @@
 def roman_numeral(num)
     digits = [1000, 500, 100, 50, 10, 5, 1]
     numeral = [0, 0, 0, 0, 0, 0, 0]
-    rom_num = ['M','D','C','L','X','V','I','IV','IX','XL','XC','CD','CM']
+    rom_num = ['M','D','C','L','X','V','I']
     answer = ' '
     h = 0
     
@@ -43,4 +43,4 @@ def roman_numeral(num)
     puts answer
 end
 
-roman_numeral(1032)
+roman_numeral(949)

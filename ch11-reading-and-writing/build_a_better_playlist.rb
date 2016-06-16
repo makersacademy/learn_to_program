@@ -1,4 +1,4 @@
-def music_shuffle filenames
+def playlist_shuffle filenames
   a = filenames.split("\n")
 
   count = 0
@@ -15,6 +15,16 @@ def music_shuffle filenames
 
 
   c.uniq.compact.join("\n")
+end
+
+def music_shuffle paths
+
+  count = 0
+  until count == 10
+  paths = playlist_shuffle paths
+  count += 1
+end
+paths
 end
 
 puts music_shuffle "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15"

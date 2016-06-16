@@ -14,7 +14,7 @@ def roman_numeral num
     roman_num = roman_num + "CD"
   else
     roman_num = roman_num + "D" * (num % 1000 / 500)
-    roman_num = roman_num + "M" * (num % 500 / 100)
+    roman_num = roman_num + "C" * (num % 500 / 100)
   end
 
   if tens == 9

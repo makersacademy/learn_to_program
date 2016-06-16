@@ -1,3 +1,6 @@
+#Old Method
+
+=begin
 def roman_numeral(num)
     digits = [1000, 500, 100, 50, 10, 5, 1]
     numeral = [0, 0, 0, 0, 0, 0, 0]
@@ -42,5 +45,30 @@ def roman_numeral(num)
 
     puts answer
 end
+=end
 
-roman_numeral(949)
+#Refactored Method
+def roman_numeral(num)
+    digits = [1000, 500, 100, 50, 10, 5, 1]
+    numeral = [0, 0, 0, 0, 0, 0, 0]
+    rom_num = ['M','D','C','L','X','V','I']
+    answer = ' '
+    h = 0
+    
+    digits.each do |z|
+        if num / z > 0
+            numeral[h] = (num / z)
+            num = num % z
+        end
+        h += 1
+    end
+   
+    for a in 0..numeral.size - 1 do
+        answer << rom_num[a] * numeral[a]
+        answer = answer.gsub("DCCCC","CM").gsub("CCCC","CD").gsub("LXXXX","XC").gsub("XXXX","XL").gsub("VIIII","IX").gsub("IIII","IV")
+    end
+
+    puts answer
+end
+
+#roman_numeral(949)

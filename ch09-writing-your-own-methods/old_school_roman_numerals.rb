@@ -9,5 +9,5 @@ def old_roman_numeral num
   roman = roman + "I" * (num % 5 / 1)
 end
 
-puts "Enter a number from 1 to 3000."
-puts old_roman_numeral(gets.chomp.to_i)
+#puts "Enter a number from 1 to 3000."
+#puts old_roman_numeral(gets.chomp.to_i)

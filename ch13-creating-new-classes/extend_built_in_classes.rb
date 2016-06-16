@@ -1,4 +1,12 @@
 class Integer
+
+  def factorial
+
+    return "You can't take the factorial of a negative number!" if self < 0
+    (1...self).inject(self) {|result, element| result * element }
+
+end
+
   def to_roman
 
     numerals_hash = { "M"=>1000,
@@ -21,5 +29,3 @@ num = self
   end
 
 end
-
-puts 29.to_roman

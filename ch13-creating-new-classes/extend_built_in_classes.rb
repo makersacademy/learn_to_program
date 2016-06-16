@@ -1,3 +1,25 @@
 class Integer
-  # your code here
+  def to_roman
+
+    numerals_hash = { "M"=>1000,
+                      "D"=>500,
+                      "C"=>100,
+                      "L"=>50,
+                      "X"=>10,
+                      "V"=>5,
+                      "I"=>1}
+
+  numerals = ''
+num = self
+  numerals_hash.each do |l, i|
+      (num / i).times {numerals << l}
+      num %= i
+    end
+
+  numerals
+
+  end
+
 end
+
+puts 29.to_roman

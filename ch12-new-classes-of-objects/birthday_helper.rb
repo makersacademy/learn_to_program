@@ -31,10 +31,22 @@ def convert_date(date)
     'dec' => 12
   }
   date_arr = date.split(' ')
-  m = calendar[date_arr[0]]
-  d = date_arr[1]
-  y = date_arr[2]
-  Time.local(y, m, d)
+  @m = calendar[date_arr[0]]
+  @d = date_arr[1]
+  @y = date_arr[2]
+  Time.local(@y, @m, @d)
 end
-#
-convert_date(list[r])
+
+def age(date)
+  ((Time.new - date) / 31_557_600) + 1
+end
+
+def days_until
+  (Time.new - Time.local(Time.new.year, @m, @d) / 86_400).floor
+end
+
+def capitalise(string)
+  string.split.map(&:capitalize).join(' ')
+end
+
+puts "#{capitalise(r)} will be #{age(convert_date(list[r])).floor} in #{days_until}"

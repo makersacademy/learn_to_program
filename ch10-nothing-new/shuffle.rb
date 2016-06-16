@@ -5,14 +5,14 @@ shuffle = []
 x = shuffle.length
 a = arr.length
   until x == a
-    p = arr[(rand(5))]
+    p = arr[(rand(a))]
     unless shuffle.include? p
       shuffle.push(p)
     end
     x = shuffle.length
    end
 arr = shuffle
-puts arr
+return arr
 end
 
 arr = [1,2,3,4,5]

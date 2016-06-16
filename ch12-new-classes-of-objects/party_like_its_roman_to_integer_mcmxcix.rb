@@ -1,3 +1,4 @@
 def roman_to_integer roman
-  # your code here
+    roman = roman.downcase
+    
 end

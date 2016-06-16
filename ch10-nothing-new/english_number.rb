@@ -11,36 +11,202 @@ def english_number number
     one_place = ['one','two','three','four','five','six','seven','eight','nine']
     teenager_place = ['eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
     ten_place = ['ten','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']
-    millions = [' thousand', ' million',' billion',' trillion',' quadrillion',' quintillion',' sextillion']
-    millions_num = [1000,1000000,1000000000,1000000000000,1000000000000000,1000000000000000000, 1000000000000000000000]
-    
+    millions = [' thousand', ' million',' billion',' trillion',' quadrillion',' quintillion',' sextillion', ' septillion', ' octillion',' nonillion',' decillion',' undecillion',' duodecillion',' tredecillion',' quattuordecillion', ' quindecillion', ' sexdecillion']
+    millions_num = [ 1000,1000000,1000000000,1000000000000,1000000000000000,1000000000000000000, 1000000000000000000000,1000000000000000000000000,1000000000000000000000000000,1000000000000000000000000000000, 1000000000000000000000000000000000, 1000000000000000000000000000000000000,1000000000000000000000000000000000000000,1000000000000000000000000000000000000000000,1000000000000000000000000000000000000000000000, 1000000000000000000000000000000000000000000000000,1000000000000000000000000000000000000000000000000000]
     
     left = number
-    if left >= 1000
-        x = 0
-        y = 0
-        until number / millions_num[y] >= 1 && number / millions_num[y] <= 999
-            #x = x ** y
-            y += 1
-        end
-        #puts x
-        puts y
-        z = millions_num[y]
-        #puts z
-        #left = number
-        write = left/z
-        left = left - (write*z)
-        #puts left
-        if write > 0
-            thousand = english_number write
-            num_string = num_string + thousand + millions[y]
-            if left > 0
-                num_string = num_string + ' '
-            end
+    
+    x = millions_num[16]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        sexdecillion = english_number write
+        num_string = num_string + sexdecillion + millions[16]
+        if left > 0
+            num_string = num_string + ' '
         end
     end
-    #puts left
     
+    x = millions_num[15]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        quindecillion = english_number write
+        num_string = num_string + quindecillion + millions[15]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[14]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        quattuordecillion = english_number write
+        num_string = num_string + quattuordecillion + millions[14]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[13]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        tredecillion = english_number write
+        num_string = num_string + tredecillion + millions[13]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[12]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        duodecillion = english_number write
+        num_string = num_string + duodecillion + millions[12]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    
+    
+    
+    x = millions_num[11]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        undecillion = english_number write
+        num_string = num_string + undecillion + millions[11]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+  
+  x = millions_num[10]
+  write = left/x
+  left = left - write*x
+  if write > 0
+      decillion = english_number write
+      num_string = num_string + decillion + millions[10]
+      if left > 0
+          num_string = num_string + ' '
+      end
+  end
+  
+    x = millions_num[9]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        nonillion = english_number write
+        num_string = num_string + nonillion + millions[9]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[8]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        octillion = english_number write
+        num_string = num_string + octillion + millions[8]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[7]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        septillion = english_number write
+        num_string = num_string + septillion + millions[7]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[6]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        sextillion = english_number write
+        num_string = num_string + sextillion + millions[6]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[5]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        quintillion = english_number write
+        num_string = num_string + quintillion + millions[5]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[4]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        quadrillion = english_number write
+        num_string = num_string + quadrillion + millions[4]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[3]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        trillion = english_number write
+        num_string = num_string + trillion + millions[3]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    x = millions_num[2]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        billion = english_number write
+        num_string = num_string + billion + millions[2]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    
+    x = millions_num[1]
+    write = left/x
+    left = left - write*x
+    if write > 0
+        million = english_number write
+        num_string = num_string + million + millions[1]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
+    
+    
+    write = left/1000
+    left = left - write*1000
+    if write > 0
+        thousands = english_number write
+        num_string = num_string + thousands + millions[0]
+        if left > 0
+            num_string = num_string + ' '
+        end
+    end
     
     write = left/100
     left = left - write*100
@@ -52,7 +218,6 @@ def english_number number
         end
     end
     
-    #puts left
     write = left/10
     left = left - write*10
     if write > 0
@@ -74,3 +239,5 @@ def english_number number
     end
     num_string
 end
+
+puts english_number 109238745102938560129834709285360238475982374561034

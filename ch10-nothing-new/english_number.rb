@@ -18,7 +18,7 @@ def english_number number
     
     tens_place = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
     
-    teenagers = ['eleven', 'twelve', 'thirteen','fourteen', 'fifteen','fourteen', 'fifteen', 'sixteen','seventeen','eighteen', 'nineteen']
+    teenagers = ['eleven', 'twelve', 'thirteen','fourteen', 'fifteen', 'sixteen','seventeen','eighteen', 'nineteen']
     
     zillions = [
     ['hundred', 2],

@@ -8,7 +8,8 @@ def roman_to_integer roman
                     "C" => 100,
                     "D" => 500,
                     "M" => 1000}
-#I figured out that I needed a hash, but couldn't work out how to account for calculating 4 and 9!
+
+#I figured out that I needed a hash, but couldn't work out how to account for calculating 4's and 9's!
 
   roman.upcase!
   total = 0
@@ -31,5 +32,5 @@ def roman_to_integer roman
     end
     total += value
   end
-  total
+  total.to_i
 end

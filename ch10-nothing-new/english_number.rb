@@ -21,6 +21,31 @@ teenagers = ['eleven', 'twelve', 'thirteen',
             'fourteen', 'fifteen', 'sixteen',
             'seventeen', 'eighteen', 'nineteen']
 
+zillions = [['hundred', 2],
+              ['thousand', 3],
+              ['million', 6],
+              ['billion', 9],
+              ['trillion', 12],
+              ['quadrillion', 15],
+              ['quintillion', 18],
+              ['sextillion', 21],
+              ['septillion', 24],
+              ['octillion', 27],
+              ['nonillion', 30],
+              ['decillion', 33],
+              ['undecillion', 36],
+              ['duodecillion', 39],
+              ['tredecillion', 42],
+              ['quattuordecillion', 45],
+              ['quindecillion', 48],
+              ['sexdecillion', 51],
+              ['septendecillion', 54],
+              ['octodecillion', 57],
+              ['novemdecillion', 60],
+              ['vigintillion', 63],
+              ['googol', 100]]
+              
+
 # "left" is how much of the number
 # we still have left to write out.
 # "write" is the part we are
@@ -28,29 +53,25 @@ teenagers = ['eleven', 'twelve', 'thirteen',
 # write and left...get it? :)
 left = number
 
-write = left/1000 # How many thousands left?
-left = left - write*1000 #Take off the thousands
-
-    if write > 0
-        thousands = english_number write
-        num_string = num_string + thousands + ' thousand'
-            if left > 0
-                num_string = num_string + ' '
-            end
-    end            
-
-write = left/100 # How many hundreds left?
-left = left - write*100 # Subtract off those hundreds.
-
+while zillions.length > 0
+    zil_pair = zillions.pop
+    zil_name = zil_pair[0]
+    zil_base = 10 ** zil_pair[1]
+    
+    write = left/zil_base # How many zillions left?
+    left = left - write*zil_base #Take off the zillions
+    
     if write > 0
         # Now here's the recursion:
-        hundreds = english_number write
-        num_string = num_string + hundreds + ' hundred'
-            if left > 0
-                # So we don't write 'two hundredfifty-one'...
-                num_string = num_string + ' '
-            end
+        prefix = english_number write
+        num_string = num_string + prefix + ' ' + zil_name
+            
+        if left > 0
+            # So we keep a space between the words...
+            num_string = num_string + ' '
+        end
     end
+end #end of the while
 
 write = left/10 # How many tens left?
 left = left - write*10 # Subtract off those tens.

@@ -8,6 +8,6 @@ def dictionary_sort arr
   dictionary_sort(less) + [middle] + dictionary_sort(more) #Combine all words now in order
 end
 
-words = ['joe', 'andrea', 'thomas', 'eliza', 'buddy']
+words = ['Joe', 'andrea', 'thomas', 'Eliza', 'buddy']
 
 puts(dictionary_sort(words).join(' '))

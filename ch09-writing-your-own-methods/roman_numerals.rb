@@ -14,24 +14,31 @@ def roman_numeral num
   2_digit = (num % 100 / 10)
   1_digit = (num % 10 / 1)
   
-  roman = "M" * 4_digit
+  roman = 'M' * 4_digit
   # hundreds... 900 in roman 1000-100=M-C / 400 in R 500-100 = D-C
   if 3_digit == 4 
-      return roman = roman + "CD"
+      return roman = roman + 'CD'
   elsif 3_digit == 9 
-      return roman = roman + "CM"
+      return roman = roman + 'CM'
+  else
+      roman = roman + 'C'*(num%500/100)
+      roman = roman + 'D'*(num%1000/500)
   end
   # tens...90 in R 100-10=C-X / 40 in R 50-10=L-X
   if 2_digit == 4
-      return roman = roman + "XL"
+      return roman = roman + 'XL'
   elsif 2_digit == 9
-      return roman = roman + "XC"
+      return roman = roman + 'XC'
+  else
+      
   end
   #single digits ... 9 = 10-1(X-I) / 4 = 5-1(V-I)
   if 1_digit == 4
-      return roman = roman + "IV"
+      return roman = roman + 'IV'
   elsif 1_digit == 9
-      return roman = roman + "IX"
+      return roman = roman + 'IX'
+  else
+      
   end
   puts roman
 end

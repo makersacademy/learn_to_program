@@ -78,5 +78,5 @@ def roman_numeral(num)
     #num = num % 10
   end
 
-  numberal = "M"*m + "CM"*n900 + "D"*d + "DC"*n400 + "C"*c + "XC"*n90 + "L"*l + "XL"*n40 + "X"*x + "IX"*n9 +"V"*v + "IV"*n4 + "I"*i
+  numberal = "M"*m + "CM"*n900 + "D"*d + "CD"*n400 + "C"*c + "XC"*n90 + "L"*l + "XL"*n40 + "X"*x + "IX"*n9 +"V"*v + "IV"*n4 + "I"*i
 end

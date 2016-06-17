@@ -3,8 +3,8 @@ def sort(array)
   return array if array.length == 0
 
   pick = array.pop
-  low = array.select {|x| x <= pick}
-  high = array.select {|x| x > pick}
+  low = array.select {|x| x.downcase <= pick.downcase}
+  high = array.select {|x| x.downcase > pick.downcase}
 
   sort(low) + [pick] + sort(high)
 

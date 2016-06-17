@@ -27,17 +27,29 @@ teenagers = ['eleven', 'twelve', 'thirteen',
 # writing out right now.
 # write and left...get it? :)
 left = number
+
+write = left/1000 # How many thousands left?
+left = left - write*1000 #Take off the thousands
+
+    if write > 0
+        thousands = english_number write
+        num_string = num_string + thousands + ' thousand'
+            if left > 0
+                num_string = num_string + ' '
+            end
+    end            
+
 write = left/100 # How many hundreds left?
 left = left - write*100 # Subtract off those hundreds.
 
     if write > 0
-    # Now here's the recursion:
-    hundreds = english_number write
-    num_string = num_string + hundreds + ' hundred'
-        if left > 0
-        # So we don't write 'two hundredfifty-one'...
-        num_string = num_string + ' '
-        end
+        # Now here's the recursion:
+        hundreds = english_number write
+        num_string = num_string + hundreds + ' hundred'
+            if left > 0
+                # So we don't write 'two hundredfifty-one'...
+                num_string = num_string + ' '
+            end
     end
 
 write = left/10 # How many tens left?

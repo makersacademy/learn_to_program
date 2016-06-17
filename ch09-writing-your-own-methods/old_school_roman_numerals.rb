@@ -38,6 +38,9 @@ puts old_roman_numeral(2016)
 puts old_roman_numeral(1001)
 puts old_roman_numeral(1013)
 puts old_roman_numeral(113)
+puts old_roman_numeral(1019)
+puts old_roman_numeral(514)
+puts old_roman_numeral(109)
 
 =begin
 orn = ""

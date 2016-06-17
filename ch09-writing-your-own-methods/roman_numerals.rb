@@ -25,7 +25,7 @@ if tens == 4
 elsif tens == 9
   new_tens = 'XC'
 else
-  tens < 5 ? (tens.times {new_tens << 'X'}) : ((tens-5).times {new_tens <<'X'} ; new_tens = 'L' << tens)
+  tens < 5 ? (tens.times {new_tens << 'X'}) : ((tens-5).times {new_tens <<'X'} ; new_tens = 'L' << new_tens)
 end
 
 if singles == 4

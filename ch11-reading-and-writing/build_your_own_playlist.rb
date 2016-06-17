@@ -11,8 +11,6 @@ song_count = gets.chomp.to_i
 playlist_array = []
 songs_array = Dir["**/*.{MP3,mp3}"]
 
-#randomly select song_count number of songs from the songs_array and push them into the playlist_array
-
 index = 0
 
 while song_count > 0
@@ -44,8 +42,3 @@ read_array = YAML::load read_string
 
 puts read_string
 puts read_array
-
-
-
-
-#add the playlist_array to the playlist file

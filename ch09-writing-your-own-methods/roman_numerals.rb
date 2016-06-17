@@ -8,30 +8,32 @@ def roman_numeral num
   # roman = roman + "V" * (num % 10 / 5)
   # roman = roman + "I" * (num % 5 / 1)
   # only 4-9, 40-90 and 400-900 only want 1000/100 ... 100/10 ... 10/1
+  #***IV not VI*** Do subtractable number first followed by total being subtracted
   4_digit = (num / 1000)
   3_digit = (num % 1000 / 100)
   2_digit = (num % 100 / 10)
   1_digit = (num % 10 / 1)
   
-  M * 4_digit
+  roman = "M" * 4_digit
   # hundreds... 900 in roman 1000-100=M-C / 400 in R 500-100 = D-C
   if 3_digit == 4 
-      return roman = roman + "DC"
+      return roman = roman + "CD"
   elsif 3_digit == 9 
-      return roman = roman + "MC"
+      return roman = roman + "CM"
   end
   # tens...90 in R 100-10=C-X / 40 in R 50-10=L-X
   if 2_digit == 4
-      return roman = roman + "LX"
+      return roman = roman + "XL"
   elsif 2_digit == 9
-      return roman = roman + "CX"
+      return roman = roman + "XC"
   end
   #single digits ... 9 = 10-1(X-I) / 4 = 5-1(V-I)
   if 1_digit == 4
-      return roman = roman + "VI"
+      return roman = roman + "IV"
   elsif 1_digit == 9
-      return roman = roman + "XI"
+      return roman = roman + "IX"
   end
+  puts roman
 end
   # M = 1000
   # D = 500

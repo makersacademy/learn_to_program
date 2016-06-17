@@ -32,5 +32,5 @@ def roman_to_integer roman
     end
     total += value
   end
-  total.to_i
+  total
 end

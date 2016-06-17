@@ -17,7 +17,7 @@ class Integer
         number = number + 'X' * (self % 50 / 10)
         number = number + 'V' * (self % 10 / 5)
         number = number + 'I' * (self % 5 / 1)
-      end
+      
 end
 
 end

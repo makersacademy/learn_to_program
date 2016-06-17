@@ -68,7 +68,7 @@ while zillions.length > 0
             
         if left > 0
             # So we keep a space between the words...
-            num_string = num_string + ' '
+            zil_name == "hundred" ? num_string = num_string + ' and ' : num_string = num_string + ' '
         end
     end
 end #end of the while

@@ -1,10 +1,10 @@
 def english_number number
   if number < 0
-    "Please enter a number that isn't negative."
+    return "Please enter a number that isn't negative."
   end
 
   if number == 0
-    "zero"
+    return "zero"
   end
 
 num_string = ""

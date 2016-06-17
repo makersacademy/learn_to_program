@@ -13,7 +13,7 @@ def shuffle arr
         new_arr.push element # otherwise add to new array
       end
 
-      index_no = index_no + 1
+      index_no += 1
     end
 
   arr = new_arr #new array smaller, loops until arr is empty

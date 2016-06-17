@@ -22,5 +22,3 @@ def roman_to_integer roman
 
   total
 end
-
-puts roman_to_integer('mcf')

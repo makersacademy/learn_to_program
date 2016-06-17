@@ -1,3 +1,9 @@
-class Integer
-  # your code here
-end
+    class Array
+        
+        def shuffle
+            
+            sort_by{rand}
+            
+        end
+        
+    end

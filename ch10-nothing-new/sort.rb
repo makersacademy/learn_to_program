@@ -1,8 +1,15 @@
 def sort arr
-  sorted_arr = Array.new(arr.count)
-  sorted_arr.insert(0,arr(1))
-   while arr =! [nil]
+  array_unsorted = []
+  array_sorted = []
+  first_element = arr(0)
+  arr.each |e| do
+    if 
+      array_sorted
+  end
 
+
+
+puts lowest
 end
 
 sort ['BP','Texaco','Shell','Morrisons','Tesco','Total','Esso']

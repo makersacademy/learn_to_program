@@ -3,7 +3,7 @@ describe 'OrangeTree' do
   before do
     allow(STDOUT).to receive(:puts)
     require './ch13-creating-new-classes/orange_tree.rb'
-    
+
     23.times do
       ot.one_year_passes
     end

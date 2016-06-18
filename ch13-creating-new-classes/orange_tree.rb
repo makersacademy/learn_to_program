@@ -7,5 +7,19 @@
 
 
 class OrangeTree
-  # your code here
+
+  def initialize
+    @age = 0
+    @height_of_tree = 0
+    @oranges = 0
+  end
+
+  def height
+  end
+
+  def one_year_passes
+  end
+
+  
+
 end

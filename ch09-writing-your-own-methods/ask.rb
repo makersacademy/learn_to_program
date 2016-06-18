@@ -4,9 +4,9 @@ def ask question
     reply = gets.chomp.downcase
 if (reply == 'yes' || reply == 'no')
   if reply == 'yes'
-return reply
+return true
 else
-return reply
+return false
 end
 break else
       puts 'Please answer "yes" or "no".'

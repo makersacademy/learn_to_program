@@ -1,5 +1,3 @@
-# require_relative '../spec/ch09/ask_spec.rb'
-
 def ask question
   while true
     puts question

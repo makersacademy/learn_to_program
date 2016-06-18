@@ -1,41 +1,45 @@
 def roman_numeral num
   # your code here
   
-  four_digit = (num / 1000)
-  three_digit = (num % 1000 / 100)
-  two_digit = (num % 100 / 10)
-  one_digit = (num % 10 / 1)
-  
-  roman = 'M' * four_digit
-  
-  if three_digit == 4 
-      roman = roman + 'CD'
-  elsif three_digit == 9 
-      roman = roman + 'CM'
+  thous = (num / 1000)
+  hunds = (num % 1000 / 100)
+  tens  = (num % 100 / 10)
+  ones  = (num % 10)
+
+  roman = 'M' * thous
+
+  if hunds == 9
+    roman = roman + 'CM'
+  elsif hunds == 4 
+    roman = roman + 'CD'
   else
-      roman = roman + 'C' * (num % 500 / 100)
-      roman = roman + 'D' * (num % 1000 / 500)
+    roman = roman + 'D' * (num % 1000 / 500)
+    roman = roman + 'C' * (num % 500 / 100) 
   end
-  
-  if two_digit == 4
-      return roman = roman + 'XL'
-  elsif two_digit == 9
-      return roman = roman + 'XC'
+
+  if tens == 9 
+    roman = roman + 'XC'
+  elsif tens == 4 
+    roman = romann + 'XL'
   else
-      roman = roman + 'X' * (num % 50 / 10)
-      roman = roman + 'L' * (num % 100 / 50)
+    roman = roman + 'L' * (num % 100 / 50)
+    roman = roman + 'X' * (num % 50 / 10) 
   end
-  
-  if one_digit == 4
-      return roman = roman + 'IV'
-  elsif one_digit == 9
-      return roman = roman + 'IX'
+
+  if ones == 9 
+    roman = roman + 'IX'
+  elsif ones == 4 
+    roman = roman + 'IV'
   else
-      roman = roman + 'V' * (num % 10 / 5)
-      roman = roman + 'I' * (num % 5 / 1)
+    roman = roman + 'V' * (num % 10 / 5)
+    roman = roman + 'I' * (num % 5 / 1) 
   end
-  puts roman
+  roman
 end
+
+
+
+
   # your code here
   # roman = roman + "M" * (num / 1000)
   # roman = roman + "D" * (num % 1000 / 500)

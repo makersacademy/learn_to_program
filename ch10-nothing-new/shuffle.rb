@@ -9,3 +9,13 @@ def recursive_shuffle unsorted_array, sorted_array
 end
 
 #shuffle(['pear','apple', 'banana','orange','blackberry'])
+
+array = []
+random_words = 'start'
+while random_words != ""
+puts "Please enter one word per line, push 'enter' to exit"
+random_words = gets.chomp
+array.push random_words
+end
+
+puts shuffle array

@@ -1,3 +1,5 @@
+# Come back and tackle this with a less brute force method!
+
 def english_number(number)
   return "Please enter a number that isn't negative." if number < 0
   return "zero" if number == 0
@@ -16,6 +18,114 @@ def english_number(number)
    # "write" is the part of the number we are writing now
 
    left = number
+   write = left / 10**48
+   left -= write * 10**48
+
+   if write > 0
+      quindecillion = english_number(write)
+      num_string += quindecillion + ' quindecillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**45
+   left -= write * 10**45
+
+   if write > 0
+      quattuordecillion = english_number(write)
+      num_string += quattuordecillion + ' quattuordecillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**42
+   left -= write * 10**42
+
+   if write > 0
+      tredecillion = english_number(write)
+      num_string += tredecillion + ' tredecillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**39
+   left -= write * 10**39
+
+   if write > 0
+      duodecillion = english_number(write)
+      num_string += duodecillion + ' duodecillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**36
+   left -= write * 10**36
+
+   if write > 0
+      undecillion = english_number(write)
+      num_string += undecillion + ' undecillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**33
+   left -= write * 10**33
+
+   if write > 0
+      decillion = english_number(write)
+      num_string += decillion + ' decillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**30
+   left -= write * 10**30
+
+   if write > 0
+      nonillion = english_number(write)
+      num_string += nonillion + ' nonillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**27
+   left -= write * 10**27
+
+   if write > 0
+      octillion = english_number(write)
+      num_string += octillion + ' octillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**24
+   left -= write * 10**24
+
+   if write > 0
+      septillion = english_number(write)
+      num_string += septillion + ' septillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**21
+   left -= write * 10**21
+
+   if write > 0
+      sextillion = english_number(write)
+      num_string += sextillion + ' sextillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**18
+   left -= write * 10**18
+
+   if write > 0
+      quintillion = english_number(write)
+      num_string += quintillion + ' quintillion'
+      num_string += " " if left > 0
+   end
+
+   write = left / 10**15
+   left -= write * 10**15
+
+   if write > 0
+      quadrillion = english_number(write)
+      num_string += quadrillion + ' quadrillion'
+      num_string += " " if left > 0
+   end
+
    write = left / 1_000_000_000_000
    left -= write * 1_000_000_000_000
 
@@ -94,3 +204,4 @@ p english_number(24)
 p english_number(142)
 p english_number(1022)
 p english_number(1_200_000_002)
+p english_number(109238745102938560129834709285360238475982374561034)

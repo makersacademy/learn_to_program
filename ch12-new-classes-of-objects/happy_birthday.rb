@@ -1,7 +1,7 @@
 puts "What year were you born in?"
-birth_year = gets.chomp
+birth_year = gets.chomp.to_i
 puts "What month were you born in?"
-birth_month = gets.chomp
+birth_month = gets.chomp.to_i
 
 time_now = Time.new
 birthday = Time.local(birth_year, birth_month)

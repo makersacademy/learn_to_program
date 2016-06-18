@@ -27,6 +27,7 @@ def recursive_sort(list, sorted_list)
     recursive_sort(half_sorted, sorted_list)
 end
 
-#list_of_words = ['hello','world','bye','go','ask','peel','apple','hello']
+#list_of_words = ['HEllo','world','bye','go','ask','peel','apple','HELlo']
+#list_of_words = ['aa','cc','dd','bb','gg','ee','ff']
 #puts(sort(list_of_words))
 #=end

@@ -108,6 +108,7 @@ def english_number number
 num_string
   end
 
+=begin
 puts english_number( 88)
 puts english_number( 99)
 puts english_number(100)
@@ -117,7 +118,8 @@ puts english_number(3211)
 puts english_number(999999)
 puts english_number(1000000000000)
 puts english_number(1000)
-puts english_number(10000)
+puts english_number(1855225861)
 
 #add in ands to do spacng?
 #put in hash?
+=end

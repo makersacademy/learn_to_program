@@ -38,7 +38,7 @@ pic_names.each do |name|
 # Now where were we? Oh, yeah...
 
 #This needs a lot more work!
-if file.exist? new_name
+if file.exists? new_name
   puts "There is already a file with this name. Please do something else...!"
   break
 end

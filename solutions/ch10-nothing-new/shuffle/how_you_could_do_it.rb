@@ -26,7 +26,10 @@ def shuffle arr
     arr = new_arr
   end
 
-  shuf
+  shuffle arr
 end
+puts shuffle [1,2,3,4,5,6,]
+
+
 
 # puts(shuffle([1,2,3,4,5,6,7,8,9]))

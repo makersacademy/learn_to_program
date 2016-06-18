@@ -1,3 +1,4 @@
+=begin
 puts "Type some words"
 response = nil
 words = []
@@ -5,7 +6,7 @@ while response != ""
   response = gets.chomp.capitalize
   words << response
 end
-
+=end
 def sort(arr)
   rec_sort(arr,[])
 end
@@ -30,4 +31,4 @@ def rec_sort(unsorted,sorted)
   rec_sort(still_unsorted,sorted)
 end
 
-puts(sort(words))
+#puts(sort(words))

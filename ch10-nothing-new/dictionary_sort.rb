@@ -1,4 +1,4 @@
-
+=begin
 puts "Type some words"
 response = nil
 words = []
@@ -6,7 +6,7 @@ while response != ""
   response = gets.chomp
   words << response
 end
-
+=end
 def dictionary_sort(arr)
   rec_dict_sort(arr,[])
 end
@@ -31,4 +31,4 @@ def rec_dict_sort(unsorted,sorted)
   rec_dict_sort(still_unsorted,sorted)
 end
 
-puts(dictionary_sort(words))
+#puts(dictionary_sort(words))

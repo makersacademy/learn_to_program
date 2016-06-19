@@ -19,6 +19,7 @@ class OrangeTree
       @height
     else
       'A dead tree is not very tall. :('
+    end
   end
 
   def one_year_passes

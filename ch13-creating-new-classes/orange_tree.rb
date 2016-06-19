@@ -9,56 +9,78 @@
 class OrangeTree
 
   def initialize
-    @age = 0
-    @height_of_tree = 0
+    @still_alive = true
+    @height = 0
     @oranges = 0
   end
 
   def height
-    if @age <= 25
-      @height
+    if @still_alive
+      return @height.round(1)
     else
-      'A dead tree is not very tall. :('
-    end
-  end
-
-  def one_year_passes
-    if @age <= 25
-      @height_of_tree += 0.4
-      @age += 1
-      puts "This year your tree grew to #{@height}m tall, and produced #{@oranges} oranges."
-    else
-      puts 'Oh, no! The tree is too old, and has died. :('
+      puts 'A dead tree is not very tall. :('
     end
   end
 
   def count_the_oranges
-    if @age <= 25
-      if @oranges > 0
-        puts "There are #{@oranges} left for you to eat."
-      else
-        puts 'There are no more oranges on the tree.'
-      end
+    if @still_alive
+      return @oranges
     else
       puts 'A dead tree has no oranges. :('
     end
   end
 
+  def one_year_passes
+    # My initial code below
+    # if @age <= 25
+    #   @height_of_tree += 0.4
+    #   @still_alive += 1
+    #   puts "This year your tree grew to #{@height}m tall, and produced #{@oranges} oranges."
+    #   #Oranges per year
+    #   @oranges = @height * 15 - 25 if @still_alive > 5
+    # else
+    #   puts 'Oh, no! The tree is too old, and has died. :('
+    # end
+    # Chris Pine's slightly better code
+    if @still_alive
+      @height += 0.4
+      @oranges = 0 # old oranges fall off
+      if @height > 10 && rand(2) > 0
+        # tree dies
+        @still_alive = false
+        puts 'Oh, no! The tree is too old, and has died. :('
+      elsif @height > 2
+        # new oranges grow
+        @oranges = (@height * 15 - 25).to_i
+        puts "This year your tree grew to #{@height.round(1)}m tall,"\
+          " and produced #{@oranges} oranges."
+      else
+        puts "This year your tree grew to #{@height.round(1)}m tall," \
+          " but is still too young to bear fruit."
+      end
+    else
+      puts 'A year later, the tree is still dead. :('
+    end
+  end
+
   def pick_an_orange
-    if @age <= 25
+    if @still_alive
       if @oranges > 0
         @oranges -= 1
         puts 'That orange was absolutely delicious!'
       else
-        puts 'Sorry, the tree has no more oranges. You will just have to wait until next year.'
+        puts 'Sorry, the tree has no more oranges. You will just have'\
+          ' to wait until next year.'
       end
     else
       puts 'A dead tree has nothing to pick. :('
     end
   end
 end
-
-
-un = OrangeTree.new
-un.one_year_passes
-un.one_year_passes
+# ot = OrangeTree.new
+# ot.one_year_passes
+# ot.one_year_passes
+# ot.one_year_passes
+# ot.one_year_passes
+# ot.one_year_passes
+# puts ot.height

@@ -5,9 +5,9 @@ def ask question
 
 	  if(reply == 'yes' || reply == 'no')
 		  if reply == 'yes'
-			  return answer = true
+			  return true
 		  else
-			  return answer = false
+			  return false
 		  end
 		  break
 	  else

@@ -1,42 +1,52 @@
-def roman_numeral num
- # MDCLXVI
-  roman_num = ""
-  thousends =  (num / 1000)
-  hundreds = (num % 1000 / 100)
-  tens =  (num % 100 / 10)
-  ones = (num % 10)
+def roman(num)
+  roman_nr = ''
 
-  roman_num = roman_num + "M" * thousends
-  
-  if hundreds == 9
-    roman_num = roman_num + "CM"
-  elsif hundreds == 4
-    roman_num = roman_num + "CD"
+  how_meny = num / 1000 #how meny thousends are in num
+  roman_nr = roman_nr + ("M" * how_meny) #gives "M" for every thousend
+  num = num - how_meny * 1000 #substracts thousends
+
+  if num / 900 == 9
+    roman_nr = roman_nr + "CM"
+  elsif num / 400 == 4
+    roman_nr = roman_nr + "CD"
   else
-    roman_num = roman_num + "D" * (num % 1000 / 500)
-    roman_num = roman_num + "C" * (num % 500 / 100)
+    how_meny = num / 500 
+    roman_nr = roman_nr + ("D" * how_meny) 
+    num = num - how_meny * 500 
+
+    how_meny = num / 100 
+    roman_nr = roman_nr + ("C" * how_meny) 
+    num = num - how_meny * 100 
   end
 
-  if tens == 9
-    roman_num = roman_num + "XC"
-  elsif tens == 4
-    roman_num = roman_num + "XL"
+  if num / 90 == 9
+    roman_nr = roman_nr + "XC"
+  elsif num / 40 == 4
+    roman_nr = roman_nr + "XL"
   else
-    roman_num = roman_num + "L" * (num % 100 / 50)
-    roman_num = roman_num + "X" * (num % 50 / 10)
+    how_meny = num / 50 
+    roman_nr = roman_nr + ("L" * how_meny) 
+    num = num - how_meny * 50 
+
+    how_meny = num / 10 
+    roman_nr = roman_nr + ("X" * how_meny) 
+    num = num - how_meny * 10 
   end
 
-  if ones == 9
-    roman_num = roman_num + "IX"
-  elsif ones == 4
-    roman_num = roman_num + "IV"
+  if num == 9
+    roman_nr = roman_nr + "IX"
+  elsif num == 4
+    roman_nr = roman_nr + "IV"
   else
-    roman_num = roman_num + "V" * (num % 10 / 5)
-    roman_num = roman_num + "I" * (num % 5 / 1)
-  end
-  
-  roman_num
+    how_meny = num / 5
+    roman_nr = roman_nr + ("V" * how_meny) 
+    num = num - how_meny * 5
+
+    how_meny = num / 1
+    roman_nr = roman_nr + ("I" * how_meny) 
+  end 
+  return roman_nr
 end
 
-puts roman_numeral(2524)
-puts roman_numeral(520)
+puts roman(5699)
+puts roman(1404)

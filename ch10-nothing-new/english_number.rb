@@ -1,98 +1,105 @@
 def english_number number
-if number < 0 # no neg numbers
-return 'Please enter a number that isn\'t negative'
-end
-if number == 0
-return 'zero'
-end
+  # method called 'english_number'
+  # argument called 'number '
+  if number < 0 # no neg numbers
+  return 'Please enter a number that isn\'t negative'
+  end
+    if number == 0
+    return 'zero'
+    end
 
 # no more special cases, no more returns
 
-num_string = '' # This is the string we will return, define it an start 'empty'
+num_string = '' # This is the string we will return, define it and start 'empty'
+# variable called 'num_string' with assignment of empty string
 
-ones_place = [ 'one', 'two', 'three',
-'four', 'five', 'six',
+ones_place = [ 'one', 'two', 'three', # variable called 'ones_place'
+'four', 'five', 'six',                # assignment of an 'array'
 'seven', 'eight', 'nine']
 
-tens_place = [ 'ten', 'twenty', 'thirty',
-'forty', 'fifty', 'sixty',
-'seventy', 'eighty', 'ninty']
+tens_place = [ 'ten', 'twenty', 'thirty', # variable called 'tens_place'
+'forty', 'fifty', 'sixty',                # assignment of an 'array'
+'seventy', 'eighty', 'ninety']
 
-teenagers = [ 'eleven', 'twelve', 'thirteen',
-'fourteen', 'fifteen', 'sixteen',
+teenagers = [ 'eleven', 'twelve', 'thirteen', # variable called 'teenagers'
+'fourteen', 'fifteen', 'sixteen',             # assignment of an 'array'
 'seventeen', 'eighteen', 'nineteen']
 
 
 # "left" is how much of the number we still have to write
 # "write" is which part we are writing out at the time
 
-left = number
+left = number # variable called 'left'
+# with assignment of 'number', which is the argument for the method
 
 # trillions
-write = left/1000000000000
+write = left/1000000000000 # variable called 'write'
+# which points to left (which = number/argument)
 left = left - write*1000000000000
+# 'variable left' equals 'vairiable left' (above version, which points to number)
+# Then minuses 'write' variable multiplied by 1000000000000
+  if write > 0 # if 'write' variable is greater than zero
+  trillions = english_number write # trillions assignment of english_number write
+  num_string = num_string + trillions + ' trillion'
+# num_string varialbe assignment of num_string plus trillions plus trillion
 
-if write > 0
-trillions = english_number write
-num_string = num_string + trillions + ' trillion'
-
-if left > 0
-num_string = num_string + ' '
-end
-end
+    if left > 0 # if left is greater than zero
+    num_string = num_string + ' ' # num_string assignment of num_string plus
+    end
+  end
 
 # billions
 write = left/1000000000
 left = left - write*1000000000
 
-if write > 0
-billions = english_number write
-num_string = num_string + billions + ' billion'
+  if write > 0
+  billions = english_number write
+  num_string = num_string + billions + ' billion'
 
-if left > 0
-num_string = num_string + ' '
-end
-end
+    if left > 0
+    num_string = num_string + ' '
+    end
+  end
 
 # millions
 write = left/1000000
 left = left - write*1000000
 
-if write > 0
-millions = english_number write
-num_string = num_string + millions + ' million'
+  if write > 0
+  millions = english_number write
+  num_string = num_string + millions + ' million'
 
-if left > 0
-num_string = num_string + ' '
-end
-end
+    if left > 0
+    num_string = num_string + ' '
+    end
+  end
 
 # thousands
 write = left/1000
 left = left - write*1000
 
-if write > 0
-thousands = english_number write
-num_string = num_string + thousands + ' thousand'
+  if write > 0
+  thousands = english_number write
+  num_string = num_string + thousands + ' thousand'
 
-if left > 0
-num_string = num_string + ' '
-end
-end
+    if left > 0
+    num_string = num_string + ' '
+    end
+  end
 
 write = left/100 # how many hundreds left
 left = left - write*100 # subtract off those hundreds
 
-if write > 0
-# recursion
-hundreds = english_number write
-num_string = num_string + hundreds + ' hundred'
+  if write > 0
+  # recursion
+  hundreds = english_number write
+  num_string = num_string + hundreds + ' hundred'
 
-if left > 0
-# adds a space
-num_string = num_string + ' '
-end
-end
+    if left > 0
+    # adds a space
+    num_string = num_string + ' '
+    end
+  end
 
 write = left/10 # how many tens left
 left = left - write*10 # subtract off those tens
@@ -145,4 +152,4 @@ puts english_number(10000)
 puts english_number(1000000)
 puts english_number(10000000)
 puts english_number(1000000000)
-puts english_number(10000000000)
+puts english_number(109238745102938560129834709285360238475982374561034)

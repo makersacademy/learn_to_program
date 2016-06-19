@@ -29,5 +29,6 @@ def roman_to_integer roman
   total
 end
 
-# puts(roman_to_integer('mcmxcix'))
-# puts(roman_to_integer('CCCLXV'))
+ puts(roman_to_integer('mcmxcixiii'))
+ puts(roman_to_integer('mcmxcix'))
+ puts(roman_to_integer('CCCLXV'))

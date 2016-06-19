@@ -1,8 +1,8 @@
-def dictionary_sort arr 
-  rec_dict_sort arr, []
+def dictionary_sort(arr) 
+  rec_dict_sort(arr, [])
 end
 
-def rec_dict_sort unsorted, sorted 
+def rec_dict_sort(unsorted, sorted) 
   if unsorted.length <= 0
     return sorted 
   end
@@ -26,7 +26,7 @@ def rec_dict_sort unsorted, sorted
   # and all the rest of it is in "still_unsorted". 
   sorted.push smallest
   
-  rec_dict_sort still_unsorted, sorted
+  rec_dict_sort(still_unsorted, sorted)
 end
 
 # puts(dictionary_sort([' can' ,' feel' ,' singing.' ,' like' ,' A' ,' can' ]))

@@ -12,14 +12,14 @@ def yaml_load filename
 end
 
 def shuffle arr
-  
+
   shuffled_arr = [] #Start with empty array to collect shuffled items
 
   while arr.length > 0 #Set point at which recursion should stop
-    
+
     rand_index = rand(arr.length) #Randomly pick one element of the array
     curr_index = 0  #Set back to 0 before going around again
-    new_arr = [] 
+    new_arr = []
 
     arr.each do |item|
       if curr_index == rand_index
@@ -27,7 +27,7 @@ def shuffle arr
       else
         new_arr.push item #Chuck the others back to be 'recursed'...
       end
-      curr_index = curr_index + 1 
+      curr_index = curr_index + 1
     end
 
     arr = new_arr
@@ -35,15 +35,16 @@ def shuffle arr
 
   return shuffled_arr
 end
+
 # Find music files to add to the playlist.
 #pic_names = Dir['F:/**/*.jpg']
-mp3tracks = Dir['C:/Users/Lenovo/Music/**/*.mp3']
+mp3tracks = Dir['C:/Users/Lenovo/Music/Rubyplaylist/**/*.mp3']
 
 #Shuffle it...
-shuffle mp3tracks
+mp3tracks_shuffle = shuffle mp3tracks
 
 #Go to directory in which to place the playlist
-Dir.chdir 'C:/Users/Lenovo/Music'
+Dir.chdir 'C:/Users/Lenovo/Music/Rubyplaylist'
 
 puts 'What would you like to call this playlist?'
 playlist = gets.chomp
@@ -52,10 +53,10 @@ puts
 print "Creating playlist of all #{mp3tracks.length} music files: "
 
 # We save it...
-yaml_save mp3tracks, playlist
+yaml_save mp3tracks_shuffle, playlist
 
 # We load it...
 read_playlist = yaml_load playlist
 
 # We check it matches...
-puts(read_playlist == mp3tracks)
+puts(read_playlist == mp3tracks_shuffle)

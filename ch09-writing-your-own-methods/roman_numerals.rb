@@ -13,6 +13,7 @@ when hundred == 4
 else
 romNum = romNum + 'D' * (num % 1000 / 500)
 romNum = romNum + 'C' * (num % 500 / 100)
+end
 
 when ten == 9
   romNum = romNum + "XC"
@@ -21,6 +22,7 @@ when hundred == 4
 else
 romNum = romNum + 'L' * (num % 100 / 50)
 romNum = romNum + 'X' * (num % 50 / 10)
+end
 
 when one == 9
   romNum = romNum + "IX"
@@ -29,6 +31,7 @@ when hundred == 4
 else
 romNum = romNum + 'V' * (num % 1000 / 500)
 romNum = romNum + 'I' * (num % 500 / 100)
+end
 
 end
 

@@ -1,9 +1,10 @@
-def log(desc, &block)
-  puts 'Beginning "' + desc + '"...'
+def program_log(desc, &block)
+  puts "Beginning #{desc.inspect}..."
   result = block.call
-  puts '..."' + desc + '" finished, returning: ' + result.to_s
+  puts "...#{desc.inspect} finished, returning: #{result}"
 end
 
+=begin
 log 'outer block' do
   log 'some little block' do
     1**1 + 2**2
@@ -15,3 +16,4 @@ log 'outer block' do
 
   '0' == 0
 end
+=end

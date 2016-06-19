@@ -6,11 +6,12 @@ def roman_numeral num
   one = (num % 10 )
 
   numeral = 'M' * thousand
-
+  
   if hundred == 9
     numeral = numeral + 'CM'
   elsif hundred == 4
     numeral = numeral + 'CD'
+  else
     numeral = numeral + 'D' * (num % 1000 / 500)
     numeral = numeral + 'C' * (num % 500 / 100)
   end
@@ -19,6 +20,7 @@ def roman_numeral num
     numeral = numeral + 'XC'
   elsif ten == 4
     numeral = numeral + 'XL'
+  else
     numeral = numeral + 'L' * (num % 100 / 50)
     numeral = numeral + 'X' * (num % 50 / 10)
   end

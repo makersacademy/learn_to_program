@@ -1,15 +1,16 @@
 $logger_indent = 0
 
-def log(desc, &block)
+def better_log(desc, &block)
   indent = ' ' * $logger_indent
 
-  puts "#{indent} Beginning #{desc.inspect}..."
+  puts "#{indent}Beginning #{desc.inspect}..."
   $logger_indent += 1
   result = block.call
   $logger_indent -= 1
-  puts "#{indent} ...#{desc.inspect} finished, returning: #{result}"
+  puts "#{indent}...#{desc.inspect} finished, returning: #{result}"
 end
 
+=begin
 log 'outer block' do
   log 'some little block' do
     log 'teeny-tiny block' do
@@ -25,3 +26,4 @@ log 'outer block' do
 
   '0' == "0"
 end
+=end

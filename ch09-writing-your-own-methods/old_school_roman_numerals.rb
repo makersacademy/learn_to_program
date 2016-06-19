@@ -21,7 +21,7 @@ def old_roman_numeral num
       elsif num / 5 == odd && num % 5 == 0 # does end in a five
         puts
       elsif
-    
+
 
     if num % 5 != 0 && num < 5
       puts i *num

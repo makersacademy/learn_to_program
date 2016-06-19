@@ -11,9 +11,36 @@ def yaml_load filename
     YAML::load yaml_string
 end
 
+def shuffle arr
+  
+  shuffled_arr = [] #Start with empty array to collect shuffled items
+
+  while arr.length > 0 #Set point at which recursion should stop
+    
+    rand_index = rand(arr.length) #Randomly pick one element of the array
+    curr_index = 0  #Set back to 0 before going around again
+    new_arr = [] 
+
+    arr.each do |item|
+      if curr_index == rand_index
+        shuffled_arr.push item #If it's the random index one then chuck it into the shuffled pile
+      else
+        new_arr.push item #Chuck the others back to be 'recursed'...
+      end
+      curr_index = curr_index + 1 
+    end
+
+    arr = new_arr
+  end
+
+  return shuffled_arr
+end
 # Find music files to add to the playlist.
 #pic_names = Dir['F:/**/*.jpg']
 mp3tracks = Dir['C:/Users/Lenovo/Music/**/*.mp3']
+
+#Shuffle it...
+shuffle mp3tracks
 
 #Go to directory in which to place the playlist
 Dir.chdir 'C:/Users/Lenovo/Music'

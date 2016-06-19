@@ -9,4 +9,4 @@ def dictionary_sort arr
 
 end
 
-puts dictionary_sort(['Banana', 'apple', 'orange', 'Grape'])
+# puts dictionary_sort(['Banana', 'apple', 'orange', 'Grape'])

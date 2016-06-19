@@ -1,17 +1,30 @@
+$logger_depth = 0
+
 def log desc, &block
-  puts "Beginning #{desc.inspect}..."
-  result = block[]
-  puts "...#{desc.inspect} finished, returning: #{result}"
+  prefix = ' '*$logger_depth
+
+  puts prefix + 'Beginning "' + desc + '"...'
+
+  $logger_depth = $logger_depth + 1
+
+  result = block.call
+
+  $logger_depth = $logger_depth - 1
+  puts prefix + '..."' + desc + '" finished, returning: ' + result.to_s
 end
 
 log 'outer block' do
   log 'some little block' do
-    1**1 + 2**2
+    log 'teeny-tiny block' do
+      'lOtS oF lOVe'.downcase
+    end
+
+    7 * 3 * 2
   end
 
   log 'yet another block' do
-    '!doof iahT ekil I'.reverse
+    '!doof naidnI evol I'.reverse
   end
 
-  '0' == 0
+  '0' == "0"
 end

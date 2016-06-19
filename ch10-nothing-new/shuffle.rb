@@ -5,9 +5,7 @@ end
 
 #or
 =begin
-
-
-def rec_shuffle unshuffled
+def shuffle unshuffled
     shuffled = unshuffled.shuffle
 end
 =end

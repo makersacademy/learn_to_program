@@ -21,7 +21,7 @@ end
 
 def age(b, n)
   age = n.year - b.year
-  age = age - 1 if b.month > n.month || (b.month >= n.month && b.day > n.day)
+  age -= 1 if b.month > n.month || (b.month >= n.month && b.day > n.day)
   puts "You are #{age} years old!"
   puts "SPANK!\n" * age
 end

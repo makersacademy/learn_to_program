@@ -33,32 +33,32 @@ def english_number number
     zil_name = zil_pair[0] # assigns variable to the name
     zil_base = 10 ** zil_pair[1] # assigns variable to the value
     write = left/zil_base # submitted number / zillion number => gives multiple
-    left = left - write*zil_base # remainder after the big number is removed
+    left -= write*zil_base # remainder after the big number is removed
 
     if write > 0
       prefix = english_number write #recursion loops it thorugh 'while' again
-      num_string = num_string + prefix + ' ' + zil_name
+      num_string += prefix + ' ' + zil_name
 
       if left > 0
         # So we don't write 'two billionfifty-one'...
-        num_string = num_string + ' '
+        num_string += ' '
       end
     end
   end
 
   write = left/10 # 'left' from 'while' loop - determines how many 10s
-  left = left - write*10 # Subtract off those tens.
+  left -= write*10 # Subtract off those tens.
 
   if write > 0 # if there are any 10s
     if ((write == 1) and (left > 0)) # exception for teenagers
-      num_string = num_string + teenagers[left-1] # index starts at 0
+      num_string += teenagers[left-1] # index starts at 0
       left = 0 # teenagers take care of the ones place
     else
-      num_string = num_string + tens_place[write-1] # index starts at 0
+      num_string += tens_place[write-1] # index starts at 0
     end
 
     if left > 0
-      num_string = num_string + '-' # adds hyphen
+      num_string += '-' # adds hyphen
     end
   end
 
@@ -66,7 +66,7 @@ def english_number number
   left = 0 # Subtract off those ones.
 
   if write > 0
-    num_string = num_string + ones_place[write-1] # index starts at 0
+    num_string += ones_place[write-1] # index starts at 0
   end
 
   num_string # number name put together

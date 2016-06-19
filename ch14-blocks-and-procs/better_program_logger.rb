@@ -1,12 +1,12 @@
-$nesting_depth = 0
-$indent = '  '
+@nesting_depth = 0
 
-def log desc, &block
-  puts "#{$indent * $nesting_depth}Beginning \"" + desc + "\"..."
+def log(desc, &block)
+  indent = '  ' * @nesting_depth
+  puts indent + 'Beginning "' + desc + '"...'
+  @nesting_depth += 1
   output = yield
-  puts "#{$indent * $nesting_depth}...\"" + desc + '" finished, returning:'
-  puts "#{$indent * $nesting_depth}#{output.to_s}"
-  $nesting_depth += 1
+  @nesting_depth -= 1
+  puts indent + '..."' + desc + '" finished, returning: ' + output.to_s
 end
 
 log 'outer block' do

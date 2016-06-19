@@ -9,11 +9,11 @@ def old_roman_numeral (num)
   roman << "X" * (num%50/10)
   roman << "V" * (num%10/5)
   roman << "I" * (num%5/1)
-  puts roman
+  roman
 
 end
 
-puts "Old Roman Numeral Converter!"
-puts "Please enter your number (range: 1-3000):"
-num = gets.chomp.to_i
-old_roman_numeral (num)
+# puts "Old Roman Numeral Converter!"
+# puts "Please enter your number (range: 1-3000):"
+# num = gets.chomp.to_i
+# old_roman_numeral (num)

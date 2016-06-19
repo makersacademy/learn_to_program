@@ -35,11 +35,11 @@ def roman_numeral (num)
   	roman << "I"*(num%5/1)
   end
 
-  puts roman
+  roman
 
 end
 
-puts "Roman Numeral Converter!"
-puts "Please enter your number (range: 1-3000):"
-num = gets.chomp.to_i
-roman_numeral (num)
+# puts "Roman Numeral Converter!"
+# puts "Please enter your number (range: 1-3000):"
+# num = gets.chomp.to_i
+# roman_numeral (num)

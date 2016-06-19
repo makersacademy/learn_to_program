@@ -1,7 +1,8 @@
-def log desc, &block
+def log (desc, &block)
   puts 'Beginning "' + desc + '"...'
-  output = block.call
-  puts '..."' + desc + '" finished, returning:' + output.to_s
+  output = yield
+  puts '..."' + desc + '" finished, returning:'
+  puts output.to_s
 end
 
 log 'outer block' do

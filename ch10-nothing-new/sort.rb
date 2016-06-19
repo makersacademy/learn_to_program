@@ -1,10 +1,10 @@
-puts "Type some words"
-response = nil
-words = Array.new
-while response != ""
-  response = gets.chomp.capitalize
-  words.push(response)
-end
+#puts "Type some words"
+#response = nil
+#words = Array.new
+#while response != ""
+#  response = gets.chomp.capitalize
+#  words.push(response)
+#end
 
 def sort(arr)
   rec_sort(arr, [])
@@ -30,5 +30,5 @@ def rec_sort(unsorted, sorted)
   rec_sort(still_unsorted, sorted)
 end
 
-puts(sort(words))
+#puts(sort(words))
 #puts words.sort

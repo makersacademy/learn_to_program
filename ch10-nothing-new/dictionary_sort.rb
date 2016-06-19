@@ -1,10 +1,10 @@
-puts "Type some words"
-response = nil
-words = Array.new
-while response != ""
-  response = gets.chomp
-  words.push(response)
-end
+#puts "Type some words"
+#response = nil
+#words = Array.new
+#while response != ""
+#  response = gets.chomp
+#  words.push(response)
+#end
 
 def dictionary_sort(arr)
   dictionary_rec_sort(arr, [])
@@ -30,4 +30,4 @@ def dictionary_rec_sort(unsorted, sorted)
   dictionary_rec_sort(still_unsorted, sorted)
 end
 
-puts(dictionary_sort(words)).inspect
+#puts(dictionary_sort(words)).inspect

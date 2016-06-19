@@ -6,27 +6,27 @@ def roman_numeral num
 
   romNum = "M" * thousand
 
-when hundred == 9
+if hundred == 9
   romNum = romNum + "CM"
-when hundred == 4
+elsif hundred == 4
   romNum = romNum + "CD"
 else
 romNum = romNum + 'D' * (num % 1000 / 500)
 romNum = romNum + 'C' * (num % 500 / 100)
 end
 
-when ten == 9
+if ten == 9
   romNum = romNum + "XC"
-when hundred == 4
+elsif hundred == 4
   romNum = romNum + "XL"
 else
 romNum = romNum + 'L' * (num % 100 / 50)
 romNum = romNum + 'X' * (num % 50 / 10)
 end
 
-when one == 9
+if one == 9
   romNum = romNum + "IX"
-when hundred == 4
+elsif hundred == 4
   romNum = romNum + "IV"
 else
 romNum = romNum + 'V' * (num % 1000 / 500)
@@ -34,5 +34,3 @@ romNum = romNum + 'I' * (num % 500 / 100)
 end
 
 end
-
-puts romNum (2016)

@@ -1,155 +1,130 @@
 def english_number number
-  # method called 'english_number'
-  # argument called 'number '
-  if number < 0 # no neg numbers
-  return 'Please enter a number that isn\'t negative'
+  if number < 0 # No negative numbers.
+    return 'Please enter a number that isn\'t negative.'
   end
-    if number == 0
+  if number == 0
     return 'zero'
-    end
+  end
 
-# no more special cases, no more returns
+  # No more special cases! No more returns!
 
-num_string = '' # This is the string we will return, define it and start 'empty'
-# variable called 'num_string' with assignment of empty string
+  num_string = '' # This is the string we will return.
 
-ones_place = [ 'one', 'two', 'three', # variable called 'ones_place'
-'four', 'five', 'six',                # assignment of an 'array'
-'seven', 'eight', 'nine']
+  ones_place = ['one', 'two', 'three',
+                'four', 'five', 'six',
+                'seven', 'eight', 'nine']
 
-tens_place = [ 'ten', 'twenty', 'thirty', # variable called 'tens_place'
-'forty', 'fifty', 'sixty',                # assignment of an 'array'
-'seventy', 'eighty', 'ninety']
-
-teenagers = [ 'eleven', 'twelve', 'thirteen', # variable called 'teenagers'
-'fourteen', 'fifteen', 'sixteen',             # assignment of an 'array'
-'seventeen', 'eighteen', 'nineteen']
+  tens_place = ['ten', 'twenty', 'thirty',
+                'forty', 'fifty', 'sixty',
+                'seventy', 'eighty', 'ninety']
 
 
-# "left" is how much of the number we still have to write
-# "write" is which part we are writing out at the time
+  teenagers = ['eleven', 'twelve', 'thirteen',
+               'fourteen', 'fifteen', 'sixteen',
+               'seventeen', 'eighteen', 'nineteen']
 
-left = number # variable called 'left'
-# with assignment of 'number', which is the argument for the method
+  zillions = [['hundred', 2],
+              ['thousand', 3],
+              ['million', 6],
+              ['billion', 9],
+              ['trillion', 12],
+              ['quadrillion', 15],
+              ['quintillion', 18],
+              ['sextillion', 21],
+              ['septillion', 24],
+              ['octillion', 27],
+              ['nonillion', 30],
+              ['decillion', 33],
+              ['undecillion', 36],
+              ['duodecillion', 39],
+              ['tredecillion', 42],
+              ['quattuordecillion', 45],
+              ['quindecillion', 48],
+              ['sexdecillion', 51],
+              ['septendecillion', 54],
+              ['octodecillion', 57],
+              ['novemdecillion', 60],
+              ['vigintillion', 63],
+              ['googol', 100]]
 
-# trillions
-write = left/1000000000000 # variable called 'write'
-# which points to left (which = number/argument)
-left = left - write*1000000000000
-# 'variable left' equals 'vairiable left' (above version, which points to number)
-# Then minuses 'write' variable multiplied by 1000000000000
-  if write > 0 # if 'write' variable is greater than zero
-  trillions = english_number write # trillions assignment of english_number write
-  num_string = num_string + trillions + ' trillion'
-# num_string varialbe assignment of num_string plus trillions plus trillion
+  # "left" is how much of the number
+  # we still have left to write out.
+  # "write" is the part we are
+  # writing out right now.
+  # write and left...get it? :)
+  left = number
 
-    if left > 0 # if left is greater than zero
-    num_string = num_string + ' ' # num_string assignment of num_string plus
+  while zillions.length > 0
+    zil_pair = zillions.pop
+    zil_name = zil_pair[0]
+    zil_base = 10 ** zil_pair[1]
+    write = left/zil_base # How many zillions left?
+    left = left - write*zil_base # Subtract off those zillions.
+
+    if write > 0
+      # Now here's the recursion:
+      prefix = english_number write
+      num_string = num_string + prefix + ' ' + zil_name
+
+      if left > 0
+        # So we don't write 'two billionfifty-one'...
+        num_string = num_string + ' '
+      end
     end
   end
 
-# billions
-write = left/1000000000
-left = left - write*1000000000
+  write = left/10 # How many tens left?
+  left = left - write*10 # Subtract off those tens.
 
   if write > 0
-  billions = english_number write
-  num_string = num_string + billions + ' billion'
+    if ((write == 1) and (left > 0))
+      # Since we can't write "tenty-two" instead of
+      # "twelve", we have to make a special exception
+      # for these.
+      num_string = num_string + teenagers[left-1]
+      # The "-1" is because teenagers[3] is
+      # 'fourteen', not 'thirteen'.
+
+      # Since we took care of the digit in the
+      # ones place already, we have nothing left to write.
+      left = 0
+    else
+      num_string = num_string + tens_place[write-1]
+      # The "-1" is because tens_place[3] is
+      # 'forty', not 'thirty'.
+    end
 
     if left > 0
-    num_string = num_string + ' '
+      # So we don't write 'sixtyfour'...
+      num_string = num_string + '-'
     end
   end
 
-# millions
-write = left/1000000
-left = left - write*1000000
+  write = left # How many ones left to write out?
+  left = 0 # Subtract off those ones.
 
   if write > 0
-  millions = english_number write
-  num_string = num_string + millions + ' million'
-
-    if left > 0
-    num_string = num_string + ' '
-    end
+    num_string = num_string + ones_place[write-1]
+    # The "-1" is because ones_place[3] is
+    # 'four', not 'three'.
   end
 
-# thousands
-write = left/1000
-left = left - write*1000
-
-  if write > 0
-  thousands = english_number write
-  num_string = num_string + thousands + ' thousand'
-
-    if left > 0
-    num_string = num_string + ' '
-    end
-  end
-
-write = left/100 # how many hundreds left
-left = left - write*100 # subtract off those hundreds
-
-  if write > 0
-  # recursion
-  hundreds = english_number write
-  num_string = num_string + hundreds + ' hundred'
-
-    if left > 0
-    # adds a space
-    num_string = num_string + ' '
-    end
-  end
-
-write = left/10 # how many tens left
-left = left - write*10 # subtract off those tens
-
-if write > 0
-if ((write == 1) and (left > 0))
-# exception for teenagers
-num_string = num_string + teenagers[left-1]
-# -1 because of the array ordering [0] is eleven etc.
-# with teenagers the digit in the ones place is taken care of so nothing left
-left = 0
-else
-num_string = num_string + tens_place[write-1]
+  # Now we just return "num_string"...
+  num_string
 end
 
-if left > 0
-# add a space
-num_string = num_string + '-'
-end
-end
-
-write = left # how many ones left
-left = 0 # subtract off those ones
-
-if write > 0
-num_string = num_string + ones_place[write-1]
-end
-
-# now we just return the num_string
-
-num_string
-end
-
-puts english_number( 0)
-puts english_number( 9)
-puts english_number( 10)
-puts english_number( 11)
-puts english_number( 17)
-puts english_number( 32)
-puts english_number( 88)
-puts english_number( 99)
-puts english_number(100)
-puts english_number(101)
-puts english_number(234)
-puts english_number(3211)
-puts english_number(999999)
-puts english_number(1000000000000)
-puts english_number(1000)
-puts english_number(10000)
-puts english_number(1000000)
-puts english_number(10000000)
-puts english_number(1000000000)
-puts english_number(109238745102938560129834709285360238475982374561034)
+# puts english_number( 0)
+# puts english_number( 9)
+# puts english_number( 10)
+# puts english_number( 11)
+# puts english_number( 17)
+# puts english_number( 32)
+# puts english_number( 88)
+# puts english_number( 99)
+# puts english_number(100)
+# puts english_number(101)
+# puts english_number(234)
+# puts english_number(3211)
+# puts english_number(999999)
+# puts english_number(1000000000000)
+# puts english_number(109238745102938560129834709285360238475982374561034)

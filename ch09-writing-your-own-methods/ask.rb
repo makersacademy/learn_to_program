@@ -1,17 +1,14 @@
 def ask question
-  while true
-    puts question
-    reply = gets.chomp.downcase
+    while true
+      puts question
+      reply = gets.chomp.downcase
 
-    if reply == 'yes'
-      return true
+      return true if reply == 'yes'
+      return false if reply == 'no'
+
+      puts 'Please answer "yes" or "no".'
     end
-    if reply == 'no'
-      return false
-    end
-# If we got this far, then we're going to loop # and ask the question again.
-    puts 'Please answer "yes" or "no".'
+    answer # This is what we return (true or false).
   end
-end
-  likes_it = ask 'Do you like eating tacos?'
-  puts likes_it
+
+  # puts(ask('Do you like eating tacos?'))

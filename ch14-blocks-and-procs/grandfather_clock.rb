@@ -1,3 +1,4 @@
 def grandfather_clock &block
-  # your code here
+  hours = Time.new.hour
+  hours.times { block.call }
 end

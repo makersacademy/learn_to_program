@@ -105,6 +105,4 @@ end
   #  Now we just return "num_string"...
 num_string
 end
-puts english_number(1000000000000)
-#english number translates numbers to english text translates 109238745102938560129834709285360238475982374561034 to one hundred nine quindecillion two hundred thirty-eight quattuordecillion seven hundred forty-five tredecillion one hundred two duodecillion nine hundred thirty-eight undecillion five hundred sixty decillion one hundred twenty-nine nonillion eight hundred thirty-four octillion seven hundred nine septillion two hundred eighty-five sextillion three hundred sixty quintillion two hundred thirty-eight quadrillion four hundred seventy-five trillion nine hundred eighty-two billion three hundred seventy-four million five hundred sixty-one thousand thirty-four
-#     Failure/Error: expect(english_number(number)).to eq english
+#puts english_number

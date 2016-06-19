@@ -11,7 +11,6 @@ class OrangeTree
     @orange_count = 0
     @age = 1
     @alive = true
-    @max_oranges = 0
 
     puts "The baby orange tree has sprouted!"
   end
@@ -29,8 +28,8 @@ class OrangeTree
       puts "This year your tree grew to #{@height} tall, and produced #{@orange_count} oranges."
     else
       if @age <= 25
-        @max_oranges = @max_oranges + (@height * 15 - 25)
-        @orange_count = @max_oranges - @orange_count
+        @orange_count = 0
+        @orange_count = @orange_count + (@height * 15 - 25)
         @alive = true
         @height = @height + 0.4
         @age = @age + 1

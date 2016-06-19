@@ -1,4 +1,4 @@
-def solution (num)
+def roman_numeral (num)
   thousand = (num / 1000)
   hundred = (num % 1000 / 100)
   ten = (num % 100 / 10)

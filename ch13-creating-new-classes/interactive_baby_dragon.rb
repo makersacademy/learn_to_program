@@ -1,6 +1,5 @@
 class Dragon
-
-  def initialize name
+  def initialize(name)
     @name = name
     @asleep = false
     @stuff_in_belly = 10
@@ -25,12 +24,8 @@ class Dragon
     puts "You put #{@name} to bed."
     @asleep = true
     3.times do
-      if @asleep
-        passage_of_time
-      end
-      if @asleep
-        puts "#{@name} snores, filling the room with smoke."
-      end
+      passage_of_time if @asleep
+      puts "#{@name} snores, filling the room with smoke." if @asleep
     end
     if @asleep
       @asleep = false
@@ -40,18 +35,18 @@ class Dragon
 
   def toss
     puts "You toss #{@name} up into the air."
-    puts "He giggles, which singes your eyebrows."
+    puts 'He giggles, which singes your eyebrows.'
     passage_of_time
   end
 
   def rock
     puts "You rock #{@name} gently."
     @asleep = true
-    puts "He briefly doses off..."
+    puts 'He briefly doses off...'
     passage_of_time
     if @asleep
       @asleep = false
-      puts "...but wakes up when you stop."
+      puts '...but wakes up when you stop.'
     end
   end
 
@@ -100,13 +95,41 @@ class Dragon
   end
 end
 
-pet = Dragon.new 'Norbert'
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.rock
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
+
+# Ask for input
+puts 'What do you want to call your dragon?'
+# save input
+new_name = gets.chomp
+new_pet = Dragon.new new_name.to_s
+while true
+  puts 'What would you like to do with your dragon? feed/walk/put to' \
+       ' bed/toss/rock/exit'
+  new_command = gets.chomp
+  if new_command == 'exit'
+    exit
+  elsif new_command == 'feed'
+    new_name.feed
+  elsif new_command == 'walk'
+    new_name.walk
+  elsif new_command == 'put to bed'
+    new_name.put_to_bed
+  elsif new_command == 'toss'
+    new_name.toss
+  elsif new_name == 'rock'
+    new_name.rock
+  else
+    puts 'Please enter a valid command from: feed/walk/put to' \
+         ' bed/toss/rock'
+  end
+end
+
+# pet = Dragon.new 'Norbert'
+# pet.feed
+# pet.toss
+# pet.walk
+# pet.put_to_bed
+# pet.rock
+# pet.put_to_bed
+# pet.put_to_bed
+# pet.put_to_bed
+# pet.put_to_bed

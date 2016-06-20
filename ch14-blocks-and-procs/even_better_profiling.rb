@@ -17,4 +17,3 @@ def profile block_description, &block
             
         end
     end
-end

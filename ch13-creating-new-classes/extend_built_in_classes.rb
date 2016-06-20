@@ -30,4 +30,24 @@ class Integer
   end
 end
 
-#puts 19.to_roman
+class Array
+  def shuffle
+      recursive_shuffle(self, [])
+  end
+  
+  def recursive_shuffle(arr, shuffled)
+      if self.length == 0
+          return shuffled
+      end
+      
+      num = rand(self.size)
+      shuffled.push(self[num])
+      self.delete_at(num)
+      recursive_shuffle(self, shuffled)
+  end
+end
+
+#list_of_words = ['hello','world','bye','go','ask','peel','apple','hello']
+#print list_of_words.shuffle
+#puts
+#puts rand(3999).to_roman

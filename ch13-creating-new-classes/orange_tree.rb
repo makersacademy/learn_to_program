@@ -21,7 +21,7 @@ def height
     if @alive == true
         return @height #determine growth later?
     else
-        "That's one dead tree"
+        "A dead tree is not very tall. :("
     end
 end
 
@@ -42,16 +42,16 @@ def a_year_later
         #first 5 years no fruit
         if  height > 10
          @alive =false
-            "Last night we lost a good friend, mister orangtree was afine fello....."
+            "Oh no! The tree is too old, and has died. :("
             elsif height > 2
          @orange_count = (@height*15-25)
-            "Tree produced #{@orange_count} oranges and grew #{@height} meters"
+            "This year your tree grew to #{@height}m tall, and produced #{@orange_count} oranges."
         else
             "tree grew #{@height}meters, but no fruitty tutey, this tree too young"
         end
     
 else
-    "you should really get rid of that dead tree"
+    "A year later, the tree is still dead. :("
     
     end
     
@@ -63,10 +63,10 @@ end
               @orange_count = @orange_count - 1
               "nom nom nom delishoouuuuuussssssss"
           else
-              "where them oranges at???"
+              "A dead tree has nothing to pick. :("
           end
       else
-          "deadyMcDeadtree ain't got no fruits"
+          "A dead tree has no oranges. :("
       end
   end
   end

@@ -16,17 +16,17 @@ class OrangeTree
 
   def height
     if @still_alive
-      return @height.round(1)
+    @height.round(1)
     else
-      puts 'A dead tree is not very tall. :('
+      'A dead tree is not very tall. :('
     end
   end
 
   def count_the_oranges
     if @still_alive
-      return @oranges
+      @oranges
     else
-      puts 'A dead tree has no oranges. :('
+      'A dead tree has no oranges. :('
     end
   end
 
@@ -48,18 +48,17 @@ class OrangeTree
       if @height > 10 && rand(2) > 0
         # tree dies
         @still_alive = false
-        puts 'Oh, no! The tree is too old, and has died. :('
+        'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2
         # new oranges grow
         @oranges = (@height * 15 - 25).to_i
-        puts "This year your tree grew to #{@height.round(1)}m tall,"\
-          " and produced #{@oranges} oranges."
+        "This year your tree grew to #{@height.round(1)}m tall, and produced #{@oranges} oranges."
       else
-        puts "This year your tree grew to #{@height.round(1)}m tall," \
+        "This year your tree grew to #{@height.round(1)}m tall," \
           " but is still too young to bear fruit."
       end
     else
-      puts 'A year later, the tree is still dead. :('
+      'A year later, the tree is still dead. :('
     end
   end
 
@@ -67,20 +66,24 @@ class OrangeTree
     if @still_alive
       if @oranges > 0
         @oranges -= 1
-        puts 'That orange was absolutely delicious!'
+        'That orange was absolutely delicious!'
       else
-        puts 'Sorry, the tree has no more oranges. You will just have'\
+        'Sorry, the tree has no more oranges. You will just have'\
           ' to wait until next year.'
       end
     else
-      puts 'A dead tree has nothing to pick. :('
+      'A dead tree has nothing to pick. :('
     end
   end
 end
+
 # ot = OrangeTree.new
-# ot.one_year_passes
-# ot.one_year_passes
-# ot.one_year_passes
-# ot.one_year_passes
-# ot.one_year_passes
+# 25.times do
+#   ot.one_year_passes
+# end
 # puts ot.height
+# ot.one_year_passes
+# ot.one_year_passes
+# ot.one_year_passes
+# # ot.one_year_passes
+# # ot.one_year_passes

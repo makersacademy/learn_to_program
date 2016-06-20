@@ -1,20 +1,26 @@
 def shuffle arr
-  def shuffle arr
-shuf = []
-while arr.length > 0
-rand_index = rand(arr.length)
-curr_index = 0
-new_arr = []
-arr.each do |item|
-if curr_index == rand_index
-shuf.push item
-else
-new_arr.push item
+  
+  shuf = []
+
+  while arr.length > 0
+  
+  random_index = rand(arr.length)
+  current_index = 0
+  
+  new_array = []
+    arr.each do |item|
+      
+      if current_index == random_index
+        shuf.push item
+      else
+        new_array.push item
+      end
+    
+    current_index = current_index + 1
+    end
+  
+    arr = new_array
+  end
+  
+  shuf
 end
-curr_index = curr_index + 1
-end
-arr = new_arr
-end
-shuf
-end
-puts(shuffle([1,2,3,4,5,6,7,8,9]))

@@ -6,7 +6,7 @@
 # THE 'sort' METHOD FROM API)
 # [ WELL, OR EVEN THE 'shuffle' method in API ]
 
-def sort(arr)  
+def pre_sort(arr)  
   i =0
   while i < arr.length 
     j = i + 1
@@ -31,5 +31,5 @@ def shuffle(arr)
 end
 
 # TEST THIS...
-arr = [1, 2, 3, 4, 5,6, 7]
+arr = [1, 2, 3, 4, 5, 6, 7]
 puts shuffle(arr)

@@ -4,21 +4,21 @@ values  =   [ 1000, 500, 100, 50, 10, 5, 1 ]
 lv = letters.zip values
 lv.insert(-2, ["IV", 4])
 lv.insert(-4, ["IX", 9])
-p lv.to_h
+lv.to_h
 roman = ""
 
-  lv.each do |pair|
-  p  letter = pair[0]
-  p  value = pair[1]
-    p roman += letter*(num / value)
-    p num = num % value
-  end
+lv.each do |pair|
+letter = pair[0]
+value = pair[1]
+roman += letter*(num / value)
+num = num % value
+end
 
-  return roman
+return roman
 
 end
 
 
-p roman_numeral(1999)
+# p roman_numeral(1999)
 #c=0
 #lv.map{|l,v| c, num = num.divmod v; l*c}.join ''

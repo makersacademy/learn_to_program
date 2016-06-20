@@ -18,5 +18,5 @@ end
 num.inject { |memo, n| memo +n}
 end
 
-puts(roman_to_integer("mcmxcix"))
-puts(roman_to_integer("CCCLXV"))
+#puts(roman_to_integer("mcmxcix"))
+#puts(roman_to_integer("CCCLXV"))

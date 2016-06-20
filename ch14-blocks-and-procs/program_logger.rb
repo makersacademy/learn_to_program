@@ -26,3 +26,4 @@ def log desc, &block
   'I like Thai food!'
   end
   end
+  #----Solution uses 1**1 + 2**2 over 5???

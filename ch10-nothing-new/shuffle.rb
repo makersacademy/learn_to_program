@@ -16,7 +16,7 @@ def shuffle (arr)
   else
       return new_array.push(item)
   end
-  selected = selected + 1
+  selected +=1
       
   }
   

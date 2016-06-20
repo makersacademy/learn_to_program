@@ -2,16 +2,7 @@ def shuffle (arr)
   # your code here
   shuffled_array []
   
-  #---random objects from array---
-  #class Array
-  #def random_element
-  # self[rand(length)]
-  #end
-  #end
-  #
-  #or
-  #
-  #rand - random generator  
+ 
   while arr.length > 0
   rand_arr_object = rand(arr.length)
   
@@ -33,3 +24,14 @@ def shuffle (arr)
 end
 shuffle
 end
+
+  #---random objects from array---
+  #class Array
+  #def random_element
+  # self[rand(length)]
+  #end
+  #end
+  #
+  #or
+  #
+  #rand - random generator 

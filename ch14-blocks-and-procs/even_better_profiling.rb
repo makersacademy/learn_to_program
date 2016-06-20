@@ -1,8 +1,8 @@
 def profile block_description, &block
     
-        profile_on = false
+        profiling_on = false
         
-        if profile_on
+        if profiling_on = true
             
             start_time = Time.new
             
@@ -17,3 +17,5 @@ def profile block_description, &block
             
         end
     end
+
+

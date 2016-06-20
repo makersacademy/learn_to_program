@@ -1,9 +1,13 @@
 
-def grandfather_clock &some_block
+def grandfather_clock &block
     
-    twelve_hours = Time.new.strftime("%I")
-    twelve_hours.to_i.times do
-        some_block.call
+    twelve_hours = Time.new.hour
+    if twelve_hours > 12
+        twelve_hours -= 12
+        end
+    
+    twelve_hours.times do
+        block.call
     end
 end
 

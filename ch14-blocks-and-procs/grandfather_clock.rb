@@ -9,8 +9,11 @@ def grandfather_clock &block
   end
   current_hour.times do
       block.call
-   end      
+   end 
+   puts "Dont count them that was " + $dong_count.to_s + " Dong(s)"
 end #method
+$dong_count = 0
 grandfather_clock do 
-    puts 'Dong'
+    puts 'Dong' 
+    $dong_count = $dong_count + 1
 end    

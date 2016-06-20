@@ -35,3 +35,5 @@ else
     "You chickened out of the fight"
 end
 end       
+
+#------- issues occuring plus requires a loop function in order to repreat evrthing aside from exit

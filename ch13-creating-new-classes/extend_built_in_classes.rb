@@ -50,3 +50,5 @@ def roman_integers
   roman
 end 
 end 
+
+#---------class a:integer and array different arrangement?

@@ -61,7 +61,7 @@ end
       if @alive ==true
           if @orange_count > 0
               @orange_count = @orange_count - 1
-              "nom nom nom delishoouuuuuussssssss"
+              "nom nom nom delicioussssssssssss"
           else
               "A dead tree has nothing to pick. :("
           end

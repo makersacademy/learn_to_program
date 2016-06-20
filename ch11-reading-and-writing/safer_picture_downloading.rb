@@ -1,6 +1,8 @@
-Dir.chdir 'C:\Users\Jason\Pictures'
+#location of folder where we want to put moved pictures
+Dir.chdir '/home/ubuntu/workspace/ch11-reading-and-writing/pictures'
 
-pic_names = Dir['C:\Users\Jason\Pictures\move_me\*.{JPG,jpg}']
+#location of pictures to be moved on fake 'storage card'
+pic_names = Dir['../**/*.{jpg,JPG,jpeg,JPEG,png,PNG}']
 
 puts 'What would you like to call this batch?'
 batch_name = gets.chomp
@@ -18,13 +20,13 @@ pic_names.each do |name|
         "#{batch_name}-#{pic_number}.jpg"
     end
     
-if File.exist?(new_name) == false
-    File.rename(name, new_name)
-    pic_number += 1
-else
-    puts "File name already exist"
-    return 0
-end
+    if File.exist?(new_name) == false
+        File.rename(name, new_name)
+        pic_number += 1
+    else
+        puts "File name already exist"
+        exit
+    end
 end
 
 puts # This is so we aren't on progress bar line.

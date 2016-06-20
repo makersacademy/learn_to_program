@@ -1,3 +1,5 @@
+Dir.chdir '/home/ubuntu/workspace/ch11-reading-and-writing/playlist'
+
 def shuffle(array)
     recursive_shuffle(array, [])
 end

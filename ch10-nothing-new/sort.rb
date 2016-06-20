@@ -25,3 +25,5 @@ def recursive_sort (unsorted_arr, sorted_arr)
   recursive_sort still_unsorted, sorted_arr
 
 end
+
+puts(sort(['can','feel','singing','like','a','can']).join(' '))

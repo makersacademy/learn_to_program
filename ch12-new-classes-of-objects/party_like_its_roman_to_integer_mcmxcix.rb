@@ -36,3 +36,5 @@ def roman_to_integer (roman)
   total
 end
   
+  #-------------understand-------------
+  #why val = val * -1? negative integers

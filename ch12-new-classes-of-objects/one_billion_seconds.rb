@@ -9,7 +9,7 @@
     #.gm number of parameters
     # gm(year, month, day, hour, min) -> time
     
-    puts(Time.gm(1994, 8, 3, 06, 18)
+    puts(Time.gm(1994, 3, 18, 06, 01)
     
     
     # t = Time.parse "12:00 AM"

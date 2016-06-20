@@ -13,19 +13,15 @@ birthday_date = gets.chomp.to_i
 birthday = Time.local(birthday_year, birthday_month, birthday_date)
 time = Time.new
 
-def birthday_boy(age_min, age_max)
-age_min = 0
-age_max = 22
-while a <= age_max
-a = 0
-a = + 1
-end 
-end
 
-age = 0
+age = 1
 
 while Time.local(birthday_year, birthday_month, birthday_date) <= time
-puts "BIRTHDAY TIME"
-age = age + 1
+puts "SPANK"
+age += 1
 end
+
+#-----------------------Changes---------------
+# removed age method as age is already changed in Time.local loop
+# x+=1 is the same as x = x + 1
 

@@ -1,8 +1,8 @@
     def program_log desc, &block
         
-        puts "Beginning " + desc + "..."
+        puts 'Beginning "' + desc + '"...'
         result = block.call
-        puts "..." + desc + " finished, returning: " + result.to_s
+        puts '..."' + desc + '" finished, returning: ' + result.to_s
         
     end
     

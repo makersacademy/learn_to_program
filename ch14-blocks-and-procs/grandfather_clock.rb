@@ -1,5 +1,5 @@
 
-def grand_clock &some_block
+def grandfather_clock &some_block
     
     twelve_hours = Time.new.strftime("%I")
     twelve_hours.to_i.times do
@@ -7,7 +7,7 @@ def grand_clock &some_block
     end
 end
 
-grand_clock do
+grandfather_clock do
     puts 'DONG!'
     
 end

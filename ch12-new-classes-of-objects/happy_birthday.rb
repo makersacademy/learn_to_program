@@ -1,6 +1,6 @@
-puts "What year were you born in?"
+puts "What year were you born in? Please write out in full e.g. 1998"
 year = gets.chomp
-
+ while month = 0 do
 puts "What month were you born in?"
 month = gets.chomp.downcase
 
@@ -44,6 +44,7 @@ if month == "january"
     puts "Are you sure you're spelling that right? Remember the computer isn't as good at words as you are!"
 
 end
+end
 
 puts 'What day were you born on?'
 day = gets.chomp
@@ -53,7 +54,9 @@ birth_day = Time.gm(year.to_i, month.to_i, day.to_i)
 
 years_old = (right_now - birth_day)/(60*60*24*365)
 
-years_old.to_i.times do
-puts 'Birthday Beats'
+#add in month to get for birthdates later in the year
+
+(years_old.to_i).times do
+  puts 'Birthday Beats'
 
 end

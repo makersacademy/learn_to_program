@@ -2,7 +2,7 @@
 
 $logger_depth = 0
 
-def log desc, &block
+def better_log desc, &block
     
     prefix = ' '*$logger_depth
     

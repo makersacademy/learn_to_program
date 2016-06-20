@@ -1,3 +1,5 @@
+Dir.chdir('/home/ubuntu/workspace/ch12-new-classes-of-objects')
+
 birth_dates = {}
 File.read('birthdates.txt').each_line do |line|
   line = line.chomp

@@ -7,14 +7,14 @@ month = gets.chomp.to_i
 puts 'What day of the month were you born?'
 day = gets.chomp.to_i
 
-#bday = Time.local(year, month, day)
-t = Time.new
+#the current time
+curTime = Time.new
 
 age = 1
 
-while Time.local(year + age, month, day) <= t
+while Time.gm(year + age, month, day) <= curTime
   puts 'SPANK!'
-  age = age + 1
+  age += 1
 end
 
 puts "Thats #{age-1} spanks!"

@@ -10,12 +10,12 @@ def rec_sort(unsorted, sorted)
     smallest = unsorted.pop
     still_unsorted = [""]
     
-    unsorted.each do |tested_object|
+    unsorted.each do |tester|
         if tester < smallest
             still_unsorted.push smallest
-            smallest = tested_object
+            smallest = tester
         else
-            still_unsorted.push tested_object
+            still_unsorted.push tester
         end
     end
 

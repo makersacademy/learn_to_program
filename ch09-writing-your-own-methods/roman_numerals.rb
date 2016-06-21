@@ -5,7 +5,7 @@ def roman_numeral num
 	
   digit_vals = [['I', 5 , 1],['V', 10, 5],['X', 50, 10],['L', 100, 50],['C', 500, 100],['D', 1000, 500],['M', nil, 1000]]
 
-roman = ' '
+roman = ''
 remaining = nil
 
 build_rev = proc do |l,m,n| 

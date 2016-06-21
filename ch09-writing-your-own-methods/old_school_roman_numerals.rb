@@ -1,6 +1,6 @@
 def old_roman_numeral num
   # your code here
-  number = ' '
+  number = ''
 
   number = number + 'M' * (num / 10000)
   number = number + 'D' * (num % 10000 / 500)

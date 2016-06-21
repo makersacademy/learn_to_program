@@ -13,22 +13,23 @@ def roman_to_integer(roman)
 
   	while index >= 0
   		x = roman[index].capitalize
+      val = values[x]
 
-  		if values[x]
-  			if values[x] < prev
-  				total = total - 1
+  		if val
+  			if val < prev
+  				val = val * - 1
   			else
-  				total = total + values[x]
+          prev = val
   			end
+        total = total + val
   		else
   			return "Not a valid roman nr"
   		end
   		index -= 1
-  		prev = values[x]
   	end
   	return total
 end
 
 puts roman_to_integer("MCLIX")
 puts roman_to_integer("MCLXI")
-puts roman_to_integer("MCLXIX")
+puts roman_to_integer("mcmxcix")

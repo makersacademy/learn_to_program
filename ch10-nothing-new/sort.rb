@@ -23,9 +23,4 @@ sorted.push(smallest)
 rec_sort(still_unsorted, sorted)
 end
 
-def sort arr
-
-   recursive_sort arr, []
- end
-
-puts(sort(['england','will','go','out','in','the', 'next', 'round']))
+puts sort(['england','will','go','out','in','the', 'next', 'round'])

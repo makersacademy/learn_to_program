@@ -8,7 +8,7 @@ def rec_sort(unsorted, sorted)
     end
 
     smallest = unsorted.pop
-    still_unsorted = [""]
+    still_unsorted = []
     
     unsorted.each do |tester|
         if tester < smallest

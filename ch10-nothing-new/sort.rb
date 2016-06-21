@@ -1,4 +1,4 @@
-def sort arr
+def sort(arr)
     rec_sort(arr, [])
 end
 
@@ -12,13 +12,20 @@ def rec_sort(unsorted, sorted)
     
     unsorted.each do |tester|
         if tester < smallest
-            still_unsorted.push smallest
+            still_unsorted.push(smallest)
             smallest = tester
         else
-            still_unsorted.push tester
+            still_unsorted.push(tester)
         end
     end
 
-sorted.push smallest
+sorted.push(smallest)
 rec_sort(still_unsorted, sorted)
 end
+
+def sort arr
+
+   recursive_sort arr, []
+ end
+
+puts(sort(['england','will','go','out','in','the', 'next', 'round']))

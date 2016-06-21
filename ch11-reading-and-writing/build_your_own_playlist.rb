@@ -13,6 +13,7 @@ def search(file_extension)
     arr = shuffle(arr)
     write(arr)
   end
+  print arr
 end
 
 def write(arr)

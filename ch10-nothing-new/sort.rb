@@ -17,6 +17,3 @@ def recursive_sort(unsorted, sorted)
   unsorted.delete_at(unsorted.index(smallest))
   return recursive_sort(unsorted, sorted)
 end
-
-
-puts sort(["Alpha", "alpha", "ready", "Zulu"])

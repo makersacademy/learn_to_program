@@ -3,28 +3,23 @@ def sort arr
 end
 
 def rec_sort unsorted, all_sorted
-  if unsorted.length <= 0
-    return all_sorted
-  end
+    return all_sorted if unsorted.length <= 0
 
-all_sorted = []
 still_unsorted = []
 
-smallest = unsorted.min
+smallest = unsorted.pop
 
-unsorted.each do |tested_string|
-  if tested_string == smallest
-    all_sorted << smallest
-    unsorted.delete(smallest)
-  else
+unsorted.each do |tested_object|
+  if tested_object < smallest
     still_unsorted << smallest
+    smallest = tested_object
+  else
+    still_unsorted << tested_object
   end
 end
 
-
+all_sorted << smallest
 rec_sort still_unsorted, all_sorted
 end
 
-puts sort (['baby', 'baby', 'fred', 'car', 'ham', 'alien'])
-
-#doesn't work. Puts only 'alien'
+# puts sort (['james', 'john', 'james', 'cake', 'alien', 'baby'])

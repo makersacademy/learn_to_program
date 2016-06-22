@@ -1,14 +1,14 @@
-def log desc, &block
-  puts "Beginning #{desc}..."
-  puts "...#{desc} finished, returning: #{block.call}"
+def program_log desc, &block
+  puts "Beginning #{desc.inspect}..."
+  puts "...#{desc.inspect} finished, returning: #{block.call}"
 end
 
-log "outer block" do
-  log "some little block" do
-    2 + 3
+program_log 'outer block' do
+  program_log 'some little block' do
+    5
   end
-  log "yet another block" do
-    "I like Thai food!"
+  program_log 'yet another block' do
+    'I love Thai food!'
   end
-  1 == 2
+  1 == 0
 end

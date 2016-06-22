@@ -1,5 +1,5 @@
 $nesting_depth = 0
-def log desc, &block
+def better_log desc, &block
   indent = " "*$nesting_depth
   puts indent + "Beginning \"#{desc}\"..."
   $nesting_depth += 1
@@ -7,14 +7,14 @@ def log desc, &block
   $nesting_depth -= 1
 end
 
-log "outer block" do
-  log "some little block" do
-    log "teeny-tiny block" do
+better_log "outer block" do
+  better_log "some little block" do
+    better_log "teeny-tiny block" do
     "lots of love"
     end
   6*7
   end
-  log "yet another block" do
+  better_log "yet another block" do
     "I love Indian food!"
   end
   1 == 1

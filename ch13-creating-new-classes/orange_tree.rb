@@ -7,5 +7,48 @@
 
 
 class OrangeTree
-  # your code here
-end
+  def initalize
+      @height = 0
+      @orange_count = 0
+      @alive = true
+      @age = 0
+  end
+  
+  def height
+      if @alive == true
+          @height
+      else
+          "Tree is dead... no height"
+      end
+  end
+  
+  def count_the_oranges
+     if @alive == true
+         @orange_count
+     else
+         "Tree is dead... no oranges"
+     end
+  end
+  
+  def one_year_passes
+      @age += 1
+      if @age >= 25
+          @alive = false
+          "Oh no, the tree died from old age"
+      else @height = @height + 0.4
+      end
+      
+      if @age > 5
+          @orange_count = (@height*15-25)
+          "This year the tree grew to #{@height} and grew #{orange_count} oranges."
+      else
+          "This year the tree grew to #{@height} but was too young to grow oranges."
+      end
+  end
+  
+  ot = OrangeTree.new
+  23.times do
+      ot.one_year_passes
+  end
+  
+  puts(ot.one_year_passes)

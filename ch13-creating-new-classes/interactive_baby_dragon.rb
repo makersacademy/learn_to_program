@@ -111,15 +111,8 @@ class Dragon
   end #end of passage of time
 end #end of Class
 
-puts "Please enter the name of your baby dragon..."
-name = gets.chomp
-baby = Dragon.new name
-puts "Aah, what a great name for a baby dragon!"
-
-while true
-puts "You can choose to do things with #{@name}."
-
-def ask_action
+def ask_action baby
+  
   puts "Please choose from: feed, toss, walk, rock, put_to_bed or just type exit if you want to stop."
   action = gets.chomp
 
@@ -138,13 +131,19 @@ def ask_action
       baby.put_to_bed
     else
       puts "Sorry, I don't understand. Please enter one of these choices"
-      ask
+      ask_action baby
   end
-ask_action
 end
-      
-ask_action      
-end      
+  
+puts "Please enter the name of your baby dragon..."
+name = gets.chomp.capitalize
+baby = Dragon.new name
+puts "Aah, what a great name for a baby dragon!"
+
+while true
+puts "You can choose to do things with #{name}."
+ask_action baby
+end
       
 #pet = Dragon.new 'Norbert'
 #pet.feed

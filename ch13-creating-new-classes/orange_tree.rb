@@ -8,35 +8,44 @@
 
 class OrangeTree
   def initialize
-    @height = 0.0
+    @height = 0
     @orange_count = 0
     @alive = true
-    puts 'You\'ve planted an orange tree!'
   end
 
-  def one_year_passes
-    if @height < 10.0
-      @height += 0.4
-      @orange_count = 0
-      if @height > 2.0
-        @orange_count += (@height * 15 - 20).to_i
-      end
-      puts "This year your tree grew to #{@height.round(1)}m tall, and produced #{@orange_count} oranges."
+  def height
+    if @alive
+      @height.round(1)
     else
-      @alive = false
-      puts 'Oh, no! The tree is too old, and has died. :('
+      'A dead tree is not very tall. :('
     end
   end
 
   def count_the_oranges
     if @alive
-      if @orange_count > 0
-        puts "Your tree has #{@orange_count} oranges."
-      else
-        puts "Sorry, your tree doesn\'t have any oranges."
-      end
+      @orange_count
     else
-      "A dead tree has no oranges. :(."
+      'A dead tree has no oranges. :('
+    end
+  end
+
+  def one_year_passes
+    if @alive
+      @height += 0.4
+      @orange_count = 0
+
+      if @height > 10 && rand(2) > 0
+        @alive = false
+        'Oh, no! The tree is too old, and has died. :('
+      elsif @height > 2
+        @orange_count = (@height * 15 - 25).to_i
+        "This year your tree grew to #{@height.round(1)}m tall, and produced #{@orange_count} oranges."
+      else
+        "This year your tree grew to #{@height.round(1)}m tall, but still too young to bear fruit."
+      end
+
+    else
+      'A year later, the tree is still dead. :('
     end
   end
 
@@ -44,12 +53,14 @@ class OrangeTree
     if @alive
       if @orange_count > 0
         @orange_count -= 1
-        puts 'You picked an orange!'
+        'You pick a juicy, delicious orange!'
       else
-          puts "Sorry, your tree doesn\'t seem to have any oranges!"
+        "You search every branch, but find no oranges."
       end
     else
-        puts "A dead tree has nothing to pick. :("
+      "A dead tree has nothing to pick. :("
     end
   end
 end
+
+ot = OrangeTree.new

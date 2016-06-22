@@ -111,13 +111,48 @@ class Dragon
   end #end of passage of time
 end #end of Class
 
-pet = Dragon.new 'Norbert'
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.rock
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
+puts "Please enter the name of your baby dragon..."
+name = gets.chomp
+baby = Dragon.new name
+puts "Aah, what a great name for a baby dragon!"
+
+while true
+puts "You can choose to do things with #{@name}."
+
+def ask_action
+  puts "Please choose from: feed, toss, walk, rock, put_to_bed or just type exit if you want to stop."
+  action = gets.chomp
+
+  case action
+    when 'exit'
+      exit
+    when 'feed'
+      baby.feed
+    when 'toss'
+      baby.toss
+    when 'walk'
+      baby.walk
+    when 'rock'
+      baby.rock
+    when 'put_to_bed'
+      baby.put_to_bed
+    else
+      puts "Sorry, I don't understand. Please enter one of these choices"
+      ask
+  end
+ask_action
+end
+      
+ask_action      
+end      
+      
+#pet = Dragon.new 'Norbert'
+#pet.feed
+#pet.toss
+#pet.walk
+#pet.put_to_bed
+#pet.rock
+#pet.put_to_bed
+#pet.put_to_bed
+#pet.put_to_bed
+#pet.put_to_bed

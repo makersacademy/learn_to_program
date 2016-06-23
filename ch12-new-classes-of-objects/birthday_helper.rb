@@ -1,50 +1,27 @@
-# Define path for txt file file bdays
-filepath = "/Users/acsauk/Projects/learn_to_program/learn_to_program/ch12-new-classes-of-objects/birthdays.txt"
-
-birth_days = {}
-
-File.read("/Users/acsauk/Projects/learn_to_program/learn_to_program/ch12-new-classes-of-objects/birthdays.txt").each_line do |line|
-  line = line.chomp!
-  line.split(",")
-  name = line
-  date = line
-  birth_days[name] = date
-end
-
-puts birth_days
-=begin
-  txt_line = line
-  split_line = txt_line.split(",", 2)
-  split_line.each do |k, v|
-    birth_dates[k] = v
+# First, load in the birthdates.
+birth_dates = {}
+File.read('birthdates.txt').each_line do |line|
+  line = line.chomp
+  # Find the index of first comma,
+  # so we know where the name ends.
+  first_comma = 0
+  while line[first_comma] != ',' &&
+      first_comma < line.length
+    first_comma = first_comma + 1
   end
+
+  name = line[0..(first_comma - 1)]
+  date = line[-12..-1]
+  birth_dates[name] = date
 end
 
+# Now ask the user which one they want to know.
+puts 'Whose birthday would you like to know?'
+name = gets.chomp
+date = birth_dates[name]
 
-  # Split the string by looking at the first comma only
-  # Save the text prior to comma in key of hash
-  # Save the text after the comma in value of hash
-
-
-
-
-puts birth_dates
-
-# Convert the txt file into an array using key value pairs (e.g. name ==> birthday)
-
-
-=begin
-# Ask the user for a name and store in variable
-puts "Please enter a name."
-user_input = gets.chomp
-
-
-# Search in text file for name user enters
-if birth_dates.include(user_input) == true # If name is found then print birthday
-
-  puts "#{user_input}'s birthday is "
+if date == nil
+  puts "Oooh, I don't know that one..."
 else
-  puts "Name not found." # If name is not found tell user name cannot be found
+  puts date[0..5]
 end
-
-=end

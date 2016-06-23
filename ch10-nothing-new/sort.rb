@@ -1,30 +1,30 @@
 def sort arr
+  rec_sort arr, []
+end
 
-  #puts "Enter some names:"
+def rec_sort unsorted, sorted
+  if unsorted.length <= 0
+    return sorted
+  end
+  # So if we got here, then it means we still # have work to do.
+  smallest = unsorted.pop
+  still_unsorted = []
 
-  #arr = gets.chomp
-  names = arr
-
-  #while arr != ''
-  #  names.push arr
-  #  arr = gets.chomp
-  #end
-
-  names.each_index do |first|
-    (first + 1..names.length).each do |second|
-      if names[first] > names[second]
-        names[first], names[second] = names[second], names[first]
-        puts "[#{names.join(', ')}]"
-      end
+  unsorted.each do |tested_object|
+    if tested_object < smallest
+      still_unsorted.push smallest
+      smallest = tested_object
+    else
+      still_unsorted.push tested_object
     end
   end
-  puts "[#{names.join(', ')}]"
-  end
 
-sort ['Alex', 'Zara', 'Bill', 'Gerrard']
+  # Now "smallest" really does point to the
+  # smallest element that "unsorted" contained,
+  # and all the rest of it is in "still_unsorted". l
+  sorted.push smallest
 
-  #Move the 'smallest' word to the end of sorted array
+  rec_sort still_unsorted, sorted
+end
 
-  #Sort the words that are being added to the sorted array
-
-  #Print the finished sorted array
+# puts(sort([' can' ,' feel' ,' singing' ,' like' ,' a' ,' can' ]))

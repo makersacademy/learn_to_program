@@ -1,20 +1,39 @@
-#Shuffle
-class Array
-  def shuffle
-  arr = self
+# class Array
+#   def shuffle
+#     arr = self
+#     # Now we can just copy the old shuffle method.
+#     shuf = []
 
-    i = arr.length
+#     while arr.length > 0
+#       # Randomly pick one element of the array.
+#       rand_index = rand(arr.length)
 
-    while i > 1
-      i = i - 1
-      random = i*rand
-      arr[random], arr[i] = arr[i], arr[random]
-    end
-  end
-end
+#       # Now go through each item in the array,
+#       # putting them all into new_arr except for
+#       # the randomly chosen one, which goes into
+#       # shuf.
+#       curr_index = 0
+#       new_arr = []
+#       arr.each do |item|
+#         if curr_index == rand_index
+#           shuf.push item
+#         else
+#           new_arr.push item
+#         end
 
+#         curr_index = curr_index + 1
+#       end
+#       # Replace the original array with the new,
+#       # smaller array.
 
-#Factorial
+#       arr = new_arr
+#     end
+#     shuf
+#   end
+# end
+
+# note modern ruby has already has a built in shuffle method
+
 class Integer
   def factorial
     if self <= 1
@@ -23,63 +42,21 @@ class Integer
       self * (self-1).factorial
     end
   end
+  def to_roman
+    # I chose old-school roman numerals just to save space.
+    roman = ''
 
-# numerals
+    roman = roman + 'M' * (self / 1000)
+    roman = roman + 'D' * (self % 1000 / 500)
+    roman = roman + 'C' * (self % 500 / 100)
+    roman = roman + 'L' * (self % 100 / 50)
+    roman = roman + 'X' * (self % 50 / 10)
+    roman = roman + 'V' * (self % 10 / 5)
+    roman = roman + 'I' * (self % 5 / 1)
 
-def old_roman_numeral
-  num = self
-
-  while true
-    numerals = {
-      1 => 'I',
-      5 => 'V',
-      10 => 'X',
-      50 => 'L',
-      100 => 'C',
-      500 => 'D',
-      1000 => 'M'
-    }
-
-    str = ""
-    num = gets.chomp.to_i
-
-    numerals.each do |number, numeral|
-      if num == number
-        return str + "#{numeral}"
-      elsif num / 5 == even && num % 5 == 0 # does not end in a 5
-        puts
-      elsif num / 5 == odd && num % 5 == 0 # does end in a five
-        puts
-      elsif
-
-
-    if num % 5 != 0 && num < 5
-      puts i *num
-    end
-
-    if num % 5 == 0 && num < 10
-      puts v
-    end
-
-    if num % 5 != 0 && num > 5 && num < 10
-      puts v + (i * (num % 5))
-    end
-
-    if num % 10 == 0 && num < 50
-      puts x
-    end
-
-    if num % 10 != 0 && num % 5 == 0 && num > 10 && num < 50
-      puts x + v + (i * (num % 5))
-    end
-
-    if num % 10 != 0 && num % 5 != 0 && num > 10 && num < 50
-      puts (x * (num / 10)) + (i * (num % 5))
-    end
-  break
+    roman
   end
 end
-
-puts ["apple","pear","orange","kiwi"].shuffle
-puts 21.factorial
-puts 7.to_roman
+  # puts [1,2,3,4,5].shuffle
+  # puts 7.factorial
+  # puts 73.to_roman

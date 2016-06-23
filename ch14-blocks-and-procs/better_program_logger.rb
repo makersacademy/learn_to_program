@@ -1,4 +1,4 @@
-indent = 0
+$indent = 0
 
  def better_log (desc, &block)
    puts " " * $indent + "Beginning \"#{desc}\"..."

@@ -6,7 +6,8 @@ def log desc, &block
   $logger_depth += 1
   result = block[]
   $logger_depth -= 1
-  puts prefix+"...#{desc.inspect} finished, returning: #{result}"
+  puts prefix+"...#{desc.inspect} finished, returning:
+  #{result}"
 end
 
 log 'outer block' do

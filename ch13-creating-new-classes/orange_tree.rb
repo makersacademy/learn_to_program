@@ -7,5 +7,97 @@
 
 
 class OrangeTree
-  # your code here
+def initialize #name
+    #@name = name
+    @alive = true
+    @height = 0 # Just a tiny seedling popping up.
+    @oranges =  0 # No oranges on it yet.
+    @age = 0
+  
+    puts "A new orange tree seedling has started to grow!"
 end
+
+def one_year_passes
+    @oranges = 0
+    @age += 1.to_i
+    @height += 0.4
+    @age < 5 ? @oranges = 0.to_i : @oranges += (@height * 15 - 25).to_i
+    
+    if @age == 25 
+        @alive = false
+    end
+    
+    if @age == 1
+        year = "year"
+    else
+        year = "years"
+    end
+    
+    puts
+    if @alive
+     puts "A year on it is #{@age} #{year} old! It is #{@height}m tall and has #{@oranges} oranges!"
+    else
+     puts "Oh no, sadly the tree is old and has died...  :( "
+    end
+   
+end
+
+def pick_an_orange
+  if @alive
+    unless @oranges == 0
+        @oranges -= 1
+        if @oranges == 0
+            puts "No more oranges left to eat now!"
+        elsif @oranges == 1 
+            puts "That orange was delicious! Now there is only #{@oranges} left..."
+        else
+            puts "That orange was delicious! Now there are #{@oranges} left..."
+        end
+    end
+  else
+     puts "Sadly the tree is dead so has been cut down."
+  end
+     
+end
+
+def count_the_oranges
+   if @alive
+   puts "There are currently #{@oranges} oranges on the tree."
+   else
+       puts "Sadly the tree is dead so has been cut down."
+   end
+   @oranges  
+end
+
+def height
+    if @alive
+        puts "The tree is now #@height}m tall."
+    else
+        puts "Sadly the tree is dead so has been cut down."
+    end
+end
+
+end #end of class
+
+tree = OrangeTree.new 
+
+#27.times do
+# tree.one_year_passes
+#end
+
+6.times do
+    tree.one_year_passes
+end
+
+tree.count_the_oranges
+
+11.times do
+   tree.pick_an_orange
+end
+
+20.times do
+ tree.one_year_passes
+end
+
+tree.count_the_oranges
+tree.pick_an_orange

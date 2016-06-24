@@ -1,3 +1,7 @@
-def log desc, &block
-  # your code here
+def program_log desc, &block
+
+puts "Beginning #{desc.inspect}..."
+a = block[]
+puts "...#{desc.inspect} finished, returning: #{a}"
+
 end

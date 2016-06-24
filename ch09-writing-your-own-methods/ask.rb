@@ -1,3 +1,12 @@
 def ask question
-  # your code here
+  puts question
+  reply = gets.chomp
+
+  unless (reply.downcase == "yes") || (reply.downcase == "no")
+      puts "Please answer \"yes\" or \"no\"."
+      ask question
+  end
+
+reply.downcase == "yes" ? true : false
+
 end

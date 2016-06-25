@@ -1,6 +1,6 @@
-def shuffle (arr)
+def shuffle arr
   # your code here
-  shuffled_array []
+  shuffled_array = []
   
  
   while arr.length > 0
@@ -12,9 +12,9 @@ def shuffle (arr)
   arr.each {|x|
   
   if selected == rand_arr_object
-      return shuf.push(item)
+      shuffled_array.push x
   else
-      return new_array.push(item)
+      new_array.push x
   end
   selected +=1
       
@@ -22,7 +22,7 @@ def shuffle (arr)
   
   arr= new_array
 end
-shuffle
+shuffled_array
 end
 
   #---random objects from array---

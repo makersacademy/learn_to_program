@@ -7,65 +7,57 @@
 
 
 class OrangeTree
-
-  def initialize
-  @age = 0
-  @tall = 0
-  @fruit = 0
-  puts 'A new Orange Tree is planted.'
-  end
-
-  def height
-  puts 'This year your tree grew to ' + @tall.round(1).to_s + 'm tall, and produced '+ @fruit.floor.to_s + ' oranges.'
-  end
-
-  def count_the_oranges
-    puts 'This year your tree grew to ' + @tall.round(1).to_s + 'm tall, and produced '+ @fruit.floor.to_s + ' oranges.'
-  
-  #puts 'The tree has ' + @fruit.to_s + ' oranges.'
+def initialize
+  @height = 0
+  @orange_count = 0
+  @alive = true
 end
 
-  def pick_an_orange
-  if @fruit < 1
-  puts 'Sorry, there are no oranges to pick this year.'
+def height
+  if @alive
+    @height
   else
-  puts 'You pick an orange from the tree. It\'s very delicious.'
-  @fruit = @fruit - 1
+    'A dead tree is not very tall. :('
   end
+end
+def count_the_oranges
+  if @alive
+    @orange_count
+  else
+    'A dead tree has no oranges. :('
   end
-
-  def one_year_passes
-  puts 'One year passes'
-  @age = @age + 1
-  @tall = @tall + 0.4
-  @fruit = 0
-  
-  if dead?
-  puts 'The Orange Tree dies'
-  exit
-  end 
-
-  if @age > 5 
-    if @age < 17
-    #array =*(10..25)
-    #orange_count = @age.to_i
-    #@fruit = @age*array[orange_count]
-    @fruit = @tall*(@age+9)
+end
+def one_year_passes
+  if @alive
+    @height = @height.round(2) + 0.4
+    @orange_count = 0
+    if @height > 10 #&& rand(2) > 0
+      @alive = false
+      'Oh, no! The tree is too old, and has died. :('
+    elsif @height > 2
+      @orange_count = (@height * 15 - 25).to_i
+      "This year your tree grew to #{@height.round(2)}m tall," + " and produced #{@orange_count} oranges."
     else
-    @fruit = 119#@age*25
+      "This year your tree grew to #{@height.round(2)}m tall," + " but is still too young to bear fruit."
     end
   else
-  @fruit = 0
-  end
-
-  end
-
-  private
-
-  def dead?
-  @age > 25
+    'A year later, the tree is still dead. :('
   end
 end
+def pick_an_orange
+  if @alive
+    if @orange_count > 0
+      @orange_count = @orange_count - 1
+      'You pick a juicy, delicious orange!'
+    else
+      'You search every branch, but find no oranges.'
+    end
+  else
+    'A dead tree has nothing to pick. :('
+  end
+end
+end
+
 
 tree = OrangeTree.new
 tree.one_year_passes

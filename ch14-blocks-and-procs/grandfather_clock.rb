@@ -1,20 +1,15 @@
 def grandfather_clock &block
-  #convert hours to 12 hour format
-  current_hour = Time.new.hour
-  if current_hour == 0
-  current_hour = current_hour + 12
-  elsif current_hour > 12
-  current_hour = current_hour - 12
+  hour = Time.new.hour
+  if hour >= 13
+    hour  = hour - 12
   end
-
-  #call the proc the number of hours passed
-  current_hour.to_i.times do
-  some_proc.call
+  if hour == 0
+    hour = 12
   end
-
-  end 
-
-  # Dong proc
-  dong_proc = Proc.new do
-  puts 'DONG!'
-end
+  hour.times do
+    block.call
+  end
+  end
+  grandfather_clock do
+    puts 'DONG!'
+  end

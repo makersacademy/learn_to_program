@@ -1,19 +1,14 @@
 def log desc, &block
-  puts 'Beginning "'+block_description+'" . . .' 
-  value_returned = block.call
-  puts '. . . "'+block_description+'" finished, returning:'
-  puts value_returned
-  end
-
-  log 'outer block' do
-
-  log 'some little block' do
-  5
-  end
-
-  log 'yet another block' do
-  'I like Thai food!'
-  end
-
-  false
+  puts "Beginning #{desc.inspect}..."
+  result = block[]
+  puts "...#{desc.inspect} finished, returning: #{result}"
 end
+log 'outer block' do
+  log 'some little block' do
+    1**1 + 2**2
+  end
+  log 'yet another block' do
+    '!doof iahT ekil I'.reverse
+  end
+  '0' == end
+  end

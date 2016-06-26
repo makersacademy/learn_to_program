@@ -6,7 +6,7 @@
   puts $space*$nesting_depth + 'Beginning "'+block_description+'" ...'
   $nesting_depth = $nesting_depth + 1
   value_returned = block.call
-  $nesting_depth = $nesting_depth - 1 
+  $nesting_depth = $nesting_depth - 1
   puts $space*$nesting_depth + '... "'+block_description+'" finished, returning:'
   puts $space*$nesting_depth + value_returned.to_s
   end

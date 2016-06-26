@@ -1,21 +1,32 @@
-def shuffle some_array
-    recursive_shuffle some_array, []
+#def shuffle some_array
+    #recursive_shuffle some_array, []
+#end
+
+def shuffle sorted_array
+    shuf = []
+    while sorted_array.length > 0
+      rand_index = rand(sorted_array.length)
+      curr_index = 0
+      array = []
+      sorted_array.each do |item|
+        if curr_index == rand_index
+          shuf.push item
+        else
+          array.push item
+        end
+        curr_index = curr_index + 1
+      end
+      sorted_array = array
+    end
+    shuf
+        #unsorted_array = []
+        #x = rand(0...sorted_array.count)
+        #x = (0...(sorted_array.count)).sort_by{rand}
+        #sorted_array.each do |num|
+          #while unsorted_array.count < sorted_array.count
+          #unsorted_array << sorted_array[x]}
+
+        #return unsorted_array
 end
-
-def recursive_shuffle unsorted_array, sorted_array
-        x = (0...(unsorted_array.count)).sort_by{rand}
-        x.each{|num| sorted_array << unsorted_array[num]}
-        return sorted_array
-end
-
-#shuffle(['pear','apple', 'banana','orange','blackberry'])
-
-array = []
-random_words = 'start'
-while random_words != ""
-puts "Please enter one word per line, push 'enter' to exit"
-random_words = gets.chomp
-array.push random_words
-end
-
+array = ['a','b','c','d','e','f','d']
 puts shuffle array

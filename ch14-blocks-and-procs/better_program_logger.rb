@@ -1,30 +1,21 @@
-  $nesting_depth = 0
-  $space = ' '
-
-  def log desc, &block
-
-  puts $space*$nesting_depth + 'Beginning "'+block_description+'" ...'
-  $nesting_depth = $nesting_depth + 1
-  value_returned = block.call
-  $nesting_depth = $nesting_depth - 1
-  puts $space*$nesting_depth + '... "'+block_description+'" finished, returning:'
-  puts $space*$nesting_depth + value_returned.to_s
-  end
-
-  log 'outer block' do
-
-  log 'some little block' do
-
-  log 'teeny-tiny block' do
-  'lots of love'
-  end
-
-  42
-  end
-
-  log 'yet another block' do
-  'I love Indian food!'
-  end
-
-  true
+$logger_depth = 0
+def better_log desc, &block
+  prefix = ' '*$logger_depth
+  puts prefix+"Beginning #{desc.inspect}..."
+  $logger_depth += 1
+  result = block[]
+  $logger_depth -= 1
+  puts prefix+"...#{desc.inspect} finished, returning: #{result}"
 end
+better_log 'outer block' do
+  better_log 'some little block' do
+    better_log 'teeny-tiny block' do
+      'lOtS oF lOVe'.downcase
+    end
+    7 * 3 * 2
+  end
+  better_log 'yet another block' do
+    '!doof naidnI evol I'.reverse
+  end
+  '0' == "0"
+  end

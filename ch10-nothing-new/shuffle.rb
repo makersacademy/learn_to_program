@@ -28,5 +28,5 @@ def shuffle sorted_array
 
         #return unsorted_array
 end
-array = ['a','b','c','d','e','f','d']
-puts shuffle array
+#array = ['a','b','c','d','e','f','d']
+#puts shuffle array

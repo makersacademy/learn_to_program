@@ -1,5 +1,5 @@
 
-def mysort arr # This "wraps" recursive_sort.
+def sort arr # This "wraps" recursive_sort.
     recursive_sort arr, []
 end
 
@@ -29,7 +29,7 @@ end
 
 
 arr = ['beaver', 'badger', 'bear', 'lion', 'tiger', 'panda', 'bear', 'giraffe']
-puts mysort arr
+puts sort arr
 puts arr.sort #to check it's working
 
 

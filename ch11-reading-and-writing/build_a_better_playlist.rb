@@ -1,4 +1,4 @@
-def music_shuffle filenames
+def music_shuffle(filenames)
   filenames = filenames.sort
   len = filenames.length
   2.times do
@@ -21,7 +21,7 @@ def music_shuffle filenames
   idx = 0
   while idx < len
     arr.push(filenames[(idx+cut)%len])
-    idx = idx + 1
+    idx = idx +  1
   end
   arr
 end

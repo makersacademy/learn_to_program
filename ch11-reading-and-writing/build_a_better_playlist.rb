@@ -1,7 +1,13 @@
+#couldnt figure this one out
+#so got the solution and working out how each part of the method functions
+
 def music_shuffle filenames
+  #takes the songs from list of song files and places them in arrays
+  #witht eh song and the path
   songs_and_paths = filenames.map do |s|
     [s, s.split('/')] # [song, path]
   end
+
   tree = {:root => []}
   # put each song into the tree
   insert_into_tree = proc do |branch, song, path|

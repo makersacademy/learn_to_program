@@ -1,15 +1,22 @@
-require 'time'
+# require 'time'
+# def grandfather_clock &block
+# t = Time.now
+# hours = t.hour
+# hour = t.strftime('%I').to_i
+#   hour.times do
+#     block.call
+#   end
+# end
+# grandfather_clock do
+#   puts 'DONG!'
+# end
+# # p t = Time.now
+# # p str = t.strftime('%I')
+# # p str.to_i
 def grandfather_clock &block
-p t = Time.now
-p hours = t.hour
-p hour = t.strftime('%I').to_i - 1
-  hour.times do
-    block.call
-  end
+  hour = (Time.new.hour + 11)%12 + 1
+
+  hour.times(&block)
 end
-grandfather_clock do
-  puts 'DONG!'
-end
-# p t = Time.now
-# p str = t.strftime('%I')
-# p str.to_i
+
+grandfather_clock { puts 'DONG!' }

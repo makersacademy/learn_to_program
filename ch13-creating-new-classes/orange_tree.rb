@@ -41,7 +41,7 @@ def one_year_passes
 if @tree
     @height = @height + 0.4
      @oranges = 0
-if @height > 10 && rand(2) > 0
+if @height > 10.1
   @tree = false
   'Oh, no! The tree is too old, and has died. :('
 elsif @height > 2

@@ -1,4 +1,4 @@
-require 'Time'
+require 'time'
 def grandfather_clock &block
 t = Time.now
   hours = t.hour

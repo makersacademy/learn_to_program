@@ -1,8 +1,8 @@
 require 'time'
 def grandfather_clock &block
-t = Time.now
-  hours = t.hour
-hour = t.strftime('%I').to_i
+p t = Time.now
+p hours = t.hour
+p hour = t.strftime('%I').to_i - 1
   hour.times do
     block.call
   end

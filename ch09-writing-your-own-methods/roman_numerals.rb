@@ -19,6 +19,6 @@ return roman
 end
 
 
-# p roman_numeral(1999)
+p roman_numeral(1999)
 #c=0
 #lv.map{|l,v| c, num = num.divmod v; l*c}.join ''

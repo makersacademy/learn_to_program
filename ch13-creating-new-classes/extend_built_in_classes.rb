@@ -1,5 +1,5 @@
-require_relative '/Users/julia/RUBY/test/learn_to_program/ch09-writing-your-own-methods/old_school_roman_numerals.rb'
-require_relative '/Users/julia/RUBY/test/learn_to_program/ch10-nothing-new/shuffle.rb'
+require_relative '../ch09-writing-your-own-methods/old_school_roman_numerals.rb'
+require_relative '../ch10-nothing-new/shuffle.rb'
 class Integer
   def factorial
     (1..self).inject(:*) || 1

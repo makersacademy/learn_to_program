@@ -1,9 +1,10 @@
 $log_counter = 0
 
 def log desc, &block
-  puts "The block #{desc} is starting now..."
+  indent = " " * $log_counter
+  puts "#{indent} The block #{desc} is starting now..."
     returned = block.call
-    puts "Block #{desc} has run, returning: #{returned.to_s}"
+    puts "#{indent} ...Block #{desc} has run, returning: #{returned.to_s}"
     $log_counter += 1
     puts "$log_counter = #{$log_counter}"
     false ? "False" : "True"

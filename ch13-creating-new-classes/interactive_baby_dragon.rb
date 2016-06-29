@@ -17,7 +17,7 @@ class Dragon
 
   def walk 
     puts "You walk #{@name}."
-    stuff_in_intestine = 0
+    @stuff_in_intestine = 0
     passage_of_time
   end
 
@@ -52,7 +52,6 @@ class Dragon
       puts "...but wakes when you stop."
     end
   end
-
 
 private 
 
@@ -100,3 +99,43 @@ private
   end
 
 end
+
+
+def application_start
+  puts "Welcome! Please choose a name for your dragon:"
+  name = gets.chomp
+  pet = Dragon.new(name)
+  puts "What would you like to do now? Type help to see available options."
+  action = gets.chomp  
+
+  while action
+     case action
+     when "feed" then pet.feed
+     when "walk" then pet.walk
+     when "put to bed" then pet.put_to_bed
+     when "toss" then pet.toss
+     when "rock" then pet.rock
+     when "help" then puts "You can feed, walk, put to bed, toss or rock your dragon, or type exit to quit."
+     when "exit" then exit
+     else puts "I don't recognise that command - type help for more information."
+     end
+  puts "What would you like to do next?"
+  action = gets.chomp
+  end
+
+end
+
+def user_input
+  selection = gets.chomp
+
+  case selection
+    when "feed" then pet.feed
+    when "walk" then pet.walk
+   end
+
+end
+
+
+
+
+application_start

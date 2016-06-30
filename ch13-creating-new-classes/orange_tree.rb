@@ -21,7 +21,7 @@ def one_year_passes
     @oranges = 0
     @age += 1.to_i
     @height += 0.4
-    @age < 5 ? @oranges = 0.to_i : @oranges += (@height * 15 - 25).to_i
+    @age <= 5 ? @oranges = 0.to_i : @oranges += (@height * 15 - 25).to_i
     
     if @age == 25 
         @alive = false

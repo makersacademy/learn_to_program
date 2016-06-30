@@ -1,4 +1,4 @@
-def my_dict_sort arr # This "wraps" recursive_sort.
+def dictionary_sort arr # This "wraps" recursive_sort.
     recursive_dict_sort arr, []
 end
 
@@ -29,8 +29,9 @@ end
 
 
 arr = ['beaver', 'badger', 'Bear', 'Lion', 'tiger', 'panda', 'bear', 'Giraffe']
-puts my_dict_sort arr
+puts dictionary_sort arr
 #puts arr.sort #to check it's working
 
+puts(dictionary_sort([' can' ,' feel' ,' singing.' ,' like' ,' A' ,' can' ]))
 
 

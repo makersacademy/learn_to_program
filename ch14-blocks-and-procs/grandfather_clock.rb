@@ -1,23 +1,7 @@
 def grandfather_clock &block
-  
-hour = Time.new.hour
 
-if hour >= 13
- 	hour -= 12
-	hour.times do
-	block.call
-	end
-elsif hour == 0
-	hour = 12
-	hour.times do 
-	block.call
-	end	
-else
-	hour.times do
-	block.call
-	end
-
-end
+  hour = (Time.new.hour + 11) % 12 + 1
+  hour.times {block.call}
 
 end
 

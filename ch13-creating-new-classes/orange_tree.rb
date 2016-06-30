@@ -24,7 +24,7 @@ def one_year_passes
     @height = @height.round(1)
     @age <= 5 ? @oranges = 0.to_i : @oranges += (@height * 15 - 25).to_i
     
-    if @age == 25 
+    if @age > 25 
         @alive = false
     end
     
@@ -39,7 +39,7 @@ def one_year_passes
      #puts "A year on it is #{@age} #{year} old! It is #{@height}m tall and has #{@oranges} oranges!"
      #'This year your tree grew to 9.6m tall, and produced 119 oranges.'
      puts "This year your tree grew to #{@height}m tall, and produced #{@oranges} oranges."
-    elsif @age == 25
+    elsif @age == 26
      #puts "Oh no, sadly the tree is old and has died...  :( "
      puts "Oh, no! The tree is too old, and has died. :("
     else
@@ -94,19 +94,13 @@ tree = OrangeTree.new
 # tree.one_year_passes
 #end
 
-6.times do
-    tree.one_year_passes
-end
-
-tree.count_the_oranges
-
-11.times do
-   tree.pick_an_orange
-end
-
 23.times do
  tree.one_year_passes
 end
 
+5.times do
+  tree.one_year_passes
+end
+tree.height
 tree.count_the_oranges
 tree.pick_an_orange

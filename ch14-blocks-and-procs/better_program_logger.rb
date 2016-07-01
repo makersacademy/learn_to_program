@@ -1,22 +1,29 @@
 $log_counter = 0
 
-def log desc, &block
+def better_log desc, &block
   indent = " " * $log_counter
-  puts "#{indent} The block #{desc} is starting now..."
+  puts indent + 'Beginning "' + desc + '"...'
+  $log_counter += 1
     returned = block.call
-    puts "#{indent} ...Block #{desc} has run, returning: #{returned.to_s}"
-    $log_counter += 1
-    puts "$log_counter = #{$log_counter}"
-    false ? "False" : "True"
+    $log_counter = $log_counter - 1
+    puts indent + '..."' + desc +'" finished, returning: ' + returned.to_s
+    #puts "$log_counter = #{$log_counter}"
   end
 
-log 'envelope block' do
+better_log 'outer block' do
+  
+  better_log 'some little block' do
+    
+    better_log 'teeny-tiny block' do
+      'lOtS oF lOVe'.downcase
+    end # end teeny tiny
+    
+    7 * 3 * 2
+  end # end some little
 
-  log 'square 7' do
-    7 * 7
-  end
-
-  log 'hour in France' do
-    "The hour in France now is #{Time.new.hour + 1} in 24 hour clock time."
-  end
+    better_log 'yet another block' do
+      '!doof naidnI evol I'.reverse
+    end # end yet another
+  
+false
 end

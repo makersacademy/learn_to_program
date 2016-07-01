@@ -1,3 +1,3 @@
 def dictionary_sort arr
-  # your code here
-end
+  arr.sort_by(&:downcase)
+  end

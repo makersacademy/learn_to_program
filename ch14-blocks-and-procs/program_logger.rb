@@ -1,3 +1,21 @@
 def log desc, &block
-  # your code here
+  def log block_description, &block
+    puts 'Beginning "'+desc+'" . . .'
+    value_returned = block.call
+    puts ". . . "+desc+" finished, returning:"
+    puts value_returned
+  end
+
+  log "outer block" do
+
+    log "some little block" do
+      5
+    end
+
+    log "yet another block" do
+      "I like Thai food!"
+    end
+
+    false
+  end
 end

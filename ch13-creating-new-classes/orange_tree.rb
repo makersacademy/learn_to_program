@@ -7,11 +7,11 @@
 
 
 class OrangeTree
-def initialize #name
-    #@name = name
+  
+def initialize 
     @alive = true
     @height = 0 # Just a tiny seedling popping up.
-    @oranges =  0 # No oranges on it yet.
+    @oranges = 0 # No oranges on it yet.
     @age = 0
   
     puts "A new orange tree seedling has started to grow!"
@@ -22,7 +22,7 @@ def one_year_passes
     @age += 1.to_i
     @height += 0.4
     @height = @height.round(1)
-    @age <= 5 ? @oranges = 0.to_i : @oranges += (@height * 15 - 25).to_i
+    @age <= 5 ? @oranges = 0.to_i : @oranges = (@height * 15 - 25).to_i
     
     if @age > 25 
         @alive = false
@@ -34,16 +34,14 @@ def one_year_passes
         year = "years"
     end
     
-    puts
     if @alive
-     #puts "A year on it is #{@age} #{year} old! It is #{@height}m tall and has #{@oranges} oranges!"
-     #'This year your tree grew to 9.6m tall, and produced 119 oranges.'
-     puts "This year your tree grew to #{@height}m tall, and produced #{@oranges} oranges."
+      #puts "A year on it is #{@age} #{year} old! It is #{@height}m tall and has #{@oranges} oranges!"
+      "This year your tree grew to #{@height}m tall, and produced #{@oranges} oranges."
     elsif @age == 26
-     #puts "Oh no, sadly the tree is old and has died...  :( "
-     puts "Oh, no! The tree is too old, and has died. :("
+      #puts "Oh no, sadly the tree is old and has died...  :( "
+      "Oh, no! The tree is too old, and has died. :("
     else
-     puts "A year later, the tree is still dead. :("
+      "A year later, the tree is still dead. :("
     end
    
 end
@@ -69,20 +67,20 @@ end
 
 def count_the_oranges
    if @alive
-   puts "There are currently #{@oranges} oranges on the tree."
+     #puts "There are currently #{@oranges} oranges on the tree."
+     @oranges
    else
-       #puts "Sadly the tree is dead so has been cut down."
-       puts "A dead tree has no oranges. :("
-   end
-   @oranges  
+     #puts "Sadly the tree is dead so has been cut down."
+     "A dead tree has no oranges. :(" 
+   end   
 end
 
 def height
     if @alive
-        puts "The tree is now #@height}m tall."
+        @height
     else
         #puts "Sadly the tree is dead so has been cut down."
-        puts "A dead tree is not very tall. :("
+        "A dead tree is not very tall. :("
     end
 end
 
@@ -98,9 +96,12 @@ tree = OrangeTree.new
  tree.one_year_passes
 end
 
+tree.one_year_passes
+tree.count_the_oranges
+tree.height
 5.times do
   tree.one_year_passes
 end
 tree.height
-tree.count_the_oranges
+tree.count_the oranges
 tree.pick_an_orange

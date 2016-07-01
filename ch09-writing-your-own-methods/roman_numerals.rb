@@ -1,4 +1,3 @@
-=begin
 def old_roman_numeral(num)
     m_length = 0
     cm_length = 0
@@ -67,7 +66,7 @@ def old_roman_numeral(num)
     end
     "M"*m_length + "CM"*cm_length + "D"*d_length + "CD"*cd_length + "C"*c_length+ "XC"*xc_length + "L"*l_length + "XL"*xl_length + "X"*x_length +"IX"*ix_length + "V"*v_length + "IV"*iv_length + "I"*i_length
 end
-=end
+
 def roman_numeral number
 
 m_length = 0
@@ -149,8 +148,35 @@ i_length = number/1
 number = number%10
 end
 
-'M'*m_length + "CM"*n900_length + 'D'*d_length + 'CD'*n400_length + 'C'*c_length + 'XC'*n90_length + 'L'*l_length + 'XL'*n40_length + 'X'*x_length + 'IX'*n9_length + 'V'*v_length + 'IV'*n4_length + 'I'*i_length
+puts 'M'*m_length + "CM"*n900_length + 'D'*d_length + 'CD'*n400_length + 'C'*c_length + 'XC'*n90_length + 'L'*l_length + 'XL'*n40_length + 'X'*x_length + 'IX'*n9_length + 'V'*v_length + 'IV'*n4_length + 'I'*i_length
 
 end
 
-#puts roman_numeral(4999)
+
+=begin
+ROMAN_NUMBERS = {
+  1000 => "M",
+   900 => "CM",
+   500 => "D",
+   400 => "CD",
+   100 => "C",
+    90 => "XC",
+    50 => "L",
+    40 => "XL",
+    10 => "X",
+      9 => "IX",
+      5 => "V",
+      4 => "IV",
+      1 => "I",
+      0 => "",
+}
+def roman_numeral(input)
+  return '' if self == 0
+  ROMAN_NUMBERS.each do |value, letter|
+    return ( letter * (self / value)) << (self % value).roman if value <= self
+  end
+  return (self % value).roman
+end
+
+puts roman_numeral(4999)
+=end

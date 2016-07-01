@@ -1,17 +1,18 @@
-def log desc, &block
-  puts "The block #{desc} is starting now..."
+def program_log desc, &block
+  puts 'Beginning "' + desc + '"...'
     returned = block.call
-    puts "Block #{desc} has run, returning: #{returned.to_s}"
-    false ? "False" : "True"
+    puts '..."' + desc +'" finished, returning: ' + returned.to_s
   end
 
-log 'envelope block' do
+program_log 'outer block' do
 
-  log 'square 7' do
-    7 * 7
+  program_log 'some little block' do
+    1 + 4
   end
 
-  log 'hour in France' do
-    "The hour in France now is #{Time.new.hour + 1} in 24 hour clock time."
+  program_log 'yet another block' do
+    #"The hour in France now is #{Time.new.hour + 1} in 24 hour clock time."
+    "I like Thai food!"
   end
+false
 end

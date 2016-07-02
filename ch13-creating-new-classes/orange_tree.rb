@@ -40,10 +40,10 @@ class OrangeTree
       elsif @height > 2
         # new oranges grow
         @orange_count = (@height * 15 - 25).to_i
-        "This year your tree grew to #{@height}m tall," +
+        "This year your tree grew to #{@height.round(1)}m tall," +
           " and produced #{@orange_count} oranges."
       else
-        "This year your tree grew to #{@height}m tall," +
+        "This year your tree grew to #{@height.round(1)}m tall," +
           " but is still too young to bear fruit."
       end
     else

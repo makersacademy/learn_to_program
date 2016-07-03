@@ -1,4 +1,4 @@
-#bottles of beer
+#expanded engish number 
 def english_number number
 	if number < 0 
 		return "Please enter a number that isn'negative"
@@ -16,7 +16,28 @@ def english_number number
 				["thousand",3],
 				["million", 6],
 				["billion", 9],
-				["trillion",12]] # array of arrays for the endings.
+				["trillion",12],
+				["hundred", 2],
+				["thousand",3],
+				["million", 6],
+				["billion", 9],
+				["trillion",12],
+				["quadrillion", 15],
+				["quintillion", 18],
+				["sextillion", 	21],
+				["septillion", 24],
+				["octillion", 27],
+				["decillion", 30],
+				["undecillion", 33],
+				["duodecillion", 36],
+				["tredecillion", 39],
+				["quattuordecillion", 42],
+				["sexdecillion", 45],
+				["septendecillion", 48],
+				["octodecillion", 51],
+				["novemdecillion", 54],
+				["vigintillion", 57],
+				["googol", 100]] # array of arrays for the endings.
 					# one array of endings consists of the ending name: hundred thousand 
 					# million, billion etc. and the other part shows the amount of zeros
 					# in other words how often you can divide it by 10
@@ -41,12 +62,14 @@ def english_number number
 			ending = english_number write # one hundred (hundred has to be in the end)
 			num_string = num_string + ending + " " + ending_name 
 			if left > 0 
-				num_string = num_string + " " #just to have space between the numbers
+				num_string = num_string + " and " #just to have space between the numbers
 			end 
 		end 
 	end 
 	#after the while iterator there is no array anymore, meaning we have to add the 
 	# teenagers, tens and ones. similar to the exercise w/o recursion
+
+	 #copied from exercise in book
 
 	write = left/10 # How many tens left?
 	left = left - write*10 # Subtract off those tens.
@@ -56,52 +79,34 @@ def english_number number
 		# "twelve", we have to make a special exception
 		# for these.
 		num_string = num_string + teenagers[left-1]
-		# The "-1" is because teenagers[3] is
+		#  The "-1" is because teenagers[3] is
 		# 'fourteen', not 'thirteen'.
 		# Since we took care of the digit in the
 		# ones place already, we have nothing left to write.
 		left = 0
-
 		else
 			num_string = num_string + tens_place[write-1]
-
-		# The "-1" is because tens_place[3] is
-		# 'forty', not 'thirty'.
-		end
+			# The "-1" is because tens_place[3] is
+			# 'forty', not 'thirty'.
+			end
 		if left > 0
 		# So we don't write 'sixtyfour'...
-			num_string = num_string + '-'
+			num_string = num_string + ' and '
 		end
 	end
 	write = left # How many ones left to write out?
 	left = 0 # Subtract off those ones.
 	if write > 0
 		num_string = num_string + ones_place[write-1]
-	# The "-1" is because ones_place[3] is
-	# 'four', not 'three'.
+		# The "-1" is because ones_place[3] is
+		# 'four', not 'three'.
 	end
-# Now we just return "num_string"...
-	num_string
-end 
-def counting_down (number)
-	 # where to begin with counting bottles
-	num_counting_down = number 
-	while num_counting_down >1
-		puts english_number(num_counting_down).capitalize + " bottles of beer on the wall, " + english_number(num_counting_down) + " bottles of beer!" 
-		num_counting_down -= 1 
-		if num_counting_down == 1
-			puts "Take on down, pass it around" + english_number(num_counting_down) + "bottle of beer on the wall "
-			puts "one bottle of beer on the wall, one bottle of beer!"
-			puts "Take one down, pass it around, no more bottles of beer on the wall!"
-		
-		else 
-			puts "Take one down, pass it around, " + english_number(num_counting_down) + " bottles of beer on the wall!"
-		end 
-	end 
-	p
-	
-end 
+	# Now we just return "num_string"...
+num_string
+end
 
-puts counting_down(15)
+puts english_number(124235134124123123)
+	
+
 
 

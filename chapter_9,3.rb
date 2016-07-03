@@ -1,5 +1,5 @@
 #modern roman numerals
-def roman_numeral (x)
+def modern_school_numeral (x)
 	if x < 0
 		return "Please enter a number greater than zero"
 	end 
@@ -23,10 +23,6 @@ def roman_numeral (x)
 	if roman.count("I") == 4
 		roman.gsub!("IIII","IV")
 	end 
-	if roman.count("VIV") > 0
-		roman.gsub!("VIV","IX")
-	end 
 	roman 
 end 
-
-puts roman_numeral(9)
+puts modern_school_numeral(494) 

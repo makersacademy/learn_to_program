@@ -5,9 +5,9 @@ def ask (question)
 		reply = gets.chomp.downcase
 		if (reply =="yes" || reply == "no")
 			if reply == "yes"
-				return true
+				return "yes"
 			else 
-				return false
+				return "no"
 			end 
 			break 
 		else 

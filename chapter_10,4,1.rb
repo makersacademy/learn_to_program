@@ -1,7 +1,7 @@
 #expanded engish number 
 def english_number number
 	if number < 0 
-		return "Please enter a number that isn'negative"
+		return "Please enter a number that isn't a negative"
 	end 
 	if number == 0 
 		return "zero"
@@ -12,11 +12,27 @@ def english_number number
 				 "ninety"]
 	teenagers = ["eleven", "twelve", "thirteen","fourteen", 
 			"fifteen", "sixteen","seventeen", "eighteen", "nineteen"]
-	endings = [["hundred", 2],
+	endings = [	["hundred", 2],
 				["thousand",3],
 				["million", 6],
 				["billion", 9],
-				["trillion",12]] # array of arrays for the endings.
+				["trillion",12],
+				["quadrillion", 15],
+				["quintillion", 18],
+				["sextillion", 	21],
+				["septillion", 24],
+				["octillion", 27],
+				["decillion", 30],
+				["undecillion", 33],
+				["duodecillion", 36],
+				["tredecillion", 39],
+				["quattuordecillion", 42],
+				["sexdecillion", 45],
+				["septendecillion", 48],
+				["octodecillion", 51],
+				["novemdecillion", 54],
+				["vigintillion", 57],
+				["googol", 100]] # array of arrays for the endings.
 					# one array of endings consists of the ending name: hundred thousand 
 					# million, billion etc. and the other part shows the amount of zeros
 					# in other words how often you can divide it by 10
@@ -48,8 +64,6 @@ def english_number number
 	#after the while iterator there is no array anymore, meaning we have to add the 
 	# teenagers, tens and ones. similar to the exercise w/o recursion
 
-	 #copied from exercise in book
-
 	write = left/10 # How many tens left?
 	left = left - write*10 # Subtract off those tens.
 	if write > 0
@@ -58,16 +72,18 @@ def english_number number
 		# "twelve", we have to make a special exception
 		# for these.
 		num_string = num_string + teenagers[left-1]
-		#  The "-1" is because teenagers[3] is
+		# The "-1" is because teenagers[3] is
 		# 'fourteen', not 'thirteen'.
 		# Since we took care of the digit in the
 		# ones place already, we have nothing left to write.
 		left = 0
+
 		else
 			num_string = num_string + tens_place[write-1]
-			# The "-1" is because tens_place[3] is
-			# 'forty', not 'thirty'.
-			end
+
+		# The "-1" is because tens_place[3] is
+		# 'forty', not 'thirty'.
+		end
 		if left > 0
 		# So we don't write 'sixtyfour'...
 			num_string = num_string + '-'
@@ -77,14 +93,14 @@ def english_number number
 	left = 0 # Subtract off those ones.
 	if write > 0
 		num_string = num_string + ones_place[write-1]
-		# The "-1" is because ones_place[3] is
-		# 'four', not 'three'.
+	# The "-1" is because ones_place[3] is
+	# 'four', not 'three'.
 	end
-	# Now we just return "num_string"...
+# Now we just return "num_string"...
 num_string
-end
+end 
 
-puts english_number(999)
+puts english_number(1231354652341234124892359134891293)
 	
 
 

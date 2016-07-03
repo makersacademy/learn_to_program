@@ -1,4 +1,4 @@
-def roman_numerial(x)
+def old_roman_numerial(x)
     x = x.to_i
 	numerial = " "
 	numerial = numerial + "M" * (x / 1000)
@@ -8,7 +8,7 @@ def roman_numerial(x)
 	numerial = numerial + "X" * ((x % 50) / 10)
 	numerial = numerial + "V" * ((x % 10) / 5)
 	numerial = numerial + "I" * ((x % 5) / 1)
-	puts numerial
+	numerial
 end
 
-roman_numerial(876)
+puts old_roman_numerial(9987)

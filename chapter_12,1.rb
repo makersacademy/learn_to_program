@@ -7,7 +7,8 @@ def seconds_to_years (num)
 end 
 def when_x_seconds_old(num)
 	puts(Time.gm(1995, 01, 19) + num)
-end 
+	puts "This is when I turn #{num} seconds old"
+end
 
 
 puts when_x_seconds_old(10**9)

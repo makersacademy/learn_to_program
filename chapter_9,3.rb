@@ -6,85 +6,23 @@ def modern_school_numeral (x)
 	if x > 30000
 		"Please enter a number smaller than 3000"
 	end 
-	roman_numeral = ""
-	rest = x 
-	write = rest/1000
-	rest = rest%1000
-	if write > 0 
-		if write == 1 
-			roman_numeral = roman_numeral + "M"
-		elsif write == 2
-			roman_numeral = roman_numeral + "MM"
-		elsif write == 3 
-			roman_numeral = roman_numeral + "MMM"
-		end 
+	roman = ""
+	roman = roman +"M" *(x/1000)
+	roman = roman +"D" *(x%1000/500)
+	roman = roman +"C" *(x%500/100)
+	roman = roman +"L" *(x%100/50)
+	roman = roman +"X" *(x%50/10)
+	roman = roman +"V" *(x%10/5)
+	roman = roman +"I" *(x%5/1)
+	if roman.count("C") == 4
+		roman.gsub!("CCCC","DC")
 	end 
-	write = rest/500
-	rest = rest%500
-	if write > 0 
-		roman_numeral = roman_numeral + "D"
+	if roman.count("X")== 4
+		roman.gsub!("XXXX", "XL")
 	end 
-	write = rest/100
-	rest = rest%50
-	if write > 0 
-		if write == 1 
-			roman_numeral = roman_numeral + "C"
-		elsif write == 2
-			roman_numeral = roman_numeral + "CC"
-		elsif write == 3
-			roman_numeral = roman_numeral + "CCC"
-		elsif write == 4
-			roman_numeral = roman_numeral + "CD"
-		end 
-	
-	else 
-		roman_numeral = roman_numeral +""
+	if roman.count("I") == 4
+		roman.gsub!("IIII","IV")
 	end 
-	write = rest/50
-	rest = rest%50
-	if write > 0 
-		roman_numeral = roman_numeral + "L"
-	
-	else
-		roman_numeral = roman_numeral +""
-	end 
-	write = rest/10 
-	rest = rest%10
-	if write > 0 
-		if write == 1 
-			roman_numeral = roman_numeral + "X"
-		elsif write == 2
-			roman_numeral = roman_numeral + "XX"
-		elsif write == 3
-			roman_numeral = roman_numeral + "XXX"
-		elsif write == 4
-			roman_numeral = roman_numeral + "XL"
-		end 
-	
-	else 
-		roman_numeral = roman_numeral + ""
-	end 
-	write = rest/5
-	rest = rest%5
-	if write > 0 
-		roman_numeral = roman_numeral + "V"
-	
-	else 
-		roman_numeral = roman_numeral +""
-	end 
-	write = rest 
-	if write > 0 
-		if write == 1 
-			roman_numeral = roman_numeral + "I"
-		elsif write == 2
-			roman_numeral = roman_numeral + "II"
-		elsif write == 3
-			roman_numeral = roman_numeral + "III"
-		elsif write == 4
-			roman_numeral = roman_numeral + "IV"
-		end 
-	else 
-		roman_numeral = roman_numeral +""
-	end 
+	roman 
 end 
-puts modern_school_numeral(194)
+puts modern_school_numeral(194) 

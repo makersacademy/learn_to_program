@@ -16,7 +16,28 @@ def english_number number
 				["thousand",3],
 				["million", 6],
 				["billion", 9],
-				["trillion",12]] # array of arrays for the endings.
+				["trillion",12],
+				["hundred", 2],
+				["thousand",3],
+				["million", 6],
+				["billion", 9],
+				["trillion",12],
+				["quadrillion", 15],
+				["quintillion", 18],
+				["sextillion", 	21],
+				["septillion", 24],
+				["octillion", 27],
+				["decillion", 30],
+				["undecillion", 33],
+				["duodecillion", 36],
+				["tredecillion", 39],
+				["quattuordecillion", 42],
+				["sexdecillion", 45],
+				["septendecillion", 48],
+				["octodecillion", 51],
+				["novemdecillion", 54],
+				["vigintillion", 57],
+				["googol", 100]] # array of arrays for the endings.
 					# one array of endings consists of the ending name: hundred thousand 
 					# million, billion etc. and the other part shows the amount of zeros
 					# in other words how often you can divide it by 10
@@ -84,7 +105,7 @@ def english_number number
 num_string
 end
 
-puts english_number(999)
+puts english_number(124235134124123123)
 	
 
 

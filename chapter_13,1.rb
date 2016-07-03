@@ -42,7 +42,8 @@ class Integer
 		roman 
 		end
 end 
-puts ["a","b","c","d","e","f"].shuffle
+print ["a","b","c","d","e","f"].shuffle
+puts 
 puts 4.factorial 
 puts 7.to_roman
 

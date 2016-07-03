@@ -1,45 +1,27 @@
 #better playlist 
-
 def shuffle_playlist arr
-	arr = arr.sort
-	number_songs = arr.length
+		number_songs = arr.length
+		new_arr =[]
+		left_arr =[]
+		right_arr =[]
+		l = 0 
+		r = number_songs
+		2.times do
+			while new_arr.length < number_songs 
+				if new_arr.length%2 == 0 
+					new_arr.push(arr[r])
+					r += 1 
+				else 
+					new_arr.push(arr[l])
+					l +=1
+				end 	
+			end
+			arr = new_arr 
+		end 
 
-
-	#taking one song from the first half and one song from the second half
-	# first half goes until number_songs/2
-	# second half starts from number_songs/2 to arr.length
-	# adding these songs to a new array 
-	new_arr =[]
-	first_half=[]
-	second_half=[]
-	r = 0 
-	t = number_songs/2
-	while r < t 
-		first_half.push(arr[r])
-		r += 1
-	end 
-	
-	while t < number_songs
-		second_half.push(arr[t])
-		t += 1
-	end 
-
-	# we have to add songs until the number of songs
-	# in new_arr = number_songs
-	i = 0
-	while new_arr.length < number_songs 
-		
-		new_arr.push(first_half[i])
-		new_arr.push(second_half[i])
-		i +=1 
-	end
-	# now every second song in new_arr is from the second half
-	# if we repeat the whole process several times it will be shuffled and mixed
-	# shuffle_playlist(new_arr)
-	#shuffle_playlist(new_arr)
-	#shuffle_playlist(new_arr)
-	new_arr.sort_by{rand}
 end 
+#### not complete, come back later! 
+
 
 songs = 
 	["/Jazz/Monk--Nutty/track08.oggmusic",

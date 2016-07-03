@@ -20,18 +20,18 @@ class OrangeTree #classes beginn with capital letter!
 	end 
 	def one_year_passes
 		if @alive
-			@height = @height + 3
+			@height = @height + 0.4
 			@orange_count = 0 #each year the oranges fall off the tree and there is place for new ones
 
-			if @height > 15 #let's say the tree lives 5 years
+			if @height > 2 #let's say the tree lives 5 years
 				@alive = false 
 				"The orange tree died, plant a new one"
 			elsif @height > 6 #in the first years the tree does not give oranges
-				@orange_count = (@height * 10).to_i
-				"This year your tree grew to #{@height}meters and produced 
+				@orange_count = (@height * 15-25).to_i
+				"This year your tree grew to #{@height} meters and produced 
 				#{@orange_count} oranges." 
 			else # if younger than three years = no oranges
-				"Tree grew to #{@height}meters but did not give any oranges yet. Be patient son"
+				"Tree grew to #{@height} meters but did not give any oranges yet. Be patient son"
 			end 
 		else #if dead 
 			"Time passes but what is dead remains dead"

@@ -15,7 +15,7 @@ def modern_school_numeral (x)
 	roman = roman +"V" *(x%10/5)
 	roman = roman +"I" *(x%5/1)
 	if roman.count("C") == 4
-		roman.gsub!("CCCC","DC")
+		roman.gsub!("CCCC","CD")
 	end 
 	if roman.count("X")== 4
 		roman.gsub!("XXXX", "XL")
@@ -25,4 +25,4 @@ def modern_school_numeral (x)
 	end 
 	roman 
 end 
-puts modern_school_numeral(194) 
+puts modern_school_numeral(494) 

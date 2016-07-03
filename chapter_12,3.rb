@@ -19,21 +19,28 @@ def roman_to_integer rom_num
 		#we have to get the number according to the letter
 		number = rom_num[index].downcase  #.downcase to compare also number written in capital letters
 		pairs = roman_hash[number]
+		index = index -1 
 		if !pairs 
 			puts "This is not a valid roman numeral!"
 			return
 		end 
-
-		if pairs > before
-			before =pairs  #IV : 5-1  or -1 + 5 
-		else
-			pairs = pairs *= -1 
+		if pairs < before 
+			a = pairs 
+			pairs = pairs * -1
+			before = a
+		 
+		else 
+		before = pairs
 		end 
-		sum = sum + pairs 
-		index -=1
+	 
+		sum = sum + pairs
+
+		#mcd = 1400 
+		# 1000, wenn 100<1000 => -100 
+		# 1000, wenn 500<100 => -500 
+		# => 400 wrong
 	end 
 	sum
 end 
 
-puts (roman_to_integer("mdcxiv"))
-
+puts roman_to_integer("mmdciv")

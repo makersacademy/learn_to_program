@@ -86,12 +86,19 @@ end
 def counting_down (number)
 	 # where to begin with counting bottles
 	num_counting_down = number 
-	while num_counting_down >1 
-		 
-		puts "one bottle beer on the wall"
-		puts english_number(num_counting_down) + " bottles beer on the wall"
+	while num_counting_down >1
+		puts english_number(num_counting_down).capitalize + " bottles of beer on the wall, " + english_number(num_counting_down) + " bottles of beer!" 
 		num_counting_down -= 1 
+		if num_counting_down == 1
+			puts "Take on down, pass it around" + english_number(num_counting_down) + "bottle of beer on the wall "
+			puts "one bottle of beer on the wall, one bottle of beer!"
+			puts "Take one down, pass it around, no more bottles of beer on the wall!"
+		
+		else 
+			puts "Take one down, pass it around, " + english_number(num_counting_down) + " bottles of beer on the wall!"
+		end 
 	end 
+	p
 	
 end 
 

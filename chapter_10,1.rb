@@ -32,24 +32,26 @@ def recursive_sort unsorted_array, sorted_array
 	
 end 
 
-# looked at solution 
 
 # non recursive sort
-def non_rec_sort arr
+def non_rec_sort (arr)
 	return arr if arr.size <= 1 
 	switch = false # all items in array switch position so that the lowest one
 					# is first
 
 	while !switch # as long as not all are switched, you keep
 					# comparing items next to each other and switch them
+			switch = false
 		0.upto(arr.size-2) do |x|
-			if arr[x] < arr[x+1] 
-				arr[x], arr[x+1] = arr[x+1], arr[x]
-				switch = true 
-			end 
+				if arr[x] < arr[x+1] 
+					arr[x], arr[x+1] = arr[x+1], arr[x]
+					switch = true 
+				end 
 		end 
 	end 
-	arr
+	arr.reverse!
+
+	
 end 
 puts sort(["can","feel","singing","like","a","can"])
 puts 

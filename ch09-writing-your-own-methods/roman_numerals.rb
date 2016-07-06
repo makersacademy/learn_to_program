@@ -25,7 +25,7 @@ def roman_numeral num
 	if arr[2]==9 
 		out<<"XC" 
 	elsif arr[2]>=5
-		out<<"#{'X'*(arr[2]%5)}L" 
+		out<<"L#{'X'*(arr[2]%5)}" 
 	else
 		out<<"#{'X'*(arr[2])}" 
 	end
@@ -34,7 +34,9 @@ def roman_numeral num
 	if arr[3]==9 
 		out<<"IX" 
 	elsif arr[3]>=5
-		out<<"#{'I'*(arr[3]%5)}V" 
+		out<<"V#{'I'*(arr[3]%5)}" 
+	elsif arr[3]==4
+		out<<"IV"
 	else
 		out<<"#{'I'*(arr[3])}" 
 	end
@@ -43,3 +45,5 @@ def roman_numeral num
 return out
 
 end
+
+roman_numeral 6

@@ -1,3 +1,5 @@
 def shuffle arr
-  # your code here
+
+arr.shuffle #Shuffle is a built in array method
+
 end

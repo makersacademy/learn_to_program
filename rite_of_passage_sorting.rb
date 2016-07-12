@@ -1,5 +1,4 @@
-
-def dictionary_sort array
+def sort array
     rec_sort array, []
     
 end
@@ -30,9 +29,15 @@ def rec_sort unsorted, sorted
     
     rec_sort still_unsorted, sorted
     
-    return sorted.sort_by { |word| word.downcase }
-    
     
 end
 
-puts dictionary_sort(['can','feel','singing','Like','A','can'])
+puts sort(['can','feel','singing','Like','A','can'])
+
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+We have an array of unsorted words.
+We can see which two words come first in the dictionary with <\

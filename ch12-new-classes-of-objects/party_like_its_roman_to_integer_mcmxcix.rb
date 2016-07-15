@@ -1,3 +1,24 @@
-def roman_to_integer roman
-  # your code here
+# Hats off to Mali for working out the old_number variable.
+def roman_to_integer(roman)
+  pairs = {
+    "M" => 1000,
+    "D" => 500,
+    "C" => 100,
+    "L" => 50,
+    "X" => 10,
+    "V" => 5,
+    "I" => 1
+  }
+
+  old_roman = roman.upcase.gsub(/IV/,"IIII").gsub(/IX/,"VIIII").gsub(/XL/,"XXXX").gsub(/XC/,"LXXXX").gsub(/CD/,"CCCC").gsub(/CM/,"DCCCC")
+
+  arr = old_roman.chars
+  num = []
+
+  arr.each do |char|
+    num << pairs[char]
+  end
+  num.inject { |memo, n| memo + n }
 end
+
+puts roman_to_integer("mcmxcix")

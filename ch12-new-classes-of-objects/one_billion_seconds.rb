@@ -1,1 +1,1 @@
-# your code here
+print (Time.gm(1981, 12, 2) + 10**9)

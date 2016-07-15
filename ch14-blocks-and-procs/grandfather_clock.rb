@@ -1,3 +1,4 @@
 def grandfather_clock &block
-  # your code here
+  times = (Time.new.hour) % 12
+  times.times {block[]}
 end

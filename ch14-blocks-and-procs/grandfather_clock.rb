@@ -1,3 +1,10 @@
 def grandfather_clock &block
-  # your code here
+  hours = Time.new.hour
+  hours.times do
+     block.call
+  end
+end
+
+grandfather_clock do
+   puts 'DONG'
 end

@@ -1,0 +1,115 @@
+---
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Against Me!/Transgender Dysphoria
+  Blues/02 True Trans Soul Rebel.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/01.
+  Sucker.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/02.
+  Break The Rules.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/03.
+  London Queen.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/04.
+  Breaking Up.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/05.
+  Gold Coins.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/06.
+  Boom Clap.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/07.
+  Doing It.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/08.
+  Body Of My Own.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/09.
+  Famous.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/10.
+  Hanging Around.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/11.
+  Die Tonight.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/12.
+  Caught In The Middle.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/13.
+  Need Ur Luv.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/14.
+  Money (That's What I Want).mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Charli XCX/Sucker (Deluxe)/15.
+  Break The Rules (Femme Remix).mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/01
+  Welcome To New York.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/02
+  Blank Space.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/03
+  Style.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/04
+  Out Of The Woods.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/05
+  All You Had To Do Was Stay.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/06
+  Shake It Off.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/07
+  I Wish You Would.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/08
+  Bad Blood.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/09
+  Wildest Dreams.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/10
+  How You Get The Girl.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/11
+  This Love.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/12
+  I Know Places.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/13
+  Clean.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/14
+  Wonderland.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/15
+  You Are In Love.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/16
+  New Romantics.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/17
+  I Know Places - [Voice Memos].mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/18
+  I Wish You Would - [Voice Memos].mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/1989 (Deluxe Edition)/19
+  Blank Space - [Voice Memos].mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/01
+  State of Grace.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/01
+  The Moment I Knew.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/02
+  Come Back... Be Here.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/02
+  Red.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/03
+  Girl at Home.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/03
+  Treacherous.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/04
+  I Knew You Were Trouble.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/04
+  Treacherous (Original Demo Recording).mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/05
+  All Too Well.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/05
+  Red (Original Demo Recording).mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/06
+  22.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/06
+  State of Grace (Acoustic Version).mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/07
+  I Almost Do.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/08
+  We Are Never Ever Getting Back Together.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/09
+  Stay Stay Stay.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/10
+  The Last Time (feat Gary Lightbody of Snow Patrol).mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/11
+  Holy Ground.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/12
+  Sad Beautiful Tragic.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/13
+  The Lucky One.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/14
+  Everything Has Changed (feat Ed Sheeran).mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/15
+  Starlight.mp3"
+- "/Users/sambroughton/Music/iTunes/iTunes Media/Music/Taylor Swift/Red (Deluxe Version)/16
+  Begin Again.mp3"

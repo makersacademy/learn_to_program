@@ -26,7 +26,7 @@ def shuffle arr
     arr = new_arr
   end
 
-  shuffle arr
+  shuf
 end
 puts shuffle [1,2,3,4,5,6,]
 

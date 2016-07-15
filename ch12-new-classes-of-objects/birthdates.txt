@@ -1,0 +1,6 @@
+Albert Einstein,    Mar 14, 1879
+Barack Obama,       Aug 4,  1961
+Neil Armstrong,     Aug 5,  1930
+Christopher Pine,   Aug 3,  1976
+Bart Simpson,       Apr 1,  1979
+Maggie Simpson,     Jun 16, 1988

@@ -12,7 +12,6 @@ def recursiveSort unsortedArr, sortedArr
   toSort = []
 
   unsortedArr.each do |x|
-    x = x.downcase
     if x < item
       toSort.push item
       item = x
@@ -25,6 +24,8 @@ def recursiveSort unsortedArr, sortedArr
   recursiveSort toSort, sortedArr
 end
 
-myArr = ["hello","goodbye", "dog", "xenophobic", "London", "magic", "Ruby"]
+myArr = ["hello","goodbye", "dog", "xenophobic", "Ruby","London", "magic"]
 
 puts(sort(myArr))
+puts "************"
+puts(myArr.sort)

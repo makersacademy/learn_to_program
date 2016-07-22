@@ -1,6 +1,6 @@
 def factorial num
   if num < 0
-      return "Watch out - you can't take a factorial of this!"
+      return "Watch out - you can't make a factorial of this!"
   end
 
   if num <= 1

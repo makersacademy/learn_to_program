@@ -25,6 +25,6 @@ def shuffle arr
 end
 
 
-myArr = ["hello","goodbye", "dog", "xenophobic", "Ruby","London", "magic"]
+## myArr = ["hello","goodbye", "dog", "xenophobic", "Ruby","London", "magic"]
 
-puts(shuffle(myArr))
+## puts(shuffle(myArr))

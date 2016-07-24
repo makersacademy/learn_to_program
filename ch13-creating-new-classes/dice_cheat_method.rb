@@ -11,7 +11,15 @@ class Die
   def cheat
     puts "Pssst, what number do you want to show (1-6)?"
     @number_cheat = gets.chomp
-    @number_showing = @number_chea
+    if (@number_cheat.to_i > 6)
+      puts "Hey! There are only six sides on this dice. Try again!"
+      self.cheat
+    elsif (@number_cheat.to_i < 1)
+      puts "Hey! What world do you live in? Try again!"
+      self.cheat
+    else
+      @number_showing = @number_cheat
+    end
   end
 
   def showing

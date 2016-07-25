@@ -1,5 +1,3 @@
-# doesn't pass the rspec tests but works at the command line. Will come back to it and debug if I have time. 
-
 def program_log desc, &block
     puts "Beginning \"#{desc}\"..."
     result = block.call

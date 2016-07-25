@@ -12,6 +12,6 @@ def old_roman_numeral num
     roman << "X" * (num % 50 / 10)
     roman << "V" * (num % 10 / 5)
     roman << "I" * (num % 5)
-    puts roman
+    return roman
   end
 end

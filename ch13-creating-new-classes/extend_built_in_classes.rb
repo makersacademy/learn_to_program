@@ -14,7 +14,7 @@ class Integer
   end
 end
 
-puts(25.factorial)
+# puts(25.factorial)
 
 # Extend shuffle
 
@@ -46,14 +46,14 @@ class Array
   end
 end
 
-myArr = ["hello","goodbye", "dog", "xenophobic", "Ruby","London", "magic"]
-
-puts(myArr.shuffle)
+# myArr = ["hello","goodbye", "dog", "xenophobic", "Ruby","London", "magic"]
+#
+# puts(myArr.shuffle)
 
 # Extend roman numeral
 
 class Integer
-  def roman_numeral
+  def to_roman
     results = ''
     results = results + 'M' * (self / 1000)
     results = results + 'D' * (self % 1000 / 500)
@@ -76,4 +76,4 @@ class Integer
   end
 end
 
-puts(1999.roman_numeral)
+55.to_roman

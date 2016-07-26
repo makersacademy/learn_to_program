@@ -1,7 +1,8 @@
 def dictionary_sort arr
   sorted_arr = []
+
   while arr.length > 0
-    unsorted = []
+  unsorted = []
   current_highest_alph = arr.pop
 
   arr.each do |new_word|
@@ -19,3 +20,12 @@ def dictionary_sort arr
   return sorted_arr
 
 end
+
+#this passes rspec but not test on github test - can only assume that within
+#the while clause, unsorted gets reset as [] after taking an unsorted element at
+#the end of the previous loop. however, why does it pass rspec (and also works
+#when i pass it through irb?) i tried to move unsorted = [] to before the while
+#clause but this seemed to cause even more issues on rspec and irb (which I also
+#don't understand)
+
+#any feedback will be v much appreciated!

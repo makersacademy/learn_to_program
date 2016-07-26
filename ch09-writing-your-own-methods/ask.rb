@@ -11,5 +11,5 @@ def ask question
 		  	end
   	end
 end
-tacos = ask 'Do you like tacos?'
-puts tacos
+burritos = ask 'Do you like burritos?'
+puts burritos

@@ -12,7 +12,7 @@ def roman_numeral n
 
 	}
 ans = answer.join("") #converting array to one string
-puts ans
+return ans
 end 
 
 roman_numeral 6444 #test

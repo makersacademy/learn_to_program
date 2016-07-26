@@ -28,16 +28,9 @@ def old_roman_numeral num
   i_count = num / 1
   num = num - (i_count * 1)
 
-=begin
-  puts m_count
-  puts d_count
-  puts c_count
-  puts l_count
-  puts x_count
-  puts v_count
-  puts i_count
-=end
-
   roman_result = "M" * m_count + "D" * d_count + "C" * c_count + "L" * l_count + "X" * x_count + "V" * v_count + "I" * i_count
   puts roman_result
+  return roman_result
 end
+
+old_roman_numeral 150

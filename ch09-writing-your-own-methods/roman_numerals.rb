@@ -1,4 +1,3 @@
-#!/usr/local/rvm/rubies/ruby-2.3.0/bin/ruby
 def roman_numeral n
 	#this function should take an int n and convert it to a new roman numeral
 	nums = {'M'=>1000, 'CM'=>900, 'D'=>500, 'CD'=>400, 'C'=>100, 'XC'=>90, 'L'=>50, 'XL'=>40, 'X' => 10, 'IX' => 9, 'V' => 5, 'IV' => 4, 'I' => 1 } #a hash of the building blocks for roman numerals

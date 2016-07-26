@@ -11,7 +11,7 @@ def old_roman_numeral n
 		n = r #redefine n - what was pushed already for next iteration
 
 	}
-puts answer.join("") #converting array to one string
+return answer.join("") #converting array to one string
 end 
 
 old_roman_numeral 6443 #test

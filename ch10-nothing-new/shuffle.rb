@@ -1,3 +1,16 @@
 def shuffle arr
-  # your code here
+  recursive arr, []
 end
+
+def recursive unshuffled, shuffled
+  while unshuffled.length > shuffled.length
+    temp = unshuffled.sample
+    unless shuffled.include? temp
+        shuffled << temp
+    end     
+  end
+  shuffled
+end
+
+words = ["hello", "how", "are", "you"]
+puts shuffle words

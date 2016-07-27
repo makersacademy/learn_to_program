@@ -1,3 +1,3 @@
 def dictionary_sort arr
-  # your code here
+  puts arr.each {|x| x.downcase}.sort.join(' ').capitalize
 end

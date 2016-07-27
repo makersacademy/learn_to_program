@@ -15,7 +15,7 @@ def english_number number
     "five hundred", "six hundred", "seven hundred", "eight hundred",
     "nine hundred"]
 
-    if number >= 1000000000000
+    if number % 1000000000000000 / 1000000000000 > 0
       if (number / 100000000000000) > 0
         number_string << hundreds[(number / 100000000000000) - 1]
         if number % 100000000000000 / 1000000000000 > 0
@@ -39,7 +39,7 @@ def english_number number
       number_string << " trillion "
     end
 
-    if number >= 1000000000
+    if number % 1000000000000 / 1000000000 > 0
       if (number % 1000000000000 / 100000000000) > 0
         number_string << hundreds[(number % 1000000000000 / 100000000000) - 1]
         if number % 100000000000 / 1000000000 > 0
@@ -63,7 +63,7 @@ def english_number number
       number_string << " billion "
     end
 
-    if number >= 1000000
+    if number % 1000000000 / 1000000 > 0
       if (number % 1000000000 / 100000000) > 0
         number_string << hundreds[(number % 1000000000 / 100000000) - 1]
         if number % 100000000 / 1000000 > 0
@@ -87,7 +87,7 @@ def english_number number
       number_string << " million "
     end
 
-    if number >= 1000
+    if number % 1000000 / 1000 > 0
       if (number % 1000000 / 100000) > 0
         number_string << hundreds[(number % 1000000 / 100000) - 1]
         if number % 100000 / 1000 > 0
@@ -111,7 +111,7 @@ def english_number number
       number_string << " thousand "
     end
 
-    if number > 0
+    if number % 1000 > 0
       if (number % 1000 / 100) > 0
       number_string << hundreds[(number % 1000 / 100) - 1]
         if number % 100000 / 1000 > 0

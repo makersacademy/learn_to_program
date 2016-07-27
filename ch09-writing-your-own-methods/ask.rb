@@ -1,13 +1,15 @@
 def ask question
   while true
- +    puts question
- +    reply = gets.chomp.downcase
- +    if reply == 'yes'
- +      return true
- +    elsif reply == 'no'
- +      return false
- +    else
- +      puts 'Please answer "yes" or "no"'
- +    end
- +  end
+    puts question
+    input = gets.chomp.downcase
+    if input == "yes"
+      return true
+    elsif input == "no"
+      return false
+    else
+      puts "Please answer by 'yes' or 'no'"
+    end
+  end
 end
+
+ask "test question"

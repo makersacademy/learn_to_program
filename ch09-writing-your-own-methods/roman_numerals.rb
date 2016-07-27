@@ -16,7 +16,11 @@ def roman_numeral num
              [1000, "M"], #12
              [2000, "MM"],
              [3000, "MMM"],
-             [4000, "MMMM"]]
+             [4000, "MMMM"]
+             [5000, "MMMMM"]
+             [6000, "MMMMMM"]
+             [7000, "MMMMMMM"]
+             [8000, "MMMMMMMM"]]
 
   while num >= 1
     i = 0

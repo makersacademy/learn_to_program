@@ -113,12 +113,13 @@ def english_number number
   # Now we just return "num_string"...
   num_string
 end
-num_at_start = 5 # change to 9999 if you want
-num_now = num_at_start
+def beer n # change to 9999 if you want
+num_now = n
 while num_now > 2
   puts english_number(num_now).capitalize + ' bottles of beer on the wall, ' +
     english_number(num_now) + ' bottles of beer!'
   num_now = num_now - 1
   puts 'Take one down, pass it around, ' +
     english_number(num_now) + ' bottles of beer on the wall!'
+end
 end

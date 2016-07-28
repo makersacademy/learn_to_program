@@ -1,8 +1,8 @@
 def roman_numeral number
-	thousand = (num /1000)
-	hundred = (num % 1000 /100)
-	tens = (num % 100 /10)
-	ones = (num % 10)
+	thousand = (number /1000)
+	hundred = (number % 1000 /100)
+	tens = (number % 100 /10)
+	ones = (number % 10)
 	
 	roman = 'M' * thousand
 	if hunds == 9
@@ -10,24 +10,24 @@ def roman_numeral number
 	elsif hunds == 4
 		roman = roman + 'CD'
 	else 
-		roman = roman + 'D' * (num % 1000 / 500)
-		roman = roman + 'D' * (num % 500 / 100)
+		roman = roman + 'D' * (number % 1000 / 500)
+		roman = roman + 'D' * (number % 500 / 100)
 	end
 	if tens == 9
 		roman = roman +'XC'
 	elsif tens == 4
 		roman = roman + 'XL'
 	else 
-		roman = roman + 'L' * (num % 100 / 50)
-		roman = roman + 'X' * (num % 50 / 10)
+		roman = roman + 'L' * (number % 100 / 50)
+		roman = roman + 'X' * (number % 50 / 10)
 	end
 			if ones == 9
 		roman = roman +'IX'
 	elsif ones == 4
 		roman = roman + 'IV'
 	else 
-		roman = roman + 'V' * (num % 10 / 5)
-		roman = roman + 'I' * (num % 5 / 1)
+		roman = roman + 'V' * (number % 10 / 5)
+		roman = roman + 'I' * (number % 5 / 1)
 	end
 	
 	roman

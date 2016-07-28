@@ -13,7 +13,7 @@ def roman_numeral number
 		roman = roman + 'D' * (num % 1000 / 500)
 		roman = roman + 'D' * (num % 500 / 100)
 	end
-		if tens == 9
+	if tens == 9
 		roman = roman +'XC'
 	elsif tens == 4
 		roman = roman + 'XL'
@@ -26,8 +26,8 @@ def roman_numeral number
 	elsif ones == 4
 		roman = roman + 'IV'
 	else 
-		roman = roman + 'V' * (num % 100 / 50)
-		roman = roman + 'I' * (num % 50 / 10)
+		roman = roman + 'V' * (num % 10 / 5)
+		roman = roman + 'I' * (num % 5 / 1)
 	end
 	
 	roman

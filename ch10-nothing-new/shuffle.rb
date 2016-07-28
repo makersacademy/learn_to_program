@@ -7,10 +7,7 @@ def recursive unshuffled, shuffled
     temp = unshuffled.sample
     unless shuffled.include? temp
         shuffled << temp
-    end     
+    end
   end
   shuffled
 end
-
-words = ["hello", "how", "are", "you"]
-puts shuffle words

@@ -1,7 +1,7 @@
 # This is where we store pictures
 Dir.chdir './target/'
 # First we find all of the pictures to be moved.
-pic_names = Dir['./input/*.jpg']
+pic_names = Dir['.././input/*.jpg']
 puts 'What would you like to call this batch?'
 batch_name = gets.chomp
 puts

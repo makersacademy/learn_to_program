@@ -9,7 +9,7 @@ def playlist(filename)
   end
   #open file and add the names of mp3 files one-by-one
   File.open filename, 'w' do |f|
-    mp3_files.each { |track| f.write (track + "\n")}
+    mp3_files.each { |track| f.puts track}
   end
 end
 

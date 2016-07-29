@@ -23,6 +23,7 @@ def happy_birthday
 
   age = ((Time.new - dob) / 60 / 60 / 24 / 365).to_i
 
-  return "You are #{age} years old!"
+  puts "You are #{age} years old!"
+  puts "Spank! " * age
 
 end

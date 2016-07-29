@@ -7,7 +7,6 @@ def roman_to_integer(roman)
   sum = 0
   str = roman.upcase
   Symbols.each do |k, v|
-    puts "not a valid roman numeral" if roman.upcase != v
     while str.start_with?(v)
       sum += k
       str = str.slice(v.length, str.length)

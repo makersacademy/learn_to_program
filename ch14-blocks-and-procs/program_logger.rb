@@ -1,3 +1,5 @@
 def log desc, &block
-  # your code here
+  puts "Beginning #{desc}..."
+  output = block.call
+  puts "... #{desc} finished, returning #{output}"
 end

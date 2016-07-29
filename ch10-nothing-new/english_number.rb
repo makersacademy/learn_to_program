@@ -88,17 +88,3 @@ if write > 0
 end
 num_string
 end
-
-
-
-
-puts english_number (0)
-puts english_number (9)
-puts english_number (10)
-puts english_number (14)
-puts english_number (25)
-puts english_number (66)
-puts english_number (99)
-puts english_number (100)
-puts english_number (1000)
-puts english_number (3345)

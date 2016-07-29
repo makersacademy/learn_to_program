@@ -6,16 +6,17 @@ Symbols = {1000=>"M", 900=>"CM", 500=>"D", 400=>"CD",
 def roman_to_integer(roman)
   sum = 0
   str = roman.upcase
-  Symbols.values.each do |v|
+  Symbols.each do |k, v|
+    puts "not a valid roman numeral" if roman.upcase != v
     while str.start_with?(v)
-      sum += Symbols.invert[v]
+      sum += k
       str = str.slice(v.length, str.length)
     end
   end
   sum
 end
 
-puts roman_to_integer("iii")
+puts roman_to_integer("p")
 puts roman_to_integer("mcmxcix")
 puts roman_to_integer("CCCLXV")
 puts roman_to_integer("IV")

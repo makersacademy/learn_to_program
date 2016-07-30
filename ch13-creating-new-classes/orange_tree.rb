@@ -22,9 +22,11 @@ class OrangeTree
       puts "A year later, the tree is still dead. :("
     elsif @age < 6
       @height = @height + 0.4
+      puts "This year (#{@age}) your tree grew to #{@height.round(1)}m tall, and produced #{@orange.to_i} oranges."
     else
       @height = @height + 0.4
       @orange = (@height * 15 - 25)
+      puts "This year (#{@age}) your tree grew to #{@height.round(1)}m tall, and produced #{@orange.to_i} oranges."
     end
   end
 
@@ -57,10 +59,10 @@ class OrangeTree
 end
 
 
-
+=begin
 tree = OrangeTree.new
 
-24.times do
+26.times do
 tree.one_year_passes
 end
 
@@ -71,3 +73,4 @@ tree.pick_an_orange
 end
 
 tree.count_the_oranges
+=end

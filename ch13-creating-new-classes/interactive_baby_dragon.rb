@@ -32,6 +32,8 @@ def take_command
       toss
     elsif command.downcase == "rock"
       rock
+    elsif command.downcase == "quit"
+      exit
     else
       puts "Command not recognised!"
       take_command

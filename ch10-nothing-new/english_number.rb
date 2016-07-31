@@ -45,7 +45,7 @@ def english_number (number)
     num_string << hundreds + " hundred"
     # add a space to avoid e.g. two hundredfifty one
     if left > 0
-      num_string = num_string + " "
+      num_string = num_string + "-"
     end
   end
 

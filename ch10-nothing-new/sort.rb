@@ -21,6 +21,4 @@ def rec_sort unsorted, sorted
 	rec_sort still_unsorted sorted
 end
 
-puts (sort['trying','to','sort', 'words'])def sort arr
-  # your code here
-end
+puts (sort['trying','to','sort', 'words'])

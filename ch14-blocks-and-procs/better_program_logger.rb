@@ -1,28 +1,25 @@
-
-
 $nest = 0 #nest will track how many times we should indent our putsing, which is the times that log calls another block
-def log block_description, &block
+def better_log block_description, &block
 	
-	prefix = '	'*$nest
-	puts prefix + "Beginning #{block_description.inspect}.."
+	prefix = ' '*$nest
+	puts prefix + "Beginning #{block_description.inspect}..."
 	$nest += 1
 	l = block.call
 	$nest -= 1
-	puts prefix + "#{block_description.inspect}.. finished, returning: #{l}"
+	puts prefix + "...#{block_description.inspect} finished, returning: #{l}"
 end
 
-log "outer block" do 
-	log "some little block" do		
-		log "teeny-tiny block" do
-			#$nest = 3
+better_log "outer block" do 
+	better_log "some little block" do		
+		better_log "teeny-tiny block" do
 			'lots of love'
 		end
-		5
+		42
 	end 
-	log "yet another block" do 
-		'I like Thai food!'
+	better_log "yet another block" do 
+		'I love Indian food!'
 	end
-'0' == 0
+'0' == 1
 end
 
 

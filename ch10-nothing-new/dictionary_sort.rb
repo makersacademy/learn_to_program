@@ -1,3 +1,4 @@
 def dictionary_sort arr
-  # your code here
+puts arr
+
 end

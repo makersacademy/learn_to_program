@@ -8,7 +8,7 @@ def grandfather_clock &block
   if hour == 0
     hour = 12
   end
-  
+
   hour.times do
     block.call
   end

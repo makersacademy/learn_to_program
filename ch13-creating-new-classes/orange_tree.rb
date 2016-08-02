@@ -42,7 +42,7 @@ class OrangeTree
     @height += 0.4
     @age += 1
 
-    if age > 5
+    if @age > 5
       @oranges = @height * rand(15..20)
     end
 

@@ -1,3 +1,3 @@
 def dictionary_sort arr
-  # your code here
+  arr.each {|x| x.downcase}.sort
 end

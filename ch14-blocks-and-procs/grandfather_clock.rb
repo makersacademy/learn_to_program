@@ -13,7 +13,7 @@ def grandfather_clock (&block)
   end
 end
 
-# block to be passed into grandfather_clock method above
-grandfather_clock do
-  puts 'DONG!'
-end
+# block to be passed into grandfather_clock method above:
+#grandfather_clock do
+  #puts 'DONG!'
+#end

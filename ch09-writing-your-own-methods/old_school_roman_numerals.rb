@@ -1,35 +1,33 @@
-def old_roman_numerals(num)
+def old_roman_numerals(numbers)
+	rom_num_arr = numbers.to_s.split('').reverse
+	final_arr = [singles(rom_num_arr[0].to_i), tens(rom_num_arr[1].to_i), hundreds(rom_num_arr[2].to_i), thousands(rom_num_arr[3].to_i)]
+	final_arr.reverse.join
+end
 
-	$res_arr = []
+def singles(sn)
+	sin_arr = []
+	if sn == 0
+		sin_arr
+	else
+		sn > 4 == true ? ( sin_arr << "V" && (sn % 5).times do sin_arr << "I" end ) : ((sn % 5).times do sin_arr << "I" end)
+    end
+	sin_arr.join
+end
 
-	def zero_to_four(sin)
-		sin.times do
-		$res_arr << "I"
-		end
-	end	
-	
-	def fives(fiv)
-		$res_arr << "V"
-		zero_to_four(fiv % 5)
-	end
+def tens(tn)
+	tn_arr = []
+	tn > 4 == true ? (tn_arr << "L" && (tn % 5).times do tn_arr << "X" end ) : (tn.times do tn_arr << "X" end)
+	tn_arr.join
+end
 
-	def tens(tn)
-		(tn/10).times do 
-			$res_arr << "X"
-		end
-		zero_to_four(tn % 10)
-	end
+def hundreds(hn)
+	hun_arr = []
+	hn > 4 == true ? (hun_arr << "D" && (hn % 5).times do hun_arr << "C" end ) : (hn.times do hun_arr << "C" end)
+	hun_arr.join
+end
 
-	if num < 5
-		zero_to_four(num)
-
-	elsif (5..9).include? num
-		fives(num)
-	elsif (10..49)
-		tens(num)
-
-	end
-
-
-p $res_arr.join
+def thousands(th)
+	thu_arr = []
+	th.times do thu_arr << "M" end
+	thu_arr.join
 end

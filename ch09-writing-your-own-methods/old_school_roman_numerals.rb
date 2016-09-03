@@ -1,4 +1,4 @@
-def old_roman_numerals(numbers)
+def old_roman_numeral(numbers)
 	rom_num_arr = numbers.to_s.split('').reverse
 	final_arr = [singles(rom_num_arr[0].to_i), tens(rom_num_arr[1].to_i), hundreds(rom_num_arr[2].to_i), thousands(rom_num_arr[3].to_i)]
 	final_arr.reverse.join
@@ -10,7 +10,7 @@ def singles(sn)
 		sin_arr
 	else
 		sn > 4 == true ? ( sin_arr << "V" && (sn % 5).times do sin_arr << "I" end ) : ((sn % 5).times do sin_arr << "I" end)
-    end
+	end
 	sin_arr.join
 end
 

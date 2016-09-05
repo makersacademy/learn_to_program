@@ -10,5 +10,3 @@ numeral = numeral + 'M' * (num / 1000)
   numeral = numeral + 'I' * (num % 5 / 1)
   numeral
 end
-
-puts(old_roman_numeral(2285))

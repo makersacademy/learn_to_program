@@ -10,5 +10,3 @@
 
   roman_number
 end
-
-puts old_roman_numeral(1)

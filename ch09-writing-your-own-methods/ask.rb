@@ -11,5 +11,3 @@ def ask question
   puts "Please answer yes or no"
 end
 end
-likes_it = ask 'Do you eat tacos'
-puts likes_it

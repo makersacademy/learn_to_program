@@ -5,18 +5,18 @@ def roman_numeral(num)
 end
 
 
-def singles(sn)
-	singles_arr = []
-	if (1..3).include? sn
-		sn.times do singles_arr << "I" end
-	elsif sn == 4
-		singles_arr << "IV"
-	elsif (5..8).include? sn
-		singles_arr << "V" && (sn % 5 ).times do singles_arr << "I" end
-	elsif sn == 9
-		singles_arr << "IX"
+def singles(n)
+	result_arr = []
+	if (1..3).include? n
+		n.times do result_arr << "I" end
+	elsif n == 4
+		result_arr << "IV"
+	elsif (5..8).include? n
+		result_arr << "V" && (n % 5 ).times do result_arr << "I" end
+	elsif n == 9
+		result_arr << "IX"
 	end
-	singles_arr
+	result_arr
 end
 
 def tens(n)

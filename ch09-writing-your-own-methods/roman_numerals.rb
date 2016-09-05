@@ -31,8 +31,8 @@ def roman_numeral num
   elsif ones == 4
     numeral = numeral + 'IV'
   else
-    numeral = numeral + 'V' + (num % 10 / 5)
-    numeral = numeral + 'I' + (num % 5 / 1)
+    numeral = numeral + 'V' * (num % 10 / 5)
+    numeral = numeral + 'I' * (num % 5 / 1)
   end
   numeral
 end

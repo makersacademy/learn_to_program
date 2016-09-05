@@ -8,5 +8,6 @@ def ask question
 
     puts 'Please answer "yes" or "no".'
   end
+
   
 end

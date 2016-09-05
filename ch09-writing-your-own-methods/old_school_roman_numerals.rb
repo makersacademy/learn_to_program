@@ -8,5 +8,7 @@
   roman_number = roman_number + 'V' * (num % 10 / 5)
   roman_number = roman_number + 'I' * (num % 5 / 1)
 
-  puts roman_number
+  roman_number
 end
+
+puts old_roman_numeral(1)

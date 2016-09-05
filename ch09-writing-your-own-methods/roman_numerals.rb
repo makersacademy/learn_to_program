@@ -36,9 +36,3 @@ def roman_numeral num
   end
   numeral
 end
-
-puts "Please enter any number and I'll convert it to"
-puts "Roman numerals."
-puts
-num = gets.chomp.to_i
-puts (roman_numeral num)

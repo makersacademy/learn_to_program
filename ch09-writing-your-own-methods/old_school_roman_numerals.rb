@@ -13,6 +13,7 @@ def old_roman_numeral num
   puts old_roman_numeral(9)
   puts old_roman_numeral(6)
   puts old_roman_numeral(16)
+  puts old_roman_numeral(55)
   puts old_roman_numeral(1110)
   puts old_roman_numeral(2458)
   puts old_roman_numeral(3001)

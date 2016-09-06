@@ -19,10 +19,9 @@ def old_roman_numeral num
         number << "C"
         hundereds -= 100
       end
-
     else
-      simple = hundereds / 100
-      simple.times do |n|
+      hundereds = hundereds / 100
+      hundereds.times do |n|
         number << "C"
       end
     end
@@ -38,8 +37,8 @@ def old_roman_numeral num
       end
 
     else
-        simply = tens / 10
-        simply.times do |n|
+        tens = tens / 10
+        tens.times do |n|
           number << "X"
         end
     end
@@ -60,3 +59,5 @@ def old_roman_numeral num
     end
     return number
 end
+
+puts old_roman_numeral 48

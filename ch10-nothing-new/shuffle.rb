@@ -1,3 +1,4 @@
 def shuffle arr
-  # your code here
+  permutations = arr.permutation.to_a
+  permutations[rand(permutations.length)]
 end

@@ -23,4 +23,4 @@ def shuffle arr
   shuf
 end
 
-puts(shuffle([1, 9, 2, 8, 3, 7, 4, 6, 5]))
+puts(shuffle([1,9,2,8,3,7,4,6,5]))

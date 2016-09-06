@@ -18,6 +18,8 @@ def roman_numeral num
   if tens == 9
     roman = roman + 'XC'
   elsif tens == 4
+		roman = roman + 'XL'
+	else
     roman = roman + 'L' * (num % 100 / 50)
     roman = roman + 'X' * (num % 50 / 10)
   end

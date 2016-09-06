@@ -33,8 +33,9 @@ def old_roman_numeral num
         result << "V"
         (number-5).times { result << "I" }
     end
-    puts "#{num} in Old Style Roman Numerals is #{result.join("")}."
+    puts result.join("")
     exit
   end
   puts "Number must be greater than 3000."
-  exitend
+  exit
+end

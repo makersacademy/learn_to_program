@@ -1,7 +1,7 @@
 def roman_numeral num
   while num.to_i <= 3000
 		# split number into an array
-		array = num.split(//).map { |x| x.to_i }
+		array = num.to_s.split(//).map { |x| x.to_i }
 		result =[]
 		# array has length of 4
 		until array.length == 4
@@ -67,8 +67,7 @@ def roman_numeral num
 				(number-5).times { result << "I" }
 		end
 		# return number in roman numerals
-		puts "#{num} in New Style Roman Numerals is #{result.join("")}."
-		exit
+    	return result.join("")
 	end
 	puts "Number must be greater than 3000."
 	exit

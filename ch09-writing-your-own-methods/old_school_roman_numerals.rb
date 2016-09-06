@@ -33,9 +33,7 @@ def old_roman_numeral num
         result << "V"
         (number-5).times { result << "I" }
     end
-    puts result.join("")
-    exit
+    return result.join("")
   end
-  puts "Number must be greater than 3000."
-  exit
+  return "Number must be greater than 3000."
 end

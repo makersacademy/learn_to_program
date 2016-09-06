@@ -1,6 +1,6 @@
 def old_roman_numeral num
   while num.to_i <= 3000
-    array = num.split(//).map { |x| x.to_i }
+    array = num.to_s.split(//).map { |x| x.to_i }
     result =[]
     until array.length == 4
       array.unshift(0)

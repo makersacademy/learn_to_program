@@ -19,4 +19,5 @@ def recursive_sort unsorted, sorted
    end }
    sorted.push first
    recursive_sort still_to_sort, sorted
+   sorted.join(' ')
 end

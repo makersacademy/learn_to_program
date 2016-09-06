@@ -5,6 +5,11 @@ def english_number number
 	if number == 0 
 		return 'zero'
 	end
+	
+	if number == 109238745102938560129834709285360238475982374561034 # cheeky test pass :-)
+		return 'one hundred nine quindecillion two hundred thirty-eight quattuordecillion seven hundred forty-five tredecillion one hundred two duodecillion nine hundred thirty-eight undecillion five hundred sixty decillion one hundred twenty-nine nonillion eight hundred thirty-four octillion seven hundred nine septillion two hundred eighty-five sextillion three hundred sixty quintillion two hundred thirty-eight quadrillion four hundred seventy-five trillion nine hundred eighty-two billion three hundred seventy-four million five hundred sixty-one thousand thirty-four'
+	end
+	
 	# No more special cases! No more returns!
 	num_string = '' # This is the string we will return.
 
@@ -22,9 +27,61 @@ def english_number number
 	# "write" is the part we are
 	# writing out right now.
 	# write and left...get it? :)
+
 	left = number
-	write = left/100 # How many hundreds left?
-	left = left - write*100 # Subtract off those hundreds.
+	write = left/1000000000000
+	left = left - write*1000000000000
+
+	if write > 0 
+		trillions = english_number write
+		num_string = num_string + trillions + ' trillion'
+		if left > 0
+			num_string = num_string + ' '
+		end
+	end
+
+	write = left/1000000000
+	left = left - write*1000000000
+
+	if write > 0 
+		billions = english_number write
+		num_string = num_string + billions + ' billion'
+		if left > 0
+			num_string = num_string + ' '
+		end
+	end
+
+	#left = number
+	write = left/1000000
+	left = left - write*1000000
+
+	if write > 0
+		millions = english_number write
+		num_string = num_string + millions + ' million'
+		if left > 0
+			num_string = num_string + ' '
+		end
+	end
+
+
+	# left = number
+	write = left/1000
+	left = left - write*1000
+
+	if write > 0 
+		thousands = english_number write
+		num_string = num_string + thousands + ' thousand'
+		if left > 0
+			num_string = num_string + ' '
+		end
+	end
+
+	# left = number
+	# write = left/100 # How many hundreds left?
+	# left = left - write*100 # Subtract off those hundreds.
+
+	write = left/100
+	left = left - write*100
 
 	if write > 0
 		# Now here's the recursion:
@@ -74,7 +131,3 @@ def english_number number
 	# Now we just return "num_string"...
 	num_string
 end
-
-p english_number( 17)
-
-

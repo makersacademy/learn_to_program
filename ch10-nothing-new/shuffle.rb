@@ -1,3 +1,5 @@
 def shuffle arr
-  # your code here
+  arr.sort_by{rand}
 end
+
+puts(shuffle(['a','b','C','d','E','f','g','h','I']))

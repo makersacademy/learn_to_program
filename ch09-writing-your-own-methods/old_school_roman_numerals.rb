@@ -19,12 +19,3 @@ def old_roman_numeral num
       puts "M" * array[0] + (array[1] < 5 ? ("C" * array[1] + (array[2] < 5 ? ("X" * array[2] + (array[3] < 5 ? "I" * array[3] : "V" + "I" * (array[3] - 5))) : ("L" + ("X" * (array[2] - 5)) + (array[3] < 5 ? "I" * array[3] : "V" + "I" * (array[3] - 5))))) : ("D" + ("C" * (array[1] - 5)) + (array[2]< 5 ? ("X" * array[2] + (array[3] < 5 ? "I" * array[3] : "V" + "I" * (array[3] -5))) : ("L" + ("X" * (array[2] - 5)) + (array[3] < 5 ? "I" * array[3] : "V" + "I" * (array[3] - 5))))))
     end
 end
-
-#test_cases
-old_roman_numeral 3
-old_roman_numeral 7
-old_roman_numeral 27
-old_roman_numeral 69
-old_roman_numeral 207
-old_roman_numeral 780
-old_roman_numeral 2793

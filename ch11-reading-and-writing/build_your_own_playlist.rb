@@ -1,5 +1,3 @@
-require 'yaml'
-
 def shuffle arr
   shuffle_up arr, [], arr.length
 end

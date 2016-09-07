@@ -3,13 +3,28 @@ def sort arr
 end
 
 def recursive_sort unsorted_array, sorted_array
-	until unsorted_array.length < 1
-		sorted_array << unsorted_array.delete(unsorted_array.min)
+	if unsorted_array.length < 1
+		return sorted_array
 	end
-	print sorted_array
+
+	smallest = unsorted_array.pop
+	still_unsorted = []
+
+	unsorted_array.each { |tested_object| 
+		if tested_object < smallest
+			still_unsorted << smallest
+			smallest = tested_object
+		else
+			still_unsorted << tested_object
+		end
+		}	
+	sorted_array << smallest
+	recursive_sort still_unsorted, sorted_array
 end
 
-# sort(['testing', 'with', 'duplicate', 'duplicate', 'words', 'alright'])
-# sort(['f', 'v', 'e', 'd', 'j', 'f'])
 
-# HAVING REAL PROBLEMS GETTING DUPLICATED ELEMENTS INTO THE NEW ARRY
+print sort(['testing', 'with', 'duplicate', 'duplicate', 'words', 'alright'])
+print sort(['testing', 'with', 'DUPLICATE', 'duplicate', 'words', 'alright'])
+
+print sort(['f', 'v', 'e', 'd', 'j', 'f'])
+print sort(['Apple', 'apple', 'Banana', 'BANANA', 'banana'])

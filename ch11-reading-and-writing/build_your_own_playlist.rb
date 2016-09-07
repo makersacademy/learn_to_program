@@ -1,7 +1,9 @@
-Dir.chdir "/Users/michael/music/prince/live_albums/2002-one-nite-alone"
+require '/users/michael/dropbox/makers/pre_week2/learn_to_program/ch10-nothing-new/shuffle.rb'
+
+Dir.chdir "/Users/michael/"
 
 #First find all the music files that need to be in the playlist and place in array
-music_file_names = Dir["/Users/michael/music/prince/live_albums/2002-one-nite-alone/*.mp3"]
+music_file_names = shuffle(Dir["**/*.mp3"])
 
 #Creating playlist
 puts "What do you want to call your playlist?"
@@ -30,5 +32,5 @@ end
 #Close file
 playlist_file.close
 
-puts 
+puts
 puts "Playlist created!"

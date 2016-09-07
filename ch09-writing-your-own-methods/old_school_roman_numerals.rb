@@ -10,10 +10,10 @@ def old_roman_numeral num
   x = x + "V" * (num % 10 / 5)
   x = x + "I" * (num % 5 / 1)
 
-  puts x
+  x
 
 end
 
-old_roman_numeral 141
-old_roman_numeral 3000
-old_roman_numeral 6
+puts old_roman_numeral 141
+puts old_roman_numeral 3000
+puts old_roman_numeral 6

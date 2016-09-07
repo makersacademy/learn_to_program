@@ -1,3 +1,3 @@
 def shuffle arr
-  # your code here
-end
+  arr.sort {|a, b| rand <=> rand }
+  end

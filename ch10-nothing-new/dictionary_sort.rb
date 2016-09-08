@@ -3,7 +3,7 @@ def dictionary_sort array
 end
 
 def rec_dict_sort unsorted, sorted
-	if unsorted.lenght <= 0
+	if unsorted.length <= 0
 		return sorted
 	end
 
@@ -22,4 +22,4 @@ def rec_dict_sort unsorted, sorted
 	sorted << smallest #I am having trouble understanding this part....
 
 	rec_dict_sort still_unsorted, sorted
-end 
+end

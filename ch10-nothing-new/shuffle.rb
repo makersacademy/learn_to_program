@@ -2,7 +2,7 @@ def shuffle arr
   shuf = []
 
   while arr.length > 0
-    rand_index = rand(shuffle.lenth) #pick a randon index
+    rand_index = rand(arr.length) #pick a randon index
 
     current_index = 0 # I take all the order items in arr and put them in a new array
     new_arr = [] # except for the rand_index item.

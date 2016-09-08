@@ -9,41 +9,17 @@ def english_number number
   ones_place = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
   tens_place = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
   teenagers = ["eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+  big_nums = {"quindecillion" => 48, "quattuordecillion" => 45, "tredecillion" => 42, "duodecillion" => 39, "undecillion" => 36, "decillion" => 33, "nonillion" => 30, "octillion" => 27, "septillion" => 24, "sextillion" => 21, "quintillion" => 18, "quadrillion" => 15, "trillion" => 12, "billion" => 9, "million" => 6, "thousand" => 3, "hundred" => 2}
   left = number
-  write = left/1000000000000
-  left -= write*1000000000000
-  if write > 0
-    trillions = english_number write
-    num_string += trillions + " trillion"
-    if left > 0
-      num_string += " "
-    end
-  end
-  write = left/1000000
-  left -= write*1000000
-  if write > 0
-    millions = english_number write
-    num_string += millions + " million"
-    if left > 0
-      num_string += " "
-    end
-  end
-  write = left/1000
-  left -= write*1000
-  if write > 0
-    thousands = english_number write
-    num_string += thousands + " thousand"
-    if left > 0
-      num_string += " "
-    end
-  end
-  write = left/100
-  left -= write*100
-  if write > 0
-    hundreds = english_number write
-    num_string = num_string + hundreds + " hundred"
-    if left > 0
-      num_string += " "
+  big_nums.each do |k, v|
+    write = left/("1"+("0" * v)).to_i
+    left -= write * ("1"+("0" * v)).to_i
+    if write > 0
+      big_number = english_number write
+      num_string += big_number + " " + k
+      if left > 0
+        num_string += " "
+      end
     end
   end
   write = left/10
@@ -66,3 +42,5 @@ def english_number number
   end
   return num_string
 end
+
+#puts english_number 1234567890123456789012

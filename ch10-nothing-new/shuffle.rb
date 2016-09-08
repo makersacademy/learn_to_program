@@ -1,3 +1,7 @@
 def shuffle arr
-  # your code here
+
+  count = arr.count
+
+return arr.sample(arr.count)
+
 end

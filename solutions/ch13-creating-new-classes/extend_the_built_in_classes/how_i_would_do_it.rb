@@ -26,3 +26,4 @@ class Integer
 end
 # Get ready for the pure awesome...
 # p 7.factorial.to_roman.split(//).shuffle
+puts 5.factorial

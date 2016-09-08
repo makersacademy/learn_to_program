@@ -56,6 +56,7 @@ def english_number number
         numString + numString + ' '
       end
     end
+  end
 
   write = left/10
   left  = left - write*10

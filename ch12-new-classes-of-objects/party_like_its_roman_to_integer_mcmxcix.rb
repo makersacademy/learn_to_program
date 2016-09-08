@@ -1,5 +1,5 @@
 def roman_to_integer(roman)
-	roman = roman.to_s
+	roman = roman.upcase.to_s
 	roman_length = roman.length
 	# CHECK FOR INVALID CHARACTERS
 	valid_character_count = roman.count('MDCLXVI')

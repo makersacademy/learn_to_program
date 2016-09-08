@@ -1,8 +1,8 @@
-birthdays_file = Dir["birthdays.txt"]
+currentDir = File.dirname(__FILE__)
 
 birthdays = {}
 
-text = File.read(birthdays_file[0])
+text = File.read(File.join(currentDir, "birthdays.txt"))
 
 text.each_line do |line|
   name, date, year = line.chomp.split(",")

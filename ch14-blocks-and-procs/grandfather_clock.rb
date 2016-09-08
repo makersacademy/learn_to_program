@@ -1,3 +1,8 @@
 def grandfather_clock &block
-  # your code here
+  hour = Time.new.hour
+  puts hour
+  hour -= 12 if (hour < 1 || hour > 12)
+  hour.times { block.call }
 end
+
+grandfather_clock { puts "DONG!" }

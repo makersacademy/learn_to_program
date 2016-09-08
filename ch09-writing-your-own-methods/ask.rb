@@ -9,13 +9,15 @@ def ask question
 			else
 				return false
 			end
-			break
 		else
 			puts 'Please answer "yes" or "no".'
 		end
+
 	end
+		
 	answer
-end 
+	
+end
 
 puts 'Hello, and thank you for...'
 puts
@@ -36,4 +38,3 @@ puts
 puts wets_bed
 
 
-end

@@ -1,26 +1,40 @@
-def roman_to_integer roman
-  roman.downcase!
-  numString = 0
-  onesPlace = ["","i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"]
-  tensPlace = ["", "x", "xx", "xxx", "xl", "l", "lx", "lxx", "lxxx", "xc"]
-  hundredsPlace = ["", "c", "cc", "ccc", "cd", "d", "dc", "dcc", "dccc", "cm"]
-  thousandsPlace = ["", "m", "mm", "mmm"]
+class Roman
+  def initialize
+    puts "What roman numeral do you want to convert to an integer?"
+    my_answer = gets.chomp
+    roman_to_integer(my_answer)
+  end
 
-  onesPlace.each_with_index do |ones_numeral, ones_idx|
-      tensPlace.each_with_index do |tens_numeral, tens_idx|
-        hundredsPlace.each_with_index do |hund_numeral, hund_idx|
-          thousandsPlace.each_with_index do |thous_numeral, thous_idx|
-            number_joined = thous_numeral + hund_numeral + tens_numeral + ones_numeral
-            if number_joined == roman
-              numString = ((thous_idx * 1000) + (hund_idx * 100) + (tens_idx * 10) + ones_idx)
-              break
+  def roman_to_integer roman
+    roman.downcase!
+    numString = 0
+    onesPlace = ["","i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"]
+    tensPlace = ["", "x", "xx", "xxx", "xl", "l", "lx", "lxx", "lxxx", "xc"]
+    hundredsPlace = ["", "c", "cc", "ccc", "cd", "d", "dc", "dcc", "dccc", "cm"]
+    thousandsPlace = ["", "m", "mm", "mmm"]
+
+    onesPlace.each_with_index do |ones_numeral, ones_idx|
+        tensPlace.each_with_index do |tens_numeral, tens_idx|
+          hundredsPlace.each_with_index do |hund_numeral, hund_idx|
+            thousandsPlace.each_with_index do |thous_numeral, thous_idx|
+              number_joined = thous_numeral + hund_numeral + tens_numeral + ones_numeral
+              if number_joined == roman
+                numString = ((thous_idx * 1000) + (hund_idx * 100) + (tens_idx * 10) + ones_idx)
+                break
+              end
             end
           end
         end
       end
-    end
-numString
+    puts numString
+    numString == 0 ? error_message : numString
+  end
+
+  def error_message
+    puts "That was not a valid roman numeral less than 4000... please try again."
+  end
 end
+run = Roman.new
 
 
 =begin

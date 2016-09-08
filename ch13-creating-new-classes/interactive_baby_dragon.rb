@@ -7,34 +7,34 @@ class Dragon
 
   def initialize (name)
     @name = name
-    "#{name} is alive!!!"
+    "#{@name} is alive!!!"
   end
 
   puts "What would you like to call your dragon?"
   name = gets.chomp
   pet = Dragon.new (name)
 
+
+  def feed
+    puts "you fed #{@name}."
+  end
+
+  def walk
+    puts "#{@name} went for a walk."
+  end
+
+
     puts "Would you like to walk or feed #{name}?"
     response = gets.chomp
 
     if response == "feed"
       pet.feed
-    end
 
     elsif response == "walk"
       pet.walk
-    end
 
     else
       puts "I don't understand. Goodbye"
     end
 
-
-  def feed
-    puts "you fed #{name}."
-  end
-
-  def walk
-    puts "#{name} went for a walk."
-  end
 end

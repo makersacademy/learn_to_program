@@ -55,10 +55,11 @@ def english_number number
   left = number
 
   while zillions.length > 0
-    zil_pair = zillions.pop
+    zil_pair = zillions.pop     #defining the zillions by their names and numbers of zeros
     zil_name = zil_pair[0]
     zil_base = 10 ** zil_pair[1]
-    write = left/zil_base # How many zillions left?
+
+    write = left/zil_base # How many zillions left? THIS IS WHERE THE DIVISION HAPPENS!!!
     left = left - write*zil_base # Subtract off those zillions.
 
     if write > 0

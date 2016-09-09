@@ -1,80 +1,63 @@
-# in order to pass the rspec please follow the below rates of growth, orange production and age of death.
-# have your OrangeTree grow by 0.4 per year.
-# have it produce no oranges in its first 5 years
-# starting in its sixth year have it produce oranges at a rate of (height * 15 - 25) per year.
-# have the tree die after 25 years.
-# check out the rspec spec/ch13/orange_tree_spec.rb to see what strings we're looking for in the responses.
-
-
 class OrangeTree
-
   def initialize
-    @orangeheight = 3
-    @years = 0
-    @produce = 0
+    @height = 0
+    @orange_count = 0
+    @alive = true
   end
 
   def height
-    puts "you are #{@orangeheight} tall!"
-    one_year_passes
-  end
-
-  def one_year_passes
-    @years = @years + 1
-    @orangeheight = @orangeheight + 0.4
-    if @years == 25
-      die
-    elsif @years > 3
-      fruit_produce
+    if @alive
+      @height
     else
-       puts "young! still #{@years} old!"
+      'A dead tree is not very tall. :('
     end
-  end
-
-  def fruit_produce
-    if @years > 7
-      @produce = @produce + 4
-      puts "you are #{@years} years old and can produce #{@produce} of fruit!"
-    else
-      puts "you are #{@years} years old, you cant produce shit yet!"
-    end
-  end
-
-  def die
-    puts "DEAD!"
   end
 
   def count_the_oranges
-    puts @produce
+    if @alive
+      @orange_count
+    else
+      'A dead tree has no oranges. :('
+    end
   end
 
-  def pick_an_orange
-  end
+  def one_year_passes
+    if @alive
+      @height = @height + 0.4
+      @orange_count = 0 # old oranges fall off
+      if @height > 10 && rand(2) > 0
+        # tree dies
+        @alive = false
+        'Oh, no! The tree is too old, and has died. :('
+      elsif @height > 2
+        # new oranges grow
+        @orange_count = (@height * 15 - 25).to_i
+        "This year your tree grew to #{@height}m tall," +
+        " and produced #{@orange_count} oranges."
+      else
+        "This year your tree grew to #{@height}m tall," +
+        " but is still too young to bear fruit."
+      end
+    else
+  'A year later, the tree is still dead. :('
 end
 
-tree = OrangeTree.new
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
-tree.height
+end
+def pick_an_orange
+  if @alive
+    if @orange_count > 0
+      @orange_count = @orange_count - 1
+      'You pick a juicy, delicious orange!'
+    else
+      'You search every branch, but find no oranges.'
+    end
+  else
+    'A dead tree has nothing to pick. :('
+  end
+end
+end
+
+ot = OrangeTree.new
+23.times do
+  ot.one_year_passes
+end

@@ -1,3 +1,6 @@
+#cannot get this to pass rspec even after copying the code from the book.
 def log desc, &block
-  # your code here
+  puts 'Beginning "' + desc + '"...'
+  result = block.call
+  puts '..."' + desc + '" finished,  returning: ' + result.to_s
 end

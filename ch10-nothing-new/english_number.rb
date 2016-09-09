@@ -26,7 +26,7 @@ def english_number number
               ['decillion',         33],
               ['undecillion',       36],
               ['duodecillion',      39],
-              ['tredcillion',       42],
+              ['tredecillion',      42],
               ['quattuordecillion', 45],
               ['quindecillion',     48],
               ['sexdecillion',      51],
@@ -51,7 +51,7 @@ def english_number number
     num_string = num_string + prefix + " " + zil_name
 
     if left > 0
-      num_string = sum+string + " "
+      num_string = num_string + " "
     end
   end
  end

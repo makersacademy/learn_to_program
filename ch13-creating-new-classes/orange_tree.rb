@@ -7,5 +7,36 @@
 
 
 class OrangeTree
-  # your code here
+  def initialize
+  	@height = 0.0
+  	@age = 0
+  	@oranges = 0
+  end
+
+  def height
+  	if age >= 25
+  		return 'A dead tree is not very tall. :('
+  	else
+  		@height
+  	end
+  end
+
+  def age
+  	@age
+  end
+
+  def one_year_passes
+  	if @age > 25
+  		return 'A year later, the tree is still dead. :('
+  	elsif @age < 25
+	  	@age += 1
+	  	@height += 0.4
+	  	@height = @height.round(1) 
+	  	@oranges = (@height * 15 - 25).floor unless @age < 6
+	  end
+  	if @age == 25 
+  		return 'Oh, no! The tree is too old, and has died. :('
+  	end
+  	return "This year your tree grew to #{@height}m tall, and produced #{@oranges} oranges."
+  end
 end

@@ -80,3 +80,7 @@ def roman_numeral num
   return number
 
 end
+
+puts roman_numeral(40)
+puts roman_numeral(110)
+puts roman_numeral(1999)

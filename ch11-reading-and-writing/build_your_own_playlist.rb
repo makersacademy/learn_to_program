@@ -11,8 +11,8 @@ if Dir[MUSIC_PATH].empty?
 end
 Dir.chdir(MUSIC_PATH)
 
-#  First we find all of the pictures to be moved.
-file_names = Dir['./*/*.{mp3,wav,aif}']
+#  First we find all of the tracks to be moved.
+file_names = Dir['./**/*.{mp3,wav,aif}']
 
 if file_names.length == 0
 	puts "ERROR! Directory '#{MUSIC_PATH}' is empty!"

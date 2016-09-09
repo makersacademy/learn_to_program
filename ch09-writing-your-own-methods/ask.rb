@@ -12,6 +12,8 @@ def ask(question)
 end
 
 ask "Do you like eating tacos?"
+
+
 =begin
 ask "Do you like eating burritos?"
 wets_bed = ask "Do you wet the bed?"

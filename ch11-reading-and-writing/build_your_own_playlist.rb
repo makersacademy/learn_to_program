@@ -3,7 +3,7 @@
 #  and makes a .m3u playlist from it.
 #  Tracks are sorted alphabetically
 
-MUSIC_PATH = '/Users/tadasmajeris/Downloads/nu house : techno'
+MUSIC_PATH = '/Users/tadasmajeris/Downloads/nu electro'
 
 if Dir[MUSIC_PATH].empty?
 	puts "ERROR! Directory '#{MUSIC_PATH}' not found!"
@@ -12,7 +12,7 @@ end
 Dir.chdir(MUSIC_PATH)
 
 #  First we find all of the pictures to be moved.
-file_names = Dir['./*.{mp3,wav,aif}']
+file_names = Dir['./*/*.{mp3,wav,aif}']
 
 if file_names.length == 0
 	puts "ERROR! Directory '#{MUSIC_PATH}' is empty!"

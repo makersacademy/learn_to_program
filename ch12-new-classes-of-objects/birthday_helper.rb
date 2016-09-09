@@ -25,4 +25,4 @@ bday_date = birth_dates[name].strftime("%e")
 age_in_years = TimeDifference.between(bday, current_date).in_years.to_i
 
 # output
-puts "#{name} will be #{age_in_years+1} on #{bday_date} of #{bday_month}."
+puts "#{name} will be #{age_in_years+1} on #{bday_date} of #{bday_month}.#{}"

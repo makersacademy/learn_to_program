@@ -1,18 +1,23 @@
-def sort(some_array)
-	recursive_sort(some_array, [])
+def dictionary_sort arr
+  rec_dict_sort arr, []
 end
+def rec_dict_sort unsorted, sorted
+  if unsorted.length <= 0
+    return sorted
+  end
 
-def recursive_sort(unsorted_array, sorted_array)
-	#loop through unsorted array to find smallest word
-	#push to sorted array
-	smallest = unsorted_array.reduce { |memo, word|  memo.downcase < word.downcase ? memo : word}
-	unsorted_array.delete_at(unsorted_array.index(smallest))
-	sorted_array << smallest
-	#repeat (recursion)
-	#if unsorted array length > 0, repeat, else return sorted array
-	if unsorted_array.length > 0
-		recursive_sort(unsorted_array, sorted_array)
-	else
-		sorted_array
-	end
+  smallest = unsorted.pop
+  still_unsorted = []
+
+  unsorted.each do |tested_object|
+    if tested_object.downcase < smallest.downcase
+      still_unsorted.push smallest
+      smallest = tested_object
+    else
+      still_unsorted.push tested_object
+    end
+
+  end
+  sorted.push smallest
+  rec_dict_sort still_unsorted, sorted
 end

@@ -4,6 +4,7 @@ def log desc, &block
   puts "...'#{desc}' finished returning: #{returned}"
 end
 
+
 log "outer block" do 
 	log "some little block" do	
 			5

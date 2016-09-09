@@ -1,24 +1,10 @@
 def sort arr
-  # your code here
-  rec_sort arr, []
-end
+	return arr if arr.length <= 1
 
-def rec_sort unsorted, sorted
-  if unsorted.lenght <= 0
-    return sorted
-  end
+	middle = arr.pop
+	less = arr.select{|x| x < middle}
+	more = arr.select{|x| x >= middle}
 
-  smallest       = unsorted.pop
-  still_unsorted = []
+	sort(less) + [middle] + sort(more)
 
-  unsorted.each do |tested_object|
-    if tested_object < smallest
-      still_unsorted.push smallest
-      smallest = tested_object
-    else
-      still_unsorted.push tested_object
-    end
-end
-sorted.push smallest
-rec_sort still_unsorted, sorted
 end

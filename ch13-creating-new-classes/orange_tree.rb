@@ -8,6 +8,7 @@ class OrangeTree
 		puts "You have planted an Orange Tree."
 	end
 
+
 	def height
 		if @height == 1
 			puts "Your Orange Tree is #{@height.round(1)} meter tall!"
@@ -33,8 +34,13 @@ class OrangeTree
 	def one_year_passes
     oneYearPasses
     @age + 1
-    puts "This year your tree grew to #{@height.round(1)}m tall, and produced #{@orangeCount.round} oranges."
-    @orangeCount = 0
+    if @age >= 25
+      @orangeCount = 0
+      puts "Your Orange Tree has died! All it's friut are rotten. I'm sorry!"
+    else
+      puts "This year your tree grew to #{@height.round(1)}m tall, and produced #{@orangeCount.round} oranges."
+      @orangeCount = 0
+    end
 	end
 
 private
@@ -45,23 +51,17 @@ private
 		if @age <= 5
 			@orangeCount = @orangeCount
 		else
-			@orangeCount = @height * rand(15..25)
+			@orangeCount = (@height * 15 - 25).to_i
 		end
-
-		if @age == 25
-			@orangeCount = 0
-		 	puts "Your Orange Tree has died! All it's friut are rotten. I'm sorry!"
-		 	exit
-		end
-
 	end
-
 end
 
-ot = OrangeTree.new
-26.times do
-  ot.one_year_passes
-end
+#ot = OrangeTree.new
+#26.times do
+#  ot.one_year_passes
+#end
+
+
 # in order to pass the rspec please follow the below rates of growth, orange production and age of death.
 # have your OrangeTree grow by 0.4 per year.
 # have it produce no oranges in its first 5 years

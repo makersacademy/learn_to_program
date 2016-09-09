@@ -18,7 +18,7 @@ months = { "January" => 1,
 		   "September" => 9,
 		   "October" => 10,
 		   "November" => 11,
-		   "Decembder" => 12 }
+		   "December" => 12 }
 
 
 seconds_in_a_year = (Time.gm(1987) - Time.gm(1986))

@@ -1,0 +1,17 @@
+LTP p.73- how do array grid references work? Is a new 8 man team created for each square?
+When typing stuff into the command line and I forget to close quotes or <> etc does the command line then show the missing symbol rather than the directory and 0 
+How do I get CI Travis to check my work? New pull request each time?
+WHat's the command for 'add and commit all modified files'?
+
+
+
+#I tried to commit two files at once, and it 'copied' the files. they coth seem to ahve retained their contenat though, what does it mean?
+ubuntu@roryai-rory_ruby_0-3707112:~/Projects/learn_to_program/ch10-nothing-new$ git add dictionary_sort.rb sort.rb
+ubuntu@roryai-rory_ruby_0-3707112:~/Projects/learn_to_program/ch10-nothing-new$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   dictionary_sort.rb
+        copied:     dictionary_sort.rb -> sort.rb

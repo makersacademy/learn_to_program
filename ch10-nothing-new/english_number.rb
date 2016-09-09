@@ -16,7 +16,7 @@ ones_place = [ 'one', 'two', 'three',
 
 tens_place = [ 'ten', 'twenty', 'thirty',
 'forty', 'fifty', 'sixty',
-'seventy', 'eighty', 'ninty']
+'seventy', 'eighty', 'ninety']
 
 teenagers = [ 'eleven', 'twelve', 'thirteen',
 'fourteen', 'fifteen', 'sixteen',

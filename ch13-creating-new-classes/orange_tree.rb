@@ -7,5 +7,74 @@
 
 
 class OrangeTree
-  # your code here
+
+  def initialize
+    @orangeheight = 3
+    @years = 0
+    @produce = 0
+  end
+
+  def height
+    puts "you are #{@orangeheight} tall!"
+    one_year_passes
+  end
+
+  def one_year_passes
+    @years = @years + 1
+    @orangeheight = @orangeheight + 0.4
+    if @years == 25
+      die
+    elsif @years > 3
+      fruit_produce
+    else
+       puts "young! still #{@years} old!"
+    end
+  end
+
+  def fruit_produce
+    if @years > 7
+      @produce = @produce + 4
+      puts "you are #{@years} years old and can produce #{@produce} of fruit!"
+    else
+      puts "you are #{@years} years old, you cant produce shit yet!"
+    end
+  end
+
+  def die
+    puts "DEAD!"
+  end
+
+  def count_the_oranges
+    puts @produce
+  end
+
+  def pick_an_orange
+  end
 end
+
+tree = OrangeTree.new
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height
+tree.height

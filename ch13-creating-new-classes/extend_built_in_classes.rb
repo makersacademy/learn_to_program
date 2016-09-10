@@ -1,27 +1,3 @@
-class Array
-def shuffle 
-	final_array = []
-	while self.length > 0
-		rand_index = rand(self.length)
-		intial_index = 0
-		array = []
-		self.each do |w|
-				if intial_index == rand_index
-					final_array.push(w)
-				else
-					array.push(w)
-				end
-
-				intial_index = intial_index + 1
-				end
-	self = array
-	end
-
-return final_array
-end
-end
-
-
 class Integer
   def factorial
     if self <= 1
@@ -31,7 +7,6 @@ class Integer
     end
   end
   def to_roman
-    # I chose old-school roman numerals just to save space.
     roman = ''
 
     roman = roman + 'M' * (self / 1000)
@@ -45,3 +20,4 @@ class Integer
     roman
   end
 end
+

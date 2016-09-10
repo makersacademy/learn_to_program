@@ -1,5 +1,5 @@
-class Roman
-  def initialize
+
+  def start
     puts "What roman numeral do you want to convert to an integer?"
     my_answer = gets.chomp
     roman_to_integer(my_answer)
@@ -33,8 +33,7 @@ class Roman
   def error_message
     puts "That was not a valid roman numeral less than 4000... please try again."
   end
-end
-run = Roman.new
+
 
 
 =begin

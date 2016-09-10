@@ -1,4 +1,15 @@
 class Integer
+  def factorial
+    if self < 0
+      return 'You can\'t take the factorial of a negative number!'
+    end
+    if self <= 1
+      1
+    else
+      self * (self-1).factorial
+    end
+  end
+
   def to_roman
     if self < 0  # No negative numbers.
         return 'Please enter a number that isn\'t negative.'
@@ -9,10 +20,10 @@ class Integer
 
     num_string = ""
 
-    onesPlace = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
-    tensPlace = ['X', 'XX', 'XXX','XL', 'L', 'LX', 'LXX', 'LXXX', 'XC']
-    hundredsPlace = ["C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
-    thousandsPlace = ["M", "MM", "MMM"]
+    onesPlace = ["I", "II", "III", "IIII", "V", "VI", "VII", "VIII", "VIIII"]
+    tensPlace = ['X', 'XX', 'XXX','XXXX', 'L', 'LX', 'LXX', 'LXXX', 'LXXXX']
+    hundredsPlace = ["C", "CC", "CCC", "CCCC", "D", "DC", "DCC", "DCCC", "DCCCC"]
+    thousandsPlace = ["M", "MM", "MMM", "MMMM", "MMMMM"]
 
     remainder = self
 

@@ -46,6 +46,7 @@ class OrangeTree
       'A dead tree has nothing to pick. :('
     else
       "You picked an orange - delicious!"
+      @fruit -= 1
     end
   end
 

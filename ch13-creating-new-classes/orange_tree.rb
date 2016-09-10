@@ -12,7 +12,6 @@
 
 class OrangeTree
   def initialize
-    @age = 0
     @height = 0
     @orange_count = 0
     @alive = true
@@ -35,16 +34,17 @@ class OrangeTree
   end
 
      def one_year_passes
-   @orange_count = 0
-   @age += 1
-   @height = (@height + 0.4).round(1)
   if @alive
-     if @age > 25
-        @alive = false
-        "Oh, no! The tree is too old, and has died. :("
-      elsif @age > 5
-        @orange_count += (@height * 15 - 25).round
-        "This year your tree grew to #{@height}m tall, and produced #{@orange_count} oranges."
+    @height = @height + 0.4
+    @orange_count = 0
+    if @height > 10 && rand(2) > 0
+      @alive = false
+      "Oh, no! The tree is too old, and has died. :("
+    elsif @height > 2
+    @orange_count = (@height * 15 - 25).to_i
+        "This year your tree grew to #{@height.round(1)}m tall, and produced #{@orange_count} oranges."
+      else
+        "This year your tree grow to #{@height.round(1)}m tall, but is still too young to bear fruit."
       end
     else
       'A year later, the tree is still dead. :('

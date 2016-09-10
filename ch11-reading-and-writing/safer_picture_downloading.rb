@@ -1,4 +1,4 @@
-Dir.chdir '~/alexanderwjrussell/pictures'
+Dir.chdir '~/pictures'
 
 pic_names = Dir['~/ExternalHD/Picturs']
 puts 'What would you like to call this batch?'

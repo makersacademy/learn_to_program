@@ -26,12 +26,5 @@ def roman_numeral num
         roman = roman + "V" * ((num % 10) / 5)
         roman = roman + "I" * ((num % 5) / 1)
     end
-    puts roman
+    roman
 end
-
-puts(roman_numeral(1999))
-puts(roman_numeral(2469))
-puts(roman_numeral(1378))
-puts(roman_numeral(5))
-puts(roman_numeral(497))
-puts(roman_numeral(949))

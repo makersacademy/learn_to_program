@@ -7,5 +7,55 @@
 
 
 class OrangeTree
-  # your code here
+  attr_accessor :height, :count_the_oranges
+
+  def initialize
+    @height = 0
+    @age = 0
+    @fruit = 0
+    @dead = false
+    "Your orange tree has been created. It will take about five years to grow fruit."
+  end
+
+  def one_year_passes
+    @fruit = 0
+    @age += 1
+    @height = (@height + 0.4).round(1)
+    if @age ==26
+      @dead = true
+      'Oh, no! The tree is too old, and has died. :('
+    elsif @age >26
+      'A year later, the tree is still dead. :('
+    elsif @age >5
+      @fruit = (height * 15 - 25).round
+      "This year your tree grew to #{@height}m tall, and produced #{@fruit} oranges."
+    end
+  end
+
+  def count_the_oranges
+    if @dead
+      'A dead tree has no oranges. :('
+    else
+      @fruit
+    end
+
+  end
+
+  def pick_an_orange
+    if @dead
+      'A dead tree has nothing to pick. :('
+    else
+      "You picked an orange - delicious!"
+      @fruit -= 1
+    end
+  end
+
+  def height
+    if @dead
+      'A dead tree is not very tall. :('
+    else
+      @height
+    end
+  end
+
 end

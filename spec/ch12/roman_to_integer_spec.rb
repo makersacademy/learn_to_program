@@ -1,3 +1,5 @@
+require './ch12-new-classes-of-objects/party_like_its_roman_to_integer_mcmxcix.rb'
+
 describe 'roman to integer numerals' do
   numerals = ['i','ii','iii','iv','v','vi','vii','viii','ix','x',
               'xi','xii','xiii','xiv','xv','xvi','xvii','xviii','xix','xx']
@@ -19,4 +21,3 @@ describe 'roman to integer numerals' do
     expect(roman_to_integer('CCCLXV')).to eq 365
   end
 end
-  

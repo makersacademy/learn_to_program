@@ -17,7 +17,7 @@ if birthday_passed > 0
 end
 
 print "SPANK! "*years_since_birth
-puts "You just got spanked "+years_since_birth.to_s+" times.
+puts "You just got spanked "+years_since_birth.to_s+" times."
 
 
 
@@ -30,7 +30,6 @@ puts "You just got spanked "+years_since_birth.to_s+" times.
 
 # this_year=Time.new
 # birthday_this_year=Time.local(this_year.year, birth_mon, birth_dt)
-# puts "Birthday this year: "+birthday_this_year.to_s
 
 # has_birthday_happened=Time.new-birthday_this_year
 #   if val > 0
@@ -40,19 +39,15 @@ puts "You just got spanked "+years_since_birth.to_s+" times.
 #   end
 # end
 
-# puts "Has birthday happened?: "+has_birthday_happened.to_s
 
 
 # #whole_years=Time.new()
 
 # this_year=Time.new
-# puts "this year below:"
-# puts this_year.year
+
 
 
 # birthdays=Time.now-user_birthday
 # birthdays_int=birthdays.to_i
 
 # seconds_in_year=(Time.local(1981)-Time.local(1980)).to_i
-# puts "Seconds in a year: "+seconds_in_year.to_s
-# puts "Birthdays: "+birthdays.to_s

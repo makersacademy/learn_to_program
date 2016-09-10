@@ -1,6 +1,3 @@
-# def grandfather_clock &block
-#   # your code here
-# end
 def grandfather_clock &block
   hour = Time.new.hour
   

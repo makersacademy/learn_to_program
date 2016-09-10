@@ -1,0 +1,27 @@
+import text file as an array, with each line separated by newlines.
+
+take names and put them as hash keys
+take birthdays and convert them to Time.local, put them as hash values
+ask for a name
+enter name
+program tells you when next birthday will be
+program tells you how old person will be
+
+____________________________________________________
+create empty hash
+read input file and iterate over it using .each_line
+    remove newlines
+    create counter for substring position
+    while loop checks each character in line by using substring set to value of
+    counter of substring positioon. when it's not looking at a comma it 
+    increments the substring counter then it ends
+    the person's name is set to a variable, containing substring 0-comma counter -1
+    the bday is set to the last 12 characters of the line
+    these are inputted to the array as array[key]=value
+    ends
+
+ask whose birthday they want to know
+set the answer to a variable
+look inside the hash by passing the user input to the hash as a key []
+
+if it's an empty entry print an error. otherwise output the birthday.

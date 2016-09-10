@@ -7,5 +7,34 @@
 
 
 class OrangeTree
-  # your code here
+
+  def initialize
+    @@age = 0
+    @@height = 0
+    while @@age < 25
+      self.grow
+      if @@age > 5
+        self.oranges
+      end
+      @@age = @@age + 1
+    end
+    if @@age == 25
+      self.dies
+    end
+  end
+
+  def grow
+    puts "the tree grows. It is now 0.4 taller."
+    @@height = @@height + 0.4
+  end
+
+  def oranges
+    puts "The orange tree produces #{(@@age * 5)} oranges this year."
+  end
+
+  def dies
+    puts "The tree grows old and dies"
+  end
 end
+
+OrangeTree.new

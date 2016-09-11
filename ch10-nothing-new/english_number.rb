@@ -6,11 +6,11 @@ def english_number number
     return 'zero'
   end
 
-  numString = ''
+  num_string = ''
 
-  onesPlace = ['one',     'two',       'three',    'four',     'five',
+  ones_place = ['one',     'two',       'three',    'four',     'five',
                'six',     'seven',     'eight',    'nine']
-  tensPlace = ['ten',     'twenty',    'thirty',   'forty',    'fifty',
+  tens_place = ['ten',     'twenty',    'thirty',   'forty',    'fifty',
                'sixty',   'seventy',   'eighty',   'ninety']
   teenagers = ['eleven',  'twelve',    'thirteen', 'fourteen', 'fifteen',
                'sixteen', 'seventeen', 'eighteen', 'nineteen']
@@ -50,10 +50,10 @@ def english_number number
 
     if write > 0
       prefix = english_number write
-      numString = numString + prefix + ' ' + zil_base
+      num_string = num_string + prefix + ' ' + zil_base
 
       if left > 0
-        numString + numString + ' '
+        num_string = num_string + ' '
       end
     end
   end
@@ -63,14 +63,14 @@ def english_number number
 
   if write > 0
     if ((write == 1) and (left > 0))
-      numString = numString + teenagers[left-1]
+      num_string = num_string + teenagers[left-1]
       left = 0
     else
-      numString = numString + tensPlace[write-1]
+      num_string = num_string + tens_place[write-1]
     end
 
     if left > 0
-      numString = numString + '-'
+      num_string = num_string + '-'
     end
   end
 
@@ -78,8 +78,8 @@ def english_number number
   left  = 0
 
   if write > 0
-    numString = numString + onesPlace[write-1]
+    num_string = num_string + ones_place[write-1]
   end
 
-  numString
+  num_string
 end

@@ -35,7 +35,20 @@ class Integer
     end
   end
 
-  def to_roman
+  def old_roman_numeral
+    old_roman = ''
+
+    old_roman = old_roman + 'M' * (self / 1000)
+    old_roman = old_roman + 'D' * (self % 1000/500)
+    old_roman = old_roman + 'C' * (self % 500/100)
+    old_roman = old_roman + 'L' * (self % 100/50)
+    old_roman = old_roman + 'X' * (self % 50/10)
+    old_roman = old_roman + 'V' * (self % 10/5)
+    old_roman = old_roman + 'I' * (self % 5/1)
+
+    old_roman
+  end
+=begin
     roman = ''
 
     roman = roman + 'M' * (self % 10000/1000)
@@ -70,9 +83,10 @@ class Integer
       roman = roman + 'I' * (self % 5/1)
     end
   end
+=end
 end
 
 
 puts [1,2,3,4,5,6,7,8,9].shuffle
 puts 5.fractorial
-puts 123.to_roman
+puts 123.old_roman_numeral

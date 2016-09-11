@@ -12,8 +12,8 @@ program_log 'outer block' do              #'outer block' is the desc, outer bloc
   end
 
   program_log 'yet another block' do        #'yet another block' is another inner block
-    '!doof iahT ekil I'.reverse     #the methods result.to_s has nothing to return, and will return false
+    '!doof iahT ekil I'.reverse     
   end
 
-  '0' == 0
+  '0' == 0          #this returns "false" for the "outer block"
 end                       #outer block ends here

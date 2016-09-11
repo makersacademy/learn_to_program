@@ -19,19 +19,21 @@ def roman_to_integer roman
   number = 0
   count = 0
 
-  roman.length.times {
+  until count == roman.length
     current_letter = roman[count]
     double_check = roman[count].to_s + roman[count+1].to_s
-    if double_check.length == 2 && roman_numerals[double_check].to_i > 1
+    if roman_numerals.include?(current_letter) == false
+      return "Please enter valid roman numerals"
+    elsif double_check.length == 2 && roman_numerals[double_check].to_i > 1
       number = number + roman_numerals[double_check].to_i
       count += 1
     else
       number = number + roman_numerals[current_letter].to_i
     end
     count += 1
-  }
+  end
 
   number
 end
 
-puts roman_to_integer "iv"
+puts roman_to_integer "IVCDXDD"

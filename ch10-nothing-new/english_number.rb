@@ -77,10 +77,10 @@ def english_number(number)
 	num_string
 end
 
-puts english_number(17)
-puts english_number(32)
-puts english_number(168)
-puts english_number(1752)
-puts english_number(28654)
-puts english_number(862492)
-puts english_number(87263874)
+#puts english_number(17)
+#puts english_number(32)
+#puts english_number(168)
+#puts english_number(1752)
+#puts english_number(28654)
+#puts english_number(862492)
+#puts english_number(87263874)

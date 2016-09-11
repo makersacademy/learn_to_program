@@ -18,6 +18,5 @@ def old_roman_numeral num
   fives = num / 5 #det num of fives
   num -= fives * 5
 
-  return 'M'*thousands + 'D'*five_hundreds + 'C'*hundreds + 'L'*fiftys + 'X'*tens + 'V'*fives + 'I'*num
-  puts 'M'*thousands + 'D'*five_hundreds + 'C'*hundreds + 'L'*fiftys + 'X'*tens + 'V'*fives + 'I'*num
+  'M'*thousands + 'D'*five_hundreds + 'C'*hundreds + 'L'*fiftys + 'X'*tens + 'V'*fives + 'I'*num
 end

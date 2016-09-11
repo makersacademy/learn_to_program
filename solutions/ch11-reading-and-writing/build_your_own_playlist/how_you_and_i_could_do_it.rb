@@ -1,4 +1,22 @@
-# using the shuffle method as defined above
+def shuffle arr
+  shuf = []
+  while arr.length > 0
+    rand_index = rand(arr.length)
+
+    new_arr = []
+    arr.each do |item|
+      if curr_index == rand_index
+        shuf.push item
+      else
+        new_arr.push item
+      end
+      curr_index = curr_index + 1
+    end
+
+    arr = new_arr
+  end
+shuf
+end
 
 all_oggs = shuffle(Dir['**/*.ogg'])
 

@@ -1,27 +1,27 @@
 def music_shuffle filenames
 
   filenames = filenames.sort
-  numbers = filenames.length
+  len = filenames.length
 
 2.times do
   l_idx = 0
-  r_idx = numbers/2
-  shuff = []
+  r_idx = len/2
+  shuf = []
 
-  while shuff.length < numbers
-    if shuff.length % 2 == 0
-      shuff.push(filenames[r_idx])
+  while shuf.length < len
+    if shuf.length % 2 == 0
+      shuf.push(filenames[r_idx])
       r_idx = r_idx + 1
     else
-      shuff.push(filenames[l_idx])
+      shuf.push(filenames[l_idx])
       r_idx = r_idx + 1
     end
 end
-filenames = shuff
+filenames = shuf
 end
 
 arr = []
-cut = rand(numbers)
+cut = rand(len)
 idx = 0
 while idx < len
   arr.push(filenames[idx+cut)%numbers])

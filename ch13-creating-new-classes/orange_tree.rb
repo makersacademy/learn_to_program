@@ -10,52 +10,55 @@ class OrangeTree
   def initialize
     @height = 0
     @orange_count = 0
-    @alive = true
-  end
-  def height
-    if @alive
-      @height
-    else
-      "A dead tree is not very tall. :("
-    end
-  end
-  def count_the_oranges
-    if @alive
-      @orange_count
-    else
-      "A dead tree has no oranges. :("
-    end
+    @year = 0
+    @dead = 0
   end
 
   def one_year_passes
-    if @alive
-      @height = @height + 0.4
-      @orange_count = 0
-      if @height > 10 && rand(2) > 0
-        @alive = false
-        "Oh no! The tree is too old, and has died! :("
-      elsif @height > 2
-        @orange_count = (@height * 15 - 25).to_i
-        "This year your tree grew to #{@height} m tall," +
-        " and produced #{@orange_count} oranges."
-      else
-        "This year your tree grew to #{@height} m tall," +
-        " but is still too young to bear fruit."
-      end
+    @height += 0.4
+    @year += 1
+    if @year == 26
+      @dead = 1
+      return "Oh, no! The tree is too old, and has died. :("
+    elsif @dead == 1
+      return "A year later, the tree is still dead. :("
     else
-      "A year later, the tree is still dead. :("
+      unless @year < 6
+        oranges = @height * 15 - 25
+        @orange_count = oranges
+      else
+        oranges = 0
+      end
+      return "This year your tree grew to #{@height.round(1)}m tall, and produced #{oranges.to_i} oranges."
     end
   end
+
+  def height
+    if @dead == 0
+      return @height.round(1)
+    else
+      return "A dead tree is not very tall. :("
+    end
+  end
+
+  def count_the_oranges
+    if @dead == 0
+      return @orange_count.to_i
+    else
+      return "A dead tree has no oranges. :("
+    end
+  end
+
   def pick_an_orange
-    if @alive
+    if @dead == 0
       if @orange_count > 0
-        @orange_count = @orange_count - 1
-        "You pick a juicy, delicious orange!"
+        return "Mmmmm, delicious juicy freshness."
+        @orange_count -= 1
       else
-        "You search every branch, but find no oranges."
+        return "Oh dear, there are no oranges left.  Try next year!"
       end
     else
-      "A dead tree has nothing to pick. :("
+      return "A dead tree has nothing to pick. :("
     end
   end
 end

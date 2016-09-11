@@ -3,6 +3,9 @@ def dictionary_sort arr
 end
 
 def recursive_sort unsorted, sorted
+    if unsorted.length <= 0
+        return sorted
+    end
     
     smallest = unsorted.pop
     still_unsorted = []

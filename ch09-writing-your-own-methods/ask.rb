@@ -11,7 +11,7 @@ def ask question
   answer
 end
   
-choc = ask 'Do you like chocolate?'
-puts choc
+#puts(ask ('Do you like chocolate?'))
+
 
 

@@ -1,7 +1,5 @@
-
-
-def dict_sort some_array
-  recursive_sort some_array, []
+def dictionary_sort arr
+  recursive_sort arr, []
 end
 
 def recursive_sort unsorted_array, sorted_array
@@ -22,5 +20,3 @@ def recursive_sort unsorted_array, sorted_array
     sorted_array.push smallest
     recursive_sort stillunsorted, sorted_array
 end
-
-puts(dict_sort(['can', 'Life', 'moment', 'fun' ]))

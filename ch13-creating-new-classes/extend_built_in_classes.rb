@@ -1,12 +1,13 @@
 class Integer
   def factorial
-    if self <= 1
+    if self <= 1  # self is refering to the instance of the Integer class
       1
     else
       self * (self-1).factorial
     end
   end
-  def to_roman
+
+  def to_old_roman
   
     roman = ''
 
@@ -22,6 +23,6 @@ class Integer
   end
 end
 
-puts [1,2,3,4,5].shuffle
+
 puts 7.factorial
 puts 73.to_roman

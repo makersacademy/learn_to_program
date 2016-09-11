@@ -31,7 +31,7 @@ def english_number number
               ['duodecillion',      39],
               ['tredecillion',      42],
               ['quattuordecillion', 45],
-              ['quintillion',       48],
+              ['quindecillion',       48],
               ['sextillion',        51],
               ['septendecillion',   54],
               ['octodecillion',     57],
@@ -77,6 +77,11 @@ to write out.
       left = 0
     else
       num_string = num_string + tensPlace[write -1]
+    end
+
+    if left > 0
+      # So we don't write thirtytwo!!
+      num_string = num_string + '-'
     end
   end
 

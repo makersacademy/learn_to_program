@@ -1,3 +1,5 @@
+MY IDEAS
+
 import text file as an array, with each line separated by newlines.
 
 take names and put them as hash keys
@@ -8,6 +10,8 @@ program tells you when next birthday will be
 program tells you how old person will be
 
 ____________________________________________________
+SOLUTION DECONSTRUCTED
+
 create empty hash
 read input file and iterate over it using .each_line
     remove newlines

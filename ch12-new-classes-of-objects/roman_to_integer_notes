@@ -1,0 +1,14 @@
+create a hash that assigns a value to each of the letters. 
+
+take roman integer from user, upcase it.
+
+split each character, put them in an array
+
+check each character in the array matches an array of valid characters. abort
+program if it does not.
+
+iterate over the array. check whether the next character has a hash value larger
+than the character currently being tested. if it does, subtract character from
+next character. if it does not, add the value of current character to
+int_running_total. repeat with the next pair of characters until the end of the
+string is reached. need to add exception for last char, where it is just added?

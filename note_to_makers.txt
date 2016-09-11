@@ -1,0 +1,5 @@
+For the rspec tests for Chapter 14, the pre-defined method's names (in the original file)
+had to be changed in order to match the expected methods in the spec file.
+
+program_logger: "log" to "program_log"
+better_program_logger: "log" to "better_log"

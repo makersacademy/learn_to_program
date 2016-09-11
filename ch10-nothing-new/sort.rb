@@ -1,17 +1,9 @@
 def sort arr
-  num = arr.length
+  return arr if arr.length <= 1
 
-  loop do
+  middle = arr.pop
+  less = arr.select{|x| x < middle}
+  more = arr.select{|x| x >= middle}
 
-    sorted = false
-
-    (num-1).times do |i|
-      if arr[i] > arr [i +1]
-        arr[i], arr[i +1] = arr[i+1], arr[1]
-        sorted = true
-      end
-    end
-
-    break if not sorted
-  end
+  sort(less) + [middle] + sort(more)
 end

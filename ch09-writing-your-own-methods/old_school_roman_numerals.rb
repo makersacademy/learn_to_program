@@ -21,7 +21,3 @@ def old_roman_numeral num
   return 'M'*thousands + 'D'*five_hundreds + 'C'*hundreds + 'L'*fiftys + 'X'*tens + 'V'*fives + 'I'*num
   puts 'M'*thousands + 'D'*five_hundreds + 'C'*hundreds + 'L'*fiftys + 'X'*tens + 'V'*fives + 'I'*num
 end
-
-#puts 'enter number'
-#num = gets.chomp.to_i
-#puts (old_roman_numeral num)

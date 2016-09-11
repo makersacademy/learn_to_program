@@ -1,3 +1,7 @@
 def shuffle arr
-  # your code here
+  arr.shuffle
 end
+
+veg = ['apple', 'banana', 'carrot', 'Leek', 'Pear',]
+
+puts(shuffle(veg))

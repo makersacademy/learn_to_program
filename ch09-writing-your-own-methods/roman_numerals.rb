@@ -1,14 +1,14 @@
 def roman_numeral num
-  thousands = (num / 1000)
-  hundreds =  (num % 1000 / 100)
-  tens =      (num % 100 / 10)
-  ones =      (num % 10)
+  thous = (num        / 1000)
+  hunds = (num % 1000 / 100)
+  tens =  (num % 100  / 10)
+  ones =  (num % 10)
 
-  roman = 'M' * thousands
+  roman = 'M' * thous
 
-if hundreds == 9
+if hunds == 9
   roman = roman + 'CM'
-elsif hundreds == 4
+elsif hunds == 4
   roman = roman + 'CD'
 else
   roman = roman + 'D' * (num % 1000 / 500)
@@ -34,7 +34,4 @@ else
 end
 
 roman
-end
-
-  # your code here
 end

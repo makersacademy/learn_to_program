@@ -1,101 +1,62 @@
+# class Array
+#   def shuffle
+#     arr = self
+#     # Now we can just copy the old shuffle method.
+#     shuf = []
+
+#     while arr.length > 0
+#       # Randomly pick one element of the array.
+#       rand_index = rand(arr.length)
+
+#       # Now go through each item in the array,
+#       # putting them all into new_arr except for
+#       # the randomly chosen one, which goes into
+#       # shuf.
+#       curr_index = 0
+#       new_arr = []
+#       arr.each do |item|
+#         if curr_index == rand_index
+#           shuf.push item
+#         else
+#           new_arr.push item
+#         end
+
+#         curr_index = curr_index + 1
+#       end
+#       # Replace the original array with the new,
+#       # smaller array.
+
+#       arr = new_arr
+#     end
+#     shuf
+#   end
+# end
+
+# note modern ruby has already has a built in shuffle method
+
 class Integer
-
-  def roman
-
-  m_length = 0
-  n900_length = 0
-  d_length = 0
-  n400_length = 0
-  c_length = 0
-  n90_length = 0
-  l_length = 0
-  n40_length = 0
-  x_length = 0
-  n9_length = 0
-  v_length = 0
-  n4_length = 0
-  i_length = 0
-
-  number = self
-
-  if number >= 1000
-    m_length = number/1000
-    number = number%1000
+  def factorial
+    if self <= 1
+      1
+    else
+      self * (self-1).factorial
+    end
   end
+  def to_roman
+    # I chose old-school roman numerals just to save space.
+    roman = ''
 
-  if number >= 900
-    n900_length = number/900
-    number = number%900
+    roman = roman + 'M' * (self / 1000)
+    roman = roman + 'D' * (self % 1000 / 500)
+    roman = roman + 'C' * (self % 500 / 100)
+    roman = roman + 'L' * (self % 100 / 50)
+    roman = roman + 'X' * (self % 50 / 10)
+    roman = roman + 'V' * (self % 10 / 5)
+    roman = roman + 'I' * (self % 5 / 1)
+
+    roman
   end
-
-  if number >= 500
-    d_length = number/500
-    number = number%500
-  end
-
-  if number >= 400
-    n400_length = number/400
-    number = number%400
-  end
-
-  if number >= 100
-    c_length = number/100
-    number = number%100
-  end
-
-  if number >= 90
-    n90_length = number/90
-    number = number%90
-  end
-
-  if number >= 50
-    l_length = number/50
-    number = number%50
-  end
-
-  if number >= 40
-    n40_length = number/40
-    number = number%40
-  end
-
-  if number >= 10
-    x_length = number/10
-    number = number%10
-  end
-
-  if number >= 9
-    n9_length = number/9
-    number = number%9
-  end
-
-  if number >= 5
-    v_length = number/5
-    number = number%5
-  end
-
-  if number >= 4
-    n4_length = number/4
-    number = number%4
-  end
-
-  if number < 4
-    i_length = number/1
-    number = number%10
-  end
-
-  puts 'M'*m_length + "CM"*n900_length + 'D'*d_length + 'CD'*n400_length + 'C'*c_length +
-  'XC'*n90_length + 'L'*l_length + 'XL'*n40_length + 'X'*x_length + 'IX'*n9_length +
-  'V'*v_length + 'IV'*n4_length + 'I'*i_length
-
-  end
-
 end
-
-x = ''
-while x != 'exit'
-  puts 'Enter a number, and the equivalent roman numeral will be returned.'
-  puts 'Type exit to quit.'
-  x = gets.chomp
-  num = x.to_i
-  num.roman
-end
+  # puts [1,2,3,4,5].shuffle
+  # puts 7.factorial
+  # puts 73.to_roman

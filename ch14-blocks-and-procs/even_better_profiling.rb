@@ -12,6 +12,7 @@ def profile block_description, &block
   end
 end
 
+=begin
 # 25000 doublings block
 profile '25000 doublings' do
   number = 1
@@ -30,3 +31,4 @@ profile 'count to a million' do
     number = number + 1
   end
 end
+=end

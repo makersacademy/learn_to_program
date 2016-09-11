@@ -1,104 +1,78 @@
-# in order to pass the rspec please follow the below rates of growth, orange production and age of death.
-# have your OrangeTree grow by 0.4 per year.
-# have it produce no oranges in its first 5 years
-# starting in its sixth year have it produce oranges at a rate of (height * 15 - 25) per year.
-# have the tree die after 25 years.
-# check out the rspec spec/ch13/orange_tree_spec.rb to see what strings we're looking for in the responses.
-
+# note we have added a rounding operation on the height to ensure
+# the output is sensible in terms of decimal places
 
 class OrangeTree
-
   def initialize
-    @age = 0
-    @tall = 0
-    @fruit = 0
-    puts 'A new Orange Tree is planted.'
+    @height = 0
+    @orange_count = 0
+    @alive = true
   end
 
   def height
-    puts 'The tree is ' + @tall.to_s + ' feet tall.'
+    if @alive
+      @height.round(1)
+    else
+      'A dead tree is not very tall. :('
+    end
   end
 
   def count_the_oranges
-    puts 'The tree has ' + @fruit.to_s + ' oranges.'
-  end
-
-  def pick_an_orange
-    if @fruit < 1
-      puts 'Sorry, there are no oranges to pick this year.'
+    if @alive
+      @orange_count
     else
-      puts 'You pick an orange from the tree. It\'s very delicious.'
-      @fruit = @fruit - 1
+      'A dead tree has no oranges. :('
     end
   end
 
   def one_year_passes
-    puts 'One year passes'
-    @age = @age + 1
-    @tall = @tall + 1
-    @fruit = 0
-
-    if dead?
-      puts 'The Orange Tree dies'
-      exit
-    end 
-
-    if @age > 2
-      @fruit = @age*10
+    if @alive
+      @height = @height + 0.4
+      @orange_count = 0 # old oranges fall off
+      if @height > 10 && rand(2) > 0
+        # tree dies
+        @alive = false
+        'Oh, no! The tree is too old, and has died. :('
+      elsif @height > 2
+        # new oranges grow
+        @orange_count = (@height * 15 - 25).to_i
+        "This year your tree grew to #{@height.round(1)}m tall," +
+          " and produced #{@orange_count} oranges."
+      else
+        "This year your tree grew to #{@height.round(1)}m tall," +
+          " but is still too young to bear fruit."
+      end
     else
-      @fruit = 0
+      'A year later, the tree is still dead. :('
     end
-
   end
 
-  private
-
-  def dead?
-    @age > 5
+  def pick_an_orange
+    if @alive
+      if @orange_count > 0
+        @orange_count = @orange_count - 1
+        'You pick a juicy, delicious orange!'
+      else
+        'You search every branch, but find no oranges.'
+      end
+    else
+      'A dead tree has nothing to pick. :('
+    end
   end
-
 end
 
-puts ''
-tree = OrangeTree.new
-tree.height
-tree.count_the_oranges
-tree.pick_an_orange
+# ot = OrangeTree.new
+# 23.times do
+#   ot.one_year_passes
+# end
 
-puts ''
-tree.one_year_passes
-tree.height
-tree.count_the_oranges
-tree.pick_an_orange
-
-puts ''
-tree.one_year_passes
-tree.one_year_passes
-tree.height
-tree.count_the_oranges
-tree.pick_an_orange
-tree.pick_an_orange
-tree.pick_an_orange
-tree.pick_an_orange
-tree.pick_an_orange
-tree.pick_an_orange
-tree.count_the_oranges
-
-puts ''
-tree.one_year_passes
-tree.height
-tree.count_the_oranges
-tree.pick_an_orange
-tree.pick_an_orange
-tree.pick_an_orange
-tree.count_the_oranges
-tree.pick_an_orange
-tree.count_the_oranges
-
-puts ''
-tree.one_year_passes 
-tree.height
-tree.count_the_oranges 
-
-puts ''
-tree.one_year_passes 
+# puts(ot.one_year_passes)
+# puts(ot.count_the_oranges)
+# puts(ot.height)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.one_year_passes)
+# puts(ot.height)
+# puts(ot.count_the_oranges)
+# puts(ot.pick_an_orange)

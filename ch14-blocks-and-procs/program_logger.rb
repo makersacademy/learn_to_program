@@ -1,16 +1,17 @@
 def log desc, &block
-  puts 'Beginning "' + desc + '" . . .' 
-  value_returned = block.call
-  puts '. . . "' + desc + '" finished, returning: ' + value_returned.to_s
+  puts 'Beginning "' + desc + '"...'
+  result = block.call
+  puts '..."' + desc + '" finished, returning: ' + result.to_s
 end
-  
+
 log 'outer block' do
-    log 'some little block' do
-    5
+  log 'some little block' do
+    1**1 + 2**2
   end
-  
+
   log 'yet another block' do
-    'I like Thai food!'
+    '!doof iahT ekil I'.reverse
   end
+
   '0' == 0
 end

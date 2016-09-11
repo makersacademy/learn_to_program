@@ -1,24 +1,23 @@
-def sort some_array
-  recursive_sort some_array, []
+def sort arr
+  rec_sort arr, []
 end
 
-def recursive_sort unsorted_array, sorted_array
-  if unsorted_array.length <= 0
-    return sorted_array
+def rec_sort arr, sorted
+  smallest = ""
+  arr.each do |x|
+    if (smallest == "" || x < smallest)
+      smallest = x
+    end
   end
-  smallest = unsorted_array.pop
-  stillunsorted = []
-
-  unsorted_array.each do |x|
-    if x < smallest
-    stillunsorted << smallest
-    smallest = x
-   else
-    stillunsorted << x
+  arr.each do |y|
+    if y == smallest
+      sorted << smallest
+    end
   end
+  arr.delete(smallest)
+  if arr.length > 0
+    rec_sort arr, sorted
+  else
+    return sorted
   end
-    sorted_array << smallest
-    recursive_sort stillunsorted, sorted_array
 end
-
-puts(sort(['can', 'life', 'moment', 'fun' ]))

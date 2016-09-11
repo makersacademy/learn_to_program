@@ -5,7 +5,7 @@ bdays = {}
 File.read('birthdays.txt').each_line do |line|
   line = line.chomp
   person, date, year = line.split(',')
-  bdays[person] = date, year
+  bdays[person] = date
 end
 
 

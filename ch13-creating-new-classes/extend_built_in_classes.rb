@@ -1,4 +1,10 @@
 class Integer
+  
+  def factorial
+    raise 'Must not use negative integer' if self < 0
+    (self <= 1) ? 1 : self * (self-1).factorial
+  end
+
   def to_roman
     roman_numeral = ""
 

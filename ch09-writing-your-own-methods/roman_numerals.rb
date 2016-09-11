@@ -31,7 +31,6 @@ elsif tens_to_convert > 5 && tens_to_convert < 9
 elsif tens_to_convert == 9
   converted_tens = 'X' + "C"
 end
-ruby
 
 if units_to_convert <= 3
   converted_units = "I" * units_to_convert
@@ -50,3 +49,4 @@ puts converted_num
 converted_num
 end
 roman_numeral 119
+roman_numeral 101

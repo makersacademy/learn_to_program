@@ -1,15 +1,16 @@
-def log desc, &block
-  puts "Beginning #{desc}..."
+def program_log desc, &block
+  puts 'Beginning "' + desc + '"...'
   output = block.call
-  puts "... #{desc} finished, returning: " + output.to_s
+  puts '..."' + desc + '" finished, returning: ' + output.to_s
 end
 
-log '"outer block"' do
-  log '"some little block"' do
+program_log 'outer block' do
+  program_log 'some little block' do
     5
   end
-  log '"yet another block"' do
-    puts "I like Thai food!"
+
+  log 'yet another block' do
+    "I like Thai food!"
   end
-  3 > 4
+  16 == 8*2
 end

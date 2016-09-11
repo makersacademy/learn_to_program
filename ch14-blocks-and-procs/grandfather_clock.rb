@@ -6,7 +6,7 @@ def grandfather_clock &block
     twelve_hour_time = twenty_hour_time
   end
   twelve_hour_time.times do
-puts "Dong!"
+puts "DONG!"
   end
 end
 

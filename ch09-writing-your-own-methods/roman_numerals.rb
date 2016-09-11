@@ -1,6 +1,7 @@
 def roman_numeral num
     roman = ""
     roman = roman + "M" * (num / 1000)
+    
     if (900..999) === (num % 1000)
         roman = roman + "CM"
         elsif (400..499) === (num  % 500)

@@ -12,5 +12,5 @@ def grandfather_clock &block
   end
 end
 grandfather_clock do
-  puts 'Dong'
+  puts 'Ding'
 end

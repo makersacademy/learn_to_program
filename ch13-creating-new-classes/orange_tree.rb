@@ -4,62 +4,58 @@ class OrangeTree
 		@height = 0
 		@orangeCount = 0
 		@age = 0
+		@dead = false
 
-		puts "You have planted an Orange Tree."
+		"You have planted an Orange Tree."
 	end
 
 
 	def height
-		if @height == 1
-			puts "Your Orange Tree is #{@height.round(1)} meter tall!"
+		if @dead
+			'A dead tree is not very tall. :('
 		else
-			puts "Your Orange Tree is #{@height.round(1)} meters tall!"
+			@height.round(1)
 		end
 	end
 
 	def count_the_oranges
-		@orangeCount.round(1)
-		puts "There are #{@orangeCount.round} oranges on your tree!"
+		if @dead
+			'A dead tree has no oranges. :('
+		else
+			@orangeCount.round(1)
+		end
 	end
 
 	def pick_an_orange
 		if @orangeCount > 0
-			puts "You just picked a delicious orange! Yummy."
+			"You just picked a delicious orange! Yummy."
 			@orangeCount = @orangeCount.round(1) - 1
 		else
-			puts "Sorry, your tree has no oranges for you to pick. Come back next year!"
+			"A dead tree has nothing to pick. :("
 		end
 	end
 
 	def one_year_passes
-    oneYearPasses
-    @age + 1
-    if @age >= 25
-      @orangeCount = 0
-      puts "Your Orange Tree has died! All it's friut are rotten. I'm sorry!"
-    else
-      puts "This year your tree grew to #{@height.round(1)}m tall, and produced #{@orangeCount.round} oranges."
-      @orangeCount = 0
-    end
+		@orangeCount = 0
+		@age += 1
+	  @height = (@height + 0.4).round(1)
+	  if @age ==26
+		  @dead = true
+		  'Oh, no! The tree is too old, and has died. :('
+	  elsif @age >26
+		  'A year later, the tree is still dead. :('
+	  elsif @age >5
+		  @orangeCount = (@height * 15 - 25).round
+		  "This year your tree grew to #{@height}m tall, and produced #{@orangeCount} oranges."
+	 	end
 	end
-
-private
-
-	def oneYearPasses
-		@height = @height + 0.4
-		@age = @age + 1
-		if @age <= 5
-			@orangeCount = @orangeCount
-		else
-			@orangeCount = (@height * 15 - 25).to_i
-		end
-	end
-end
+ end
 
 #ot = OrangeTree.new
-#26.times do
-#  ot.one_year_passes
+#24.times do
+#	ot.one_year_passes
 #end
+
 
 
 # in order to pass the rspec please follow the below rates of growth, orange production and age of death.

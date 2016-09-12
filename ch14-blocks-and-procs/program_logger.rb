@@ -1,3 +1,12 @@
 def log desc, &block
-  # your code here
+  puts "Beginning #{desc}..."
+  block.call
+  puts "Finishing #{desc}..."
+end
+
+log "Outer block" do
+  number = 5
+  log "Inner block" do
+    puts "THIS IS THE INNER BLOCK!"
+  end
 end

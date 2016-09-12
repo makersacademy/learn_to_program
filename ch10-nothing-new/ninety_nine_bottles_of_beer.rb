@@ -1,4 +1,6 @@
-#Using the solution.
+#Using the solution for english_number.
+#english_number is included here so that the call to english_number method will run.
+#Code for "X bottles of beer" is right at the bottom.
 def english_number number
   if number < 0 # No negative numbers.
     return 'Please enter a number that isn\'t negative.'
@@ -130,7 +132,7 @@ end
 # puts english_number(1000000000000)
 # puts english_number(109238745102938560129834709285360238475982374561034)
 
-#My code to incorporate the enlgish_number program into "X bottles of beer"
+#My code to incorporate the english_number program into "X bottles of beer"
 #Note that the "english_number" method needs to be above the code below.
 
 num_at_start = 5    #9999 # change to 99 if you want
@@ -139,7 +141,7 @@ num_now = num_at_start
 
 while num_now > 2
 
-puts "#{english_number (num_now)} bottles of beer on the wall, " +
+puts "#{(english_number (num_now)).capitalize} bottles of beer on the wall, " +
 
 "#{english_number (num_now)} bottles of beer!"
 

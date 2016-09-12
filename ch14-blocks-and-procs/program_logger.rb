@@ -5,7 +5,7 @@ def program_log desc, &block
 end
 
 program_log 'outer block' do
-  log 'some little block' do
+  program_log 'some little block' do
     1**1 + 2**2
   end
 

@@ -1,1 +1,66 @@
-# your code here
+=begin
+I couldn't get the original file to work.
+Error msg was ".rb:19:in `chdir': No such file or directory @ dir_chdir - D:/RUBY_TEST_DELETE/Orig_loc (Errno::ENOENT)"
+
+My solution would be to insert the following code at the place indicated in the code below 
+(see "#GB Insert code above here." below).
+=end
+while FileTest.exist? new_name
+    new_name += '(duplicate)'
+    save_name = new_name + '.jpg'
+end
+
+=begin
+A few methods you might find useful are File.exist? (pass it a filename, and it will return true or false) 
+and exit — it kills your program right where it stands; this is good for spitting out an error message and 
+then quitting).
+=end
+# For Katy, with love. (I always write little notes in the programs
+# I write for her. I deleted all of the dirty ones, though, so that one is all that's left.)
+# This is where she stores her pictures before she gets her YAML on and moves them to the server.
+# Just for my own convenience, I'll go there now. 
+#Dir.chdir 'C:/Documents and Settings/Katy/PictureInbox'
+Dir.chdir 'D:/RUBY_TEST_DELETE/Orig_loc'
+
+# First we find all of the pictures to be moved.
+
+#pic_names = Dir['F:/**/*.jpg']
+pic_names = Dir['D:/RUBY_TEST_DELETE/New_loc/*.jpg']
+puts 'What would you like to call this batch?'
+batch_name = gets.chomp
+puts
+print "Downloading #{pic_names.length} files: "
+
+# This will be our counter. We'll start at 1 today, though normally I like to count from 0.
+
+pic_number = 1
+pic_names.each do |name|
+print '.' # This is our "progress bar".
+
+new_name = 
+if pic_number < 10
+    "#{batch_name}0#{pic_number}.jpg"
+else
+    "#{batch_name}#{pic_number}.jpg"
+end
+
+#GB Insert code above here.
+
+# This renames the picture, but since "name" has a big long path on it, and "new_name"
+# doesn't, it also moves the file to the current working directory, which is now
+# Katy's PictureInbox folder. Since it's a *move*, this effectively
+# downloads and deletes the originals. And since this is a memory card, not a
+# hard drive, each of these takes a second or so; hence, the little dots let her
+# know that my program didn't hose her machine. (Some marriage advice from your favorite
+# author/programmer: it's all about the little things.)
+
+# Now where were we? Oh, yeah...
+
+File.rename name, new_name
+
+# Finally, we increment the counter.
+pic_number = pic_number + 1
+end
+
+puts # This is so we aren't on progress bar line.
+puts 'Done, cutie!'

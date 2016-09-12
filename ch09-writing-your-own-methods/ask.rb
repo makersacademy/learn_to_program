@@ -16,6 +16,7 @@ end
 answer # This is what we return (true or false).
 end
 
+=begin
 puts 'Hello, and thank you for...'
 puts
 ask 'Do you like eating tacos?' # Ignore this return value
@@ -31,3 +32,4 @@ puts 'DEBRIEFING:'
 puts 'Thank you for...'
 puts
 puts wets_bed
+=end

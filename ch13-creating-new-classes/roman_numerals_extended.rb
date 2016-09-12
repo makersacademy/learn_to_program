@@ -1,16 +1,6 @@
 class Integer
-	def factorial 
-		if self < 0
-			return "You can't take the factorial out of a negative number!"
-		end
-		if self <= 1
-			1
-		else
-			self * (self-1).factorial
-		end
-	end
 
-	def to_roman 
+	def roman_numeral 
 	  while self.to_i <= 3000
 			# split number into an array
 			array = self.to_s.split(//).map { |x| x.to_i }
@@ -61,18 +51,18 @@ class Integer
 					(number-5).times { result << "X" }
 			end
 			# single digits of number
-			if array[-1] <= 4
+			if array[-1] < 4
 					number = array[-1]
 					number.times { result << "I" }
-			# elsif array[-1] == 4
-			# 		number = array[-1]
-			# 		result << "IV"
+			elsif array[-1] == 4
+					number = array[-1]
+					result << "IV"
 			elsif array[-1] == 6
 					number = array[-1]
 					result << "VI"
-			# elsif array[-1] == 9
-			# 		number = array[-1]
-			# 		result << "IX"
+			elsif array[-1] == 9
+					number = array[-1]
+					result << "IX"
 			else
 					number = array[-1]
 					result << "V"
@@ -86,10 +76,6 @@ class Integer
 	end
 end
 
-
-# puts 59.to_roman
-# puts 1323.roman_numeral
-# puts 1999.roman_numeral
-
-# puts 3.factorial
-# puts 10.factorial
+puts 10.roman_numeral
+puts 1323.roman_numeral
+puts 1999.roman_numeral

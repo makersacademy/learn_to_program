@@ -1,0 +1,4 @@
+Alice Winters,	Jan	5,	1989
+Tadas Majeris,	May 21,	1986
+John Lennon,		Oct 9,	1940
+Yoko Ono,				Feb 18,	1933

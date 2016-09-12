@@ -27,66 +27,32 @@ class Array
 end
 
 class Integer
-  def fractorial
-    if self <= 1
-      1
-    else
-      self * (self-1).fractorial
-    end
+  def factorial
+    raise 'Must not use negative integer' if self < 0
+
+    (self <= 1) ? 1 : self * (self-1).factorial
   end
 
-  def old_roman_numeral
-    old_roman = ''
 
-    old_roman = old_roman + 'M' * (self / 1000)
-    old_roman = old_roman + 'D' * (self % 1000/500)
-    old_roman = old_roman + 'C' * (self % 500/100)
-    old_roman = old_roman + 'L' * (self % 100/50)
-    old_roman = old_roman + 'X' * (self % 50/10)
-    old_roman = old_roman + 'V' * (self % 10/5)
-    old_roman = old_roman + 'I' * (self % 5/1)
+  def to_roman
 
-    old_roman
-  end
-=begin
+    raise 'Must use positive integer' if self <= 0
+
     roman = ''
 
-    roman = roman + 'M' * (self % 10000/1000)
+    roman << 'M' * (self / 1000)
+    roman << 'D' * (self % 1000/500)
+    roman << 'C' * (self % 500/100)
+    roman << 'L' * (self % 100/50)
+    roman << 'X' * (self % 50/10)
+    roman << 'V' * (self % 10/5)
+    roman << 'I' * (self % 5/1)
 
-    hundreds = self % 1000/100
-    if  hundreds == 9
-      roman = roman + 'CM'
-    elsif hundreds == 4
-      roman = roman + 'CD'
-    else
-      roman = roman + 'D' * (self % 1000/500)
-      roman = roman + 'C' * (self % 500/100)
-    end
-
-    tens = self % 100/10
-    if tens == 9
-      roman = roman + 'XC'
-    elsif tens == 4
-      roman = roman + 'XL'
-    else
-      roman = roman + 'L' * (self % 100/50)
-      roman = roman + 'X' * (self % 50/10)
-    end
-
-    ones = self % 10/1
-    if ones == 9
-      roman = roman + 'IX'
-    elsif ones == 4
-      roman = roman + 'IV'
-    else
-      roman = roman + 'V' * (self % 10/5)
-      roman = roman + 'I' * (self % 5/1)
-    end
+    roman
   end
-=end
 end
 
 
 puts [1,2,3,4,5,6,7,8,9].shuffle
-puts 5.fractorial
-puts 123.old_roman_numeral
+puts 5.factorial
+puts 123.to_roman

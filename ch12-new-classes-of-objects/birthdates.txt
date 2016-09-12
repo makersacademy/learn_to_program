@@ -1,0 +1,6 @@
+birth_dates['The King of Spain'] = 'Jan 5, 1938'
+birth_dates['Francois Figgins'] = 'Feb 9, 1921'
+birth_dates['Jebediah Gremble'] = 'Dec 30, 1999'
+birth_dates['Sally Brule'] = 'May 13, 1979'
+birth_dates['Barley Mussel'] = 'Oct 28, 1962'
+birth_dates['Anne Boleyn'] = 'July 25, 1500'

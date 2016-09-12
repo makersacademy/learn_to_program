@@ -1,1 +1,1 @@
-# your code here
+puts Time.gm(1987, 7, 21, 8, 30, 00) + 1000000000

@@ -28,5 +28,5 @@ def recursive_sort unsorted_array, sorted_array
 end
 
 puts sort ["avada", "kedavra", "black", "sirius", "harry"]
-puts sort ["A","feel", "can", "like", "can","singing"]
+puts sort ["a","feel", "can", "like", "can","singing"]
 

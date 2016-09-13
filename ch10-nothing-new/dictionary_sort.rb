@@ -6,18 +6,13 @@ end
 def recursive_sort unsorted_array, sorted_array
     j = 1
     
-    smallest = unsorted_array[0].to_s.downcase
+    smallest_index = 0
     
     until unsorted_array.length == 0
-        
-        smallest_index = 0
-        
+
         # find smallest in unsorted_array
         while j < unsorted_array.length
-            if unsorted_array[j].to_s.downcase < smallest
-                smallest = unsorted_array[j].to_s.downcase
-                smallest_index = j
-            end
+            smallest_index = j if unsorted_array[j].to_s.downcase < unsorted_array[smallest_index].to_s.downcase
             j += 1
         end
         
@@ -33,3 +28,4 @@ def recursive_sort unsorted_array, sorted_array
 end
 
 puts dictionary_sort ["avada", "Kedavra", "black", "SirIUs", "harry"]
+puts dictionary_sort ["A","feel", "can", "like", "can","singing"]

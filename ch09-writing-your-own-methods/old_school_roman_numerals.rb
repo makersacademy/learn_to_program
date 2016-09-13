@@ -46,10 +46,3 @@ def old_roman_numeral num
   puts numberMs + numberDs + numberCs + numberLs + numberXs + numberVs + numberIs
 
 end
-
-old_roman_numeral 1759
-old_roman_numeral 3000
-old_roman_numeral 520
-old_roman_numeral 3621
-old_roman_numeral 860
-old_roman_numeral 16

@@ -43,6 +43,6 @@ def old_roman_numeral num
   numberVs = "V" * ((num % 10) / 5)
   numberIs = "I" * ((num % 5) / 1)
 
-  puts numberMs + numberDs + numberCs + numberLs + numberXs + numberVs + numberIs
+  return numberMs + numberDs + numberCs + numberLs + numberXs + numberVs + numberIs
 
 end

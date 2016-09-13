@@ -17,6 +17,10 @@ def shuffle arr
   end
   shuffled << left[i] if i < left.length # for case when arr.length is odd
   
+  #move the first element to the end
+  shuffled << shuffled[0]
+  shuffled.delete_at(0)
+  
   return shuffled
   
 end

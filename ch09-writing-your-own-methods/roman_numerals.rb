@@ -36,7 +36,7 @@ def roman_numeral num
   elsif number10s == 4
     result = result + "XL"
   else
-    result = result + "L" * numberDs
+    result = result + "L" * numberLs
     result = result + "X" * numberXs
   end
 

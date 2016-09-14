@@ -15,5 +15,3 @@ def old_roman_numeral num
   r += 'I' * num
   r
 end
-
-puts old_roman_numeral 1549

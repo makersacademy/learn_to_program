@@ -35,4 +35,4 @@ def roman_numeral num
   roman
 end
 
-# puts(roman_numeral(1999))
+ puts(roman_numeral(1999))

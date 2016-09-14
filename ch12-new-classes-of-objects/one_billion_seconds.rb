@@ -1,1 +1,1 @@
-puts(Time.local(1993, 7, 1) + 10**9)
+puts Time.local(1993, 7, 1) + 10**9

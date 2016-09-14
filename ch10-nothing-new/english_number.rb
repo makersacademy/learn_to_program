@@ -66,7 +66,7 @@ def english_number number
     end
 
     if left > 0
-      num_string = num_string + " "
+      num_string = num_string + "-"
     end
   end
 
@@ -84,6 +84,7 @@ end
 # puts english_number 937234827364876238423423487686234
 # puts english_number 234987234982398798423
 # puts english_number 23432
-# puts english_number 234
-# puts english_number 3487876879872340983495768762340834876827634234328745768762348768736458983745435
+puts english_number 99
+puts english_number 234
+puts english_number 109238745102938560129834709285360238475982374561034
 # puts english_number 9898176572634765762999987987

@@ -1,7 +1,7 @@
 def dictionary_sort arr, sorted=[]
   a = arr[0]
   arr.each do |i|
-    if i <= a
+    if i.downcase <= a.downcase
       a = i
     end
   end

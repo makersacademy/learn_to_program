@@ -4,7 +4,7 @@ describe 'ask' do
     stub(:puts).with('Please answer "yes" or "no".')
     stub(:gets).and_return 'yes'
     allow_any_instance_of(Kernel).to receive(:gets).and_return 'yes'
-    require './ch09-writing-your-own-methods/ask.rb'
+    require '../../ch09-writing-your-own-methods/ask.rb'
   end
   it 'returns true when you say yes' do
     expect(ask('anything')).to be true

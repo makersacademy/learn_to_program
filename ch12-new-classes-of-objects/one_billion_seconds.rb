@@ -1,1 +1,1 @@
-# your code here
+puts Time.local(1993, 7, 1) + 10**9

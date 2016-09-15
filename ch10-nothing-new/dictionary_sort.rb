@@ -9,6 +9,7 @@ def dictionary_sort arr, sorted=[]
   sorted << a
   if arr.length > 0
     dictionary_sort arr, sorted
+  else
+    return sorted
   end
-  sorted
 end

@@ -43,7 +43,7 @@ class OrangeTree
           if @age > 5
               make_fruit
           end
-          puts "This year your tree grew to #{@h.round(1)}m tall, and produced #{@orange_count.round} oranges."
+          puts 'This year your tree grew to #{@h.round(1)}m tall, and produced #{@orange_count.round} oranges.'
       end
   end
   
@@ -67,9 +67,9 @@ class OrangeTree
       return 'A dead tree has nothing to pick. :(' if @age >= 25
       if @orange_count > 0
         @orange_count -= 1
-        puts "Mmmmmmmmm. Delicious."
+        puts 'Mmmmmmmmm. Delicious.'
       else
-        puts "No oranges. Sadness. :("
+        puts 'No oranges. Sadness. :('
       end
   end
   
@@ -80,7 +80,7 @@ class OrangeTree
   end
   
   def death
-      return "Oh, no! The tree is too old, and has died. :(" if @age == 25
+      return 'Oh, no! The tree is too old, and has died. :(' if @age == 25
       return 'A year later, the tree is still dead. :('
   end
   

@@ -30,5 +30,3 @@ def roman_to_integer roman
   end
   num
 end
-
-['i','iii','iv','v','vii','ix','x'].each{ |n| roman_to_integer n}

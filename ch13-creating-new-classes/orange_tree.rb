@@ -23,7 +23,7 @@ class OrangeTree
           if @age > 5
               make_fruit
           end
-          'This year your tree grew to ' + height + 'm tall, and produced ' + count_the_oranges + ' oranges.'
+          'This year your tree grew to ' + height.to_s + 'm tall, and produced ' + count_the_oranges.to_s + ' oranges.'
       end
   end
   

@@ -2,9 +2,9 @@ $level = 0
 
 def better_log desc, &block
  puts "#{' '*$level}Beginning \"#{desc}\"..."
- $level += 2
+ $level += 1
  result = block.call
- $level -= 2
+ $level -= 1
  puts "#{' '*$level}...\"#{desc}\" finished, returning: #{result}"
 end
 

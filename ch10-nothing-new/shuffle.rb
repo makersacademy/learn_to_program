@@ -1,25 +1,8 @@
-def shuffle arr
-  shuf = []
-  while arr.length > 0
-  
-  curr_index = 0
-  new_arr = []
-  
-  arr.each do |item|
-      if curr_index == rand_index
-          shuf.push item
-      else
-          new_arr.push item
-      end 
-      
-      curr_index = curr_index + 1
-  end
-  
-  arr = new_arr
-  end
-  
-  shuf
-  end
-  
-  puts(shuffle([1,2,3,4,5,6,7,8,9]))
-  
+meeshyep:~/workspace/Projects/learn_to_program/ch10-nothing-new (master) $ irb
+2.3.0 :001 > def shuffle arr
+2.3.0 :002?>   arr.sort_by{rand}
+2.3.0 :003?>   end
+ => :shuffle 
+2.3.0 :004 > p(shuffle([1,2,3,4,5,6,7,8,9,0]))
+[9, 0, 6, 8, 4, 3, 2, 1, 7, 5]
+ => [9, 0, 6, 8, 4, 3, 2, 1, 7, 5] 

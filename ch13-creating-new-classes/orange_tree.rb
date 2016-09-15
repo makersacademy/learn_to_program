@@ -13,10 +13,6 @@ class OrangeTree
       @orange_count = 0
   end
   
-  def height
-      return @h
-  end
-  
   def one_year_passes
       @age +=1
       @orange_count = 0 #just to make sure all oranges fell off
@@ -35,7 +31,7 @@ class OrangeTree
       if @age >= 25
         puts 'A dead tree has no oranges. :('
       else
-        puts @orange_count.round
+        @orange_count.round
       end
   end
   
@@ -43,7 +39,7 @@ class OrangeTree
       if @age >= 25
           puts 'A dead tree is not very tall. :('
       else
-        puts @h.round(1)
+        @h.round(1)
       end
   end
   

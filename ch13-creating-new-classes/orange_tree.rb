@@ -17,7 +17,7 @@ class OrangeTree
       @age +=1
       @orange_count = 0 #just to make sure all oranges fell off
       if @age > 25
-          puts death
+          death
       else
           grow
           if @age > 5
@@ -29,7 +29,7 @@ class OrangeTree
   
   def count_the_oranges
       if @age > 25
-        puts 'A dead tree has no oranges. :('
+        'A dead tree has no oranges. :('
       else
         @orange_count.round
       end
@@ -37,7 +37,7 @@ class OrangeTree
   
   def height
       if @age > 25
-          puts 'A dead tree is not very tall. :('
+          'A dead tree is not very tall. :('
       else
         @h.round(1)
       end
@@ -47,9 +47,9 @@ class OrangeTree
       return 'A dead tree has nothing to pick. :(' if @age > 25
       if @orange_count > 0
         @orange_count -= 1
-        puts 'Mmmmmmmmm. Delicious.'
+        'Mmmmmmmmm. Delicious.'
       else
-        puts 'No oranges. Sadness. :('
+        'No oranges. Sadness. :('
       end
   end
   
@@ -60,8 +60,11 @@ class OrangeTree
   end
   
   def death
-      return'Oh, no! The tree is too old, and has died. :(' if @age == 25
-      return 'A year later, the tree is still dead. :('
+      if @age == 26
+        'Oh, no! The tree is too old, and has died. :('
+      else
+        'A year later, the tree is still dead. :('
+      end
   end
   
   def make_fruit
@@ -70,9 +73,7 @@ class OrangeTree
       
 end
 
-=begin
 tree = OrangeTree.new
 28.times do
       puts tree.one_year_passes
 end
-=end

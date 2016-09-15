@@ -1,6 +1,5 @@
 $PROFILING_ON = false
 
-
 def profile block_description, &block
   if $PROFILING_ON
     start_time = Time.new

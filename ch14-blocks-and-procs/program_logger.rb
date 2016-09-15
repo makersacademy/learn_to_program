@@ -1,6 +1,6 @@
 def program_log desc, &block
- puts "Beginning #{desc}..."
- puts "...#{desc} finished, returning: #{block.call}"
+ puts "Beginning \"#{desc}\"..."
+ puts "...\"#{desc}\" finished, returning: #{block.call}"
 end
 
 program_log 'outer block' do 

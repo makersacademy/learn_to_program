@@ -67,9 +67,9 @@ def roman_to_integer roman
   
 end
 
-puts roman_to_integer 'I'         #1
-puts roman_to_integer 'III'       #3
-puts roman_to_integer 'IV'        #4
+puts roman_to_integer 'i'         #1
+puts roman_to_integer 'iiI'       #3
+puts roman_to_integer 'Iv'        #4
 puts roman_to_integer 'V'         #5
 puts roman_to_integer 'VIII'      #8
 puts roman_to_integer 'XXVI'      #26
@@ -78,4 +78,5 @@ puts roman_to_integer 'CXCIX'     #199
 puts roman_to_integer 'DCLXXXII'  #682
 puts roman_to_integer 'MMCMXLI'   #2941
 puts roman_to_integer 'MMMX'      #3010
-puts roman_to_integer 'babiemc'
+puts roman_to_integer 'mcmxcix'   #1999
+puts roman_to_integer 'CCCLXV'    #365

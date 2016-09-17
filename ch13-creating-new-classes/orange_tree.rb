@@ -15,18 +15,19 @@ class OrangeTree
     @age_of_death = 25
     @orange_count = 0
 
-    puts "Your tree has been planted."
+    #puts "Your tree has been planted."
   end
 
   def height
-    puts "Your tree is currently #{(@height = @age * @growth_rate).round(2)}m in height."
+    @height = @age * @growth_rate
+    #puts "Your tree is currently #{(@height = @age * @growth_rate).round(2)}m in height."
   end
 
   def one_year_passes
     @age += 1
-    puts "Your tree is now #{@age}"
+    #puts "Your tree is now #{@age}"
     if @age == 25
-      puts "Ah I'm sorry, your tree just died. But it lived till it was 25 and had a good life."
+      #puts "Ah I'm sorry, your tree just died. But it lived till it was 25 and had a good life."
       exit
     end
     puts
@@ -35,20 +36,20 @@ class OrangeTree
   def count_the_oranges
     if @age < @age_first_fruit
       @orange_count
-      puts "Your tree has no oranges."
+      #puts "Your tree has no oranges."
     else
       @orange_count = (@height * rand(15..25)).to_i
-      puts "Your tree has #{@orange_count} oranges."
+      #puts "Your tree has #{@orange_count} oranges."
     end
   end
 
   def pick_an_orange
     if @orange_count > 0
-      puts "Mmm you've picked an orange. How yummy - it's very juicy."
+      #puts "Mmm you've picked an orange. How yummy - it's very juicy."
       @orange_count -= 1
-      puts "You tree now has #{@orange_count} oranges left."
-    else
-      "You can't pick any oranges, as there aren't any I'm afraid. Try again in a year or so."
+      #puts "You tree now has #{@orange_count} oranges left."
+    #else
+    #  "You can't pick any oranges, as there aren't any I'm afraid. Try again in a year or so."
     end
   end
 

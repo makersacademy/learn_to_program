@@ -18,6 +18,27 @@ def recursive_shuffle original_array, shuffled_array
   # Insert it in a random place in the shuffled array
   shuffled_array.insert(rand(shuffled_array.length+1), randomWord)
 
-  # Call the method again unti
+  # Call the method again until all the elements have been shuffled
   recursive_shuffle original_array, shuffled_array
 end
+
+
+#def shuffle arr # Chris Pine's shuffle method
+# shuf = []
+# while arr.length > 0
+#   rand_index = rand(arr.length)
+#   curr_index = 0
+#   new_arr = []
+#
+#   arr.each do |item|
+#     if curr_index == rand_index
+#       shuf.push item
+#     else
+#       new_arr.push item
+#     end
+#   curr_index += 1
+#   end
+#   arr = new_arr
+# end
+# shuf
+#end

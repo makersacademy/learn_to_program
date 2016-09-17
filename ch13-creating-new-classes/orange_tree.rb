@@ -19,7 +19,7 @@ class OrangeTree
   end
 
   def height
-    @height = @age * @growth_rate
+    return @height = @age * @growth_rate
     #puts "Your tree is currently #{(@height = @age * @growth_rate).round(2)}m in height."
   end
 
@@ -35,10 +35,10 @@ class OrangeTree
 
   def count_the_oranges
     if @age < @age_first_fruit
-      @orange_count
+      return @orange_count
       #puts "Your tree has no oranges."
     else
-      @orange_count = (@height * rand(15..25)).to_i
+      return @orange_count = (@height * rand(15..25)).to_i
       #puts "Your tree has #{@orange_count} oranges."
     end
   end

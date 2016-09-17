@@ -16,9 +16,9 @@ def music_shuffle filenames
         shuf.push(filenames[l_idx])
         l_idx = l_idx + 1
       end
-  end
+    end
 
-  filenames = shuf
+    filenames = shuf
   end
 
   arr = []

@@ -29,7 +29,7 @@ class OrangeTree
   def one_year_passes
     @age += 1
     if @age < 25
-      puts "This year your tree grew to #{self.height}m tall, and produced #{self.count_the_oranges} oranges."
+      puts "This year your tree grew to #{self.height} tall, and produced #{self.count_the_oranges} oranges."
     elsif @age == 25
       @alive = false
       puts "Oh, no! The tree is too old, and has died. :("

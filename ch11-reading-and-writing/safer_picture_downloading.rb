@@ -3,9 +3,11 @@
 # Using a picture folder as a tester
 # I'LL GET MY YAML on and  them to the test file.
 # Just for my own convenience, I'll go there now.
-Dir.chdir['Users/User/Documents/pictureTest']
+# Changing into the folder where we wish to copy the files.
+Dir.chdir '/Users/User/Documents/pictureTest'
+
 #  First we find all of the pictures to be moved.
-pic_names = Dir['Users/User/Documents/Pictures/*.jpg']
+pic_names = Dir['/User/Documents/Pictures/*.jpg']
 
 puts 'What would you like to call this batch?'
 batch_name = gets.chomp

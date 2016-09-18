@@ -127,10 +127,10 @@ class OrangeTree
   end
 
   def pick_an_orange
-    if @orange_count > 0
-      @orange_count -= 1
-    elsif @alive == false
+    if @alive == false
       "A dead tree has nothing to pick. :("
+    elsif @orange_count > 0
+      @orange_count -= 1
     end
   end
 

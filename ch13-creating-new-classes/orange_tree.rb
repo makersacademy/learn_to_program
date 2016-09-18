@@ -4,7 +4,7 @@
 # starting in its sixth year have it produce oranges at a rate of (height * 15 - 25) per year.
 # have the tree die after 25 years.
 # check out the rspec spec/ch13/orange_tree_spec.rb to see what strings we're looking for in the responses.
-
+=begin
 class OrangeTree
 
   def initialize
@@ -36,16 +36,16 @@ class OrangeTree
       if @height > 10.1
         # tree dies
         @alive = false
-        puts 'Oh, no! The tree is too old, and has died. :('
+        'Oh, no! The tree is too old, and has died. :('
       elsif @height > 2
         # new oranges grow
         @orange_count = (@height * 15 - 25).to_i
-        puts "This year your tree grew to #{@height.round(1)}m tall, and produced #{@orange_count} oranges."
+        "This year your tree grew to #{@height.round(1)}m tall, and produced #{@orange_count} oranges."
       else
-        puts "This year your tree grew to #{@height.round(1)}m tall, but is still too young to bear fruit."
+        "This year your tree grew to #{@height.round(1)}m tall, but is still too young to bear fruit."
       end
     else
-      puts 'A year later, the tree is still dead. :('
+      'A year later, the tree is still dead. :('
     end
   end
 
@@ -53,16 +53,16 @@ class OrangeTree
     if @alive
       if @orange_count > 0
         @orange_count = @orange_count - 1
-        puts 'You pick a juicy, delicious orange!'
+        'You pick a juicy, delicious orange!'
       else
-        puts 'You search every branch, but find no oranges.'
+        'You search every branch, but find no oranges.'
       end
     else
-      puts 'A dead tree has nothing to pick. :('
+      'A dead tree has nothing to pick. :('
     end
    end
   end
-
+=end
 =begin
 tree = OrangeTree.new
 23.times do
@@ -82,7 +82,7 @@ tree.count_the_oranges
 tree.pick_an_orange
 =end
 
-=begin
+
 class OrangeTree
 
   def initialize
@@ -97,7 +97,7 @@ class OrangeTree
 
   def height
     if @alive == false
-      puts "A dead tree is not very tall."
+      "A dead tree is not very tall."
     else
       @height
     end
@@ -107,12 +107,12 @@ class OrangeTree
     @age += 1
     if @age < @age_of_death
       @height = (@age * @growth_rate).round(2)
-      puts "This year your tree grew to #{self.height}m tall, and produced #{self.count_the_oranges} oranges."
+      "This year your tree grew to #{self.height}m tall, and produced #{self.count_the_oranges} oranges."
     elsif @age == @age_of_death
       @alive = false
-      puts "Oh, no! The tree is too old, and has died. :("
+      "Oh, no! The tree is too old, and has died. :("
     elsif @age > @age_of_death
-      puts "A year later, the tree is still dead. :("
+      "A year later, the tree is still dead. :("
     end
   end
 
@@ -120,7 +120,7 @@ class OrangeTree
     if @age < @age_first_fruit
       @orange_count
     elsif @alive == false
-      puts "A dead tree has no oranges. :("
+      "A dead tree has no oranges. :("
     else
       @orange_count = (@height * 15 - 25).to_i
     end
@@ -130,9 +130,8 @@ class OrangeTree
     if @orange_count > 0
       @orange_count -= 1
     elsif @alive == false
-      puts "A dead tree has nothing to pick. :("
+      "A dead tree has nothing to pick. :("
     end
   end
 
 end
-=end

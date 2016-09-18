@@ -97,7 +97,7 @@ class OrangeTree
 
   def height
     if @alive == false
-      "A dead tree is not very tall."
+      "A dead tree is not very tall. :("
     else
       @height
     end

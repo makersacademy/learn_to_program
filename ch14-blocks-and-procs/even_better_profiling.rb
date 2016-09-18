@@ -1,6 +1,6 @@
 def profile block_description, &block
 
-  profiling_on = false
+  profiling_on = true
 
   if profiling_on
     start_time = Time.new
@@ -10,7 +10,7 @@ def profile block_description, &block
   else
     block.call
   end
-  
+
 end
 
 profile '25000 doublings' do

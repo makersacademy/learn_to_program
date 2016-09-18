@@ -12,7 +12,7 @@ class OrangeTree
     @height = 0
     @growth_rate = 0.4
     @age_first_fruit = 6
-    @age_of_death = 25
+    @age_of_death = 26
     @orange_count = 0
     @alive = true
   end
@@ -28,12 +28,12 @@ class OrangeTree
 
   def one_year_passes
     @age += 1
-    if @age < 25
+    if @age < @age_of_death
       puts "This year your tree grew to #{self.height} tall, and produced #{self.count_the_oranges} oranges."
-    elsif @age == 25
+    elsif @age == @age_of_death
       @alive = false
       puts "Oh, no! The tree is too old, and has died. :("
-    elsif @age > 25
+    elsif @age > @age_of_death
       puts "A year later, the tree is still dead. :("
     end
   end

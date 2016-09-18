@@ -18,10 +18,13 @@ pic_names.each do |name|
     "#{batch_name}#{pic_number}.jpg"
   end
 
-  File.rename name, new_name
-  #  Finally, we increment the counter.
-  pic_number = pic_number + 1
-end
+  if File.exist?(new_name)
+    exit
+  else
+    File.rename name, new_name
+    #  Finally, we increment the counter.
+    pic_number = pic_number + 1
+  end
 
 puts # This is so we aren't on progress bar line.
 puts 'Done, cutie!'

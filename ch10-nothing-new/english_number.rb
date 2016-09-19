@@ -29,13 +29,27 @@ def english_number number
     #  write and left...get it?  :)
 
   left = number
+  write = left/1000
+  number = left - write*1000 # Subtract off those thousands.
+
+  if write > 0
+    # Now here's the recursion:
+    thousands = english_number write
+    num_string = num_string + "#{thousands} thousand"
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+
+
+  left = number
   write = left/100 # How many hundreds left?
   left = left - write*100 # Subtract off those hundreds.
 
   if write > 0
     # Now here's the recursion:
     hundreds = english_number write
-    num_string = num_string + hundreds + ' hundred'
+    num_string = num_string + "#{hundreds} hundred"
     if left > 0
       #  So we don't write 'two hundredfifty-one'...
       num_string = num_string + ' '
@@ -78,8 +92,26 @@ def english_number number
 
   #  Now we just return "num_string"...
   #num_string
-  puts num_string
+  num_string
 end
 
-puts 'number?'
-english_number gets.chomp.to_i
+puts english_number(  9)
+puts english_number( 10)
+puts english_number( 11)
+puts english_number( 17)
+puts english_number( 32)
+puts english_number( 88)
+puts english_number( 99)
+puts english_number(100)
+puts english_number(101)
+puts english_number(234)
+puts english_number(3211)
+puts english_number(999999)
+
+response = 'stay'
+while response != 'exit'
+  puts 'number?'
+  puts(english_number(gets.chomp.to_i))
+  puts 'Type exit to leave. Else press any other key.'
+  response = gets.chomp.downcase
+end

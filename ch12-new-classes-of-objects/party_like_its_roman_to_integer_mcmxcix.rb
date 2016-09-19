@@ -10,6 +10,7 @@ def roman_to_integer roman
 
   roman_valid = ['M','D','C','L','X','V','I']
 
+  roman.upcase!
   num_val = Array.new
   to_convert = roman.split(//)
 

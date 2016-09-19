@@ -29,6 +29,32 @@ def english_number number
     #  write and left...get it?  :)
 
   left = number
+  write = left/1000000000
+  number = left - write*1000000000 # Subtract off those thousands.
+
+  if write > 0
+    # Now here's the recursion:
+    billions = english_number write
+    num_string = num_string + "#{billions} billion"
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+
+  left = number
+  write = left/1000000
+  number = left - write*1000000 # Subtract off those thousands.
+
+  if write > 0
+    # Now here's the recursion:
+    millions = english_number write
+    num_string = num_string + "#{millions} million"
+    if left > 0
+      num_string = num_string + ' '
+    end
+  end
+
+  left = number
   write = left/1000
   number = left - write*1000 # Subtract off those thousands.
 

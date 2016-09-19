@@ -134,10 +134,10 @@ puts english_number(234)
 puts english_number(3211)
 puts english_number(999999)
 
-response = 'stay'
-while response != 'exit'
-  puts 'number?'
-  puts(english_number(gets.chomp.to_i))
-  puts 'Type exit to leave. Else press any other key.'
-  response = gets.chomp.downcase
-end
+#response = 'stay'
+#while response != 'exit'
+#  puts 'number?'
+#  puts(english_number(gets.chomp.to_i))
+#  puts 'Type exit to leave. Else press any other key.'
+#  response = gets.chomp.downcase
+#end

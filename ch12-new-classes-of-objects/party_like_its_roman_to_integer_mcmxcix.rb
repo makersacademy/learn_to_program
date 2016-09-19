@@ -8,8 +8,17 @@ def roman_to_integer roman
   roman_lookup['V'] = 5
   roman_lookup['I'] = 1
 
+  roman_valid = ['M','D','C','L','X','V','I']
+
   num_val = Array.new
   to_convert = roman.split(//)
+
+  to_convert.each do |check|
+    if roman_valid.include?(check) == false
+      puts 'Not a valid Roman Numeral'
+      exit
+    end
+  end
 
   #converting to numberical values
   to_convert.each do |sym|
@@ -41,3 +50,4 @@ end
 #puts roman_to_integer('XL')
 #puts roman_to_integer('XCIV')
 #puts roman_to_integer('MMCMXCIX')
+puts roman_to_integer('MMCMXCITX')

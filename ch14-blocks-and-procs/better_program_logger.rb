@@ -5,6 +5,7 @@ def log desc, &block
   puts prefix + "Beginning " + desc + "..."
   $nest_depth += 1
   result = block.call
+  $nest_depth -= 1
   puts prefix + "..." + desc + " finished, returning: " + result.to_s
 
 end

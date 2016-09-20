@@ -8,9 +8,11 @@ def roman_to_integer roman
   roman_lookup['V'] = 5
   roman_lookup['I'] = 1
 
+  temp = roman
+  roman = temp.upcase
+
   roman_valid = ['M','D','C','L','X','V','I']
 
-  roman.upcase!
   num_val = Array.new
   to_convert = roman.split(//)
 
@@ -33,7 +35,7 @@ def roman_to_integer roman
       num_val.push(roman_lookup[sym])
     end
   end
-num_val.reduce(:+)
+(num_val.reduce(:+))
 end
 
 #puts 'Simple'
@@ -51,4 +53,4 @@ end
 #puts roman_to_integer('XL')
 #puts roman_to_integer('XCIV')
 #puts roman_to_integer('MMCMXCIX')
-puts roman_to_integer('MMCMXCITX')
+#puts roman_to_integer('MMCMXCITX')

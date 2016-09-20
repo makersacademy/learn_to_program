@@ -1,7 +1,7 @@
 def log desc, &block
-  puts "Beginning #{desc.inspect}..."
+  puts "Beginning \"#{desc}\"..."
   output = block.call
-  puts "...#{desc.inspect} finished, returning: " + output.to_s
+  puts "...\"#{desc}\" finished, returning: #{output}"
 end
 
 log 'outer block' do

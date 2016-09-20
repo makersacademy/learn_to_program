@@ -1,6 +1,6 @@
 def profile block_description, &block
 
-  profle_status = false #change to true to turn on profiling
+  profle_status = true #change to true to turn on profiling
 
   if profle_status
     start_time = Time.new

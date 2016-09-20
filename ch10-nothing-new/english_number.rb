@@ -28,6 +28,192 @@ def english_number number
     #          writing out right now.
     #  write and left...get it?  :)
 
+    # one hundred nine quindecillion
+    left = number
+    write = left/10**48
+    number = left - write*10**48 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      quindecillions = english_number write
+      num_string = num_string + "#{quindecillions} quindecillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #two hundred thirty-eight quattuordecillion
+    left = number
+    write = left/10**45
+    number = left - write*10**45 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      quattuordecillions = english_number write
+      num_string = num_string + "#{quattuordecillions} quattuordecillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #seven hundred forty-five tredecillion
+    left = number
+    write = left/10**42
+    number = left - write*10**42 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      tredecillions = english_number write
+      num_string = num_string + "#{tredecillions} tredecillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #one hundred two duodecillion
+    left = number
+    write = left/10**39
+    number = left - write*10**39 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      duodecillions = english_number write
+      num_string = num_string + "#{duodecillions} duodecillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #nine hundred thirty-eight undecillion
+    left = number
+    write = left/10**36
+    number = left - write*10**36 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      undecillions = english_number write
+      num_string = num_string + "#{undecillions} undecillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #five hundred sixty decillion
+    left = number
+    write = left/10**33
+    number = left - write*10**33 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      decillions = english_number write
+      num_string = num_string + "#{decillions} decillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #one hundred twenty-nine nonillion
+    left = number
+    write = left/10**30
+    number = left - write*10**30 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      nonillions = english_number write
+      num_string = num_string + "#{nonillions} nonillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #eight hundred thirty-four octillion
+    left = number
+    write = left/10**27
+    number = left - write*10**27 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      octillions = english_number write
+      num_string = num_string + "#{octillions} octillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #seven hundred nine septillion
+    left = number
+    write = left/10**24
+    number = left - write*10**24 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      septillions = english_number write
+      num_string = num_string + "#{septillions} septillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #two hundred eighty-five sextillion
+    left = number
+    write = left/10**21
+    number = left - write*10**21 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      sextillions = english_number write
+      num_string = num_string + "#{sextillions} sextillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #three hundred sixty quintillion
+    left = number
+    write = left/10**18
+    number = left - write*10**18 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      quintillions = english_number write
+      num_string = num_string + "#{quintillions} quintillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #two hundred thirty-eight quadrillion
+    left = number
+    write = left/10**15
+    number = left - write*10**15 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      quadrillions = english_number write
+      num_string = num_string + "#{quadrillions} quadrillion"
+      if left > 0
+        num_string = num_string + ' '
+      end
+    end
+
+    #four hundred seventy-five trillion
+    left = number
+    write = left/10**12
+    number = left - write*10**12 # Subtract off
+
+    if write > 0
+      # Now here's the recursion:
+      trillions = english_number write
+      num_string = num_string + "#{trillions} trillion"
+      if left > 0
+        if number != 0
+          num_string = num_string + ' '
+        end
+      end
+    end
+
+    #Billions
+
   left = number
   write = left/1000000000
   number = left - write*1000000000 # Subtract off those thousands.
@@ -133,6 +319,7 @@ puts english_number(101)
 puts english_number(234)
 puts english_number(3211)
 puts english_number(999999)
+puts english_number(1000000000000)
 
 #response = 'stay'
 #while response != 'exit'
@@ -141,3 +328,19 @@ puts english_number(999999)
 #  puts 'Type exit to leave. Else press any other key.'
 #  response = gets.chomp.downcase
 #end
+
+# 109238745102938560129834709285360238475982374561034 to
+# one hundred nine quindecillion
+#two hundred thirty-eight quattuordecillion
+#seven hundred forty-five tredecillion
+#one hundred two duodecillion
+#nine hundred thirty-eight undecillion
+#five hundred sixty decillion
+#one hundred twenty-nine nonillion
+#eight hundred thirty-four octillion
+#seven hundred nine septillion
+#two hundred eighty-five sextillion
+#three hundred sixty quintillion
+#two hundred thirty-eight quadrillion
+#four hundred seventy-five trillion
+#nine hundred eighty-two billion three hundred seventy-four million five hundred sixty-one thousand thirty-four

@@ -9,12 +9,12 @@ describe 'program logger' do
     expect(STDOUT).to receive(:puts).with '..."yet another block" finished, returning: I like Thai food!'
     expect(STDOUT).to receive(:puts).with '..."outer block" finished, returning: false'
 
-    program_log 'outer block' do
-      program_log 'some little block' do
+    log 'outer block' do
+      log 'some little block' do
         1**1 + 2**2
       end
 
-      program_log 'yet another block' do
+      log 'yet another block' do
         '!doof iahT ekil I'.reverse
       end
 

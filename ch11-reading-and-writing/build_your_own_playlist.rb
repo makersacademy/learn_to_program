@@ -1,4 +1,4 @@
-#I can't get this to work
+#I can't get this to work...
 #ref = https://github.com/makersacademy/pre_course/issues/639
 
 # using the shuffle method as defined above

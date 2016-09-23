@@ -10,28 +10,22 @@ class Dragon
         @name = name.capitalize
         puts "Your new Dragon's name is '#{@name}'."
     end
-    
     def name
         @name    
     end
-    
     def feed
         puts "You have just fed your pet dragon '#{@name}'." 
     end
-    
     def walk
         puts "You have just walked your pet dragon '#{@name}'." 
     end
-    
     def tickle
         puts "'#{@name}' is enjoying having his tummy tickled. \"Gneeearh, gneeearh, gneeearh\", he goes which is like purring but for dragons."
     end
-    
     def quit
         puts "'#{@name}' is mighty sad to see you go!"
         exit
     end
-    
 end
 
 puts "I've heard you got yourself a dragon pet. What's his name?"
@@ -42,7 +36,7 @@ puts "You can do the following with '#{petd.name}' the dragon: 'feed', 'walk', '
 puts "Enter one of these commands:"
 cmd = gets.chomp
 askagain = true
-while askagain == true
+while true   
     cmd.downcase!
     case cmd
         when "feed" 
@@ -56,22 +50,15 @@ while askagain == true
             cmd = ""
         when "quit" 
             petd.quit
-            #askagain = false
     else
         puts "That command is not recognised. Please enter a recognised command."
-        askagain = true
     end
     puts
     puts "What would you like to do now?"
     puts "You can do the following with '#{petd.name}' the dragon: 'feed', 'walk', 'tickle' or 'quit'."
     puts "Enter one of these commands:"
     cmd = gets.chomp
-    
 end    
-#puts petd.name
-
-#petd.dispatch "feed"
-#petd.dispatch "walk"
 
 
 

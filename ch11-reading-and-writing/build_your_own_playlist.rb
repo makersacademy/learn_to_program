@@ -1,18 +1,8 @@
-#I can't get this to work...
-#ref = https://github.com/makersacademy/pre_course/issues/639
-
-# using the shuffle method as defined above
-
-all_mp3s = (Dir["c:/**/*.mp3"]).shuffle
-
-#all_mp3s = Dir.entries("C:/Users/g/Desktop/Zim photos - move!/Johnny Clegg & Savuka").select {|f| !File.directory? f}
-
-=begin
-all_mp3s = 
-"C:\Users\g\Desktop\Zim photos - move!\Johnny Clegg & Savuka\In My African Dream\06 Dela.mp3
-C:\Users\g\Desktop\Zim photos - move!\Johnny Clegg & Savuka\In My African Dream\07 Siyayilanda.mp3"
-=end
-
+output_dir = 'D:/RUBY_TEST_DELETE/'
+Dir.chdir output_dir	#Working directory where the m3u file will be writtten to.
+										#If this is not specified the m3u file will be written to the directory where the program was run from.
+search_dir = "D:/RUBY_TEST_DELETE/**/*.mp3" #Where the mp3 files should be searched for.
+all_mp3s = (Dir[search_dir]).shuffle
 puts all_mp3s
 
 File.open 'playlist.m3u', 'w' do |f|
@@ -20,5 +10,5 @@ File.open 'playlist.m3u', 'w' do |f|
     f.write mp3+"\n"
   end
 end
-
-puts 'Done!'
+puts
+puts "A randomized list of songs found in \"#{search_dir}\" has been created in \"#{output_dir}\"."

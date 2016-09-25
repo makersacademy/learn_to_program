@@ -1,3 +1,17 @@
 def grandfather_clock &block
-  # your code here
+    hours = Time.new.hour
+    if hours <= 12
+        hours.times do
+            block.call
+        end
+    else
+        hours = hours - 12
+        hours.times do
+            block.call
+        end
+    end
+end
+
+grandfather_clock do
+    puts "DONG!"
 end

@@ -10,7 +10,7 @@ def music_shuffle filenames
 			if !temp1.include? item
 				temp1 << item 
 				break
-			end
+			end 
 		end
 	}
 	temp1.each{

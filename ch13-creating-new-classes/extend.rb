@@ -1,4 +1,4 @@
-class Array 
+class Array #need to come back to ths
   def shuffle
    random = [] #create an empty array to receive our items
   
@@ -38,3 +38,4 @@ end
 puts [1,2,3,4,5].shuffle
 puts 7.fact.roman.split('').shuffle
 puts 100.roman
+

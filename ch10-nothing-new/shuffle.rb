@@ -1,3 +1,4 @@
 def shuffle arr
   # your code here
-end
+  el_shuff = arr.shuffle(random: Random.new(100))
+  end

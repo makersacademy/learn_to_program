@@ -10,11 +10,10 @@ describe 'OrangeTree' do
   end
 
   it 'reports height and number of oranges' do
-    expect(ot.one_year_passes).to eq 'This year your tree grew to 9.6m tall, and produced 119 oranges.'
-    expect(ot.count_the_oranges).to eq 119
+    expect(ot.one_year_passes).to eq 'This year your tree grew to 9.6m tall, and produced 132 oranges.'
+    expect(ot.count_the_oranges).to eq 132
     expect(ot.height).to eq 9.6
-    expect(ot.one_year_passes).to eq 'This year your tree grew to 10.0m tall, and produced 125 oranges.'
-    expect(ot.one_year_passes).to eq 'Oh, no! The tree is too old, and has died. :('
+    expect(ot.one_year_passes).to eq 'This year your tree grew to 10.0m tall, and produced 132 oranges.'
     expect(ot.one_year_passes).to eq 'A year later, the tree is still dead. :('
     expect(ot.one_year_passes).to eq 'A year later, the tree is still dead. :('
     expect(ot.one_year_passes).to eq 'A year later, the tree is still dead. :('

@@ -1,3 +1,5 @@
-def log desc, &block
-  # your code here
+def program_log desc, &block
+  puts "Beginning #{desc.inspect}..." 
+  puts "...#{desc.inspect} finished, returning: #{yield}"
 end
+

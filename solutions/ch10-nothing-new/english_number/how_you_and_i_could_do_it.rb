@@ -52,26 +52,7 @@ def english_number number
   # "write" is the part we are
   # writing out right now.
   # write and left...get it? :)
-  left = number
-
-  while zillions.length > 0
-    zil_pair = zillions.pop
-    zil_name = zil_pair[0]
-    zil_base = 10 ** zil_pair[1]
-    write = left/zil_base # How many zillions left?
-    left = left - write*zil_base # Subtract off those zillions.
-
-    if write > 0
-      # Now here's the recursion:
-      prefix = english_number write
-      num_string = num_string + prefix + ' ' + zil_name
-
-      if left > 0
-        # So we don't write 'two billionfifty-one'...
-        num_string = num_string + ' '
-      end
-    end
-  end
+  
 
   write = left/10 # How many tens left?
   left = left - write*10 # Subtract off those tens.
@@ -113,18 +94,19 @@ def english_number number
   num_string
 end
 
-# puts english_number( 0)
-# puts english_number( 9)
-# puts english_number( 10)
-# puts english_number( 11)
-# puts english_number( 17)
-# puts english_number( 32)
-# puts english_number( 88)
-# puts english_number( 99)
-# puts english_number(100)
-# puts english_number(101)
-# puts english_number(234)
-# puts english_number(3211)
-# puts english_number(999999)
+puts english_number( 0)
+puts english_number( 9)
+puts english_number( 10)
+puts english_number( 11)
+
+puts english_number( 17)
+puts english_number( 32)
+puts english_number( 88)
+puts english_number( 99)
+puts english_number(100)
+puts english_number(101)
+puts english_number(234)
+puts english_number(3211)
+puts english_number(999999)
 # puts english_number(1000000000000)
 # puts english_number(109238745102938560129834709285360238475982374561034)

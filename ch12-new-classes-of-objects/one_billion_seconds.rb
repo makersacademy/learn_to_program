@@ -1,1 +1,1 @@
-# your code here
+puts Time.mktime(1993, 6, 25) + 1000000000

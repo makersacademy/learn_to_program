@@ -1,3 +1,4 @@
 def music_shuffle filenames
-  # your code here
+a = [*1.10]
+a.select {|el| el.even?}
 end

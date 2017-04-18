@@ -1,32 +1,42 @@
 def shuffle arr
-  shuf = []
+  shuf = []      # => []
 
-  while arr.length > 0
+  while arr.length > 0             # => true, true, true, true, true, true, true, true, true, false
     # Randomly pick one element of the array.
-    rand_index = rand(arr.length)
+    rand_index = rand(arr.length)  # => 6, 0, 6, 0, 0, 2, 1, 0, 0
 
     # Now go through each item in the array,
     # putting them all into new_arr except for the
     # randomly chosen one, which goes into shuf.
-    curr_index = 0
-    new_arr = []
+    curr_index = 0  # => 0, 0, 0, 0, 0, 0, 0, 0, 0
+    new_arr = []    # => [], [], [], [], [], [], [], [], []
 
-    arr.each do |item|
-      if curr_index == rand_index
-        shuf.push item
+    arr.each do |item|             # => [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 8, 9], [2, 3, 4, 5, 6, 8, 9], [2, 3, 4, 5, 6, 8], [3, 4, 5, 6, 8], [4, 5, 6, 8], [4, 5, 8], [4, 8], [8]
+      if curr_index == rand_index  # => false, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, false, false, false, false, false, true, false, false, false, false, false, false, true, false, false, true, false, true, false, true
+        shuf.push item             # => [7], [7, 1], [7, 1, 9], [7, 1, 9, 2], [7, 1, 9, 2, 3], [7, 1, 9, 2, 3, 6], [7, 1, 9, 2, 3, 6, 5], [7, 1, 9, 2, 3, 6, 5, 4], [7, 1, 9, 2, 3, 6, 5, 4, 8]
       else
-        new_arr.push item
-      end
+        new_arr.push item          # => [1], [1, 2], [1, 2, 3], [1, 2, 3, 4], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6, 8], [1, 2, 3, 4, 5, 6, 8, 9], [2], [2, 3], [2, 3, 4], [2, 3, 4, 5], [2, 3, 4, 5, 6], [2, 3, 4, 5, 6, 8], [2, 3, 4, 5, 6, 8, 9], [2], [2, 3], [2, 3, 4], [2, 3, 4, 5], [2, 3, 4, 5, 6], [2, 3, 4, 5, 6, 8], [3], [3, 4], [3, 4, 5], [3, 4, 5, 6], [3, 4, 5, 6, 8], [4], [4, 5], [4, 5, 6], [4, 5, 6, 8], [4], [4, 5], [4, 5, 8], [4], [4, 8], [8]
+      end                          # => [1], [1, 2], [1, 2, 3], [1, 2, 3, 4], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5, 6], [7], [1, 2, 3, 4, 5, 6, 8], [1, 2, 3, 4, 5, 6, 8, 9], [7, 1], [2], [2, 3], [2, 3, 4], [2, 3, 4, 5], [2, 3, 4, 5, 6], [2, 3, 4, 5, 6, 8], [2, 3, 4, 5, 6, 8, 9], [2], [2, 3], [2, 3, 4], [2, 3, 4, 5], [2, 3, 4, 5, 6], [2, 3, 4, 5, 6, 8], [7, 1, 9], [7, 1, 9, 2], [3], [3, 4], [3, 4, 5], [3, 4, 5, 6], [3, 4, 5, 6, 8], [7, 1, 9, 2, 3], [4], [4, 5], [4, 5, 6], [4, 5, 6, 8], [4], [4, 5], [7, 1, 9, 2, 3, 6], [4, 5, 8], [4], [7, 1, 9, 2, 3, 6, 5], [4, 8], [7, 1, 9, 2, 3, 6, 5, 4], [8], [7, 1, 9, 2, 3, 6, 5, 4, 8]
 
-      curr_index = curr_index + 1
-    end
+      curr_index = curr_index + 1  # => 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 1, 2, 3, 4, 1, 2, 3, 1, 2, 1
+    end                            # => [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 8, 9], [2, 3, 4, 5, 6, 8, 9], [2, 3, 4, 5, 6, 8], [3, 4, 5, 6, 8], [4, 5, 6, 8], [4, 5, 8], [4, 8], [8]
 
     # Replace the original array with the new,
     # smaller array.
-    arr = new_arr
-  end
+    arr = new_arr  # => [1, 2, 3, 4, 5, 6, 8, 9], [2, 3, 4, 5, 6, 8, 9], [2, 3, 4, 5, 6, 8], [3, 4, 5, 6, 8], [4, 5, 6, 8], [4, 5, 8], [4, 8], [8], []
+  end              # => nil
 
-  shuf
-end
+  shuf  # => [7, 1, 9, 2, 3, 6, 5, 4, 8]
+end     # => :shuffle
 
-# puts(shuffle([1,2,3,4,5,6,7,8,9]))
+puts(shuffle([1,2,3,4,5,6,7,8,9]))  # => nil
+
+# >> 7
+# >> 1
+# >> 9
+# >> 2
+# >> 3
+# >> 6
+# >> 5
+# >> 4
+# >> 8

@@ -1,3 +1,5 @@
 def shuffle arr
-  # your code here
+
+	arr.shuffle
+#alternatively it is possible to use arr.sort_by { rand }
 end

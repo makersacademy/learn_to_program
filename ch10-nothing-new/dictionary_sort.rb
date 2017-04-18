@@ -1,3 +1,7 @@
 def dictionary_sort arr
-  # your code here
+
+arr.sort_by(&:downcase)
+
 end
+
+#puts (dictionary_sort([ 'Can','by','zebra','Apple','octopus','BANANA' ]))

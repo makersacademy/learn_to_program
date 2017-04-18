@@ -1,3 +1,8 @@
 def shuffle arr
-  # your code here
+  arr1 = []
+  while arr != []
+    arr1 << arr[rand(arr.length)]
+    arr = arr - arr1
+  end
+  arr1
 end

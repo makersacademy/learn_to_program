@@ -1,4 +1,12 @@
+# Change to spec file made:
+# While completing the shuffle exercise, my code
+# would not pass this test, despite the same code 
+# passing on other peoples machines.  The error was
+# due to the "uninitialized constant Set" on line 16.
+# I there included "require 'set'" below to correct this.
+
 require './ch10-nothing-new/shuffle.rb'
+require 'set'
 
 describe 'shuffle' do
 

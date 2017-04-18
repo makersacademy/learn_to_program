@@ -1,3 +1,7 @@
 def grandfather_clock &block
-  # your code here
+  timer = (Time.new.hour +1) > 12 ? (Time.new.hour + 1) / 12 : (Time.new.hour)
+  timer.times do 
+    block.call
+  end
+  
 end

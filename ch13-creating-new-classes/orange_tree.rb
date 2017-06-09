@@ -7,5 +7,49 @@
 
 
 class OrangeTree
-  # your code here
+	def initialize
+		@height = 0
+		@age = 0
+		@orangeCount = 0
+		@live = true
+		puts "You orange tree is planted..."
+	end
+
+	def age
+		puts "Your tree is #{@age} years old..."	
+	end
+
+	def height
+		puts "Your tree is #{@height}"
+	end
+
+	def oneYearPasses
+	  #method, which, when called, ages the tree one year.
+	  if @age < 5
+	        @height += 0.4)
+	        @orangeCount = 0
+	        @age = @age + 1
+	  end
+	  puts "The orange tree is #{@age} years old..."
+	  if @age > 5
+	  	@orangeCount += (@height * 15 - 25)
+	  elsif @age ==25
+	  	@live = false
+	  	return "Your tree is dead..."
+	  end
+	end
+
+	def countTheOranges
+	  puts "You have #{@orangeCount} oranges on the tree..."
+	end
+
+	def pickAnOrange
+		if @orangeCount == 0
+		  return "There are no more oranges to pick this year!"
+		else
+		  	@orangeCount -= 1
+		  	puts "You picked an orange. It is delicious!"
+		  	puts "There are now #{@orangeCount} oranges left on the tree."
+		end 
+	end
 end

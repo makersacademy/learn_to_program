@@ -12,5 +12,5 @@ def old_roman_numeral num
             num = num % k
         end
     end
-  puts roman
+  return roman
 end

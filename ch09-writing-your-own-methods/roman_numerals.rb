@@ -17,4 +17,4 @@ def roman_numeral num
   puts roman
 end
 
-roman_numeral (gets.chomp)
+#roman_numeral (gets.chomp)

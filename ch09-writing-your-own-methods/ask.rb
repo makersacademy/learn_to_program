@@ -1,4 +1,5 @@
 def ask question
+    # your code here
     while true
         puts question
         reply = gets.chomp.downcase

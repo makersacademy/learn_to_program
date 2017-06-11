@@ -1,10 +1,20 @@
 def shuffle arr
   # your code here
-  size = arr.length
-  (size).downto(1) do |n|
-       index=rand(n)
-       # swap elements at index and the end
-       arr[index], arr[size-1] = arr[size-1],arr[index]
+  shuff = []
+  
+  while !arr.empty?
+    rand_index = rand(arr.length)
+    #curr_index = 0
+    new_arr = []
+    arr.length.times do |i|
+      if i == rand_index
+        shuff << arr[rand_index]
+      else
+        new_arr << arr[i]
+      end
     end
-    arr
+    arr = new_arr
+  end
+  
+  shuff
 end

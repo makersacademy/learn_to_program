@@ -106,3 +106,18 @@ write = left/1000000000000          # How many millions left to write out?
   # Now we just return "numString"...
   return numString
 end
+
+puts english_number(  0)
+puts english_number(  9)
+puts english_number( 10)
+puts english_number( 11)
+puts english_number( 17)
+puts english_number( 32)
+puts english_number( 88)
+puts english_number( 99)
+puts english_number(100)
+puts english_number(101)
+puts english_number(234)
+puts english_number(3211)
+puts english_number(999999)
+puts english_number(1000000000000)

@@ -43,73 +43,9 @@ if write > 0
   end
 end
 
-#### ------------> TRILLIONS
 =begin
 write = left/1000000000000          # How many millions left to write out?
   left  = left - write*1000000000000  # Subtract off those millions.
-
-if write > 0
-    # trillions
-    trillions  = english_number write
-    numString = numString + trillions + ' trillion'
- 
-    if left > 0
-      # So we don't write 'two hundredfifty-one'...
-      numString = numString + ' '
-    end
-  end
-
-#### ------------> BILLIONS
-
-write = left/1000000000          # How many millions left to write out?
-  left  = left - write*1000000000  # Subtract off those millions.
-
-if write > 0
-    # billions
-    billions  = english_number write
-    numString = numString + billions + ' billion'
- 
-    if left > 0
-      # So we don't write 'two hundredfifty-one'...
-      numString = numString + ' '
-    end
-  end
-
-#### ------------> MILLIONS
-  write = left/1000000          # How many millions left to write out?
-  left  = left - write*1000000  # Subtract off those millions.
-
-if write > 0
-    # millions
-    millions  = english_number write
-    numString = numString + millions + ' million'
- 
-    if left > 0
-      # So we don't write 'two hundredfifty-one'...
-      numString = numString + ' '
-    end
-  end
-
-#### ------------> THOUSANDS
-
-  write = left/1000          # How many thousands left to write out?
-  left  = left - write*1000  # Subtract off those thousands.
-
-if write > 0
-    # for thousands
-    hundreds  = english_number write
-    numString = numString + hundreds + ' thousand'
-    
-    if left > 0
-      # So we don't write 'two hundredfifty-one'...
-      numString = numString + ' '
-    end
-  end
-
-#### ------------> HUNDREDS
-
-  write = left/100          # How many hundreds left to write out?
-  left  = left - write*100  # Subtract off those hundreds.
 
   if write > 0
     # Now here's a really sly trick:
@@ -170,18 +106,3 @@ if write > 0
   # Now we just return "numString"...
   return numString
 end
-
-puts english_number(  0)
-puts english_number(  9)
-puts english_number( 10)
-puts english_number( 11)
-puts english_number( 17)
-puts english_number( 32)
-puts english_number( 88)
-puts english_number( 99)
-puts english_number(100)
-puts english_number(101)
-puts english_number(234)
-puts english_number(3211)
-puts english_number(999999)
-puts english_number(1000000000000)

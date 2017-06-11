@@ -16,14 +16,35 @@ def english_number number
                'sixty',   'seventy',   'eighty',   'ninety']
   teenagers = ['eleven',  'twelve',    'thirteen', 'fourteen', 'fifteen',
                'sixteen', 'seventeen', 'eighteen', 'nineteen']
+  nums = {'quindecillion'=>10**48, 'quattuordecillion'=>10**45, 'tredecillion'=>10**42, 'duodecillion'=>10**39, 'undecillion'=>10**36,
+  'decillion'=>10**33, 'nonillion'=>10**30, 'octillion'=>10**27, 'septillion'=>10**24, 'sextillion'=>10**21, 
+  'quintillion'=> 10**18, 'quadrillion'=> 10**15, 
+  'trillion'=> 10**12, 'billion'=> 10**9, 'million'=> 10**6, 'thousand'=> 10**3, 'hundred'=> 10**2 }
 
   # "left" is how much of the number we still have left to write out.
   # "write" is the part we are writing out right now.
   # write and left... get it?  :)
   left  = number
 
-#### ------------> TRILLIONS
+nums.each do |name,value|
+  #print name
+  write = left/value         # How many millions left to write out?
+  left  = left - write*value  # Subtract off those millions.
 
+if write > 0
+    # trillions
+    trillions  = english_number write
+    numString = numString + (english_number write) + " " + name.to_s
+ 
+    if left > 0
+      # So we don't write 'two hundredfifty-one'...
+      numString = numString + ' '
+    end
+  end
+end
+
+#### ------------> TRILLIONS
+=begin
 write = left/1000000000000          # How many millions left to write out?
   left  = left - write*1000000000000  # Subtract off those millions.
 
@@ -111,7 +132,7 @@ if write > 0
       numString = numString + ' '
     end
   end
-
+=end
 #### ------------> TENS
 
   write = left/10          # How many tens left to write out?

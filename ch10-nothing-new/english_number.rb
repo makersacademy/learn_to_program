@@ -1,4 +1,4 @@
-def englishNumber number
+def english_number number
   if number < 0  # No negative numbers.
     return 'Please enter a number that isn\'t negative.'
   end
@@ -147,7 +147,7 @@ if write > 0
   end
 
   # Now we just return "numString"...
-  numString
+  return numString
 end
 =begin
 puts englishNumber(  0)

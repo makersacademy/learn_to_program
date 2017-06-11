@@ -29,7 +29,7 @@ write = left/1000000000000          # How many millions left to write out?
 
 if write > 0
     # trillions
-    trillions  = englishNumber write
+    trillions  = english_number write
     numString = numString + trillions + ' trillion'
  
     if left > 0
@@ -45,7 +45,7 @@ write = left/1000000000          # How many millions left to write out?
 
 if write > 0
     # billions
-    billions  = englishNumber write
+    billions  = english_number write
     numString = numString + billions + ' billion'
  
     if left > 0
@@ -60,7 +60,7 @@ if write > 0
 
 if write > 0
     # millions
-    millions  = englishNumber write
+    millions  = english_number write
     numString = numString + millions + ' million'
  
     if left > 0
@@ -76,7 +76,7 @@ if write > 0
 
 if write > 0
     # for thousands
-    hundreds  = englishNumber write
+    hundreds  = english_number write
     numString = numString + hundreds + ' thousand'
     
     if left > 0
@@ -92,19 +92,19 @@ if write > 0
 
   if write > 0
     # Now here's a really sly trick:
-    hundreds  = englishNumber write
+    hundreds  = english_number write
     numString = numString + hundreds + ' hundred'
     # That's called "recursion". So what did I just do?
     # I told this method to call itself, but with "write" instead of
     # "number". Remember that "write" is (at the moment) the number of
     # hundreds we have to write out. After we add "hundreds" to
     # "numString", we add the string ' hundred' after it.
-    # So, for example, if we originally called englishNumber with
+    # So, for example, if we originally called english_number with
     # 1999 (so "number" = 1999), then at this point "write" would
     # be 19, and "left" would be 99. The laziest thing to do at this
-    # point is to have englishNumber write out the 'nineteen' for us,
+    # point is to have english_number write out the 'nineteen' for us,
     # then we write out ' hundred', and then the rest of
-    # englishNumber writes out 'ninety-nine'.
+    # english_number writes out 'ninety-nine'.
 
     if left > 0
       # So we don't write 'two hundredfifty-one'...
@@ -149,19 +149,18 @@ if write > 0
   # Now we just return "numString"...
   return numString
 end
-=begin
-puts englishNumber(  0)
-puts englishNumber(  9)
-puts englishNumber( 10)
-puts englishNumber( 11)
-puts englishNumber( 17)
-puts englishNumber( 32)
-puts englishNumber( 88)
-puts englishNumber( 99)
-puts englishNumber(100)
-puts englishNumber(101)
-puts englishNumber(234)
-puts englishNumber(3211)
-puts englishNumber(999999)
-puts englishNumber(1000000000000)
-=end
+
+puts english_number(  0)
+puts english_number(  9)
+puts english_number( 10)
+puts english_number( 11)
+puts english_number( 17)
+puts english_number( 32)
+puts english_number( 88)
+puts english_number( 99)
+puts english_number(100)
+puts english_number(101)
+puts english_number(234)
+puts english_number(3211)
+puts english_number(999999)
+puts english_number(1000000000000)

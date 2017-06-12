@@ -64,8 +64,3 @@ class OrangeTree
 		end
 	end
 end
-
- ot = OrangeTree.new
- 23.times do
-   ot.one_year_passes
- end

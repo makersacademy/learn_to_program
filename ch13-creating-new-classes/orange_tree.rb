@@ -53,10 +53,10 @@ class OrangeTree
 
 	def pick_an_orange
 		if @alive 
-			if @orangeCount == 0
+			if @orange_count == 0
 				'You search every branch, but find no oranges.'
 			else
-		  		@orangeCount -= 1
+		  		@orange_count -= 1
 		  		'You pick a juicy, delicious orange!'
 			end
 		else

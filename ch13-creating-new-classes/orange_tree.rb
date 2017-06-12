@@ -23,7 +23,7 @@ class OrangeTree
 		return "Your tree is #{@height}"
 	end
 
-	def oneYearPasses
+	def one_year_passes
 	  #method, which, when called, ages the tree one year.
 	  if @age < 5
 	        @height += 0.4
@@ -39,11 +39,11 @@ class OrangeTree
 	  end
 	end
 
-	def countTheOranges
+	def count_the_oranges
 	  return "You have #{@orangeCount} oranges on the tree..."
 	end
 
-	def pickAnOrange
+	def pick_an_orange
 		if @orangeCount == 0
 		  return "There are no more oranges to pick this year!"
 		else

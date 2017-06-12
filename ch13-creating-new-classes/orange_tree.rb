@@ -26,7 +26,7 @@ class OrangeTree
 	def oneYearPasses
 	  #method, which, when called, ages the tree one year.
 	  if @age < 5
-	        @height += 0.4)
+	        @height += 0.4
 	        @orangeCount = 0
 	        @age = @age + 1
 	  end

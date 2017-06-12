@@ -10,46 +10,62 @@ class OrangeTree
 	def initialize
 		@height = 0
 		@age = 0
-		@orangeCount = 0
+		@orange_ount = 0
 		@live = true
-		puts "You orange tree is planted..."
 	end
 
 	def age
-		puts "Your tree is #{@age} years old..."	
+		"Your tree is #{@age} years old..."	
 	end
 
 	def height
-		return "Your tree is #{@height}"
+		if @alive
+			@height.round(1)
+		else
+		"Your tree is dead!"
+		end
 	end
 
 	def one_year_passes
 	  #method, which, when called, ages the tree one year.
-	  if @age < 5
-	        @height += 0.4
+	  if @ailve
+	  	@height += 0.4
+	  	@age += 1
+	  	@orange_count=0
+		if @age <= 5
 	        @orangeCount = 0
-	        @age = @age + 1
-	  end
-	  puts "The orange tree is #{@age} years old..."
-	  if @age > 5
-	  	@orangeCount += (@height * 15 - 25)
-	  elsif @age ==25
-	  	@live = false
-	  	return "Your tree is dead..."
+	        "This year your tree grew to #{@height.round(1)}m tall," +
+          " but is still too young to bear fruit."
+		elsif @age > 5 && @age <=25
+	  		@orangeCount = (@height * 15 - 25)
+	  		"This year your tree grew to #{@height}m tall, and produced #{@orange_count} oranges."
+		else 
+	  		@live = false
+	  		'Oh, no! The tree is too old, and has died. :('
+		end
+	  else
+	  	'A year later, the tree is still dead. :('
 	  end
 	end
 
 	def count_the_oranges
-	  return "You have #{@orangeCount} oranges on the tree..."
+		if @alive
+			@orange_count
+		else
+		  	"A dead tree has no oranges"
+		end
 	end
 
 	def pick_an_orange
-		if @orangeCount == 0
-		  return "There are no more oranges to pick this year!"
+		if @alive 
+			if @orangeCount == 0
+				'You search every branch, but find no oranges.'
+			else
+		  		@orangeCount -= 1
+		  		'You pick a juicy, delicious orange!'
+			end
 		else
-		  	@orangeCount -= 1
-		  	puts "You picked an orange. It is delicious!"
-		  	puts "There are now #{@orangeCount} oranges left on the tree."
-		end 
+			'A dead tree has nothing to pick. :('
+		end
 	end
 end

@@ -20,7 +20,7 @@ class OrangeTree
 	end
 
 	def height
-		puts "Your tree is #{@height}"
+		return "Your tree is #{@height}"
 	end
 
 	def oneYearPasses
@@ -40,7 +40,7 @@ class OrangeTree
 	end
 
 	def countTheOranges
-	  puts "You have #{@orangeCount} oranges on the tree..."
+	  return "You have #{@orangeCount} oranges on the tree..."
 	end
 
 	def pickAnOrange

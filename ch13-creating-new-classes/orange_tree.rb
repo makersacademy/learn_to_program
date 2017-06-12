@@ -11,7 +11,7 @@ class OrangeTree
 		@height = 0
 		@age = 0
 		@orange_ount = 0
-		@live = true
+		@alive = true
 	end
 
 	def age

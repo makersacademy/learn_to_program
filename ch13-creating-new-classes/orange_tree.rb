@@ -28,7 +28,7 @@ class OrangeTree
 
 	def one_year_passes
 	  #method, which, when called, ages the tree one year.
-	  if @ailve
+	  if @alive
 	  	@height += 0.4
 	  	@age += 1
 	  	@orange_count=0
@@ -69,3 +69,6 @@ class OrangeTree
 		end
 	end
 end
+
+o = OrangeTree.new
+puts o.one_year_passes

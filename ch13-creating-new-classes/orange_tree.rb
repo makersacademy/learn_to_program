@@ -14,15 +14,11 @@ class OrangeTree
 		@alive = true
 	end
 
-	def age
-		"Your tree is #{@age} years old..."	
-	end
-
 	def height
 		if @alive
 			@height.round(1)
 		else
-		"Your tree is dead!"
+		'A dead tree is not very tall. :('
 		end
 	end
 
@@ -33,14 +29,13 @@ class OrangeTree
 	  	@age += 1
 	  	@orange_count=0
 		if @age <= 5
-	        @orangeCount = 0
 	        "This year your tree grew to #{@height.round(1)}m tall," +
           " but is still too young to bear fruit."
-		elsif @age > 5 && @age <=25
-	  		@orangeCount = (@height * 15 - 25)
-	  		"This year your tree grew to #{@height}m tall, and produced #{@orange_count} oranges."
+		elsif @age > 5 && @age <= 25
+	  		@orange_count = (@height * 15 - 25).to_i
+	  		"This year your tree grew to #{@height.round(1)}m tall, and produced #{@orange_count} oranges."
 		else 
-	  		@live = false
+	  		@alive = false
 	  		'Oh, no! The tree is too old, and has died. :('
 		end
 	  else
@@ -70,5 +65,7 @@ class OrangeTree
 	end
 end
 
-o = OrangeTree.new
-puts o.one_year_passes
+ ot = OrangeTree.new
+ 23.times do
+   ot.one_year_passes
+ end

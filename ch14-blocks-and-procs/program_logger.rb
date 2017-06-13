@@ -1,6 +1,6 @@
-def log desc, &block
+def program_log desc, &block
   # your code here
-  puts "Beginning \"" + desc + "\"..."
-  
-  puts "...\"" + desc + "\" finished, returning: " + block.call.to_s
+  puts "Beginning \"#{desc}\"..."
+  result = block.call
+  puts "...\"#{desc}\" finished, returning: #{ result.to_s}"
 end

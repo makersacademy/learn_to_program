@@ -1,9 +1,9 @@
 $depth = 0
-def log desc, &block
+def better_log desc, &block
   # your code here
-    puts ("\t"*$depth) + "Beginning \"" + desc + "\"..."
+  puts "Beginning \"#{desc}\"..."
   $depth +=1
   result = block.call
-    $depth -=1
-  puts ("\t"*$depth) + "...\"" + desc + "\" finished, returning: " + result.to_s
+  $depth -=1
+  puts "...\"#{desc}\" finished, returning: #{ result.to_s}"
 end

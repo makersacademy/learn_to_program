@@ -47,7 +47,7 @@ class OrangeTree
 		if @alive
 			@orange_count
 		else
-		  	"A dead tree has no oranges"
+		  	"A dead tree has no oranges. :("
 		end
 	end
 

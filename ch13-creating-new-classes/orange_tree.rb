@@ -64,3 +64,21 @@ class OrangeTree
 		end
 	end
 end
+
+=begin
+ ot = OrangeTree.new
+ 23.times do
+   ot.one_year_passes
+ end
+ puts(ot.one_year_passes)
+ puts(ot.count_the_oranges)
+ puts(ot.height)
+ puts(ot.one_year_passes)
+ puts(ot.one_year_passes)
+ puts(ot.one_year_passes)
+ puts(ot.one_year_passes)
+ puts(ot.one_year_passes)
+ puts(ot.height)
+ puts(ot.count_the_oranges)
+ puts(ot.pick_an_orange)
+-end

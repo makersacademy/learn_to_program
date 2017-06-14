@@ -25,4 +25,7 @@ File.open 'playlist.m3u', 'w' do |f|
     f.write track+"\n"
   end
 end
+puts "Playlist made!"
 end
+
+build_your_own_playlist

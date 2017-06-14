@@ -164,7 +164,7 @@ if write > 0
   numString
 end
 
-#num = 99
+
 def ninety_nine_bottles_of_beer num
 while (num > 0)
   puts weddingNumber(num) + " bottles of beer on the wall, " + weddingNumber(num) + " bottles of beer."
@@ -173,19 +173,4 @@ while (num > 0)
 end
 end
 
-=begin
-puts weddingNumber(  0)
-puts weddingNumber(  9)
-puts weddingNumber( 10)
-puts weddingNumber( 11)
-puts weddingNumber( 17)
-puts weddingNumber( 32)
-puts weddingNumber( 88)
-puts weddingNumber( 99)
-puts weddingNumber(100)
-puts weddingNumber(101)
-puts weddingNumber(234)
-puts weddingNumber(3211)
-puts weddingNumber(999999)
-puts weddingNumber(1000000000000) 
-=end
+ninety_nine_bottles_of_beer 99

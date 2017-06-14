@@ -8,13 +8,9 @@ return and Napoleon had a baby—it kills your program right where it stands;
 this is good for spitting out an error message and then quitting).
 =end
 # This is where she stores her pictures before
-
 # she gets her YAML on and moves them to the server.
-
 # Just for my own convenience, I'll go there now.
-
-#Dir.chdir 'C:/Documents and Settings/Katy/PictureInbox'
-
+#Dir.chdir '/Photos/PictureInbox'
 # First we find all of the pictures to be moved.
 
 pic_names = Dir["**/*\.{jpg,JPG}"]

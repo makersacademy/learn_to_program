@@ -1,5 +1,5 @@
 def english_number number
-  if number < 0
+if number < 0
 return 'please enter a positive number.'
 end
 if number == 0
@@ -85,5 +85,4 @@ if write > 0
   num_string = num_string + ones_place[write-1]
 end
 num_string
-
 end

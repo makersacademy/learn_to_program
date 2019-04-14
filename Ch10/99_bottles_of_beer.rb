@@ -1,4 +1,4 @@
-require_relative 'english_number.rb'
+require_relative 'expand_english.rb'
 
 def plurals(num, word)
 num == "one" ? num + " " + word : num + " " + word + "s"

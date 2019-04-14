@@ -1,14 +1,14 @@
-def roman_numeral num
-  thous = (num        / 1000)
-  hunds = (num % 1000 / 100)
-  tens =  (num % 100  / 10)
-  ones =  (num % 10)
+def modern_roman num
+  thousands = (num / 1000)
+  hundreds =  (num % 1000 / 100)
+  tens =      (num % 100 / 10)
+  ones =      (num % 10)
 
-  roman = 'M' * thous
+  roman = 'M' * thousands
 
-if hunds == 9
+if hundreds == 9
   roman = roman + 'CM'
-elsif hunds == 4
+elsif hundreds == 4
   roman = roman + 'CD'
 else
   roman = roman + 'D' * (num % 1000 / 500)
